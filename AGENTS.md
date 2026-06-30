@@ -70,6 +70,7 @@ xurl search "from:USERNAME" -n 20
 | Аналитика | `87832edf5bc3` | Пн 10:00 UTC | Еженедельный отчёт |
 | Посты | `185cfe35cca7` | Ср, Сб 16:00 UTC | Контент-пост в голосе |
 | Engagement | `390decfe6138` | Ежедневно 14:00 UTC | Поиск + реплаи + лайки |
+| Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Осторожная подписка на tracked authors, максимум 2/day |
 
 ## Стратегия роста
 
@@ -114,3 +115,17 @@ xurl post --app my-app --auth oauth2 -u '@user' "полный текст до 40
 - Не слать AI-сгенерированный текст без проверки на «AI-голос»
 - Раздельно с другими проектами (директория, venv, ключи — изолировано)
 - Не спорить с пользователем про обрезку постов — проверять `note_tweet`
+
+## Cautious Follow Workflow: Tracked Authors
+
+Tracked-author follows for @RobotsTJ500 must be gradual and auditable. X has strict anti-spam rules; do not run mass following or one-batch follow operations.
+
+- Default cap: follow at most **2 tracked authors per UTC day**.
+- Hard cap: **3 tracked authors per UTC day** only with explicit user instruction for that run.
+- Never exceed 3 tracked-author follows in one UTC day.
+- Skip accounts that are already followed; mark them `already_following` in the tracked queue instead of refollowing.
+- Report every successful follow with handle, profile URL, and the daily counter as `N/day`.
+- Stop immediately on `429`, `403`, authentication errors, or authorization errors.
+- Do not unfollow/refollow, churn relationships, or use follow/unfollow loops.
+- Do not call `xurl follow` directly for tracked authors. Use `follow_tracked_authors.py`, which is dry-run by default and requires `--execute` for follow side effects.
+- Do not read or print `~/.xurl`, token files, environment secrets, or credential material.
