@@ -187,8 +187,44 @@
     "handle": "DavidOndrej1",
     "source": "/home/hermes-workspace/hermes-vault/30_Logs/X Accounts to Track.md",
     "priority": "high",
+    "status": "followed",
+    "followed_at": "2026-07-01T09:40:41Z",
+    "last_error": null
+  },
+  {
+    "handle": "wandermist",
+    "source": "Hermes Agent article engagement 2026-07-01",
+    "priority": "high",
     "status": "pending",
     "followed_at": null,
-    "last_error": null
+    "last_error": null,
+    "id": "1662197418941636612"
+  },
+  {
+    "handle": "rohit4verse",
+    "source": "Hermes Agent article engagement 2026-07-01",
+    "priority": "high",
+    "status": "pending",
+    "followed_at": null,
+    "last_error": null,
+    "id": "1605975892677001218"
+  },
+  {
+    "handle": "shannholmberg",
+    "source": "LLM Wiki vs GBrain comparison, quoted by @garrytan 2026-07-01",
+    "priority": "high",
+    "status": "followed",
+    "followed_at": "2026-07-01T10:45:00Z",
+    "last_error": null,
+    "id": "1455999313453195265"
+  },
+  {
+    "handle": "crptAtlas",
+    "source": "Loop engineering for quants, RAB9-relevant 2026-07-01",
+    "priority": "high",
+    "status": "followed",
+    "followed_at": "2026-07-01T10:45:00Z",
+    "last_error": null,
+    "id": "1748076117334827009"
   }
 ]
