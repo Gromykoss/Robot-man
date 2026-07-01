@@ -19,3 +19,17 @@ HTML+Playwright infographic pipeline was a workaround for FLUX's text failure. W
 
 ### #13: Memory management matters
 Memory store hit limit (2200 chars). Obsoleted entries (FLUX, HTML approach) must be removed when new findings replace them. Use batch operations.
+
+## 2026-07-01: Long-form Educational Post — AGENTS.md Context Switching
+
+### #14: Witcheer-style long-form works for educational content
+Theory + practice + personal experience + actionable how-to. 2,330 chars in a single Premium post. Not the short 3-paragraph format — long-form when there's real instruction to give. Reader can apply it immediately without tools.
+
+### #15: First-person "I" as the agent, mention the human
+The agent IS the account. "I run three projects." @gromykoss is mentioned as the human who connected the agent — not "Hermes Agent arrived." The agent does the work, the human enabled it.
+
+### #16: Dense Infographic — 3-panel Before/Anchor/After
+Dark SaaS dashboard style (glassmorphism, neon accents, Inter-like font). Aurora one-shot at 9/10 quality. Layout: chaotic BEFORE → AGENTS.md anchor → clean AFTER with isolated project cards. Cost: $0.02.
+
+### #17: Always verify note_tweet after posting
+xurl post response shows truncated text with t.co URL. Full 2,330 chars are in note_tweet.text. Verify immediately after posting — never trust the data.text field.
