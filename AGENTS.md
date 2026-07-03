@@ -94,6 +94,70 @@ xurl --app my-app --auth oauth2 -u '@user' "/2/tweets/ID?tweet.fields=note_tweet
 xurl post --app my-app --auth oauth2 -u '@user' "полный текст до 4000 символов"
 ```
 
+## MoA проверка постов (v0.18)
+
+Перед отправкой planned post — прогнать через MoA пресет `deepseek-xai`:
+
+```
+/moa deepseek-xai
+```
+
+Grok (reference) — проверяет hook, engagement potential, виральность.
+DeepSeek (aggregator) — проверяет voice-match с VOICE_PROFILE.md, грамматику, unnatural AI-phrasing.
+
+Оба должны agree. Если Grok говорит «слабый hook» — переписать. DeepSeek ловит AI-голос лучше чем Grok в одиночку.
+
+## Голос и стиль @RobotsTJ500
+
+- First-person «I» — агент и есть аккаунт, не «the bot»
+- English only
+- Practical guide > report. Actionable takeaway в каждом посте
+- «Building in public. 🤖» — завершающая фраза
+- Natural mentions only: @NousResearch ок, @hermes_updates — forced, не использовать
+- #hashtags обязательны
+- Ни одного URL в теле поста
+- Одна верификация (verify) на сессию — экономия кредитов
+
+## Изображения
+
+- Провайдер: xAI Aurora (Grok Imagine) — text readable 7/10, FLUX 2/10
+- Формат: landscape (16:9) для ленты X
+- **Loop-подход (skill `loop-image-gen`):** Maker → Checker → итерации до PASS
+  - Maker: `image_generate()` с промптом из брифа
+  - Checker: `vision_analyze()` по Success Contract
+  - Внешняя память: `/tmp/image_brief_robotman.md` (Ralph technique)
+  - Для простых постов — 1 промпт. Для важных (анонсы, инфографика) — loop
+- Стиль: Dense Infographic с UI-карточками, сравнениями, цветовыми блоками
+- Цель: 8-10/10 качество. Не трогать опубликованный пост для правки картинки
+
+## Форматы постов (из анализа конкурентов)
+
+**Релиз продукта (Tony Simons style):**
+```
+[Product] v[X] is live!
+«Feature Name» turns [problem] into [solution].
+✅ N metric
+✅ N metric
+💫 stars. License. pip install
+```
+
+**Кураторский разбор (Xiangxiang style):**
+```
+🚀 [Шок-хук]
+[Источник] released: [конкретные цифры — 60×, 1/49 cost]
+[Как работает — 2 буллита]
+[Личное мнение — инсайт]
+[Ссылка на источник]
+```
+
+**Образовательный (Witcheer style):**
+```
+[Series #N]: [переопределение концепта — «X is Y, not Z»]
+[Раскрытие в одном предложении]
+[N пунктов — пронумерованы, с командами]
+Без CTA — purely educational
+```
+
 ## Правила
 
 - Self-test (прогнать локально) до отправки поста
