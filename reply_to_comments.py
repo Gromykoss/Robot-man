@@ -33,8 +33,42 @@ def xurl(cmd):
         return None
 
 
+PUBLISHED_LOG = os.path.join(os.path.dirname(__file__), 'published_posts.jsonl')
+
+
+def save_published_post(post_id, created_at=None):
+    """Save a post ID after publishing. Called by the posting flow."""
+    if created_at is None:
+        created_at = datetime.now(timezone.utc).isoformat()
+    with open(PUBLISHED_LOG, 'a') as f:
+        f.write(json.dumps({'id': str(post_id), 'created_at': created_at}) + '\n')
+
+
 def get_my_recent_posts():
-    """Get recent posts from @RobotsTJ500."""
+    """
+    Get recent post IDs from local log (survives API outages).
+    Falls back to X API only if log is empty or stale.
+    """
+    now = datetime.now(timezone.utc)
+    posts = []
+
+    # 1. Try local log first (fast, survives 503)
+    if os.path.exists(PUBLISHED_LOG):
+        with open(PUBLISHED_LOG) as f:
+            for line in f:
+                try:
+                    rec = json.loads(line.strip())
+                    created = datetime.fromisoformat(rec['created_at'].replace('Z', '+00:00'))
+                    age_h = (now - created).total_seconds() / 3600
+                    if age_h <= 48:  # Only check posts from last 48h
+                        posts.append({'id': rec['id'], 'created_at': rec['created_at']})
+                except (json.JSONDecodeError, KeyError, ValueError):
+                    continue
+
+    if posts:
+        return sorted(posts, key=lambda p: p['created_at'], reverse=True)[:MAX_POSTS]
+
+    # 2. Fallback: X API (may be 503)
     data = xurl([
         '/2/users/{}/tweets'.format(ACCOUNT_ID),
         '?max_results={}'.format(MAX_POSTS),
