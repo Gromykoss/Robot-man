@@ -235,6 +235,23 @@ DeepSeek (aggregator) — проверяет voice-match с VOICE_PROFILE.md, г
 | 4 | Follow drip | `ebeb4ec1801d` | Ежедн 10:15 | ✅ OK |
 | 5 | Reply Engine | `3763fa798a12` | Каждые 30м | ✅ OK |
 
+### X API: доступный функционал (@RobotsTJ500)
+
+| Операция | Статус | Аутентификация |
+|----------|--------|---------------|
+| 📖 Читать посты, timeline, search | ✅ | OAuth 1.0a / 2.0 |
+| ✍️ Постить текст | ✅ | OAuth 1.0a |
+| 🖼️ Постить с картинкой | ✅ | OAuth 1.0a (media upload) |
+| 💬 Reply (свои треды + mentions) | ✅ | OAuth 1.0a |
+| ❤️ Like / 🔄 Repost / 👥 Follow | ✅ | OAuth 1.0a |
+| 📌 Читать закладки | ✅ | OAuth 1.0a |
+| 🗑️ Удалить свои посты | ✅ | OAuth 1.0a |
+| 📩 DM | ✅ | OAuth 1.0a |
+| 🔍 Поиск по X (x_search) | ✅ | xAI Grok |
+| ❌ Reply чужим (не @-упомянули) | ❌ | X блок Feb 2026 |
+| ❌ Quote чужих | ❌ | X блок Feb 2026 |
+| ❌ Снять закладки | ❌ | OAuth 2.0 + `bookmark.write` |
+
 ## Правила строительства Robot-man v1
 
 ### 1. Контент — качество > количество
