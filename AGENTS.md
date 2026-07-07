@@ -192,28 +192,109 @@ DeepSeek (aggregator) — проверяет voice-match с VOICE_PROFILE.md, г
 - Отвечать на КАЖДЫЙ комментарий к своим постам в течение 2 часов
 - Цель: reply rate > 50% (сейчас 2/12 = 17%)
 
-## Правила
+## Архитектура (v2 — 07.07.2026)
 
-- Self-test (прогнать локально) до отправки поста
-- **Каждый пост — с изображением + подтверждение Сергея перед отправкой.** Показать текст + картинку, получить «ок». Без удалений и перепостов.
-- Для публикации использовать `post_with_log.sh` — он сохраняет ID поста в `published_posts.jsonl` для reply engine. Не использовать голый `xurl post`.
-- Для autonomous engagement cron разрешены ограниченные публичные действия без предварительного approval: reply/quote/original/repost суммарно **не более 3 public write actions в сутки**. После любого public write cron обязан прислать отчёт Сергею: URL поста, source URL, точный текст, счётчик N/3, ошибки API.
-- Не удалять и не пересоздавать посты — риск блокировки аккаунта за массовые delete+post
-- OAuth 1.0a для картинок; OAuth 2.0 даёт 403 на media upload
-- Для поста с картинкой использовать связку:
-  ```bash
-  MEDIA_ID=$(xurl --app my-app --auth oauth1 media upload --media-type image/png --category tweet_image image.png | ...)
-  xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$(cat post.txt)" --media-id "$MEDIA_ID"
-  ```
-  В текущей конфигурации `oauth2` может давать `401 Unauthorized` на write/read, а `oauth1` успешно публикует media+post.
-- После публикации длинного поста всегда проверять полный текст через raw API с `note_tweet` и тем же auth, который работает:
-  ```bash
-  xurl --app my-app --auth oauth1 -u RobotsTJ500 "/2/tweets/POST_ID?tweet.fields=note_tweet,created_at,attachments,entities&expansions=attachments.media_keys&media.fields=type,url,width,height"
-  ```
-  Не доверять полю `data.text`: оно обрезается и заменяет хвост на `pic.x.com/...`; полный текст лежит в `data.note_tweet.text`.
-- Не слать AI-сгенерированный текст без проверки на «AI-голос»
-- Раздельно с другими проектами (директория, venv, ключи — изолировано)
-- Не спорить с пользователем про обрезку постов — проверять `note_tweet`
+### Поток контента
+
+```
+Идея → Content Strategy → [War Story / Tech Breakdown / Quote]
+    → MoA deepseek-xai (hook + voice check)
+        → Генерация текста в голосе @RobotsTJ500
+            → loop-image-gen (Maker: xAI Aurora → Checker: vision_analyze)
+                → Показ Сергею (текст + картинка)
+                    → Approval → post_with_log.sh → X API (OAuth 1.0a)
+                        → published_posts.jsonl
+                            → Reply Engine (каждые 30 мин)
+```
+
+### Компоненты
+
+| Компонент | Файл | Назначение |
+|-----------|------|-----------|
+| **xurl CLI** | системный | X API: пост, reply, media upload, search, mentions |
+| **post_with_log.sh** | `post_with_log.sh` | Публикация + лог в `published_posts.jsonl` |
+| **analytics.py** | `analytics.py` | Еженедельная аналитика engagement |
+| **engage.py** | `engage.py` | Engagement engine: поиск + фильтрация |
+| **reply_to_comments.py** | `reply_to_comments.py` | Ответы на комментарии к своим постам |
+| **follow_tracked_authors.py** | `follow_tracked_authors.py` | Осторожная подписка (dry-run default) |
+
+### Два аккаунта X
+
+| Аккаунт | Тип | Контент | Аутентификация |
+|---------|-----|---------|---------------|
+| **@RobotsTJ500** | AI-агент | War Stories, Tech, Building in Public | OAuth 1.0a (write) + OAuth 2.0 (read) |
+| **@gromykoss** | Личный бренд | Мысли, наблюдения, ирония | OAuth (read-only через API) |
+
+### Cron-джобы (4/5 активны)
+
+| # | Джоб | ID | Расписание | Статус |
+|---|------|-----|-----------|--------|
+| 1 | Аналитика | `87832edf5bc3` | Пн 10:00 | ❌ ERROR |
+| 2 | ~~Посты~~ | `185cfe35cca7` | ~~Ср/Сб 16:00~~ | ❌ УДАЛЁН |
+| 3 | Engagement | `390decfe6138` | Ежедн 14:00 | ✅ OK |
+| 4 | Follow drip | `ebeb4ec1801d` | Ежедн 10:15 | ✅ OK |
+| 5 | Reply Engine | `3763fa798a12` | Каждые 30м | ✅ OK |
+
+## Правила строительства Robot-man v1
+
+### 1. Контент — качество > количество
+
+- **MoA проверка обязательна.** Каждый planned post → `/moa deepseek-xai`. Grok — hook + виральность, DeepSeek — voice match + unnatural AI-phrasing. Оба agree → пост. Не agree → переписать.
+- **Каждый пост — с изображением.** Качество 8-10/10. loop-image-gen для важных.
+- **2 поста/день максимум.** Минимум 4 часа между постами. 3+ → каннибализация.
+- **Форматы:** War Story (70%) > Tech Breakdown (20%) > Quote (10%).
+
+### 2. Подтверждение перед отправкой — MANDATORY
+
+- Показать Сергею текст + картинку.
+- Получить явное «ок».
+- Только потом `post_with_log.sh`.
+- Не удалять и не перепощивать.
+
+### 3. Инфраструктуру верифицировать при старте
+
+- xurl жив? `xurl auth status` (OAuth 1.0a + 2.0)
+- Cron-джобы живы? `cronjob list` → фильтр robot-man
+- Опубликованные посты? `cat published_posts.jsonl | tail -3`
+- Лимиты X? Проверить `x-app-limit-24hour-remaining` в ответе API
+
+### 4. Pre-post чеклист
+
+1. Текст написан в голосе @RobotsTJ500 (VOICE_PROFILE.md)
+2. MoA deepseek-xai: PASS
+3. Изображение сгенерировано (loop-image-gen если важно)
+4. vision_analyze: изображение 8-10/10
+5. Показать Сергею → «ок»
+6. `post_with_log.sh` → ID записан в `published_posts.jsonl`
+7. Проверить полный текст через `note_tweet`
+
+### 5. API-лимиты и безопасность аккаунта
+
+- **OAuth 1.0a для write** (media upload, post, reply). OAuth 2.0 → 403 на media.
+- **Max 3 public writes/сутки** для autonomous cron (reply/quote/original/repost).
+- После каждого write → отчёт Сергею: URL, source, текст, N/3.
+- **Cautious follow:** max 2/day (3 только с явным разрешением).
+- `429` → STOP и ждать. Не даунгрейдить до Basic.
+
+### 6. Правило отката
+
+```bash
+# Удалить последний пост (если ошибка)
+xurl --app my-app --auth oauth1 -u RobotsTJ500 tweet delete POST_ID
+```
+
+Не злоупотреблять — массовые delete+post → бан.
+
+### 7. Баги → документ
+
+Каждый баг → BUGS.md в корне robot-man/. Формат: ID, симптом, причина, fix, статус.
+
+### 8. Self-test перед отправкой
+
+- Текст: AI-voice check (DeepSeek) + hook check (Grok)
+- Изображение: vision_analyze на читаемость и качество
+- Формат: no URLs в теле, closing phrase «Building in public. 🤖», hashtags
+- Проверить `note_tweet` после публикации
 
 ## Cautious Follow Workflow: Tracked Authors
 
