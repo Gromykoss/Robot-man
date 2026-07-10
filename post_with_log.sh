@@ -15,8 +15,19 @@ if [ -z "$TEXT" ]; then
 fi
 
 if [ -n "$IMAGE" ] && [ -f "$IMAGE" ]; then
-    # Post with image
-    MEDIA_ID=$(xurl --app my-app --auth oauth1 media upload --media-type image/png --category tweet_image "$IMAGE" 2>&1 | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['id'])")
+    # Post with image — xurl outputs JSON + human-readable line, extract JSON part only
+    UPLOAD_OUT=$(xurl --app my-app --auth oauth1 media upload --media-type image/png --category tweet_image "$IMAGE" 2>&1)
+    MEDIA_ID=$(echo "$UPLOAD_OUT" | python3 -c "
+import sys, json
+lines = sys.stdin.read().strip().split('\n')
+# Find the first { and last } to extract JSON block
+json_start = next(i for i, l in enumerate(lines) if l.strip() == '{')
+json_block = '\n'.join(lines[json_start:])
+# Parse only up to the first complete JSON object
+decoder = json.JSONDecoder()
+data, _ = decoder.raw_decode(json_block)
+print(data['data']['id'])
+")
     OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" --media-id "$MEDIA_ID" 2>&1)
 else
     # Text-only post
