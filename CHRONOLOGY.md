@@ -1,5 +1,51 @@
 # Robot-man — Хронология
 
+## 2026-07-09 — v3: Virality Scoring + Self-Improvement Loop + Specialist Profiles
+
+### Контекст
+Реализация трёх улучшений из IBuzovskyi's "Hermes Agent + Grok 4.5 Content Machine" guide.
+
+### Изменения
+
+**1. Virality Scoring**
+- Новый MoA пресет `viral-score`: Grok 4.5 (reference) + DeepSeek v4 Pro (aggregator)
+- Создан skill `viral-scorer`: оценивает hook (1-10), engagement (1-10), virality (1-10)
+- Вердикт: BURN >24, KEEP WITH EDITS 18-24, REWRITE <18
+
+**2. Self-Improvement Loop**
+- Создан `scripts/analytics_loop.py`: ежедневный сбор metrics, классификация outperformer/average/underperformer, pattern detection
+- Создан skill `voice-updater`: читает analytics output, сравнивает с VOICE_PROFILE.md, генерирует suggestions
+- Создан cron job «Octagon CREATOR — Self-Improvement Loop»: ежедневно 15:00 UTC
+- Скрипт засимлинкован в ~/.hermes/scripts/
+
+**3. Specialist Profiles**
+- Созданы три specialist profile skills:
+  - `x-researcher` — X search + trend detection + author monitor
+  - `content-writer` — voice-matched post generation
+  - `content-editor` — MoA review + viral-score gate + approve/reject/edit
+
+**4. AGENTS.md v3**
+- Полный поток контента обновлён: Idea → Research → Write → Edit → Viral Score → Image → Approve → Post → Reply Engine → Analytics → Voice Update
+- Добавлена секция Specialist Profiles (5 skills)
+- Добавлена секция Self-Improvement Loop
+- Cron-джобы: +1 (Self-Improvement Loop), итого 5 активных
+- Pre-post чеклист обновлён до v3 (9 шагов)
+- MoA секция обновлена: оба пресета документированы
+
+### Текущее состояние
+
+| Компонент | Статус |
+|-----------|--------|
+| @RobotsTJ500 | ✅ Активен, 2 поста/день |
+| @gromykoss | ✅ Активен |
+| Cron: Аналитика | ✅ OK |
+| Cron: Engagement | ✅ OK |
+| Cron: Follow drip | ✅ OK |
+| Cron: Reply Engine | ✅ OK |
+| Cron: Self-Improvement Loop | ✅ NEW |
+| viral-score MoA preset | ✅ NEW |
+| 5 skills (viral-scorer, x-researcher, content-writer, content-editor, voice-updater) | ✅ NEW |
+
 ## 2026-07-07 — Правила строительства v1 + архитектура v2
 
 ### Контекст
