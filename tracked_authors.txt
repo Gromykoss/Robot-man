@@ -1,0 +1,12 @@
+# Tracked Authors for @RobotsTJ500 follow drip
+# Format: username | reason | priority (1=high, 2=medium, 3=low)
+# Follow cap: 2/day, never exceed 3/day
+
+tekium | Hermes creator, MoA architect | 1
+NousResearch | Hermes official | 1
+kshitijk4poor | Hermes core contributor, P0/P1 sweep | 2
+benbarclay | Hermes relay/gateway/drain | 2
+OutThisLife | Hermes desktop app dev | 2
+applywiseai | Samian — engaged with our content | 2
+sonmerfiel54819 | SoloDeveloper_Doreen — engaged with our content | 3
+JackQi82772 | 🆕 GEO, Codex, Fable 5, practical tech content, verified 1.6K | 2

@@ -30,6 +30,29 @@
 
 ## Типы постов (шаблоны)
 
+### 0. ALL-CAPS Announcement (IBuzovskyi-стиль)
+```
+[ALL-CAPS ЗАГОЛОВОК С ЦИФРОЙ]
+[подзаголовок — одна строка]
+[3-5 фактов, каждый с новой строки]
+→ [ссылка или CTA]
+
+HERMES AGENT MANAGES 4 PROJECTS.
+NO CODE WRITTEN. NO TEAM.
+JUST TELEGRAM, CRON, AND XURL.
+
+gooolag: matrix messaging with registration flow
+Alikhan: whatsapp agent tracking construction site
+RAB9: crypto signal pipeline with verifier gate
+Robot-man: this account, automated
+
+one year ago i couldn't write python.
+now i ship weekly.
+
+→ full architecture breakdown in article
+```
+**Правила:** заголовок ALL-CAPS, цифра, payoff. Без эмодзи. Каждый факт — новая строка. Закрытие — одна фраза, без пафоса.
+
 ### 1. Микро-отчёт
 ```
 [что сделали] + [цифра] + [контекст]

@@ -69,12 +69,10 @@ def get_my_recent_posts():
         return sorted(posts, key=lambda p: p['created_at'], reverse=True)[:MAX_POSTS]
 
     # 2. Fallback: X API (may be 503)
-    data = xurl([
-        '/2/users/{}/tweets'.format(ACCOUNT_ID),
-        '?max_results={}'.format(MAX_POSTS),
-        '&tweet.fields=created_at,conversation_id,public_metrics',
-        '&exclude=retweets,replies'
-    ])
+    url = '/2/users/{}/tweets?max_results={}&tweet.fields=created_at,conversation_id,public_metrics&exclude=retweets,replies'.format(
+        ACCOUNT_ID, MAX_POSTS
+    )
+    data = xurl([url])
     if not data or 'data' not in data:
         return []
     return data['data']
@@ -82,18 +80,13 @@ def get_my_recent_posts():
 
 def get_comments(conversation_id, since_time=None):
     """Get comments on a post (conversation)."""
-    params = [
-        '/2/tweets/search/recent',
-        '?query=conversation_id:{}'.format(conversation_id),
-        '&tweet.fields=created_at,author_id,conversation_id,in_reply_to_user_id',
-        '&expansions=author_id',
-        '&user.fields=username',
-        '&max_results=20'
-    ]
+    url = '/2/tweets/search/recent?query=conversation_id:{}&tweet.fields=created_at,author_id,conversation_id,in_reply_to_user_id&expansions=author_id&user.fields=username&max_results=20'.format(
+        conversation_id
+    )
     if since_time:
-        params[1] += '&start_time=' + since_time
+        url += '&start_time=' + since_time
     
-    data = xurl(params)
+    data = xurl([url])
     if not data or 'data' not in data:
         return []
     
