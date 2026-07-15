@@ -1,5 +1,25 @@
 # Robot-man — Хронология
 
+## 2026-07-14 — Engagement + Voice fix
+
+### Engagement
+- **Reply:** @animejmroche — review gate для desktop-агента с Codex. Первая версия была с ошибкой голоса («my agent» вместо «I») — удалена, переписана. Tweet: `2077071732184158521`
+- **Likes (8):** @paxron7 (memory architecture), @rgk_degen (living second brain), @zeroclaw_build (Matrix+Hermes), @ScottyBeamIO (building in public), @witcheer ×2 (Hermes PRs + Qwen hardware), @RodmanAi (6 AI repos), @libapi_ (Hermes Studio), @Abobsterina (ecosystem 200K stars)
+- **Follow:** @paxron7, @witcheer (2/2 сегодня)
+- **Контент:** без постов — пользователь решил не постить
+
+### Лента
+- Hermes-сообщество активно: память (Obsidian vaults), hardware (ESP32 голосовые терминалы), self-hosted UI (RelayDesk), observability (UNBROKER)
+- @tonysimons_ ответил на наш reply — 🫡🫡🫡 + «this is amazing to wake up to»
+- @witcheer: обзор PR'ов Hermes v0.18+ — webhook payload filters, session export, SecretSource
+- @libapi_: Hermes Studio + Studuo hardware (9100★)
+- @Abobsterina: экосистема Hermes — 200K★. GBrain (Garry Tan/YC), SkillClaw, agenttrace, mission-control
+- Agent-Reach (Panniantong): проверен, не нужен — cookie-скрапинг, наш стек закрыт официальными API
+
+## 2026-07-14 — Agent-Driven Development Rules
+
+AGENTS.md: добавлены 8 правил делегирования в Codex CLI / Grok Build (build plan, security gate, verification ladder). Методика Tony Simons (wp-chatgpt-publisher). Skill: `codex-grok-delegation`.
+
 ## 2026-07-09 — v3: Virality Scoring + Self-Improvement Loop + Specialist Profiles
 
 ### Контекст

@@ -15,18 +15,38 @@ os.makedirs(LOG_DIR, exist_ok=True)
 
 # === CONFIG ===
 SEARCH_TOPICS = [
-    'Hermes Agent',
-    'HermesAgent',
-    'building AI agent',
-    'WhatsApp bot',
-    'AI memory agent',
-    'self improving AI',
-    '@NousResearch Hermes',
+    'Hermes Agent agent workflow',
+    'HermesAgent skill memory',
+    'building AI agent infrastructure',
+    'Hermes Agent Claude Code Codex',
+    'AI memory agent production',
+    'self improving AI context',
+    '@NousResearch Hermes deployment',
+    'agent-driven development',
 ]
 
 SKIP_HANDLES = {'RobotsTJ500', 'Gromykoss', 'gromykoss'}
 MAX_CANDIDATES = 10
 MAX_AGE_HOURS = 24
+
+# Quality thresholds
+MIN_LIKES = 1            # skip zero-engagement posts (bots/spam)
+MAX_LIKES = 500          # skip viral (we can't add value)
+MIN_TEXT_LENGTH = 60     # skip one-liners, emoji-only
+MIN_REPLIES = 0          # allow any reply count
+MAX_REPLIES = 100        # skip flooded threads
+
+# Interesting signal words (posts with these get priority)
+SIGNAL_WORDS = [
+    'build', 'built', 'building',
+    'workflow', 'pipeline', 'automate',
+    'memory', 'context', 'skill',
+    'infrastructure', 'deploy', 'production',
+    'question', 'how', 'anyone',
+    'tried', 'testing', 'experiment',
+    'learned', 'lesson', 'insight',
+    'open source', 'repo', 'github',
+]
 
 # === TOOL WRAPPERS ===
 
@@ -119,11 +139,25 @@ def find_engagement_targets():
             continue
         if not posts:
             continue
-        # Filter: min 0 likes (search results are sparse), not ourselves
         for p in posts:
             likes = p['metrics'].get('like_count', 0)
-            if likes > 500:
+            replies = p['metrics'].get('reply_count', 0)
+            text = p['text']
+            
+            # Quality gates
+            if likes < MIN_LIKES or likes > MAX_LIKES:
                 continue
+            if replies > MAX_REPLIES:
+                continue
+            if len(text) < MIN_TEXT_LENGTH:
+                continue
+            # Skip retweets (start with "RT @")
+            if text.strip().startswith('RT @'):
+                continue
+            # Score: signal words × 2 + likes
+            text_lower = text.lower()
+            signal_score = sum(2 for w in SIGNAL_WORDS if w in text_lower)
+            p['_quality'] = signal_score + min(likes, 50)  # cap likes weight
             all_candidates.append(p)
 
     # Deduplicate by ID
@@ -136,8 +170,8 @@ def find_engagement_targets():
 
     candidates = filter_candidates(unique, engaged_ids)
 
-    # Sort by engagement (likes)
-    candidates.sort(key=lambda x: x['metrics'].get('like_count', 0), reverse=True)
+    # Sort by quality score descending
+    candidates.sort(key=lambda x: x.get('_quality', 0), reverse=True)
 
     return candidates
 
