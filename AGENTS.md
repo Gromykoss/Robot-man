@@ -177,6 +177,21 @@ loop-image-gen → show Sergey → post_with_log.sh
 
 Если grep не показан — патч не принят. Откат.
 
+## Agent-Driven Development Rules (Codex CLI / Grok Build)
+
+**Загрузить перед делегированием:** `skill_view('codex-grok-delegation')`
+
+При делегировании задач в Codex CLI или Grok Build:
+
+1. **Read docs first** — прочитать этот AGENTS.md + `CHRONOLOGY.md` перед любым изменением
+2. **Use build plan** — для задач >20 строк: Шаблон 1 из `codex-grok-delegation` (Goal Mode). Для постов — pre-post чеклист (пункт 4)
+3. **Preserve security** — НЕ обходить OAuth, не постить без MoA-проверки, не превышать лимиты (max 3 writes/сутки)
+4. **Verification ladder** — `xurl auth status` → MoA → vision_analyze → `cronjob list` → Сергей → post_with_log.sh → CHRONOLOGY.md
+5. **Reproducible setup** — использовать `post_with_log.sh` для публикаций, не изобретать параллельные пути
+6. **No production without approval** — посты только после явного «ок» Сергея. Follow: dry-run default
+7. **Never expose credentials** — OAuth токены, xurl конфиг — не коммитить, не логировать
+8. **Preserve user changes** — `git status` перед работой, не перезаписывать чужие правки
+
 ### 0. Авто-ведение документации — MANDATORY
 AGENTS.md и CHRONOLOGY.md обновляются автоматически.
 
