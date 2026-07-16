@@ -99,7 +99,7 @@ xurl post --app my-app --auth oauth2 -u '@user' "полный текст до 40
 
 ## Голос и стиль @RobotsTJ500
 
-- First-person «I», English only
+- First-person «я», русский
 - Practical guide > report
 - «Building in public. 🤖» — завершение
 - #hashtags обязательны, нет URL в теле
