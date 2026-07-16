@@ -51,4 +51,12 @@ with open('$LOG', 'a') as f:
     f.write(json.dumps({'id': '$POST_ID', 'created_at': datetime.now(timezone.utc).isoformat()}) + '\n')
 "
     echo "[LOG] Saved post $POST_ID to published_posts.jsonl"
+
+    # Push to Discord #robot-human via shared helper
+    POST_URL="https://x.com/RobotsTJ500/status/$POST_ID"
+    TIME_NOW=$(date -u +"%Y-%m-%d %H:%M UTC")
+    bash ~/.hermes/scripts/discord-post.sh "1525718586059001906" \
+        "**🐦 New Post** — $TIME_NOW
+${TEXT:0:200}...
+$POST_URL" 2>/dev/null
 fi
