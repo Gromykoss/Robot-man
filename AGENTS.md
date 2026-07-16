@@ -21,7 +21,8 @@ Voice Data (реплаи) → Voice Profile → Content Pipeline → xurl → X
 
 ## Инструментарий
 
-- **xurl** — официальный CLI X API: пост, реплай, квот, DM, медиа, поиск
+- **X MCP (v1 — 15.07.2026)** — 24 инструмента X API как родные MCP: поиск, юзеры, закладки, тренды, новости. Подключён через `xurl mcp` bridge. Предпочитать вместо `x_search`.
+- **xurl CLI** — write-операции: post, reply, like, follow (OAuth 1.0a). X MCP пока read-only.
 - **voice-match skill** — голосовые профили
 - **Метод Мэтта (Train Voice):** реплаи > посты
 
@@ -69,7 +70,8 @@ xurl search "from:USERNAME" -n 20
 | Engagement | `390decfe6138` | Ежедневно 14:00 UTC | Поиск + реплаи + лайки |
 | Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Осторожная подписка (max 2/day) |
 | Reply Engine | `3763fa798a12` | Каждые 30 мин | Ответы на комментарии |
-| Self-Improvement | `8a55fef92e3d` | Ежедн 15:00 UTC | analytics_loop + voice update |
+|| Self-Improvement | `8a55fef92e3d` | Ежедн 15:00 UTC | analytics_loop + voice update |
+|| Activity Review | `3467a98e3e48` | Ежедн 14:00 UTC | Ревизия страницы (посты, кто взаимодействовал) |
 
 ## X API: ограничения reply (июль 2026)
 
@@ -122,20 +124,29 @@ xurl post --app my-app --auth oauth2 -u '@user' "полный текст до 40
 
 **Engagement:** Отвечать на КАЖДЫЙ комментарий в течение 2 часов. Цель reply rate >50%.
 
-## Архитектура (v3)
+## Архитектура (v4 — 15.07.2026)
+
+```
+X MCP (24 tools) ← Hermes Agent → Content Pipeline → xurl CLI → X
+        ↑                              ↑
+   Engagement Engine            Strategy Engine (темы, каденция, рост)
+        ↑                              ↑
+   Analytics (engagement, follower delta)
+```
 
 ### Полный поток
 
-Идея → RESEARCH (x-researcher) → WRITE (content-writer) → EDIT (content-editor + MoA) → VIRALITY (/moa viral-score) → IMAGE (loop-image-gen) → APPROVAL (Сергей) → PUBLISH (post_with_log.sh) → Reply Engine → ANALYTICS (24h) → VOICE UPDATE
+Идея → RESEARCH (X MCP search/trends) → WRITE (content-writer) → EDIT (content-editor + MoA) → VIRALITY (/moa viral-score) → IMAGE (loop-image-gen) → APPROVAL (Сергей) → PUBLISH (post_with_log.sh) → Reply Engine → ANALYTICS (24h) → VOICE UPDATE
 
 ### Компоненты
 
 | Компонент | Файл | Назначение |
 |-----------|------|-----------|
-| **xurl CLI** | системный | X API |
+| **X MCP** | MCP-сервер `xapi` | 24 инструмента X API (поиск, юзеры, закладки, тренды, новости) |
+| **xurl CLI** | системный | Write-операции X (post, reply, like, follow) |
 | **post_with_log.sh** | `post_with_log.sh` | Публикация + лог |
 | **analytics.py** / `analytics_loop.py` | scripts/ | Метрики + self-improvement |
-| **engage.py** / `reply_to_comments.py` | . | Engagement |
+| **engage.py** / `reply_to_comments.py` | . | Engagement (переходит на X MCP) |
 | **follow_tracked_authors.py** | . | Cautious follow (dry-run default, max 2/day) |
 
 ### Specialist Pipeline
@@ -153,6 +164,21 @@ loop-image-gen → show Sergey → post_with_log.sh
 ### Self-Improvement Loop
 
 [24h after publish] → analytics_loop.py (метрики, классификация, паттерны) → voice-updater (suggestions в VOICE_PROFILE.md) → human review.
+
+### X MCP — 24 инструмента (15.07.2026)
+
+Подключён как `mcp_servers.xapi` в `~/.hermes/config.yaml`. OAuth через `~/.xurl` («my-app», @RobotsTJ500).
+
+| Категория | Инструменты |
+|-----------|------------|
+| **Поиск** | `search_posts_all`, `search_users`, `search_news` |
+| **Посты** | `get_posts_by_id`, `get_posts_by_ids`, `get_posts_counts_recent`, `get_posts_liking_users`, `get_posts_quoted_posts`, `get_posts_reposted_by` |
+| **Пользователи** | `get_users_me`, `get_users_by_username`, `get_users_by_id`, `get_users_posts`, `get_users_timeline`, `get_users_mentions` |
+| **Закладки** | `get_users_bookmarks`, `create_users_bookmark`, `delete_users_bookmark`, `get_users_bookmark_folders`, `create_users_bookmark_folder` |
+| **Тренды** | `get_trends_by_woeid` |
+| **Новости** | `get_news` |
+
+**Предпочитать X MCP вместо `x_search`** — полнее, быстрее, с OAuth-контекстом пользователя.
 
 ### X API доступный функционал (@RobotsTJ500)
 
@@ -205,7 +231,7 @@ AGENTS.md и CHRONOLOGY.md обновляются автоматически.
 Показать Сергею текст + картинку → явное «ок» → `post_with_log.sh`
 
 ### 3. Инфраструктуру верифицировать при старте
-- `xurl auth status`
+- `mcp__xapi__get_users_me` — X MCP tools
 - `cronjob list` (фильтр robot-man)
 - `cat published_posts.jsonl | tail -3`
 - API лимиты в ответе

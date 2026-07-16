@@ -1,5 +1,28 @@
 # Robot-man — Хронология
 
+## 2026-07-15 — X MCP: 24 инструмента + Engagement Fix
+
+### X MCP
+- Подключён X MCP сервер — 24 инструмента X API как родные MCP для Hermes
+- Мост: `xurl mcp` → `https://api.x.com/mcp` (STDIO → Streamable HTTP)
+- OAuth через `~/.xurl` («my-app», @RobotsTJ500)
+- Конфиг: `~/.hermes/config.yaml` → `mcp_servers.xapi`
+
+### Engagement
+- X API credits пополнены — 402 «credits depleted» решён
+- Health monitor (`8fc50b259bd4`): Evolution API → Hermes bridge
+
+### GitHub
+- PR #55716 (hermes-agent): правки по ревью Teknium — model/provider routing убран, schema trimming реализован
+
+### Discord Sync (15.07 12:08)
+- Синхронизированы пропущенные посты в #robot-human:
+  - `2075981819317453275` (11.07) — «my agent found a bug in its own voice profile»
+  - `2077258660112163081` (15.07) — «i manage 4 projects under one hermes agent»
+- `2076701430056902756` (13.07) — удалён (404), пропущен
+- `2077258456482947162` (15.07) — удалён (404), пропущен
+- `2077342251341029628` — уже был в Discord
+
 ## 2026-07-14 — Engagement + Voice fix
 
 ### Engagement
