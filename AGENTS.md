@@ -68,7 +68,7 @@ xurl search "from:USERNAME" -n 20
 | Аналитика | `87832edf5bc3` | Пн 10:00 UTC | Еженедельный отчёт |
 | Посты | `185cfe35cca7` | Ср, Сб 16:00 UTC | Контент-пост (post_with_log.sh) |
 | Engagement | `390decfe6138` | Ежедневно 14:00 UTC | Поиск + реплаи + лайки |
-| Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Осторожная подписка (max 2/day) |
+| Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Mutuals follow-back (max 2) + осторожная подписка (max 1) |
 | Reply Engine | `3763fa798a12` | Каждые 30 мин | Ответы на комментарии |
 || Self-Improvement | `8a55fef92e3d` | Ежедн 15:00 UTC | analytics_loop + voice update |
 || Activity Review | `3467a98e3e48` | Ежедн 14:00 UTC | Ревизия страницы (посты, кто взаимодействовал) |
@@ -121,6 +121,8 @@ xurl post --app my-app --auth oauth2 -u '@user' "полный текст до 40
 3. **Квот-твит** (~10%, max 1/нед): + свой инсайт
 
 **Антипаттерны:** Хук без раскрытия, квот без мнения, URL в теле, 3+ постов/день, чисто образовательный без опыта.
+
+**Mutuals boost (July 2026):** X-алгоритм приоритизирует mutuals (взаимные подписки) в For You и реплаях. Follow-back через `mutuals_follow_back.py` — обязателен. Чем больше mutuals, тем выше organic reach.
 
 **Engagement:** Отвечать на КАЖДЫЙ комментарий в течение 2 часов. Цель reply rate >50%.
 
