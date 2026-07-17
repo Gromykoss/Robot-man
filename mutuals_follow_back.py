@@ -38,14 +38,31 @@ def xurl(*args: str) -> dict:
         return {"error": result.stderr or result.stdout, "raw": result.stdout}
 
 
+def xurl_oauth2(url: str) -> dict:
+    """Run xurl with OAuth2 for read operations."""
+    cmd = ["xurl", "--app", APP, "--auth", "oauth2", "-u", f"@{ACCOUNT}", url]
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+    try:
+        return json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return {"error": result.stderr or result.stdout}
+
+
 def get_followers() -> list[str]:
-    """Get list of follower IDs."""
-    data = xurl("followers", "-n", "50")
-    followers = []
-    if "data" in data:
-        for f in data["data"]:
-            followers.append(f.get("id") or f.get("user_id") or "")
-    return [f for f in followers if f]
+    """Get all follower IDs with pagination."""
+    all_followers = []
+    next_token = None
+    for _ in range(5):  # Max 5 pages = 1000 followers
+        url = f"/2/users/1880157852632772608/followers?max_results=200&user.fields=id,username"
+        if next_token:
+            url += f"&pagination_token={next_token}"
+        data = xurl_oauth2(url)
+        users = data.get("data", [])
+        all_followers.extend(u.get("id") or u.get("user_id") or "" for u in users)
+        next_token = data.get("meta", {}).get("next_token")
+        if not next_token:
+            break
+    return [f for f in all_followers if f]
 
 
 def get_following() -> list[str]:
@@ -61,6 +78,43 @@ def get_following() -> list[str]:
 def follow_user(user_id: str, user_name: str = "") -> dict:
     """Follow a user by ID."""
     return xurl("follow", user_id)
+
+
+def fetch_user_profile(user_id: str) -> dict:
+    """Fetch user profile details for quality check."""
+    result = subprocess.run(
+        ["xurl", "--app", APP, "--auth", "oauth2", "-u", f"@{ACCOUNT}",
+         f"/2/users/{user_id}?user.fields=description,public_metrics,created_at,verified"],
+        capture_output=True, text=True, timeout=15,
+    )
+    try:
+        data = json.loads(result.stdout)
+        return (data.get("data") or {})
+    except (json.JSONDecodeError, KeyError):
+        return {}
+
+
+def should_follow(user_id: str) -> tuple[bool, str]:
+    """Quality gate: skip dormant, fresh, spammy accounts."""
+    profile = fetch_user_profile(user_id)
+    if not profile:
+        return False, "no_profile"
+
+    metrics = profile.get("public_metrics", {})
+    tweet_count = metrics.get("tweet_count", 0)
+    followers_count = metrics.get("followers_count", 0)
+    created_at = profile.get("created_at", "")
+
+    if tweet_count == 0:
+        return False, "zero_tweets"
+    if tweet_count < 5 and followers_count < 10:
+        return False, "dormant"
+    if created_at > "2026-06-15":
+        return False, "too_new"
+    if not profile.get("description"):
+        return False, "no_bio"
+
+    return True, "ok"
 
 
 def log_action(user_id: str, user_name: str, action: str, result: dict) -> None:
@@ -104,20 +158,31 @@ def main() -> None:
         print("[MUTUALS] All followers are mutuals already.")
         return
 
-    # Follow the missing ones
+    # Follow the missing ones (with quality gate)
     followed = 0
-    for user_id in missing[:limit]:
+    skipped = 0
+    for user_id in missing:
+        if followed >= limit:
+            break
+        
+        ok, reason = should_follow(user_id)
+        if not ok:
+            print(f"  ✗ Skip {user_id}: {reason}")
+            log_action(user_id, "", f"skip:{reason}", {})
+            skipped += 1
+            continue
+
         action = "dry-run" if not execute else "follow"
         result = {}
         if execute:
             result = follow_user(user_id)
             print(f"  ✓ Followed {user_id}: {result.get('data', result.get('error', 'ok'))}")
         else:
-            print(f"  ○ Would follow: {user_id}")
+            print(f"  ○ Would follow: {user_id} (quality: {reason})")
         log_action(user_id, "", action, result)
         followed += 1
 
-    print(f"[MUTUALS] Processed: {followed}/{limit}")
+    print(f"[MUTUALS] Followed: {followed}/{limit}, Skipped: {skipped}")
 
 
 if __name__ == "__main__":
