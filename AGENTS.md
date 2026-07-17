@@ -161,6 +161,13 @@ loop-image-gen → show Sergey → post_with_log.sh
 
 Все skills в `robot-man/skills/<name>/SKILL.md`.
 
+## Публикация
+
+**MANDATORY: всегда через `post_with_log.sh`.** Любой пост @RobotsTJ500 — через `bash post_with_log.sh "текст" [image.png]`. Никогда напрямую через `xurl post`.
+
+- `post_with_log.sh` логирует в `published_posts.jsonl` (ID + timestamp)
+- Прямой `xurl post` не логирует — пост невидим для Reply Engine и аналитики
+
 ### Self-Improvement Loop
 
 [24h after publish] → analytics_loop.py (метрики, классификация, паттерны) → voice-updater (suggestions в VOICE_PROFILE.md) → human review.
