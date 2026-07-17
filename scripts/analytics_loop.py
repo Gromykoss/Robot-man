@@ -20,7 +20,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 HOME = os.environ.get('HOME', '/home/hermes-workspace')
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent  # project root (scripts/../)
 PUBLISHED_LOG = ROOT / "published_posts.jsonl"
 METRICS_DIR = ROOT / "data" / "metrics"
 VOICE_UPDATE_DIR = ROOT / "data" / "voice_updates"
