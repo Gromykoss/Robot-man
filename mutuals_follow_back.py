@@ -75,9 +75,13 @@ def get_following() -> list[str]:
     return [f for f in following if f]
 
 
-def follow_user(user_id: str, user_name: str = "") -> dict:
-    """Follow a user by ID."""
-    return xurl("follow", user_id)
+def follow_user(user_id: str) -> dict:
+    """Follow a user. Resolves ID → username first (xurl expects username)."""
+    profile = fetch_user_profile(user_id)
+    username = profile.get("username", "")
+    if not username:
+        return {"error": "no_username", "user_id": user_id}
+    return xurl("follow", username)
 
 
 def fetch_user_profile(user_id: str) -> dict:
@@ -180,7 +184,12 @@ def main() -> None:
         else:
             print(f"  ○ Would follow: {user_id} (quality: {reason})")
         log_action(user_id, "", action, result)
-        followed += 1
+        if execute and not result.get("error"):
+            followed += 1
+        elif not execute:
+            followed += 1
+        else:
+            print(f"  ✗ Follow failed: {result.get('error')}")
 
     print(f"[MUTUALS] Followed: {followed}/{limit}, Skipped: {skipped}")
 
