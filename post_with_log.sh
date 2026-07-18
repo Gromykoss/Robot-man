@@ -14,10 +14,18 @@ if [ -z "$TEXT" ]; then
     exit 1
 fi
 
-if [ -n "$IMAGE" ] && [ -f "$IMAGE" ]; then
-    # Post with image — xurl outputs JSON + human-readable line, extract JSON part only
-    UPLOAD_OUT=$(xurl --app my-app --auth oauth1 media upload --media-type image/png --category tweet_image "$IMAGE" 2>&1)
-    MEDIA_ID=$(echo "$UPLOAD_OUT" | python3 -c "
+if [ -n "$IMAGE" ]; then
+    # If IMAGE is a URL, download it first
+    if echo "$IMAGE" | grep -qE '^https?://'; then
+        TMP_IMG="/tmp/post_cover_$$.png"
+        curl -sL "$IMAGE" -o "$TMP_IMG" || { echo "ERROR: failed to download $IMAGE"; exit 1; }
+        IMAGE="$TMP_IMG"
+    fi
+
+    if [ -f "$IMAGE" ]; then
+        # Post with image — xurl outputs JSON + human-readable line, extract JSON part only
+        UPLOAD_OUT=$(xurl --app my-app --auth oauth1 media upload --media-type image/png --category tweet_image "$IMAGE" 2>&1)
+        MEDIA_ID=$(echo "$UPLOAD_OUT" | python3 -c "
 import sys, json
 lines = sys.stdin.read().strip().split('\n')
 # Find the first { and last } to extract JSON block
@@ -28,7 +36,11 @@ decoder = json.JSONDecoder()
 data, _ = decoder.raw_decode(json_block)
 print(data['data']['id'])
 ")
-    OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" --media-id "$MEDIA_ID" 2>&1)
+        OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" --media-id "$MEDIA_ID" 2>&1)
+    else
+        echo "WARNING: image file not found — posting text-only"
+        OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" 2>&1)
+    fi
 else
     # Text-only post
     OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" 2>&1)
