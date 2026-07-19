@@ -71,7 +71,9 @@ xurl search "from:USERNAME" -n 20
 | Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Mutuals follow-back (max 2) + осторожная подписка (max 1) |
 | Reply Engine | `3763fa798a12` | Каждые 30 мин | Ответы на комментарии |
 || Self-Improvement | `8a55fef92e3d` | Ежедн 15:00 UTC | analytics_loop + voice update |
-|| Activity Review | `3467a98e3e48` | Ежедн 14:00 UTC | Ревизия страницы (посты, кто взаимодействовал) |
+| Activity Review | `3467a98e3e48` | Ежедн 14:00 UTC | Ревизия страницы |
+| X Hotspot Radar | `946f8f3f3174` | Ежедн 12:00 UTC | Сканирование X + создание T-XXX задач в Obsidian |
+| Tony Reply Monitor | `890fc0ab0677` | Каждые 3ч | Мониторинг ответа Тони на Alikhan
 
 ## X API: ограничения reply (июль 2026)
 
