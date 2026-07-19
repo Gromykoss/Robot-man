@@ -56,7 +56,7 @@ def get_followers() -> list[str]:
         url = f"/2/users/1880157852632772608/followers?max_results=200&user.fields=id,username"
         if next_token:
             url += f"&pagination_token={next_token}"
-        data = xurl_oauth2(url)
+        data = xurl(url)
         users = data.get("data", [])
         all_followers.extend(u.get("id") or u.get("user_id") or "" for u in users)
         next_token = data.get("meta", {}).get("next_token")
@@ -98,8 +98,22 @@ def fetch_user_profile(user_id: str) -> dict:
         return {}
 
 
+RELEVANCE_KEYWORDS = [
+    "ai", "agent", "hermes", "llm", "gpt", "claude", "grok",
+    "building", "build", "construction", "engineering",
+    "dev", "developer", "code", "coding", "software",
+    "automation", "bot", "workflow", "n8n", "tooling",
+    "python", "javascript", "typescript", "rust", "go",
+    "open source", "oss", "self-hosted", "selfhosted",
+    "infra", "ops", "devops", "platform",
+    "maker", "indie", "startup", "founder", "saas",
+    "data", "ml", "machine learning", "deep learning",
+    "indie hacker", "build in public", "buildinginpublic",
+]
+
+
 def should_follow(user_id: str) -> tuple[bool, str]:
-    """Quality gate: skip dormant, fresh, spammy accounts."""
+    """Quality gate: skip dormant, fresh, spammy, and irrelevant accounts."""
     profile = fetch_user_profile(user_id)
     if not profile:
         return False, "no_profile"
@@ -115,8 +129,16 @@ def should_follow(user_id: str) -> tuple[bool, str]:
         return False, "dormant"
     if created_at > "2026-06-15":
         return False, "too_new"
-    if not profile.get("description"):
-        return False, "no_bio"
+
+    description = (profile.get("description") or "").lower()
+    name = (profile.get("name") or "").lower()
+    username = (profile.get("username") or "").lower()
+    # Use word-boundary matching to avoid false positives (e.g. "Baldev" ≠ dev)
+    import re
+    search_text = f"{description} {name} {username}"
+    pattern = r'\b(?:' + '|'.join(re.escape(kw) for kw in RELEVANCE_KEYWORDS) + r')\b'
+    if not re.search(pattern, search_text):
+        return False, "irrelevant_bio"
 
     return True, "ok"
 
