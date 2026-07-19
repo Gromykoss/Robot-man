@@ -1,5 +1,37 @@
 # Robot-man — Хронология
 
+## 2026-07-19 — Tony Simons: Alikhan presentation + Mutuals filter + Radar → Tasks
+
+### Tony Simons thread
+- Сергей ответил в тред Тони (@tonysimons_) с презентацией Alikhan: https://x.com/Gromykoss/status/2078809136431813111
+- Текст подготовлен на основе PRESENTATION_PITCH + README + CHRONOLOGY (4 266 сообщений, 2 786 фото, 14 таблиц ОЖР, 837 кодов ВОР)
+- Cron `890fc0ab0677` мониторит ответ Тони каждые 3 часа
+
+### Mutuals relevance filter
+- `mutuals_follow_back.py`: фильтр по релевантности био (38 ключевых слов), word-boundary matching
+- Трое нерелевантных (@bsolanki, @knnthevans, @theglowofmyvoid) excluded
+- Качество отбора: из 395 → 3 релевантных кандидата/день
+
+### GitHub Curation
+- Изучены DiUS/agent-toolkit (codebase-discovery skill) и jules-mcp-server (MCP wrapper pattern)
+- DiUS: прогнан codebase-discovery на Alikhan, созданы docs/_discovery/
+- jules: адаптирован → Codex MCP server (3 tools, pure stdlib, HTTP bridge), закоммичен в hermes-agent-lab
+
+### X Hotspot Radar → Task Index
+- Крон `946f8f3f3174`: радар теперь создаёт T-XXX задачи в Obsidian Task Index для каждой релевантной находки
+- Из пассивного коллекционирования → активный бэклог
+
+## 2026-07-19 — Discord Sync (cron run, 3rd)
+
+- Проверены последние 5 постов из `published_posts.jsonl` (20 строк) vs Discord #robot-human (50 сообщений)
+- Все 5 постов в Discord:
+  - `2078492463111577932` (18.07) → msg `1528051196772880498` ✅
+  - `2078074865697906859` (17.07) → msg `1527633599376134206` ✅
+  - `2077641197636432318` (16.07) → msg `1528281362090688522` ✅ (переотправлен во 2-м прогоне)
+  - `2077807401672098229` (16.07) → msg `1527366134482079905` ✅
+  - `2077342251341029628` (15.07) → msg `1526923299085488309` ✅
+- **Итог:** Discord синхронизирован, расхождений нет. Новых постов не обнаружено.
+
 ## 2026-07-19 — Mutuals: relevance filter
 
 - `mutuals_follow_back.py`: добавлен фильтр по релевантности био (38 ключевых слов)
