@@ -8,3 +8,10 @@
 {"timestamp": "2026-07-17T10:16:02.945581+00:00", "user_id": "101836494", "user_name": "", "action": "follow", "result": {"error": "\u001b[31mError: user @101836494 not found\u001b[0m\n", "raw": ""}}
 {"timestamp": "2026-07-17T11:28:13.365676+00:00", "user_id": "22110070", "user_name": "", "action": "follow", "result": {"error": "\u001b[31mError: user @22110070 not found\u001b[0m\n", "raw": ""}}
 {"timestamp": "2026-07-17T11:28:14.083739+00:00", "user_id": "101836494", "user_name": "", "action": "follow", "result": {"error": "\u001b[31mError: user @101836494 not found\u001b[0m\n", "raw": ""}}
+{"timestamp": "2026-07-18T10:15:55.571984+00:00", "user_id": "1998563847331016705", "user_name": "", "action": "follow", "result": {"error": "\u001b[31mError: could not look up user @1998563847331016705: {\"detail\":\"One or more parameters to your request was invalid.\",\"errors\":[{\"message\":\"The `username` query parameter value [1998563847331016705] does not match ^[A-Za-z0-9_]{1,15}$\",\"parameters\":{\"username\":[\"1998563847331016705\"]}}],\"title\":\"Invalid Request\",\"type\":\"https://api.x.com/2/problems/invalid-request\"}\u001b[0m\n", "raw": ""}}
+{"timestamp": "2026-07-18T10:15:56.278470+00:00", "user_id": "22110070", "user_name": "", "action": "follow", "result": {"error": "\u001b[31mError: user @22110070 not found\u001b[0m\n", "raw": ""}}
+{"timestamp": "2026-07-18T10:17:02.868701+00:00", "user_id": "1998563847331016705", "user_name": "AeonCorridor", "action": "follow", "result": {"following": true, "pending_follow": false}}
+{"timestamp": "2026-07-18T10:17:02.868721+00:00", "user_id": "22110070", "user_name": "greggonzo1", "action": "follow", "result": {"following": true, "pending_follow": false}}
+{"timestamp": "2026-07-18T22:40:09.345985+00:00", "user_id": "101836494", "user_name": "", "action": "dry-run", "result": {}}
+{"timestamp": "2026-07-18T22:40:09.557346+00:00", "user_id": "93424329", "user_name": "", "action": "dry-run", "result": {}}
+{"timestamp": "2026-07-18T22:40:09.774207+00:00", "user_id": "1796560389347635200", "user_name": "", "action": "dry-run", "result": {}}
