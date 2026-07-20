@@ -32,8 +32,8 @@
 - Если релевантный — ответ от @gromykoss с production-опытом
 
 ### Инфраструктура
-- Nightly Analysis `56aa69d2d98f` сработает в 23:00 UTC → тактика на вторник
-- Daily Content Gate `c52cbdbac802` — вторник 10:00, прочитает этот TACTICS, риск 90% → [SILENT]
+- Nightly Analysis `d90897631712` сработает в 23:00 UTC → тактика на вторник
+- Daily Content Gate `76e7dead750b` — вторник 10:00, прочитает этот TACTICS, риск 90% → [SILENT]
 
 ---
 

@@ -1,5 +1,32 @@
 # Robot-man — Хронология
 
+## 2026-07-20 — Discord Sync (cron run, 7th)
+
+- Проверены последние 5 уникальных постов из `published_posts.jsonl` (20 строк) vs Discord #robot-human (10 сообщений)
+- Все 5 в Discord:
+  - `2078492463111577932` (18.07) → msg `1528051196772880498` ✅
+  - `2078074865697906859` (17.07) → ранее подтверждён ✅
+  - `2077641197636432318` (16.07) → ранее подтверждён ✅
+  - `2077807401672098229` (16.07) → ранее подтверждён ✅
+  - `2077342251341029628` (15.07) → ранее подтверждён ✅
+- **Итог:** Discord синхронизирован, расхождений нет. Новых постов не обнаружено.
+
+## 2026-07-20 — Радары: авто-синхронизация vault + Git
+
+### Radar auto-commit
+- **X Hotspot Radar** (`946f8f3f3174`): добавлен `git commit + push` после создания задач
+- **GitHub Curation** (`3715aa72f089`): добавлено создание T-XXX задач + research-заметок + git push
+- **Vault auto-sync** (`180cf94c39dc`): новый cron каждые 15 мин — pull → add → commit → push (no_agent, script-only). Страховка от потери изменений
+- **Psyche/NOUS drop scout** (`d5dec75e2ea3`): ⏸ ПАУЗА
+
+### Сегодняшние находки
+- X Hotspot: T-133 (Anthropic self-improving agents), T-134 (Solana memecoin reference), T-135 (Kimi K3 coding model)
+- GitHub Curation: T-136 (xcurate-public X curation), T-137 (fantasy LangGraph+MCP+RAG), T-138 (matrix-admin Synapse deploy)
+- 3 research-заметки сохранены в wiki
+
+### Схема синхронизации vault
+Кроны пишут → сразу git push → авто-синк каждые 15 мин (страховка) → Twin Obsidian Git pull каждые 30 мин
+
 ## 2026-07-20 — Стратегия роста v3: полная реорганизация
 
 ### Strategy overhaul
@@ -21,6 +48,17 @@
 
 ### GULAG
 - 🆕 T-132: iOS Safari mobile chat fix (скролл, тулбар, хедер)
+
+## 2026-07-20 — Discord Sync (cron run, 6th)
+
+- Проверены последние 5 уникальных постов из `published_posts.jsonl` (20 строк данных) vs Discord #robot-human (последние 10 сообщений)
+- Все 5 в Discord:
+  - `2078492463111577932` (18.07) → msg `1528051196772880498` ✅
+  - `2078074865697906859` (17.07) → в sync report `1527649356709232843` ✅
+  - `2077641197636432318` (16.07) → msg `1528281362090688522` ✅
+  - `2077807401672098229` (16.07) → ранее подтверждён ✅
+  - `2077342251341029628` (15.07) → ранее подтверждён ✅
+- **Итог:** Discord синхронизирован, расхождений нет. Новых постов не обнаружено.
 
 ## 2026-07-20 — Discord Sync (cron run, 5th)
 

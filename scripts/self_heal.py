@@ -30,6 +30,8 @@ from pathlib import Path
 
 HOME = os.environ.get("HOME", "/home/hermes-workspace")
 ROOT = Path(__file__).resolve().parent.parent  # scripts/../ = robot-man/
+HERMES_SCRIPTS = Path(HOME) / "hermes-agent-lab" / "scripts"
+sys.path.insert(0, str(HERMES_SCRIPTS))  # For task_finish import
 DATA_DIR = ROOT / "data"
 REGISTRY_PATH = DATA_DIR / "self_heal_registry.json"
 LEARNED_DIR = DATA_DIR / "learned_fixes"
@@ -589,10 +591,10 @@ def main():
 
     # ── Stage 4: Detect repeated errors (2+ in window) ─────────────────
     if not all_errors:
-        # Silent on success
+        from task_finish import success
         print(f"🔧 Self-Heal Scan — {TODAY}")
         print("Errors found: 0 | Repeated: 0 | Fixable: 0")
-        print("✅ All clear. No errors detected.")
+        success("All clear. No errors detected.")
         sys.exit(0)
 
     # Group by fingerprint
@@ -701,8 +703,17 @@ def main():
     else:
         if errors_total > 0:
             print("ℹ️  Errors found but none repeated — nothing to fix")
-        else:
-            print("✅ All clear. No error patterns detected.")
+
+    # Structured outcome logging
+    from task_finish import success, partial_success
+    if errors_fixable == 0 and avoided_count == 0:
+        success(f"Heal scan: {errors_total} total, 0 fixable, {avoided_count} avoided, {total_learned} learned")
+    else:
+        partial_success(
+            done=[f"Scanned {errors_total} errors, {errors_repeated} repeated patterns"],
+            failed=([f"{errors_fixable} fixable errors need attention"] if errors_fixable > 0 else [])
+                   + ([f"{avoided_count} patterns previously avoided"] if avoided_count > 0 else []),
+        )
 
     if new_learned_promotions > 0:
         print(f"\n📚 New learned fix pattern saved to {LEARNED_DIR}/")
