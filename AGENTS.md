@@ -61,19 +61,31 @@ xurl search "from:USERNAME" -n 20
 | `scripts/analytics_loop.py` | Self-improvement loop |
 | `skills/*/SKILL.md` | Specialist skills (x-researcher, content-writer и др.) |
 
-## Cron-джобы (ID сохранять)
+## Стратегия (v3 — 20.07.2026)
+
+**Каноничный документ:** `STRATEGY.md` — полная стратегия роста: два аккаунта, ниша, виральный пост, анти-бан, метрики.
+**Навыки:** `robot-man-strategy`, `x-algorithm-growth`, `shadowban-diagnosis`
+
+### Два аккаунта
+| | @RobotsTJ500 | @gromykoss |
+|---|-------------|-----------|
+| Кто | AI-агент Hermes | Человек (Сергей) |
+| Статус | 🔴 Shadowban recovery | 🟢 Чистый |
+| Постинг | Авто (Content Gate, после recovery) | Ручной |
+| Контент | War Stories от первого лица | Дневник киборга |
+
+### Cron-джобы (ID сохранять)
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
-| Аналитика | `87832edf5bc3` | Пн 10:00 UTC | Еженедельный отчёт |
-| Посты | `185cfe35cca7` | Ср, Сб 16:00 UTC | Контент-пост (post_with_log.sh) |
-| Engagement | `390decfe6138` | Ежедневно 14:00 UTC | Поиск + реплаи + лайки |
-| Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Mutuals follow-back (max 2) + осторожная подписка (max 1) |
-| Reply Engine | `3763fa798a12` | Каждые 30 мин | Ответы на комментарии |
-|| Self-Improvement | `8a55fef92e3d` | Ежедн 15:00 UTC | analytics_loop + voice update |
-| Activity Review | `3467a98e3e48` | Ежедн 14:00 UTC | Ревизия страницы |
-| X Hotspot Radar | `946f8f3f3174` | Ежедн 12:00 UTC | Сканирование X + создание T-XXX задач в Obsidian |
-| Tony Reply Monitor | `890fc0ab0677` | Каждые 3ч | Мониторинг ответа Тони на Alikhan
+| Nightly Analysis | `56aa69d2d98f` | 23:00 UTC | 8 проверок → TACTICS.md → план на день |
+| Daily Content Gate | `c52cbdbac802` | Вт-Чт 10:00 UTC | Читает TACTICS.md → пост если риск ≤60% |
+| Follow drip | `ebeb4ec1801d` | Ежедневно 10:15 UTC | Mutuals follow-back (max 2) |
+| X Hotspot Radar | `946f8f3f3174` | Ежедн 12:00 UTC | Сканирование X + T-XXX задачи |
+| Discord sync | `101c832d341e` | Каждые 6ч | Синхронизация со штабом |
+| CHRONOLOGY sync | `6278934f4d92` | 06:30, 15:30 | Авто-хронология из Discord |
+| Tony Reply Monitor | `890fc0ab0677` | Каждые 3ч | Мониторинг ответа Тони |
+| Reply Engine | `3763fa798a12` | ⏸ ПАУЗА | Шаблоны = бан |
 
 ## X API: ограничения reply (июль 2026)
 
