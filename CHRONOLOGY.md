@@ -1,5 +1,47 @@
 # Robot-man — Хронология
 
+## 2026-07-20 — System Wipe Recovery: все 8 cron jobs восстановлены
+
+- После system wipe восстановлены все 8 cron job'ов (новые ID)
+- AGENTS.md, STRATEGY.md, TACTICS.md — обновлены корректные cron IDs
+- Cron jobs: Nightly Analysis, Daily Content Gate, Follow drip, X Hotspot Radar, Discord sync, CHRONOLOGY sync, Tony Reply Monitor, Reply Engine
+- Подтверждена работоспособность: все 8 джобов активны после восстановления
+
+## 2026-07-20 — Self-Heal Scanner + Voice Calibration + Engage Upgrade (T-133/T-136)
+
+### Self-Heal Scanner (T-133)
+- scripts/self_heal.py (721 строка) — proactive error detection агент (Stages 4-5: Proactive + Self-improving)
+- Сканирует логи ВСЕХ 4 проектов (robot-man, alikhan, hermes, gulag) на ошибки
+- Классифицирует: config/external/code, группирует по fingerprint, отслеживает повторяемость
+- НЕ авто-фиксит — только предлагает. Safety-first: не трогает production code, не читает .env secrets
+- Registry: data/self_heal_registry.json — отслеживание applied/outcome для обучения
+- Первый запуск: найдено 6 ошибок (alikhan DB collation, hermes MCP robotman connection, alikhan bridge down)
+- Learned fixes: сохраняются в отдельную директорию для будущего переиспользования
+
+### Voice Calibration Tool (T-136)
+- voice_calibrate.py (744 строки) — извлекает голос @RobotsTJ500 из реальных реплаев
+- Читает data/my-replies.json (74 реплая), бакетирует по возрасту (fresh/older/archive)
+- Измеряет: длина (медиана 97 chars, диапазон 84-124), move distribution (Assert 11%, Agree 33%, Ask 22%, Push back 11%), opening/closing patterns, emoji rate (0.0), hashtag rate (0.0)
+- Генерирует: VOICE_PROFILE.proposed.md (99 строк) — НЕ перезаписывает VOICE_PROFILE.md, только proposal
+- Отчёт: data/voice_calibration_report.md (111 строк) — evidence + drift analysis
+- Метод: количественный, не субъективный. Вдохновлён xcurate calibrate-voice
+
+### Engage.py Upgrade
+- engage.py — значительный рефакторинг (+297/-44 строки)
+- Обновлена логика engagement: улучшенная обработка mentions, фильтрация дубликатов, reply scoring
+
+### TACTICS v2
+- TACTICS_v2.md (486 строк) — агрессивный план роста: +1000 followers за 30 дней
+- Реалистичная математика: 185-345 realistic, +1000 — амбициозный сценарий (требует вирального поста)
+- Shadowban Recovery Protocol (дни 1-5): удаление спама, дневной лимит, только quality engagements
+- Multi-channel: mutuals (70-90), organic content (30-60), thread entry (30-60), mentions от крупных (20-60), профильный трафик (20-50), @gromykoss кросс-промо (15-25)
+- Честная цель: +400 за 30 дней
+
+### Voice Calibration Data
+- data/my-replies.json — 74 реальных реплая @RobotsTJ500 собраны как training data
+- data/voice_calibration_report.md — quantitative evidence: распределение moves, opening/closing patterns, drift от VOICE_PROFILE.md
+- VOICE_PROFILE.proposed.md — AI-proposed обновление голоса на основе измерений (ожидает human review)
+
 ## 2026-07-20 — Discord Sync (cron run, 7th)
 
 - Проверены последние 5 уникальных постов из `published_posts.jsonl` (20 строк) vs Discord #robot-human (10 сообщений)
