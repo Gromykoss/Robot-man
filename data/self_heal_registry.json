@@ -1,0 +1,89 @@
+{
+  "fixes": [
+    {
+      "fingerprint": "warning: database \"evolution_db\" has no actual collation version, but a version was recorded",
+      "fix_type": "db-collation",
+      "source_project": "alikhan",
+      "error_class": "config",
+      "error_snippet": "WARNING:  database \"evolution_db\" has no actual collation version, but a version was recorded",
+      "suggestion": "Run: ALTER DATABASE evolution_db REFRESH COLLATION VERSION; or restart alikhan service",
+      "occurrences": 3,
+      "first_seen": "2026-07-20T15:40:30.526484+00:00",
+      "last_seen": "2026-07-20T15:41:12.833166+00:00",
+      "status": "proposed",
+      "applied_at": null,
+      "outcome": null
+    },
+    {
+      "fingerprint": ",<n> warning tools.mcp_tool: mcp server 'robotman' initial connection failed (attempt <n>/<n>), retrying in <n>s: unhand",
+      "fix_type": "external-check",
+      "source_project": "hermes",
+      "error_class": "external",
+      "error_snippet": "2026-07-20 15:36:13,831 WARNING tools.mcp_tool: MCP server 'robotman' initial connection failed (attempt 3/3), retrying in 4s: unhandled errors in a TaskGroup (1 sub-exception)",
+      "suggestion": "Check upstream service status. Add circuit breaker pattern.",
+      "occurrences": 3,
+      "first_seen": "2026-07-20T15:40:30.526530+00:00",
+      "last_seen": "2026-07-20T15:41:12.833196+00:00",
+      "status": "proposed",
+      "applied_at": null,
+      "outcome": null
+    },
+    {
+      "fingerprint": ",<n> info tools.mcp_tool: mcp server 'robotman': attempting revival after initial connection failures (self-probe or exp",
+      "fix_type": "external-check",
+      "source_project": "hermes",
+      "error_class": "external",
+      "error_snippet": "2026-07-20 15:36:17,480 INFO tools.mcp_tool: MCP server 'robotman': attempting revival after initial connection failures (self-probe or explicit reconnect request); rebuilding transport.",
+      "suggestion": "Check upstream service status. Add circuit breaker pattern.",
+      "occurrences": 3,
+      "first_seen": "2026-07-20T15:40:30.526539+00:00",
+      "last_seen": "2026-07-20T15:41:12.833203+00:00",
+      "status": "proposed",
+      "applied_at": null,
+      "outcome": null
+    },
+    {
+      "fingerprint": ",<n> warning tools.mcp_tool: mcp server 'robotman' failed initial connection after <n> attempts, parking until a reconne",
+      "fix_type": "external-check",
+      "source_project": "hermes",
+      "error_class": "external",
+      "error_snippet": "2026-07-20 15:36:16,167 WARNING tools.mcp_tool: MCP server 'robotman' failed initial connection after 3 attempts, parking until a reconnect is requested: unhandled errors in a TaskGroup (1 sub-excepti",
+      "suggestion": "Check upstream service status. Add circuit breaker pattern.",
+      "occurrences": 3,
+      "first_seen": "2026-07-20T15:40:30.526550+00:00",
+      "last_seen": "2026-07-20T15:41:12.833211+00:00",
+      "status": "proposed",
+      "applied_at": null,
+      "outcome": null
+    },
+    {
+      "fingerprint": "[send err] http error <n>: not found",
+      "fix_type": "external-check",
+      "source_project": "alikhan",
+      "error_class": "external",
+      "error_snippet": "[SEND ERR] HTTP Error 404: Not Found",
+      "suggestion": "Check upstream service status. Add circuit breaker pattern.",
+      "occurrences": 3,
+      "first_seen": "2026-07-20T15:40:30.526558+00:00",
+      "last_seen": "2026-07-20T15:41:12.833216+00:00",
+      "status": "proposed",
+      "applied_at": null,
+      "outcome": null
+    },
+    {
+      "fingerprint": "[] bridge down (failure #<n>)",
+      "fix_type": "external-check",
+      "source_project": "alikhan",
+      "error_class": "external",
+      "error_snippet": "[2026-07-19T09:35:01Z] Bridge DOWN (failure #1)",
+      "suggestion": "Check upstream service status. Add circuit breaker pattern.",
+      "occurrences": 3,
+      "first_seen": "2026-07-20T15:40:30.526565+00:00",
+      "last_seen": "2026-07-20T15:41:12.833220+00:00",
+      "status": "proposed",
+      "applied_at": null,
+      "outcome": null
+    }
+  ],
+  "avoid_patterns": []
+}
