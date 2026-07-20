@@ -21,6 +21,8 @@ from pathlib import Path
 
 HOME = os.environ.get('HOME', '/home/hermes-workspace')
 ROOT = Path(__file__).resolve().parent.parent  # project root (scripts/../)
+HERMES_SCRIPTS = Path(HOME) / "hermes-agent-lab" / "scripts"
+sys.path.insert(0, str(HERMES_SCRIPTS))  # For task_finish import
 PUBLISHED_LOG = ROOT / "published_posts.jsonl"
 METRICS_DIR = ROOT / "data" / "metrics"
 VOICE_UPDATE_DIR = ROOT / "data" / "voice_updates"
@@ -328,7 +330,8 @@ def main():
         )
         print(f"\n🎙️ Voice-update suggestion saved to {update_file}")
 
-    print("\n✅ Analytics loop complete")
+    from task_finish import success
+    success(f"Analytics loop: {len(metrics)} posts, {len(historical)} historical, baseline likes={averages.get('likes', 'N/A')}")
 
 
 if __name__ == '__main__':

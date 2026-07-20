@@ -281,14 +281,14 @@
 
 | Крон | ID | Статус | Расписание |
 |------|-----|--------|-----------|
-| Nightly Analysis | `56aa69d2d98f` | ▶ | 23:00 UTC |
-| Daily Content Gate | `c52cbdbac802` | ▶ | Вт-Чт 10:00 UTC |
-| Follow drip | `ebeb4ec1801d` | ▶ | 10:15 UTC |
-| X Hotspot Radar | `946f8f3f3174` | ▶ | 12:00 UTC |
-| Discord sync | `101c832d341e` | ▶ | Каждые 6ч |
-| CHRONOLOGY sync | `6278934f4d92` | ▶ | 06:30, 15:30 |
-| Reply Engine | `3763fa798a12` | ⏸ Пауза | — |
-| Tony Reply Monitor | `890fc0ab0677` | ▶ | Каждые 3ч |
+| Nightly Analysis | `d90897631712` | ▶ | 23:00 UTC |
+| Daily Content Gate | `76e7dead750b` | ▶ | Вт-Чт 10:00 UTC |
+| Follow drip | `1f4d97a6a726` | ▶ | 10:15 UTC |
+| X Hotspot Radar | `fc01c4ddb88f` | ▶ | 12:00 UTC |
+| Discord sync | `d2288946df0d` | ▶ | Каждые 6ч |
+| CHRONOLOGY sync | `ce571dae73f6` | ▶ | 06:30, 15:30 |
+| Reply Engine | `3f4a0ef59f2e` | ⏸ Пауза | — |
+| Tony Reply Monitor | `a25917e3f76f` | ▶ | Каждые 3ч |
 
 ### Файлы стратегии
 
