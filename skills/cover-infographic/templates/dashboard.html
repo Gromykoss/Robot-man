@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, height=900">
+<title>Cover — Dashboard Infographic</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg: #0a0a1a;
+  --cyan: #00e5ff;
+  --green: #00ff88;
+  --white: #e0e0e0;
+  --dim: #555566;
+  --panel-bg: #0d0d24;
+  --border: #1a1a3e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px; height: 900px;
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Tree background */
+body::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -200px;
+  width: 600px; height: 900px;
+  background: radial-gradient(ellipse at 30% 60%, rgba(0,229,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container { display: flex; height: 100%; padding: 30px 35px; gap: 25px; position: relative; z-index: 1; }
+
+/* LEFT COLUMN */
+.left { width: 440px; display: flex; flex-direction: column; gap: 16px; }
+
+.header-title {
+  font-size: 42px; font-weight: 700; line-height: 1.1;
+  color: var(--white);
+}
+.header-title span { color: var(--cyan); }
+
+.header-sub { font-size: 18px; color: var(--white); font-weight: 400; opacity: 0.85; }
+
+.description-box {
+  background: var(--panel-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 14px 16px;
+  font-size: 13px; line-height: 1.6; color: var(--white);
+}
+
+/* Sidebar labels */
+.sidebar { display: flex; flex-direction: column; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); }
+.sidebar .motto { color: var(--dim); font-size: 11px; margin-top: 6px; letter-spacing: 1px; }
+
+/* Flow diagram */
+.flow { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+
+.node-box {
+  background: var(--panel-bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 10px 14px;
+  display: flex; align-items: center; gap: 12px;
+  position: relative;
+}
+.node-box::after {
+  content: '';
+  position: absolute; bottom: -9px; left: 50%;
+  width: 2px; height: 8px; background: var(--cyan);
+}
+.node-box:last-child::after { display: none; }
+
+.node-icon { font-size: 22px; width: 32px; text-align: center; flex-shrink: 0; }
+.node-name { font-weight: 600; font-size: 14px; color: var(--white); min-width: 80px; }
+.node-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-left: auto; }
+.status-running { color: var(--cyan); }
+.status-waiting { color: var(--dim); }
+.node-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim); margin-left: 8px; }
+
+/* RIGHT COLUMN */
+.right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+
+/* Terminal */
+.terminal {
+  background: #000; border: 1px solid var(--border); border-radius: 6px;
+  padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  line-height: 1.7; color: var(--white); min-height: 160px;
+}
+.terminal .prompt { color: var(--cyan); }
+.terminal .ok { color: var(--green); }
+
+/* Dashboard */
+.dashboard {
+  background: var(--panel-bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+}
+.dash-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.dash-title { color: var(--cyan); font-weight: 600; }
+.dash-auto { color: var(--green); font-size: 11px; }
+
+.dash-table { width: 100%; border-collapse: collapse; }
+.dash-table th { text-align: left; color: var(--dim); font-weight: 400; font-size: 10px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+.dash-table td { padding: 4px 0; font-size: 11px; border-bottom: 1px solid rgba(26,26,62,0.5); }
+.dash-table .status-r { color: var(--cyan); }
+.dash-table .status-w { color: var(--dim); }
+.dash-table .num { text-align: right; }
+
+.dash-summary { display: flex; gap: 28px; margin-top: 10px; font-size: 11px; }
+.dash-summary .val { color: var(--cyan); font-weight: 600; }
+.health-bar { width: 100%; height: 6px; background: var(--border); border-radius: 3px; margin-top: 8px; }
+.health-fill { width: 100%; height: 100%; background: var(--green); border-radius: 3px; }
+
+/* BOTTOM */
+.bottom { position: absolute; bottom: 30px; left: 35px; right: 35px; }
+
+.how-title { font-size: 13px; font-weight: 600; color: var(--dim); letter-spacing: 2px; margin-bottom: 10px; }
+
+.steps { display: flex; gap: 12px; margin-bottom: 12px; }
+.step {
+  flex: 1; background: var(--panel-bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 10px 12px; text-align: center;
+}
+.step-icon { font-size: 20px; margin-bottom: 4px; }
+.step-title { font-size: 10px; font-weight: 600; color: var(--cyan); letter-spacing: 1px; }
+.step-desc { font-size: 10px; color: var(--dim); margin-top: 2px; }
+
+.flow-chain {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--cyan); justify-content: center; margin-bottom: 10px;
+}
+.flow-chain .arrow { color: var(--dim); }
+
+.footer-quote {
+  background: var(--panel-bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: 8px 14px; text-align: center; font-size: 12px; color: var(--dim);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.footer-quote .tree-icon { font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="left">
+    <div class="header-title">NOT WORKERS.<br><span>A TREE.</span></div>
+    <div class="header-sub">Every node knows when to stop.</div>
+
+    <div class="description-box">
+      Fractal from @plasma__ai<br>
+      Hierarchical agent loops.<br>
+      Each node: its own git worktree, its own NODE.md contract, its own budget.<br>
+      Decides when to finish. Passes control to the next node.
+    </div>
+
+    <div class="sidebar">
+      <div>🔀 git worktree</div>
+      <div>📋 NODE.md contract</div>
+      <div>💰 budget control</div>
+      <div>✅ self completion</div>
+      <div class="motto">NO CRON. NO MANUAL HANDOFFS. JUST FLOW.</div>
+    </div>
+
+    <div class="flow">
+      <div class="node-box">
+        <div class="node-icon">🔍</div>
+        <div class="node-name">Research</div>
+        <div class="node-meta">git worktree NODE.md budget</div>
+        <div class="node-status status-running">running</div>
+      </div>
+      <div class="node-box">
+        <div class="node-icon">📄</div>
+        <div class="node-name">Draft</div>
+        <div class="node-meta">git worktree NODE.md budget</div>
+        <div class="node-status status-waiting">waiting</div>
+      </div>
+      <div class="node-box">
+        <div class="node-icon">⚖️</div>
+        <div class="node-name">MoA</div>
+        <div class="node-meta">git worktree NODE.md budget</div>
+        <div class="node-status status-running">running</div>
+      </div>
+      <div class="node-box">
+        <div class="node-icon">🚀</div>
+        <div class="node-name">Publish</div>
+        <div class="node-meta">git worktree NODE.md budget</div>
+        <div class="node-status status-waiting">waiting</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="terminal">
+      <span class="prompt">$</span> fractal node init research<br>
+      <span class="ok">✓</span> worktree created<br>
+      <span class="ok">✓</span> NODE.md created<br>
+      <span class="ok">✓</span> budget assigned<br>
+      <span class="ok">✓</span> node started<br>
+      <span class="ok">✓</span> tree updated<br>
+      <span class="prompt">$</span> <span style="animation: blink 1s step-end infinite">█</span>
+    </div>
+
+    <div class="dashboard">
+      <div class="dash-header">
+        <span class="dash-title">FRACTAL OPEN</span>
+        <span class="dash-auto">auto mode: ON</span>
+      </div>
+      <table class="dash-table">
+        <tr><th>node</th><th>status</th><th class="num">iters</th><th class="num">cost</th></tr>
+        <tr><td>Research</td><td class="status-r">running</td><td class="num">12</td><td class="num">$0.42</td></tr>
+        <tr><td>Draft</td><td class="status-w">waiting</td><td class="num">0</td><td class="num">$0.00</td></tr>
+        <tr><td>MoA</td><td class="status-r">running</td><td class="num">18</td><td class="num">$0.91</td></tr>
+        <tr><td>Image</td><td class="status-w">idle</td><td class="num">0</td><td class="num">$0.00</td></tr>
+        <tr><td>Publish</td><td class="status-w">waiting</td><td class="num">0</td><td class="num">$0.00</td></tr>
+      </table>
+      <div class="dash-summary">
+        <div>Iterations: <span class="val">41</span></div>
+        <div>Cost: <span class="val">$2.13</span></div>
+        <div>Tree health: <span class="val">100%</span></div>
+      </div>
+      <div class="health-bar"><div class="health-fill"></div></div>
+      <div style="color:var(--dim);font-size:10px;margin-top:4px;">Last update: just now</div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="how-title">HOW IT WORKS</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">🔗</div>
+      <div class="step-title">INIT NODE</div>
+      <div class="step-desc">Create worktree, NODE.md, budget. Start.</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🧊</div>
+      <div class="step-title">DO THE WORK</div>
+      <div class="step-desc">Node works in its environment. Tracks progress.</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🎯</div>
+      <div class="step-title">DECIDE &amp; FINISH</div>
+      <div class="step-desc">Checks contract. Decides it's done. Commits results.</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🔄</div>
+      <div class="step-title">PASS CONTROL</div>
+      <div class="step-desc">Updates tree. Wakes up the next node.</div>
+    </div>
+  </div>
+
+  <div class="flow-chain">
+    RESEARCH <span class="arrow">→</span> DRAFT <span class="arrow">→</span> MoA <span class="arrow">→</span> IMAGE <span class="arrow">→</span> PUBLISH
+  </div>
+
+  <div class="footer-quote">
+    <span class="tree-icon">🌳</span>
+    Not automation. A model. A tree of autonomous nodes with contracts and lifecycles.
+  </div>
+</div>
+</body>
+</html>
