@@ -184,6 +184,22 @@ X MCP (24 tools) ← Hermes Agent → Content Pipeline → xurl CLI → X
 
 ### Полный поток
 
+**Diamond Pattern (@EXM7777 Graph Engineering):** Split → Parallel → Check → Merge → Human Gate.
+
+```
+         ┌─ Research: X trends ───┐
+         ├─ Research: Knowledge G.─┤
+Split ───┤                         ├─── Merge ─── Write ─── MoA Check ─── APPROVAL (Сергей)
+         ├─ Research: CHRONOLOGY ─┤
+         └─ Research: Strategy ───┘
+```
+
+- **Split:** 3-4 независимых research-потока (X, Knowledge Graph, CHRONOLOGY, Strategy)
+- **Parallel:** запускать одновременно (Grok Build background × 3)
+- **Check:** MoA double-check (deepseek-xai + viral-score). Оба agree → дальше. Нет → переписать.
+- **Human Gate:** Сергей approve перед публикацией. НИКОГДА не постить без approval.
+- **Stop Rule:** research-потоки НЕ читают результаты друг друга → ✅ Diamond. Write зависит от Merge → sequential.
+
 Идея → RESEARCH (X MCP search/trends) → WRITE (content-writer) → EDIT (content-editor + MoA) → VIRALITY (/moa viral-score) → IMAGE (loop-image-gen) → APPROVAL (Сергей) → PUBLISH (post_with_log.sh) → Reply Engine → ANALYTICS (24h) → VOICE UPDATE
 
 ### Компоненты
