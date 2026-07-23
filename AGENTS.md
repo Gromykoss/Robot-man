@@ -10,6 +10,38 @@
 2. `skill_view("build")` — общие правила строительства
 3. Прочитай `~/hermes-vault/30_Logs/Арсенал Hermes.md`
 4. Затем этот файл
+5. **Запроси Knowledge Graph:** `python3 ~/robot-man/knowledge_graph/query_tool.py` — что произошло за последние дни
+
+## 🧠 Knowledge Graph — shared memory (Anthropic Graph Engineering, 23.07.2026)
+
+**Проблема:** память агентов умирает с контекстным окном. Knowledge Graph — постоянная structured память.
+
+**Файлы:**
+- `knowledge_graph/schema.py` — Pydantic-модели (Triple, Entity, Edge)
+- `knowledge_graph/query_tool.py` — запросы к графу
+- `knowledge_graph/graph.json` — сам граф (117 узлов, 109 связей)
+- `scripts/knowledge_graph.py` — пайплайн Extract → Resolve → Assemble
+
+**Правила для всех агентов robot-man:**
+
+1. **Nightly Analysis (23:00)** — ПЕРЕД написанием TACTICS.md запроси граф:
+   ```python
+   from knowledge_graph.query_tool import query_knowledge_graph
+   print(query_knowledge_graph("What happened in the last 24 hours?"))
+   print(query_knowledge_graph("Any open tasks?", center_entity="project/robot-man"))
+   ```
+
+2. **Content Gate (Вт-Чт 10:00)** — ПЕРЕД решением о посте проверь граф:
+   ```python
+   print(query_knowledge_graph("Last 3 days events and decisions"))
+   ```
+
+3. **Любой агент** может вызвать `mcp_query_graph("вопрос", entity="...")` для проверки фактов перед действием.
+
+4. **Rebuild:** cron каждые 6 часов (`4506b578cfa3`). Граф всегда свежий.
+
+**Pipeline (Anthropic playbook):**
+Extract (regex из CHRONOLOGY+memory+strategy) → Resolve (нормализация) → Assemble (NetworkX) → Query (DeepSeek reasoning over subgraph)
 
 ## Архитектура
 
@@ -225,6 +257,19 @@ loop-image-gen → show Sergey → post_with_log.sh
 4. Только потом патч
 
 Если grep не показан — патч не принят. Откат.
+
+## X-операции через Grok Build CLI (OAuth 2.0)
+
+**Загрузить перед делегированием в Grok Build:** `skill_view('grok-build-delegation')`
+
+Когда Hermes/xurl возвращают 403 (закладки, списки, настройки аккаунта) — Grok Build CLI с нативным OAuth 2.0.
+
+```bash
+grok --always-approve -p "промпт"   # одноразовая задача, headless
+grok update                          # обновление (сейчас 0.2.111)
+```
+
+**Важно:** `-p` (--single), не `--check` (удалён в новых версиях).
 
 ## Agent-Driven Development Rules (Codex CLI / Grok Build)
 

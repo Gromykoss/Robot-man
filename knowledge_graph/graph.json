@@ -1,0 +1,1480 @@
+{
+  "built_at": "2026-07-23T15:18:40.857326+00:00",
+  "stats": {
+    "nodes": 117,
+    "edges": 109,
+    "projects": 4,
+    "events": 28,
+    "people": 27,
+    "tasks": 12
+  },
+  "nodes": [
+    [
+      "event/2026-07-20/System Wipe Recovery: все 8 cron jobs во",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-20",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "System Wipe Recovery: все 8 cron jobs восстановлены",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-20/Self-Heal Scanner + Voice Calibration +",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Self-Heal Scanner + Voice Calibration + Engage Upgrade (T-133/T-136)",
+      {
+        "type": "Self-Heal Scanner + Voice Calibration + Engage Upgrade (T-133"
+      }
+    ],
+    [
+      "event/2026-07-20/Discord Sync (cron run, 7th)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 7th)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-20/Радары: авто-синхронизация vault + Git",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Радары: авто-синхронизация vault + Git",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-20/Стратегия роста v3: полная реорганизация",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Стратегия роста v3: полная реорганизация",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-20/Discord Sync (cron run, 6th)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 6th)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-20/Discord Sync (cron run, 5th)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 5th)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-19/Discord Sync (cron run, 4th)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-19",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 4th)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-19/Tony Simons: Alikhan presentation + Mutu",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Tony Simons: Alikhan presentation + Mutuals filter + Radar → Tasks",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-19/Discord Sync (cron run, 3rd)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 3rd)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-19/Mutuals: relevance filter",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Mutuals: relevance filter",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-19/Discord Sync (cron run, 2nd)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 2nd)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-19/Discord Sync (cron run, 1st — ⚠️ ошибочн",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (cron run, 1st — ⚠️ ошибочный)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-18/Discord Sync (cron run)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-18",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Discord Sync (cron run)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-17/Discord Sync (11:22 UTC)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-17",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Discord Sync (11:22 UTC)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-17/Discord Sync (06:35 UTC)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Discord Sync (06:35 UTC)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-16/Discord Sync",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-16",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Discord Sync",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-15/X MCP: 24 инструмента + Engagement Fix",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-15",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "X MCP: 24 инструмента + Engagement Fix",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-14/Engagement + Voice fix",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-14",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Engagement + Voice fix",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-14/Agent-Driven Development Rules",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Agent-Driven Development Rules",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-09/v3: Virality Scoring + Self-Improvement",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-09",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "v3: Virality Scoring + Self-Improvement Loop + Specialist Profiles",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-07/Правила строительства v1 + архитектура v",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-07",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Правила строительства v1 + архитектура v2",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-05/X API: reply-ограничения подтверждены",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-05",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "X API: reply-ограничения подтверждены",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-23/Grok CLI audit + shadowban update + memo",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-23",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Grok CLI audit + shadowban update + memory hygiene",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-22/X Hotspot Radar: 5 находок + Nightly Str",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-22",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "X Hotspot Radar: 5 находок + Nightly Strategy fix",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-03/Стратегия контента v2",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-03",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Стратегия контента v2",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-02/Лучший пост: «3 weeks of agents»",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-02",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Лучший пост: «3 weeks of agents»",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-06-28/Начало @RobotsTJ500",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-06-28",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Начало @RobotsTJ500",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "person/@RobotsTJ500",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "CHRONOLOGY.md",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "person/@gromykoss",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@tonysimons_",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@bsolanki",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@knnthevans",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@theglowofmyvoid",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@animejmroche",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@paxron7",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@rgk_degen",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@zeroclaw_build",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@ScottyBeamIO",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@witcheer",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@RodmanAi",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@libapi_",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Abobsterina",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Chris73ai",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@DantesClown",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@S0UIMateK",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "project/robot-man",
+      {
+        "type": "project"
+      }
+    ],
+    [
+      "project/alikhan",
+      {
+        "type": "project"
+      }
+    ],
+    [
+      "project/gulag",
+      {
+        "type": "project"
+      }
+    ],
+    [
+      "project/rab9",
+      {
+        "type": "project"
+      }
+    ],
+    [
+      "task/T-133",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-136",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-134",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-135",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-137",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-138",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-132",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-156",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-160",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-157",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-158",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "task/T-159",
+      {
+        "type": "task"
+      }
+    ],
+    [
+      "MEMORY.md",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "person/@92dd2d26",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "STRATEGY.md",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "person/@IBuzovskyi",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@cyrilXBT",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@outsource_",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@OferBlutrich",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@lviswanath",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Teknium",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@hermes_updates",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@NousResearch",
+      {
+        "type": "person"
+      }
+    ]
+  ],
+  "edges": [
+    {
+      "source": "event/2026-07-20/System Wipe Recovery: все 8 cron jobs во",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/System Wipe Recovery: все 8 cron jobs во",
+      "target": "System Wipe Recovery: все 8 cron jobs восстановлены",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-20/Self-Heal Scanner + Voice Calibration +",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/Self-Heal Scanner + Voice Calibration +",
+      "target": "Self-Heal Scanner + Voice Calibration + Engage Upgrade (T-133/T-136)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-20/Discord Sync (cron run, 7th)",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/Discord Sync (cron run, 7th)",
+      "target": "Discord Sync (cron run, 7th)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-20/Радары: авто-синхронизация vault + Git",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/Радары: авто-синхронизация vault + Git",
+      "target": "Радары: авто-синхронизация vault + Git",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-20/Стратегия роста v3: полная реорганизация",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/Стратегия роста v3: полная реорганизация",
+      "target": "Стратегия роста v3: полная реорганизация",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-20/Discord Sync (cron run, 6th)",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/Discord Sync (cron run, 6th)",
+      "target": "Discord Sync (cron run, 6th)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-20/Discord Sync (cron run, 5th)",
+      "target": "2026-07-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-20/Discord Sync (cron run, 5th)",
+      "target": "Discord Sync (cron run, 5th)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 4th)",
+      "target": "2026-07-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 4th)",
+      "target": "Discord Sync (cron run, 4th)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-19/Tony Simons: Alikhan presentation + Mutu",
+      "target": "2026-07-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-19/Tony Simons: Alikhan presentation + Mutu",
+      "target": "Tony Simons: Alikhan presentation + Mutuals filter + Radar → Tasks",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 3rd)",
+      "target": "2026-07-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 3rd)",
+      "target": "Discord Sync (cron run, 3rd)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-19/Mutuals: relevance filter",
+      "target": "2026-07-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-19/Mutuals: relevance filter",
+      "target": "Mutuals: relevance filter",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 2nd)",
+      "target": "2026-07-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 2nd)",
+      "target": "Discord Sync (cron run, 2nd)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 1st — ⚠️ ошибочн",
+      "target": "2026-07-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-19/Discord Sync (cron run, 1st — ⚠️ ошибочн",
+      "target": "Discord Sync (cron run, 1st — ⚠️ ошибочный)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-18/Discord Sync (cron run)",
+      "target": "2026-07-18",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-18/Discord Sync (cron run)",
+      "target": "Discord Sync (cron run)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-17/Discord Sync (11:22 UTC)",
+      "target": "2026-07-17",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-17/Discord Sync (11:22 UTC)",
+      "target": "Discord Sync (11:22 UTC)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-17/Discord Sync (06:35 UTC)",
+      "target": "2026-07-17",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-17/Discord Sync (06:35 UTC)",
+      "target": "Discord Sync (06:35 UTC)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-16/Discord Sync",
+      "target": "2026-07-16",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-16/Discord Sync",
+      "target": "Discord Sync",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-15/X MCP: 24 инструмента + Engagement Fix",
+      "target": "2026-07-15",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-15/X MCP: 24 инструмента + Engagement Fix",
+      "target": "X MCP: 24 инструмента + Engagement Fix",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-14/Engagement + Voice fix",
+      "target": "2026-07-14",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-14/Engagement + Voice fix",
+      "target": "Engagement + Voice fix",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-14/Agent-Driven Development Rules",
+      "target": "2026-07-14",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-14/Agent-Driven Development Rules",
+      "target": "Agent-Driven Development Rules",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-09/v3: Virality Scoring + Self-Improvement",
+      "target": "2026-07-09",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-09/v3: Virality Scoring + Self-Improvement",
+      "target": "v3: Virality Scoring + Self-Improvement Loop + Specialist Profiles",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-07/Правила строительства v1 + архитектура v",
+      "target": "2026-07-07",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-07/Правила строительства v1 + архитектура v",
+      "target": "Правила строительства v1 + архитектура v2",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-05/X API: reply-ограничения подтверждены",
+      "target": "2026-07-05",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-05/X API: reply-ограничения подтверждены",
+      "target": "X API: reply-ограничения подтверждены",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-23/Grok CLI audit + shadowban update + memo",
+      "target": "2026-07-23",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-23/Grok CLI audit + shadowban update + memo",
+      "target": "Grok CLI audit + shadowban update + memory hygiene",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-22/X Hotspot Radar: 5 находок + Nightly Str",
+      "target": "2026-07-22",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-22/X Hotspot Radar: 5 находок + Nightly Str",
+      "target": "X Hotspot Radar: 5 находок + Nightly Strategy fix",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-03/Стратегия контента v2",
+      "target": "2026-07-03",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-03/Стратегия контента v2",
+      "target": "Стратегия контента v2",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-02/Лучший пост: «3 weeks of agents»",
+      "target": "2026-07-02",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-02/Лучший пост: «3 weeks of agents»",
+      "target": "Лучший пост: «3 weeks of agents»",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-06-28/Начало @RobotsTJ500",
+      "target": "2026-06-28",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-06-28/Начало @RobotsTJ500",
+      "target": "Начало @RobotsTJ500",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@tonysimons_",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@tonysimons_",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@bsolanki",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@knnthevans",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@theglowofmyvoid",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@animejmroche",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@paxron7",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@rgk_degen",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@zeroclaw_build",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@ScottyBeamIO",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@witcheer",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@witcheer",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RodmanAi",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@libapi_",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Abobsterina",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Chris73ai",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@DantesClown",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@S0UIMateK",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/robot-man",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/robot-man",
+      "target": "MEMORY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/robot-man",
+      "target": "STRATEGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/alikhan",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/gulag",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/gulag",
+      "target": "MEMORY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/gulag",
+      "target": "STRATEGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/rab9",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "task/T-133",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-136",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-134",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-135",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-137",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-138",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-132",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-156",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-160",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-157",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-158",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-159",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "person/@92dd2d26",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@IBuzovskyi",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@cyrilXBT",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@outsource_",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@OferBlutrich",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@lviswanath",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Teknium",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@hermes_updates",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@NousResearch",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    }
+  ]
+}

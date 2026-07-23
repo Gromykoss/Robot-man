@@ -1,0 +1,174 @@
+"""Query tool for Knowledge Graph — Steps 10-12.
+Loads graph.json, serializes subgraph, queries DeepSeek for reasoning.
+Every answer cites specific edges.
+"""
+import json, os, sys
+from pathlib import Path
+from typing import Optional
+
+import networkx as nx
+
+GRAPH_DIR = Path(__file__).parent
+GRAPH_FILE = GRAPH_DIR / "graph.json"
+
+# ─── Load ────────────────────────────────────────────────
+def _load_graph() -> nx.DiGraph:
+    """Load NetworkX graph from graph.json."""
+    if not GRAPH_FILE.exists():
+        raise FileNotFoundError(f"No graph.json at {GRAPH_FILE}. Run knowledge_graph.py first.")
+    
+    with open(GRAPH_FILE) as f:
+        data = json.load(f)
+    
+    G = nx.DiGraph()
+    for node_id, attrs in data.get("nodes", []):
+        G.add_node(node_id, **attrs)
+    for edge in data.get("edges", []):
+        G.add_edge(
+            edge["source"], edge["target"],
+            predicate=edge.get("predicate", "?"),
+            source_file=edge.get("source_file", "?"),
+            confidence=edge.get("confidence", 0.5),
+        )
+    return G
+
+
+# ─── Serialize ───────────────────────────────────────────
+def serialize_subgraph(center: str, hops: int = 2) -> str:
+    """Serialize subgraph around center as triple lines with edge citations."""
+    G = _load_graph()
+    
+    if center not in G:
+        return f"(no entity found: '{center}')"
+    
+    nodes = {center}
+    frontier = {center}
+    for _ in range(hops):
+        nxt = set()
+        for n in frontier:
+            if n in G:
+                nxt |= set(G.successors(n)) | set(G.predecessors(n))
+        frontier = nxt - nodes
+        nodes |= frontier
+    
+    existing = [n for n in nodes if n in G]
+    if len(existing) <= 1:
+        return f"(entity '{center}' has no connections)"
+    
+    sub = G.subgraph(existing)
+    lines = []
+    for s, t, data in sub.edges(data=True):
+        pred = data.get("predicate", "?")
+        src = Path(data.get("source_file", "?")).name
+        conf = data.get("confidence", 0.5)
+        lines.append(f"{s}  --[{pred}]-->  {t}  [src: {src}, conf: {conf:.0%}]")
+    
+    # Stats
+    lines.append(f"\n({len(existing)} nodes, {len(lines)-1} edges in subgraph)")
+    return "\n".join(sorted(set(lines)))
+
+
+# ─── Query with DeepSeek ─────────────────────────────────
+def query_knowledge_graph(
+    question: str,
+    center_entity: Optional[str] = None,
+    max_hops: int = 2,
+) -> str:
+    """Query the knowledge graph. Uses DeepSeek for reasoning if question provided.
+    Returns answer with cited edges (Step 11: every answer cites edges).
+    """
+    G = _load_graph()
+    now = data = None
+    with open(GRAPH_FILE) as f:
+        data = json.load(f)
+        now = data.get("built_at", "unknown")
+    
+    # If center entity given, serialize subgraph
+    # If center entity given, serialize subgraph
+    if center_entity:
+        context = serialize_subgraph(center_entity, hops=max_hops)
+    else:
+        # Serialize recent edges (last 50, or all if fewer)
+        all_edges = data.get("edges", [])
+        sample = all_edges[-50:]  # most recent
+        lines = []
+        for e in sample:
+            lines.append(f"{e['source']}  --[{e.get('predicate','?')}]-->  {e['target']}  [src: {Path(e.get('source_file','?')).name}]")
+        stats = data.get("stats", {})
+        context = f"Graph ({stats.get('nodes','?')} nodes):\n" + "\n".join(sorted(set(lines)))
+        if len(all_edges) > 50:
+            context += f"\n({len(all_edges)-50} more edges omitted)"
+    
+    # If no question, just return context
+    if not question:
+        return f"Graph snapshot ({now}):\n{context}"
+    
+    # Query DeepSeek
+    api_key = os.environ.get("DEEPSEEK_API_KEY", "")
+    if not api_key:
+        # Try .env
+        env_file = os.path.expanduser("~/.hermes/.env")
+        if os.path.exists(env_file):
+            with open(env_file) as f:
+                for line in f:
+                    if "DEEPSEEK_API_KEY" in line and "=" in line:
+                        api_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+                        break
+    
+    if not api_key:
+        return f"(no DeepSeek key — raw graph data)\n{context}"
+    
+    import urllib.request
+    
+    prompt = f"""Answer using only the knowledge graph below. Cite the specific edges that support your answer.
+
+<graph>
+{context}
+</graph>
+
+Question: {question}
+
+Answer format:
+ANSWER: [your answer]
+CITED EDGES: [list edge IDs or "none"]"""
+
+    req = urllib.request.Request(
+        "https://api.deepseek.com/v1/chat/completions",
+        data=json.dumps({
+            "model": "deepseek-v4-pro",
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": 300,
+            "temperature": 0.3,
+        }).encode(),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+    )
+    
+    try:
+        resp = urllib.request.urlopen(req, timeout=15)
+        result = json.loads(resp.read())
+        answer = result["choices"][0]["message"]["content"]
+        return f"Knowledge Graph ({now}):\n{answer}"
+    except Exception as e:
+        return f"(DeepSeek error: {e})\nRaw graph:\n{context}"
+
+
+# ─── MCP-compatible tool function ─────────────────────────
+def mcp_query_graph(question: str = "", entity: str = "", hops: int = 2) -> str:
+    """MCP tool wrapper. Called by Hermes agents via terminal."""
+    return query_knowledge_graph(
+        question=question,
+        center_entity=entity or None,
+        max_hops=hops,
+    )
+
+
+# ─── CLI ──────────────────────────────────────────────────
+if __name__ == "__main__":
+    print("🧠 Robot-man Knowledge Graph Query")
+    print(query_knowledge_graph("What happened in the last 3 days?"))
+    print()
+    if "project/gulag" in _load_graph():
+        print(query_knowledge_graph("What is the GULAG project status?", center_entity="project/gulag"))
