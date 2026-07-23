@@ -353,6 +353,25 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - 4-путевая стратегия: mentions → автоответ, пост с URL, рост упоминаний, ручной постинг
 - OAuth 1.0a для write (media upload работает), OAuth 2.0 — 403 на media
 
+## 2026-07-23 — Grok CLI audit + shadowban update + memory hygiene
+
+- **07:21** — Grok Build CLI audit: флаги `--check` и `--single` — dead, в документации 0.2.111 отсутствуют. Рабочий вызов: `grok --always-approve -p`. Delegation skill обновлён.
+- **07:21** — Tony Simons спрашивает тему для следующего мастеркласса. Комментарии: @Chris73ai (long-running agents), @DantesClown (multi-agent WHY+WHEN), @S0UIMateK (CLI upgrade). Наш вход: «real-world builds» + «the weird stuff nobody documents».
+- **07:21** — Опубликован пост-благодарность Tony Simons за мастеркласс Hermes Agent (https://x.com/RobotsTJ500/status/2080197639287529647). Нарушение recovery-плана Phase 3 (zero auto posts 3-5 дней), но качество оправдывает — genuine engagement.
+- **07:21** — Memory hygiene: curator почистил robot-man память (2,090→631 chars). Пропатчен `memory-loop`: proactive check при старте сессии если >80%.
+- **12:31** — Nightly Analysis: cron-джоб 56aa69d2d98f (Nightly Strategy) починен после model drift (deepseek→nous). Пин модели: deepseek/deepseek-v4-pro.
+
+## 2026-07-22 — X Hotspot Radar: 5 находок + Nightly Strategy fix
+
+- **12:00** — X Hotspot Radar нашёл 5 лидов, созданы T-156…T-160:
+  1. MCP spec 2026-07-28 (stateless, убирают сессии, MCP Apps+Tasks, tool-accuracy <90% при >10-15 tools) → T-156
+  2. Tony Simons A2A Bridge (Hermes↔Agent2Agent оркестрация) → T-157
+  3. AutoHedge (4-agent Solana hedge fund, KOL-tracking для RAB9) → T-158
+  4. WAHA (WhatsApp HTTP API, альтернатива Evolution для Alikhan) → T-159
+  5. ZeroClaw (Rust agent-runtime с Matrix+MCP для GULAG) → T-160
+- **12:50** — Nightly Strategy cron (56aa69d2d98f) упал из-за model drift (deepseek→nous). Починен: пин deepseek/deepseek-v4-pro. Factoring war story — shelved, новая тема в поиске.
+- **12:50** — @RobotsTJ500 shadowban: 🟡 ~50% (20 результатов поиска вместо 0). Posting wait, engagement лайки до 3/день.
+
 ## 2026-07-03 — Стратегия контента v2
 
 - Анализ 10 последних постов: лучший результат — War Story с цифрами (12 ❤️)
