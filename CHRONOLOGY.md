@@ -1,5 +1,13 @@
 # Robot-man — Хронология
 
+## 2026-07-24
+
+- Switched model to Kimi K3 (1M context)
+- Knowledge Graph steps 4-5: `grounded_answer` + `maintenance.py`
+- KG dedup: 58 false positives fixed, number-differ guard added
+- CONTEXT GATE (rule #0) added to `AGENTS.md`
+- Diamond Pattern published as `skill_view('diamond-pattern')`
+
 ## 2026-07-20 — System Wipe Recovery: все 8 cron jobs восстановлены
 
 - После system wipe восстановлены все 8 cron job'ов (новые ID)

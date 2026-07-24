@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Knowledge Graph for Robot-man — Anthropic Graph Engineering Playbook.
-Extract → Resolve → Assemble → Query.
+Extract → Resolve → Assemble → Query → Grounded Answer → Maintain.
 No external NLP, no graph DB. Just prompts + schema + NetworkX.
 """
-import os, re, json, sqlite3
+import os, re, json, sqlite3, sys
 from datetime import datetime, timezone
 from pathlib import Path
 import networkx as nx
@@ -176,6 +176,14 @@ def build_graph():
     }
     with open(GRAPH_FILE, 'w') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    
+    # Stage 5: MAINTAIN — run checks after each rebuild
+    try:
+        sys.path.insert(0, GRAPH_DIR)
+        import maintenance
+        maintenance.run_report()
+    except Exception as e:
+        print(f"⚠️  Maintenance check failed (non-fatal): {e}", file=sys.stderr)
     
     return G
 

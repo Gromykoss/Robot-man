@@ -155,6 +155,105 @@ CITED EDGES: [list edge IDs or "none"]"""
         return f"(DeepSeek error: {e})\nRaw graph:\n{context}"
 
 
+def _read_env_key(key: str) -> str:
+    """Read a key from ~/.hermes/.env (fallback to environment)."""
+    val = os.environ.get(key, "")
+    if val:
+        return val
+    env_file = os.path.expanduser("~/.hermes/.env")
+    if os.path.exists(env_file):
+        with open(env_file) as f:
+            for line in f:
+                if line.strip().startswith(key) and "=" in line:
+                    return line.split("=", 1)[1].strip().strip('"').strip("'")
+    return ""
+
+
+# ─── Step 4: GROUNDED ANSWER (Kimi K3 via Moonshot) ──────────
+def grounded_answer(question: str, center_entity: Optional[str] = None, max_hops: int = 2) -> str:
+    """Reason over the knowledge graph with Kimi K3 (Moonshot, 1M context).
+    Every claim MUST cite a specific edge. Contradictions flagged explicitly.
+
+    Output:
+        ANSWER: <reasoned answer>
+        EVIDENCE:
+        - [node A] → [relation] → [node B] (confidence: X%, source: ...)
+    """
+    with open(GRAPH_FILE) as f:
+        data = json.load(f)
+    built_at = data.get("built_at", "unknown")
+
+    # 1. Query graph for relevant subgraph
+    if center_entity:
+        subgraph = serialize_subgraph(center_entity, hops=max_hops)
+    else:
+        all_edges = data.get("edges", [])
+        lines = []
+        for e in all_edges:
+            conf = e.get("confidence", 0.5)
+            src = Path(e.get("source_file", "?")).name
+            lines.append(
+                f"[{e['source']}] → [{e.get('predicate','?')}] → [{e['target']}] "
+                f"(confidence: {conf:.0%}, source: {src})"
+            )
+        subgraph = "\n".join(sorted(set(lines)))
+
+    api_key = _read_env_key("MOONSHOT_API_KEY")
+    if not api_key:
+        return f"(no MOONSHOT_API_KEY — raw subgraph)\n{subgraph}"
+
+    # 2-3. Pass subgraph + question to Kimi K3, which reasons and cites edges
+    import urllib.request
+
+    system = (
+        "You reason over a knowledge graph. Every claim MUST cite a specific edge "
+        "from the graph. If you find contradictions (two edges with same subject+relation "
+        "but different objects), flag them explicitly under CONTRADICTIONS. "
+        "Answer in this exact format:\n"
+        "ANSWER: <reasoned answer>\n\n"
+        "EVIDENCE:\n"
+        "- [node A] → [relation] → [node B] (confidence: X%, source: <file>)\n\n"
+        "CONTRADICTIONS: <list or 'none'>"
+    )
+    payload = {
+        "model": "kimi-k3",
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": f"GRAPH:\n{subgraph}\n\nQUESTION: {question}"},
+        ],
+        "temperature": 1,  # kimi-k3 accepts only temperature=1
+        "max_tokens": 1500,
+    }
+    req = urllib.request.Request(
+        "https://api.moonshot.ai/v1/chat/completions",
+        data=json.dumps(payload).encode(),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+    )
+    import time
+    import urllib.error
+    last_err = None
+    for attempt in range(4):
+        try:
+            resp = urllib.request.urlopen(req, timeout=120)
+            result = json.loads(resp.read())
+            answer = result["choices"][0]["message"]["content"]
+            return f"Knowledge Graph ({built_at}):\n{answer}"
+        except urllib.error.HTTPError as e:
+            body = e.read().decode()[:200]
+            last_err = f"HTTP {e.code}: {body}"
+            if e.code in (429, 500, 502, 503) and attempt < 3:
+                time.sleep(5 * (attempt + 1))
+                continue
+            break
+        except Exception as e:
+            last_err = str(e)
+            break
+    return f"(Kimi K3 error: {last_err})\nRaw subgraph:\n{subgraph}"
+
+
 # ─── MCP-compatible tool function ─────────────────────────
 def mcp_query_graph(question: str = "", entity: str = "", hops: int = 2) -> str:
     """MCP tool wrapper. Called by Hermes agents via terminal."""
@@ -167,8 +266,17 @@ def mcp_query_graph(question: str = "", entity: str = "", hops: int = 2) -> str:
 
 # ─── CLI ──────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("🧠 Robot-man Knowledge Graph Query")
-    print(query_knowledge_graph("What happened in the last 3 days?"))
-    print()
-    if "project/gulag" in _load_graph():
-        print(query_knowledge_graph("What is the GULAG project status?", center_entity="project/gulag"))
+    args = sys.argv[1:]
+    if args and args[0] == "grounded_answer":
+        if len(args) < 2:
+            print("Usage: query_tool.py grounded_answer \"<question>\" [center_entity]")
+            sys.exit(1)
+        question = args[1]
+        center = args[2] if len(args) > 2 else None
+        print(grounded_answer(question, center_entity=center))
+    else:
+        print("🧠 Robot-man Knowledge Graph Query")
+        print(query_knowledge_graph("What happened in the last 3 days?"))
+        print()
+        if "project/gulag" in _load_graph():
+            print(query_knowledge_graph("What is the GULAG project status?", center_entity="project/gulag"))

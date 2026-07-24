@@ -4,6 +4,33 @@
 Два аккаунта: @gromykoss (Сергей) + @RobotsTJ500 (бот Hermes).
 Путь: /home/hermes-workspace/robot-man/
 
+---
+
+# ⛔ CRITICAL GATES — ЧИТАЙ ПЕРВЫМ, ДО ЛЮБОГО ДЕЙСТВИЯ
+
+⚠️ DO NOT SKIP: read ALL rules in this file before acting. Самые нарушаемые правила — здесь, наверху.
+
+0. **CONTEXT GATE (MANDATORY):** перед ЛЮБЫМ действием — выбрать триггер и загрузить контекст:
+   ```bash
+   python3 ~/.hermes/scripts/context_loader.py robot-man <trigger> [--max-tokens 500]
+   ```
+   Вывод вставить в reasoning ДО действия. Триггеры:
+   - `session_start` → gates + last-3-days
+   - `content_write` → voice + strategy + chronology (пост/ответ/outreach)
+   - `code_change` → gates + API limits (код в repo)
+   - `bug_fix` → gates + bugs
+   - `audit` → chronology + bugs + strategy (ночной анализ)
+   - `default` → gates only
+
+1. **PRE-PATCH GATE (MANDATORY):** перед любым изменением кода — `grep -rn "имя" .`, показать grep пользователю, проследить логику в КАЖДОМ найденном месте. Нет grep → патч не принят. Откат.
+2. **Human Gate:** НИКОГДА не постить без явного approval Сергея. MoA → показать Сергею → «ок» → только потом публикация.
+3. **Публикация ТОЛЬКО через `post_with_log.sh`.** Никогда напрямую `xurl post` — пост станет невидим для Reply Engine и аналитики.
+4. **Knowledge Graph first:** перед Nightly Analysis / Content Gate / любым факт-действием — запрос к графу (`knowledge_graph/query_tool.py`).
+5. **API-лимиты (hard):** max 3 public writes/сутки, follow max 2/day (hard 3), 429 → STOP.
+6. **Never expose credentials:** OAuth токены, xurl конфиг — не коммитить, не логировать.
+
+---
+
 ## Старт сессии
 
 1. `skill_view("hermes-self-knowledge")` — 14 паттернов харнеса
@@ -18,9 +45,10 @@
 
 **Файлы:**
 - `knowledge_graph/schema.py` — Pydantic-модели (Triple, Entity, Edge)
-- `knowledge_graph/query_tool.py` — запросы к графу
+- `knowledge_graph/query_tool.py` — запросы к графу + `grounded_answer` (Kimi K3)
+- `knowledge_graph/maintenance.py` — Step 5: stale/duplicates/contradictions/decay → maintenance_report.json
 - `knowledge_graph/graph.json` — сам граф (117 узлов, 109 связей)
-- `scripts/knowledge_graph.py` — пайплайн Extract → Resolve → Assemble
+- `scripts/knowledge_graph.py` — пайплайн Extract → Resolve → Assemble (+ вызов maintenance после rebuild)
 
 **Правила для всех агентов robot-man:**
 
@@ -41,7 +69,7 @@
 4. **Rebuild:** cron каждые 6 часов (`4506b578cfa3`). Граф всегда свежий.
 
 **Pipeline (Anthropic playbook):**
-Extract (regex из CHRONOLOGY+memory+strategy) → Resolve (нормализация) → Assemble (NetworkX) → Query (DeepSeek reasoning over subgraph)
+Extract (regex из CHRONOLOGY+memory+strategy) → Resolve (нормализация) → Assemble (NetworkX) → Query (subgraph serialization) → Grounded Answer (Kimi K3 reasoning over graph, every claim cites an edge: `query_tool.py grounded_answer "вопрос"`) → Maintain (`maintenance.py` — stale/duplicates/contradictions/confidence decay → `maintenance_report.json`, запускается после каждого rebuild)
 
 ## Архитектура
 
@@ -261,6 +289,8 @@ loop-image-gen → show Sergey → post_with_log.sh
 | Like / Repost / Follow | ✅ | OAuth 1.0a |
 | DM / Удалить свои | ✅ | OAuth 1.0a |
 | Reply чужим / Quote | ❌ | X блок Feb 2026 |
+
+# ⚠️ DO NOT SKIP: прочитай ВСЕ правила ниже перед любым действием
 
 ## Правила строительства
 

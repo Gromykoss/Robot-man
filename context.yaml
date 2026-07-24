@@ -1,0 +1,9 @@
+triggers:
+  session_start: [AGENTS.md#critical-gates, CHRONOLOGY.md#last-3-days]
+  content_write: [VOICE_PROFILE.md, STRATEGY.md, CHRONOLOGY.md#last-7-days]
+  code_change: [AGENTS.md#critical-gates, AGENTS.md#api-лимиты]
+  audit: [CHRONOLOGY.md, BUGS.md, STRATEGY.md]
+  bug_fix: [AGENTS.md#critical-gates, BUGS.md]
+  default: [AGENTS.md#critical-gates]
+mode: keyword
+budget: 3000
