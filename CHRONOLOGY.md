@@ -8,6 +8,12 @@
 - CONTEXT GATE (rule #0) added to `AGENTS.md`
 - Diamond Pattern published as `skill_view('diamond-pattern')`
 
+## 2026-07-23 — Robot-man → DeepSeek + X Hotspot Radar T-169..T-171
+
+- **07:21** — Профиль robot-man переключён на DeepSeek (с Kimi K3); GULAG оставлен на Kimi K3. Причина: DeepSeek дешевле для высокочастотных краулеров.
+- **07:21** — X Hotspot Radar (cron `946f8f3f3174`) произвёл 3 задачи: T-169 (go-whatsapp-web-multidevice MCP → Alikhan), T-170 (MoA Advisor Cadence Optimization), T-171 (Self-Replicating Hermes Agent Pattern → Infra)
+- grok-build-delegation skill аудит: `grok --check` флаг удалён, Codex флаги обновлены
+
 ## 2026-07-20 — System Wipe Recovery: все 8 cron jobs восстановлены
 
 - После system wipe восстановлены все 8 cron job'ов (новые ID)
