@@ -138,14 +138,15 @@ xurl search "from:USERNAME" -n 20
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
-| Nightly Analysis | `d90897631712` | 23:00 UTC | 8 проверок → TACTICS.md → план на день |
-| Daily Content Gate | `76e7dead750b` | Вт-Чт 10:00 UTC | Читает TACTICS.md → пост если риск ≤60% |
-| Follow drip | `1f4d97a6a726` | Ежедневно 10:15 UTC | Mutuals follow-back (max 2) |
-| X Hotspot Radar | `fc01c4ddb88f` | Ежедн 12:00 UTC | Сканирование X + T-XXX задачи |
-| Discord sync | `d2288946df0d` | Каждые 6ч | Синхронизация со штабом |
-| CHRONOLOGY sync | `ce571dae73f6` | 06:30, 15:30 | Авто-хронология из Discord |
-| Tony Reply Monitor | `a25917e3f76f` | Каждые 3ч | Мониторинг ответа Тони |
-| Reply Engine | `3f4a0ef59f2e` | ⏸ ПАУЗА | Шаблоны = бан |
+| Nightly Analysis | `56aa69d2d98f` | 23:00 UTC | 8 проверок → TACTICS.md → план на день |
+| Daily Content Gate | `c52cbdbac802` | Вт-Чт 10:00 UTC | Читает TACTICS.md → пост если риск ≤60% |
+| X Hotspot Radar | `946f8f3f3174` | Ежедн 12:00 UTC | Сканирование X + T-XXX задачи |
+| Morning Tracked Scan | `693d2bfee2df` | Ежедн 05:00 UTC | Сканирование отслеживаемых аккаунтов |
+| KG rebuild | `4506b578cfa3` | Каждые 6ч | Knowledge Graph перестроение |
+| Discord/Infra Sync | `32d46d9d7752` | Ежедн 04:00 UTC | GitHub + Obsidian + Discord синхронизация |
+| Auto-CHRONOLOGY | `eef332c48459` | Ежедн 23:00 UTC | CHRONOLOGY.md для всех проектов |
+| Follow drip | — | ⏸ НЕТ CRON | `mutuals_follow_back.py` — запускать вручную при recovery |
+| Reply Engine | — | ⏸ ПАУЗА | Шаблоны = бан, не запускать |
 
 ## X API: ограничения reply (июль 2026)
 

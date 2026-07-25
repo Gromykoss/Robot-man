@@ -198,11 +198,11 @@ def grounded_answer(question: str, center_entity: Optional[str] = None, max_hops
             )
         subgraph = "\n".join(sorted(set(lines)))
 
-    api_key = _read_env_key("MOONSHOT_API_KEY")
+    api_key = _read_env_key("DEEPSEEK_API_KEY")
     if not api_key:
-        return f"(no MOONSHOT_API_KEY — raw subgraph)\n{subgraph}"
+        return f"(no DEEPSEEK_API_KEY — raw subgraph)\n{subgraph}"
 
-    # 2-3. Pass subgraph + question to Kimi K3, which reasons and cites edges
+    # 2-3. Pass subgraph + question to DeepSeek, which reasons and cites edges
     import urllib.request
 
     system = (
@@ -216,16 +216,16 @@ def grounded_answer(question: str, center_entity: Optional[str] = None, max_hops
         "CONTRADICTIONS: <list or 'none'>"
     )
     payload = {
-        "model": "kimi-k3",
+        "model": "deepseek-v4-pro",
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": f"GRAPH:\n{subgraph}\n\nQUESTION: {question}"},
         ],
-        "temperature": 1,  # kimi-k3 accepts only temperature=1
+        "temperature": 0.3,
         "max_tokens": 1500,
     }
     req = urllib.request.Request(
-        "https://api.moonshot.ai/v1/chat/completions",
+        "https://api.deepseek.com/v1/chat/completions",
         data=json.dumps(payload).encode(),
         headers={
             "Authorization": f"Bearer {api_key}",
@@ -251,7 +251,7 @@ def grounded_answer(question: str, center_entity: Optional[str] = None, max_hops
         except Exception as e:
             last_err = str(e)
             break
-    return f"(Kimi K3 error: {last_err})\nRaw subgraph:\n{subgraph}"
+    return f"(DeepSeek error: {last_err})\nRaw subgraph:\n{subgraph}"
 
 
 # ─── MCP-compatible tool function ─────────────────────────

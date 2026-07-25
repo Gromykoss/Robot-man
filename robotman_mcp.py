@@ -89,25 +89,28 @@ TOOLS = {
 def main():
     from mcp.server import Server
     from mcp.server.stdio import stdio_server
+    from mcp.types import Tool
     
     server = Server("robotman-mcp")
     
     @server.list_tools()
     async def list_tools():
         return [
-            {"name": "status", "description": "Check Robot-man cron jobs and content queue state"},
-            {"name": "analytics", "description": "Get weekly follower and engagement analytics"},
-            {"name": "next_post", "description": "Preview next scheduled content post"},
+            Tool(name="status", description="Check Robot-man cron jobs and content queue state", inputSchema={"type": "object", "properties": {}}),
+            Tool(name="analytics", description="Get weekly follower and engagement analytics", inputSchema={"type": "object", "properties": {}}),
+            Tool(name="next_post", description="Preview next scheduled content post", inputSchema={"type": "object", "properties": {}}),
         ]
     
     @server.call_tool()
-    async def call_tool(name: str, arguments: dict) -> str:
+    async def call_tool(name: str, arguments: dict):
+        from mcp.types import TextContent
         if name not in TOOLS:
-            return f"Unknown tool: {name}. Available: {', '.join(TOOLS)}"
+            return [TextContent(type="text", text=f"Unknown tool: {name}. Available: {', '.join(TOOLS)}")]
         try:
-            return TOOLS[name]()
+            result = TOOLS[name]()
+            return [TextContent(type="text", text=result)]
         except Exception as e:
-            return f"Error: {e}"
+            return [TextContent(type="text", text=f"Error: {e}")]
     
     import asyncio
     
