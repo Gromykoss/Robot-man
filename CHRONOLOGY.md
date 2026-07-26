@@ -1,51 +1,5 @@
 # Robot-man — Хронология
 
-## 25.07.2026 — Полный аудит и стабилизация (Hermes-driven)
-
-### Аудит
-- Полный построчный аудит 15 модулей (~6900 строк): 49 багов (2 CRITICAL, 7 HIGH, 21 MEDIUM, 19 LOW)
-- Документ: `docs/full-audit-2026-07-25.md`
-
-### Исправления (12+ коммитов)
-
-**Архитектура данных:**
-- `data_sources.py` — единый модуль контрактов: 12 NamedTuple, primary OJR + fallback legacy
-- `fill_ejo.py` — вырезаны прямые обращения к БД/API (~300 строк)
-
-**ЕЖО:**
-- B1-B7: фото base64, guard перегенерации, hide_rows, погода fallback, ПСД динамический, АйБиКон fallback, DRY планы
-- Формат имени: `ЕЖО_ДД.ММ.ГГ_АйБиКон.xlsx` (единый во всех модулях)
-- R853 L-U очистка
-- WhatsApp-кириллица: убран `'ЕЖО' in fname` (обрезается)
-- Diff формат: `R737 U (2.1.10): 185.5 → 873.2` вместо `col20`
-
-**OJR:**
-- Персонал: end_date закрывается при новых записях
-- Объёмы: ON CONFLICT без category, дубликатов нет
-- QA-парсер: не пишет volume=0 и статусные сообщения в work_log
-- Фото: запись в ojr_photo_log + local_path сохраняется
-
-**HIGH-баги:**
-- bridge_wrapper: exact match вместо substring (утечка сообщений)
-- Age gate 15с убран
-- Дубликаты secrets → config.py
-- Grok abuse vector → проверка имени «алихан»
-- datetime.utcnow() → timezone.utc
-- poll: ostatok≤0 filter убран
-- main_waha: VOR дедупликация, EJO guard убран
-
-**БД:**
-- Очистка: 28→15 MB (2924 строки мусора миграции, 4816 старых фактов, 3983 сообщения, 36 пустых таблиц)
-
-### Верифицировано (без багов)
-- AVR (КС-2, КС-6): не зависит от формата ЕЖО
-- Календарь/напоминания: БД, не файлы
-- STT: faster-whisper + Grok коррекция
-- Grok: проверка имени, без abuse vector
-
-### Осталось (низкий приоритет)
-- 21 MEDIUM + 19 LOW (качество кода, мёртвый код)
-
 ## 2026-07-24
 
 - Switched model to Kimi K3 (1M context)
@@ -451,3 +405,44 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Голос: first-person «I», English, технический, без эмодзи
 - Voice profile: VOICE_PROFILE.md
 - xurl CLI настроен: OAuth 1.0a + 2.0
+
+## 2026-07-09 — Content Pipeline v1 (восстановлено 25.07)
+
+- 5 specialist skills: x-researcher, content-writer, content-editor, viral-scorer, voice-updater
+- analytics_loop.py + MoA viral-score preset (Grok 4.5 ref → DeepSeek agg)
+- Cron: Self-Improvement Loop (ежедн 15:00 UTC)
+- IBuzovskyi content strategy adopted: ALL-CAPS заголовки, X Articles, promo-threads
+
+## 2026-07-14 — Build Blog Writer + skills (восстановлено 25.07)
+
+- build-blog-writer пост опубликован на @RobotsTJ500
+- 7+1 skills: war-story, skill-curation, research, engage, analytics, thread-entry, showcase
+- HOODRADAR reference для RAB9
+
+## 2026-07-19 — Ночной анализ: 5 патчей (восстановлено 25.07)
+
+- 6 ошибок найдено → 5 патчей в multi-project-rules
+- Правила: iOS-баг → реальное устройство, fabrication → читать исходники, фикс → smoke-test
+
+## 2026-07-20 — Стратегия v3 (восстановлено 25.07)
+
+- STRATEGY.md v3: два аккаунта, ниша, shadowban recovery 5 дней, анти-бан, метрики
+- Анализ 15 конкурентов → ниша «AI agent running production» ПУСТА
+- @RobotsTJ500: 🔴 search shadowban, `from:` поиск пуст
+- @gromykoss: 🟢 чист, 334 followers
+- Cron полная пересборка: Nightly Analysis (23:00), Daily Content Gate (Вт-Чт 10:00), Morning Tracked Scan (05:00)
+- Engaged @witcheer (13.2K): MoA как publishing gate
+- Пост @gromykoss: Kimi K3 аудит GULAG
+
+## 2026-07-21 — Diamond Pattern в robot-man (восстановлено 25.07)
+
+- Diamond Pattern (@EXM7777): Split → 3 parallel research streams → Merge → MoA Check → Human Gate
+- Grok Build: X-исследования делегируются в Grok Build (нативный X MCP, без моста)
+- Навык grok-build-delegation: шаблоны для research/monitor/bookmarks/competitor/threads
+
+## 2026-07-23 — Knowledge Graph (восстановлено 25.07)
+
+- Robot-man Knowledge Graph: 117 узлов, 109 связей
+- Pipeline: Extract → Resolve → Assemble → Query → Grounded Answer (Kimi K3)
+- Cron каждые 6 часов: 4506b578cfa3
+- Maintenance: stale/duplicates/contradictions/decay
