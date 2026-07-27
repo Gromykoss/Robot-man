@@ -465,3 +465,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Maintenance: stale/duplicates/contradictions/decay
 - **26.07.2026 04:12** — chore: auto-sync 26.07 (`2ec0f37`)
 - **27.07.2026 04:07** — chore: auto-sync 27.07 (`eac1528`)
+- **27.07.2026 04:08** — chore: auto-sync CHRONOLOGY 27.07 (`c4bbec8`)
