@@ -1,14 +1,32 @@
 {
-  "built_at": "2026-07-26T00:00:25.635395+00:00",
+  "built_at": "2026-07-27T00:00:41.876337+00:00",
   "stats": {
-    "nodes": 140,
-    "edges": 130,
+    "nodes": 145,
+    "edges": 134,
     "projects": 4,
-    "events": 36,
-    "people": 29,
+    "events": 37,
+    "people": 31,
     "tasks": 15
   },
   "nodes": [
+    [
+      "event/2026-07-26/Nightly Analysis: shadowban day 9, метри",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-26",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Nightly Analysis: shadowban day 9, метрики разворот",
+      {
+        "type": "unknown"
+      }
+    ],
     [
       "event/2026-07-24/Switched model to Kimi K3 (1M context)",
       {
@@ -544,7 +562,7 @@
       }
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -556,7 +574,13 @@
       }
     ],
     [
-      "person/@gromykoss",
+      "person/@RobotsTJ500",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Gromykoss",
       {
         "type": "person"
       }
@@ -784,6 +808,12 @@
       }
     ],
     [
+      "person/@grok",
+      {
+        "type": "person"
+      }
+    ],
+    [
       "person/@92dd2d26",
       {
         "type": "person"
@@ -851,6 +881,20 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-07-26/Nightly Analysis: shadowban day 9, метри",
+      "target": "2026-07-26",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-26/Nightly Analysis: shadowban day 9, метри",
+      "target": "Nightly Analysis: shadowban day 9, метрики разворот",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-07-24/Switched model to Kimi K3 (1M context)",
       "target": "2026-07-24",
@@ -1356,6 +1400,27 @@
       "confidence": 0.9
     },
     {
+      "source": "person/@gromykoss",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
       "source": "person/@RobotsTJ500",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -1377,24 +1442,10 @@
       "confidence": 0.85
     },
     {
-      "source": "person/@gromykoss",
+      "source": "person/@Gromykoss",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@gromykoss",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@gromykoss",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
@@ -1690,6 +1741,13 @@
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
+    },
+    {
+      "source": "person/@grok",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
     },
     {
       "source": "person/@92dd2d26",

@@ -84,20 +84,26 @@ def query_knowledge_graph(
         now = data.get("built_at", "unknown")
     
     # If center entity given, serialize subgraph
-    # If center entity given, serialize subgraph
     if center_entity:
         context = serialize_subgraph(center_entity, hops=max_hops)
     else:
-        # Serialize recent edges (last 50, or all if fewer)
-        all_edges = data.get("edges", [])
-        sample = all_edges[-50:]  # most recent
-        lines = []
-        for e in sample:
-            lines.append(f"{e['source']}  --[{e.get('predicate','?')}]-->  {e['target']}  [src: {Path(e.get('source_file','?')).name}]")
-        stats = data.get("stats", {})
-        context = f"Graph ({stats.get('nodes','?')} nodes):\n" + "\n".join(sorted(set(lines)))
-        if len(all_edges) > 50:
-            context += f"\n({len(all_edges)-50} more edges omitted)"
+        # Auto-center on most recent event for temporal questions
+        events = [n for n in G.nodes if n.startswith("event/")]
+        if events:
+            events_sorted = sorted(events, reverse=True)
+            center_entity = events_sorted[0]
+            context = serialize_subgraph(center_entity, hops=max_hops)
+        else:
+            # No events — serialize recent edges as before
+            all_edges = data.get("edges", [])
+            sample = all_edges[-50:]
+            lines = []
+            for e in sample:
+                lines.append(f"{e['source']}  --[{e.get('predicate','?')}]-->  {e['target']}  [src: {Path(e.get('source_file','?')).name}]")
+            stats = data.get("stats", {})
+            context = f"Graph ({stats.get('nodes','?')} nodes):\n" + "\n".join(sorted(set(lines)))
+            if len(all_edges) > 50:
+                context += f"\n({len(all_edges)-50} more edges omitted)"
     
     # If no question, just return context
     if not question:

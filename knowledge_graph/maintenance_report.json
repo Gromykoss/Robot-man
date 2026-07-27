@@ -1,23 +1,30 @@
 {
-  "generated_at": "2026-07-26T00:00:25.644271+00:00",
-  "graph_built_at": "2026-07-26T00:00:25.635395+00:00",
+  "generated_at": "2026-07-27T00:00:41.896306+00:00",
+  "graph_built_at": "2026-07-27T00:00:41.876337+00:00",
   "graph_stats": {
-    "nodes": 140,
-    "edges": 130,
+    "nodes": 145,
+    "edges": 134,
     "projects": 4,
-    "events": 36,
-    "people": 29,
+    "events": 37,
+    "people": 31,
     "tasks": 15
   },
   "checks": {
     "stale_nodes": [],
-    "duplicate_entities": [],
+    "duplicate_entities": [
+      {
+        "canonical": "person/@gromykoss",
+        "duplicate": "person/@Gromykoss",
+        "similarity": 1.0,
+        "action": "merge_into_canonical_preserve_provenance"
+      }
+    ],
     "contradictions": [],
     "confidence_decay": []
   },
   "summary": {
     "stale_nodes": 0,
-    "duplicate_entities": 0,
+    "duplicate_entities": 1,
     "contradictions": 0,
     "confidence_decay": 0
   }

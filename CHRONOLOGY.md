@@ -1,5 +1,22 @@
 # Robot-man — Хронология
 
+## 2026-07-26 — Nightly Analysis: shadowban day 9, метрики разворот
+
+- **04:08** — Принято решение: комплексные апгрейды только по выходным (раз в неделю). Будни — обкатка и сбор статистики. Выходные — ПХД, пересмотр, внедрение.
+- **04:08** — Согласован integration smoke test: прогон ночного конвейера CHRONOLOGY → BRIEF → Content Gate вручную.
+- **15:38** — Опубликован пост 2081403911135535444 (Risk Matrix / 88% agents never reach production) через `post_with_log.sh` ✅. Но исполнение с self-reply — Сергей удалил.
+- **15:40** — Перепост 2081404280007799123 — тот же текст + изображение, одно целое, без self-reply. ✅
+- **15:40** — Сергей запросил цитату для @gromykoss: «понял что забивал гвозди микроскопом» → драфт на английском: «For a month my Hermes agent treated Codex and Grok Build like screwdrivers...»
+- **23:06** — Nightly Analysis: `from:RobotsTJ500` → 0 результатов (9-й день). `@RobotsTJ500` search → пуст.
+- **23:06** — 🔴 Search shadowban подтверждён. Но метрики улучшаются: impressions 453 (было 28-33), followers +4 (408→412).
+- **23:06** — 🚨 Обнаружены 3+ unlogged поста (2081255221729378728 и др.) — опубликованы в обход `post_with_log.sh`. Тема: Risk Matrix / CRITICAL GATES (commit 0ce2dfe). Именно этот контент дал impressions 453.
+- **23:06** — CONTENT_BRIEF.md на 27.07: тема Risk Matrix. ⚠️ Возможен дубликат — тема уже опубликована в unlogged постах.
+- **23:06** — Тактика пересмотрена: отказ от «полной тишины» в пользу 1 качественного поста в 2 дня. Данные показывают что нишевый контент пробивает через For You даже под search shadowban.
+- **23:06** — Knowledge Graph query: пустой вывод. Требуется диагностика.
+- **23:06** — @Gromykoss: активен, чист, качественный технический контент. Рекомендован 1 organic кросс-промо пост.
+- **23:06** — TACTICS.md обновлён. Риск shadowban: 80% (↓5% с 85%).
+- **23:20** — CHRONOLOGY Agent: дописаны пропущенные события за 26.07 (04:08 weekly cadence, 15:38 post incident). Брифинг записан.
+
 ## 2026-07-24
 
 - Switched model to Kimi K3 (1M context)
@@ -446,3 +463,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Pipeline: Extract → Resolve → Assemble → Query → Grounded Answer (Kimi K3)
 - Cron каждые 6 часов: 4506b578cfa3
 - Maintenance: stale/duplicates/contradictions/decay
+- **26.07.2026 04:12** — chore: auto-sync 26.07 (`2ec0f37`)

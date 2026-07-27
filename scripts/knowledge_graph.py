@@ -14,22 +14,35 @@ GRAPH_FILE = os.path.join(GRAPH_DIR, "graph.json")
 os.makedirs(GRAPH_DIR, exist_ok=True)
 
 # ─── Stage 1: EXTRACT ───────────────────────────────────────
-def extract_entities_from_file(filepath: str) -> list[dict]:
+def extract_entities_from_file(filepath: str, days: int = None) -> list[dict]:
     """Extract entities and S-P-O triples from a markdown file.
-    In production: DeepSeek API call with Pydantic schema.
-    For pilot: regex-based extraction from structured CHRONOLOGY format."""
+    If days is set, only extract events from the last N days."""
     triples = []
     with open(filepath) as f:
         content = f.read()
     
+    cutoff = None
+    if days:
+        from datetime import timedelta
+        cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+    
     # Extract from CHRONOLOGY format: ## YYYY-MM-DD — title
     for match in re.finditer(r'##\s+(\d{4}-\d{2}-\d{2})\s*[-—]\s*(.+)', content):
-        date, title = match.groups()
-        entity_id = f"event/{date}/{title[:40].strip()}"
+        date_str, title = match.groups()
+        try:
+            event_date = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        
+        # Skip old events if filtering
+        if cutoff and event_date < cutoff:
+            continue
+        
+        entity_id = f"event/{date_str}/{title[:40].strip()}"
         triples.append({
             "subject": entity_id,
             "predicate": "occurred_on",
-            "object": date,
+            "object": date_str,
             "source": filepath,
             "confidence": 0.95
         })
@@ -92,16 +105,23 @@ def resolve_entities(triples: list[dict]) -> list[dict]:
     return resolved
 
 # ─── Stage 3: ASSEMBLE ───────────────────────────────────────
+VALID_TYPES = {"event", "person", "project", "task"}
+
 def assemble_graph(triples: list[dict]) -> nx.DiGraph:
-    """Build directed graph with typed edges and provenance."""
+    """Build directed graph with all extracted triples (entities + literals).
+    No co-occurrence inference — only direct extracted edges."""
     G = nx.DiGraph()
+
     for t in triples:
         s, p, o = t["subject"], t["predicate"], t["object"]
+        src = t["source"]
+
         if not G.has_node(s):
-            G.add_node(s, type=s.split("/")[0] if "/" in s else "unknown")
+            G.add_node(s)
         if not G.has_node(o):
-            G.add_node(o, type=o.split("/")[0] if "/" in o else "unknown")
-        G.add_edge(s, o, predicate=p, source=t["source"], confidence=t["confidence"])
+            G.add_node(o)
+        G.add_edge(s, o, predicate=p, source=src, confidence=t["confidence"])
+
     return G
 
 # ─── Stage 4: QUERY ──────────────────────────────────────────
@@ -142,10 +162,10 @@ def build_graph():
     """Full pipeline: extract → resolve → assemble → save."""
     all_triples = []
     
-    # Extract from CHRONOLOGY
+    # Extract from CHRONOLOGY — last 3 days only
     chron = os.path.join(ROBOT_MAN, "CHRONOLOGY.md")
     if os.path.exists(chron):
-        all_triples.extend(extract_entities_from_file(chron))
+        all_triples.extend(extract_entities_from_file(chron, days=7))
     
     # Extract from memory
     mem = os.path.expanduser("~/.hermes/profiles/robot-man/memories/MEMORY.md")
