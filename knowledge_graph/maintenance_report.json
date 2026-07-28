@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-27T00:00:41.896306+00:00",
-  "graph_built_at": "2026-07-27T00:00:41.876337+00:00",
+  "generated_at": "2026-07-28T00:00:13.608272+00:00",
+  "graph_built_at": "2026-07-28T00:00:13.595940+00:00",
   "graph_stats": {
-    "nodes": 145,
-    "edges": 134,
+    "nodes": 148,
+    "edges": 137,
     "projects": 4,
-    "events": 37,
+    "events": 38,
     "people": 31,
     "tasks": 15
   },
@@ -13,8 +13,8 @@
     "stale_nodes": [],
     "duplicate_entities": [
       {
-        "canonical": "person/@gromykoss",
-        "duplicate": "person/@Gromykoss",
+        "canonical": "person/@Gromykoss",
+        "duplicate": "person/@gromykoss",
         "similarity": 1.0,
         "action": "merge_into_canonical_preserve_provenance"
       }

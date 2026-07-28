@@ -1,5 +1,20 @@
 # Robot-man — Хронология
 
+## 2026-07-27 — Nightly Analysis: shadowban day 10, OAuth credits depleted
+
+- **23:07** — Nightly Analysis: `from:RobotsTJ500` → 0 результатов (10-й день). `@RobotsTJ500` → пуст.
+- **23:07** — 🔴 Search shadowban подтверждён 10-й день. Followers 412 (без изменений).
+- **23:07** — 🔴 OAuth 2.0 credits depleted (402). Невозможно получить impressions, timeline, mentions. OAuth 1.0a работает для write.
+- **23:07** — Постов за 27.07: 0. День полной тишины — план «1 пост в 2 дня» выполнен.
+- **23:07** — 2081404280007799123 (Risk Matrix/88% agents, 26.07): ❤️1. 2081255221729378728 (CRITICAL GATES, 26.07): ❤️0. Дубликат темы подтверждён.
+- **23:07** — CONTENT_BRIEF от 27.07 (Alikhan audit bugs): свежая тема, не дубликат. Готов к Content Gate 28.07 10:00.
+- **23:07** — Подтверждено: 2081357533986340921 и 2081269767839875406 — чужие посты (@grok, @LunariPro), не @RobotsTJ500.
+- **23:07** — @Gromykoss: 341 followers, активен. Рекомендован кросс-промо пост про 10 дней shadowban.
+- **23:07** — TACTICS.md обновлён. Риск shadowban: 80% (без изменений). Уровень агрессии: 5%.
+- **23:07** — Контент-банк: P0 = Alikhan audit bugs (BRIEF 27.07), P1 = 10 дней shadowban experience.
+- **23:07** — Критическое: пополнить OAuth 2.0 credits. Без них аналитика ослеплена.
+- **23:20** — CHRONOLOGY Agent: CHRONOLOGY свежая (23:07 Nightly Analysis), дополнений нет. Брифинг 27.07 записан. KG rebuild (4506b578cfa3) отработал в 18:02 — 5.3ч назад. Published posts: 23 total, последний 26.07.
+
 ## 2026-07-26 — Nightly Analysis: shadowban day 9, метрики разворот
 
 - **04:08** — Принято решение: комплексные апгрейды только по выходным (раз в неделю). Будни — обкатка и сбор статистики. Выходные — ПХД, пересмотр, внедрение.
@@ -466,3 +481,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **26.07.2026 04:12** — chore: auto-sync 26.07 (`2ec0f37`)
 - **27.07.2026 04:07** — chore: auto-sync 27.07 (`eac1528`)
 - **27.07.2026 04:08** — chore: auto-sync CHRONOLOGY 27.07 (`c4bbec8`)
+- **27.07.2026 04:08** — chore: CHRONOLOGY final 27.07 (`5d550fa`)
