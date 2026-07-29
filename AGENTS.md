@@ -150,8 +150,11 @@ Extract (regex из CHRONOLOGY+memory+strategy) → Resolve (нормализа�
 
 ## Инструментарий
 
-- **X MCP (v1 — 15.07.2026)** — 24 инструмента X API как родные MCP: поиск, юзеры, закладки, тренды, новости. Подключён через `xurl mcp` bridge. Предпочитать вместо `x_search`.
-- **xurl CLI** — write-операции: post, reply, like, follow (OAuth 1.0a). X MCP пока read-only.
+- **agent-reach + `twitter` CLI** — scraping (feed / search / followers). Заменяет `x-monitor`. Skill: `x-scraping-stack`.
+- **xactions** (+ `xactions-mcp`) — automation: non-followers, bulk unfollow, scrape, tweets, search. Skill: `x-scraping-stack`.
+- **xurl CLI** — write-операции: post, reply, like, follow (OAuth 1.0a). Публикация только через `post_with_log.sh`.
+- **X MCP** — 24 read-tool X API через `xurl mcp` bridge (если есть credits).
+- **x-monitor** — ⛔ DEPRECATED → `robot-man/x-monitor.deprecated`. Не использовать.
 - **voice-match skill** — голосовые профили
 - **Метод Мэтта (Train Voice):** реплаи > посты
 

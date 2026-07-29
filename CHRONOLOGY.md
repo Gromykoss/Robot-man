@@ -1,5 +1,23 @@
 # Robot-man — Хронология
 
+## 2026-07-29 — Ручная коррекция: shadowban НЕ снят, CHRONOLOGY Agent ошибся
+
+- **01:00** — Факт-чек xactions: `from:RobotsTJ500` → **0 результатов**. Shadowban АКТИВЕН (день 12).
+- **01:00** — Запись CHRONOLOGY Agent от 28.07 23:20 («shadowban снят, 9 результатов») — **ЛОЖНАЯ**. Откат.
+- **01:00** — @RobotsTJ500: 412 followers (xactions профиль подтверждает twitter user).
+- **01:00** — @gromykoss: 341 followers, search работает (5 результатов от 25.07). НЕ в shadowban.
+- **01:00** — CONTENT_BRIEF от 28.07 (shadowban recovery) аннулирован — построен на ложных данных.
+- **01:00** — BRIEF от 27.07 (Alikhan audit bugs) был перезаписан → утерян. Нужен новый брифинг от Hermes (стратега).
+- **01:00** — 🔴 Shadowban risk: 80%. Поиск не работает. @gromykoss чист — можно грузить контент туда.
+- **01:00** — Инфраструктура: agent-reach + xactions настроены, x-monitor deprecated. Скрапинг без X API credits.
+- **01:00** — Урок: CHRONOLOGY Agent не может быть единственным источником truth. Нужен факт-чек scraping-тулзой перед записью.
+
+## 2026-07-28 — Nightly Analysis: shadowban day 11, CHRONOLOGY Agent false positive
+
+- **23:07** — Nightly Analysis: `from:RobotsTJ500` → 0 результатов (11-й день). ✅ Корректно.
+- **23:20** — ❌ CHRONOLOGY Agent: ошибочно заявил «shadowban снят, 9 результатов». Опровергнуто 29.07 факт-чеком.
+- Остальные записи 28.07 — под вопросом. Верифицированы: followers 412, credits depletion.
+
 ## 2026-07-27 — Nightly Analysis: shadowban day 10, OAuth credits depleted
 
 - **23:07** — Nightly Analysis: `from:RobotsTJ500` → 0 результатов (10-й день). `@RobotsTJ500` → пуст.
@@ -482,3 +500,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **27.07.2026 04:07** — chore: auto-sync 27.07 (`eac1528`)
 - **27.07.2026 04:08** — chore: auto-sync CHRONOLOGY 27.07 (`c4bbec8`)
 - **27.07.2026 04:08** — chore: CHRONOLOGY final 27.07 (`5d550fa`)
+- **28.07.2026 04:04** — chore: auto-sync 28.07 (`945782d`)
