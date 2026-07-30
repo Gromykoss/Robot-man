@@ -1,16 +1,46 @@
 {
-  "built_at": "2026-07-29T00:00:45.659561+00:00",
+  "built_at": "2026-07-30T00:00:58.402979+00:00",
   "stats": {
-    "nodes": 151,
-    "edges": 139,
+    "nodes": 159,
+    "edges": 146,
     "projects": 4,
-    "events": 39,
-    "people": 31,
+    "events": 41,
+    "people": 34,
     "tasks": 15
   },
   "nodes": [
     [
-      "event/2026-07-28/CHRONOLOGY Agent: search shadowban LIFTE",
+      "event/2026-07-29/Nightly Analysis: shadowban день 13, кон",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-29",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Nightly Analysis: shadowban день 13, контент-банк пуст, @gromykoss -2 followers",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-29/Ручная коррекция: shadowban НЕ снят, CHR",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Ручная коррекция: shadowban НЕ снят, CHRONOLOGY Agent ошибся",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-28/Nightly Analysis: shadowban day 11, CHRO",
       {
         "type": "event"
       }
@@ -22,7 +52,7 @@
       }
     ],
     [
-      "CHRONOLOGY Agent: search shadowban LIFTED, OAuth 2.0 credits восстановлены",
+      "Nightly Analysis: shadowban day 11, CHRONOLOGY Agent false positive",
       {
         "type": "unknown"
       }
@@ -598,7 +628,7 @@
       }
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -610,13 +640,31 @@
       }
     ],
     [
-      "person/@gromykoss",
+      "person/@RobotsTJ500",
       {
         "type": "person"
       }
     ],
     [
       "person/@witcheer",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Coopbuilds1",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@clawdtalk",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@nykdotdev",
       {
         "type": "person"
       }
@@ -918,15 +966,43 @@
   ],
   "edges": [
     {
-      "source": "event/2026-07-28/CHRONOLOGY Agent: search shadowban LIFTE",
+      "source": "event/2026-07-29/Nightly Analysis: shadowban день 13, кон",
+      "target": "2026-07-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-29/Nightly Analysis: shadowban день 13, кон",
+      "target": "Nightly Analysis: shadowban день 13, контент-банк пуст, @gromykoss -2 followers",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-29/Ручная коррекция: shadowban НЕ снят, CHR",
+      "target": "2026-07-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-29/Ручная коррекция: shadowban НЕ снят, CHR",
+      "target": "Ручная коррекция: shadowban НЕ снят, CHRONOLOGY Agent ошибся",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-28/Nightly Analysis: shadowban day 11, CHRO",
       "target": "2026-07-28",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-07-28/CHRONOLOGY Agent: search shadowban LIFTE",
-      "target": "CHRONOLOGY Agent: search shadowban LIFTED, OAuth 2.0 credits восстановлены",
+      "source": "event/2026-07-28/Nightly Analysis: shadowban day 11, CHRO",
+      "target": "Nightly Analysis: shadowban day 11, CHRONOLOGY Agent false positive",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
@@ -1464,27 +1540,6 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@RobotsTJ500",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@RobotsTJ500",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@RobotsTJ500",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
-    },
-    {
       "source": "person/@gromykoss",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -1506,6 +1561,27 @@
       "confidence": 0.85
     },
     {
+      "source": "person/@RobotsTJ500",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
       "source": "person/@witcheer",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -1517,6 +1593,27 @@
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Coopbuilds1",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@clawdtalk",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@nykdotdev",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {

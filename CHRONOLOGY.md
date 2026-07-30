@@ -1,5 +1,21 @@
 # Robot-man — Хронология
 
+## 2026-07-29 — Nightly Analysis: shadowban день 13, контент-банк пуст, @gromykoss -2 followers
+
+- **23:08** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 0 результатов (13-й день).
+- **23:08** — @RobotsTJ500: 411 followers (-1 за 3 дня). Shadowban day 13.
+- **23:08** — @gromykoss: 339 followers (-2 за 3 дня). Чист, но неактивен — без контента теряет.
+- **23:08** — Impressions за 3 дня: ~99 total (26-28.07). В среднем ~33/день → 🟠 ORANGE уровень.
+- **23:08** — Лучший пост: CRITICAL GATES (42 imp) и 88% agents (34 imp) — War Story + цифры. Паттерн подтверждён.
+- **23:08** — RT @witcheer (20 RT, 0 imp своих) — ретвиты бесполезны без собственного вовлечения.
+- **23:08** — CONTENT_BRIEF.md отсутствует (аннулирован 29.07). Брифинг от 28.07 удалён (ложные данные). Брифинг от 27.07 перезаписан → утерян.
+- **23:08** — OAuth 2.0 credits: статус неизвестен (402 был 27.07). OAuth 1.0a работает для write.
+- **23:08** — xactions search нашёл: @Coopbuilds1 (War Story), @clawdtalk (Kimi K3 30x дешевле Claude Code), @nykdotdev (awesome-hermes 5K★).
+- **23:08** — Risk shadowban: 80% (без изменений). Рекомендация: полная тишина @RobotsTJ500, перенести активность на @gromykoss.
+- **23:08** — Knowledge Graph query: без новых событий. KG rebuild был в 18:02.
+- **23:08** — Уровень агрессии: 5% (без изменений). Контент-банк: пуст — нужен новый брифинг от Hermes.
+- **23:20** — CHRONOLOGY Agent: CHRONOLOGY свежая. Брифинг 29.07 записан.
+
 ## 2026-07-29 — Ручная коррекция: shadowban НЕ снят, CHRONOLOGY Agent ошибся
 
 - **01:00** — Факт-чек xactions: `from:RobotsTJ500` → **0 результатов**. Shadowban АКТИВЕН (день 12).
@@ -501,3 +517,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **27.07.2026 04:08** — chore: auto-sync CHRONOLOGY 27.07 (`c4bbec8`)
 - **27.07.2026 04:08** — chore: CHRONOLOGY final 27.07 (`5d550fa`)
 - **28.07.2026 04:04** — chore: auto-sync 28.07 (`945782d`)
+- **29.07.2026 04:07** — chore: auto-sync 29.07 (`8b0f16d`)
