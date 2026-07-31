@@ -1,59 +1,121 @@
-# CONTENT_BRIEF — 30.07.2026
+# CONTENT_BRIEF — 31.07.2026
 
 **Автор:** Hermes (default) — стратег
 **Получатель:** robot-man (профиль) — голос/исполнитель
-**Цель:** один пост для @RobotsTJ500
+**Цель:** два поста для @gromykoss — обновление статуса проектов
 
 ---
 
-## Тема
+## ПОСТ 1 — GULAG.online: 9 дней после «5 агентов»
 
-How I deleted 3 components, 2 cron jobs, and my own bot — and the system got simpler, not weaker
+### Тема
 
-## Факты (верифицированы Hermes)
+Что изменилось в GULAG.online за 9 дней после поста про 5 Hermes-агентов.
+
+### Факты (верифицированы Hermes)
 
 | # | Факт | Источник |
 |---|------|----------|
-| 1 | Alikhan прошёл полную миграцию с промежуточного Waha-бота на прямой Hermes Bridge (Baileys, mode=bot, порт 3000) | Alikhan CHRONOLOGY 29.07.2026, строки 43-99 |
-| 2 | Удалены 3 компонента: `main_waha.py` (poll 3s), `bridge_wrapper.py` (monkey-patch), Evolution API Docker | Alikhan CHRONOLOGY 29.07.2026, строка 32 |
-| 3 | Архитектура упрощена с 6 слоёв до 2: `WhatsApp → Bridge :3000 → Hermes Agent → Alikhan` (прямой агент) | Alikhan CHRONOLOGY 29.07.2026, строки 28-30 |
-| 4 | Создан `whatsapp_commands.py` (302 строки) — диспетчер команд v2 для двух WhatsApp-групп: песочница + боевая | Alikhan CHRONOLOGY 29.07.2026, строка 23 |
-| 5 | Бот `alikhan.service` остановлен. Бот больше не крутится отдельным процессом — Alikhan теперь напрямую в группах как агент Hermes | Alikhan CHRONOLOGY 29.07.2026, строки 7, 33 |
-| 6 | Критический баг 28.07: бот не был перезапущен после фикса `01edd49` — код на диске новый, код в памяти старый. Ошибка `'NoneType' object has no attribute 'fetchone'` всё ещё активна | Alikhan CHRONOLOGY 28.07.2026, строки 396-400 |
+| 1 | 11 активных пользователей | GULAG CHRONOLOGY.md, Matrix API |
+| 2 | v109 APK: исправлен баг клавиатуры (зазор + тулбар), 2 круга Codex+Grok → 100% PASS | GULAG CHRONOLOGY.md 27.07.2026 |
+| 3 | Ketesa v1.4.0 на /admin/ — Basic auth + fail2ban | GULAG CHRONOLOGY.md 28.07.2026 |
+| 4 | Diamond Pattern Pilot #2: bug-fix/deploy/audit workflows | GULAG AGENTS.md |
+| 5 | Kimi K3: 1M контекст, $3/M input | GULAG CHRONOLOGY.md 24.07.2026 |
+| 6 | Codex + Grok Build — весь код, нулевая маржинальная стоимость | GULAG AGENTS.md (CNC-ПРАВИЛО) |
+| 7 | Само-хост: Matrix/Synapse, Vanilla JS клиент, Expo app, Ketesa | GULAG AGENTS.md |
+| 8 | nginx Basic auth конфликт с Synapse — решён через map по Authorization | GULAG CHRONOLOGY.md 28.07.2026 |
+| 9 | Кастомные эмодзи «СИМВОЛЫ ЗОНЫ» (28 символов) | GULAG CHRONOLOGY.md 05.07.2026 |
 
-## Контекст проекта
+### Контекст проекта
 
-**Проект:** Alikhan — стройка в Кыргызстане (2700м), WhatsApp-бот, ЕЖО, ОЖР
-**CHRONOLOGY:** `/home/hermes-workspace/Alikhan-migration/CHRONOLOGY.md`
-**AGENTS.md:** `/home/hermes-workspace/Alikhan-migration/AGENTS.md`
+**Проект:** GULAG
+**CHRONOLOGY:** `/home/hermes-workspace/gooolag/CHRONOLOGY.md`
+**AGENTS.md:** `/home/hermes-workspace/gooolag/AGENTS.md`
 
-## Формат и голос
+### Формат и голос
 
 | Параметр | Значение |
 |----------|----------|
-| Тип поста | War Story |
-| Аккаунт | @RobotsTJ500 |
-| Голос | English first-person «I» |
-| Длина | до 4000 (note_tweet) |
-| Hashtags | #BuildingInPublic #AIAgents #HermesAgent #WhatsApp |
-| Изображение | да — техническая архитектурная диаграмма «до/после» |
+| Тип поста | Tech Breakdown — thread (2-3 твита) |
+| Аккаунт | @gromykoss |
+| Голос | Русский, производственный, без хайпа |
+| Длина | до 280 × 3 |
+| Hashtags | #BuildInPublic #Hermes #Matrix #SelfHosted #AI |
+| Изображение | нет |
 
-## Запрещено
+### Запрещено
 
 - ALL CAPS в хуках (всегда)
 - Self-reply (всегда)
 - URL в теле поста (всегда)
 - Выдуманные детали (всегда)
-- Не углубляться в ЕЖО/ОЖР/ВОР термины без пояснения
-- Не называть точных имён файлов (main_waha.py, bridge_wrapper.py) — заменить на «my polling bot», «my monkey-patch wrapper»
+- Упоминать GitHub-репозиторий (приватный)
 
-## Tone-направление
+### Tone-направление
 
-«Я выбросил собственного бота и это лучшее архитектурное решение за месяц» — практичный, без пафоса, с self-deprecating юмором про то как агент осознал что он сам и есть бот.
+Сухо, по делу, с гордостью за production-результат. «Вот что мы построили за 9 дней.»
 
-## Deadline
+### Ссылка на старый пост
 
-**Черновик к:** 10:00 UTC 30.07.2026
+https://x.com/Gromykoss/status/2079392228754284866 — «5 Hermes agents, 1 senior, 4 juniors, GULAG — prison warden»
+
+### Deadline
+
+**Черновик к:** 18:00 UTC
+**Публикация:** после approval Сергея
+
+---
+
+## ПОСТ 2 — Robot-man: обновление статуса
+
+### Тема
+
+Что изменилось в robot-man после поста про Knowledge Graph (117 nodes).
+
+### Факты (верифицированы Hermes)
+
+| # | Факт | Источник |
+|---|------|----------|
+| 1 | Knowledge Graph: cron каждые 6 часов перестраивает граф | robot-man AGENTS.md |
+| 2 | Diamond Pattern: Split → 3 research streams → Merge → MoA Check → Human Gate | robot-man AGENTS.md |
+| 3 | Content pipeline: Hermes (BRIEF) → robot-man → MoA → approval → публикация | robot-man AGENTS.md |
+| 4 | Два аккаунта: @RobotsTJ500 (AI-агентность, техника), @gromykoss (личный бренд, производство) | robot-man AGENTS.md |
+
+### Контекст проекта
+
+**Проект:** robot-man
+**CHRONOLOGY:** `/home/hermes-workspace/robot-man/CHRONOLOGY.md`
+**AGENTS.md:** `/home/hermes-workspace/robot-man/AGENTS.md`
+
+### Формат и голос
+
+| Параметр | Значение |
+|----------|----------|
+| Тип поста | Simple Insight — 1 твит |
+| Аккаунт | @gromykoss |
+| Голос | Русский, сжато, обновление статуса |
+| Длина | до 280 |
+| Hashtags | #BuildInPublic #Hermes #KnowledgeGraph #AI |
+| Изображение | нет |
+
+### Запрещено
+
+- ALL CAPS в хуках (всегда)
+- Self-reply (всегда)
+- URL в теле поста (всегда)
+- Выдуманные детали (всегда)
+
+### Tone-направление
+
+Короткое обновление: граф жив, пайплайн работает, два аккаунта.
+
+### Ссылка на старый пост
+
+https://x.com/Gromykoss/status/2080590958547100042 — «knowledge graph 117 nodes, 109 edges, kimi k3 primary model»
+
+### Deadline
+
+**Черновик к:** 18:00 UTC
 **Публикация:** после approval Сергея
 
 ---
@@ -61,11 +123,11 @@ How I deleted 3 components, 2 cron jobs, and my own bot — and the system got s
 ## Процесс robot-man
 
 1. Прочитать этот брифинг
-2. Прочитать CHRONOLOGY.md Alikhan (раздел 29.07.2026, строки 1-99)
-3. Прочитать AGENTS.md Alikhan (контекст)
-4. Написать драфт в голосе @RobotsTJ500 (VOICE_PROFILE.md)
+2. Прочитать CHRONOLOGY.md указанного проекта (раздел за последние 3 дня)
+3. Прочитать AGENTS.md указанного проекта (контекст)
+4. Написать драфт в голосе аккаунта (см. VOICE_PROFILE_GROMYKOSS.md)
 5. MoA-проверка: `/moa deepseek-xai` + `/moa viral-score`
 6. Факт-чек: сверить каждую цифру с брифингом
 7. При нарушениях → переписать
 8. Отправить драфт на approval Сергею
-9. После «ок» → `bash post_with_log.sh "текст" [image.png]`
+9. После «ок» → `bash post_with_log.sh "текст"`

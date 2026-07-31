@@ -1,5 +1,17 @@
 # Robot-man — Хронология
 
+## 2026-07-30 — Nightly Analysis: shadowban день 14, пост «API spending audit» — 12 views 0❤️
+
+- **23:05** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 0 результатов (14-й день shadowban).
+- **23:05** — @RobotsTJ500: 411 followers (без изменений за сутки). @gromykoss: 339 followers (без изменений).
+- **23:05** — Последний пост 2082773363601129652 (30.07 10:20 UTC) — «API spending audit / cron jobs don't have wallets». Опубликован через post_with_log.sh. Результат: 12 views, 0 ❤️, 0 ↩️. Контент качественный (War Story, цифры, 4000 символов, изображение), но shadowban убивает охват.
+- **23:05** — Impressions за 3 дня: ~99 total (~33/день) → 🟠 ORANGE. Падение с 453 (26.07) до 33/день. Причина: shadowban + нулевой engagement.
+- **23:05** — CONTENT_BRIEF.md отсутствует. Контент-банк пуст. Нет тем для Daily Content Gate.
+- **23:05** — OAuth 2.0 credits: исчерпаны (402 с 27.07). OAuth 1.0a работает для write.
+- **23:05** — @gromykoss: ответ Tony Simons (2078809136431813111) — 1 ❤️, 0 ↩️, 44 views. Слабый охват, но аккаунт чистый.
+- **23:05** — Риск shadowban: 85% (↑5% за 2 дня). Рекомендация: полная тишина @RobotsTJ500 минимум 5 дней. Агрессия: 3%.
+- **23:20** — CHRONOLOGY Agent: CHRONOLOGY свежая. Брифинг 30.07 записан.
+
 ## 2026-07-29 — Nightly Analysis: shadowban день 13, контент-банк пуст, @gromykoss -2 followers
 
 - **23:08** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 0 результатов (13-й день).
@@ -518,3 +530,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **27.07.2026 04:08** — chore: CHRONOLOGY final 27.07 (`5d550fa`)
 - **28.07.2026 04:04** — chore: auto-sync 28.07 (`945782d`)
 - **29.07.2026 04:07** — chore: auto-sync 29.07 (`8b0f16d`)
+- **30.07.2026 04:04** — chore: auto-sync 30.07 (`7979882`)
