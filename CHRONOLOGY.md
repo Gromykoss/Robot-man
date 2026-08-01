@@ -1,5 +1,31 @@
 # Robot-man — Хронология
 
+## 2026-07-31 — Nightly Analysis: shadowban день 15, @gromykoss +1 follower, GULAG thread готов
+
+- **23:07** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 9 результатов через xurl (привилегированный доступ), но обычный search — 0.
+- **23:07** — @RobotsTJ500: 411 followers (стабильно 4 дня). Посты: API spending audit (30.07 — 15 imp, 1❤️), Anthropic report (31.07 — 6 imp, 0❤️). Падение с 453 до 6 за 5 дней.
+- **23:07** — @gromykoss: 340 followers (+1). Reply @HermesWatcher — 144 imp, 2❤️, 2💬, 2🔖 (4.2% ER). Search работает. GULAG thread (27 дней эволюции) опубликован — 32 imp, 2❤️.
+- **23:07** — Рекомендация аналитика: @RobotsTJ500 — тишина 5+ дней. @gromykoss — публиковать GULAG thread, увеличить reply-активность. Контент-банк пуст — нужен новый брифинг.
+- **23:07** — Тренды рынка: AgentMemory (26K★), self-improving agent loops (DSPy), shadowban recovery threads. Ниша «AI agent running production» всё ещё пуста.
+- **23:07** — Impressions: 🟠 ORANGE (6-15/день). OAuth 2.0 credits: 🔴 $0 (402 с 27.07).
+- **23:20** — CHRONOLOGY Agent: CHRONOLOGY свежая (23:07 Nightly Analysis). Брифинг 31.07 записан.
+
+## 2026-07-31 — 🔐 Аудит безопасности: удаление секретов из репозитория
+
+- **Инициатор:** двойной аудит безопасности профиля Robot-man.
+- **Найдены секреты в репозитории:**
+  - **CRITICAL:** Matrix Access Token в `gulag-inject.js` (строка 502) → `syt_Z3JybXlrb3Nz_...` (скомпрометирован).
+  - **HIGH:** Пароль GULAG `Gromykoss1306!` в 5 тестовых файлах (test_login.py, test_member_popup.py, test_member_popup2.py, test_member_popup3.py, test-member-popup.mjs).
+  - **CRITICAL:** X cookies (`auth_token` + `ct0`) в `x-monitor.deprecated/.env` (не в git, только на диске).
+- **Выполненные действия:**
+  1. `git filter-branch --tree-filter` — удалил все 6 секретных файлов (gulag-inject.js + 5 тестовых) из всех 63 коммитов (ветки main + main.war_story_draft).
+  2. Удалил `x-monitor.deprecated/.env` с диска (`rm`).
+  3. Добавил в `.gitignore`: `gulag-inject.js`, `test_*.py`, `test-*.mjs`, `x-monitor.deprecated/`.
+  4. Удалил ветку `main.war_story_draft` (содержала секреты, не используется).
+  5. `git reflog expire --expire=now --all` + `git gc --aggressive --prune=now` — полная очистка.
+- **Статус:** Репозиторий очищен локально. Force push НЕ выполнялся — будет отдельно после проверки.
+- **Рекомендация:** скомпрометированный Matrix токен необходимо отозвать на стороне Matrix-сервера. Пароль GULAG — сменить. X cookies — сбросить сессию в X.
+
 ## 2026-07-30 — Nightly Analysis: shadowban день 14, пост «API spending audit» — 12 views 0❤️
 
 - **23:05** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 0 результатов (14-й день shadowban).
@@ -531,3 +557,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **28.07.2026 04:04** — chore: auto-sync 28.07 (`945782d`)
 - **29.07.2026 04:07** — chore: auto-sync 29.07 (`8b0f16d`)
 - **30.07.2026 04:04** — chore: auto-sync 30.07 (`7979882`)
+- **31.07.2026 04:04** — chore: auto-sync 31.07 (`6a5994b`)

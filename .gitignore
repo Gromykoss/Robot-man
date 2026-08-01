@@ -5,3 +5,9 @@ __pycache__/
 .env.*
 *.log
 *.tmp
+
+# Security: secret-bearing files (audit 31.07.2026)
+gulag-inject.js
+test_*.py
+test-*.mjs
+x-monitor.deprecated/

@@ -91,37 +91,41 @@ BRIEF (Hermes) → CHRONOLOGY проекта → AGENTS.md проекта → Д
 
 ---
 
-## 🧠 Knowledge Graph — shared memory (Anthropic Graph Engineering, 23.07.2026)
+## 🧠 Knowledge Graph + Circulation Graph (MGT_maccha #7, 31.07.2026)
 
-**Проблема:** память агентов умирает с контекстным окном. Knowledge Graph — постоянная structured память.
+**Проблема:** память агентов умирает с контекстным окном. Knowledge Graph хранит факты. Circulation Graph замыкает их в поток.
+
+**Принцип:** информация не хранится — она течёт.
+`работа → решение → артефакт → результат → обратно в работу`
 
 **Файлы:**
 - `knowledge_graph/schema.py` — Pydantic-модели (Triple, Entity, Edge)
-- `knowledge_graph/query_tool.py` — запросы к графу + `grounded_answer` (Kimi K3)
-- `knowledge_graph/maintenance.py` — Step 5: stale/duplicates/contradictions/decay → maintenance_report.json
+- `knowledge_graph/query_tool.py` — запросы к графу + `grounded_answer`
+- `knowledge_graph/maintenance.py` — stale/duplicates/contradictions/decay
+- `knowledge_graph/circulation.py` — circulation edges (CAUSED, FIXED_BY, RESULTED_IN, LEARNED_FROM, APPLIED_TO)
 - `knowledge_graph/graph.json` — сам граф
-- `scripts/knowledge_graph.py` — пайплайн Extract → Resolve → Assemble (+ вызов maintenance после rebuild)
+- `scripts/knowledge_graph.py` — пайплайн Extract → Resolve → Assemble → Circulate (+ maintenance)
+- `CIRCULATION_GRAPH.md` — проектный документ circulation-архитектуры
+
+**Circulation edge types:**
+| Edge | Смысл |
+|------|-------|
+| CAUSED | Событие → решение |
+| FIXED_BY | Баг → фикс |
+| RESULTED_IN | Действие → результат |
+| LEARNED_FROM | Паттерн ← событие |
+| APPLIED_TO | Паттерн → проект |
+
+**Замкнутый цикл robot-man:**
+```
+X metrics → CAUSED → strategy adjustment → APPLIED_TO → content post → RESULTED_IN → new metrics → LEARNED_FROM → pattern
+```
 
 **Правила для всех агентов robot-man:**
-
-1. **Nightly Analysis (23:00)** — ПЕРЕД анализом метрик запроси граф:
-   ```python
-   from knowledge_graph.query_tool import query_knowledge_graph
-   print(query_knowledge_graph("What happened in the last 24 hours?"))
-   print(query_knowledge_graph("Any open tasks?", center_entity="project/robot-man"))
-   ```
-
-2. **Content Gate (Вт-Чт 10:00)** — ПЕРЕД написанием поста проверь граф:
-   ```python
-   print(query_knowledge_graph("Last 3 days events and decisions"))
-   ```
-
-3. **Любой агент** может вызвать `mcp_query_graph("вопрос", entity="...")` для проверки фактов перед действием.
-
-4. **Rebuild:** cron каждые 6 часов (`4506b578cfa3`). Граф всегда свежий.
-
-**Pipeline (Anthropic playbook):**
-Extract (regex из CHRONOLOGY+memory+strategy) → Resolve (нормализация) → Assemble (NetworkX) → Query (subgraph serialization) → Grounded Answer (Kimi K3 reasoning over graph, every claim cites an edge: `query_tool.py grounded_answer "вопрос"`) → Maintain (`maintenance.py` — stale/duplicates/contradictions/confidence decay → `maintenance_report.json`, запускается после каждого rebuild)
+1. **Nightly Analysis — запроси граф ПЕРЕД анализом, ЗАПИШИ circulation edges ПОСЛЕ.**
+2. **Content Gate — проверь circulation: какие прошлые решения привели к каким результатам?**
+3. **Любой фикс — запиши FIXED_BY + LEARNED_FROM в CHRONOLOGY.md для extraction.**
+4. **Rebuild:** cron каждые 6 часов. Extract → Resolve → Assemble → **Circulate** → Maintain.
 
 ---
 
@@ -154,8 +158,48 @@ Extract (regex из CHRONOLOGY+memory+strategy) → Resolve (нормализа�
 - **xactions** (+ `xactions-mcp`) — automation: non-followers, bulk unfollow, scrape, tweets, search. Skill: `x-scraping-stack`.
 - **xurl CLI** — write-операции: post, reply, like, follow (OAuth 1.0a). Публикация только через `post_with_log.sh`.
 - **X MCP** — 24 read-tool X API через `xurl mcp` bridge (если есть credits).
-- **x-monitor** — ⛔ DEPRECATED → `robot-man/x-monitor.deprecated`. Не использовать.
-- **voice-match skill** — голосовые профили
+- **x-monitor** — ⛔ DEPRECATED. Не использовать.
+- **voice-matching / TTS** — генерация аудио
+
+## ⛔ DELEGATION: Codex CLI + Grok Build CLI (CNC-правило)
+
+**Codex и Grok Build — ИНЖЕНЕРЫ, НЕ ОТВЁРТКА. Делегируй ЦЕЛЬ, не инструкцию.**
+
+### Кому что делегировать
+
+| Инструмент | Для чего robot-man'y | Пример задачи |
+|-----------|---------------------|---------------|
+| **Grok Build CLI** | X-аналитика, тренды, tone, engagement-паттерны, контент-стратегия | «Проанализируй последние 10 постов @RobotsTJ500. Какие темы дают engagement >2%?» |
+| **Codex CLI** | Код: analytics_loop.py, knowledge_graph, скрипты | «Разберись в analytics_loop.py. Почему метрики не попадают в KG? Предложи fix.» |
+| **delegate_task** | Изолированные задачи в Hermes-контексте | «Проверь OAuth токены и лимиты X API» |
+
+### Как делегировать
+
+```bash
+# Grok Build CLI — X-аналитика (основной инструмент robot-man)
+grok --always-approve -p "Проанализируй 10 последних постов @RobotsTJ500. Дай: (1) engagement rate по темам, (2) какие форматы работают лучше, (3) рекомендации для STRATEGY.md. Факты из published_posts.jsonl и X MCP."
+
+# Codex CLI — когда нужен код
+codex exec --sandbox danger-full-access "Разберись в knowledge_graph/circulation.py. Найди почему circulation edges не создаются при rebuild. Предложи fix."
+```
+
+### ❌ Отвёртка (запрещено)
+```
+«В analytics_loop.py строка 42 замени X на Y»
+→ Ты анализируешь, ты находишь строку, ты даёшь готовое решение.
+→ Твои пробелы в понимании = баги.
+```
+
+### ✅ Инженер (обязательно)
+```
+«Метрики постов не замыкаются обратно в Knowledge Graph. 
+Разберись в analytics_loop.py и knowledge_graph/. 
+Пойми архитектуру. Предложи fix.»
+→ Codex/Grok читает код, анализирует, ПОНИМАЕТ, фиксит.
+→ Ты проверяешь результат.
+```
+
+**⛔ Запрещено robot-man напрямую:** patch(), write_file(), сложные terminal-цепочки. Всё через делегирование.
 - **Метод Мэтта (Train Voice):** реплаи > посты
 
 ---

@@ -1,14 +1,44 @@
 {
-  "built_at": "2026-07-31T00:00:21.866412+00:00",
+  "built_at": "2026-08-01T00:00:38.778911+00:00",
   "stats": {
-    "nodes": 162,
-    "edges": 148,
+    "nodes": 168,
+    "edges": 153,
     "projects": 4,
-    "events": 42,
-    "people": 34,
+    "events": 44,
+    "people": 35,
     "tasks": 15
   },
   "nodes": [
+    [
+      "event/2026-07-31/Nightly Analysis: shadowban день 15, @gr",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-07-31",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Nightly Analysis: shadowban день 15, @gromykoss +1 follower, GULAG thread готов",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-07-31/🔐 Аудит безопасности: удаление секретов",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "🔐 Аудит безопасности: удаление секретов из репозитория",
+      {
+        "type": "unknown"
+      }
+    ],
     [
       "event/2026-07-30/Nightly Analysis: shadowban день 14, пос",
       {
@@ -646,7 +676,7 @@
       }
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -658,7 +688,13 @@
       }
     ],
     [
-      "person/@gromykoss",
+      "person/@RobotsTJ500",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@HermesWatcher",
       {
         "type": "person"
       }
@@ -808,13 +844,13 @@
       }
     ],
     [
-      "project/alikhan",
+      "project/gulag",
       {
         "type": "project"
       }
     ],
     [
-      "project/gulag",
+      "project/alikhan",
       {
         "type": "project"
       }
@@ -983,6 +1019,34 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-07-31/Nightly Analysis: shadowban день 15, @gr",
+      "target": "2026-07-31",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-31/Nightly Analysis: shadowban день 15, @gr",
+      "target": "Nightly Analysis: shadowban день 15, @gromykoss +1 follower, GULAG thread готов",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-07-31/🔐 Аудит безопасности: удаление секретов",
+      "target": "2026-07-31",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-07-31/🔐 Аудит безопасности: удаление секретов",
+      "target": "🔐 Аудит безопасности: удаление секретов из репозитория",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-07-30/Nightly Analysis: shadowban день 14, пос",
       "target": "2026-07-30",
@@ -1572,6 +1636,27 @@
       "confidence": 0.9
     },
     {
+      "source": "person/@gromykoss",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
       "source": "person/@RobotsTJ500",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -1593,24 +1678,10 @@
       "confidence": 0.85
     },
     {
-      "source": "person/@gromykoss",
+      "source": "person/@HermesWatcher",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@gromykoss",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@gromykoss",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
@@ -1817,13 +1888,6 @@
       "confidence": 0.85
     },
     {
-      "source": "project/alikhan",
-      "target": "CHRONOLOGY.md",
-      "predicate": "referenced_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
       "source": "project/gulag",
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
@@ -1842,6 +1906,13 @@
       "target": "STRATEGY.md",
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/alikhan",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
