@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, height=900">
+<title>Cover — 6 Classes of Agent Failures</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg: #0a0a1a;
+  --cyan: #00e5ff;
+  --green: #00ff88;
+  --red: #ff3355;
+  --amber: #ffb020;
+  --white: #e0e0e0;
+  --dim: #555566;
+  --panel-bg: #0d0d24;
+  --border: #1a1a3e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1200px; height: 900px;
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -200px;
+  width: 700px; height: 900px;
+  background: radial-gradient(ellipse at 30% 60%, rgba(0,229,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; right: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse at 60% 40%, rgba(255,51,85,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container { display: flex; height: 100%; padding: 30px 35px; gap: 25px; position: relative; z-index: 1; }
+
+.left { width: 470px; display: flex; flex-direction: column; gap: 14px; }
+
+.header-title { font-size: 40px; font-weight: 800; line-height: 1.08; color: var(--white); }
+.header-title span { color: var(--cyan); }
+.header-sub { font-size: 17px; color: var(--white); font-weight: 400; opacity: 0.85; }
+
+.description-box {
+  background: var(--panel-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px;
+  font-size: 12.5px; line-height: 1.55; color: var(--white);
+}
+
+.sidebar { display: flex; flex-direction: column; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); }
+.sidebar .motto { color: var(--dim); font-size: 10.5px; margin-top: 4px; letter-spacing: 1px; }
+
+.flow { display: flex; flex-direction: column; gap: 7px; margin-top: 2px; }
+.node-box {
+  background: var(--panel-bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 9px 14px;
+  display: flex; align-items: center; gap: 12px;
+  position: relative;
+}
+.node-box::after {
+  content: '';
+  position: absolute; bottom: -8px; left: 50%;
+  width: 2px; height: 7px; background: var(--cyan);
+}
+.node-box:last-child::after { display: none; }
+.node-icon { font-size: 20px; width: 30px; text-align: center; flex-shrink: 0; }
+.node-name { font-weight: 600; font-size: 13.5px; color: var(--white); min-width: 100px; }
+.node-status { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; margin-left: auto; white-space: nowrap; }
+.status-running { color: var(--cyan); }
+.status-waiting { color: var(--dim); }
+.status-danger { color: var(--red); }
+.node-meta { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--dim); margin-left: 6px; }
+
+.right { flex: 1; display: flex; flex-direction: column; gap: 16px; }
+
+.terminal {
+  background: #000; border: 1px solid var(--border); border-radius: 6px;
+  padding: 13px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+  line-height: 1.7; color: var(--white); min-height: 150px;
+}
+.terminal .prompt { color: var(--cyan); }
+.terminal .ok { color: var(--green); }
+.terminal .warn { color: var(--amber); }
+.terminal .err { color: var(--red); }
+
+.dashboard {
+  background: var(--panel-bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: 13px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+}
+.dash-header { display: flex; justify-content: space-between; margin-bottom: 9px; }
+.dash-title { color: var(--cyan); font-weight: 600; font-size: 13px; }
+.dash-auto { color: var(--green); font-size: 10.5px; }
+
+.dash-table { width: 100%; border-collapse: collapse; }
+.dash-table th { text-align: left; color: var(--dim); font-weight: 400; font-size: 9.5px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+.dash-table td { padding: 5px 0; font-size: 11px; border-bottom: 1px solid rgba(26,26,62,0.5); }
+.dash-table .cls { color: var(--white); font-weight: 600; }
+.dash-table .act { color: var(--cyan); }
+.dash-table .clr-transient { color: var(--cyan); }
+.dash-table .clr-permanent { color: var(--red); }
+.dash-table .clr-config { color: var(--green); }
+.dash-table .clr-logic { color: var(--amber); }
+.dash-table .clr-cost { color: #ff66cc; }
+.dash-table .clr-external { color: #88aaff; }
+
+.dash-summary { display: flex; gap: 26px; margin-top: 9px; font-size: 10.5px; }
+.dash-summary .val { color: var(--cyan); font-weight: 600; }
+.health-bar { width: 100%; height: 6px; background: var(--border); border-radius: 3px; margin-top: 7px; }
+.health-fill { width: 100%; height: 100%; background: linear-gradient(90deg, var(--red), var(--amber), var(--green)); border-radius: 3px; }
+
+.bottom { position: absolute; bottom: 28px; left: 35px; right: 35px; }
+.how-title { font-size: 12px; font-weight: 600; color: var(--dim); letter-spacing: 2px; margin-bottom: 9px; }
+.steps { display: flex; gap: 12px; margin-bottom: 11px; }
+.step {
+  flex: 1; background: var(--panel-bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 9px 12px; text-align: center;
+}
+.step-icon { font-size: 19px; margin-bottom: 3px; }
+.step-title { font-size: 9.5px; font-weight: 600; color: var(--cyan); letter-spacing: 1px; }
+.step-desc { font-size: 9.5px; color: var(--dim); margin-top: 2px; line-height: 1.35; }
+
+.footer-quote {
+  background: var(--panel-bg); border: 1px solid var(--border); border-radius: 6px;
+  padding: 8px 14px; text-align: center; font-size: 12px; color: var(--dim);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.footer-quote .tree-icon { font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="left">
+    <div class="header-title">6 CLASSES OF<br><span>AGENT FAILURES</span></div>
+    <div class="header-sub">classify before you fix.</div>
+
+    <div class="description-box">
+      Every AI-agent error is one of six types.<br>
+      Timeout ≠ ban. Hallucination ≠ crash.<br>
+      Two months of live debugging, one taxonomy.
+    </div>
+
+    <div class="sidebar">
+      <div>🔁 transient → retry ×3</div>
+      <div>🚫 permanent → stop, call human</div>
+      <div>⚙️ config → fix in a minute</div>
+      <div>🧠 logic → replan + verify</div>
+      <div>💸 cost → hard stop</div>
+      <div>🌐 external → wait it out</div>
+      <div class="motto">NOT ALL ERRORS ARE EQUAL.</div>
+    </div>
+
+    <div class="flow">
+      <div class="node-box">
+        <div class="node-icon">🔍</div>
+        <div class="node-name">Classify</div>
+        <div class="node-meta">6 types</div>
+        <div class="node-status status-running">match pattern</div>
+      </div>
+      <div class="node-box">
+        <div class="node-icon">⚡</div>
+        <div class="node-name">Act</div>
+        <div class="node-meta">per class</div>
+        <div class="node-status status-running">retry / stop / fix</div>
+      </div>
+      <div class="node-box">
+        <div class="node-icon">✅</div>
+        <div class="node-name">Verify</div>
+        <div class="node-meta">scraper</div>
+        <div class="node-status status-running">never trust agent</div>
+      </div>
+      <div class="node-box">
+        <div class="node-icon">😴</div>
+        <div class="node-name">Sleep</div>
+        <div class="node-meta">tonight</div>
+        <div class="node-status status-waiting">know which are safe</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="terminal">
+      <span class="prompt">$</span> classify error "connection timed out"<br>
+      <span class="ok">✓</span> transient → retry (2/3)<br>
+      <span class="prompt">$</span> classify error "401 unauthorized"<br>
+      <span class="err">✗</span> permanent → stop, escalate to human<br>
+      <span class="prompt">$</span> classify error "agent claims fixed"<br>
+      <span class="warn">⚠</span> logic → verify with scraper first<br>
+      <span class="prompt">$</span> <span style="animation: blink 1s step-end infinite">█</span>
+    </div>
+
+    <div class="dashboard">
+      <div class="dash-header">
+        <span class="dash-title">FAILURE CLASSIFICATION MATRIX</span>
+        <span class="dash-auto">recovery tree: ON</span>
+      </div>
+      <table class="dash-table">
+        <tr><th>class</th><th>signature</th><th>action</th></tr>
+        <tr><td class="cls clr-transient">TRANSIENT</td><td>timeout, network</td><td class="act">retry ×3 backoff</td></tr>
+        <tr><td class="cls clr-permanent">PERMANENT</td><td>401/403, shadowban</td><td class="act">stop, call human</td></tr>
+        <tr><td class="cls clr-config">CONFIG</td><td>missing env/file</td><td class="act">fix, 1 minute</td></tr>
+        <tr><td class="cls clr-logic">LOGIC</td><td>hallucination, plan</td><td class="act">replan + fact-check</td></tr>
+        <tr><td class="cls clr-cost">COST</td><td>runaway loop</td><td class="act">hard stop</td></tr>
+        <tr><td class="cls clr-external">EXTERNAL</td><td>upstream API down</td><td class="act">wait, drink tea</td></tr>
+      </table>
+      <div class="dash-summary">
+        <div>classes: <span class="val">6</span></div>
+        <div>nightmares killed: <span class="val">50%</span></div>
+        <div>trust in agent: <span class="val">verify</span></div>
+      </div>
+      <div class="health-bar"><div class="health-fill"></div></div>
+      <div style="color:var(--dim);font-size:9.5px;margin-top:4px;">last update: after the 48-min hang</div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="how-title">HOW IT WORKS</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <div class="step-title">LOOK</div>
+      <div class="step-desc">read the error, name the class</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🗂️</div>
+      <div class="step-title">MAP</div>
+      <div class="step-desc">transient / permanent / config / logic / cost / external</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🎯</div>
+      <div class="step-title">ACT</div>
+      <div class="step-desc">retry, stop, fix, replan, cut power, wait</div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🛡️</div>
+      <div class="step-title">VERIFY</div>
+      <div class="step-desc">never trust "fixed" — check yourself</div>
+    </div>
+  </div>
+
+  <div class="footer-quote">
+    <span class="tree-icon">🌳</span>
+    Not all errors are equal. Fix the right class — and sleep.
+  </div>
+</div>
+</body>
+</html>

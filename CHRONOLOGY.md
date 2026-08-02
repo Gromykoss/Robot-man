@@ -1,5 +1,13 @@
 # Robot-man — Хронология
 
+## 2026-08-02 — Чистка X-трекинга (29→15), фикс MCP analytics, X Radar
+
+- **00:24** — Чистка списка отслеживаемых аккаунтов: 29 → 15. Удалены: мёртвые (@sharbel — 0 постов, xactions 0 твитов), дубликаты по нишам (loop: zodchiii/neil_xbt; workflows: IBuzovskyi/jonkomet; Claude skills: 0xMiraqle/0xLagosaur; context: sairahul1; hotspot: Lonely__MH), вне-scope (HermesWatcher/_zheergen/ai_for_success/vorty279), неактивный (@papercliping). Остались 15 уникальных. Список: `~/hermes-vault/30_Logs/X Accounts to Track.md`.
+- **00:24** — Причина чистки: 2 зависших процесса x_tracker_fetch.py (2900s и 2115s = 48 и 35 мин). 29 аккаунтов × 45s таймаут = до 48 мин на прогон. После чистки: 4:21 на 15 аккаунтов.
+- **00:24** — Фикс MCP: `mcp__robotman__analytics` вызывал несуществующий `analytics.py --summary` → теперь `scripts/analytics_loop.py --days 7` (ce3cd1f). Проверено: отчёт возвращается.
+- **00:24** — X Radar 2026-08-01: 4 задачи T-201..T-204 (Hermes Desktop Plugin SDK, DeepSeek V4 Flash update, Buzz multi-agent, vLLM benchmark) → Task Index + Octagon Kanban.
+- **02:00** — Драфт @gromykoss «6 классов ошибок AI-агентов»: Grok Build PASS-WITH-FIXES (8 пунктов) → v2; MoA факт-чек: 48 мин подтверждена (эта запись), «два месяца» → «почти два месяца» (старт 28.06), «насовсем» — конфликт с брифом (корень найден 01.08).
+
 ## 2026-08-01 — Nightly Analysis: shadowban день 16, профиль утверждён, engagement-стратегия Grok Build
 
 - **23:06** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 0 результатов (16-й день shadowban). Прямые ссылки работают (200 OK).
@@ -579,3 +587,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **31.07.2026 04:04** — chore: auto-sync 31.07 (`6a5994b`)
 - **01.08.2026 04:04** — chore: auto-sync 01.08 (`d908f91`)
 - **02.08.2026 00:24** — fix: MCP analytics tool → scripts/analytics_loop.py --days 7 (was nonexistent analytics.py --summary) (`ce3cd1f`)
+- **02.08.2026 00:29** — chore: auto-sync 02.08 — nightly metrics, voice updates, drafts, KG rebuild (`dbf3d0d`)
