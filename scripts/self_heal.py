@@ -57,9 +57,17 @@ CONFIG_PATTERNS = [
     r"(?i)(missing.*env|config.*missing|no\s+such\s+file)",
     r"(?i)(key\s*error|keyerror).*env",
     r"(?i)(permission\s+denied|eacces|eaccess)",
-    r"(?i)(authentication\s+failed|unauthorized|401|403)",
+    r"(?i)(authentication\s+failed|unauthorized|invalid\s+token|401)(?!.*403)",
     r"(?i)(invalid\s+(?:api\s+)?key|api\s+key.*invalid)",
     r"(?i)(database.*collation|no\s+collation)",
+]
+
+# 403/forbidden/blocked/suspended = PERMANENT (MGT_maccha #02.08: не верить тексту ошибки,
+# смотреть HTTP-код; 403 ≠ «auth failed». 403 = запрет/бан провайдера → звать человека, не ретраить)
+PERMANENT_PATTERNS = [
+    r"(?i)(403\s+forbidden|forbidden|access\s+denied|blocked|suspended|banned)",
+    r"(?i)(not\s+allowed|not\s+authorized|permission\s+denied.*403)",
+    r"(?i)(x\s+api.*403|reply.*blocked|shadowban)",
 ]
 
 LOGIC_PATTERNS = [
@@ -129,10 +137,13 @@ def extract_errors_from_text(text, source_name):
 
 
 def classify_error(error_text):
-    """Classify an error string into: transient, config, logic, external, unknown."""
+    """Classify an error string into: transient, permanent, config, logic, external, unknown."""
     for pattern in TRANSIENT_PATTERNS:
         if re.search(pattern, error_text):
             return "transient"
+    for pattern in PERMANENT_PATTERNS:
+        if re.search(pattern, error_text):
+            return "permanent"
     for pattern in CONFIG_PATTERNS:
         if re.search(pattern, error_text):
             return "config"
@@ -290,6 +301,13 @@ def propose_fix(source_project, error_class, fingerprint, raw_error):
             "action": f"Retry mechanism — transient error in {source_project}",
             "suggestion": "Add exponential backoff retry: sleep 15s, 30s, 60s before retry",
             "type": "retry-pattern",
+        })
+
+    elif error_class == "permanent":
+        fixes.append({
+            "action": f"STOP — permanent error in {source_project}. Call a human.",
+            "suggestion": "403/forbidden/blocked = provider-level ban or permission change. Retries will NOT help. Check provider status, consent, or account suspension. Do NOT work around it.",
+            "type": "human-gate",
         })
 
     elif error_class == "config":

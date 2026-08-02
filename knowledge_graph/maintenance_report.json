@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-02T00:14:05.830982+00:00",
-  "graph_built_at": "2026-08-02T00:14:05.825872+00:00",
+  "generated_at": "2026-08-02T12:14:33.857063+00:00",
+  "graph_built_at": "2026-08-02T12:14:33.852538+00:00",
   "graph_stats": {
-    "nodes": 80,
-    "edges": 80,
+    "nodes": 87,
+    "edges": 86,
     "projects": 4,
-    "events": 8,
-    "people": 36,
-    "tasks": 15
+    "events": 9,
+    "people": 38,
+    "tasks": 17
   },
   "checks": {
     "stale_nodes": [],

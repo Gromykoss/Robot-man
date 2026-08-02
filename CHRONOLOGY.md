@@ -1,6 +1,9 @@
 # Robot-man — Хронология
 
-## 2026-08-02 — Чистка X-трекинга (29→15), фикс MCP analytics, X Radar
+## 2026-08-02 — T-205/T-206 из Radar (MGT_maccha), HTTP-code-first в self_heal
+
+- **T-205 OAuth Credentials Isolation** — карта credentials: один OAuth-клиент (ZTNXZ25m...) в 3 файлах. Рабочий: `~/.xurl/auth.yml`; legacy-мусор: `~/.config/xurl/{config,credentials}.yaml` (устаревший токен + опечатка @RobotsT500). X MCP bridge делит клиент с xurl. Записано в Infrastructure Reference.
+- **T-206 HTTP-Code-First Debug Rule** — self_heal.py: 403 → новый класс permanent (human-gate, STOP), 401 → config, 429 → external. Порядок: TRANSIENT→PERMANENT→CONFIG→EXTERNAL→LOGIC. Тест: 401→config, 403→permanent, 429→external ✅. FIXED_BY: MGT_maccha. LEARNED_FROM: не верить тексту ошибки, смотреть HTTP-код.
 
 - **00:24** — Чистка списка отслеживаемых аккаунтов: 29 → 15. Удалены: мёртвые (@sharbel — 0 постов, xactions 0 твитов), дубликаты по нишам (loop: zodchiii/neil_xbt; workflows: IBuzovskyi/jonkomet; Claude skills: 0xMiraqle/0xLagosaur; context: sairahul1; hotspot: Lonely__MH), вне-scope (HermesWatcher/_zheergen/ai_for_success/vorty279), неактивный (@papercliping). Остались 15 уникальных. Список: `~/hermes-vault/30_Logs/X Accounts to Track.md`.
 - **00:24** — Причина чистки: 2 зависших процесса x_tracker_fetch.py (2900s и 2115s = 48 и 35 мин). 29 аккаунтов × 45s таймаут = до 48 мин на прогон. После чистки: 4:21 на 15 аккаунтов.
@@ -588,3 +591,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **01.08.2026 04:04** — chore: auto-sync 01.08 (`d908f91`)
 - **02.08.2026 00:24** — fix: MCP analytics tool → scripts/analytics_loop.py --days 7 (was nonexistent analytics.py --summary) (`ce3cd1f`)
 - **02.08.2026 00:29** — chore: auto-sync 02.08 — nightly metrics, voice updates, drafts, KG rebuild (`dbf3d0d`)
+- **02.08.2026 04:21** — chore: auto-sync 02.08 (`d2fdcb5`)

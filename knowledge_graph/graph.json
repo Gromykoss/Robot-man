@@ -1,14 +1,26 @@
 {
-  "built_at": "2026-08-02T00:14:05.825872+00:00",
+  "built_at": "2026-08-02T12:14:33.852538+00:00",
   "stats": {
-    "nodes": 80,
-    "edges": 80,
+    "nodes": 87,
+    "edges": 86,
     "projects": 4,
-    "events": 8,
-    "people": 36,
-    "tasks": 15
+    "events": 9,
+    "people": 38,
+    "tasks": 17
   },
   "nodes": [
+    [
+      "event/2026-08-02/Чистка X-трекинга (29→15), фикс MCP anal",
+      {}
+    ],
+    [
+      "2026-08-02",
+      {}
+    ],
+    [
+      "Чистка X-трекинга (29→15), фикс MCP analytics, X Radar",
+      {}
+    ],
     [
       "event/2026-08-01/Nightly Analysis: shadowban день 16, про",
       {}
@@ -98,7 +110,7 @@
       {}
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@sharbel",
       {}
     ],
     [
@@ -106,7 +118,15 @@
       {}
     ],
     [
+      "person/@papercliping",
+      {}
+    ],
+    [
       "person/@gromykoss",
+      {}
+    ],
+    [
+      "person/@RobotsTJ500",
       {}
     ],
     [
@@ -226,6 +246,14 @@
       {}
     ],
     [
+      "task/T-201",
+      {}
+    ],
+    [
+      "task/T-204",
+      {}
+    ],
+    [
       "task/T-169",
       {}
     ],
@@ -331,6 +359,20 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-08-02/Чистка X-трекинга (29→15), фикс MCP anal",
+      "target": "2026-08-02",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-02/Чистка X-трекинга (29→15), фикс MCP anal",
+      "target": "Чистка X-трекинга (29→15), фикс MCP analytics, X Radar",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-08-01/Nightly Analysis: shadowban день 16, про",
       "target": "2026-08-01",
@@ -444,42 +486,56 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@RobotsTJ500",
+      "source": "person/@sharbel",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@RobotsTJ500",
+      "source": "person/@papercliping",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
       "target": "MEMORY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@RobotsTJ500",
+      "source": "person/@gromykoss",
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@gromykoss",
+      "source": "person/@RobotsTJ500",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@gromykoss",
+      "source": "person/@RobotsTJ500",
       "target": "MEMORY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@gromykoss",
+      "source": "person/@RobotsTJ500",
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
@@ -722,6 +778,20 @@
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
+    },
+    {
+      "source": "task/T-201",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "task/T-204",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
     },
     {
       "source": "task/T-169",
