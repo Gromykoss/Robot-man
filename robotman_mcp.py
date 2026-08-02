@@ -54,8 +54,8 @@ def handle_status():
 def handle_analytics():
     """Run analytics script and return summary."""
     result = subprocess.run(
-        ["python3", "analytics.py", "--summary"],
-        capture_output=True, text=True, timeout=60,
+        ["python3", "scripts/analytics_loop.py", "--days", "7"],
+        capture_output=True, text=True, timeout=90,
         cwd=str(ROBOT_MAN_DIR)
     )
     return result.stdout or result.stderr or "No analytics data"
