@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:400px; height:400px; background:#0a0a1a; display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; }
+  .wrap { width:400px; height:400px; background:radial-gradient(ellipse at center, #0d0d24 0%, #070714 75%); display:flex; align-items:center; justify-content:center; padding:30px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; width:280px; height:280px; }
+  .q { border-radius:22px; }
+  .q.g1 { background:#00ff88; box-shadow:0 0 30px #00ff8866; }
+  .q.g2 { background:#00ff88; box-shadow:0 0 30px #00ff8866; }
+  .q.g3 { background:#00ff88; box-shadow:0 0 30px #00ff8866; }
+  .q.a  { background:#ffb020; box-shadow:0 0 34px #ffb02088; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <div class="q g1"></div>
+      <div class="q g2"></div>
+      <div class="q a"></div>
+      <div class="q g3"></div>
+    </div>
+  </div>
+</body>
+</html>

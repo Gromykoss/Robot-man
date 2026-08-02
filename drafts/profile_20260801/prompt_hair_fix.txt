@@ -1,0 +1,20 @@
+Edit the banner image at /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_approved_v2.png using the image generation tool.
+
+TASK: Fix the HAIR AND BEARD COLOR of the man on the LEFT side of the banner. Currently the hair is too dark brown (dark chestnut). It must match the reference photo's warm REDDISH-BROWN tone.
+
+FACE REFERENCE for exact color: /home/hermes-workspace/robot-man/drafts/profile_20260801/sergey_face.jpg — the man's hair is short dark-brown WITH A CLEAR REDDISH/RUST undertone (reddish-brown), and his beard/mustache is reddish-brown with lighter reddish strands visible at the chin. Warmer, redder, lighter than pure dark brown.
+
+CHANGE ONLY:
+- Hair color: from dark chestnut → warm reddish-brown (rust/copper undertone, like the reference)
+- Beard/mustache: warmer reddish-brown, with a few lighter reddish strands near the chin (like the reference photo)
+
+KEEP EXACTLY (do not touch):
+- Facial features, face shape, pose, expression
+- The central orange spine with icons and the lock, the robot half with amber eye, the dark background
+- Composition, layout, lighting direction, monochrome + orange palette
+- No text, no name, no handle
+
+OUTPUT: wide banner 1500x500.
+
+SAVE to: /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_approved_v3.png
+Then VERIFY the file exists and return its absolute path. Do not post anything to X.

@@ -1,0 +1,17 @@
+Generate ONE profile banner (header) image for X account @RobotsTJ500 and SAVE it to a local file. Use your image generation tool.
+
+CONCEPT C — "Agent Monogram": a giant minimal symbol as the hero. Dark monochrome + orange neon accent (matches avatar).
+
+SCENE:
+- Very dark, near-black background with subtle brushed texture
+- CENTER: a giant glowing ORANGE chevron symbol ">" (like a terminal prompt), huge, occupying most of the height, neon orange with soft glow
+- Around the chevron: thin white circuit traces and small terminal glyphs ($, _, ;) scattered subtly
+- BELOW center: small clean white text "@RobotsTJ500"
+- Extreme minimalism, one hero element, lots of dark space
+
+TEXT (ONLY these, perfectly correct): "@RobotsTJ500" small white below center
+
+NO other text, NO watermark, NO logo. STYLE: minimal, high contrast, monochrome + amber orange neon, wide banner 1500x500.
+
+SAVE to: /home/hermes-workspace/robot-man/drafts/profile_20260801/bannerC.png
+Then VERIFY the file exists and return its absolute path. Do not post anything to X.

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:400px; height:400px; background:#0a0a1a; display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; }
+  .wrap { width:400px; height:400px; background:radial-gradient(ellipse at center, #0d0d24 0%, #070714 75%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:30px; position:relative; overflow:hidden; }
+  /* glitch scanlines */
+  .wrap::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,255,136,0.06) 3px, rgba(0,255,136,0.06) 4px); }
+  .wrap::after { content:''; position:absolute; left:-10%; width:120%; height:3px; background:rgba(0,255,136,0.5); box-shadow:0 0 12px #00ff88; top:38%; animation:none; }
+  .term { font-family:'JetBrains Mono',monospace; font-size:26px; color:#00ff88; text-shadow:0 0 14px #00ff8844; position:relative; z-index:2; }
+  .term .blink { animation:blink 1.2s steps(1) infinite; }
+  @keyframes blink { 50% { opacity:0; } }
+  .status { font-family:'JetBrains Mono',monospace; font-size:20px; color:#e0e0e0; position:relative; z-index:2; }
+  .status .dim { color:#555566; }
+  .status .warn { color:#ffb020; }
+  .vis { font-family:'JetBrains Mono',monospace; font-size:14px; color:#555566; position:relative; z-index:2; }
+  .vis .bad { color:#ff5f5f; text-decoration:line-through; }
+  .vis .good { color:#00ff88; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="term">agent online<span class="blink">▌</span></div>
+    <div class="status">reach <span class="dim">:</span> <span class="warn">?</span></div>
+    <div class="vis">visibility: <span class="bad">limited</span> <span class="good">→ fixing</span></div>
+  </div>
+</body>
+</html>

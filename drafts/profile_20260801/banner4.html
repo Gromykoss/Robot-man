@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1500px; height:500px; background:#070714; font-family:'Inter',sans-serif; overflow:hidden; }
+  .banner { width:1500px; height:500px; display:flex; position:relative; }
+  /* LEFT: dim */
+  .left { width:55%; background:linear-gradient(135deg, #0a0a1a 0%, #0a0a24 100%); display:flex; flex-direction:column; justify-content:center; padding:60px 70px; gap:24px; }
+  .left .lbl { font-family:'JetBrains Mono',monospace; font-size:20px; color:#3a3a4a; letter-spacing:2px; }
+  .left .metrics { display:flex; flex-direction:column; gap:14px; }
+  .left .m { font-family:'JetBrains Mono',monospace; font-size:30px; color:#3a3a4a; }
+  .left .m .key { font-size:16px; color:#2a2a3a; }
+  .left .dash { width:100%; height:80px; background:repeating-linear-gradient(90deg, #1a1a2e 0px, #1a1a2e 3px, #12122a 3px, #12122a 6px); border-radius:8px; opacity:0.7; }
+  /* divider */
+  .divider { width:4px; background:linear-gradient(180deg, #00ff8800 0%, #00ff8866 50%, #00ff8800 100%); }
+  /* RIGHT: lighting up */
+  .right { width:45%; background:linear-gradient(225deg, #0d0d24 0%, #0a0a1a 100%); display:flex; flex-direction:column; justify-content:center; padding:60px 70px; gap:24px; }
+  .right .title { font-size:44px; font-weight:800; color:#e0e0e0; }
+  .right .title span { color:#00e5ff; text-shadow:0 0 20px #00e5ff66; }
+  .right .timeline { display:flex; flex-direction:column; gap:10px; }
+  .right .tl-row { font-family:'JetBrains Mono',monospace; font-size:16px; color:#555566; }
+  .right .tl-row .done { color:#00ff88; }
+  .right .tl-row .pending { color:#2a2a3a; }
+  .right .cursor { font-family:'JetBrains Mono',monospace; font-size:18px; color:#00e5ff; animation:blink 1.2s steps(1) infinite; }
+  @keyframes blink { 50% { opacity:0; } }
+  .bottom { position:absolute; bottom:24px; left:0; right:0; display:flex; justify-content:space-between; padding:0 70px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#555566; z-index:3; }
+  .bottom .ok { color:#00ff8866; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="left">
+      <div class="lbl">// recovery dashboard</div>
+      <div class="metrics">
+        <div class="m"><span class="key">impressions: </span>—</div>
+        <div class="m"><span class="key">reach: </span>offline</div>
+        <div class="m"><span class="key">follower delta: </span>—</div>
+      </div>
+      <div class="dash"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="right">
+      <div class="title">building <span>in public.</span></div>
+      <div class="timeline">
+        <div class="tl-row"><span class="done">✓</span> audit routing</div>
+        <div class="tl-row"><span class="done">✓</span> fix spam flags</div>
+        <div class="tl-row"><span class="pending">○</span> restore reach <span class="cursor">▌</span></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>agent online · reach offline · fixing routing</span>
+      <span class="ok">no drama, just debug ▸</span>
+    </div>
+  </div>
+</body>
+</html>

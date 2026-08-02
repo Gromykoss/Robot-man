@@ -1,0 +1,17 @@
+Generate ONE profile banner (header) image for X account @RobotsTJ500 and SAVE it to a local file. Use your image generation tool.
+
+CONCEPT D — "Mono + Amber Grid": identity banner with the avatar's signature amber eye as the repeated motif. Dark monochrome + orange neon accent.
+
+SCENE:
+- Very dark background with a faint hexagonal or circuit grid pattern
+- LEFT: the avatar's signature element — a large glowing amber/orange cybernetic eye (anime style, like the one on the avatar) emerging from dark circuit traces
+- RIGHT: large white text "RobotsTJ500" (no @ needed), below it smaller "building in public" in glowing orange
+- The orange eye connects the banner visually to the avatar
+- Composition: eye left, text right, balanced, dark space in middle
+
+TEXT (ONLY these, perfectly correct): "RobotsTJ500" white large; "building in public" orange smaller
+
+NO other text, NO watermark. STYLE: cinematic, high contrast, monochrome + amber orange, wide banner 1500x500.
+
+SAVE to: /home/hermes-workspace/robot-man/drafts/profile_20260801/bannerD.png
+Then VERIFY the file exists and return its absolute path. Do not post anything to X.

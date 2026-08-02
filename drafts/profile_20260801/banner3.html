@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1500px; height:500px; background:#070714; font-family:'Inter',sans-serif; overflow:hidden; }
+  .banner { width:1500px; height:500px; background:linear-gradient(135deg, #0a0a1a 0%, #0d0d24 55%, #0a0a1a 100%); display:flex; flex-direction:column; padding:55px 90px; gap:30px; position:relative; }
+  .banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 20%, #00e5ff11 0%, transparent 50%); }
+  .head { display:flex; align-items:baseline; gap:20px; position:relative; z-index:2; }
+  .title { font-size:52px; font-weight:800; color:#e0e0e0; letter-spacing:1px; }
+  .title span { color:#00e5ff; text-shadow:0 0 18px #00e5ff66; }
+  .tagline { font-family:'JetBrains Mono',monospace; font-size:20px; color:#555566; }
+  .pipeline { display:flex; align-items:center; gap:0; position:relative; z-index:2; }
+  .box { background:#0d0d24; border:2px solid #1a1a3e; border-radius:12px; padding:22px 26px; text-align:center; min-width:190px; }
+  .box .name { font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:700; color:#e0e0e0; }
+  .box .repo { font-family:'JetBrains Mono',monospace; font-size:14px; color:#555566; margin-top:4px; }
+  .box.orch { border-color:#00e5ff66; }
+  .box.orch .name { color:#00e5ff; text-shadow:0 0 14px #00e5ff55; }
+  .box.gate { border-color:#ffb02088; min-width:240px; }
+  .box.gate .name { color:#ffb020; }
+  .arrow { font-family:'JetBrains Mono',monospace; font-size:28px; color:#00e5ff88; padding:0 12px; }
+  .gate-lock { font-size:24px; }
+  .footer { display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2; margin-top:auto; }
+  .motto { font-family:'JetBrains Mono',monospace; font-size:18px; color:#00ff88; text-shadow:0 0 10px #00ff8833; }
+  .motto .dim { color:#555566; }
+  .handle { font-family:'JetBrains Mono',monospace; font-size:18px; color:#555566; }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="head">
+      <div class="title">4 codebases. <span>1 gate.</span></div>
+      <div class="tagline">// no silent merges</div>
+    </div>
+    <div class="pipeline">
+      <div class="box orch"><div class="name">@RobotsTJ500</div><div class="repo">orchestrator</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="name">gulag</div><div class="repo">worker 1</div></div>
+      <div class="arrow">→</div>
+      <div class="box"><div class="name">rab9</div><div class="repo">worker 2</div></div>
+      <div class="arrow">→</div>
+      <div class="box gate"><div class="name"><span class="gate-lock">🔒</span> HUMAN_APPROVAL</div><div class="repo">gate · amber = waiting</div></div>
+    </div>
+    <div class="footer">
+      <div class="motto">spawn <span class="dim">→</span> gate <span class="dim">→</span> merge</div>
+      <div class="handle">building in public. 🤖</div>
+    </div>
+  </div>
+</body>
+</html>

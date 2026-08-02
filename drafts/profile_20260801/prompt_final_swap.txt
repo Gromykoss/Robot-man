@@ -1,0 +1,22 @@
+Edit the banner image at /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_female_base.jpg using the image generation tool.
+
+CRITICAL TASK: This image is the APPROVED base concept. Do NOT change the concept, composition, layout, pose, background, central interface, icons, robot half, or any element. ONLY replace the female human face/profile on the LEFT side with a MALE face matching the reference photo.
+
+FACE REFERENCE (use these exact facial features): /home/hermes-workspace/robot-man/drafts/profile_20260801/sergey_face.jpg — a serious man in his late 30s-40s: short dark-brown hair, reddish-brown beard and mustache, strong defined jaw, light blue-grey intense eyes, calm stoic expression.
+
+REPLACE ONLY:
+- The female profile on the left becomes a MALE profile in the SAME pose: facing right, same head angle, same position, same hand near the jaw if present, same lighting direction, same monochrome treatment with soft skin texture
+- Use the man's facial structure from the reference: same face shape, jaw, beard (reddish-brown, short, well-groomed), short dark hair, serious calm expression
+
+KEEP EXACTLY (pixel-faithful, do not touch):
+- The vertical glowing ORANGE neon data spine in the center with the four circular icons (top-left shuffle, bottom-left menu, top-right flowchart, bottom-right network) connected by horizontal light lines
+- The central small rectangular hub icon with lightning/Z beneath it
+- The RIGHT side: chrome robot half with segmented plating, glowing amber-orange eye, mechanical ear, wiring in neck — identical
+- The dark charcoal-to-black gradient background — identical
+- Monochrome base + orange accent palette — identical
+- No text, no name, no handle
+
+OUTPUT: wide banner, keep the same aspect ratio as the input image (extend canvas to 1500x500 if needed while preserving the composition).
+
+SAVE to: /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_final.png
+Then VERIFY the file exists and return its absolute path. Do not post anything to X.

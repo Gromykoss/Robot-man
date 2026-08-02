@@ -1,5 +1,24 @@
 # Robot-man — Хронология
 
+## 2026-08-01 — Nightly Analysis: shadowban день 16, профиль утверждён, engagement-стратегия Grok Build
+
+- **23:06** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 0 результатов (16-й день shadowban). Прямые ссылки работают (200 OK).
+- **23:06** — @RobotsTJ500: 411 followers (стабильно 5 дней). Посты: 20827733 (30.07 — 20 imp, 1❤️), 20831859 (31.07 — 14 imp, 0❤️). Среднее 22.8 imp/пост за 7 дней. 🟠 ORANGE.
+- **23:06** — @gromykoss: 340 followers (стабильно). Чист, search работает. Без shadowban.
+- **23:06** — CONTENT_BRIEF.md ЕСТЬ: «Security Audit War Story» (как AI-агент накоммитил секреты и сам себя отаудировал). Контент-очередь пуста.
+- **23:06** — Баг: `mcp__robotman__analytics` → `analytics.py` не существует. Правильный путь: `scripts/analytics_loop.py`. Нужен фикс MCP-конфига.
+- **23:06** — Рекомендация: @RobotsTJ500 тишина до 05.08 (ещё 4 дня). @gromykoss — security audit war story (брифинг уже готов).
+- **23:06** — Тренды: Buzz v0.5.3 (multi-agent thread), agent loop engineering (2102 imp), shadowban recovery ниша пуста.
+- **02:00-04:00** — Grok Build engagement-анализ: 5 задач (анализ аккаунтов, тренды, tone, форматы, стратегия) → `research/grok_engagement_strategy_20260801.md`. Рекомендации: @RobotsTJ500 — тишина, @gromykoss — дневник + ответы.
+- **02:00-04:00** — Shadowban war story v4 доработан через Grok Build. Дубликат между RTJ-1 и @gromykoss выявлен и устранён.
+- **03:00-04:00** — Профиль Robot-man утверждён: аватар (маскот, 400×400) + баннер «Киборгизм» (лицо Сергея + шов + кибер-глаз, 1500×500). Файлы: `drafts/profile_20260801/`.
+- **03:42** — Ответ @HermesWatcher (child agents freedom) опубликован через xurl. Пост-верификация прошла ✅.
+- **03:42** — 3 ответа @AiCamila_ готовы к ручному постингу (B+C рекомендованы).
+- **03:42** — Навык `x-reply-workflow` создан и обновлён: пакетная выдача, пост-верификация, анализ автора, проверка дублирования.
+- **—** — Внедрена failure-classification taxonomy AiCamila_: 6 классов + recovery tree. Shadowban → PERMANENT.
+- **18:02** — KG rebuild (cron `4506b578cfa3`): 81 edge, 82 entities. Exit 0.
+- **23:20** — CHRONOLOGY Agent: +13 записей за 01.08 (восстановлено из сессий). Брифинг 01.08 записан.
+
 ## 2026-07-31 — Nightly Analysis: shadowban день 15, @gromykoss +1 follower, GULAG thread готов
 
 - **23:07** — Nightly Analysis (cron `56aa69d2d98f`): `from:RobotsTJ500` → 9 результатов через xurl (привилегированный доступ), но обычный search — 0.
@@ -559,3 +578,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **30.07.2026 04:04** — chore: auto-sync 30.07 (`7979882`)
 - **31.07.2026 04:04** — chore: auto-sync 31.07 (`6a5994b`)
 - **01.08.2026 04:04** — chore: auto-sync 01.08 (`d908f91`)
+- **02.08.2026 00:24** — fix: MCP analytics tool → scripts/analytics_loop.py --days 7 (was nonexistent analytics.py --summary) (`ce3cd1f`)

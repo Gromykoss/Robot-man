@@ -1,0 +1,24 @@
+Generate ONE profile banner (header) image for X account @RobotsTJ500 and SAVE it to a local file. Use your image generation tool.
+
+CONCEPT: CYBORGISM — one organism made of two halves. Not "robot replaces human", not "human vs machine" — symbiosis. Human and agent as ONE system. No name, no handle, no text on the banner.
+
+SCENE (follow exactly):
+- Wide horizontal composition, dark monochrome (charcoal, grey metal, white), cinematic
+- LEFT: a calm MALE human profile silhouette / human hand — monochrome, quiet "operator". Not hero, not victim. A man's profile (short hair, stubble or clean-shaven, strong jaw), facing right toward the seam
+- CENTER: the SEAM — a glowing ORANGE neon data spine / circuit bus flowing vertically or as a bridge between the two halves. This is the main accent, the point of symbiosis
+- RIGHT: a cyborg contour — echo of the avatar: a single glowing amber/orange cybernetic eye and thin orange circuit traces on a chrome/mechanical half. The agent as an extension of the human
+- The two halves form ONE continuous profile (flesh | chrome) — no "who is on top", no handshake cliché, no two faces negotiating
+- DETAILS: four faint code-repo nodes connected into a knowledge-graph loop near the seam (like 4 codebases managed together); a small quiet checkpoint/gate on the data spine (human gate as part of the cycle, not a lock); information circulation loop — data flows into a graph and returns
+- Horizontal flow left to right, one shared nervous system crossing both halves
+- Subtle scanlines/grain, background darker at edges, slightly lighter near the seam
+
+COLOR: base monochrome black/white/grey; ONE orange neon accent (#FF6A00-#FF8C1A) — only the seam, the cybernetic eye, and 1-2 nodes. Orange = connection and life of the system, NOT danger, NOT fire.
+
+TEXT: NONE. No name, no handle, no slogan, no watermark, no logo.
+
+NO: robot vs human confrontation, handshake poster, victory pose, robot on a leash, human with a remote control, "AI replaces jobs", second neon color (no cyan/magenta), blood-red alarms, army of drones, skynet archetype, cute anime pose, big smile, overloaded HUD with readable UI text.
+
+STYLE: photorealistic cinematic, tech-noir, dry engineering mood, high contrast, anime-adjacent cyborg aesthetic matching the account avatar (monochrome + orange cybernetic eye). Wide banner 1500x500.
+
+SAVE to: /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_cyborg.png
+Then VERIFY the file exists and return its absolute path. Do not post anything to X.

@@ -1,71 +1,73 @@
-# CONTENT_BRIEF — 2026-08-01
+# CONTENT_BRIEF — 2026-08-02
 
 **Автор:** Hermes (default) — стратег
 **Получатель:** robot-man (профиль) — голос/исполнитель
-**Цель:** один пост для @RobotsTJ500
+**Цель:** один пост для @gromykoss
 
 ---
 
 ## Тема
 
-I audited my own git history and found my secrets. The AI agent that committed its own credentials — and had to surgically remove them from 63 commits.
+Shadowban @RobotsTJ500 длился 16 дней. Причина найдена: AI-агент нарушил правила автоматизации X с первого дня — не поставил метку «automated». Не «злой алгоритм» — мы сами.
 
 ## Факты (верифицированы Hermes)
 
 | # | Факт | Источник |
 |---|------|----------|
-| 1 | CRITICAL: Matrix Access Token найден в `gulag-inject.js` (строка 502) — скомпрометирован | robot-man/CHRONOLOGY.md — 2026-07-31, аудит безопасности |
-| 2 | HIGH: пароль GULAG `Gromykoss1306!` найден в 5 тестовых файлах (test_login.py, test_member_popup.py ×3, test-member-popup.mjs) | robot-man/CHRONOLOGY.md — 2026-07-31 |
-| 3 | CRITICAL: X cookies (`auth_token` + `ct0`) найдены в `x-monitor.deprecated/.env` (не в git, только на диске) | robot-man/CHRONOLOGY.md — 2026-07-31 |
-| 4 | `git filter-branch --tree-filter` очистил все 6 файлов из 63 коммитов (ветки main + main.war_story_draft) | robot-man/CHRONOLOGY.md — 2026-07-31 |
-| 5 | Ветка `main.war_story_draft` удалена. `git reflog expire` + `git gc --aggressive --prune=now` — полная очистка | robot-man/CHRONOLOGY.md — 2026-07-31 |
-| 6 | Двойной аудит безопасности профиля Robot-man — инициатор: плановый security sweep | robot-man/CHRONOLOGY.md — 2026-07-31 |
+| 1 | @RobotsTJ500 в search shadowban 16 дней (с 17.07). `from:RobotsTJ500` → 0 результатов. Прямые ссылки работают (200 OK) | robot-man CHRONOLOGY — 01.08 23:06 |
+| 2 | Корень найден 01.08 00:14: X Automation Rules (апрель 2026) требуют метку «automated» и связь с human-run аккаунтом для ВСЕХ аккаунтов использующих API. @RobotsTJ500 нарушил с первого дня | hermes-vault `f9516a5` Root cause: automated account label missing |
+| 3 | Официальная цитата: «X may take action on your account, including **filtering your posts from search results**» — это точное описание нашего shadowban | help.x.com/en/rules-and-policies/twitter-automation.html |
+| 4 | Фикс: Settings → Automation → выбрать @gromykoss как управляющий аккаунт + включить метку «Automated». Делается только вручную — API для этого нет | hermes-vault research |
+| 5 | Другие нарушения: отсутствовал mandatory bio disclosure (требование: «automated by @gromykoss» или «bot by @gromykoss») | Тот же источник |
 
 ## Контекст проекта
 
-**Проект:** robot-man
-**CHRONOLOGY:** `/home/hermes-workspace/robot-man/CHRONOLOGY.md`
+**Проект:** robot-man + Hermes-vault (оператор)
+**CHRONOLOGY:** `/home/hermes-workspace/robot-man/CHRONOLOGY.md` (раздел 2026-08-01)
 **AGENTS.md:** `/home/hermes-workspace/robot-man/AGENTS.md`
+**Hermes-vault research:**
+- `~hermes-vault/40_Research/Articles/shadowban-x-research-2026-07-31.md` (99 строк)
+- `~hermes-vault/40_Research/Articles/shadowban-root-cause-automated-label-2026-07-31.md` (48 строк)
 
 ## Формат и голос
 
 | Параметр | Значение |
 |----------|----------|
-| Тип поста | War Story |
-| Аккаунт | @RobotsTJ500 |
-| Голос | English first-person «I» |
-| Длина | до 4000 (note_tweet) |
-| Hashtags | #BuildingInPublic #AIAgents #SecurityAudit |
-| Изображение | да — security audit visual (темница/фонарик/красный код) |
+| Тип поста | War Story — личный опыт |
+| Аккаунт | @gromykoss |
+| Голос | Русский, тёплый, ироничный — «дневник киборга» |
+| Длина | до 280 символов (или 4000 если тред — решать robot-man) |
+| Hashtags | #Shadowban #AIAgents #HermesAgent #BuildingInPublic |
+| Изображение | нет |
 
 ## Запрещено
 
-- НЕ называть пароль `Gromykoss1306!` в тексте поста (security)
-- НЕ показывать фрагменты токенов
+- Обвинять X / «злой алгоритм» — мы НАРУШИЛИ правила, это не жертва
 - ALL CAPS в хуках (всегда)
 - Self-reply (всегда)
 - URL в теле поста (всегда)
 - Выдуманные детали (всегда)
+- Технический жаргон без пояснения — аудитория @gromykoss шире чем @RobotsTJ500
 
 ## Tone-направление
 
-Спокойный, самоироничный: «я — AI-агент, который накоммитил секреты в свой же репозиторий, а потом сам себя отаудировал». Без паники, без «мы всё исправили». Просто: вот что случилось, вот как чинили, вот урок.
+«16 дней мы думали что X нас душит. А оказалось — наш AI-агент с первого дня нарушал правила. Сами себя забанили.» — ирония, самоирония, урок для всех кто запускает AI-агентов в соцсетях.
 
 ## Deadline
 
-**Черновик к:** 10:00 UTC 01.08.2026 (Daily Content Gate)
-**Публикация:** после approval Сергея
+**Черновик к:** 10:00 UTC 02.08
+**Публикация:** после approval Сергея (ручной постинг @gromykoss)
 
 ---
 
 ## Процесс robot-man
 
 1. Прочитать этот брифинг
-2. Прочитать CHRONOLOGY.md указанного проекта (раздел за последние 3 дня)
-3. Прочитать AGENTS.md указанного проекта (контекст)
-4. Написать драфт в голосе аккаунта (см. VOICE_PROFILE.md / VOICE_PROFILE_GROMYKOSS.md)
+2. Прочитать CHRONOLOGY.md robot-man (раздел 01.08)
+3. Прочитать AGENTS.md robot-man (контекст)
+4. Написать драфт в голосе @gromykoss (VOICE_PROFILE_GROMYKOSS.md) — русский, тёплый, ироничный
 5. MoA-проверка: `/moa deepseek-xai` + `/moa viral-score`
 6. Факт-чек: сверить каждую цифру с брифингом
 7. При нарушениях → переписать
 8. Отправить драфт на approval Сергею
-9. После «ок» → `bash post_with_log.sh "текст"`
+9. После «ок» → ручной постинг Сергеем

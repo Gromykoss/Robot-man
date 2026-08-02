@@ -1,0 +1,20 @@
+Edit the banner image at /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_cyborg.png using the image generation tool.
+
+TASK: Replace the female human profile on the LEFT side of this banner with a MALE face, using the facial features from the reference photo at /home/hermes-workspace/robot-man/drafts/profile_20260801/sergey_face.jpg. Keep everything else identical.
+
+KEEP EXACTLY (do not change):
+- The central vertical glowing ORANGE neon data spine (the seam) with the four circular icons connected by circuit lines
+- The right side: chrome/cyborg half with the glowing amber/orange eye
+- The dark monochrome background, the overall composition, the 1500x500 dimensions
+- The style: monochrome + one orange accent, cinematic tech-noir
+- No text, no name, no handle
+
+REPLACE:
+- The female face on the left with a MALE profile facing right, using THE EXACT facial features from the reference photo: short dark-brown hair, reddish-brown beard and mustache, strong defined jaw, serious stoic expression, light blue-grey intense eyes, age ~35-45. The face must be RECOGNIZABLE as the man in the reference photo.
+
+IMPORTANT: the two halves must still form ONE continuous profile (flesh | chrome) — the man's nose/lips/jawline flow seamlessly into the mechanical half, exactly like in the current banner. Keep the hand near the chin if it reads naturally.
+
+STYLE: photorealistic male portrait, monochrome with warm orange accent, matching the reference photo's facial structure. Wide 1500x500.
+
+SAVE to: /home/hermes-workspace/robot-man/drafts/profile_20260801/banner_cyborg_sergey.png
+Then VERIFY the file exists and return its absolute path. Do not post anything to X.
