@@ -321,6 +321,26 @@ def main():
     report = '\n'.join(report_lines)
     print(f"\n📋 Report:\n{report}")
 
+    # 7b. Write metrics summary into CHRONOLOGY.md so Knowledge Graph rebuild picks it up
+    # (KG pipeline reads CHRONOLOGY.md — see scripts/knowledge_graph.py extract_entities_from_file)
+    try:
+        chron_path = ROOT / "CHRONOLOGY.md"
+        if chron_path.exists():
+            chron_entry = [
+                f"## {now.strftime('%Y-%m-%d')} — Nightly Analytics",
+                f"- **Metrics:** {len(metrics)} постов анализировано, baseline: likes={averages.get('likes', 'N/A')}, replies={averages.get('replies', 'N/A')}, impressions={averages.get('impressions', 'N/A')}",
+            ]
+            if metrics:
+                chron_entry.append(f"- **Best:** {best['id'][:8]} ({best['likes']}❤️ {best['replies']}💬 {best['retweets']}🔄)")
+                chron_entry.append(f"- **Worst:** {worst['id'][:8]} ({worst['likes']}❤️ {worst['replies']}💬 {worst['retweets']}🔄)")
+            for rec in patterns.get('recommendations', [])[:3]:
+                chron_entry.append(f"- **Pattern:** {rec}")
+            with open(chron_path, 'a') as f:
+                f.write("\n" + "\n".join(chron_entry) + "\n")
+            print("📝 Metrics summary appended to CHRONOLOGY.md (for KG)")
+    except Exception as e:
+        print(f"⚠️ Could not write CHRONOLOGY entry: {e}")
+
     # 8. Save voice-updater trigger (for the best post)
     if metrics:
         best_post = max(metrics, key=lambda m: m['likes'] + m['replies'] + m['retweets'])

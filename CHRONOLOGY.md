@@ -592,3 +592,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **02.08.2026 00:24** — fix: MCP analytics tool → scripts/analytics_loop.py --days 7 (was nonexistent analytics.py --summary) (`ce3cd1f`)
 - **02.08.2026 00:29** — chore: auto-sync 02.08 — nightly metrics, voice updates, drafts, KG rebuild (`dbf3d0d`)
 - **02.08.2026 04:21** — chore: auto-sync 02.08 (`d2fdcb5`)
+- **02.08.2026 13:52** — self_heal.py: PERMANENT class (403/forbidden/blocked → human-gate), 401→config, 429→external (`cd97fd9`)
