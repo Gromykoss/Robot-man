@@ -164,6 +164,8 @@ X metrics → CAUSED → strategy adjustment → APPLIED_TO → content post →
 ## ⛔ DELEGATION: Codex CLI + Grok Build CLI (CNC-правило)
 
 **Codex и Grok Build — ИНЖЕНЕРЫ, НЕ ОТВЁРТКА. Делегируй ЦЕЛЬ, не инструкцию.**
+**MoA Auto:** `skill_view('moa-auto')` — автоматический Maker+Checker цикл.
+**⛔ НИКОГДА `delegate_task` без `acp_command`** — spawn default-сабагента (DeepSeek-клон), пустая трата токенов.
 
 ### Кому что делегировать
 
@@ -173,14 +175,14 @@ X metrics → CAUSED → strategy adjustment → APPLIED_TO → content post →
 | **Codex CLI** | Код: analytics_loop.py, knowledge_graph, скрипты | «Разберись в analytics_loop.py. Почему метрики не попадают в KG? Предложи fix.» |
 | **delegate_task** | Изолированные задачи в Hermes-контексте | «Проверь OAuth токены и лимиты X API» |
 
-### Как делегировать
+### Как делегировать (ACP stdio)
 
-```bash
-# Grok Build CLI — X-аналитика (основной инструмент robot-man)
-grok --always-approve -p "Проанализируй 10 последних постов @RobotsTJ500. Дай: (1) engagement rate по темам, (2) какие форматы работают лучше, (3) рекомендации для STRATEGY.md. Факты из published_posts.jsonl и X MCP."
+```
+# Codex CLI (Maker)
+delegate_task(acp_command='codex', goal="задача", context="файлы, ограничения")
 
-# Codex CLI — когда нужен код
-codex exec --sandbox danger-full-access "Разберись в knowledge_graph/circulation.py. Найди почему circulation edges не создаются при rebuild. Предложи fix."
+# Grok Build CLI (Checker)  
+delegate_task(acp_command='grok', acp_args=['agent', 'stdio'], goal="задача", context="...")
 ```
 
 ### ❌ Отвёртка (запрещено)

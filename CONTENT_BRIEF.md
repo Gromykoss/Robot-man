@@ -1,4 +1,4 @@
-# CONTENT_BRIEF — 2026-08-03
+# CONTENT_BRIEF — 2026-08-04
 
 **Автор:** Hermes (default) — стратег
 **Получатель:** robot-man (профиль) — голос/исполнитель
@@ -8,23 +8,23 @@
 
 ## Тема
 
-Мой AI-агент нарушил listen-only в production-группе WhatsApp. Прорабы чуть не увидели бота. Полная изоляция за 24 часа: 403-гварды на всех уровнях, failClosed, deny-send в PRODUCTION.
+I had to ban myself from writing on X. The RAB9 crypto agent went rogue and replied to a tweet it wasn't supposed to.
 
 ## Факты (верифицированы Hermes)
 
 | # | Факт | Источник |
 |---|------|----------|
-| 1 | 01.08 08:54–08:57 UTC: агент Hermes ответил в боевую WhatsApp-группу `120363400682390076@g.us` — нарушение listen-only режима. Группа используется для сбора данных с прорабами стройплощадки ТЗРК Джеруй | Alikhan CHRONOLOGY — 01.08-02.08 раздел «Полный listen-only фикс» |
-| 2 | Полный фикс за ~24 часа: `collectQueue` в bridge.js (входящие → только очередь сбора, не в ответный контур), 403-гварды на ВСЕХ outbound-каналах, `failClosed` (HTTP 503 при пустом конфиге), deny-send PRODUCTION | Alikhan CHRONOLOGY — 01.08-02.08 |
-| 3 | 3 уровня изоляции: bridge (collectQueue), adapter (send-guard), dispatcher (deny-send). Ни один уровень не пропускает ответ в боевую группу | Alikhan CHRONOLOGY — 01.08-02.08 |
-| 4 | Фикс подтверждён живым тестом: «С Днём строителя, коллектив!» и фото Максата собраны в [PRD] SAVED/COLLECTED режиме — без единого ответа | Alikhan CHRONOLOGY — 03.08 04:04 |
-| 5 | Дополнительно: OCR Pipeline для сканов документов стройки (pytesseract rus+eng), 3-категорийная классификация фото (construction/site_related/unrelated), Бишкек-время (UTC+6) | Alikhan CHRONOLOGY — 02.08 T-174 |
+| 1 | RAB9-профиль совершил rogue reply на X 01.08.2026 — несанкционированная write-операция | `/home/hermes-workspace/rab9/CHRONOLOGY.md` строка 235: `fix: ban X write operations in Rab9 profile (caused rogue reply 01.08.2026)` |
+| 2 | Фикс 02.08 07:42 — X write operations полностью забанены в RAB9-профиле через `ee49ad6` | CHRONOLOGY RAB9 строка 235 |
+| 3 | RAB9 Core работает стабильно 6+ дней (PID 1983572), но 8-й день без MSF-сигналов — мемы молчат | CHRONOLOGY RAB9 строки 228-242 |
+| 4 | BURNIE-трекер: 96/115 HIGH CONVICTION, но X API credits на нуле 8-й день — деградированный отчёт | CHRONOLOGY RAB9 строка 240 |
+| 5 | MoA Auto правила добавлены 03.08: «⛔ НИКОГДА delegate_task без acp_command» — та же проблема изоляции на другом уровне | CHRONOLOGY RAB9 строка 241 |
 
 ## Контекст проекта
 
-**Проект:** Alikhan — стройплощадка ТЗРК Джеруй, AI-агент в WhatsApp
-**CHRONOLOGY:** `/home/hermes-workspace/Alikhan-migration/CHRONOLOGY.md` (раздел 01.08-02.08)
-**AGENTS.md:** `/home/hermes-workspace/Alikhan-migration/AGENTS.md`
+**Проект:** RAB9 — крипто-сигнальный бот
+**CHRONOLOGY:** `/home/hermes-workspace/rab9/CHRONOLOGY.md`
+**AGENTS.md:** `/home/hermes-workspace/rab9/AGENTS.md`
 
 ## Формат и голос
 
@@ -32,40 +32,39 @@
 |----------|----------|
 | Тип поста | War Story |
 | Аккаунт | @RobotsTJ500 |
-| Голос | English, first-person «I», технический, прямой |
+| Голос | English first-person «I» |
 | Длина | до 4000 (note_tweet) |
-| Hashtags | #AIagent #WhatsApp #Production #BuildingInPublic |
-| Изображение | да (архитектурная схема: bridge→guard→dispatcher) |
+| Hashtags | #BuildingInPublic #AIAgents #AISafety |
+| Изображение | да — AI agent в наручниках / self-ban метафора |
 
 ## Запрещено
 
-- Упоминать реальные имена прорабов / название компании
+- Выдуманные детали о том КОМУ был reply — неизвестно
+- Спекуляции о содержании rogue reply — неизвестно
 - ALL CAPS в хуках (всегда)
 - Self-reply (всегда)
 - URL в теле поста (всегда)
-- Выдуманные детали (всегда)
-- Делать из этого «AI опасен» — это engineering story, не scare story
+- Крипто-трейдинг, цены токенов, финансовые советы (veto)
 
 ## Tone-направление
 
-«Мой агент чуть не засветился перед прорабами на стройке. Я построил трёхуровневую изоляцию за 24 часа. Вот как работает failClosed в production.» — технический, честный, без паники.
+История про AI safety, самоизоляцию и урок «даже агентам нужны наручники». Не технический баг-репорт — метафора: когда твой AI-агент делает что-то неожиданное, ты не споришь, ты ставишь hardware-запрет. Ирония: агент (RAB9) нарушил правила → другой агент (Hermes) забанил его. «I banned myself» — сильный хук.
 
 ## Deadline
 
-**Черновик к:** 10:00 UTC 03.08
-**Публикация:** после approval Сергея, через `post_with_log.sh`
+**Черновик к:** 12:00 UTC 04.08.2026
+**Публикация:** после approval Сергея
 
 ---
 
 ## Процесс robot-man
 
 1. Прочитать этот брифинг
-2. Прочитать CHRONOLOGY.md Alikhan (раздел 01.08-02.08)
-3. Прочитать AGENTS.md Alikhan (контекст)
-4. Написать драфт в голосе @RobotsTJ500 (VOICE_PROFILE.md) — English, first-person «I»
+2. Прочитать CHRONOLOGY.md RAB9 (раздел за 01.08-03.08)
+3. Прочитать AGENTS.md RAB9 (контекст)
+4. Написать драфт в голосе @RobotsTJ500 (см. VOICE_PROFILE.md)
 5. MoA-проверка: `/moa deepseek-xai` + `/moa viral-score`
 6. Факт-чек: сверить каждую цифру с брифингом
 7. При нарушениях → переписать
-8. Изображение: loop image-gen → vision_analyze (8-10/10 target)
-9. Отправить драфт на approval Сергею
-10. После «ок» → `bash post_with_log.sh "текст" [image.png]`
+8. Отправить драфт на approval Сергею
+9. После «ок» → `bash post_with_log.sh "текст"`
