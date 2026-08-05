@@ -649,3 +649,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20827733 (1❤️ 0💬 0🔄)
 - **Pattern:** Best post (20827733): 1 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 4.0% (average)
+- **05.08.2026 00:54** — CHRONOLOGY: живой тест бана 05.08 — бан не снят, xurl search ≠ тест; лог Buzz-поста (`a15b530`)

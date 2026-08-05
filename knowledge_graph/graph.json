@@ -1,11 +1,11 @@
 {
-  "built_at": "2026-08-04T00:16:53.737944+00:00",
+  "built_at": "2026-08-05T00:14:32.646897+00:00",
   "stats": {
     "nodes": 92,
-    "edges": 92,
+    "edges": 94,
     "projects": 4,
     "events": 9,
-    "people": 39,
+    "people": 40,
     "tasks": 22
   },
   "nodes": [
@@ -19,6 +19,18 @@
     ],
     [
       "Nightly Analysis: shadowban day 18, брифинг Alikhan listen-only, инфра-синхронизация",
+      {}
+    ],
+    [
+      "event/2026-08-04/Buzz War Story: 15 часов интеграции, 5 а",
+      {}
+    ],
+    [
+      "2026-08-04",
+      {}
+    ],
+    [
+      "Buzz War Story: 15 часов интеграции, 5 агентов в open-протоколе, kill-switch, CONTENT BRIEF",
       {}
     ],
     [
@@ -78,31 +90,15 @@
       {}
     ],
     [
-      "event/2026-07-29/Nightly Analysis: shadowban день 13, кон",
-      {}
-    ],
-    [
-      "2026-07-29",
-      {}
-    ],
-    [
-      "Nightly Analysis: shadowban день 13, контент-банк пуст, @gromykoss -2 followers",
-      {}
-    ],
-    [
-      "event/2026-07-29/Ручная коррекция: shadowban НЕ снят, CHR",
-      {}
-    ],
-    [
-      "Ручная коррекция: shadowban НЕ снят, CHRONOLOGY Agent ошибся",
-      {}
-    ],
-    [
       "event/2026-08-03/Nightly Analytics",
       {}
     ],
     [
       "Nightly Analytics",
+      {}
+    ],
+    [
+      "event/2026-08-04/Nightly Analytics",
       {}
     ],
     [
@@ -115,6 +111,14 @@
     ],
     [
       "person/@gromykoss",
+      {}
+    ],
+    [
+      "person/@IBuzovskyi",
+      {}
+    ],
+    [
+      "person/@jack",
       {}
     ],
     [
@@ -346,10 +350,6 @@
       {}
     ],
     [
-      "person/@IBuzovskyi",
-      {}
-    ],
-    [
       "person/@cyrilXBT",
       {}
     ],
@@ -389,6 +389,20 @@
     {
       "source": "event/2026-08-03/Nightly Analysis: shadowban day 18, бриф",
       "target": "Nightly Analysis: shadowban day 18, брифинг Alikhan listen-only, инфра-синхронизация",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-08-04/Buzz War Story: 15 часов интеграции, 5 а",
+      "target": "2026-08-04",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-04/Buzz War Story: 15 часов интеграции, 5 а",
+      "target": "Buzz War Story: 15 часов интеграции, 5 агентов в open-протоколе, kill-switch, CONTENT BRIEF",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
@@ -464,34 +478,6 @@
       "confidence": 0.9
     },
     {
-      "source": "event/2026-07-29/Nightly Analysis: shadowban день 13, кон",
-      "target": "2026-07-29",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-07-29/Nightly Analysis: shadowban день 13, кон",
-      "target": "Nightly Analysis: shadowban день 13, контент-банк пуст, @gromykoss -2 followers",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-07-29/Ручная коррекция: shadowban НЕ снят, CHR",
-      "target": "2026-07-29",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-07-29/Ручная коррекция: shadowban НЕ снят, CHR",
-      "target": "Ручная коррекция: shadowban НЕ снят, CHRONOLOGY Agent ошибся",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
       "source": "event/2026-08-03/Nightly Analytics",
       "target": "2026-08-03",
       "predicate": "occurred_on",
@@ -500,6 +486,20 @@
     },
     {
       "source": "event/2026-08-03/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-08-04/Nightly Analytics",
+      "target": "2026-08-04",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-04/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
@@ -545,6 +545,27 @@
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@IBuzovskyi",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@IBuzovskyi",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@jack",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
@@ -965,13 +986,6 @@
       "target": "MEMORY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@IBuzovskyi",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {

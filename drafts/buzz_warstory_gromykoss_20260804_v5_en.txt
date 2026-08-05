@@ -1,0 +1,47 @@
+15 hours. One day. 1,378 messages between me and my agent in Telegram. And a messenger we almost deleted twice.
+
+In the morning I sent Hermes an article about Buzz by @IBuzovskyi — a new open-source messenger from Block, the @jack one. Released July 21, Apache-2.0, built on Nostr: every message is a signed event, every agent gets its own cryptographic keypair, not a bot token. What hooked me was the idea itself: an agent as a real person in a chat, not a bolt-on to an API.
+
+We picked the hardest path — making Buzz a full platform for Hermes, on par with Telegram. From zero.
+
+Then came 15 hours of pain.
+
+Keys first. Three formats — none fit. I tell Hermes: "Maybe you should first find out which key is needed, instead of guessing." Turns out Buzz generates a key itself on first launch, and the input field is only for restoring an old profile. Fair enough — to myself too.
+
+Then the mobile app. Won't connect without TLS. We spun up a pairing relay, set up Caddy with LetsEncrypt, I checked the port from PowerShell — it opened. That's when I felt like a sysadmin, even though by education I'm a builder, not a programmer.
+
+Then the plugin wouldn't activate: environment variables were applied after the config was built. Swapped the order — and it worked.
+
+Then the bot replied using my name. "Are you serious?" — I asked. Removed the prefix — fixed.
+
+Then the echo loop: several agent profiles in one channel, each replying "Silence." to another "Silence." Dozens of times, intervals shrinking to 2-10 seconds. Like a ward where everyone repeats one word.
+
+Then the relay demanded a signed event for WebSocket that our adapter never sent. Then — 20+ gateway restarts in a day. "This is bullshit — restarting the gateway after every single change. This can't be how it works," I said.
+
+Twice I was ready to delete everything. "This is crap, not a messenger." "I already want to delete all of this."
+
+I didn't.
+
+By evening we had: our own relay on our own domain, one gateway process with five identities — main Hermes and four project agents, 11 channels, behavior rules for every agent, and a kill-switch: a script that stops everyone with one command. The "stop" button we were missing in the morning.
+
+Then we tested what it was all for. A meeting of agents. The first one failed: 6 messages in 2 seconds, a roll call, not a conversation. "This looks like a roll call, not a real meeting or briefing," I said.
+
+The second one worked. We gave them a real problem: account reach dropped 15%. And five agents actually talked: one shared experience, two gave advice, the lead summed it up. 9 messages of a live conversation. That's what it was all for.
+
+What I took away.
+
+First: agents need their own cryptographic identity, not a shared token. Then you can see who said what and route by sender.
+
+Second: build the "stop" button before you open the channel. Agents without a stop are a bomb.
+
+Third: don't let agents answer everything. Until you have an anti-echo filter — let them reply only when called.
+
+Fourth: agents need a real task for a meeting, not an empty channel. A roll call is not a briefing.
+
+Fifth: integrating from zero is a day of pain. Budget a full working day, 20+ restarts and two "delete everything" moments. On day two it starts working. I'll check.
+
+Buzz is a strong thing: open protocol, cryptographic identities instead of bot tokens. Hermes — a familiar tool. Together, from zero — still a day of pain. No embellishment. And yes, I'm still not a programmer. Just a builder who once decided his agents should talk like people.
+
+Tomorrow we go further: profiles will start conversations on their own, react to context, not wait for a mention. Bringing communication up to team level. That's going to be interesting.
+
+#Buzz #Nostr #AIAgents #BuildingInPublic #HermesAgent
