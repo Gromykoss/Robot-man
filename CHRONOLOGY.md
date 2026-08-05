@@ -1,3 +1,12 @@
+## 2026-08-05 — Живой тест бана: пробный пост, бан НЕ снят, xurl search ≠ тест
+
+- **17:54 (04.08)** — @gromykoss опубликовал Buzz war story (EN, 3807 символов): https://x.com/Gromykoss/status/2084699433418301876. Упоминания @IBuzovskyi + @jack, 5 хештегов, обложка. Залогирован в published_posts.jsonl (ручной постинг).
+- **~18:00 (04.08)** — Решение Сергея: публикуем shadowban war story v4 от @RobotsTJ500 как ЖИВОЙ ТЕСТ бана (вместо тишины до 05.08). Драфт: drafts/shadowban_war_story_v4.md (верифицирован Grok Build + MoA 01.08).
+- **~18:05 (04.08)** — Опубликован через post_with_log.sh: https://x.com/RobotsTJ500/status/2084803064033075593 (3211 символов, обложка cover_shadowban_v3_grok.png, залогирован).
+- **06:48 (05.08)** — Проверка Сергеем из мобильного приложения: поиск `@RobotsTJ500` → вкладка «Люди» находит профиль, вкладка «Последние» — ПУСТО. Посты НЕ видны.
+- **Вердикт:** бан НЕ снят (день 19). xurl search показал 3 результата (включая новый пост), но обычный публичный поиск — 0. **Урок: xurl search = привилегированный доступ, НЕ тест бана. Единственный тест — публичный поиск в инкогнито, вкладка Latest.** Зафиксировано в skill shadowban-diagnosis.
+- **План:** тишина продолжается, минимум 3-5 дней после пробного поста. Метрики поста — сравнить с 30-31.07 (25 imp): если снова ~25 → глубокий бан, не только search.
+
 ## 2026-08-03 — Nightly Analysis: shadowban day 18, брифинг Alikhan listen-only, инфра-синхронизация
 
 - **04:07** — Инфраструктурная синхронизация (cron): все 5 репо запушены. GULAG UP (HTTP 200). CHRONOLOGY везде свежая (8ч). 13 cron-джобов ok.
@@ -7,6 +16,23 @@
 - **15:01** — Analytics Loop (cron): постов нет (ожидаемо — shadowban recovery тишина). Followers стабильны (411/340). Скрипт штатно отработал.
 - **23:32 (02.08)** — CONTENT BRIEF (cron, Hermes default): Alikhan победитель 39/42 — AI-агент нарушил listen-only в production WhatsApp-группе, трёхуровневая изоляция за 24 часа. Для @RobotsTJ500, English War Story. Файл: CONTENT_BRIEF.md.
 - **23:20** — CHRONOLOGY Agent: +7 записей за 03.08. Брифинг обновлён.
+
+## 2026-08-04 — Buzz War Story: 15 часов интеграции, 5 агентов в open-протоколе, kill-switch, CONTENT BRIEF
+
+- **04:06** — Auto-sync 04.08: Nightly Analytics — 2 поста в метриках, baseline impressions 28.8. Followers @RobotsTJ500 411, @gromykoss 340.
+- **04:24** — KG rebuild (cron `4506b578cfa3`): отработал штатно.
+- **05:49** — Buzz интеграция (сессия default `20260804_054930_0a5eb17c`): Сергей поднял Buzz-релей (Docker, ghcr.io/block/buzz:main), 5 агентов с собственными криптографическими ключами (nsec), 11 каналов. Gateway plugin Buzz активирован.
+- **05:49** — Проблемы дня: ключи — 3 формата (nsec/hex/ncryptsec) → Buzz генерирует ключ сам при первом запуске. Mobile pairing — WSS требует TLS → Caddy + LetsEncrypt. Gateway plugin не активировался — `_apply_env_overrides` после `GatewayConfig.from_dict()` → ручной `load_gateway_config()`.
+- **05:49** — Бот отвечал с префиксом `[Gromykoss]` — баг адаптера, починен.
+- **05:49** — Эхо-петля «Тишина»: профили зациклились в agent-bus, отвечая одним словом. Интервалы 2-10 сек. Фикс: `require_mention: true`.
+- **05:49** — WSS `restricted: not a channel member`: relay кеширует `accessible_channel_ids` один раз при коннекте. Новый канал = старый кеш → REQ отклоняется. REST работает (свежая проверка каждый запрос). Фикс: remove → add Hermes (реконнект, новый кеш).
+- **14:37** — Buzz продолжение (сессия `20260804_143727_472ac22e`): 194 restricted/мин → делегат исследовал: WSS работает для всех 5 pubkey. Корневая причина — кеш membership при WSS-коннекте. Решение: переподключение после membership-изменений.
+- **14:37** — Агенты провели совещание в agent-bus: первое — провал (6 сообщений за 2 секунды, перекличка). Второе — успех (9 сообщений, живой диалог о падении охватов Robot-man на 15%).
+- **14:37** — Создан kill-switch `buzz-profile.sh`: stop-all/start-all/reload. Кнопка «стоп» для всех агентов одной командой.
+- **15:15** — CONTENT BRIEF (сессия `20260804_161500_d8d1e82b`): Hermes (стратег) написал брифинг — 20 верифицированных фактов с источниками. Тема: «15 hours turning Buzz from 'this is crap' into a working agent headquarters». Для @RobotsTJ500, English War Story, до 4000 символов. Файл: CONTENT_BRIEF.md. Deadline: черновик к 12:00 UTC 05.08.
+- **17:30** — MoA-проверка драфта (сессия `20260804_173013_ae89ae`): Grok Build дал PASS-WITH-FIXES (8 пунктов). Факт-чек: 9/10 (один балл за формулировку про ключи). Человечность: 9/10. Ценность чеклиста: 8/10. Verdict: PASS.
+- **17:30** — Драфт v5 готов: `/home/hermes-workspace/robot-man/drafts/buzz_warstory_gromykoss_20260804_v5_en.txt` — 3,808 символов, с упоминаниями @IBuzovskyi + @jack, 5 хештегов.
+- **Итог дня:** Buzz — работающий штаб 5 AI-агентов на открытом протоколе Nostr. 1,378 сообщений Сергей↔Hermes за день. 15 часов от «это дерьмо» до «работает». Агенты общаются как люди, не через API.
 
 # Robot-man — Хронология
 
@@ -615,3 +641,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20827733 (1❤️ 0💬 0🔄)
 - **Pattern:** Best post (20827733): 1 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 4.2% (average)
+- **04.08.2026 04:06** — chore: auto-sync 04.08 (`ff41e33`)
+
+## 2026-08-04 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=0.8, replies=0.3, impressions=28.8
+- **Best:** 20827733 (1❤️ 0💬 0🔄)
+- **Worst:** 20827733 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20827733): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 4.0% (average)
