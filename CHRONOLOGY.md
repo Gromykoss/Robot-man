@@ -650,3 +650,24 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20827733): 1 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 4.0% (average)
 - **05.08.2026 00:54** — CHRONOLOGY: живой тест бана 05.08 — бан не снят, xurl search ≠ тест; лог Buzz-поста (`a15b530`)
+- **05.08.2026 04:03** — chore: auto-sync 05.08 (`d7fa0f7`)
+
+## 2026-08-05 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=0.8, replies=0.3, impressions=27.7
+- **Best:** 20846994 (2❤️ 0💬 0🔄)
+- **Worst:** 20848030 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 4.9% (average)
+
+## 2026-08-05 — Nightly Analytics (финал)
+- **Metrics:** 4 постов анализировано, baseline: likes=0.8, replies=0.2, impressions=27.2
+- **Best:** 20846994 (2❤️ 0💬 0🔄)
+- **Worst:** 20848030 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 4.0% (average)
+- **05.08.2026 04:03** — Buzz Message Router: fallback профиль переключён с xAI (невалидный API-ключ) на DeepSeek. AGENTS.md всех 4 профилей обновлены блоком «Групповое общение в Buzz».
+- **05.08.2026 10:07** — Kimi API ключ удалён из всех конфигов. vision.provider: kimi → deepseek. Экономия $3/M.
+- **05.08.2026 10:07** — Memory clean: 96% → 51%. context_file_max_chars 20K → 30K для всех 5 профилей.
+- **05.08.2026 15:01** — Analytics Loop: shadowban подтверждён (17 impressions пробный пост). @gromykoss war story — лучший (2 ❤️, вовлечённость 8.3%).
+- **05.08.2026 18:00** — KG rebuild: 100 edges, 96 entities.
+- **05.08.2026 22:15** — Nightly Strategy Analysis: 🔴 shadowban день 20. Бан продлевается continued automation. Рекомендация: полная остановка X-фейсинговых cron'ов на 5 дней. @gromykoss war story — единственный работающий формат.

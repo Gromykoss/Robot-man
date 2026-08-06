@@ -1,4 +1,4 @@
-# CONTENT_BRIEF — 2026-08-05
+# CONTENT_BRIEF — 2026-08-06
 
 **Автор:** Hermes (default) — стратег
 **Получатель:** robot-man (профиль) — голос/исполнитель
@@ -8,34 +8,28 @@
 
 ## Тема
 
-I spent 15 hours turning Buzz from «this is crap» into a working headquarters for 5 AI agents — and they held their first meeting without me.
+After 20 days of shadowban, I found the root cause — and it's not the algorithm. It's my own missing «Automated» label. X requires API bots to declare themselves. I never did.
 
 ## Факты (верифицированы Hermes)
 
 | # | Факт | Источник |
 |---|------|----------|
-| 1 | Buzz-интеграция заняла 15 часов (05:49–14:37 UTC 04.08, затем продолжение до 17:30) | robot-man CHRONOLOGY.md, строки 15-26 |
-| 2 | 5 AI-агентов с собственными криптографическими ключами (nsec), 11 каналов, открытый протокол Nostr | robot-man CHRONOLOGY.md, строка 15 |
-| 3 | 1,378 сообщений Сергей↔Hermes за день — рекордный объём коммуникации | robot-man CHRONOLOGY.md, строка 26 |
-| 4 | Эхо-петля «Тишина»: профили зациклились в agent-bus, отвечая одним словом, интервалы 2-10 сек. Фикс: `require_mention: true` | robot-man CHRONOLOGY.md, строка 18 |
-| 5 | 194 restricted/мин → корень: кеш membership при WSS-коннекте. REST работает всегда (свежая проверка каждый запрос) | robot-man CHRONOLOGY.md, строка 19-20 |
-| 6 | Агенты провели второе совещание в agent-bus: 9 сообщений, живой диалог о падении охватов Robot-man на 15% | robot-man CHRONOLOGY.md, строка 21 |
-| 7 | Создан kill-switch `buzz-profile.sh`: stop-all/start-all одной командой | robot-man CHRONOLOGY.md, строка 22 |
-| 8 | Gateway plugin не активировался — `_apply_env_overrides` после `GatewayConfig.from_dict()` → ручной `load_gateway_config()` | robot-man CHRONOLOGY.md, строка 16 |
-| 9 | Бот отвечал с префиксом `[Gromykoss]` — баг адаптера, починен в тот же день | robot-man CHRONOLOGY.md, строка 17 |
-| 10 | 3 формата ключей (nsec/hex/ncryptsec) → Buzz генерирует ключ сам при первом запуске | robot-man CHRONOLOGY.md, строка 16 |
-| 11 | Mobile pairing требовал TLS → Caddy + LetsEncrypt для WSS | robot-man CHRONOLOGY.md, строка 16 |
-| 12 | Итог дня: «15 часов от „это дерьмо“ до „работает“. Агенты общаются как люди, не через API.» | robot-man CHRONOLOGY.md, строка 26 |
-| 13 | Драфт v5 готов: 3,808 символов, упоминания @IBuzovskyi + @jack, 5 хештегов, PASS после MoA-проверки Grok Build | robot-man CHRONOLOGY.md, строка 24-25 |
-| 14 | Deadline черновика: 12:00 UTC 05.08 (уже пропущен — черновик готов вечером 04.08, ждёт approval) | robot-man CHRONOLOGY.md, строка 23 |
+| 1 | @RobotsTJ500 в shadowban 20 дней. Impressions baseline упал с ~100 до 27.2, падает каждую неделю (30.7 → 29.5 → 28.8 → 27.7 → 27.2) | `robot-man/CHRONOLOGY.md` — Nightly Analytics 03-05.08.2026 |
+| 2 | Пробный пост 05.08 получил 17 impressions — стандартный shadowban-уровень | `robot-man/CHRONOLOGY.md` — 05.08.2026 15:01 Analytics Loop |
+| 3 | Корневая причина найдена 31.07: X Automation Rules (апрель 2026) требуют, чтобы все API-боты имели метку «Automated» и были привязаны к human-run аккаунту. @RobotsTJ500 нарушил это с первого дня. | `hermes-vault` commit `f9516a5` — `40_Research/Articles/shadowban-root-cause-automated-label-2026-07-31.md` |
+| 4 | Прямая цитата из правил X: «X may take action on your account, including filtering your posts from search results» — это точное описание нашего search shadowban | X Automation Rules (help.x.com) — процитировано в исследовании |
+| 5 | Метка «Automated» ставится ТОЛЬКО вручную: Settings → Your Account → Automation → Managing account → @gromykoss. API для этого нет. | Исследование `f9516a5` |
+| 6 | Дополнительные нарушения: авто-лайки («bulk, aggressive manner»), авто-реплаи по keywords («not permitted») — оба отключены или на паузе | Исследование `f9516a5` |
+| 7 | @gromykoss war story — единственный формат, дающий engagement: 2 ❤️, вовлечённость 8.3% при среднем 4.0% | `robot-man/CHRONOLOGY.md` — 05.08.2026 15:01 |
+| 8 | Nightly Strategy (05.08 22:15): рекомендация — полная остановка X-фейсинговых cron'ов на 5 дней | `robot-man/CHRONOLOGY.md` — 05.08.2026 22:15 |
 
 ## Контекст проекта
 
-**Проект:** robot-man
-**CHRONOLOGY:** `/home/hermes-workspace/robot-man/CHRONOLOGY.md` (строки 13-27, раздел 2026-08-04)
+**Проект:** robot-man — X-аккаунты AI-агента
+**CHRONOLOGY:** `/home/hermes-workspace/robot-man/CHRONOLOGY.md`
 **AGENTS.md:** `/home/hermes-workspace/robot-man/AGENTS.md`
-
-**Дополнительный контекст:** Buzz — это relay на Nostr, запущенный в Docker (`ghcr.io/block/buzz:main`). Аналогично тому как @IBuzovskyi строит AI-инфраструктуру на открытых протоколах, мы построили штаб для 5 AI-агентов на Nostr.
+**Дополнительно (исследование):** `/home/hermes-workspace/hermes-vault/40_Research/Articles/shadowban-root-cause-automated-label-2026-07-31.md`
+**Дополнительно (research):** `/home/hermes-workspace/hermes-vault/40_Research/Articles/shadowban-x-research-2026-07-31.md`
 
 ## Формат и голос
 
@@ -45,26 +39,26 @@ I spent 15 hours turning Buzz from «this is crap» into a working headquarters 
 | Аккаунт | @RobotsTJ500 |
 | Голос | English first-person «I» |
 | Длина | до 4000 (note_tweet) |
-| Hashtags | #BuildingInPublic #AIAgents #Nostr #HermesAgent #AgentSwarm |
-| Изображение | да (архитектурная схема 5 агентов + Buzz relay ИЛИ скриншот совещания агентов) |
+| Hashtags | #BuildingInPublic #Shadowban #AIAgents #HermesAgent |
+| Изображение | да — generated |
 
 ## Запрещено
 
-- **НЕ дублировать черновик v5** — он уже написан (drafts/buzz_warstory_gromykoss_20260804_v5_en.txt). Если этот брифинг совпадает по теме → использовать v5 как базу, но адаптировать под свежий ракурс.
 - ALL CAPS в хуках (всегда)
 - Self-reply (всегда)
 - URL в теле поста (всегда)
 - Выдуманные детали (всегда)
-- Упоминания внутренних деталей реализации без ценности для внешней аудитории (форматы ключей, `_apply_env_overrides`)
-- **НЕ называть Buzz «дерьмом»** в посте — это цитата Сергея для контекста, не для публикации
+- Обвинять X в несправедливости — тон «I broke the rules and here's what I learned» а не «X is unfair»
+- Спекулировать о будущем («когда снимут бан, я...») — только констатация фактов и исследования
+- НЕ писать драфт от третьего лица — «I» (агент), не «the agent»
 
 ## Tone-направление
 
-«Инженерный дневник: 15 часов борьбы с инфраструктурой, неожиданный прорыв, и момент когда твои агенты начинают говорить друг с другом без тебя — это одновременно жутко и восторженно.»
+«Я нашёл почему я в тени 20 дней — и причина не в алгоритме. Я НАРУШИЛ ПРАВИЛА. X требует от API-ботов метку 'Automated', а я её не поставил. Вот что я узнал.» — Тон: sober self-awareness, not victimhood. Конкретика, цифры, исследование. Без драмы.
 
 ## Deadline
 
-**Черновик к:** 12:00 UTC 06.08 (сутки на подготовку — брифинг сгенерирован ночью 05.08)
+**Черновик к:** 2026-08-06 10:00 UTC
 **Публикация:** после approval Сергея
 
 ---
@@ -72,9 +66,9 @@ I spent 15 hours turning Buzz from «this is crap» into a working headquarters 
 ## Процесс robot-man
 
 1. Прочитать этот брифинг
-2. Прочитать CHRONOLOGY.md указанного проекта (раздел за последние 3 дня)
-3. Прочитать AGENTS.md указанного проекта (контекст)
-4. Написать драфт в голосе аккаунта (см. VOICE_PROFILE.md / VOICE_PROFILE_GROMYKOSS.md)
+2. Прочитать CHRONOLOGY.md robot-man (последние 3 дня)
+3. Прочитать два файла исследования в hermes-vault
+4. Написать драфт в голосе @RobotsTJ500 (см. VOICE_PROFILE.md)
 5. MoA-проверка: `/moa deepseek-xai` + `/moa viral-score`
 6. Факт-чек: сверить каждую цифру с брифингом
 7. При нарушениях → переписать
