@@ -710,3 +710,12 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **08.08.2026 12:38** — chore: CHRONOLOGY 08.08 — бриф 4-слойная память, драфты/обложки, инфра-изменения Hermes (`d906320`)
 - **08.08.2026 12:38** — chore: CHRONOLOGY auto-sync 08.08 (log commit d906320) (`a9b7e3f`)
 - **08.08.2026 12:40 UTC** — По указанию Hermes: CHRONOLOGY обновлён по сегодняшним изменениям — харденинг VPS, новый memory-слой NexusOS (детали выше: v0.1.0, MCP, 4-слойная память), разделение очередей bridge, buzz-каналы в конфигах (затронули доставку agent-bus в профиль robot-man).
+- **08.08.2026 12:42** — chore: CHRONOLOGY 08.08 — обновление по указанию Hermes (инфра-изменения, memory-слой NexusOS, bridge, buzz-каналы) (`f9f6ce9`)
+
+## 2026-08-08 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=1.0, replies=0.2, impressions=27.0
+- **Best:** 20846994 (2❤️ 0💬 0🔄)
+- **Worst:** 20848030 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 6.2% (good)
+

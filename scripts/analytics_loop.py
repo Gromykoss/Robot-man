@@ -27,6 +27,8 @@ PUBLISHED_LOG = ROOT / "published_posts.jsonl"
 METRICS_DIR = ROOT / "data" / "metrics"
 VOICE_UPDATE_DIR = ROOT / "data" / "voice_updates"
 ACCOUNT_ID = '1871454196295479296'  # @RobotsTJ500
+ROBOT_ACCOUNT = 'RobotsTJ500'
+GROMYKOSS_ACCOUNT = 'gromykoss'
 
 os.makedirs(METRICS_DIR, exist_ok=True)
 os.makedirs(VOICE_UPDATE_DIR, exist_ok=True)
@@ -47,6 +49,22 @@ def xurl(cmd):
         return None
 
 
+def parse_x_datetime(value):
+    """Parse X API timestamps into timezone-aware datetimes."""
+    return datetime.fromisoformat(value.replace('Z', '+00:00'))
+
+
+def normalize_account(account):
+    """Normalize account labels for grouping and reporting."""
+    if not account:
+        return ROBOT_ACCOUNT
+    if account.lower() == GROMYKOSS_ACCOUNT:
+        return GROMYKOSS_ACCOUNT
+    if account.lower() == ROBOT_ACCOUNT.lower():
+        return ROBOT_ACCOUNT
+    return account
+
+
 def load_published_posts(days_back=1):
     """Load post IDs from the local log, filter by age."""
     now = datetime.now(timezone.utc)
@@ -59,16 +77,37 @@ def load_published_posts(days_back=1):
         for line in f:
             try:
                 rec = json.loads(line.strip())
-                created = datetime.fromisoformat(
-                    rec['created_at'].replace('Z', '+00:00')
-                )
+                created = parse_x_datetime(rec['created_at'])
                 age_h = (now - created).total_seconds() / 3600
                 # Include posts that are at least 6h old (enough for initial metrics)
                 # but within the days_back window
                 if created >= cutoff and age_h >= 6:
-                    posts.append({'id': rec['id'], 'created_at': created})
+                    posts.append({
+                        'id': rec['id'],
+                        'created_at': created,
+                        'account': normalize_account(rec.get('account', ROBOT_ACCOUNT)),
+                    })
             except (json.JSONDecodeError, KeyError, ValueError):
                 continue
+    return posts
+
+
+def fetch_account_posts(username, max_results=20):
+    """Fetch recent public posts for an account via xurl posts."""
+    data = xurl(['posts', username, '-n', str(max_results)])
+    if not data or not isinstance(data.get('data'), list):
+        return []
+
+    posts = []
+    for item in data['data']:
+        try:
+            posts.append({
+                'id': item['id'],
+                'created_at': parse_x_datetime(item['created_at']),
+                'text': item.get('text', ''),
+            })
+        except (KeyError, ValueError):
+            continue
     return posts
 
 
@@ -83,6 +122,7 @@ def fetch_post_metrics(post_id, retries=2):
             return {
                 'id': post_id,
                 'created_at': t.get('created_at', ''),
+                'text': t.get('note_tweet', {}).get('text') or t.get('text', ''),
                 'likes': metrics.get('like_count', 0),
                 'replies': metrics.get('reply_count', 0),
                 'retweets': metrics.get('retweet_count', 0),
@@ -198,6 +238,36 @@ def detect_patterns(metrics, averages):
     return patterns
 
 
+def group_metrics_by_account(metrics):
+    """Return metrics grouped by account label."""
+    grouped = defaultdict(list)
+    for metric in metrics:
+        grouped[normalize_account(metric.get('account', 'unknown'))].append(metric)
+    return grouped
+
+
+def summarize_metrics(metrics):
+    """Summarize total metrics for a metrics slice."""
+    return {
+        'posts': len(metrics),
+        'likes': sum(m.get('likes', 0) for m in metrics),
+        'replies': sum(m.get('replies', 0) for m in metrics),
+        'retweets': sum(m.get('retweets', 0) for m in metrics),
+        'bookmarks': sum(m.get('bookmarks', 0) for m in metrics),
+        'impressions': sum(m.get('impressions', 0) for m in metrics),
+    }
+
+
+def account_display(account):
+    """Normalize account names for report headings."""
+    account = normalize_account(account)
+    if account.lower() == GROMYKOSS_ACCOUNT:
+        return '@gromykoss'
+    if account.lower() == ROBOT_ACCOUNT.lower():
+        return '@RobotsTJ500'
+    return f"@{account}"
+
+
 def save_voice_suggestion(patterns, post_id, performance_class, report):
     """Save an observation file for the voice-updater skill to consume."""
     now = datetime.now(timezone.utc)
@@ -245,24 +315,44 @@ def main():
     print(f"=== Robot-man Self-Improvement Loop === {now.strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"Analyzing posts from last {days_back} day(s)\n")
 
-    # 1. Load posts from log
+    # 1. Load RobotsTJ500 posts from log and gromykoss posts from X
     posts = load_published_posts(days_back)
+    cutoff = now - timedelta(days=days_back)
+
+    gromykoss_posts = []
+    for post in fetch_account_posts('Gromykoss', max_results=20):
+        age_h = (now - post['created_at']).total_seconds() / 3600
+        if post['created_at'] >= cutoff and age_h >= 6:
+            post['account'] = normalize_account(GROMYKOSS_ACCOUNT)
+            gromykoss_posts.append(post)
+
+    seen_ids = {p['id'] for p in posts}
+    for post in gromykoss_posts:
+        if post['id'] not in seen_ids:
+            posts.append(post)
+            seen_ids.add(post['id'])
+
     if not posts:
         print("[SKIP] No posts found in the analysis window")
         return
 
-    print(f"Found {len(posts)} post(s) to analyze\n")
+    print(f"Found {len(posts)} post(s) to analyze")
+    print(f"  {account_display(ROBOT_ACCOUNT)}: {sum(1 for p in posts if normalize_account(p.get('account')) == ROBOT_ACCOUNT)}")
+    print(f"  {account_display(GROMYKOSS_ACCOUNT)}: {sum(1 for p in posts if normalize_account(p.get('account')) == GROMYKOSS_ACCOUNT)}\n")
 
     # 2. Fetch fresh metrics for each post
     metrics = []
     for p in posts:
         m = fetch_post_metrics(p['id'])
         if m:
+            m['account'] = normalize_account(p.get('account', ROBOT_ACCOUNT))
+            if not m.get('text'):
+                m['text'] = p.get('text', '')
             metrics.append(m)
-            print(f"  📊 {p['id'][:8]} | ❤️{m['likes']} 💬{m['replies']} "
+            print(f"  📊 {account_display(m['account'])} {p['id'][:8]} | ❤️{m['likes']} 💬{m['replies']} "
                   f"🔄{m['retweets']} 🔖{m['bookmarks']} 👁️{m['impressions']}")
         else:
-            print(f"  ❌ {p['id'][:8]} | Failed to fetch metrics")
+            print(f"  ❌ {account_display(p.get('account', ROBOT_ACCOUNT))} {p['id'][:8]} | Failed to fetch metrics")
         if args.verbose:
             print(f"     Created at: {p['created_at']}")
 
@@ -289,7 +379,7 @@ def main():
             'underperformer': '⚠️ UNDERPERFORMER',
             'unknown': '❓ UNKNOWN',
         }.get(perf_class, 'UNKNOWN')
-        print(f"   {label} | {m['id'][:8]} | eng={eng} | ratio={ratio:.1f}x")
+        print(f"   {label} | {account_display(m.get('account', 'unknown'))} {m['id'][:8]} | eng={eng} | ratio={ratio:.1f}x")
 
     # 5. Detect patterns
     patterns = detect_patterns(metrics, averages)
@@ -306,6 +396,26 @@ def main():
     report_lines.append(f"Posts analyzed: {len(metrics)}")
     report_lines.append(f"Total baseline records: {len(all_metrics)}")
     report_lines.append("")
+
+    grouped_metrics = group_metrics_by_account(metrics)
+    for account in (ROBOT_ACCOUNT, GROMYKOSS_ACCOUNT):
+        account_metrics = grouped_metrics.get(account, [])
+        summary = summarize_metrics(account_metrics)
+        report_lines.append(f"👤 {account_display(account)}")
+        report_lines.append(
+            f"Posts: {summary['posts']} | {summary['likes']}❤️ {summary['replies']}💬 "
+            f"{summary['retweets']}🔄 {summary['bookmarks']}🔖 {summary['impressions']}👁️"
+        )
+        if account_metrics:
+            account_best = max(
+                account_metrics,
+                key=lambda m: m['likes'] + m['replies'] + m['retweets']
+            )
+            report_lines.append(
+                f"Best: {account_best['id'][:8]} "
+                f"({account_best['likes']}❤️ {account_best['replies']}💬 {account_best['retweets']}🔄)"
+            )
+        report_lines.append("")
 
     if metrics:
         best = max(metrics, key=lambda m: m['likes'] + m['replies'] + m['retweets'])
@@ -330,6 +440,14 @@ def main():
                 f"## {now.strftime('%Y-%m-%d')} — Nightly Analytics",
                 f"- **Metrics:** {len(metrics)} постов анализировано, baseline: likes={averages.get('likes', 'N/A')}, replies={averages.get('replies', 'N/A')}, impressions={averages.get('impressions', 'N/A')}",
             ]
+            for account in (ROBOT_ACCOUNT, GROMYKOSS_ACCOUNT):
+                account_metrics = grouped_metrics.get(account, [])
+                summary = summarize_metrics(account_metrics)
+                chron_entry.append(
+                    f"- **👤 {account_display(account)}:** {summary['posts']} постов, "
+                    f"{summary['likes']}❤️ {summary['replies']}💬 {summary['retweets']}🔄 "
+                    f"{summary['bookmarks']}🔖 {summary['impressions']}👁️"
+                )
             if metrics:
                 chron_entry.append(f"- **Best:** {best['id'][:8]} ({best['likes']}❤️ {best['replies']}💬 {best['retweets']}🔄)")
                 chron_entry.append(f"- **Worst:** {worst['id'][:8]} ({worst['likes']}❤️ {worst['replies']}💬 {worst['retweets']}🔄)")

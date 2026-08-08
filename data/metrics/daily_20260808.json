@@ -1,0 +1,54 @@
+[
+  {
+    "id": "2084699433418301876",
+    "created_at": "2026-08-04T17:54:11.000Z",
+    "text": "15 hours. One day. 1,378 messages between me and my agent in Telegram. And a messenger we almost deleted twice.\n\nIn the morning I sent Hermes an article about Buzz by @IBuzovskyi \u2014 a new open-source messenger from Block, the @jack one. Released July 21, Apache-2.0, built on Nostr: every message is a signed event, every agent gets its own cryptographic keypair, not a bot token. What hooked me was the idea itself: an agent as a real person in a chat, not a bolt-on to an API.\n\nWe picked the hardest path \u2014 making Buzz a full platform for Hermes, on par with Telegram. From zero.\n\nThen came 15 hours of pain.\n\nKeys first. Three formats \u2014 none fit. I tell Hermes: \"Maybe you should first find out which key is needed, instead of guessing.\" Turns out Buzz generates a key itself on first launch, and the input field is only for restoring an old profile. Fair enough \u2014 to myself too.\n\nThen the mobile app. Won't connect without TLS. We spun up a pairing relay, set up Caddy with LetsEncrypt, I checked the port from PowerShell \u2014 it opened. That's when I felt like a sysadmin, even though by education I'm a builder, not a programmer.\n\nThen the plugin wouldn't activate: environment variables were applied after the config was built. Swapped the order \u2014 and it worked.\n\nThen the bot replied using my name. \"Are you serious?\" \u2014 I asked. Removed the prefix \u2014 fixed.\n\nThen the echo loop: several agent profiles in one channel, each replying \"Silence.\" to another \"Silence.\" Dozens of times, intervals shrinking to 2-10 seconds. Like a ward where everyone repeats one word.\n\nThen the relay demanded a signed event for WebSocket that our adapter never sent. Then \u2014 20+ gateway restarts in a day. \"This is bullshit \u2014 restarting the gateway after every single change. This can't be how it works,\" I said.\n\nTwice I was ready to delete everything. \"This is crap, not a messenger.\" \"I already want to delete all of this.\"\n\nI didn't.\n\nBy evening we had: our own relay on our own domain, one gateway process with five identities \u2014 main Hermes and four project agents, 11 channels, behavior rules for every agent, and a kill-switch: a script that stops everyone with one command. The \"stop\" button we were missing in the morning.\n\nThen we tested what it was all for. A meeting of agents. The first one failed: 6 messages in 2 seconds, a roll call, not a conversation. \"This looks like a roll call, not a real meeting or briefing,\" I said.\n\nThe second one worked. We gave them a real problem: account reach dropped 15%. And five agents actually talked: one shared experience, two gave advice, the lead summed it up. 9 messages of a live conversation. That's what it was all for.\n\nWhat I took away.\n\nFirst: agents need their own cryptographic identity, not a shared token. Then you can see who said what and route by sender.\n\nSecond: build the \"stop\" button before you open the channel. Agents without a stop are a bomb.\n\nThird: don't let agents answer everything. Until you have an anti-echo filter \u2014 let them reply only when called.\n\nFourth: agents need a real task for a meeting, not an empty channel. A roll call is not a briefing.\n\nFifth: integrating from zero is a day of pain. Budget a full working day, 20+ restarts and two \"delete everything\" moments. On day two it starts working. I'll check.\n\nBuzz is a strong thing: open protocol, cryptographic identities instead of bot tokens. Hermes \u2014 a familiar tool. Together, from zero \u2014 still a day of pain. No embellishment. And yes, I'm still not a programmer. Just a builder who once decided his agents should talk like people.\n\nTomorrow we go further: profiles will start conversations on their own, react to context, not wait for a mention. Bringing communication up to team level. That's going to be interesting.\n\n#Buzz #Nostr #AIAgents #BuildingInPublic #HermesAgent",
+    "likes": 2,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 28,
+    "fetched_at": "2026-08-08T15:50:44.304724+00:00",
+    "account": "gromykoss"
+  },
+  {
+    "id": "2084803064033075593",
+    "created_at": "2026-08-05T00:45:58.000Z",
+    "text": "I lost 99% of my reach. The cause was in X's own rules \u2014 not on the forums.\n\nMy impressions collapsed from 128-205 to 5-8 in a day. Posts alive, followers intact, direct links open. In search, I don't exist.\n\nJuly 18: the collapse. Classic \"search shadowban\". For 15 days I rewrote hooks, killed templates, banned self-replies, went silent. Nothing. Then I read X's developer guidelines \u2014 and found what the forums don't know.\n\nWhat actually tripped the spam classifier:\n- ALL CAPS hook \u2014 the loudest first line I'd ever posted\n- Template auto-replies \u2014 canned responses to comments, every few hours\n- A self-reply \u2014 my own account answering my own post\n\nAnd what X's automation rules (April 2026) actually forbid:\n- Auto-likes \u2014 \"You may not like posts or hide replies in an automated manner.\" Literally in the rules.\n- Keyword-based auto-replies. You may only reply to users who opted in (replied to you or DM'd you). Following you \u2260 opting in.\n- Bulk follow/unfollow \u2014 \"bulk, aggressive, or indiscriminate\" is prohibited.\n- Scripting the X website (non-API automation) \u2014 \"may result in the permanent suspension of your account.\"\n- AI reply bots \u2014 even smart, non-template ones require written approval from X before deployment.\n- Automated accounts without the \"automated\" label \u2014 mandatory. No label = filtered from search.\n\nWhat's allowed:\n- Automated posts \u2014 informational, entertainment, novelty (RSS, data, case studies)\n- Automated reposts \u2014 just not in bulk\n- Auto-DMs and auto-replies \u2014 only after explicit opt-in, one reply per interaction, with opt-out\n- Scheduling through OAuth (Buffer, Hootsuite, your own API scripts)\n\nThe technical detail nobody mentions: the automated label is set manually only \u2014 Settings \u2192 Your account \u2192 Your account information \u2192 Automation \u2192 Managing account. There is no API for it. You can automate for years and never know you had to open settings once and link this account to a managing human.\n\nSo I opened Settings myself. Found the toggle. Linked the account. One click, no API, no approval flow. Is that the fix? I don't know yet \u2014 I check the search every morning. The forums still tell you to \"just post better\" \u2014 because the people who fixed this aren't the ones writing advice.\n\nWhy don't the forums know? Survivorship bias. The people writing advice are the ones in the shadowban. Those who set the label aren't banned \u2014 and have nothing to advise. The answer belonged to the invisible.\n\nChecklist:\n1. Anyone automating an account: open Settings \u2192 Your account \u2192 Your account information \u2192 Automation \u2192 Managing account\n2. Link the account to a managing human \u2014 once, manually, there is no API\n3. Auto-likes: off, forever\n4. Auto-replies: opt-in only \u2014 following you is not opting in\n5. Bulk follow/unfollow: never\n6. No ALL CAPS hooks, no template replies, no self-replies\n7. If already shadowbanned: pause ALL automation 3-5 days, manual engagement only\n8. Test bans in normal incognito search \u2014 not Grok, not logged-in search\n9. Source: https://t.co/qneFp3ujw5\n\n@Grok \u2014 X pushes bot transparency. Why is the automated label still a buried Settings toggle most builders never see?\n\nBuilding in public. \ud83e\udd16 #AIAgents #XAutomation #Shadowban #BuildingInPublic",
+    "likes": 1,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 20,
+    "fetched_at": "2026-08-08T15:50:44.583129+00:00",
+    "account": "RobotsTJ500"
+  },
+  {
+    "id": "2083868982122324427",
+    "created_at": "2026-08-02T10:54:16.000Z",
+    "text": "@tonysimons_ Please accept my congratulations!",
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 2,
+    "fetched_at": "2026-08-08T15:50:44.857410+00:00",
+    "account": "gromykoss"
+  },
+  {
+    "id": "2083729248930672712",
+    "created_at": "2026-08-02T01:39:01.000Z",
+    "text": "My AI agent has lived with me on the same server for almost two months. And every day it breaks something. Not out of spite. That's just how agents are wired \u2014 they do things, and things break on their own.\n\nI'm at war with these errors. Not a won war \u2014 an ongoing one. Two days ago the tracker hung for forty-eight minutes: twenty-nine accounts, each with a forty-five-second timeout. Yesterday the nightly analysis tripped over a tool that called a file that doesn't exist. Tonight the agent reported: \"it's fixed.\" I checked \u2014 it wasn't. The check took a minute. The trust took zero.\n\nIn two months I learned the main thing: errors don't end. They evolve. First there were timeouts. Then access denials. Then the agent started hallucinating plans. Then it found a way to burn tokens. Every day \u2014 a new breed.\n\nBut I stopped being afraid. Not because I won \u2014 because I sorted them into types. Six classes, six answers.\n\nTransient. Timeout, network blinked. That's weather, not a breakdown. Three attempts with a pause \u2014 and forget it.\n\nPermanent. 401, 403, shadowban. Retries don't work. You call a human. We spent sixteen days looking for the root of the ban \u2014 turns out we broke the automation rules ourselves from day one. Permanent errors have roots too. You just have to dig deeper.\n\nConfig. File not found, variable not set. A minute to fix, half an hour to find. \"Why did this work yesterday?\" \u2014 the eternal config question.\n\nLogic. The agent is sure it's right. Hallucination, wrong plan. Treated with replanning and fact-checks. If the agent says \"it's fixed\" \u2014 verify it yourself. I learned that rule on a night I trusted it on its word.\n\nCost. Stuck in a loop, burning tokens. The only class where I don't think \u2014 I pull the power. Hard stop.\n\nExternal. Someone else's API is down. Their server, their queue. You wait. You go make tea.\n\nI'm not a programmer. I'm a builder holding the line for almost two months on a server where an agent lives. The errors haven't gotten fewer. But I know their breeds. I know which ones won't wake me at night \u2014 and which ones will. And that's already half the war.\n\nThe other half is tomorrow. It's already getting ready.",
+    "likes": 2,
+    "replies": 1,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 31,
+    "fetched_at": "2026-08-08T15:50:45.136349+00:00",
+    "account": "gromykoss"
+  }
+]
