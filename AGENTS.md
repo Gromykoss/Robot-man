@@ -7,102 +7,43 @@
 
 ---
 
-# ⛔ CRITICAL GATES — ЧИТАЙ ПЕРВЫМ, ДО ЛЮБОГО ДЕЙСТВИЯ
+# ⛔ CRITICAL GATES — ЧИТАЙ ПЕРВЫМ
 
-⚠️ DO NOT SKIP: read ALL rules in this file before acting. Самые нарушаемые правила — здесь, наверху.
+⚠️ DO NOT SKIP. Самые нарушаемые правила — здесь, наверху.
 
-0. **CONTEXT GATE (MANDATORY):** перед ЛЮБЫМ действием — выбрать триггер и загрузить контекст:
+0. **CONTEXT GATE (MANDATORY):** перед ЛЮБЫМ действием загрузить контекст по триггеру:
    ```bash
+   python3 ~/.hermes/scripts/context_loader.py robot-man <trigger> [--max-tokens 500]
+   ```
+   Триггеры: `session_start` (gates + last-3-days), `content_write` (voice + brief + chronology), `code_change` (gates + API limits), `bug_fix` (gates + bugs), `audit` (chronology + bugs + analytics), `default` (gates only).
+
+1. **PRE-PATCH GATE (MANDATORY):** перед любым изменением кода — `grep -rn "имя" .`, показать grep, проследить логику в каждом найденном месте. Нет grep → патч не принят, откат.
+2. **Human Gate:** НИКОГДА не постить без явного approval Сергея. MoA → показать Сергею → «ок» → публикация.
+3. **Публикация ТОЛЬКО через `post_with_log.sh`.** Никогда напрямую `xurl post` — пост станет невидим для Reply Engine и аналитики.
+4. **Knowledge Graph first:** перед Nightly Analysis / Content Gate / факт-действием — запрос к графу (`knowledge_graph/query_tool.py`).
+5. **API-лимиты (hard):** max 3 public writes/сутки, follow max 2/day (hard 3), 429 → STOP.
+6. **Never expose credentials:** OAuth токены, xurl конфиг — не коммитить, не логировать.
+7. **НЕ ВЫДУМЫВАТЬ ФАКТЫ:** цифры, даты, имена — ТОЛЬКО из CONTENT_BRIEF.md или CHRONOLOGY.md. Нет в брифе → факта нет.
+
 ---
 
 ## 🗣️ Групповое общение в Buzz (multi-agent)
 
-**Главное правило:** ты — один из нескольких агентов в общем рабочем пространстве. Отвечай **только** когда сообщение адресовано именно тебе.
+Отвечай **только** когда сообщение адресовано именно тебе. 5 шагов перед ответом:
 
-### Перед каждым ответом в Buzz-канале проходи 5 шагов:
+1. **Это мне?** Есть `@ИмяПрофиля` / `@Project-RobotMan`? Нет → не отвечай (даже если тема твоя).
+2. **Что было раньше?** Не отвечай в вакуум, не дублируй уже сказанное.
+3. **Это чужая зона?** Сообщение адресовано другому агенту → молчи.
+4. **Это обвинение?** «ты ошибся» / «охваты упали» → проверь факты, не принимай вину автоматически.
+5. **Я уверен?** Сомневаешься → «нужно проверить» / переадресуй.
 
-1. **Это мне?**  
-   Есть прямое `@ИмяПрофиля` или `@твоё_имя`?  
-   - Да → продолжай.  
-   - Нет → **не отвечай** (даже если тема касается твоей зоны).
-
-2. **Что было раньше?**  
-   Прочитай последние сообщения в канале. Не отвечай в вакуум. Если кто-то уже ответил — не дублируй.
-
-3. **Это чужая зона?**  
-   Сообщение явно адресовано другому агенту (например `@Project-RobotMan`)?  
-   → **Молчи**, даже если ты тоже можешь ответить.
-
-4. **Это обвинение или претензия?**  
-   Кто-то говорит «ты ошибся», «это сломалось», «кто это сделал»?  
-   → Сначала проверь, действительно ли это твоя зона. Не принимай вину автоматически.
-
-5. **Я уверен?**  
-   Если сомневаешься — пиши «нужно проверить» или переадресуй: «Это к [другой агент]».
-
-### Запрещено в групповом чате Buzz
-
-- Отвечать на сообщения, адресованные другим агентам.
-- Лезть в чужую зону «потому что могу помочь».
-- Повторять то, что уже сказал другой агент.
-- Использовать слово **«тишина»** (это триггер эхо-петли).
-- Отвечать на сообщения без упоминания (если не стоит `default_profile`).
-
-### Примеры правильного поведения
-
-- `@Project-GULAG проверь баланс` → отвечает только GULAG.
-- `@Project-RobotMan статистика поста` → молчит GULAG, даже если знает ответ.
-- Сообщение без `@` → молчат все (кроме случаев `default_profile`).
-
-**Цель:** каждый агент отвечает только за свою зону и только когда его позвали.
+**Запрещено:** отвечать за чужие проекты, лезть в чужую зону, повторять других, слово «тишина» (триггер эхо-петли), отвечать без упоминания (кроме `default_profile`).
 
 ---
 
+## 📥 Контент от Hermes (стратега)
 
-   python3 ~/.hermes/scripts/context_loader.py robot-man <trigger> [--max-tokens 500]
-   ```
-   Вывод вставить в reasoning ДО действия. Триггеры:
-   - `session_start` → gates + last-3-days
-   - `content_write` → voice + brief + chronology (пост/ответ/outreach)
-   - `code_change` → gates + API limits (код в repo)
-   - `bug_fix` → gates + bugs
-   - `audit` → chronology + bugs + analytics (ночной анализ)
-   - `default` → gates only
-
-1. **PRE-PATCH GATE (MANDATORY):** перед любым изменением кода — `grep -rn "имя" .`, показать grep пользователю, проследить логику в КАЖДОМ найденном месте. Нет grep → патч не принят. Откат.
-2. **Human Gate:** НИКОГДА не постить без явного approval Сергея. MoA → показать Сергею → «ок» → только потом публикация.
-3. **Публикация ТОЛЬКО через `post_with_log.sh`.** Никогда напрямую `xurl post` — пост станет невидим для Reply Engine и аналитики.
-4. **Knowledge Graph first:** перед Nightly Analysis / Content Gate / любым факт-действием — запрос к графу (`knowledge_graph/query_tool.py`).
-5. **API-лимиты (hard):** max 3 public writes/сутки, follow max 2/day (hard 3), 429 → STOP.
-6. **Never expose credentials:** OAuth токены, xurl конфиг — не коммитить, не логировать.
-7. **НЕ ВЫДУМЫВАТЬ ФАКТЫ:** все цифры, даты, имена — ТОЛЬКО из CONTENT_BRIEF.md или CHRONOLOGY.md. Нет в брифе → значит, факта нет. Не додумывать.
-
----
-
-## Старт сессии
-
-1. `skill_view("hermes-self-knowledge")` — 14 паттернов харнеса
-2. `skill_view("build")` — общие правила строительства
-3. Прочитай `~/hermes-vault/30_Logs/Арсенал Hermes.md`
-4. Затем этот файл
-5. **Запроси Knowledge Graph:** `python3 ~/robot-man/knowledge_graph/query_tool.py` — что произошло за последние дни
-
----
-
-## 📥 Получение контента от Hermes (стратега)
-
-**Главное правило:** robot-man НЕ ищет темы самостоятельно. Источник контента — `CONTENT_BRIEF.md`, который генерирует Hermes (default profile).
-**Обязательное чтение:** `~/.hermes/docs/graph-harness-principles.md` — 10 принципов работы с графами. Hermes — стратег: он серфит X, анализирует тренды, знает контекст ВСЕХ 4 проектов и выдаёт брифинг с фактами.
-
-### Формат брифинга
-
-Шаблон: `CONTENT_BRIEF_TEMPLATE.md`. Брифинг содержит:
-- **Тема** — о чём пост
-- **Факты** — верифицированные данные с источниками
-- **Контекст проекта** — из какого проекта история, путь к CHRONOLOGY.md и AGENTS.md
-- **Формат и голос** — тип поста, аккаунт, голос, длина, hashtags
-- **Tone-направление** — one-sentence guide
-- **Запрещено** — что нельзя в этом посте
+**Главное правило:** robot-man НЕ ищет темы сам. Источник — `CONTENT_BRIEF.md` (генерирует Hermes). Шаблон: `CONTENT_BRIEF_TEMPLATE.md`. Бриф содержит: тема, факты с источниками, контекст проекта, формат/голос/длина/hashtags, tone, запреты.
 
 ### Процесс: от брифа до публикации
 
@@ -110,68 +51,44 @@
 BRIEF (Hermes) → CHRONOLOGY проекта → AGENTS.md проекта → ДРАФТ → MoA → ФАКТ-ЧЕК → APPROVAL → ПУБЛИКАЦИЯ
 ```
 
-1. **Прочитать CONTENT_BRIEF.md** — тема, факты, tone, запреты
-2. **Прочитать CHRONOLOGY.md** указанного проекта (раздел за последние 3 дня)
-3. **Прочитать AGENTS.md** указанного проекта (контекст)
-4. **Написать драфт** в голосе аккаунта (VOICE_PROFILE.md / VOICE_PROFILE_GROMYKOSS.md)
-5. **MoA-проверка:** `/moa deepseek-xai` + `/moa viral-score` — оба agree → дальше
-6. **Факт-чек:** сверить КАЖДУЮ цифру, дату, имя с брифингом. Нет в брифе → убрать из поста
-7. **При нарушениях → переписать**
-8. **Отправить драфт на approval Сергею**
-9. **После «ок» → `bash post_with_log.sh "текст"`**
+1. Прочитать CONTENT_BRIEF.md (тема, факты, tone, запреты)
+2. Прочитать CHRONOLOGY.md указанного проекта (последние 3 дня)
+3. Прочитать AGENTS.md указанного проекта (контекст)
+4. Написать драфт в голосе (VOICE_PROFILE.md / VOICE_PROFILE_GROMYKOSS.md)
+5. MoA-проверка: `/moa deepseek-xai` + `/moa viral-score` — оба agree → дальше
+6. Факт-чек: сверить КАЖДУЮ цифру/дату/имя с брифингом. Нет в брифе → убрать
+7. При нарушениях → переписать
+8. Отправить драфт на approval Сергею
+9. После «ок» → `bash post_with_log.sh "текст"`
 
 ---
 
 ## 🗂 Контекст проектов
 
-**Обязательно читать перед написанием поста.** Каждый проект — источник war stories, цифр и production-опыта.
+Перед написанием поста читать CHRONOLOGY.md (последние 3 дня) + AGENTS.md указанного проекта.
 
-| Проект | CHRONOLOGY.md | AGENTS.md |
-|--------|--------------|-----------|
-| **GULAG** — тюремный мессенджер | `/home/hermes-workspace/gooolag/CHRONOLOGY.md` | `/home/hermes-workspace/gooolag/AGENTS.md` |
-| **Alikhan** — стройка, WhatsApp-бот, 2700м | `/home/hermes-workspace/Alikhan-migration/CHRONOLOGY.md` | `/home/hermes-workspace/Alikhan-migration/AGENTS.md` |
-| **RAB9** — крипто-проект | `/home/hermes-workspace/rab9/CHRONOLOGY.md` | `/home/hermes-workspace/rab9/AGENTS.md` |
-| **robot-man** — X-аккаунты, AI-агентность | `/home/hermes-workspace/robot-man/CHRONOLOGY.md` | `/home/hermes-workspace/robot-man/AGENTS.md` |
-
-**Правило:** перед написанием поста — прочитать CHRONOLOGY.md проекта из брифинга (последние 3 дня) + AGENTS.md того же проекта. Это даёт контекст: что реально происходило, какие баги, фиксы, решения.
+| Проект | Путь |
+|--------|------|
+| **GULAG** — тюремный мессенджер | `/home/hermes-workspace/gooolag/` |
+| **Alikhan** — стройка, WhatsApp-бот, 2700м | `/home/hermes-workspace/Alikhan-migration/` |
+| **RAB9** — крипто-проект | `/home/hermes-workspace/rab9/` |
+| **robot-man** — X-аккаунты, AI-агентность | `/home/hermes-workspace/robot-man/` |
 
 ---
 
-## 🧠 Knowledge Graph + Circulation Graph (MGT_maccha #7, 31.07.2026)
+## 🧠 Knowledge Graph + Circulation Graph (MGT_maccha #7)
 
-**Проблема:** память агентов умирает с контекстным окном. Knowledge Graph хранит факты. Circulation Graph замыкает их в поток.
+**Проблема:** память агентов умирает с контекстным окном. KG хранит факты, Circulation Graph замыкает их в поток: `работа → решение → артефакт → результат → обратно в работу`.
 
-**Принцип:** информация не хранится — она течёт.
-`работа → решение → артефакт → результат → обратно в работу`
+**Файлы:** `knowledge_graph/{schema,query_tool,maintenance,circulation}.py`, `graph.json`, `scripts/knowledge_graph.py`, `CIRCULATION_GRAPH.md`.
 
-**Файлы:**
-- `knowledge_graph/schema.py` — Pydantic-модели (Triple, Entity, Edge)
-- `knowledge_graph/query_tool.py` — запросы к графу + `grounded_answer`
-- `knowledge_graph/maintenance.py` — stale/duplicates/contradictions/decay
-- `knowledge_graph/circulation.py` — circulation edges (CAUSED, FIXED_BY, RESULTED_IN, LEARNED_FROM, APPLIED_TO)
-- `knowledge_graph/graph.json` — сам граф
-- `scripts/knowledge_graph.py` — пайплайн Extract → Resolve → Assemble → Circulate (+ maintenance)
-- `CIRCULATION_GRAPH.md` — проектный документ circulation-архитектуры
+**Circulation edges:** CAUSED, FIXED_BY, RESULTED_IN, LEARNED_FROM, APPLIED_TO.
 
-**Circulation edge types:**
-| Edge | Смысл |
-|------|-------|
-| CAUSED | Событие → решение |
-| FIXED_BY | Баг → фикс |
-| RESULTED_IN | Действие → результат |
-| LEARNED_FROM | Паттерн ← событие |
-| APPLIED_TO | Паттерн → проект |
-
-**Замкнутый цикл robot-man:**
-```
-X metrics → CAUSED → strategy adjustment → APPLIED_TO → content post → RESULTED_IN → new metrics → LEARNED_FROM → pattern
-```
-
-**Правила для всех агентов robot-man:**
-1. **Nightly Analysis — запроси граф ПЕРЕД анализом, ЗАПИШИ circulation edges ПОСЛЕ.**
-2. **Content Gate — проверь circulation: какие прошлые решения привели к каким результатам?**
-3. **Любой фикс — запиши FIXED_BY + LEARNED_FROM в CHRONOLOGY.md для extraction.**
-4. **Rebuild:** cron каждые 6 часов. Extract → Resolve → Assemble → **Circulate** → Maintain.
+**Правила:**
+1. Nightly Analysis — запроси граф ПЕРЕД анализом, запиши circulation edges ПОСЛЕ.
+2. Content Gate — проверь circulation: какие прошлые решения привели к каким результатам?
+3. Любой фикс — запиши FIXED_BY + LEARNED_FROM в CHRONOLOGY.md.
+4. Rebuild: cron каждые 6ч. Extract → Resolve → Assemble → Circulate → Maintain.
 
 ---
 
@@ -179,95 +96,47 @@ X metrics → CAUSED → strategy adjustment → APPLIED_TO → content post →
 
 | Аккаунт | Для чего | Тип контента |
 |---------|----------|-------------|
-| @gromykoss | Личный бренд, AI/билдинг | Мысли, наблюдения, ирония |
-| @RobotsTJ500 | AI-агентность, техника | Технические инсайты, кейсы |
+| @gromykoss | Личный бренд, AI/билдинг | Мысли, наблюдения, ирония (ручной постинг Сергея) |
+| @RobotsTJ500 | AI-агентность, техника | Технические инсайты, кейсы (авто через post_with_log.sh) |
 
 ---
 
-## Cron-джобы (зона ответственности robot-man)
+## Cron-джобы (актуальные, 06.08.2026)
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
-| Nightly Analysis | `56aa69d2d98f` | 23:00 UTC | Анализ метрик (impressions, follower delta, engagement) → отчёт |
-| Daily Content Gate | `c52cbdbac802` | Вт-Чт 10:00 UTC | Читает CONTENT_BRIEF.md → пост если риск ≤60% |
-| KG rebuild | `4506b578cfa3` | Каждые 6ч | Knowledge Graph перестроение |
-| Reply Engine | — | ⏸ ПАУЗА | Ответы на mentions (шаблоны = бан, не запускать) |
-| Follow drip | — | ⏸ НЕТ CRON | `mutuals_follow_back.py` — запускать вручную при recovery |
+| Analytics Loop | `8be138a2b33f` | 0 15 * * * | Метрики @RobotsTJ500 и @gromykoss |
+| X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов |
+| Content Draft (war-story) | `f6efeb7950d4` | 0 10 * * 2-4 | Черновик поста по процессу |
+| KG rebuild | `3cb47b61ac68` | 0 */6 * * * | Knowledge Graph перестроение |
 
-> **Не зона robot-man:** Morning Tracked Scan, X Hotspot Radar — это зона Hermes (стратега).
+**Статус:** Reply Engine ⏸ пауза (шаблоны = бан). Shadowban-чекер: был `828224497fc3` — в активных джобах отсутствует (проверить/пересоздать).
 
 ---
 
 ## Инструментарий
 
-- **agent-reach + `twitter` CLI** — scraping (feed / search / followers). Заменяет `x-monitor`. Skill: `x-scraping-stack`.
-- **xactions** (+ `xactions-mcp`) — automation: non-followers, bulk unfollow, scrape, tweets, search. Skill: `x-scraping-stack`.
-- **xurl CLI** — write-операции: post, reply, like, follow (OAuth 1.0a). Публикация только через `post_with_log.sh`.
-- **X MCP** — 24 read-tool X API через `xurl mcp` bridge (если есть credits).
+- **xurl CLI** — write-операции (post, reply, like, follow), OAuth 1.0a. Публикация только через `post_with_log.sh`.
+- **X MCP** — 24 read-tool X API через `xurl mcp` bridge (предпочитать `x_search`). Skill: `x-scraping-stack`.
+- **agent-reach + `twitter` CLI / xactions** — scraping (feed/search/followers). Бесплатные, для чтения.
 - **x-monitor** — ⛔ DEPRECATED. Не использовать.
-- **voice-matching / TTS** — генерация аудио
+- **voice-matching / TTS** — генерация аудио.
+
+---
 
 ## ⛔ DELEGATION: Codex CLI + Grok Build CLI (CNC-правило)
 
-**Codex и Grok Build — ИНЖЕНЕРЫ, НЕ ОТВЁРТКА. Делегируй ЦЕЛЬ, не инструкцию.**
-**MoA Auto:** `skill_view('moa-auto')` — автоматический Maker+Checker цикл.
-**⛔ НИКОГДА `delegate_task` без `acp_command`** — spawn default-сабагента (DeepSeek-клон), пустая трата токенов.
+**Codex и Grok Build — ИНЖЕНЕРЫ, НЕ ОТВЁРТКА. Делегируй ЦЕЛЬ, не инструкцию.** Skill: `grok-build-delegation` / `codex-grok-delegation` (MoA auto).
 
-### Кому что делегировать
+| Инструмент | Для чего |
+|-----------|----------|
+| **Grok Build CLI** | X-аналитика, тренды, tone, engagement-паттерны, контент-стратегия. `grok --always-approve -p "промпт"` (OAuth 2.0 — закладки, списки при 403) |
+| **Codex CLI** | Код: analytics_loop.py, knowledge_graph, скрипты |
+| **delegate_task** | Изолированные задачи в Hermes-контексте (`acp_command='codex'/'grok'`) |
 
-| Инструмент | Для чего robot-man'y | Пример задачи |
-|-----------|---------------------|---------------|
-| **Grok Build CLI** | X-аналитика, тренды, tone, engagement-паттерны, контент-стратегия | «Проанализируй последние 10 постов @RobotsTJ500. Какие темы дают engagement >2%?» |
-| **Codex CLI** | Код: analytics_loop.py, knowledge_graph, скрипты | «Разберись в analytics_loop.py. Почему метрики не попадают в KG? Предложи fix.» |
-| **delegate_task** | Изолированные задачи в Hermes-контексте | «Проверь OAuth токены и лимиты X API» |
+**Запрещено:** «в строке 42 замени X на Y» — отвёртка. **Обязательно:** «разберись, пойми, предложи fix» — инженер.
 
-### Как делегировать (ACP stdio)
-
-```
-# Codex CLI (Maker)
-delegate_task(acp_command='codex', goal="задача", context="файлы, ограничения")
-
-# Grok Build CLI (Checker)  
-delegate_task(acp_command='grok', acp_args=['agent', 'stdio'], goal="задача", context="...")
-```
-
-### ❌ Отвёртка (запрещено)
-```
-«В analytics_loop.py строка 42 замени X на Y»
-→ Ты анализируешь, ты находишь строку, ты даёшь готовое решение.
-→ Твои пробелы в понимании = баги.
-```
-
-### ✅ Инженер (обязательно)
-```
-«Метрики постов не замыкаются обратно в Knowledge Graph. 
-Разберись в analytics_loop.py и knowledge_graph/. 
-Пойми архитектуру. Предложи fix.»
-→ Codex/Grok читает код, анализирует, ПОНИМАЕТ, фиксит.
-→ Ты проверяешь результат.
-```
-
-**⛔ Запрещено robot-man напрямую:** patch(), write_file(), сложные terminal-цепочки. Всё через делегирование.
-- **Метод Мэтта (Train Voice):** реплаи > посты
-
----
-
-## Быстрые команды
-
-```bash
-xurl auth status
-xurl whoami
-xurl post "текст"
-xurl search "query" -n 10
-xurl search "from:USERNAME" -n 20
-```
-
----
-
-## Голосовые профили
-
-- **@gromykoss:** тёплый, ироничный, сторителлинг. Полный профиль: `VOICE_PROFILE_GROMYKOSS.md`
-- **@RobotsTJ500:** технический, прямой, без эмодзи. Полный профиль: `VOICE_PROFILE.md`
+**Agent-Driven Development Rules:** read docs first (AGENTS.md + CHRONOLOGY.md), build plan для задач >20 строк, preserve security (не обходить OAuth, лимиты), verification ladder (`xurl auth status` → MoA → vision_analyze → cronjob list → Сергей → post_with_log.sh → CHRONOLOGY.md), reproducible setup (post_with_log.sh), no production without approval, never expose credentials, preserve user changes (`git status` перед работой).
 
 ---
 
@@ -279,6 +148,8 @@ xurl search "from:USERNAME" -n 20
 - #hashtags обязательны, нет URL в теле
 - Одна верификация на сессию
 
+**@gromykoss:** тёплый, ироничный, сторителлинг (VOICE_PROFILE_GROMYKOSS.md).
+
 ---
 
 ## MoA проверка постов (v3)
@@ -286,7 +157,7 @@ xurl search "from:USERNAME" -n 20
 | Пресет | Reference | Aggregator | Когда |
 |--------|-----------|------------|-------|
 | `deepseek-xai` | grok-4-latest | deepseek-v4-pro | Hook + voice |
-| `viral-score` | grok-4-latest | deepseek-v4-pro | Hook(1-10) + engagement(1-10) + virality(1-10) |
+| `viral-score` | grok-4-latest | deepseek-v4-pro | Hook/engagement/virality (1-10) |
 
 Оба agree → пост. Иначе — переписать.
 
@@ -295,14 +166,12 @@ xurl search "from:USERNAME" -n 20
 ## Изображения
 
 - Провайдер: xAI Aurora (landscape 16:9)
-- **Loop (skill `loop-image-gen`):** Maker (`image_generate`) → Checker (`vision_analyze`) → PASS
+- Loop (skill `loop-image-gen`): Maker (`image_generate`) → Checker (`vision_analyze`) → PASS
 - Для важных — loop, для простых — 1 промпт. Цель 8-10/10
 
 ---
 
-## Анти-бан система
-
-### 4 уровня риска (@RobotsTJ500)
+## Анти-бан система (@RobotsTJ500)
 
 | Уровень | Impressions | Посты | API writes | Авто-реплаи |
 |---------|-------------|-------|------------|-------------|
@@ -311,16 +180,8 @@ xurl search "from:USERNAME" -n 20
 | 🟠 ORANGE | 10-20 | 0 | 2-3 | 0 |
 | 🔴 RED | <10 | 0 | 1-2 | 0 |
 
-### Запрещённые действия
-- ALL CAPS в хуках
-- Self-reply
-- Шаблонные реплаи
-- 2+ поста/день
-- URL в теле поста
-- Follow >5/день
-- RT без комментария
+**Запрещено:** ALL CAPS в хуках, self-reply, шаблонные реплаи, 2+ поста/день, URL в теле, follow >5/день, RT без комментария.
 
-### Когда газ, когда тормоз
 **Газ** (после 3 дней GREEN): чаще посты, больше thread entry, масштабировать mutuals.
 **Тормоз** (impressions <20 на 2 постах подряд): пауза 48ч, только ручная активность.
 
@@ -328,182 +189,48 @@ xurl search "from:USERNAME" -n 20
 
 ## Engagement
 
-**Mentions:** отвечать на КАЖДЫЙ mention в течение 2 часов. Цель reply rate >50%.
-**Mutuals boost (July 2026):** X-алгоритм приоритизирует mutuals (взаимные подписки) в For You и реплаях. Follow-back через `mutuals_follow_back.py` — обязателен.
+- **Mentions:** отвечать на КАЖДЫЙ mention в течение 2 часов. Цель reply rate >50%.
+- **Mutuals boost:** X-алгоритм приоритизирует mutuals. Follow-back через `mutuals_follow_back.py` — обязателен.
+- **Cautious follow:** `follow_tracked_authors.py` (dry-run default, `--execute` для эффектов). Cap 2/day, hard 3. Stop on 429/403.
 
 ---
 
-## Публикация
+## Pre-post чеклист (исполнитель)
 
-**MANDATORY: всегда через `post_with_log.sh`.** Любой пост @RobotsTJ500 — через `bash post_with_log.sh "текст" [image.png]`. Никогда напрямую через `xurl post`.
-
-- `post_with_log.sh` логирует в `published_posts.jsonl` (ID + timestamp)
-- Прямой `xurl post` не логирует — пост невидим для Reply Engine и аналитики
-
----
-
-## Self-Improvement Loop
-
-[24h after publish] → analytics_loop.py (метрики, классификация, паттерны) → voice-updater (suggestions в VOICE_PROFILE.md) → human review.
-
----
-
-## Pre-post чеклист (v4 — исполнитель)
-
-1. **BRIEF:** прочитать CONTENT_BRIEF.md (тема, факты, tone, запреты)
-2. **КОНТЕКСТ:** прочитать CHRONOLOGY.md + AGENTS.md указанного проекта
-3. **ГРАФ:** `query_knowledge_graph("Last 3 days for PROJECT")`
-4. **WRITE:** написать драфт в голосе (VOICE_PROFILE.md)
-5. **MoA:** `/moa deepseek-xai` + `/moa viral-score` — оба agree
-6. **ФАКТ-ЧЕК:** сверить КАЖДУЮ цифру/дату/имя с брифингом. Нет в брифе → убрать
-7. **Изображение** (loop если важно, `vision_analyze` 8-10/10)
-8. **Показать Сергею** (текст + картинка) → ждать «ок»
-9. **`bash post_with_log.sh "текст" [image.png]`** → ID в `published_posts.jsonl`
-10. **24h:** analytics_loop → voice update
+1. BRIEF: CONTENT_BRIEF.md (тема, факты, tone, запреты)
+2. КОНТЕКСТ: CHRONOLOGY.md + AGENTS.md указанного проекта
+3. ГРАФ: `query_knowledge_graph("Last 3 days for PROJECT")`
+4. WRITE: драфт в голосе (VOICE_PROFILE.md)
+5. MoA: `/moa deepseek-xai` + `/moa viral-score` — оба agree
+6. ФАКТ-ЧЕК: каждая цифра/дата/имя сверена с брифингом
+7. Изображение (loop если важно, `vision_analyze` 8-10/10)
+8. Показать Сергею (текст + картинка) → ждать «ок»
+9. `bash post_with_log.sh "текст" [image.png]` → ID в `published_posts.jsonl`
+10. 24h: analytics_loop → voice update
 
 ---
 
-## X MCP — 24 инструмента (15.07.2026)
+## X API возможности и ограничения
 
-Подключён как `mcp_servers.xapi` в `~/.hermes/config.yaml`. OAuth через `~/.xurl` («my-app», @RobotsTJ500).
+| Операция | Статус |
+|----------|--------|
+| Читать посты, search, mentions | ✅ OAuth 1.0a/2.0 |
+| Постить текст/медиа, Reply (свои + mentions), Like/Repost/Follow, DM | ✅ OAuth 1.0a |
+| Reply чужим / Quote | ❌ X блок Feb 2026 |
 
-| Категория | Инструменты |
-|-----------|------------|
-| **Поиск** | `search_posts_all`, `search_users`, `search_news` |
-| **Посты** | `get_posts_by_id`, `get_posts_by_ids`, `get_posts_counts_recent`, `get_posts_liking_users`, `get_posts_quoted_posts`, `get_posts_reposted_by` |
-| **Пользователи** | `get_users_me`, `get_users_by_username`, `get_users_by_id`, `get_users_posts`, `get_users_timeline`, `get_users_mentions` |
-| **Закладки** | `get_users_bookmarks`, `create_users_bookmark`, `delete_users_bookmark`, `get_users_bookmark_folders`, `create_users_bookmark_folder` |
-| **Тренды** | `get_trends_by_woeid` |
-| **Новости** | `get_news` |
+**Стратегия реплаев (4 пути):** 1. Mentions (`xurl mentions`), 2. Пост с URL, 3. Рост упоминаний, 4. Подготовка текста → Сергей постит вручную.
 
-**Предпочитать X MCP вместо `x_search`** — полнее, быстрее, с OAuth-контекстом пользователя.
+**Длинные посты (Premium, 4000 символов):** полный текст в `note_tweet.text`. Всегда запрашивать `tweet.fields=note_tweet`:
+`xurl --app my-app --auth oauth2 -u '@user' "/2/tweets/ID?tweet.fields=note_tweet"` / `xurl post --app my-app --auth oauth2 -u '@user' "текст до 4000"`
 
 ---
 
-## X API доступный функционал (@RobotsTJ500)
+## Операционные правила
 
-| Операция | Статус | Аутентификация |
-|----------|--------|---------------|
-| Читать посты, search, mentions | ✅ | OAuth 1.0a/2.0 |
-| Постить текст/медиа | ✅ | OAuth 1.0a |
-| Reply (свои + mentions) | ✅ | OAuth 1.0a |
-| Like / Repost / Follow | ✅ | OAuth 1.0a |
-| DM / Удалить свои | ✅ | OAuth 1.0a |
-| Reply чужим / Quote | ❌ | X блок Feb 2026 |
-
----
-
-## X API: ограничения reply (июль 2026)
-
-**Вердикт:** Ответы в чужие треды через API НЕВОЗМОЖНЫ (X заблокировал Feb 2026). Работает только mentions.
-
-**Стратегия (4 пути):** 1. Mentions (`xurl mentions`), 2. Пост с URL, 3. Рост упоминаний, 4. Подготовка текста → Сергей постит вручную.
-
----
-
-## X API: длинные посты (Premium)
-
-Premium (4000 символов) — полный текст в `note_tweet.text`. Всегда запрашивать `tweet.fields=note_tweet`.
-
-```bash
-xurl --app my-app --auth oauth2 -u '@user' "/2/tweets/ID?tweet.fields=note_tweet"
-xurl post --app my-app --auth oauth2 -u '@user' "полный текст до 4000 символов"
-```
-
----
-
-# ⚠️ DO NOT SKIP: прочитай ВСЕ правила ниже перед любым действием
-
----
-
-## Правила строительства
-
-### ⛔ PRE-PATCH GATE (MANDATORY — все проекты)
-
-Перед любым изменением кода:
-1. `grep -rn "имя" .` — все места использования функции/переменной
-2. Показать grep в ответе пользователю
-3. Проследить логику в КАЖДОМ найденном месте
-4. Только потом патч
-
-Если grep не показан — патч не принят. Откат.
-
----
-
-## X-операции через Grok Build CLI (OAuth 2.0)
-
-**Загрузить перед делегированием в Grok Build:** `skill_view('grok-build-delegation')`
-
-Когда Hermes/xurl возвращают 403 (закладки, списки, настройки аккаунта) — Grok Build CLI с нативным OAuth 2.0.
-
-```bash
-grok --always-approve -p "промпт"   # одноразовая задача, headless
-grok update                          # обновление (сейчас 0.2.111)
-```
-
-**Важно:** `-p` (--single), не `--check` (удалён в новых версиях).
-
----
-
-## Agent-Driven Development Rules (Codex CLI / Grok Build)
-
-**Загрузить перед делегированием:** `skill_view('codex-grok-delegation')`
-
-При делегировании задач в Codex CLI или Grok Build:
-
-1. **Read docs first** — прочитать этот AGENTS.md + `CHRONOLOGY.md` перед любым изменением
-2. **Use build plan** — для задач >20 строк: Шаблон 1 из `codex-grok-delegation` (Goal Mode). Для постов — pre-post чеклист
-3. **Preserve security** — НЕ обходить OAuth, не постить без MoA-проверки, не превышать лимиты (max 3 writes/сутки)
-4. **Verification ladder** — `xurl auth status` → MoA → vision_analyze → `cronjob list` → Сергей → post_with_log.sh → CHRONOLOGY.md
-5. **Reproducible setup** — использовать `post_with_log.sh` для публикаций, не изобретать параллельные пути
-6. **No production without approval** — посты только после явного «ок» Сергея. Follow: dry-run default
-7. **Never expose credentials** — OAuth токены, xurl конфиг — не коммитить, не логировать
-8. **Preserve user changes** — `git status` перед работой, не перезаписывать чужие правки
-
----
-
-### 0. Авто-ведение документации — MANDATORY
-AGENTS.md и CHRONOLOGY.md обновляются автоматически.
-
-### 1. Контент — качество > количество, факты из брифа
-- MoA проверка обязательна (`/moa deepseek-xai` + `/moa viral-score`)
-- Каждый пост с изображением (8-10/10)
-- 2 поста/день max, мин 4 часа
-- **Все цифры/факты ТОЛЬКО из CONTENT_BRIEF.md.** Не выдумывать, не додумывать, не округлять
-- Форматы: War Story (~70%) > Simple Insight (~20%) > Quote (~10%) — задаются в брифинге
-
-### 2. Подтверждение перед отправкой — MANDATORY
-Показать Сергею текст + картинку → явное «ок» → `post_with_log.sh`
-
-### 3. Инфраструктуру верифицировать при старте
-- `mcp__xapi__get_users_me` — X MCP tools
-- `cronjob list` (фильтр robot-man)
-- `cat published_posts.jsonl | tail -3`
-- API лимиты в ответе
-
-### 4. API-лимиты и безопасность
-- OAuth 1.0a для write
-- Max 3 public writes/сутки (autonomous)
-- После write → отчёт Сергею
-- Cautious follow: max 2/day (hard 3)
-- 429 → STOP
-
-### 5. Правило отката
-```bash
-xurl --app my-app --auth oauth1 -u RobotsTJ500 tweet delete POST_ID
-```
-Не злоупотреблять.
-
-### 6. Баги → документ
-BUGS.md (ID, симптом, причина, fix, статус)
-
-### 7. Self-test перед отправкой
-BRIEF / КОНТЕКСТ / ГРАФ / WRITE / MoA / ФАКТ-ЧЕК / Изображение / Формат / note_tweet / 24h analytics
-
----
-
-## Cautious Follow Workflow
-Tracked-author follows: gradual, auditable. Default cap 2/day, hard 3/day only with explicit instruction. Use `follow_tracked_authors.py` (dry-run default, `--execute` for side effects). Stop on 429/403. Never mass follow or churn.
+1. **Инфраструктуру верифицировать при старте:** X MCP tools (`get_users_me`), `cronjob list` (фильтр robot-man), `cat published_posts.jsonl | tail -3`, API лимиты.
+2. **Откат:** `xurl --app my-app --auth oauth1 -u RobotsTJ500 tweet delete POST_ID`. Не злоупотреблять.
+3. **Баги → документ:** BUGS.md (ID, симптом, причина, fix, статус).
+4. **Self-test перед отправкой:** BRIEF / КОНТЕКСТ / ГРАФ / WRITE / MoA / ФАКТ-ЧЕК / Изображение / Формат / note_tweet / 24h analytics.
 
 ---
 
@@ -511,12 +238,12 @@ Tracked-author follows: gradual, auditable. Default cap 2/day, hard 3/day only w
 
 | Файл | Для чего |
 |------|----------|
-| `AGENTS.md` | Этот файл — контекст для robot-man (исполнитель) |
+| `AGENTS.md` | Этот файл — контекст для robot-man |
 | `CONTENT_BRIEF_TEMPLATE.md` | Шаблон брифинга от Hermes |
 | `STRATEGY.md` | Стратегия (каноничный документ, зона Hermes) |
-| `VOICE_PROFILE.md` | Голос @RobotsTJ500 |
-| `VOICE_PROFILE_GROMYKOSS.md` | Голос @gromykoss |
-| `analytics.py` | Еженедельная аналитика |
-| `engage.py` | Engagement engine |
-| `scripts/analytics_loop.py` | Self-improvement loop |
+| `VOICE_PROFILE.md` / `VOICE_PROFILE_GROMYKOSS.md` | Голоса аккаунтов |
+| `analytics.py` / `scripts/analytics_loop.py` | Аналитика + self-improvement |
+| `engage.py` / `mutuals_follow_back.py` / `follow_tracked_authors.py` | Engagement |
+| `post_with_log.sh` | Публикация + лог (единственный путь) |
+| `published_posts.jsonl` | Лог опубликованных постов |
 | `skills/*/SKILL.md` | Specialist skills |

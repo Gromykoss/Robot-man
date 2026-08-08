@@ -671,3 +671,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.08.2026 15:01** — Analytics Loop: shadowban подтверждён (17 impressions пробный пост). @gromykoss war story — лучший (2 ❤️, вовлечённость 8.3%).
 - **05.08.2026 18:00** — KG rebuild: 100 edges, 96 entities.
 - **05.08.2026 22:15** — Nightly Strategy Analysis: 🔴 shadowban день 20. Бан продлевается continued automation. Рекомендация: полная остановка X-фейсинговых cron'ов на 5 дней. @gromykoss war story — единственный работающий формат.
+- **06.08.2026 04:03** — chore: auto-sync 06.08 (`19dbb72`)
