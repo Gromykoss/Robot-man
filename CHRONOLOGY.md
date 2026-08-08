@@ -708,3 +708,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **08.08.2026** — Драфты в работе: buzz_audit_warstory_20260808_v1.md (war story по аудиту agent-bus), shadowban_automated_label_v5.md (автоматическая маркировка).
 - **08.08.2026** — Инфра (Hermes): харденинг VPS, разделение очередей bridge, buzz-каналы в конфигах — затронули доставку agent-bus в профиль robot-man. Отражено в Infrastructure Reference.
 - **08.08.2026 12:38** — chore: CHRONOLOGY 08.08 — бриф 4-слойная память, драфты/обложки, инфра-изменения Hermes (`d906320`)
+- **08.08.2026 12:38** — chore: CHRONOLOGY auto-sync 08.08 (log commit d906320) (`a9b7e3f`)
