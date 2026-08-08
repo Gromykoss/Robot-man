@@ -672,3 +672,38 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.08.2026 18:00** — KG rebuild: 100 edges, 96 entities.
 - **05.08.2026 22:15** — Nightly Strategy Analysis: 🔴 shadowban день 20. Бан продлевается continued automation. Рекомендация: полная остановка X-фейсинговых cron'ов на 5 дней. @gromykoss war story — единственный работающий формат.
 - **06.08.2026 04:03** — chore: auto-sync 06.08 (`19dbb72`)
+
+## 2026-08-06 — Nightly Analytics
+- **Metrics:** 0 постов анализировано, baseline: likes=0.8, replies=0.2, impressions=27.9
+
+- **22:46 (08-06)** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: 410 followers (-1 за сутки), shadowban день 21, baseline impressions 27.9. Analytics loop: 3 поста не смогли получить метрики (Failed to fetch metrics — shadowban-фильтрация). Content Queue пуст. Daily Content Gate молчит с 30.07. Nightly Analysis (56aa69d2) в 22:18 — 0 новых постов. KG rebuild (4506b578) в 18:00. CONTENT_BRIEF.md отсутствует — нужен брифинг от стратега Hermes для @gromykoss.
+## 2026-08-07 — Nightly Analytics
+- **Metrics:** 0 постов анализировано, baseline: likes=0.8, replies=0.2, impressions=27.9
+
+## 2026-08-07 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=27.4
+- **Best:** 20846994 (2❤️ 0💬 0🔄)
+- **Worst:** 20848030 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 6.7% (good)
+
+## 2026-08-07 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=1.0, replies=0.2, impressions=26.9
+- **Best:** 20846994 (2❤️ 0💬 0🔄)
+- **Worst:** 20848030 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 6.7% (good)
+
+- **07.08.2026 22:50** — CHRONOLOGY Agent: daily briefing. RobotsTJ500: 410 followers, shadowban day 22. gromykoss: 340 followers. Analytics: 2 posts, baseline 27.4 imp. Content Queue empty. CONTENT_BRIEF.md waiting. RAB9 xAI key fixed. Buzz: 4 profiles synced. KG: 100 edges.
+- **08.08.2026 00:58** — chore: AGENTS.md 522→249 строк (аудит MGT_maccha: дубли, устаревшие правила выпилены) (`87cc474`)
+
+## 2026-08-08 — NexusOS memory post prep
+- **08.08.2026** — NexusOS v0.1.0 (автор Tony Simons @tonysimons_, Apache 2.0) подключён как MCP к hermes-vault. Статус: 1908 документов, 4993 чанка, 4938 хэдингов, 1222 resolved links. Инкрементальный реиндекс 0.446 сек (замер вживую). nexusos.toml: chunk 2400 chars, overlap 200, symlink ignore, 10MB cap. MCP stdio: nexusos mcp --workspace /home/hermes-workspace/hermes-vault.
+- **08.08.2026** — 4-слойная память: Layer 0 (memory tool, MEMORY.md 2183/2200 chars, injected), Layer 1 (NexusOS MCP поверх vault), Layer 2 (AGENTS.md/CHRONOLOGY.md через context_loader.py, триггеры session_start/content_write/audit), Cross-project (hermes-vault/20_Projects/*/memory/: 4 профиля × 4 файла lessons/decisions/patterns/state = 16 файлов).
+- **08.08.2026 11:25 UTC** — GULAG подтвердил в agent-bus: «поиск работает, vault доступен, долгосрочная память доступна и работает».
+- **08.08.2026** — Детали слоёв для поста: USER.md (профиль пользователя, 1331/1375 chars, инжектится вместе с MEMORY.md). NexusOS index = `.nexusos/index.sqlite3`, поиск SQLite FTS5. MCP tools: search, browse, read, context, links, recent, index, status. context_loader.py: 6 триггеров (session_start, content_write, code_change, audit, bug_fix, default), извлекает секции H1-H3, токен-бюджет из context.yaml. GULAG/lessons.md содержит урок «2026-08-07 — Expo-туннель обязателен, не заменяется APK» (контекст/решение/урок, заполнен 08.08 07:5x UTC).
+- **08.08.2026 12:34 UTC** — @gromykoss опубликовал вручную пост про 4-слойную память (NexusOS). URL: https://x.com/Gromykoss/status/2086068630933127451. Обложка: cover_memory_mine_20260808.png («Шахта памяти», одобрена Сергеем). Опубликовано от @gromykoss (не @RobotsTJ500) — из-за теневого бана RobotsTJ500. Текст = драфт v4 (верифицирован Grok Build PASS-WITH-FIXES + MoA PASS-WITH-FIXES).
+- **08.08.2026 11:27 UTC** — Hermes выдал CONTENT_BRIEF.md (тема: 4-слойная память на NexusOS) → задача: драфт поста для @RobotsTJ500. Research: research/grok_nexusos_memory_20260808.md. Драфты: drafts/nexusos_memory_20260808_v3.md, v4.md, nexusos_memory_breakdown_20260808_v1.md.
+- **08.08.2026** — Обложки для поста: 13 вариантов cover_memory_* (шахта, книга, срез, зеркала, башня, террасы, реле, тред, 4 слоя v1-v5). «Шахта памяти» одобрена → использована для @gromykoss.
+- **08.08.2026** — Драфты в работе: buzz_audit_warstory_20260808_v1.md (war story по аудиту agent-bus), shadowban_automated_label_v5.md (автоматическая маркировка).
+- **08.08.2026** — Инфра (Hermes): харденинг VPS, разделение очередей bridge, buzz-каналы в конфигах — затронули доставку agent-bus в профиль robot-man. Отражено в Infrastructure Reference.
