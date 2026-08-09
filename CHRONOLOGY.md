@@ -719,3 +719,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 6.2% (good)
 
+- **08.08.2026 15:51** — analytics_loop: добавить посты @gromykoss через X API + группировка отчёта по аккаунтам (`13645fb`)
