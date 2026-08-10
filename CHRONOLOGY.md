@@ -734,3 +734,17 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **09.08.2026 ~07:00 UTC** — Shadowban-проверка (по рекомендации Nightly Strategy): публичный from: поиск через nitter.net. Контроль: @Gromykoss найден (включая пост 08.08), @RobotsTJ500 — «No items found» при живом профиле (702 поста). Вердикт: search shadowban НЕ снят, день ~23. Волна разбанов после ухода Nikita Bier аккаунт не затронула. План А (публикация через @Gromykoss) остаётся в силе.
 
 - **09.08.2026 22:45 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: 410 followers, shadowban день ~23 (nitter: «No items found»). @gromykoss: 340 followers, вырос с последнего замера. Analytics loop (22:15 UTC): 3 поста (2@gromykoss, 1@RobotsTJ500), метрики обновлены с группировкой по аккаунтам. CONTENT_BRIEF.md активен — тема WhatsApp bridge loop (Alikhan, Baileys fromMe:true bug ×9 messages). Content Queue: драфт shadowban_automated_label_v5.md + buzz_audit_warstory_20260808_v1.md в работе. KG rebuild каждые 6ч. GATEWAY RESTART BAN в AGENTS.md (прав.11) — действует с 09.08. План А (посты через @gromykoss) в силе до снятия бана.
+- **09.08.2026 22:46** — chrono: 2026-08-09 evening briefing — shadowban day 23, analytics loop account grouping, GATEWAY RESTART BAN active (`9f2aca3`)
+
+## 2026-08-10 — Nightly Analytics
+- **Metrics:** 3 постов анализировано, baseline: likes=1.0, replies=0.2, impressions=28.8
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 0💬 0🔄 0🔖 21👁️
+- **👤 @gromykoss:** 2 постов, 2❤️ 0💬 0🔄 0🔖 97👁️
+- **Best:** 20846994 (2❤️ 0💬 0🔄)
+- **Worst:** 20860686 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20846994): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.5% (average)
+
+
+- **10.08.2026 ~12:00 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: 410 followers (без изменений), shadowban день ~24. @gromykoss: 334 followers (-6 с 09.08). Analytics loop: 3 поста за 24ч, impressions baseline 29.8. CONTENT_BRIEF.md активен — тема WhatsApp loop (Alikhan, Baileys fromMe:true bug). План А (посты через @gromykoss) в силе. MCP xapi недоступен (8 consecutive failures). CHRONOLOGY очищен от дублирующихся Nightly Analytics блоков (3→1).
+- **10.08.2026 12:00** — chrono: 2026-08-10 daily briefing — follower update, dedup Nightly Analytics, Content Brief WhatsApp loop active
