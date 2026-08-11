@@ -748,3 +748,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 
 - **10.08.2026 ~12:00 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: 410 followers (без изменений), shadowban день ~24. @gromykoss: 334 followers (-6 с 09.08). Analytics loop: 3 поста за 24ч, impressions baseline 29.8. CONTENT_BRIEF.md активен — тема WhatsApp loop (Alikhan, Baileys fromMe:true bug). План А (посты через @gromykoss) в силе. MCP xapi недоступен (8 consecutive failures). CHRONOLOGY очищен от дублирующихся Nightly Analytics блоков (3→1).
 - **10.08.2026 12:00** — chrono: 2026-08-10 daily briefing — follower update, dedup Nightly Analytics, Content Brief WhatsApp loop active
+- **10.08.2026 22:46** — chrono: 2026-08-10 (`c02a2cc`)
+
+## 2026-08-11 — Nightly Analytics
+- **Metrics (15:05 UTC):** 3 постов, baseline: likes=1.0, replies=0.2, impressions=29.9
+- **Metrics (22:15 UTC):** 2 постов, baseline: likes=0.9, replies=0.1, impressions=30.8
+- **👤 @RobotsTJ500:** 1 пост, 1❤️ 0💬 0🔄 0🔖 22👁️ (shadowban — 20848030)
+- **👤 @gromykoss:** 1 пост, 0❤️ 0💬 0🔄 0🔖 68👁️ (NexusOS memory — 20860686)
+- **Best:** 20848030 (1❤️ 0💬 0🔄) — shadowban war story, стабильно держит 1 лайк
+- **Worst:** 20860686 (0❤️ 0💬 0🔄) — NexusOS пост, 0 вовлечения при 68👁️
+- **Pattern:** Engagement rate: 1.1% (low). Посты @gromykoss набирают охваты но без вовлечения
+
+- **11.08.2026 ~15:05 UTC** — Analytics Loop #1: 3 поста за 24ч, engagement 2.5%
+- **11.08.2026 ~22:15 UTC** — Analytics Loop #2: 2 поста за 24ч, engagement 1.1%. Пост @gromykoss 20846994 выпал из окна (>7 дней)
+- **11.08.2026** — CONTENT_BRIEF.md обновлён Hermes: тема GATEWAY RESTART BAN (правило 11). Драфт: `drafts/gateway_restart_warstory_20260811_v1.md` (RU + EN версии) — на утверждении у Сергея
+- **11.08.2026** — xapi MCP и xactions MCP недоступны (11 и 9 consecutive failures соответственно). X-метрики собираются через analytics_loop с xurl oauth1 — работает
+- **11.08.2026 ~22:46 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: ~410 followers (MCP недоступен, точных данных нет), shadowban день ~25. @gromykoss: ~334 followers. Драфт gateway_restart_warstory ждёт утверждения. Content Queue: 1 драфт в работе. KG rebuild каждые 6ч. CHRONOLOGY дедуплицирован (2 блока Nightly Analytics → 1). 1 незакоммиченный файл (CHRONOLOGY.md изменён analytics_loop)
