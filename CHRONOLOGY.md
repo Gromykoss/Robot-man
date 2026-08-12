@@ -764,3 +764,16 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **11.08.2026** — CONTENT_BRIEF.md обновлён Hermes: тема GATEWAY RESTART BAN (правило 11). Драфт: `drafts/gateway_restart_warstory_20260811_v1.md` (RU + EN версии) — на утверждении у Сергея
 - **11.08.2026** — xapi MCP и xactions MCP недоступны (11 и 9 consecutive failures соответственно). X-метрики собираются через analytics_loop с xurl oauth1 — работает
 - **11.08.2026 ~22:46 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: ~410 followers (MCP недоступен, точных данных нет), shadowban день ~25. @gromykoss: ~334 followers. Драфт gateway_restart_warstory ждёт утверждения. Content Queue: 1 драфт в работе. KG rebuild каждые 6ч. CHRONOLOGY дедуплицирован (2 блока Nightly Analytics → 1). 1 незакоммиченный файл (CHRONOLOGY.md изменён analytics_loop)
+- **11.08.2026 22:46** — chrono: 2026-08-11 — dedup Nightly Analytics, GATEWAY RESTART BAN draft, MCP outage noted (`dc95d42`)
+
+## 2026-08-12 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=31.2
+- **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 71👁️
+- **Best:** 20860686 (0❤️ 0💬 0🔄)
+- **Worst:** 20860686 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20860686): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.0% (low)
+
+- **12.08.2026 ~22:45 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: 0 постов (тишина, shadowban recovery ~день 26). @gromykoss: пост 20860686 «4-layer memory» — 71👁️ 0❤️ 0💬 (второй день tech-контент @gromykoss без вовлечения). xapi/xactions MCP по-прежнему недоступны (null-профили) — X-метрики только через analytics_loop + xurl oauth1. CONTENT_BRIEF.md обновлён 12.08: новая тема «Graph Engineering для Obsidian vault» (656 файлов → 5 шагов retrieval без LLM-вызова), для @RobotsTJ500, War Story EN. Предыдущий драфт gateway_restart_warstory (11.08) всё ещё на утверждении у Сергея.
+- **12.08.2026 22:45** — chrono: 2026-08-12 daily briefing — Graph Engineering brief, MCP outage продолжался, gromykoss 0-engagement второй день
