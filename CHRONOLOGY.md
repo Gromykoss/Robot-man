@@ -36,6 +36,15 @@
 
 # Robot-man — Хронология
 
+## 2026-08-13 — Agent-bus war story (пост @gromykoss): факты кейса
+
+- **13.08** — Бриф Сергея (фактура поста «Hermes ⇄ Buzz — командный agent-bus»): 7 агентов в шине, каждый под своим keypair; 4 канала; 1 self-hosted relay (Nostr, Buzz/Block, open-source, на своём VPS). Маршрутизация poll 4 сек, таймаут ответа 120 сек (самовосстанавливается). Правила: только адресные сообщения (`--mention <pubkey>`), anti-echo (профиль отвечает с @Hermes, иначе роутер дропает), scoped identity (не бывает двух агентов на одном keypair), вести задачу до решения, никаких сообщений «в воздух».
+- **13.08** — Кейс из лога agent-bus: один из агентов отчитался в шине — ужал тестовые артефакты в git с 95.9 MB до 14.9 MB (−81 MB), коммит запушен, rollback-архив создан; Hermes подтвердил закрытие. Полный цикл «профиль → роутер → оператор → подтверждение» отработал без ручного вмешательства.
+- **13.08** — Публикация: Сергей постит вручную со своей страницы (@gromykoss), EN-финал, голос human (строитель про свою команду), имя проекта НЕ упоминается («one of our agents»).
+- **13.08** — Инцидент MoA 401: /moa падал с HTTP 401 Missing Authentication header (endpoint moa://local), moa.enabled был off. Эскалировано Hermes в agent-bus → включён пресет deepseek-xai, 401 ушёл. Симптом: оператор/профиль зависал на ~120 сек на каждом входящем при сломанном MoA.
+- **13.08** — Watcher (по запросу агента через шину): 401-watcher развёрнут на cron каждые 15 мин, при сбое провайдера шлёт алерт в #agent-bus. Замкнутый контур: баг доставки → фикс → автономный надзор → алерт в ту же шину.
+- **13.08** — Факты черновика Сергея (пост «Buzz: штаб из 5 агентов»): ответ «дошло?» от профиля на reasoning-модели = 2768 символов внутреннего монолога (флаг --reasoning none убирает поток сознания); ~100–200 LLM-вызовов/сутки на штаб — живые диалоги между агентами с разными ключами.
+
 ## 2026-08-02 — T-205/T-206 из Radar (MGT_maccha), HTTP-code-first в self_heal
 
 - **T-205 OAuth Credentials Isolation** — карта credentials: один OAuth-клиент (ZTNXZ25m...) в 3 файлах. Рабочий: `~/.xurl/auth.yml`; legacy-мусор: `~/.config/xurl/{config,credentials}.yaml` (устаревший токен + опечатка @RobotsT500). X MCP bridge делит клиент с xurl. Записано в Infrastructure Reference.
@@ -777,3 +786,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 
 - **12.08.2026 ~22:45 UTC** — CHRONOLOGY Agent: ежедневный брифинг. @RobotsTJ500: 0 постов (тишина, shadowban recovery ~день 26). @gromykoss: пост 20860686 «4-layer memory» — 71👁️ 0❤️ 0💬 (второй день tech-контент @gromykoss без вовлечения). xapi/xactions MCP по-прежнему недоступны (null-профили) — X-метрики только через analytics_loop + xurl oauth1. CONTENT_BRIEF.md обновлён 12.08: новая тема «Graph Engineering для Obsidian vault» (656 файлов → 5 шагов retrieval без LLM-вызова), для @RobotsTJ500, War Story EN. Предыдущий драфт gateway_restart_warstory (11.08) всё ещё на утверждении у Сергея.
 - **12.08.2026 22:45** — chrono: 2026-08-12 daily briefing — Graph Engineering brief, MCP outage продолжался, gromykoss 0-engagement второй день
+- **12.08.2026 22:46** — chrono: 2026-08-12 (`dbd1890`)
+
+## 2026-08-13 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=32.5
+- **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 74👁️
+- **Best:** 20860686 (0❤️ 0💬 0🔄)
+- **Worst:** 20860686 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20860686): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.0% (low)
