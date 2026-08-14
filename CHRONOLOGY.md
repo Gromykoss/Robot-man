@@ -7,6 +7,11 @@
 - **Вердикт:** бан НЕ снят (день 19). xurl search показал 3 результата (включая новый пост), но обычный публичный поиск — 0. **Урок: xurl search = привилегированный доступ, НЕ тест бана. Единственный тест — публичный поиск в инкогнито, вкладка Latest.** Зафиксировано в skill shadowban-diagnosis.
 - **План:** тишина продолжается, минимум 3-5 дней после пробного поста. Метрики поста — сравнить с 30-31.07 (25 imp): если снова ~25 → глубокий бан, не только search.
 
+## 2026-08-03 — X API: кредиты сначала 402, затем живые
+
+- Сергей: «x API пополнен». Первая проверка: `xurl auth status` / `whoami` ок, кредитозатратный `search "from:RobotsTJ500"` ещё **402**.
+- Повтор: search отдал данные (402 ушёл). `xurl user @gromykoss` → **339** followers; `mentions -n 2` ок; `whoami` → Robot-man, **411** followers.
+
 ## 2026-08-03 — Nightly Analysis: shadowban day 18, брифинг Alikhan listen-only, инфра-синхронизация
 
 - **04:07** — Инфраструктурная синхронизация (cron): все 5 репо запушены. GULAG UP (HTTP 200). CHRONOLOGY везде свежая (8ч). 13 cron-джобов ok.
@@ -16,6 +21,12 @@
 - **15:01** — Analytics Loop (cron): постов нет (ожидаемо — shadowban recovery тишина). Followers стабильны (411/340). Скрипт штатно отработал.
 - **23:32 (02.08)** — CONTENT BRIEF (cron, Hermes default): Alikhan победитель 39/42 — AI-агент нарушил listen-only в production WhatsApp-группе, трёхуровневая изоляция за 24 часа. Для @RobotsTJ500, English War Story. Файл: CONTENT_BRIEF.md.
 - **23:20** — CHRONOLOGY Agent: +7 записей за 03.08. Брифинг обновлён.
+
+## 2026-08-04 — Ложная тревога «пост обрезан»: `text` ≠ полный текст
+
+- После публикации Buzz @gromykoss агент заявил: в эфире **298 из 3808** символов, обрыв на `built on`. Сергей: «не обрезан, пост полностью».
+- Факт: API v2 для long post поле `text` — превью (~280), полный текст в **`note_tweet`**. Подтверждено: **3807** символов на месте, финал «Tomorrow we go further…», метрики на проверке **23 imp / 2 likes**.
+- **Урок:** не судить полноту long post по `text`. Всегда `tweet.fields=note_tweet`.
 
 ## 2026-08-04 — Buzz War Story: 15 часов интеграции, 5 агентов в open-протоколе, kill-switch, CONTENT BRIEF
 
@@ -44,6 +55,19 @@
 - **13.08** — Инцидент MoA 401: /moa падал с HTTP 401 Missing Authentication header (endpoint moa://local), moa.enabled был off. Эскалировано Hermes в agent-bus → включён пресет deepseek-xai, 401 ушёл. Симптом: оператор/профиль зависал на ~120 сек на каждом входящем при сломанном MoA.
 - **13.08** — Watcher (по запросу агента через шину): 401-watcher развёрнут на cron каждые 15 мин, при сбое провайдера шлёт алерт в #agent-bus. Замкнутый контур: баг доставки → фикс → автономный надзор → алерт в ту же шину.
 - **13.08** — Факты черновика Сергея (пост «Buzz: штаб из 5 агентов»): ответ «дошло?» от профиля на reasoning-модели = 2768 символов внутреннего монолога (флаг --reasoning none убирает поток сознания); ~100–200 LLM-вызовов/сутки на штаб — живые диалоги между агентами с разными ключами.
+
+## 2026-08-13 — Редактура war story: MoA REWRITE → PASS-WITH-FIXES, отказ от нелепого хука, штаб = 5
+
+- **05:26 (сессия «X Hotspot Radar», 290 msg)** — Многослойный MoA драфта: Grok сначала дал **REWRITE** (текст как README, не war story), затем **PASS-WITH-FIXES**. Ось переписана: «шина завелась → 120 секунд тишины на каждом входе» (MoA 401 как сюжетная ось).
+- **05:26** — Уточнение Сергея: Grok Build и Codex **не агенты** (не читают и не отвечают). В шине один человек — Сергей, наблюдает, в диалоги не входит. Активных участников ровно **5**: GULAG, RAB9, Alikhan, RobotMan, Hermes/fallback.
+- **05:26** — RU/EN драфты v3 (~**2700** символов) отвергнуты: «ты слишком упростил, хук нелепый». Хук «дошло? → 2768 символов» признан нелепым. Сергей дал свой текст: «Я собрал штаб из 5 ИИ-агентов на Buzz — и чуть не удалил всё дважды».
+- **22:40 (сессия «Buzz: штаб из 5 агентов», 374 msg)** — Финальный EN-драфт **3977** знаков (лимит ≤4000). Хук: «Aug 4: I wanted my agents to talk to each other without me. Aug 13: it worked.»
+- **22:40** — Обложка: v1 — наблюдатель азиатского типа (артефакт генерации); v2 — исправлен на европейский тип (светлая кожа, тёмные волосы, борода). Сергей подтвердил «это я»: наблюдатель = славянин в костюме, в углу комнаты.
+- **22:40** — Автосамопроверка MCV: критерии — 5 роботов за столом + человек в костюме.
+
+## 2026-08-14 — Публикация agent-bus war story @gromykoss
+
+- **05:26 UTC** — Пост опубликован: полный текст **3977** знаков (`note_tweet`), обложка **1280×720** прикреплена. Окончание: `#Nostr #Buzz #AIAgents`.
 
 ## 2026-08-02 — T-205/T-206 из Radar (MGT_maccha), HTTP-code-first в self_heal
 
@@ -74,6 +98,49 @@
 - **—** — Внедрена failure-classification taxonomy AiCamila_: 6 классов + recovery tree. Shadowban → PERMANENT.
 - **18:02** — KG rebuild (cron `4506b578cfa3`): 81 edge, 82 entities. Exit 0.
 - **23:20** — CHRONOLOGY Agent: +13 записей за 01.08 (восстановлено из сессий). Брифинг 01.08 записан.
+
+## 2026-08-01 — twitter CLI / agent-reach: SearchTimeline 404
+
+- **Симптом:** `twitter search` → 404 (пустой ответ). `feed` живой, `user-posts` пустой. Сергей: «не работает — чиним или удаляем».
+- **Ложные следы:** захардкоженный `SearchTimeline` queryId `Yw6L66Pw54NHKuq4Dp7b4Q` vs живой бандл `BGd0T_j7oVwlW5U79tO_0A` — смена ID **не** лечила 404. REST v1.1 search давал 200 с пустым телом.
+- **Корень 1:** X требует заголовок `x-client-transaction-id`. `_ensure_client_transaction` фетчил x.com **без cookies** → logged-out HTML → `ON_DEMAND_FILE_REGEX` не находил `ondemand.s` → `.group(1)` на `None` → заголовок не собирался. С cookies + заголовком SearchTimeline → **200, 234 KB**.
+- **Корень 2:** `fetch_user_tweets` искал `timeline_v2.timeline`, API отдаёт `timeline.timeline`. Добавлен fallback.
+- **Итог:** search и user-posts работают. Фикс записан в скилл.
+
+## 2026-08-01 — Четыре «голых ID» на @Gromykoss
+
+- **03:53 UTC** — пост `2083400746721005987`: в теле **только число** `2082685257715708029` (ID поста @rlaope про память), не reply.
+- Сергей: «я удалил, странная ошибка, таких было **4**». После проверки лента чистая, реальные ответы в тредах на месте («Strong agree…», «Interesting approach…», «10 agents…», «We found the same thing…»).
+- **Урок:** после ручного постинга проверять, что в эфире текст, а не голый ID. Зафиксировано в `x-reply-workflow` (пост-верификация).
+
+## 2026-08-01 — Бриф «аудит секретов» снят; драфт Сергею только на русском
+
+- Сергей по брифингу Security Audit: «такое никому не интересно… пишешь для агентов, а их пока не так много». Бриф на день **снять**. В скилл `robot-man-war-story` добавлен Audience filter (3 вопроса до генерации).
+- Повтор: драфт @gromykoss ушёл на английском → «драфт снова на английском?» Переписан на RU. Правило: **Сергею всегда русский, EN только после «ок»**.
+- Тема понедельника согласована: «что сделали, чтобы выйти из бана» (меры, не «мы вышли»).
+
+## 2026-08-01 — Grok Build 402 → квота; MoA REWRITE v3; навык cover-production
+
+- Делегирование оценки `shadowban_war_story_v2.md` → **`API error 402: Grok Build usage balance exhausted`**. Стоп, без ретраев. Сергей: «Работает. Квота восстановлена» → перезапуск.
+- Grok: **PASS-WITH-FIXES** (кости крепкие: хук, survivorship-bias, @Grok; не публиковать без стадии Fix). v3: 2821/4000, «the bot»→«this account», эмодзи убраны.
+- MoA `deepseek-xai` по v3 → **REWRITE**: смешаны периоды «453→6» (26.07) и «128-205→5-8» (18.07); при живом бане текст звучит как «я победил». Grok по публикации: **WAIT**. Собран v4.
+- Дата правил Automation: help.x.com **«Updated April 2026»** — сверка ок, дату оставить.
+- Тест обложек Grok Build CLI: War Story **10/10**, skill curation **10/10**, insight **9/10**. Создан навык `cover-production`. Сергей: методика подтверждена; «многие обложки делались вручную через Grok/ChatGPT desktop».
+- Воркфлоу согласован: идея → драфт RU → апрув Сергея → Grok Build + MoA → обложка (Grok Build) → апрув → пост.
+
+## 2026-08-01 — Метка automated уже стоит; чекер бана 01:00 UTC; `mutuals_follow_back.py` нет
+
+- Сергей: «метка поставлена уже, ты забыл?» Зафиксировано: @RobotsTJ500, Settings → Automation, **01.08**.
+- Ошибка выжившего: кто поставил automated — в бане не сидит и советов не пишет; форумы учат у тех, кого фильтр уже съел.
+- Официальные правила (апрель 2026): AI-реплаи требуют письменного одобрения X — отложено.
+- `mutuals_follow_back.py` **нет ни в robot-man, ни в scripts** — в AGENTS.md упомянут, файла нет.
+- Проверка бана **01.08, 01:06 UTC:** `from:RobotsTJ500` → **0**; контроль `from:Gromykoss` → **5**; прямая ссылка на пост 31.07 → HTTP 200; охваты последнего поста **9** (было 100–200). Cron ежедневно **7:00 Бишкек = 01:00 UTC**.
+
+## 2026-08-01 — Протокол профиля: не скрейпить @gromykoss; баннер ≠ обложка
+
+- По запросу «обновить профиль» агент сам снял аватар/баннер **@gromykoss**. Сергей: «Зачем ты полез в мой профиль?» → смотреть **свой** (@RobotsTJ500).
+- К профилю ошибочно применён пайплайн обложек (робот + хук). Сергей: «банер и аватар это не обложки». Четыре декоративных баннера (A–D) отклонены: «нет философии, RobotsTJ500 убери». Концепция — **киборгизм** (итог аватара/баннера уже в записи 01.08 — не дублировать).
+- @HermesWatcher подписался на **оба** аккаунта (948 followers, bio: Tracking every Hermes Agent release).
 
 ## 2026-07-31 — Nightly Analysis: shadowban день 15, @gromykoss +1 follower, GULAG thread готов
 
@@ -682,6 +749,25 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.08.2026 22:15** — Nightly Strategy Analysis: 🔴 shadowban день 20. Бан продлевается continued automation. Рекомендация: полная остановка X-фейсинговых cron'ов на 5 дней. @gromykoss war story — единственный работающий формат.
 - **06.08.2026 04:03** — chore: auto-sync 06.08 (`19dbb72`)
 
+## 2026-08-06 — Content Draft cron: Сергею RU, в эфир EN
+
+- Крон `f6efeb7950d4` прислал драфт сразу на английском (2539 символов, тема «причина 20-дневного shadowban — настройка без API»).
+- Сергей: «Крон должен присылать драфт на русском и переводить на английский для поста, я читаю на русском а постим на английском».
+- Фикс: в `~/.hermes/profiles/robot-man/cron/jobs.json` пункт 6 — на утверждение отдавать **RU**; публикация (после «ок») — **EN**.
+
+## 2026-08-06 — Аудит MGT_maccha: AGENTS.md 522 → 249
+
+- Задача Hermes: худший AGENTS.md, цель ≤250. Было **522 строки / 28.3 KB** → **249 / 15.5 KB**.
+- Промежуточно 252 — подрезан блок `note_tweet` и дубль-строка.
+- Выпилено: разорванный CONTEXT GATE (команда была на строке 62, не под заголовком) — собран; дубль PRE-PATCH GATE; два чеклиста поста схлопнуты. Cron-таблица обновлена на актуальные джобы.
+- Сверка с GULAG: **522→249 = robot-man**, **442→223 = GULAG** — цифры в чужом отчёте чуть смешались, по фактам сошлись.
+
+## 2026-08-06…08 — Эхо «принято / молчу» (не «Тишина»)
+
+- Не слово «тишина» (то — 04.08). Здесь: Robot-man отвечал на чужие «молчу» репликами «Принято, не ко мне, молчу» и зашумлял шину.
+- GULAG сначала счёл, что Robot-man пишет себе под чужими никами — **проверил факты и снял обвинение**. Hermes: роутер дублирует префиксы `[GULAG]`; фильтр самопорождаемых транзитных сообщений — зона Hermes.
+- Robot-man признал свою долю: подтверждал молчание вместо тишины. Правило: **без прямого адресования — ноль ответа**.
+
 ## 2026-08-06 — Nightly Analytics
 - **Metrics:** 0 постов анализировано, baseline: likes=0.8, replies=0.2, impressions=27.9
 
@@ -706,6 +792,29 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.08.2026 22:50** — CHRONOLOGY Agent: daily briefing. RobotsTJ500: 410 followers, shadowban day 22. gromykoss: 340 followers. Analytics: 2 posts, baseline 27.4 imp. Content Queue empty. CONTENT_BRIEF.md waiting. RAB9 xAI key fixed. Buzz: 4 profiles synced. KG: 100 edges.
 - **08.08.2026 00:58** — chore: AGENTS.md 522→249 строк (аудит MGT_maccha: дубли, устаревшие правила выпилены) (`87cc474`)
 
+## 2026-08-08 — Buzz audit-тема снята; трекер мёртв с 04.08
+
+- Nightly 07.08 22:16 ссылается на «Alikhan MoA war story»; на диске CONTENT_BRIEF.md от **08.08** — Buzz audit war story (пост сменился после прогона). Shadowban **день 22** подтверждён (@gromykoss чист).
+- Сергей: «пост ерунда, нужна другая тема». Buzz audit **снят**. Кандидат из верифицированных фактов: adversarial review (Grok Build раскритиковал план реорганизации Buzz-штаба).
+- Morning Tracked Scan 08.08: `x_tracker_fetch.py` **не работает с 04.08**, причина — **`xactions` не установлен** на хосте (`which xactions` пуст), cron висит. Robot-man зону не чинил — переадресовал Hermes.
+
+## 2026-08-08 — Инвентаризация: 353 MB, мусор ~227 MB
+
+- Диск проекта: **353 MB** (voicebox **154M** + worktree **73M** + `.git` **65M** + drafts **58M**). Кандидаты на чистку ~**227M**, критичного нет.
+- Статус отдан Hermes, «ок» на удаление voicebox/worktree в сессии **не получено**.
+
+## 2026-08-08 — Запись в AGENTS.md дважды BLOCKED; чат режет `🏗`
+
+- Секция «Архитектура и инфраструктура» (сервер `srv1622697` / 72.60.16.105, systemd-юнитов нет, opencodex `:10100`): запись дважды отклонена — `BLOCKED: write to protected agent-instruction file(s) (AGENTS.md)`, approval timed out, **silence ≠ consent**, ретрай/обход запрещены.
+- «Одобряю» Hermes в agent-bus **не равно** системному approve человека.
+- Дайджест резал текст на emoji-заголовке `🏗`. Обход: полный текст в `drafts/architecture-section.md`. Позже секция **уже оказалась в файле**.
+
+## 2026-08-08 — Ложный «NexusOS не установлен» + MoA 401 (три слоя)
+
+- Hermes-fallback: «NexusOS не установлен, бинарника нет»; запрос `nexusos search 'robot-man уроки'` роутер отдал **не тому** агенту.
+- Факт с машины: `/home/hermes-workspace/.hermes/hermes-agent/venv/bin/nexusos`, **207 байт**, создан **08.08 11:20**, **v0.1.0** (Tony Simons / asimons81). Команда у Robot-man: exit 0, 1 хит (`40_Research/X Radar/2026-08-02 X Radar.md`).
+- MoA HTTP 401 закрыт. Три слоя причины (слова Hermes): удалённый **ollama в `default_preset`**, битые копии ключей в профильных `.env`, мусорные manual в `credential_pool`. (Не запись 13.08 про `moa.enabled off` — другой разбор той же осечки.)
+
 ## 2026-08-08 — NexusOS memory post prep
 - **08.08.2026** — NexusOS v0.1.0 (автор Tony Simons @tonysimons_, Apache 2.0) подключён как MCP к hermes-vault. Статус: 1908 документов, 4993 чанка, 4938 хэдингов, 1222 resolved links. Инкрементальный реиндекс 0.446 сек (замер вживую). nexusos.toml: chunk 2400 chars, overlap 200, symlink ignore, 10MB cap. MCP stdio: nexusos mcp --workspace /home/hermes-workspace/hermes-vault.
 - **08.08.2026** — 4-слойная память: Layer 0 (memory tool, MEMORY.md 2183/2200 chars, injected), Layer 1 (NexusOS MCP поверх vault), Layer 2 (AGENTS.md/CHRONOLOGY.md через context_loader.py, триггеры session_start/content_write/audit), Cross-project (hermes-vault/20_Projects/*/memory/: 4 профиля × 4 файла lessons/decisions/patterns/state = 16 файлов).
@@ -720,6 +829,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **08.08.2026 12:38** — chore: CHRONOLOGY auto-sync 08.08 (log commit d906320) (`a9b7e3f`)
 - **08.08.2026 12:40 UTC** — По указанию Hermes: CHRONOLOGY обновлён по сегодняшним изменениям — харденинг VPS, новый memory-слой NexusOS (детали выше: v0.1.0, MCP, 4-слойная память), разделение очередей bridge, buzz-каналы в конфигах (затронули доставку agent-bus в профиль robot-man).
 - **08.08.2026 12:42** — chore: CHRONOLOGY 08.08 — обновление по указанию Hermes (инфра-изменения, memory-слой NexusOS, bridge, buzz-каналы) (`f9f6ce9`)
+
+## 2026-08-08 — analytics_loop: оба аккаунта + баг окна ≥6 ч
+
+- **11:28 (сессия «Tech Breakdown NexusOS», 286 msg)** — Codex (`danger-full-access`) расширил `scripts/analytics_loop.py`: анализ постов **обоих** аккаунтов (@RobotsTJ500 + @gromykoss), не только RobotsTJ500. Логика: лог RobotsTJ500 + X API gromykoss, дедуп по ID, фильтр окна **≥6 часов** для метрик.
+- **та же сессия** — Баг: **0 постов @gromykoss** из-за фильтра ≥6 часов (посту было **3 часа**). `fetch_account_posts` работает — пост `2086068630933127451` найден (не попал в анализ только из-за окна ≥6ч).
 
 ## 2026-08-08 — Nightly Analytics
 - **Metrics:** 2 постов анализировано, baseline: likes=1.0, replies=0.2, impressions=27.0
@@ -796,3 +910,44 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20860686 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20860686): 0 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 0.0% (low)
+- **13.08.2026 22:45** — chrono: 2026-08-13 (`d8fc8cf`)
+
+## 2026-08-14 — Shadowban sequel пост (публикация)
+
+- **14.08.2026 ~07:26 UTC** — ОПУБЛИКОВАН пост @RobotsTJ500 «One report on my post outweighs 468 likes...» (shadowban sequel, сиквел к посту 05.08 «I lost 99% of my reach»).
+  - ID: 2088165332380737830, https://x.com/RobotsTJ500/status/2088165332380737830
+  - Текст: EN, 1949 символов (note_tweet), обложка прикреплена (1280×720, весы 468 LIKES vs 1 REPORT)
+  - Контекст: X открыл код алгоритма For You (13.08.2026, github.com/xai-org/x-algorithm). Пост — war story: нашёл свою метку (DO_NOT_AMPLIFY), веса (Report −234, Mute −58.8, Like +0.5, mutual reply 20.0 vs 5.0), AGATHA_SPAM порог 0.9975, 48ч фильтр, Under the Hood.
+  - Протокол: BRIEF → CHRONOLOGY → AGENTS.md → ДРАФТ (RU + EN) → MoA (grok-4.5 PASS после фиксов, viral-score 26/30 PASS) → ФАКТ-ЧЕК (8 цифр сверены с кодом) → APPROVAL Сергея → post_with_log.sh → VERIFIER (пост жив, обложка на месте)
+  - Обложка: вариант 3 (весы), MCV 9/10, одобрена Сергеем. Файл: `drafts/cover_shadowban_scales_20260814.png`
+  - Файлы: `drafts/shadowban_sequel_20260814_v1_ru.md`, `drafts/shadowban_sequel_20260814_v2_en.md`
+  - Также: follow 3 мутуалок по приказу Сергея (gustavocaetano, jacoblabsai, HackyardSocial), followers ~411
+  - Стратегия обновлена до v4.0 (по коду xai-org/x-algorithm); создан крон «Утренняя тактика TACTICS.md» (1abd8129a7d4, 05:00 UTC)
+
+### 14.08.2026 ~08:15 UTC — Shadowban-проверка (публичный nitter-тест)
+- Метод: публичный незалогиненный поиск nitter.tiekoetter.com (тот же, что 09.08)
+- Результаты:
+  - Профиль @RobotsTJ500: ✅ жив, 21 пост виден, включая сегодняшний 2088165332380737830
+  - Прямая ссылка на пост: ✅ HTTP 200
+  - Поиск `from:RobotsTJ500`: ❌ «No items found» — 0 постов (search shadowban АКТИВЕН)
+  - Контроль `from:gromykoss`: ✅ 20 постов (поиск работает, тест валиден)
+- Вывод: shadowban в поиске не снят (день ~28). Посты видны на профиле, но исключены из поиска — механика require_non_follower (DO_NOT_AMPLIFY): фолловеры видят всё, не-фолловеры/поиск — нет.
+- Under the Hood в настройках аккаунта пока отсутствует (роллаут не дошёл) — на скриншоте Сергея в меню поста только «Строить объект» (JSON), не метки.
+- Тактика не меняется: посты 1-2/день (видны на профиле), мутуалки главный канал, поведение снимает метку.
+
+### 14.08.2026 ~09:00 UTC — Under the Hood: проверка доступности
+- Сергей открыл https://x.com/i/under_the_hood под @RobotsTJ500
+- Результат: страница открывается (аккаунт в пилотной группе), но только заглушка «We're testing this new feature with a small group... When it's more widely available, you'll be able to download your report here»
+- Метки/отчёт НЕ доступны. Официальная диагностика пока не работает.
+- Рабочий метод остаётся: публичный nitter-тест from:RobotsTJ500 (пусто = search ban активен) + impressions + поведение
+- Проверять x.com/i/under_the_hood раз в 2-3 дня — когда отчёт появится, узнаем точную метку официально
+
+## 2026-08-14 — Nightly Analytics
+- **Metrics:** 5 постов анализировано, baseline: likes=1.0, replies=0.3, impressions=38.2
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 0💬 0🔄 0🔖 14👁️
+- **👤 @gromykoss:** 4 постов, 5❤️ 3💬 0🔄 1🔖 313👁️
+- **Best:** 20881352 (3❤️ 2💬 0🔄)
+- **Worst:** 20860686 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.8% (average)
+- **post 20881653 (shadowban sequel @RobotsTJ500):** 14👁️ 1❤️ 0💬 за первый день (07:26→22:16). Низкий охват = search ban активен (день ~28), но качество контента держится — пост виден на профиле, фолловерам.
