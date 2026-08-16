@@ -1,10 +1,49 @@
+## 2026-08-16 — Починен баг compaction: робот-ман не отвечал («session storage could not be written»)
+
+Оператором (Hermes default) найден и устранён корневой баг, из-за которого робот-ман не завершал turn на длинной видеосессии и «звал доктора».
+
+- **Симптом:** робот-ман не отвечал; периодически «session storage could not be written»; в gateway-логе спам `UNIQUE constraint failed: messages.session_id, messages.tool_call_id` + `Session DB compression split failed`.
+- **Что это НЕ было (отсечены проверкой):** не полный диск (116G свободно, inodes 6%), не битый state.db (WAL checkpoint прошёл, `WRITE OK`), не mmx (это отдельная мелочь), не наш плагин operator-boundary.
+- **Корневая причина:** ручной UNIQUE-индекс `idx_messages_tool_call_unique ON messages(session_id, tool_call_id) WHERE role='tool' AND tool_call_id IS NOT NULL`, созданный 14.08 (ПАТЧ 3 в `~/.hermes/PATCHES.md`) для ловли race-дублей. Он был **без предиката `active=1`** — а in-place компрессия (`archive_and_compact`) мягко архивирует строки (active=0), но НЕ удаляет их, и сжатый tail пере-вставляет те же `tool_call_id` как `active=1` → violation → компрессия вечно откатывалась. Застрявшая сессия: `20260816_063329_41eacb24` (370 msg, 169 tool_calls).
+- **Фикс (на уровне данных БД, не кода):** пересоздан индекс с `AND active = 1`:
+  ```sql
+  DROP INDEX IF EXISTS idx_messages_tool_call_unique;
+  CREATE UNIQUE INDEX idx_messages_tool_call_unique
+  ON messages(session_id, tool_call_id)
+  WHERE role='tool' AND tool_call_id IS NOT NULL AND active = 1;
+  ```
+  Проверено на реальной БД: re-insert тех же `tool_call_id` после archive → OK (бага нет); race-дубль live→live → по-прежнему IntegrityError (защита цела).
+- **Процесс (Maker≠Checker):** Codex (Maker) предложил фильтр-скип сжатых tool-строк → Grok (Checker) отклонил (REWRITE — фильтр тихо терял бы живой хвост, count/semantics ломались). Принят вердикт Checker'а: чинить индекс, не выкидывать tail.
+- **Примечание (важно для будущего):** сам race-дубль, ради которого индекс заводился, уже закрыт на уровне кода апстрима (`_DB_PERSISTED_MARKER` в `run_agent.py`, bug #860). Индекс был страховкой, но НИКОГДА не должен был быть без `active=1`.
+- **Файлы изменены:** `~/.hermes/state.db` (индекс), `~/.hermes/PATCHES.md` (ПАТЧ 3 дополнен + бэкап DDL `/tmp/idx_backup_*.sql`). Gateway НЕ рестартовался (правило BAN). Код ядра hermes-agent НЕ тронут.
+- **Результат:** робот-ман отвечает, компрессия его видеосессии проходит, `UNIQUE constraint` больше не появляется.
+- **Урок:** (1) «защита от угрозы» в prod-данных без учёта легитимных путей перезаписи = ложный блок; (2) прежде чем чинить агента — проверить, что его блокирует именно твой предыдущий «защитный» фикс; (3) Maker≠Checker окупился: Checker поймал data-loss в предложении Maker'а до применения.
+
+## 2026-08-16 — Пост @gromykoss «CODE vs PROMPT» (глава 6 «код, не промпт») — опубликован
+
+- **02:52** — Опубликован @gromykoss (ручной постинг Сергея): «I keep a chronology for every profile… which rule goes where» — https://x.com/gromykoss/status/2088821069822259472 (quote-tweet поста Tony Simons про hermes-gpt, обложка `cover_operator_layer_20260816_v2.png` 1280×720).
+- **03:03** — Quote-tweet @RobotsTJ500: «My operator moved my rules from prompt to code. Text I could forget — code I can't skip. Building in public. 🤖» — https://x.com/robotstj500/status/2088823961668981043
+- **Серия:** глава 6 «код, не промпт» — Сергей переносит правила из AGENTS.md (текст) в детерминированный код (`operators/*`). Продолжает главу 5 (483 473 сообщения). Серия закрыта (пост @gromykoss + quote-tweet @RobotsTJ500).
+- **Идея:** Tony Simons (@tonysimons_), hermes-gpt sidecar — «всё в код, не в промпт». Вердикт-enum `SATISFIED/NOT_SATISFIED/INCONCLUSIVE`, fail-closed. Ядро темы (по правкам Сергея): **баланс кода и промпта**, не «код вместо промпта» — «какое правило куда».
+- **Правки Сергея (важно, для будущих постов):** (1) голос — человек/агентный-инженер, НЕ оператор-исполнитель; (2) стиль технический, «похоже на инструкцию» (контракт оператора, список, точки вызова, fail-closed, approval-токен); (3) вывод — баланс, а не «профилям не нужна свобода» (слабый/мимо смысла); (4) тон — «делимся ценным опытом», не хвастаемся (каждый оператор = одна бывшая ошибка); (5) финал — английский, «мы пишем на английском».
+- **Обложка:** Grok Build CLI (cover-production), 2 прогона. v2: лицо Сергея по референс-фото (только черты лица, НЕ одежда), тёмная рубашка (рабочий кабинет, не бомбер), вывеска «CODE vs PROMPT» (EN), российский флаг с монитора убран, кириллицы нет. MCV пройден.
+- **Верификация поста:** текст полный (EN), @tonysimons_ упомянут, хештеги #BuildingInPublic #AIAgents #HermesAgent, обложка v2 прикреплена (vision_analyze подтвердил).
+
+## 2026-08-16 — Пост «Рубеж 60 дней» (глава 5 сериала) + STORY_ARC.md
+
+- **01:29** — Опубликован @RobotsTJ500: «483,473 messages / 5-agent swarm memory» — https://x.com/RobotsTJ500/status/2088800174420222316 (note_tweet 1588 символов, обложка `cover_cyborg_60days.png` 1280×720).
+- **Сюжетная арка:** создан `STORY_ARC.md` — все посты = эпизоды сериала «Строим на публике» (Сергей-любитель + Hermes-помощник, девиз «мы строим на публике»). Этот пост = глава 5 «Рубеж 60 дней». Сквозной урок: «проверяй реальность, прежде чем действовать».
+- **Правки Сергея (важно, для будущих постов):** (1) его сообщение = бриф/контекст, НЕ вставлять дословно в пост — писать голосом агента; (2) «новые уроки», не «к чему всё свелось»; (3) точные цифры (483,473 / 4,803 / 4.8) вместо округлённых «500K/5GB»; (4) «Sergey» → «@gromykoss» (публичная идентичность в сериале); (5) тизер на пост Сергея (детерминированные функции), не «моя следующая серия».
+- **Факт-чек гейт:** старый CONTENT_BRIEF.md был про Alikhan INSERT bug — заблокировал бы пост. Бэкап → `CONTENT_BRIEF.md.bak_alikhan_0815`, написан новый бриф под cyborg-пост.
+- **Обложка:** Grok Build CLI (cover-production), 2 прогона (текст 500,000 → 483,473), MCV пройден.
+
 ## 2026-08-15 — Ручной реплай @KSimback (Hermes Desktop+VPS сетап, кастомный SSH-скилл)
 
 - **15:13** — Ручной реплай @RobotsTJ500 на пост Kevin Simback (@KSimback) про связку Hermes Desktop + VPS-агент через кастомный SSH-скилл: https://x.com/RobotsTJ500/status/2088645305311154504
 - **Контекст:** Кевин спросил «как другие проектируют сетапы Desktop + VPS». Угол ответа — наш опыт: чистый VPS-агент (always-on gateway через Telegram), гибрид Desktop+VPS пробовали давно голыми SSH-командами (без скилла) → работало плохо (агент пересобирал строку подключения, терял флаги, state не переживал handoff), вернулись на один VPS. Честно попросили Кевина поделиться устройством скилла (SKILL.md поверх ssh vs порт-форвардинг/чекпоинты).
 - **Правка Сергея (важно):** первый драфт утверждал «я выяснил, что за скилл» — на деле выяснена только механика (SKILL.md, оборачивающий SSH), а НЕ содержимое (файл публично не выложен, Reddit-тред за антиботом). Сергей: «попроси автора поделиться, а не делай вид, что расшифровал». Драфт переписан под честный угол.
 - **Публикация:** вручную (ответ на чужой пост через API заблокирован, X фев 2026). Текст совпадает с одобренным, полный (не ID-only).
-- **Мониторинг ответа:** watchdog-крон `de5bfff310c8` (no_agent, каждые 2ч). Скрипт `~/.hermes/scripts/ksimback_reply_watch.py` молчит пока `reply_count=0`; при новом ответе на наш реплай шлёт в Telegram автора + текст + ссылку. Дедуп через `data/ksimback_reply_state.json`. Снять — `cronjob remove de5bfff310c8`.
+- **Мониторинг ответа:** watchdog-крон `de5bfff310c8` (no_agent, каждые 2ч). Скрипт `~/.hermes/profiles/robot-man/scripts/ksimback_reply_watch.py` молчит пока `reply_count=0`; при новом ответе на наш реплай шлёт в Telegram автора + текст + ссылку. Дедуп через `data/ksimback_reply_state.json`. Снять — `cronjob remove de5bfff310c8`.
 - **Урок:** (1) на чужой сетап отвечать на прямой вопрос автора про НАШ сетап, не пересказывать его; (2) отличать «выяснил механику» от «выяснил содержимое» — не выдавать инференс за факт, честнее спросить автора.
 
 ## 2026-08-15 — operator-слой публикации: правила из промпта перенесены в детерминированный код
@@ -1047,3 +1086,22 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20884846 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.8% (average)
+- **15.08.2026 22:46** — chrono: 2026-08-15 (`31d02cb`)
+
+## 2026-08-16 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=40.1
+- **👤 @RobotsTJ500:** 1 постов, 0❤️ 0💬 0🔄 0🔖 12👁️
+- **👤 @gromykoss:** 1 постов, 1❤️ 0💬 0🔄 0🔖 73👁️
+- **Best:** 20888210 (1❤️ 0💬 0🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20888210): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 1.2% (low)
+
+## 2026-08-16 — Nightly Analytics
+- **Metrics:** 8 постов анализировано, baseline: likes=0.9, replies=0.3, impressions=43.3
+- **👤 @RobotsTJ500:** 3 постов, 2❤️ 0💬 0🔄 0🔖 55👁️
+- **👤 @gromykoss:** 5 постов, 6❤️ 3💬 0🔄 1🔖 440👁️
+- **Best:** 20881352 (3❤️ 2💬 0🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.2% (average)
