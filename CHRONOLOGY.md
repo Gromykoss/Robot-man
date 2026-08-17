@@ -1,3 +1,14 @@
+
+## 2026-08-17 — Видеоклип «Дорога на Altyn-Arašan»: фикс движения дрона (orbit + yaw), финальные кадры
+
+- **Контекст:** продолжение AI-клипа «Дорога на Altyn-Arašan» (Кыргызстан, Тянь-Шань, поездка отца с сыном на бежевом УАЗ-469, ~4:30, ~20 планов). Режиссёрский фикс визуальных дефектов, накопленных в прошлых прогонах (камера улетает назад, дрон падает на дорогу, УАЗ раздваивается/превращается в джип, лишний пассажир в кабине).
+- **Ключевой фикс (движение дрона):** Grok Imagine не понимает `turn`/`sweep`/`pan` как поворот — интерпретирует как полёт назад. Рабочая формулировка (подтверждена Grok 4): `orbit` + `yaw` + «no forward or backward translation» + «no descent». Проверка по кадрам (t=12–17, плашки `stage1_12_v6.mp4`): дрон держит высоту, облёт по дуге, не падает. Урок зафиксирован в скилл `grok-imagine-video` (раздел «Камера/движение дрона»).
+- **POV-кабина УАЗ:** жёсткий промпт «ровно трое, без очков» (был дефект — четверо в кабине). Референс интерьера УАЗ (металлическая панель, приборы) использован как base.
+- **Финальные кадры (18:00 UTC):** `grok_13_survey.mp4`, `grok_14_uaz.mp4`, `act1_12.mp4`, `grok_12_yaw.mp4`, `grok_12_orbit.mp4`, `grok_11/12.mp4` в `altyn-arashan-video/`. Сборка продолжается.
+- **Файлы:** `altyn-arashan-video/` (генерационные скрипты `gen_grok_*.py`, кадры, рефы `refs/`).
+- **Статус аккаунтов (analytics_loop 10:04 UTC):** @RobotsTJ500 410 followers (ORANGE, 3 поста 57 imp за неделю, <20/post на 2 из 3 — бан держится); @gromykoss 334 followers (чист, активен). Лучший пост недели — @gromykoss «Buzz on Nostr» multi-agent гайд: 324 imp, 3 лайка, 2 ответа, 1 закладка (OUTPERFORMER, 4.3× baseline). Рекомендация: @RobotsTJ500 throttle до 1 поста на середину недели, @gromykoss — удвоить длинные технические build-guide в формате war-story.
+- **Урок:** (1) «поворот» на языке генерации видео — `orbit`+`yaw`+отрицание transit, а не `turn`/`pan`; (2) у движения дрона проверять по статичным кадрам высоту и горизонт (vision видит «заморозку», но не трассу); (3) проверка «ровно трое в кабине» — только прямым перегеном, промпт в лоб не фиксит лишний объект, надо жёсткое «no fourth person».
+
 ## 2026-08-16 — Починен баг compaction: робот-ман не отвечал («session storage could not be written»)
 
 Оператором (Hermes default) найден и устранён корневой баг, из-за которого робот-ман не завершал turn на длинной видеосессии и «звал доктора».
@@ -1105,3 +1116,22 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20888001 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.2% (average)
+- **16.08.2026 22:45** — chrono: 2026-08-16 (`cefd0df`)
+
+## 2026-08-17 — Nightly Analytics
+- **Metrics:** 8 постов анализировано, baseline: likes=1.0, replies=0.3, impressions=46.1
+- **👤 @RobotsTJ500:** 3 постов, 2❤️ 0💬 0🔄 0🔖 57👁️
+- **👤 @gromykoss:** 5 постов, 6❤️ 3💬 0🔄 1🔖 455👁️
+- **Best:** 20881352 (3❤️ 2💬 0🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.1% (average)
+
+## 2026-08-17 — Nightly Analytics
+- **Metrics:** 8 постов анализировано, baseline: likes=1.0, replies=0.3, impressions=48.4
+- **👤 @RobotsTJ500:** 3 постов, 2❤️ 0💬 0🔄 0🔖 57👁️
+- **👤 @gromykoss:** 5 постов, 6❤️ 3💬 0🔄 1🔖 469👁️
+- **Best:** 20881352 (3❤️ 2💬 0🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.1% (average)
