@@ -1136,3 +1136,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.1% (average)
 - **17.08.2026 22:46** — chrono: 2026-08-17 (`df5df4a`)
+- **18.08.2026 14:10** — git-завал: разобрал 108 untracked — коммит данных/драфтов/research, удалил .bak, убрал voicebox-gitlink, .gitignore для мусора (`17f5d95`)

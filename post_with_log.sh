@@ -8,11 +8,14 @@ LOG="$DIR/published_posts.jsonl"
 
 TEXT="$1"
 IMAGE="$2"
+ACCOUNT="${POST_ACCOUNT:-RobotsTJ500}"
 
 if [ -z "$TEXT" ]; then
     echo "Usage: post_with_log.sh 'text' [image.png]"
     exit 1
 fi
+
+PYTHONPATH="$DIR" python3 -m operators.operator_pipeline "$TEXT" "$APPROVAL_TOKEN" || { echo "BLOCKED by operator pipeline" >&2; exit 1; }
 
 if [ -n "$IMAGE" ]; then
     # If IMAGE is a URL, download it first
@@ -36,26 +39,36 @@ decoder = json.JSONDecoder()
 data, _ = decoder.raw_decode(json_block)
 print(data['data']['id'])
 ")
-        OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" --media-id "$MEDIA_ID" 2>&1)
+        OUTPUT=$(xurl --app my-app --auth oauth1 -u "$ACCOUNT" post "$TEXT" --media-id "$MEDIA_ID" 2>&1)
     else
         echo "WARNING: image file not found — posting text-only"
-        OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" 2>&1)
+        OUTPUT=$(xurl --app my-app --auth oauth1 -u "$ACCOUNT" post "$TEXT" 2>&1)
     fi
 else
     # Text-only post
-    OUTPUT=$(xurl --app my-app --auth oauth1 -u RobotsTJ500 post "$TEXT" 2>&1)
+    OUTPUT=$(xurl --app my-app --auth oauth1 -u "$ACCOUNT" post "$TEXT" 2>&1)
 fi
 
 echo "$OUTPUT"
 
-# Extract post ID and save
+# Extract post ID and save (tolerant: xurl may emit human-readable lines around JSON)
 POST_ID=$(echo "$OUTPUT" | python3 -c "
-import sys, json
-data = json.load(sys.stdin)
-print(data.get('data', {}).get('id', ''))
+import sys, json, re
+raw = sys.stdin.read()
+m = re.search(r'\{.*\}', raw, re.DOTALL)
+if not m:
+    print('')
+else:
+    try:
+        data = json.loads(m.group(0))
+        print(data.get('data', {}).get('id', '') or '')
+    except json.JSONDecodeError:
+        print('')
 " 2>/dev/null)
 
 if [ -n "$POST_ID" ]; then
+    PYTHONPATH="$DIR" python3 -m operators.operator_pipeline --increment-write
+
     python3 -c "
 import json
 from datetime import datetime, timezone

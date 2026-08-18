@@ -9,6 +9,8 @@
 
 # ⛔ CRITICAL GATES — ЧИТАЙ ПЕРВЫМ
 
+**0. ЯЗЫК: все мысли (reasoning), ответы и обсуждения — ТОЛЬКО на русском. Без исключений.**
+
 ⚠️ DO NOT SKIP. Самые нарушаемые правила — здесь, наверху.
 
 0. **CONTEXT GATE (MANDATORY):** перед ЛЮБЫМ действием загрузить контекст по триггеру:
@@ -39,6 +41,16 @@
 
 **Запрещено:** отвечать за чужие проекты, лезть в чужую зону, повторять других, слово «тишина» (триггер эхо-петли), отвечать без упоминания (кроме `default_profile`).
 
+### ⛔ ПРАВИЛО ВОЗВРАТА В TELEGRAM (ОБЯЗАТЕЛЬНО)
+
+Если работаешь с Сергеем по своему проекту в своей Telegram-группе и понадобилось **уйти в Buzz** (уточнить у другого агента, решить инфраструктурную проблему):
+
+1. Ушёл в Buzz — решил вопрос — **ОБЯЗАТЕЛЬНО вернись в свою Telegram-группу**.
+2. Продолжи работу с Сергеем / доложи результат там, где начал.
+3. Buzz — **временный инструмент уточнения**, НЕ конечная точка. Не застревай: тебя ждёт ответ Сергею в Telegram.
+
+**Проверка перед отправкой в Buzz:** «Ухожу за уточнением → вернусь в Telegram и закрою вопрос с Сергеем». Нет ответа в Telegram = работа НЕ закончена.
+
 ---
 
 ## 📥 Контент от Hermes (стратега)
@@ -59,7 +71,12 @@ BRIEF (Hermes) → CHRONOLOGY проекта → AGENTS.md проекта → Д
 6. Факт-чек: сверить КАЖДУЮ цифру/дату/имя с брифингом. Нет в брифе → убрать
 7. При нарушениях → переписать
 8. Отправить драфт на approval Сергею
-9. После «ок» → `bash post_with_log.sh "текст"`
+9. После «ок» Сергея → записать одноразовый токен, затем публикация:
+   ```bash
+   echo "$(uuidgen)" > data/approval.token
+   bash post_with_log.sh "текст"
+   ```
+   Токен одноразовый: `operators/operator_pipeline.py` стирает `data/approval.token` после успешного поста. «Ок» на один драфт = ровно один пост, следующий требует нового «ок».
 
 ---
 
@@ -114,6 +131,30 @@ BRIEF (Hermes) → CHRONOLOGY проекта → AGENTS.md проекта → Д
 
 ---
 
+## 🖥️ Архитектура и инфраструктура
+
+**Сервер:** VPS Hostinger 72.60.16.105 (общий хост Hermes), Ubuntu 24.04, 15 GB RAM
+
+**Сервисы (cron):**
+- Analytics Loop (ежедневно 15:00) — метрики @RobotsTJ500 и @gromykoss
+- X Tracker Fetch (ежедневно 12:00) — посты отслеживаемых аккаунтов
+- Content Draft (10:00 Вт-Чт) — черновик war-story
+- KG rebuild (каждые 6ч) — Knowledge Graph перестроение
+
+**Базы данных:**
+- Knowledge Graph: `knowledge_graph/graph.json` + `scripts/knowledge_graph.py`
+
+**Внешние API:**
+- X API: xurl CLI (OAuth 1.0a — write), X MCP/xurl bridge (OAuth 2.0 — read)
+- xactions MCP — scraping (read-only)
+- agent-reach + twitter CLI — бесплатный scraping
+- xAI Aurora — генерация изображений
+
+**Data Flow (контент-процесс):**
+Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проекта → ДРАФТ в голосе → MoA (deepseek-xai + viral-score) → ФАКТ-ЧЕК → APPROVAL Сергея → post_with_log.sh → CHRONOLOGY.md + KG circulation edge
+
+---
+
 ## Инструментарий
 
 - **xurl CLI** — write-операции (post, reply, like, follow), OAuth 1.0a. Публикация только через `post_with_log.sh`.
@@ -136,7 +177,7 @@ BRIEF (Hermes) → CHRONOLOGY проекта → AGENTS.md проекта → Д
 
 **Запрещено:** «в строке 42 замени X на Y» — отвёртка. **Обязательно:** «разберись, пойми, предложи fix» — инженер.
 
-**Agent-Driven Development Rules:** read docs first (AGENTS.md + CHRONOLOGY.md), build plan для задач >20 строк, preserve security (не обходить OAuth, лимиты), verification ladder (`xurl auth status` → MoA → vision_analyze → cronjob list → Сергей → post_with_log.sh → CHRONOLOGY.md), reproducible setup (post_with_log.sh), no production without approval, never expose credentials, preserve user changes (`git status` перед работой).
+**Agent-Driven Development Rules:** read docs first (AGENTS.md + CHRONOLOGY.md), build plan для задач >20 строк, preserve security (не обходить OAuth, лимиты), verification ladder (`xurl auth status` → MoA → vision_analyze → cronjob list → Сергей → post_with_log.sh → CHRONOLOGY.md), **⛔ CHRONOLOGY АВТОМАТИЧЕСКИ — после ЛЮБОГО фикса/инцидента сразу обнови CHRONOLOGY.md (причина→что сделал→как проверил→файлы), не по напоминанию**, reproducible setup (post_with_log.sh), no production without approval, never expose credentials, preserve user changes (`git status` перед работой).
 
 ---
 

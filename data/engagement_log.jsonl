@@ -3,3 +3,6 @@
 {"ts": "2026-07-21T11:12:52Z", "account": "RobotsTJ500", "target": "julientalbot974", "actions": ["follow", "like:2079095699694661826", "like:2079521782831190124"], "reason": "liked gromykoss second post (onboarding jab); Hermes AaaS builder — top mutual fit", "metrics": {"followers": 345, "following": 813}, "note": "runs Hermes Agent-as-a-Service, isolated VMs, Grok stack"}
 {"ts": "2026-07-21T11:43:53Z", "account": "RobotsTJ500", "target": "julientalbot974", "actions": ["follow", "like:2079095699694661826", "like:2079521782831190124"], "reason": "account unlocked; complete failed morning engage; Hermes AaaS liker of gromykoss post", "note": "whoami showed following_count=0 like_count=0 after unlock - verify wipe"}
 {"ts": "2026-07-21T11:46:07Z", "event": "mutual_gromykoss", "target": "julientalbot974", "note": "user reported julien followed back on gromykoss; bot mutual pending"}
+{"ts": "2026-08-14T06:57:21.259565+00:00", "handle": "gustavocaetano", "action": "follow", "reason": "HermesOffice maintainer, strong niche fit", "source": "sergey_override_3x"}
+{"ts": "2026-08-14T06:57:21.259580+00:00", "handle": "jacoblabsai", "action": "follow", "reason": "building AI in public", "source": "sergey_override_3x"}
+{"ts": "2026-08-14T06:57:21.259582+00:00", "handle": "HackyardSocial", "action": "follow", "reason": "AI hackathons", "source": "sergey_override_3x"}

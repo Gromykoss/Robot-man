@@ -12,16 +12,6 @@ test_*.py
 test-*.mjs
 x-monitor.deprecated/
 
-# Backups (мусор)
-*.bak
-*.bak.*
-
-# Large binaries — not in git
-altyn-arashan-video/
-drafts/*.png
-drafts/profile_*/
-
-
 # Transient / scratch
 SESSION_STATE.md
 *.bak

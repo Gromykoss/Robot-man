@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-08-09T00:14:11.318793+00:00",
-  "graph_built_at": "2026-08-09T00:14:11.314990+00:00",
+  "generated_at": "2026-08-18T12:06:00.971591+00:00",
+  "graph_built_at": "2026-08-18T12:06:00.964984+00:00",
   "graph_stats": {
-    "nodes": 92,
-    "edges": 100,
+    "nodes": 109,
+    "edges": 115,
     "projects": 4,
-    "events": 11,
-    "people": 40,
+    "events": 19,
+    "people": 41,
     "tasks": 22
   },
   "checks": {
     "stale_nodes": [],
     "duplicate_entities": [
       {
-        "canonical": "event/2026-08-05/Nightly Analytics",
-        "duplicate": "event/2026-08-05/Nightly Analytics (финал)",
-        "similarity": 0.895,
+        "canonical": "person/@RobotsT500",
+        "duplicate": "person/@RobotsTJ500",
+        "similarity": 0.973,
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
@@ -25,9 +25,9 @@
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
-        "canonical": "person/@RobotsT500",
-        "duplicate": "person/@RobotsTJ500",
-        "similarity": 0.973,
+        "canonical": "person/@Grok",
+        "duplicate": "person/@grok",
+        "similarity": 1.0,
         "action": "merge_into_canonical_preserve_provenance"
       }
     ],
