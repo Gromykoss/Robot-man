@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-08-14T12:06:11.393257+00:00",
+  "total_posts": 10,
+  "posts": [
+    {
+      "author": "NousResearch",
+      "tweet_id": "2087970618167706023",
+      "text": "LongCat-2.0 from @Meituan_LongCat is free in Nous Portal for one week.\n\nIt is a 1.6T-parameter MoE with 1M context built for agentic coding, scores 70.8 on Terminal-Bench 2.1, and can ingest an entire codebase in one pass.\n\nTry it out at https://t.co/KCXV2EtbOa https://t.co/M2ZUP3Cs0c",
+      "created_at": "2026-08-13T18:32:42+00:00"
+    },
+    {
+      "author": "NousResearch",
+      "tweet_id": "2087592096769147377",
+      "text": "Hermes profiles are now portable and shareable:\n\nRun /export to save a profile as a single file with credentials stripped: skills, memory, persona, crons, plugins, settings, desktop themes and layouts.\n\nThen /import loads the profile file, and your setup is up and running. https://t.co/NF3PuR2Yb4",
+      "created_at": "2026-08-12T17:28:36+00:00"
+    },
+    {
+      "author": "NousResearch",
+      "tweet_id": "2066647737613832624",
+      "text": "In partnership with @stripe, Hermes Agent now supports a full suite of Stripe skills.\n\nYour agent can buy things, pay per-call APIs, and provision its own SaaS, with configurable safety limits on every action. https://t.co/Gw3LINkCd3",
+      "created_at": "2026-06-15T22:23:11+00:00"
+    },
+    {
+      "author": "BenBarclay",
+      "tweet_id": "2086332542152528263",
+      "text": "@Teknium So you're saying I need to go back and ask for another signed spark :D",
+      "created_at": "2026-08-09T06:03:34+00:00"
+    },
+    {
+      "author": "BenBarclay",
+      "tweet_id": "679176305925971968",
+      "text": "@ps4emoji similar, but I prefer DD dashboards for the low level stats. Kibana/Timelion + Beats could be interesting.",
+      "created_at": "2015-12-22T05:47:04+00:00"
+    },
+    {
+      "author": "ApplyWiseAi",
+      "tweet_id": "2087693697496342537",
+      "text": "Insane drop by @xai and cursor\nHolyshit . The most simplest setup \n\nGrok bot is applying to jobs for me on it’s own computer and keeping track of them via Gmail https://t.co/D1mfxMKGY0",
+      "created_at": "2026-08-13T00:12:19+00:00"
+    },
+    {
+      "author": "ApplyWiseAi",
+      "tweet_id": "2067476198301606287",
+      "text": "@cyber_rekk the worst part isn't the breach. it's that two months went by without anyone noticing 1.3TB leaving the building. egress alerting is free and still optional apparently",
+      "created_at": "2026-06-18T05:15:12+00:00"
+    },
+    {
+      "author": "JackQi82772",
+      "tweet_id": "2070096226784297422",
+      "text": "https://t.co/gyTOGJfZ5l",
+      "created_at": "2026-06-25T10:46:15+00:00"
+    },
+    {
+      "author": "JackQi82772",
+      "tweet_id": "2069599178926522741",
+      "text": "https://t.co/JgKl2LaRK2",
+      "created_at": "2026-06-24T01:51:10+00:00"
+    },
+    {
+      "author": "JackQi82772",
+      "tweet_id": "2081711957737087063",
+      "text": "多的不敢说，一个月几千零花钱还是很香的 https://t.co/vnHyz0wYEH",
+      "created_at": "2026-07-27T12:03:01+00:00"
+    }
+  ]
+}

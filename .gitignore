@@ -11,3 +11,31 @@ gulag-inject.js
 test_*.py
 test-*.mjs
 x-monitor.deprecated/
+
+# Backups (мусор)
+*.bak
+*.bak.*
+
+# Large binaries — not in git
+altyn-arashan-video/
+drafts/*.png
+drafts/profile_*/
+
+
+# Transient / scratch
+SESSION_STATE.md
+*.bak
+*.bak.*
+
+# Large transient binary workdirs
+altyn-arashan-video/
+
+# Draft covers (large binaries, already published/consumed)
+drafts/*.png
+drafts/*.jpg
+
+# Transient working draft variants (RU/EN iterations, .txt/.md)
+drafts/*.txt
+drafts/profile_*/
+drafts/architecture-section.md
+drafts/robots-tj500-war-story-agentsmd.md

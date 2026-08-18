@@ -1,0 +1,34 @@
+[
+  {
+    "date": "2026-08-14T15:05:28.411572+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2088135269488918562",
+    "performance": "outperformer",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20881352): 3 likes, 2 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 4.4% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-08-14"
+  },
+  {
+    "date": "2026-08-14T22:16:03.680788+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2088135269488918562",
+    "performance": "outperformer",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20881352): 3 likes, 2 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 2.8% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-08-14"
+  }
+]

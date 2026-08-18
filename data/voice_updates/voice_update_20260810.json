@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2026-08-10T10:04:59.553258+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2084699433418301876",
+    "performance": "average",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20846994): 2 likes, 0 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 2.5% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-08-10"
+  },
+  {
+    "date": "2026-08-10T22:15:33.654159+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2084699433418301876",
+    "performance": "average",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20846994): 2 likes, 0 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 2.5% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-08-10"
+  },
+  {
+    "date": "2026-08-10T22:16:45.687444+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2084699433418301876",
+    "performance": "average",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20846994): 2 likes, 0 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 2.5% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-08-10"
+  }
+]
