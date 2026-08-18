@@ -1137,3 +1137,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Overall engagement rate: 2.1% (average)
 - **17.08.2026 22:46** — chrono: 2026-08-17 (`df5df4a`)
 - **18.08.2026 14:10** — git-завал: разобрал 108 untracked — коммит данных/драфтов/research, удалил .bak, убрал voicebox-gitlink, .gitignore для мусора (`17f5d95`)
+- **18.08.2026 14:11** — chore: git-завал — финал: убрал дубли .gitignore, закоммитил modified (AGENTS/CHRONOLOGY/CONTENT_BRIEF/STRATEGY/data/knowledge_graph/post_with_log/published_posts/robotman_mcp) (`acb6e6f`)
