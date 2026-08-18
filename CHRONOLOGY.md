@@ -1140,3 +1140,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **18.08.2026 14:11** — chore: git-завал — финал: убрал дубли .gitignore, закоммитил modified (AGENTS/CHRONOLOGY/CONTENT_BRIEF/STRATEGY/data/knowledge_graph/post_with_log/published_posts/robotman_mcp) (`acb6e6f`)
 - **18.08.2026 14:12** — chrono: 2026-08-18 — git-завал финал (acb6e6f) (`428ac4c`)
 - **18.08.2026 14:12** — chrono: 2026-08-18 (428ac4c) (`619efbf`)
+- **18.08.2026 14:12** — chrono: 2026-08-18 — git-завал финсал (void stale ref) (`45c0e09`)
