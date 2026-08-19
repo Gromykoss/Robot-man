@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
 """
+⛔ DEPRECATED (18.08.2026) — мёртвый рудимент, НЕ использовать.
+
+Этот скрипт НЕ является рабочим фетчером. Реальный фетчер cron:
+  ~/.hermes/scripts/x_tracker_fetch.py  (v3.0, twitter CLI → hermes-vault/40_Research/X Tracked/)
+
+Старая схема (tracked_authors.txt → data/tracked_posts.json) заброшена:
+  - скрипт никем не вызывается
+  - data/tracked_posts.json никем не читается
+  - cron cd9bc007c07a работает через ~/.hermes/scripts/x_tracker_fetch.py v3.0
+
+Оставлен только для git-истории. Править фетчер → только ~/.hermes/scripts/x_tracker_fetch.py.
+
+--- исходный docstring (для истории) ---
 x_tracker_fetch.py — Fetch latest posts from tracked X accounts via twitter CLI.
 Reads /home/hermes-workspace/robot-man/tracked_authors.txt, fetches recent posts,
 outputs JSON and saves to data/tracked_posts.json.

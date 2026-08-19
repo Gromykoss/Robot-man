@@ -1180,3 +1180,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Overall engagement rate: 1.9% (low)
 - **18.08.2026 22:46** — chrono: 2026-08-18 (`d60d317`)
 - **19.08.2026 04:00** — daily-sync: auto-commit (`2d5d379`)
+- **19.08.2026 11:06** — chrono: X Tracker fix от Hermes (Morning Scan путь → vault, роли 2 джобов, дубль x_tracker_fetch.py) (`9c1ef4d`)
