@@ -1,4 +1,18 @@
 
+## 2026-08-19 — Fix от Hermes: X Tracker читал пустую директорию (Morning Scan слал пустые сводки)
+
+- **Поломка (исправлена):** джоб «Morning Tracked Accounts Scan» (693d2bfee2df, default, 05:00 UTC) читал посты из `~/.hermes/cache/x_tracker/` — этой директории никогда не было. Фетчер реально пишет в `hermes-vault/40_Research/X Tracked/`. Итог: каждое утро джоб читал пустоту, слал пустую сводку в Telegram (-5373867120), но помечался ok.
+- **Что сделал Hermes:** исправил prompt джоба 693d2bfee2df — путь чтения → `hermes-vault/40_Research/X Tracked/`, убрал устаревшие x_search/xactions. Фетчер (код) НЕ трогал.
+- **Соблюдать (2 джоба, 2 роли):**
+  - cd9bc007c07a («X Tracker Fetch», 12:00, profiles/robot-man) — фетчит → vault, deliver local.
+  - 693d2bfee2df («Morning Scan», 05:00, default) — сводит свежие посты → отчёт в Telegram.
+  - Канонический путь: `hermes-vault/40_Research/X Tracked/YYYY-MM-DD/<дата>-<автор>-<id>.md`
+- **ВАЖНО (фетчер в двух местах):**
+  - `~/.hermes/scripts/x_tracker_fetch.py` — актуальный v3.0 (twitter CLI, 7464 байт)
+  - `~/robot-man/x_tracker_fetch.py` — устаревший (6656 байт)
+  - Править фетчер → правь версию в `~/.hermes/scripts/`, иначе cron возьмёт старую.
+- **Подтверждение:** прогон 693d2bfee2df завтра 05:00 UTC должен дать непустую сводку. Если пустота повторится → доложить Hermes через agent-bus (значит фетчер не успел заполнить vault).
+
 ## 2026-08-18 — Пост @gromykoss «TWINS» (GitHub-файлы → нативный SSH + Buzz) — опубликован
 
 - **14:22** — Опубликован @gromykoss (ручной постинг Сергея): «Two months ago I gave my agent a twin brother…» — https://x.com/gromykoss/status/2089719623109443843 (X-article, обложка `cover_twin_github2buzz_v4.png` 1280×720).
@@ -1153,6 +1167,7 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **18.08.2026 14:13** — chrono: 2026-08-18 — git-завал закрыт (b3fe99a) (`fb70a02`)
 - **18.08.2026 14:13** — chrono: 2026-08-18 — git-завал закрыт (fb70a02) (`fa81196`)
 - **18.08.2026** — voicebox удалён как мусор: чужой проект jamiepine/voicebox (AI voice studio), gitlink `f2cf2a72` без .gitmodules (битый submodule), внесён 14.07 как эксперимент, 154M. К robot-man не относится (TTS — отдельный стек). Восстановление не требуется.
+- **18.08.2026** — X Tracker fix от Hermes (оператор): джоб Morning Scan `693d2bfee2df` (05:00 UTC, default) читал из `~/.hermes/cache/x_tracker/` (не существует) → пустая сводка в Telegram, но статус ok. Hermes поправил prompt: путь → `hermes-vault/40_Research/X Tracked/`. Канонический путь фетчера: `hermes-vault/40_Research/X Tracked/YYYY-MM-DD/<дата>-<автор>-<id>.md`. Роли 2 джобов: `cd9bc007c07a` (12:00, profiles/robot-man) = фетчер → vault (deliver local); `693d2bfee2df` (05:00, default) = сводка → Telegram. ⚠️ `x_tracker_fetch.py` в ДВУХ местах: актуальный v3.0 = `~/.hermes/scripts/` (7464 байт), устаревший = `~/robot-man/x_tracker_fetch.py` (7020 байт). Править фетчер → только версию в `~/.hermes/scripts/`.
 - **18.08.2026 14:16** — chrono: voicebox удалён как мусор (jamiepine/voicebox, битый gitlink f2cf2a72) (`dfbafb2`)
 
 ## 2026-08-18 — Nightly Analytics
@@ -1164,3 +1179,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 1.9% (low)
 - **18.08.2026 22:46** — chrono: 2026-08-18 (`d60d317`)
+- **19.08.2026 04:00** — daily-sync: auto-commit (`2d5d379`)
