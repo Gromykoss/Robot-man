@@ -5,6 +5,7 @@
 - **Тема:** эволюция связи двух Hermes-агентов — от GitHub-файлов/Redis/worker.py/Google Sheet к нативному `terminal.backend=ssh` + Buzz (director на VPS, junior на Windows-ноутбуке). Упоминает @KSimback (его пост-триггер) и @Teknium (reacted 🔥). Финал — CTA-вопрос.
 - **Обложка (4 прогона, уроки):** v1 бомбер+верстак/инструменты — отклонена (одежда/обстановка); v2 ноут+монитор — отклонена (VPS ≠ монитор); v3 ноут+серверная башня, но face-swap сбил лицо — отклонена («теперь я не похож»); v4 машины-only (ноут+башня+неоновая SSH-связь, яркая) — принята. Уроки: AI face-swap ненадёжен для лица Сергея → real face+Pillow или машины-only; VPS = серверная башня, не второй монитор; «строитель» из профиля убран (тащил инструменты в обложки).
 - **Верификация:** пост live (14:22:37 UTC), cover прикреплена (1280×720), текст полный (X-article). Метрики на момент публикации: 9 imp.
+- **Ответ на @ethzerox:** в треде @KSimback @ethzerox написал «send the question to hermes in telegram and give it exec approval» → реплай @RobotsTJ500 (через xurl API, по команде «сам отвечай»): «It's not that simple… found the platform does it natively: terminal.backend=ssh + one Buzz bus. Full path in the post.» — https://x.com/RobotsTJ500/status/2089893774398775484. Примечание: X авто-линканул `worker.py` в t.co-ссылку (косметика).
 
 ## 2026-08-17 — Видеоклип «Дорога на Altyn-Arašan»: фикс движения дрона (orbit + yaw), финальные кадры
 
@@ -1162,3 +1163,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20888001 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20881352): 3 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 1.9% (low)
+- **18.08.2026 22:46** — chrono: 2026-08-18 (`d60d317`)

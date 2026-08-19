@@ -1,14 +1,26 @@
 {
-  "built_at": "2026-08-18T12:06:00.964984+00:00",
+  "built_at": "2026-08-19T00:01:44.142727+00:00",
   "stats": {
-    "nodes": 109,
-    "edges": 115,
+    "nodes": 111,
+    "edges": 118,
     "projects": 4,
-    "events": 19,
+    "events": 20,
     "people": 41,
     "tasks": 22
   },
   "nodes": [
+    [
+      "event/2026-08-18/Пост @gromykoss «TWINS» (GitHub-файлы →",
+      {}
+    ],
+    [
+      "2026-08-18",
+      {}
+    ],
+    [
+      "Пост @gromykoss «TWINS» (GitHub-файлы → нативный SSH + Buzz) — опубликован",
+      {}
+    ],
     [
       "event/2026-08-17/Видеоклип «Дорога на Altyn-Arašan»: фикс",
       {}
@@ -110,19 +122,11 @@
       {}
     ],
     [
-      "event/2026-08-12/Nightly Analytics",
-      {}
-    ],
-    [
-      "2026-08-12",
+      "event/2026-08-13/Nightly Analytics",
       {}
     ],
     [
       "Nightly Analytics",
-      {}
-    ],
-    [
-      "event/2026-08-13/Nightly Analytics",
       {}
     ],
     [
@@ -166,11 +170,7 @@
       {}
     ],
     [
-      "person/@RobotsTJ500",
-      {}
-    ],
-    [
-      "CHRONOLOGY.md",
+      "event/2026-08-18/Nightly Analytics",
       {}
     ],
     [
@@ -178,11 +178,23 @@
       {}
     ],
     [
-      "person/@tonysimons_",
+      "CHRONOLOGY.md",
       {}
     ],
     [
       "person/@KSimback",
+      {}
+    ],
+    [
+      "person/@Teknium",
+      {}
+    ],
+    [
+      "person/@RobotsTJ500",
+      {}
+    ],
+    [
+      "person/@tonysimons_",
       {}
     ],
     [
@@ -438,15 +450,25 @@
       {}
     ],
     [
-      "person/@Teknium",
-      {}
-    ],
-    [
       "person/@NousResearch",
       {}
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-08-18/Пост @gromykoss «TWINS» (GitHub-файлы →",
+      "target": "2026-08-18",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-18/Пост @gromykoss «TWINS» (GitHub-файлы →",
+      "target": "Пост @gromykoss «TWINS» (GitHub-файлы → нативный SSH + Buzz) — опубликован",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-08-17/Видеоклип «Дорога на Altyn-Arašan»: фикс",
       "target": "2026-08-17",
@@ -588,20 +610,6 @@
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-12/Nightly Analytics",
-      "target": "2026-08-12",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-12/Nightly Analytics",
-      "target": "Nightly Analytics",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
       "source": "event/2026-08-13/Nightly Analytics",
       "target": "2026-08-13",
       "predicate": "occurred_on",
@@ -714,25 +722,18 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@RobotsTJ500",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
+      "source": "event/2026-08-18/Nightly Analytics",
+      "target": "2026-08-18",
+      "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
+      "confidence": 0.95
     },
     {
-      "source": "person/@RobotsTJ500",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@RobotsTJ500",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
+      "source": "event/2026-08-18/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
     },
     {
       "source": "person/@gromykoss",
@@ -750,20 +751,6 @@
     },
     {
       "source": "person/@gromykoss",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@tonysimons_",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@tonysimons_",
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
@@ -774,6 +761,55 @@
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Teknium",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Teknium",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@tonysimons_",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@tonysimons_",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
@@ -1237,13 +1273,6 @@
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
-    },
-    {
-      "source": "person/@Teknium",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
     },
     {
       "source": "person/@NousResearch",
