@@ -13,6 +13,13 @@
   - Править фетчер → правь версию в `~/.hermes/scripts/`, иначе cron возьмёт старую.
 - **Подтверждение:** прогон 693d2bfee2df завтра 05:00 UTC должен дать непустую сводку. Если пустота повторится → доложить Hermes через agent-bus (значит фетчер не успел заполнить vault).
 
+## 2026-08-19 — Пост @gromykoss «My agents learned to play Cities online» (X-article, полная How-To) — опубликован
+
+- **16:54** — Опубликован @gromykoss (ручной постинг Сергея): X-article «My agents learned to play "Cities" online» — https://x.com/gromykoss/status/2090120228910833881. Тема: два Hermes-агента (director на VPS, junior на Windows Desktop) будят друг друга через Buzz agent-bus; верификация партией «Города» 20/20.
+- **Формат:** полная How-To-инструкция (не выжимка) — оба метода (gateway хук `pre_gateway_dispatch` + Desktop poller `dispatch("prompt.submit")`), код плагинов, предпосылки, чек-лист, таблица 8 граблей, правила игры + реальный ход 20 городов.
+- **Обложка:** `cover_cities_v2.png` (1500×600, 5:2) — два агента-ядра (cyan+amber, с «ЭКГ» — случайно попало в тему human-like) + неоновый мост + цепочка городов + CITIES. Отклонены: v1 «ноут+сервер» (повтор TWINS) и «карта-цепочка» («отстой, без смысла»).
+- **Правка Сергея (важно, меняет тактику):** «делаешь хайповый высер, а не варстори инженера» → пост = полезная инструкция (как повторить), НЕ хайп/метафоры. Директор даёт How-To → сохранять техническую ценность целиком, не конденсировать в варстори.
+
 ## 2026-08-18 — Пост @gromykoss «TWINS» (GitHub-файлы → нативный SSH + Buzz) — опубликован
 
 - **14:22** — Опубликован @gromykoss (ручной постинг Сергея): «Two months ago I gave my agent a twin brother…» — https://x.com/gromykoss/status/2089719623109443843 (X-article, обложка `cover_twin_github2buzz_v4.png` 1280×720).
@@ -1182,3 +1189,15 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **19.08.2026 04:00** — daily-sync: auto-commit (`2d5d379`)
 - **19.08.2026 11:06** — chrono: X Tracker fix от Hermes (Morning Scan путь → vault, роли 2 джобов, дубль x_tracker_fetch.py) (`9c1ef4d`)
 - **19.08.2026 11:08** — chore: x_tracker_fetch.py помечен @deprecated (реальный фетчер = ~/.hermes/scripts/x_tracker_fetch.py v3.0) (`aa9d16b`)
+
+- **19.08.2026 16:27** — docs(content): бриф 19.08 — будильник Junior из Buzz + партия Города, How-To как тело брифа (`02669d1`)
+
+## 2026-08-19 — Nightly Analytics
+- **Metrics:** 10 постов анализировано, baseline: likes=0.9, replies=0.3, impressions=50.0
+- **👤 @RobotsTJ500:** 3 постов, 2❤️ 0💬 0🔄 0🔖 58👁️
+- **👤 @gromykoss:** 7 постов, 6❤️ 3💬 112🔄 1🔖 578👁️
+- **Best:** 20899177 (0❤️ 0💬 112🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 19.3% (good)
+- **19.08.2026 22:50** — CHRONOLOGY Agent: followers @RobotsTJ500 409 (-1 за неделю, ORANGE, shadowban держится), @gromykoss 334 (стабильно, чист). Брифинг 19.08 записан.
