@@ -1202,3 +1202,22 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Overall engagement rate: 19.3% (good)
 - **19.08.2026 22:50** — CHRONOLOGY Agent: followers @RobotsTJ500 409 (-1 за неделю, ORANGE, shadowban держится), @gromykoss 334 (стабильно, чист). Брифинг 19.08 записан.
 - **19.08.2026 22:47** — chrono: 2026-08-19 (`8e0fc90`)
+- **20.08.2026 04:04** — auto-sync infra 20260820 (`9b84f0f`)
+
+## 2026-08-20 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=0.9, replies=0.3, impressions=53.6
+- **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **👤 @gromykoss:** 1 постов, 1❤️ 0💬 0🔄 0🔖 289👁️
+- **Best:** 20901202 (1❤️ 0💬 0🔄)
+- **Worst:** 20901202 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20901202): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.3% (low)
+- **20.08.2026 15:01** — Analytics Loop (cron `8be138a2b33f`): metrics/voice_update записаны. Единственный пост в выборке — @gromykoss «Cities» (19.08) → 289👁️ 1❤️ 0💬, вердикт underperformer, ER 0.3% (low). @RobotsTJ500 0 постов (пауза держится).
+- **20.08.2026 18:00** — KG rebuild (cron `4506b578cfa3`): 115 nodes / 122 edges / 21 events (было 113/120/20). Exit 0.
+
+## 2026-08-20 — CONTENT BRIEF (Hermes): War Story «Alikhan extractor терял текст .docx прораба» — свежий бриф
+- **23:31 (19.08)** — Hermes (стратег) написал бриф для @RobotsTJ500 (файл `CONTENT_BRIEF.md`). Тема: «6 дней гадал, почему стройплощадка молчит — а extractor тихо отбрасывал текст из .docx-файлов прораба, оставляя только метаданные. Данные были на диске всё время — ломался разъём, а не источник».
+- **6 фактов (верифицированы, источник = Alikhan CHRONOLOGY 19.08):** (1) `bot_memory_facts=0` 6-й день, last_fact = 13.08 12:02; (2) прораб шлёт сводки .docx (напр. 19.08.2026.docx, 14 152 байта) → `:8099/extract-document` возвращает только metadata без текста; (3) ручное извлечение (zipfile → word/document.xml) дало 7 человек + транспорт HUNDAI оранжевый 07KG418AEN; (4) совпадает с датой остановки фактов (13.08) — цепочка «прораб → .docx → extractor без текста → facts не растут»; (5) .xlsx парсится корректно → баг специфичен для .docx, не для extractor в целом; (6) данные физически на диске, фикс = python-docx/zipfile в extractor, НЕ ручная правка БД.
+- **Запреты брифа:** реальные имена персонала (→ «7 workers» / «a driver and six workers»), «прораб» без пояснения (→ «site foreman»), выдавать «проблема решена» (найден КОРЕНЬ, фикс ещё НЕ внедрён), ALL CAPS, self-reply, URL в теле, выдуманные детали.
+- **Deadline драфта: 12:00 UTC 20.08.** Голос: English first-person «I», 1200–2000 символов, #BuildingInPublic #AIAgents #HermesAgent. Процесс: BRIEF → CHRONOLOGY (Alikhan 19.08) → AGENTS (Alikhan) → драфт → MoA (deepseek-xai + viral-score) → факт-чек → approval Сергея → post_with_log.sh.
+- **20.08.2026 22:45** — CHRONOLOGY Agent: followers @RobotsTJ500 409 (Δ0, ORANGE, shadowban ~65% держится — риск снижен с 70%), @gromykoss 334 (Δ0, чист, tweet_count 1501 Δ+1). Брифинг 20.08 записан.
