@@ -1201,3 +1201,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 19.3% (good)
 - **19.08.2026 22:50** — CHRONOLOGY Agent: followers @RobotsTJ500 409 (-1 за неделю, ORANGE, shadowban держится), @gromykoss 334 (стабильно, чист). Брифинг 19.08 записан.
+- **19.08.2026 22:47** — chrono: 2026-08-19 (`8e0fc90`)
