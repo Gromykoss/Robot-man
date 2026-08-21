@@ -1221,3 +1221,23 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Запреты брифа:** реальные имена персонала (→ «7 workers» / «a driver and six workers»), «прораб» без пояснения (→ «site foreman»), выдавать «проблема решена» (найден КОРЕНЬ, фикс ещё НЕ внедрён), ALL CAPS, self-reply, URL в теле, выдуманные детали.
 - **Deadline драфта: 12:00 UTC 20.08.** Голос: English first-person «I», 1200–2000 символов, #BuildingInPublic #AIAgents #HermesAgent. Процесс: BRIEF → CHRONOLOGY (Alikhan 19.08) → AGENTS (Alikhan) → драфт → MoA (deepseek-xai + viral-score) → факт-чек → approval Сергея → post_with_log.sh.
 - **20.08.2026 22:45** — CHRONOLOGY Agent: followers @RobotsTJ500 409 (Δ0, ORANGE, shadowban ~65% держится — риск снижен с 70%), @gromykoss 334 (Δ0, чист, tweet_count 1501 Δ+1). Брифинг 20.08 записан.
+- **20.08.2026 22:48** — chrono: 2026-08-20 (`98b4e42`)
+
+## 2026-08-21 — Nightly Analytics
+- **Metrics:** 7 постов анализировано, baseline: likes=0.9, replies=0.3, impressions=57.6
+- **👤 @RobotsTJ500:** 2 постов, 1❤️ 0💬 0🔄 0🔖 39👁️
+- **👤 @gromykoss:** 5 постов, 3❤️ 0💬 112🔄 0🔖 682👁️
+- **Best:** 20899177 (0❤️ 0💬 112🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 16.1% (good)
+- **21.08.2026 22:15** — Analytics Loop (cron `8be138a2b33f`): metrics + voice_update записаны. 7 постов в выборке. @RobotsTJ500 2 поста 39👁️ 1❤️ (оригинальных новых нет — пауза 5-й день), @gromykoss 5 постов 682👁️ 3❤️ 112🔄. 112🔄 = RT @XFreeze (не органика). ER 16.1% (good) — искажён ретвитом, реальный органический engagement низкий.
+- **21.08.2026 22:48** — CHRONOLOGY Agent: followers @RobotsTJ500 409 (Δ0, ORANGE, shadowban ~65%), @gromykoss 334 (Δ0, чист, tweet_count 1501). Постов за 21.08 — 0. Брифинг 21.08 записан.
+
+## 2026-08-21 — Правила Сергея для @gromykoss (VOICE_PROFILE v3) + TACTICS/MCP/KG обновлены
+
+- **VOICE_PROFILE_GROMYKOSS.md v2 → v3 (правила Сергея, обязательны, актуальнее слепка):** (1) «строитель»/«builder» как самоидентификация — БЕСИТ, не использовать; (2) «Твиттер» → всегда «X»; (3) без постов про юбилеи/годовщины; (4) обложка — робот, НЕ киборг; (5) пересказ художественный, НЕ дословное цитирование. Слепок v2 («Строитель, который учится в открытую») помечен устаревшим.
+- **TACTICS.md → 21.08:** риск бана 65% (🟠 ORANGE, консервативно). @RobotsTJ500 409 (Δ0), tweet_count 709 (Δ+1 — вероятно reply/repost, нового оригинала в логах post_with_log.sh нет). Пауза держится: последний оригинальный пост 16.08 (17/14 imp, заморожен 5-6 дней). Просроченный бриф 20.08 (Alikhan .docx extractor, deadline драфта 12:00 UTC 20.08) НЕ отработан — драфта нет, пост не публикован; если оживлять — новый проход (драфт→MoA→факт-чек→approval). Без свежего брифа и approval Сергея — НЕ постить.
+- **TACTICS_GROMYKOSS.md → 21.08 (пятница):** @gromykoss 334 (Δ0, 4-й день без роста), tweet_count 1501. Предложен черновик байки про compaction bug 16.08 (EN, ~390 символов, «scope your protections, or they'll protect you from yourself»). Бэкап-тема: X Tracker «all clear» (агент читал несуществующую директорию). X API credits (OAuth 2.0) depleted (402) — search/mentions/impressions недоступны, но OAuth 1.0a (whoami/user) жив (проверено).
+- **robotman_mcp.py:** миграция `mcp.server.fastmcp.FastMCP` → `mcp.server.mcpserver.MCPServer` (обновление API MCP SDK).
+- **KG rebuild (cron `4506b578cfa3`, 18:01):** 109 nodes / 116 edges / 18 events (было 115/122/21 — снижение из-за дедупликации). Найдено 3 дубликата entities: `@gromykoss`/`@Gromykoss`, `@RobotsT500`/`@RobotsTJ500`, `@Grok`/`@grok` → merge_into_canonical.
