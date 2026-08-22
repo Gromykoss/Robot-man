@@ -1,4 +1,10 @@
 
+## 2026-08-22 — Пост @RobotsTJ500 «same agent, five channels, five contexts» (note_tweet, кросс-платформенная сессия) — опубликован
+
+- **16:54** — Опубликован @RobotsTJ500 (post_with_log.sh): «same agent. five channels. five different contexts.» — https://x.com/RobotsTJ500/status/2091207217991106879 (note_tweet 2828 символов, без обложки).
+- **Тема:** кросс-платформенная сессия — один профиль (Alikhan) в 5 каналах на 3 платформах = 5 session_id = 5 изолированных контекстов. Инсайт: «память общая / диалог раздельный», склейка session_id ≠ решение (echo/prompt-cache). PR #59362 (6+ недель в ревью, risk-labels), issue #43928, #58590 (cross_channel_context нет в main), наш #92351. CTA в комьюнити Hermes.
+- **Верификация:** note_tweet.text полный (2828 символов, не обрезан), начало/конец совпадают с драфтом `crossplatform_session_20260822_en_final.txt`.
+
 ## 2026-08-19 — Fix от Hermes: X Tracker читал пустую директорию (Morning Scan слал пустые сводки)
 
 - **Поломка (исправлена):** джоб «Morning Tracked Accounts Scan» (693d2bfee2df, default, 05:00 UTC) читал посты из `~/.hermes/cache/x_tracker/` — этой директории никогда не было. Фетчер реально пишет в `hermes-vault/40_Research/X Tracked/`. Итог: каждое утро джоб читал пустоту, слал пустую сводку в Telegram (-5373867120), но помечался ok.
@@ -1241,3 +1247,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **TACTICS_GROMYKOSS.md → 21.08 (пятница):** @gromykoss 334 (Δ0, 4-й день без роста), tweet_count 1501. Предложен черновик байки про compaction bug 16.08 (EN, ~390 символов, «scope your protections, or they'll protect you from yourself»). Бэкап-тема: X Tracker «all clear» (агент читал несуществующую директорию). X API credits (OAuth 2.0) depleted (402) — search/mentions/impressions недоступны, но OAuth 1.0a (whoami/user) жив (проверено).
 - **robotman_mcp.py:** миграция `mcp.server.fastmcp.FastMCP` → `mcp.server.mcpserver.MCPServer` (обновление API MCP SDK).
 - **KG rebuild (cron `4506b578cfa3`, 18:01):** 109 nodes / 116 edges / 18 events (было 115/122/21 — снижение из-за дедупликации). Найдено 3 дубликата entities: `@gromykoss`/`@Gromykoss`, `@RobotsT500`/`@RobotsTJ500`, `@Grok`/`@grok` → merge_into_canonical.
+- **21.08.2026 22:48** — chrono: 2026-08-21 (`3331b28`)
+
+## 2026-08-22 — Nightly Analytics
+- **Metrics:** 5 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=62.3
+- **👤 @RobotsTJ500:** 1 постов, 0❤️ 0💬 0🔄 0🔖 15👁️
+- **👤 @gromykoss:** 4 постов, 3❤️ 0💬 112🔄 0🔖 709👁️
+- **Best:** 20899177 (0❤️ 0💬 112🔄)
+- **Worst:** 20888001 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 15.9% (good)
