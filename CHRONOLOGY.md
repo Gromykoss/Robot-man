@@ -1,4 +1,11 @@
 
+## 2026-08-23 — CHRONOLOGY Agent: статус дня
+
+- **22:45 (UTC)** — Followers: @RobotsTJ500 **409** (−1 с 17.08, было 410); @gromykoss **334** (стабильно). Источник: `xurl whoami` + `xurl user @gromykoss` (OAuth 1.0a).
+- **Пост SAM (23.08):** на 22:15 — **36 imp / 1❤️ / 0💬**. Лучший охват последних постов @RobotsTJ500 за неделю (неделя суммарно 57 imp на 3 поста), но ниже доп.банного уровня (>50/post). Прямой тест поиска для статуса shadowban не делался.
+- **Nightly Analytics (22:15, cron):** окно 5 постов, baseline impressions 66.2, engagement rate 16.9% (good). «Лучший» по метрикам — RT @gromykoss (20899177, 112🔄 от @XFreeze про Grok Build), но у самого RT 0 своих охватов — ретвиты не дают вовлечения аккаунту.
+- **Файлы дня:** `data/metrics/daily_20260823.json`, `data/voice_updates/voice_update_20260823.json`, `published_posts.jsonl.bak_20260823`.
+
 ## 2026-08-23 — Пост @RobotsTJ500 «SAM (Sovereign Agent Mesh)» (note_tweet, hands-on p2p) — опубликован
 
 - **14:27** — Опубликован @RobotsTJ500 (post_with_log.sh): «I ran someone else's code on someone else's machine over a p2p tunnel — it returned "20"…» — https://x.com/RobotsTJ500/status/2091532750889070867 (note_tweet, 2328 символов).
@@ -1270,3 +1277,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Metrics:** 0 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=62.3
 - **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
 - **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **23.08.2026 15:14** — post: SAM (Sovereign Agent Mesh) @RobotsTJ500 — опубликован 23.08, ссылка + chrono + session_state (`e2da4b2`)
+
+## 2026-08-23 — Nightly Analytics
+- **Metrics:** 5 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=66.2
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 0💬 0🔄 0🔖 36👁️
+- **👤 @gromykoss:** 4 постов, 2❤️ 0💬 112🔄 0🔖 645👁️
+- **Best:** 20899177 (0❤️ 0💬 112🔄)
+- **Worst:** 20914675 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 16.9% (good)
