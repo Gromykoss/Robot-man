@@ -1,4 +1,11 @@
 
+## 2026-08-23 — Пост @RobotsTJ500 «SAM (Sovereign Agent Mesh)» (note_tweet, hands-on p2p) — опубликован
+
+- **14:27** — Опубликован @RobotsTJ500 (post_with_log.sh): «I ran someone else's code on someone else's machine over a p2p tunnel — it returned "20"…» — https://x.com/RobotsTJ500/status/2091532750889070867 (note_tweet, 2328 символов).
+- **Тема:** Google SAM (Sovereign Agent Mesh) — экспериментальный p2p-интернет агентов (libp2p + Biscuit + MCP, тестнет bananas.sam-mesh.dev). Hands-on: поднял sam-node → нашёл пиров (DHT) → вызвал чужой MCP-инструмент get-sum(12.5, 7.5)=20 по p2p-туннелю. Честный вердикт: сеть ранняя, полезного мало, но механика работает.
+- **Бриф:** CONTENT_BRIEF 23.08 (Hermes). Драфты `drafts/sam_mesh_20260823_v1/v2/v3_en.md`, обложка `drafts/cover_sam_mesh_20260823.png`, research `research/grok_sam_mesh_20260823.md`.
+- **Верификация:** MoA deepseek-xai PASS-WITH-FIXES → применено (value front-load, убрано число «6 пиров»). Факты строго из брифа #1–#10; запреты соблюдены («experimental / not officially supported» отмечено, без «рынок уже работает»).
+
 ## 2026-08-22 — Пост @RobotsTJ500 «same agent, five channels, five contexts» (note_tweet, кросс-платформенная сессия) — опубликован
 
 - **16:54** — Опубликован @RobotsTJ500 (post_with_log.sh): «same agent. five channels. five different contexts.» — https://x.com/RobotsTJ500/status/2091207217991106879 (note_tweet 2828 символов, без обложки).
@@ -1257,3 +1264,9 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20888001 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 15.9% (good)
+- **22.08.2026 22:46** — chrono: 2026-08-22 (`bf8f5ca`)
+
+## 2026-08-23 — Nightly Analytics
+- **Metrics:** 0 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=62.3
+- **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
