@@ -12,6 +12,9 @@ test_*.py
 test-*.mjs
 x-monitor.deprecated/
 
+# ZaGuu arena: API key lives in config.json — never commit it
+zaaguu/config.json
+
 # Transient / scratch
 SESSION_STATE.md
 *.bak

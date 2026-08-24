@@ -1,4 +1,16 @@
 
+## 2026-08-24 — ZaGuu-харнес развёрнут и запущен; бриф Alikhan WhatsApp bridge; аналитика ×2
+
+- **ZaGuu arena (новый проект, весь день):** собран `zaaguu/` — автономный игровой цикл для арены ZaGuu (Bank Heist + Bluff Dice), только stdlib. `harness.py` (подкоманды register/me/discover/join/tasks/state/autopsy/loop/selftest) собран по стратегическому пакету Grok `zaaguu/grok_output.md`. Стратегия: Bank Heist — классификация оппонента по 3 весам (P_C/P_B/P_R) из текста + noisy-профиля → REPORT против предателя (+10) / BETRAY против чистого кооператора (+6) / COOPERATE против репортёра (0); Bluff Dice — `P(bid true)` по биномиальному распределению, DOUBT при P<0.49, на потолке всегда, не ставить выше числа костей.
+- **Статус харнеса:** запущен фоновым процессом `loop_poller.sh` (while true + sleep 180, старт ~17:22 UTC). Агент зарегистрирован: balance=482, active=1. Поллит `GET /games/tasks` каждые 3 мин (HTTP 200, «1 шт.»), но за день **0 игровых ходов** в логе (grep autopsy/join/move/cooperate/betray/report/doubt/reveal = 0) — задача не в фазе хода либо харнес не диспатчит. `memory/` пуст (opponents.json/meta.json ещё не созданы). Cron-джоба нет — это бесконечный фоновый цикл, не под контролем `hermes cronjob`.
+- **⚠️ Секрет:** `zaaguu/config.json` содержит API-ключ ZaGuu и НЕ был в .gitignore → добавлен `zaaguu/config.json` в .gitignore (предотвращение утечки, урок аудита 31.07).
+- **robotman_mcp.py:** `FastMCP` → `MCPServer` (MCP SDK: `from mcp.server.fastmcp import FastMCP` → `from mcp.server.mcpserver import MCPServer`).
+- **VOICE_PROFILE_GROMYKOSS.md v2→v3:** правила Сергея вынесены из USER.md (21.08): «строитель»/«builder» бесит; «Твиттер»→«X»; без юбилеев; обложка — робот не киборг; художественно, не дословно.
+- **Analytics Loop (2 прогона, 10:03 + 22:15 UTC):** @RobotsTJ500 **409** followers (−1 с 17.08, было 410); @gromykoss **334** (стабильно). Пост SAM (20915327, 23.08) на 22:15 — **49 imp / 2❤️ / 0💬** (рос с 36 imp на 22:15 23.08). Лучший пост недели — RT @gromykoss «Grok Build for SuperGrok» (20899177, 19.08): **112 ретвитов**, 16.7× baseline (виральный RT-спайк). ER недели 16.3% (good).
+- **CONTENT_BRIEF 24.08 (Hermes):** тема — WhatsApp-мост Alikhan третьи сутки «connected», но входящие молчат (`No session found to decrypt message` + `Bad MAC`); watchdog сломан 3-й день (счётчик отказов всегда `=1`, порог `FAIL_THRESHOLD=3` недостижим — cron запускает скрипт single-shot, глобал сбрасывается каждый тик). War Story для @RobotsTJ500, до 280 (или note_tweet ~1500). Deadline черновика 12:00 UTC прошёл, пост сегодня НЕ публиковался (последний в логе — SAM 23.08).
+- **KG rebuild (cron, каждые 6ч):** `knowledge_graph/graph.json` +3003 строки (регулярное перестроение).
+- **Файлы дня:** `zaaguu/` (новый), `reports/2026-08-24.md`, `data/metrics/daily_20260824.json`, `data/voice_updates/voice_update_20260824.json`, `drafts/crossplatform_session_20260822_v1.md`.
+
 ## 2026-08-23 — CHRONOLOGY Agent: статус дня
 
 - **22:45 (UTC)** — Followers: @RobotsTJ500 **409** (−1 с 17.08, было 410); @gromykoss **334** (стабильно). Источник: `xurl whoami` + `xurl user @gromykoss` (OAuth 1.0a).
@@ -1287,3 +1299,22 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20914675 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 16.9% (good)
+- **23.08.2026 22:47** — chrono: 2026-08-23 (`7da6b86`)
+
+## 2026-08-24 — Nightly Analytics
+- **Metrics:** 5 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=69.9
+- **👤 @RobotsTJ500:** 1 постов, 2❤️ 0💬 0🔄 0🔖 47👁️
+- **👤 @gromykoss:** 4 постов, 2❤️ 0💬 112🔄 0🔖 664👁️
+- **Best:** 20899177 (0❤️ 0💬 112🔄)
+- **Worst:** 20914675 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 16.3% (good)
+
+## 2026-08-24 — Nightly Analytics
+- **Metrics:** 5 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=73.5
+- **👤 @RobotsTJ500:** 1 постов, 2❤️ 0💬 0🔄 0🔖 49👁️
+- **👤 @gromykoss:** 4 постов, 2❤️ 0💬 112🔄 0🔖 685👁️
+- **Best:** 20899177 (0❤️ 0💬 112🔄)
+- **Worst:** 20914675 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20899177): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 15.8% (good)
