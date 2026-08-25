@@ -15,6 +15,10 @@ if [ -z "$TEXT" ]; then
     exit 1
 fi
 
+# Pass the cover path into the operator pipeline so the checklist gate can
+# verify that a required image is actually present.
+export POST_IMAGE="$IMAGE"
+
 PYTHONPATH="$DIR" python3 -m operators.operator_pipeline "$TEXT" "$APPROVAL_TOKEN" || { echo "BLOCKED by operator pipeline" >&2; exit 1; }
 
 if [ -n "$IMAGE" ]; then

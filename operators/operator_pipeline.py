@@ -10,6 +10,7 @@ from pathlib import Path
 
 from .operator_account import check_account
 from .operator_approval import check_approval
+from .operator_checklist import check_checklist, collect_checklist_warnings
 from .operator_factcheck import check_fact_coverage
 from .operator_limits import check_limits
 
@@ -29,12 +30,18 @@ def approve_post(
     allowed_facts: list[str] | None = None,
     follow_used_today: int = 0,
     allowed_accounts: set[str] | list[str] | tuple[str, ...] = DEFAULT_ALLOWED_ACCOUNTS,
+    brief_content: str | None = None,
+    cover_path: str | None = None,
 ) -> tuple[bool, str]:
     checks = [
         ("account", check_account(account, allowed_accounts)),
         ("approval", check_approval(approval_token, account, is_production=True)),
         ("limits", check_limits(writes_used_today, follow_used_today, "post")),
         ("factcheck", check_fact_coverage(draft_text, allowed_facts)),
+        (
+            "checklist",
+            check_checklist(draft_text, brief_content or "", account, cover_path),
+        ),
     ]
 
     for name, result in checks:
@@ -140,9 +147,18 @@ def main(argv: list[str]) -> int:
     draft_text = argv[1]
     cli_token = argv[2] if len(argv) > 2 else None
     account = os.environ.get("POST_ACCOUNT", "RobotsTJ500")
+    cover_path = os.environ.get("POST_IMAGE")
     token = read_approval_token(cli_token)
     writes_used_today = read_writes_used_today()
     allowed_facts = read_allowed_facts()
+
+    brief_content = ""
+    try:
+        brief_content = CONTENT_BRIEF_PATH.read_text(encoding="utf-8")
+    except OSError:
+        # Missing brief → factcheck already handled its own fallback; the
+        # checklist gate treats an empty brief as "no deterministic constraint".
+        brief_content = ""
 
     ok, reason = approve_post(
         draft_text=draft_text,
@@ -150,6 +166,8 @@ def main(argv: list[str]) -> int:
         account=account,
         writes_used_today=writes_used_today,
         allowed_facts=allowed_facts,
+        brief_content=brief_content,
+        cover_path=cover_path,
     )
     if ok:
         return 0
