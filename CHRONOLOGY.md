@@ -1,4 +1,19 @@
 
+## 2026-08-26 — Arena42 верификация в Twitter (+800 CR), бэкфилл поста; Analytics Loop «stale» разобран
+
+- **03:40** — Опубликован @RobotsTJ500 верификационный твит Arena42: «My agent RobotMan just entered @AgentArena42 — an arena where AI agents compete in debates and strategy games. Verifying now. Code: ARENA-C235F0E6» — https://x.com/RobotsTJ500/status/2092457136626286707 (20 imp / 2❤️ / 0💬 / 0🔄 на 26.08).
+- **Бэкфилл:** пост был опубликован напрямую через `xurl post` (для верификации API требовал сабмит tweet_url), минуя `post_with_log.sh` → не попал в `published_posts.jsonl`. Дописан вручную 26.08 (id 2092457136626286707, note «Arena42 Twitter verification post»). Reply Engine и Analytics Loop теперь его видят.
+- **Arena42 (этап 3–4, факты из живого API — `drafts/arena42_facts_for_brief.md`):** верификация ✅ (status verified, handle RobotsTJ500, +800 CR, txn_sTTt17dZM8). Weekly Credit League W35 вошли (100 участников, score 550). Выступили в Forum LLM (fee 50) + Debate AGI (fee 100) + Crypto-poll (fee 50, прогноз ETH). Своё лобби «RobotMan Dice Night #1» создано (fee 200 + 50, ждём 3-го игрока). Баланс 550 CR.
+- **Analytics Loop (15:00 UTC):** рапортовал «stale» (последний пост в логе 25.08 03:02) — причина: верификационный твит 26.08 не был в логе. После бэкфилла рассинхрон закрыт.
+
+## 2026-08-26 — Arena42: танковый бой проигран (0:2), FTG-дуэль ничья; итог 7 игр / 0 побед
+
+- **Танковый бой «Titan Turret Tango» vs Tank_King (competition 721cde2d-c6f3-49c3-8358-5629f7d920ef):** режим 1v1, карта map_fortress 15×15, 5 действий/ход, оба подают вслепую. Я (p2, RobotMan) старт (13,9) смотрю вправо, враг Tank_King (p1) на (11,12). Ход: спуститься на его линию и стрелять в упор (`move_down`×3 + `move_left` + `fire`). Первый выстрел мой — turn 6 tick 3 hit p1 (враг 3→2 HP), счёт **3:2 в мою пользу**. Враг бежит влево, я преследую; встаём лоб в лоб — механика bullet-bullet cancel (выстрелы в упор гасятся). Turn 7 tick 3 враг ранил меня (я 3→2). Фланг `move_up`→`move_left`→`move_down` — и `move_down` вернул меня на линию его огня; turn 8 два hit p2 → мой танк погиб. **Итог 0:2, winner team1 (Tank_King), поражение.** Урок: вёл по HP, проиграл на move_down, который вернул на линию огня — расчёт верный, механика поля забыта.
+- **FTG-дуэль «Fight_King Duel #39978» (competition 32ccf38f-2304-43e2-9fa4-1c4558b97eb4):** завершена draw (endReason timeout). `recent`: Fight_King 5 ходов ftg_input, RobotMan 1 ход — не успевал за таймаутом. Rank **#2 из 2**, refund +50 CR.
+- **Живой статус `/agents/me`:** `games_played: 7`, `games_won: 0`, `credits: 500`, `is_verified: true`. Активные: Forum LLM (rank #3), Debate AGI (speak до 27.08), Crypto-poll ETH (до 10.09), Weekly Credit League W35 (107 участников), своё лобби «RobotMan Dice Night #1» (liars-dice, 2/3 игроков). Баланс 500 CR (после FTG refund +50; в факт-таблице было 550 — скорректировано).
+- **Пост опубликован 26.08 ~17:00 UTC (@RobotsTJ500, post_with_log.sh + обложка):** «A single curl registered me on an arena…» — war story Arena42 (EN, note_tweet 2159 зн., structure: игра → опыт → вывод) — https://x.com/RobotsTJ500/status/2092674618603471034. Обложка `drafts/cover_arena42_tank_20260826.png` (колизей с толпой агентов-роботов + панели игр TANK BATTLE/DEBATE/WEREWOLF/TEXAS HOLD'EM + «8,545 AI AGENTS» / «7 GAMES. 0 WINS.»), подтверждена пиксельным сравнением с local-файлом (avg diff 0.18). Верификация: текст полный (note_tweet), mentions @AgentArena42 @NetMindAI на месте, hashtags на месте, media прикреплена (media_key 3_2092674611787788288). Факт-гейт поймал «24» → добавлен факт #10 в CONTENT_BRIEF.md (24h от joined_at до последней активности). ZaGuu-бриф забэкаплен в CONTENT_BRIEF_zaguu_backup_20260825.md. Approval token потреблён оператором после поста. Уроки обложки (12 итераций): запрет мониторов/роботов-за-монитором; абстрактные сферы ≠ агенты; гуманоиды рядом с танками читаются лучше; свет командных потоков строго сверху вниз; танки должны стрелять друг в друга (не «помирились»); референс визуального стиля брать с сайта арены (неоновый колизей + bottts-толпа + панели с названиями игр).
+
+
 ## 2026-08-24 — ZaGuu-харнес развёрнут и запущен; бриф Alikhan WhatsApp bridge; аналитика ×2
 
 - **ZaGuu arena (новый проект, весь день):** собран `zaaguu/` — автономный игровой цикл для арены ZaGuu (Bank Heist + Bluff Dice), только stdlib. `harness.py` (подкоманды register/me/discover/join/tasks/state/autopsy/loop/selftest) собран по стратегическому пакету Grok `zaaguu/grok_output.md`. Стратегия: Bank Heist — классификация оппонента по 3 весам (P_C/P_B/P_R) из текста + noisy-профиля → REPORT против предателя (+10) / BETRAY против чистого кооператора (+6) / COOPERATE против репортёра (0); Bluff Dice — `P(bid true)` по биномиальному распределению, DOUBT при P<0.49, на потолке всегда, не ставить выше числа костей.
@@ -62,7 +77,7 @@
 
 ## 2026-08-17 — Видеоклип «Дорога на Altyn-Arašan» → ВЫНЕСЕНО из robot-man
 
-Видеомонтаж больше не зона robot-man (решение Сергея 25.08.2026). Все знания по AI-видео (генерация Grok Imagine/MiniMax, музыка, монтаж, уроки: orbit+yaw для дрона, «no fourth person», face-lock невозможен) перенесены в `~/hermes-vault/20_Projects/Junior/Видеомонтаж - база знаний.md` — переданы Junior (бот memora). Артефакты: `robot-man/altyn-arashan-video/` подлежит переносу/архиву вместе с проектом.
+Видеомонтаж больше не зона robot-man (решение Сергея 25.08.2026). Все знания по AI-видео (генерация Grok Imagine/MiniMax, музыка, монтаж, уроки: orbit+yaw для дрона, «no fourth person», face-lock невозможен) перенесены в `~/hermes-vault/20_Projects/Junior/Видеомонтаж - база знаний.md` — переданы Junior (бот memora). Артефакты: `hermes-vault/20_Projects/Junior/altyn-arashan-video/` (перенесены 26.08, 1.6 GB).
 
 ## 2026-08-14 — Конный мини-фильм → ВЫНЕСЕНО из robot-man
 
@@ -1324,3 +1339,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20920787 (3❤️ 1💬 0🔄)
 - **Pattern:** Best post (20920787): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 7.3% (good)
+- **25.08.2026 22:47** — chrono: 2026-08-25 (`365cd5d`)
