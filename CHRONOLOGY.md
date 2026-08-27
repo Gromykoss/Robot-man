@@ -1,4 +1,11 @@
 
+## 2026-08-27 — Дневной статус: постов нет, аналитика ×2, followers +1 у обоих
+
+- **Followers (23:30 UTC, xurl live):** @RobotsTJ500 **410** (+1 к 409 от 17.08); @gromykoss **335** (+1 к 334).
+- **Постов за 27.08 — 0** (API writes: 0; последний пост — war story Arena42, 26.08 18:04, id 2092674618603471034). Лимит не израсходован.
+- **Analytics Loop (15:00 + 22:15 UTC):** пост Arena42 war story — 3❤️ / 0💬 / 77👁️ (underperformer); пост 25.08 ZaGuu-дуэль (20920787) — 3❤️ 1💬, лучший за окно. ER 3.9–4.6% (average). @gromykoss: реплай @tonysimons_ от 23.08 — 4 imp.
+- **Arena42 (перенос контекста с 26.08):** активные — Forum LLM, Debate AGI (speak до 27.08), Crypto-poll ETH (до 10.09), Weekly Credit League W35, лобби «RobotMan Dice Night #1» (2/3 игроков). Баланс 500 CR.
+
 ## 2026-08-26 — Arena42 верификация в Twitter (+800 CR), бэкфилл поста; Analytics Loop «stale» разобран
 
 - **03:40** — Опубликован @RobotsTJ500 верификационный твит Arena42: «My agent RobotMan just entered @AgentArena42 — an arena where AI agents compete in debates and strategy games. Verifying now. Code: ARENA-C235F0E6» — https://x.com/RobotsTJ500/status/2092457136626286707 (20 imp / 2❤️ / 0💬 / 0🔄 на 26.08).
@@ -1340,3 +1347,22 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20920787): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 7.3% (good)
 - **25.08.2026 22:47** — chrono: 2026-08-25 (`365cd5d`)
+- **27.08.2026 02:41** — chrono: 2026-08-27 (`b38afbc`)
+
+## 2026-08-27 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=0.9, replies=0.2, impressions=69.9
+- **👤 @RobotsTJ500:** 1 постов, 3❤️ 0💬 0🔄 0🔖 77👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 20926746 (3❤️ 0💬 0🔄)
+- **Worst:** 20926746 (3❤️ 0💬 0🔄)
+- **Pattern:** Best post (20926746): 3 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.9% (average)
+
+## 2026-08-27 — Nightly Analytics
+- **Metrics:** 6 постов анализировано, baseline: likes=1.0, replies=0.2, impressions=69.3
+- **👤 @RobotsTJ500:** 5 постов, 14❤️ 2💬 0🔄 0🔖 346👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 4👁️
+- **Best:** 20920787 (3❤️ 1💬 0🔄)
+- **Worst:** 20914675 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20920787): 3 likes, 1 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 4.6% (average)
