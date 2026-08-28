@@ -1366,3 +1366,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20914675 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20920787): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 4.6% (average)
+- **27.08.2026 23:30** — chrono: 2026-08-27 daily status (`8ba8217`)
+
+## 2026-08-28 — Nightly Analytics
+- **Metrics:** 6 постов анализировано, baseline: likes=1.1, replies=0.2, impressions=68.8
+- **👤 @RobotsTJ500:** 5 постов, 14❤️ 2💬 0🔄 0🔖 372👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 4👁️
+- **Best:** 20920787 (3❤️ 1💬 0🔄)
+- **Worst:** 20914675 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20920787): 3 likes, 1 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 4.3% (average)
