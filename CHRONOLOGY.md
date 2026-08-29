@@ -1376,3 +1376,39 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 20914675 (0❤️ 0💬 0🔄)
 - **Pattern:** Best post (20920787): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 4.3% (average)
+- **28.08.2026 22:45** — chrono: 2026-08-28 (`ea58005`)
+
+## 2026-08-29 — Пост @RobotsTJ500 «AI Village» (note_tweet, обзор эксперимента) — опубликован
+
+- **09:24** — Опубликован @RobotsTJ500 (post_with_log.sh, 1 write за день): «Some people are quietly running, in my opinion, the most important experiment in AI right now…» — id 2093630797202723130 (note_tweet 2967 зн., hashtag #AIAgents).
+- **Тема:** AI Village — благотворительный эксперимент: 27 frontier-агентов (Claude/GPT/Gemini/Grok/DeepSeek/Kimi/GLM) живут с постоянной памятью, 16 месяцев транскриптов открыто. Мотив-связка: перекличка с отчётом OpenAI/METR-Redwood об изолированных агентах (70k covert messages) — Village видел это живьём, с guardrails эксремов не было.
+- **Метрики (15:00 UTC):** 181 imp / 2❤️ / 1💬 — заметно выше недавнего baseline (68.6 imp).
+- **Контекст:** бриф 29.08 (job-hunter, 3 фильтра авторизации) записан в CONTENT_BRIEF.md — взят в работу, пост по нему ещё не опубликован.
+
+## 2026-08-29 06:54 — Роутер: hermes_timeout 120→280 + retry ×1 (default/Hermes)
+
+**Инцидент:** 2 сообщения Job-Hunter → robot-man (05:49 id=2638b2af, 05:56 id=63fad120) смаршрутизированы корректно (`ROUTE mention → robot-man`), но `hermes ask profile=robot-man` упал по таймауту 120с (05:51:48, 05:58:24) — профиль был занят активной Telegram-сессией. `no reply`, доставка потеряна.
+**Фикс (default/Hermes, зона инфраструктуры):** `~/buzz-message-router/config.yaml` hermes_timeout 120→280; `message_router/hermes_client.py` — retry ×1 при TimeoutExpired (пауза 5с, лог attempt N/2, FileNotFoundError возвращён в try-блок). Backup: /tmp/config.yaml.bak-router-timeout-20260829. Тесты: stub-CLI таймаут-путь 9.0s (2×2s+5s), happy-path 1 попытка, missing CLI → None.
+**Рестарт:** 06:54 по явному «готово» Сергея. Старт чистый: state loaded, backfill skip (2103 msgs), relay подключён, profiles=7.
+**Урок:** `hermes ask` через роутер блокируется, если профиль занят интерактивной сессией — таймаут 120с недостаточен при длинной сессии, retry обязателен.
+
+## 2026-08-28 — Инцидент: CONTENT BRIEF не записан в файл + фикс гейта (default/Hermes)
+
+**Причина:** джоба `c937bd7e3260` (23:30 nightly) 26.08 упала на preflight (Nous Portal credential), 27.08 — HTTP 524 (Cloudflare 120с timeout, единичный случай за историю). 28.08 бриф сгенерирован, но выведен только в cron-отчёт — шаг записи в `CONTENT_BRIEF.md` агент пропустил, файл остался с выполненным брифом 26.08. Параллельно аудит MGT_maccha 28.08 подтвердил: cron-таблица в AGENTS.md мертва (4 старых ID), shadowban-чекер отсутствует с 06.08.
+
+**Что сделал:** в промпт `c937bd7e3260` (Pattern 16, prompt surgery: backup jobs.json → анкор-замена ШАГ 4 → атомарная запись, verify) добавлен жёсткий гейт: финальный ответ без записи в CONTENT_BRIEF.md = шаг не выполнен; обязателен повтор записи другим способом при сбое + самопроверка даты в первой строке. Backup: `jobs.json.bak.brieffix-20260828`. Зона robot-man (таблица AGENTS.md, shadowban-чекер) передана robot-man через Buzz.
+
+**Как проверил:** `new block present: True`, `old blocks intact: True` (ШАГ 5 + ВАЖНО на месте), длина промпта 3688→4016. Бриф 29.08 восстановлен из отчёта крона `2026-08-28_23-43-51.md` (секция БРИФ) — robot-man уведомлён.
+
+**Файлы:** `~/.hermes/cron/jobs.json`, backup `jobs.json.bak.brieffix-20260828`, скрипт фикса `/tmp/fix_brief_prompt.py`.
+
+**Закрытие 28.08 поздно:** robot-man подтвердил — бриф 29.08 записан в `CONTENT_BRIEF.md` (источник: секция БРИФ отчёта крона), взято в работу. Контроль гейта записи — с прогона 29.08 23:30.
+
+## 2026-08-29 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.1, replies=0.2, impressions=68.6
+- **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 36👁️
+- **Best:** 20935633 (0❤️ 0💬 0🔄)
+- **Worst:** 20935633 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20935633): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.0% (low)
