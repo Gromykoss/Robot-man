@@ -1461,3 +1461,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Overall engagement rate: 2.5% (average)
 - **31.08.2026 12:44** — content: buzz context loop post — v3 EN + бриф + обложка (MoA PASS-WITH-FIXES applied, MCV 9/10) (`0767837`)
 - **31.08.2026 13:51** — content: final cover v6 (HOLD THE THREAD, cycle schema, MCV 8.5) + EN final v3 (`f75fa3b`)
+- **31.08.2026 18:00** — content: gromykoss draft v8 (grok-bot integration story, MoA pending) + cover NEW AGENT DAY (MCV 8/10) (`ad54bf0`)
