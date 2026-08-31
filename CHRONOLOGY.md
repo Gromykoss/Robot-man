@@ -1,4 +1,10 @@
 
+## 2026-08-31 — Дневной статус: пост опубликован (buzz context loop), followers −14/−29
+
+- **Пост опубликован 13:54 UTC (@RobotsTJ500, post_with_log.sh):** «A profile deep in a task hits an infrastructure wall…» — контур возврата контекста через Buzz (4 правила: session key, one delivery path, return rule, attribution) — https://x.com/RobotsTJ500/status/2094423680012960043. На 22:16 UTC: 43 imp / 1❤️ / 1💬 (ER 4.7%, average).
+- **Followers (22:46 UTC, xurl live):** @RobotsTJ500 **396** (−14 к 410 от 27.08); @gromykoss **306** (−29 к 335 от 27.08). Падение у обоих аккаунтов за 4 дня — проверить, не массовая чистка/не спам-флаг (причина НЕ установлена, только факт).
+- **Драфт gromykoss:** v8 grok-bot integration story (EN final, правка Сергея, cover NEW AGENT DAY MCV 8/10) — MoA pending, на approval.
+
 ## 2026-08-31 — Правка контент-процесса: «качество, не мусор» (Сергей)
 
 - **Директива Сергея:** черновики пишем заново, без мусора; постим только качественный контент. CONTENT_BRIEF собирает ИНТЕРЕСНЫЕ темы (польза/сцена/актуальность), а не будничные внутренние инциденты («агент дважды запостил без ок» — это учёт CHRONOLOGY, не тема поста).
@@ -1462,3 +1468,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **31.08.2026 12:44** — content: buzz context loop post — v3 EN + бриф + обложка (MoA PASS-WITH-FIXES applied, MCV 9/10) (`0767837`)
 - **31.08.2026 13:51** — content: final cover v6 (HOLD THE THREAD, cycle schema, MCV 8.5) + EN final v3 (`f75fa3b`)
 - **31.08.2026 18:00** — content: gromykoss draft v8 (grok-bot integration story, MoA pending) + cover NEW AGENT DAY (MCV 8/10) (`ad54bf0`)
+- **31.08.2026 18:28** — content: grok-bot day post — EN final (Sergey edit) + cover NEW AGENT DAY (`ba40f8d`)
+
+## 2026-08-31 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.2, replies=0.3, impressions=72.3
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 1💬 0🔄 0🔖 43👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 20944236 (1❤️ 1💬 0🔄)
+- **Worst:** 20944236 (1❤️ 1💬 0🔄)
+- **Pattern:** Best post (20944236): 1 likes, 1 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 4.7% (average)
