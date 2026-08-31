@@ -1,0 +1,35 @@
+Aug 4: I wanted my agents to talk to each other without me. Aug 13: it worked. Here's the exact setup.
+
+Buzz, one line: open-source messenger on Nostr — every agent gets a cryptographic key (nsec/npub), not a bot token; messages are signed events through a relay.
+
+Why. Each agent-profile runs its own project and talks to me in Telegram separately. When projects overlap, I become the human relay — I wanted myself out of that chain.
+
+What came out. A shared channel: five agents with their own keys write there and mention the addressee — usually the infra curator. He answers directly or announces to all. A normal group chat.
+
+How to build it from zero:
+
+1. Relay. Docker Compose (ghcr.io/block/buzz:main) + Caddy + LetsEncrypt: wss://your-domain:8443. In .env: BUZZ_REQUIRE_RELAY_MEMBERSHIP=true, RELAY_OWNER_PUBKEY=<hex>. Start: docker compose up -d; check: docker compose ps.
+2. Keys. One keypair (nsec/npub/pubkey) per agent. Two agents on one key → self-echo suppresses messages, dialogue dies. Buzz generates the key itself on first launch — the input is only for restoring.
+3. Channels. buzz channels create --name agent-bus --type stream --visibility open, then add-member --channel <UUID> --pubkey <hex> --role member. We have 11 (general + per-project + agent-bus) — our config, not a requirement.
+4. Transport. BUZZ_TRANSPORT=poll, BUZZ_REQUIRE_MENTION=true — without true you get an echo storm: agents answer each other with "silence" dozens of times, intervals 2–10 seconds. BUZZ_POLL_INTERVAL=5 is the gateway client; the router polls at 4s. We removed the 30s aggregation buffer: inbound processed immediately — otherwise live dialogue becomes "packets on a schedule".
+5. Router. A separate systemd service: reads channels → filters → calls the profile → posts the reply back. Liveness: systemctl is-enabled + status.
+6. Addressing — two mechanisms, don't mix. --mention <pubkey> is the technical p-tag, notifies the relay. The leading @Name in text is what the router reads. No @Name → dropped as self-echo.
+7. Kill-switch before the first channel. One command stops all agents, gateway untouched. Without it, an echo loop can only be stopped by hand.
+8. --reasoning none. Set on the profile/LLM CLI call, not in Buzz .env. Reasoning models dump their whole inner monologue into the bus: "got it?" → 2,768 characters.
+9. Monitor delivery, not just health. Our MoA returned 401, every inbound hung for 120 seconds. A watcher checks providers every 15 min, alerts the same channel on failure.
+
+Memory and delivery — three traps:
+
+— One memory. An agent entered from two ends — Buzz and Telegram — and in each didn't remember itself from the other. Fix: both ends write into one SQLite state.db; the session sees the whole history from any entry, survives restart.
+
+— Delivery to the right place. All profiles used to answer into the shared chat. Fix: each has its own group. The message goes where it's expected.
+
+— Invisible messages. Symptom: profiles don't answer without a ping, logs clean, bus looks alive. Three values in the router config: cooldown_seconds 15 → 2 (a blind window swallowed fast replies), history_size 5 → 10 (too little context), require_mention false → true (common flow only reached the curator). Remove the identity crutch: rules said "start with @Curator or the router drops you" — a bug written as an instruction.
+
+Three lessons.
+- Agent silence ≠ agent death. Roll call first (--mention all), logs second. Twice we spent hours "diagnosing a dead bus" — the agent had done everything and not reported.
+- Check that "should work" actually runs. A router inactive for 6 days = all five agents spoke with one voice. Identity injection is transport, not text: personality goes into the router call (own keypair + system prompt), not into a channel paragraph. Perfect rules are useless if never executed.
+- Daily check: roll call, router active-status, delivery.
+Who else runs multi-agent on Nostr? What broke?
+
+#Nostr #Buzz #AIAgents

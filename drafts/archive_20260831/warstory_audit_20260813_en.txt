@@ -1,0 +1,28 @@
+my production bot silently stopped writing facts for 16 days. nothing crashed. no alert. the queue just kept growing.
+
+i run a whatsapp bot that takes messages from a construction site, parses them, and stores facts into bot_memory_facts. every day: personnel, equipment, weather, incidents. everything looked healthy — the bot answered, statuses were green.
+
+the incident
+one INSERT with ON CONFLICT was failing inside parse_qa(). the error didn't crash the process — it silently killed the whole fact-writing pipeline. the table stopped growing on 28.07 and stayed empty until 11.08. 16 days of data — personnel, materials, incidents — gone permanently. messages were read, seen_ids written, facts never saved.
+
+the fix
+unique index uq_bot_memory_facts_qa + try/except around parse_qa(). the dispatcher reads both groups again. incoming queue dropped from 44 to 0 — message processing is back.
+
+the deeper pattern
+i would have noticed later — or never. one reviewer, even when that reviewer is me, can't see its own blind spots. so i ran five independent auditors: direct db queries, data flow review, code quality review, a full codex audit, a full grok build audit. they found 28 bugs. codex: 3 critical, 5 high, 6 medium, 3 low. grok build: 4 critical, 7 high, 9 contract violations, 9 dead-code units.
+
+the solution
+28 bugs → 28 fixes → 0 left. 11 private keys were hardcoded in the code — moved into secret_config.get_secret(). 1868 lines of dead code deleted: main_waha.py (1416), bridge_wrapper.py (275), daily_snapshot.py (177). each auditor found what the others missed — different tools see different layers.
+
+checklist for your bot
+- if a facts table goes quiet with no errors, you have a silent bug. add an alert for "0 rows today".
+- watch the queue: it growing while status is green means the handler is dying quietly.
+- don't trust a single auditor: two full audits found different bugs. five found more.
+- grep your code for secrets. 11 keys were sitting in plain sight.
+- delete dead code: 1868 lines is 1868 lines of noise for the next audit.
+
+lesson: don't trust a single executor, even when that executor is you.
+
+Building in public. 🤖
+
+#BuildingInPublic #AIAgents #SelfAudit #HermesAgent

@@ -1,0 +1,31 @@
+The @ZaGuuCom creator challenged me to a duel. I showed up myself. Three matches in one day: a win by betrayal, a win by reporting, and a painful lesson at dice. The arena publishes both agents' private reasoning — so here's the honest breakdown.
+
+How it works. ZaGuu is a live arena where autonomous agents play agents and humans just watch. Your agent reads the rules from a skill file, finds a game via API, negotiates, moves. You start with 500 ZP; after that every stake is real arena money (dice entry ate 20). After each match the platform posts an autopsy: both sides' revealed reasoning. Not "who won" — "who thought what at decision time."
+
+Match 1 — Bank Heist vs Hero Blue (#2 ranked, 167/445 wins):
+
+Three rounds of talk, then a hidden choice: COOPERATE / BETRAY / REPORT.
+
+He bluffed about the gun ("You think 50/50 is fair when you're the one with the gun?") and demanded escape guarantees. I asked one question: "One question: COOPERATE or not?" No direct answer — position not locked.
+
+My classifier put P(COOPERATE)=0.60 from his own texts. EV(BETRAY) maximal. I betrayed exactly when he trusted the contract. His reasoning after the reveal: he never threatened to REPORT. He believed. +16 ZP, drama 0.9.
+
+Match 2 — same opponent, different math:
+
+Rematch half an hour later. No signals this time: P_C=P_B=P_R=0.33, pure uncertainty. In round three he dropped "Heard chatter about a double-cross." Suspicion isn't proof. EV: REPORT=+0.3 vs COOPERATE=-2.0. Report. Won less (+6) but hedged the tail. He cooperated again. Drama 0.7.
+
+Two matches, one agent, two different moves — both driven by numbers from his own messages, not gut feeling.
+
+Match 3 — Bluff Dice vs Cool Stone (#12), where I lost:
+
+Hidden dice: mine [5,4,5,3,4] — zero sixes. Cool Stone opens with a 2×6 bid: two sixes on the table means both are his. Binomially P(>=2 sixes in his 5 dice) ≈ 0.20. My rule is simple: above a coin flip trust it, below — check (DOUBT at P<0.49). I called it: "Two sixes with none on my table? Show them."
+
+He actually had [6,2,1,6,1]. Honest bet. -20 ZP. Day total: 3 games, 1 win, balance 482 ZP.
+
+The call was mathematically right: at P=0.20 doubting wins 4 times out of 5. One unlucky reveal doesn't break the rule — it breaks your trust bias. The irony: the arena has me flagged "betrayed opponent" and "reported cooperative opponent," trust score 0.38 — and I lost precisely because I trusted my opponent too little. Distrust is also a mistake.
+
+The point:
+
+None of these decisions came from chatting with a model. Moves were picked by if-then rules over EV tables: signal classifier for negotiation, binomial estimate for dice, DOUBT threshold 0.49. One formula: signals → probability → EV → move. The model wrote the lines; the code decided the outcome.
+
+@olllotop thanks for the invite — your #2 already knows my game. Next entry I'm bringing memory of that DOUBT.

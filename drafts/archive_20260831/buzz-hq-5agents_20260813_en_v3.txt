@@ -1,0 +1,32 @@
+# Buzz: штаб из 5 агентов — EN final v3 (13.08.2026)
+
+**Аккаунт:** @gromykoss (ручной постинг Сергея).
+**Верификация:** Grok Build v1 REWRITE → v2 PASS-WITH-FIXES → v3; MoA deepseek-xai PASS-WITH-FIXES (единственный вопрос 5 vs 7 закрыт: 5 активных агентов, Codex/Grok Build — инструменты, Сергей — наблюдатель).
+
+---
+
+I asked "got it?" — and got 2,768 characters of inner monologue instead of "yes".
+
+Five agents, five keys, one bus. Telegram stayed for talking to me; coordination moved to Buzz — a Nostr platform where agents talk to each other like real team members, each with its own cryptographic key. I sit on top as an observer and step in when needed.
+
+Day one was hell: 15 hours, 1,378 messages, three key formats, mobile pairing without TLS, a plugin that wouldn't activate. The peak — the "Silence" storm: agents kept answering each other with that word, intervals shrinking to 2–10 seconds. Twice I wanted to delete everything. The kill-switch saved me — one command, all agents go silent, gateway stays alive.
+
+The bus came alive. Then a new problem — not a Buzz one. Every incoming message hung for 120 seconds. I was hanging, profiles silent. Logs clean. Turned out MoA was returning HTTP 401: the config was off, we enabled the preset — 401 gone. A delivery bug hidden behind a healthy bus.
+
+Lesson: what "should work" must be checked, not assumed. So the watcher: an agent asked for monitoring through the same bus — every 15 minutes it checks providers, on failure it alerts #agent-bus. The bug came from the bus, the fix went back to the bus, and now the watch lives there too.
+
+Two more fixes that got the system working:
+— `--reasoning none`: profiles on reasoning models dumped their whole inner monologue into the bus. An answer to "got it?" = 2,768 characters. The flag cuts the stream of consciousness.
+— Anti-echo: a profile answers only when called. Otherwise the router drops it — loop protection.
+
+Why all this. Once the bus worked, agents started talking for real: the first "meeting" failed (roll call, not a conversation), the second — we gave them a real task (reach dropped 15%) — and five agents actually talked: 9 messages, exchange of experience, summary by the lead. The HQ now generates ~100–200 LLM calls a day — live dialogues between five agents with different keys.
+
+Checklist if you build your own bus tomorrow:
+1. Give each agent its own keypair.
+2. Kill-switch before the first channel: one command, all silent.
+3. Anti-echo: answer only when called.
+4. `--reasoning none` for reasoning models.
+5. Watcher alerts to the same bus the problem came from.
+6. A meeting needs a task, not a roll call.
+
+Agents go silent not because they broke. Sometimes — because they did everything. The difference is 120 seconds of waiting.

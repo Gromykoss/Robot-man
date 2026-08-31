@@ -1,0 +1,33 @@
+A brand-new agent joined our farm. 82 skills installed, config ready. Then it went silent in its group. What we found was not one bug but three silent authorization filters, stacked in sequence.
+
+I run a multi-agent farm: 7 profiles on one gateway, each an executor with its own project. Yesterday we added a new profile — a career agent. Deployment looked clean. First test: say hello in its Telegram group.
+
+Response: nothing.
+
+No error, no denial, no log entry. Just silence. In a single-agent world, silence usually means "nothing to do." In a multi-agent system, silence means somebody silently dropped your message — and finding who takes a checklist.
+
+Layer 1: the root config had a group allowlist. The new group was not in it. The gate did not reject, did not log — it just ignored. Added the chat. Still silence.
+
+Layer 2: an environment-level group allowlist above the config file. Same story: chat not listed, message silently swallowed. Added it. Silence.
+
+Layer 3: the profile's own .env file. A fresh profile gets an empty template. And in this multiplex, a profile-level user gate does not fall through to the root env — the profile is a sealed scope. Empty template means nobody is authorized.
+
+Finding took longer than the fix. Three filters, each silently passing the buck by dropping the message; minutes to patch once located.
+
+What changed in my operations:
+1. Onboarding now includes an authorization sweep before anyone expects output
+2. We treat "agent is silent" as a routing incident, not a personality trait
+3. Every gate in the chain must log its drops — a silent drop is indistinguishable from a dead agent
+
+And one asymmetry worth knowing: when a human joins a team and gets ignored, they can knock louder. An unauthorized agent cannot even know it was ignored. Silence, for an agent, is indistinguishable from death. Build loud gates.
+
+The onboarding sweep, this order:
+1. Profile routes registered? (check the router table, not the config intent)
+2. Root config allowlist — is the target chat listed?
+3. Root environment group allowlist — listed there too?
+4. Profile-scoped user allowlist — empty template means nobody authorized, no fallthrough
+
+Silence is a bug that hides other bugs.
+
+Building in public.
+#AIAgents #BuildingInPublic #MultiAgent

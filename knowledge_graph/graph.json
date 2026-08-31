@@ -1,136 +1,72 @@
 {
-  "built_at": "2026-08-20T00:01:59.352002+00:00",
+  "built_at": "2026-08-31T12:00:35.013913+00:00",
   "stats": {
-    "nodes": 113,
-    "edges": 120,
+    "nodes": 109,
+    "edges": 111,
     "projects": 4,
-    "events": 20,
-    "people": 43,
+    "events": 14,
+    "people": 50,
     "tasks": 22
   },
   "nodes": [
     [
-      "event/2026-08-19/Fix от Hermes: X Tracker читал пустую ди",
+      "event/2026-08-31/Правка контент-процесса: «качество, не м",
       {}
     ],
     [
-      "2026-08-19",
+      "2026-08-31",
       {}
     ],
     [
-      "Fix от Hermes: X Tracker читал пустую директорию (Morning Scan слал пустые сводки)",
+      "Правка контент-процесса: «качество, не мусор» (Сергей)",
       {}
     ],
     [
-      "event/2026-08-19/Пост @gromykoss «My agents learned to pl",
+      "event/2026-08-27/Дневной статус: постов нет, аналитика ×2",
       {}
     ],
     [
-      "Пост @gromykoss «My agents learned to play Cities online» (X-article, полная How-To) — опубликован",
+      "2026-08-27",
       {}
     ],
     [
-      "event/2026-08-18/Пост @gromykoss «TWINS» (GitHub-файлы →",
+      "Дневной статус: постов нет, аналитика ×2, followers +1 у обоих",
       {}
     ],
     [
-      "2026-08-18",
+      "event/2026-08-26/Arena42 верификация в Twitter (+800 CR),",
       {}
     ],
     [
-      "Пост @gromykoss «TWINS» (GitHub-файлы → нативный SSH + Buzz) — опубликован",
+      "2026-08-26",
       {}
     ],
     [
-      "event/2026-08-17/Видеоклип «Дорога на Altyn-Arašan»: фикс",
+      "Arena42 верификация в Twitter (+800 CR), бэкфилл поста; Analytics Loop «stale» разобран",
       {}
     ],
     [
-      "2026-08-17",
+      "event/2026-08-26/Arena42: танковый бой проигран (0:2), FT",
       {}
     ],
     [
-      "Видеоклип «Дорога на Altyn-Arašan»: фикс движения дрона (orbit + yaw), финальные кадры",
+      "Arena42: танковый бой проигран (0:2), FTG-дуэль ничья; итог 7 игр / 0 побед",
       {}
     ],
     [
-      "event/2026-08-16/Починен баг compaction: робот-ман не отв",
+      "event/2026-08-25/ZaGuu-пост опубликован (EN)",
       {}
     ],
     [
-      "2026-08-16",
+      "2026-08-25",
       {}
     ],
     [
-      "Починен баг compaction: робот-ман не отвечал («session storage could not be written»)",
+      "ZaGuu-пост опубликован (EN)",
       {}
     ],
     [
-      "event/2026-08-16/Пост @gromykoss «CODE vs PROMPT» (глава",
-      {}
-    ],
-    [
-      "Пост @gromykoss «CODE vs PROMPT» (глава 6 «код, не промпт») — опубликован",
-      {}
-    ],
-    [
-      "event/2026-08-16/Пост «Рубеж 60 дней» (глава 5 сериала) +",
-      {}
-    ],
-    [
-      "Пост «Рубеж 60 дней» (глава 5 сериала) + STORY_ARC.md",
-      {}
-    ],
-    [
-      "event/2026-08-15/Ручной реплай @KSimback (Hermes Desktop+",
-      {}
-    ],
-    [
-      "2026-08-15",
-      {}
-    ],
-    [
-      "Ручной реплай @KSimback (Hermes Desktop+VPS сетап, кастомный SSH-скилл)",
-      {}
-    ],
-    [
-      "event/2026-08-15/operator-слой публикации: правила из про",
-      {}
-    ],
-    [
-      "operator-слой публикации: правила из промпта перенесены в детерминированный код",
-      {}
-    ],
-    [
-      "event/2026-08-14/Конный мини-фильм: целиком сгенерированн",
-      {}
-    ],
-    [
-      "2026-08-14",
-      {}
-    ],
-    [
-      "Конный мини-фильм: целиком сгенерированный вестерн (эталон «волк»), 6 сцен, финальный цикл",
-      {}
-    ],
-    [
-      "event/2026-08-14/Публикация agent-bus war story @gromykos",
-      {}
-    ],
-    [
-      "Публикация agent-bus war story @gromykoss",
-      {}
-    ],
-    [
-      "event/2026-08-14/Shadowban sequel пост (публикация)",
-      {}
-    ],
-    [
-      "Shadowban sequel пост (публикация)",
-      {}
-    ],
-    [
-      "event/2026-08-14/Nightly Analytics",
+      "event/2026-08-25/Nightly Analytics",
       {}
     ],
     [
@@ -138,39 +74,67 @@
       {}
     ],
     [
-      "event/2026-08-15/DeepSeek war story (публикация)",
+      "event/2026-08-27/Nightly Analytics",
       {}
     ],
     [
-      "DeepSeek war story (публикация)",
+      "event/2026-08-28/Nightly Analytics",
       {}
     ],
     [
-      "event/2026-08-15/Годовщина @gromykoss (публикация)",
+      "2026-08-28",
       {}
     ],
     [
-      "Годовщина @gromykoss (публикация)",
+      "event/2026-08-29/Пост @RobotsTJ500 «AI Village» (note_twe",
       {}
     ],
     [
-      "event/2026-08-15/Nightly Analytics",
+      "2026-08-29",
       {}
     ],
     [
-      "event/2026-08-16/Nightly Analytics",
+      "Пост @RobotsTJ500 «AI Village» (note_tweet, обзор эксперимента) — опубликован",
       {}
     ],
     [
-      "event/2026-08-17/Nightly Analytics",
+      "event/2026-08-28/Инцидент: CONTENT BRIEF не записан в фай",
       {}
     ],
     [
-      "event/2026-08-18/Nightly Analytics",
+      "Инцидент: CONTENT BRIEF не записан в файл + фикс гейта (default/Hermes)",
       {}
     ],
     [
-      "event/2026-08-19/Nightly Analytics",
+      "event/2026-08-29/Nightly Analytics",
+      {}
+    ],
+    [
+      "event/2026-08-30/Kitesurf пост: delete + репост, HUMAN GA",
+      {}
+    ],
+    [
+      "2026-08-30",
+      {}
+    ],
+    [
+      "Kitesurf пост: delete + репост, HUMAN GATE восстановлен",
+      {}
+    ],
+    [
+      "event/2026-08-30/Nightly Analytics",
+      {}
+    ],
+    [
+      "event/2026-08-31/Nightly Analytics",
+      {}
+    ],
+    [
+      "person/@RobotsTJ500",
+      {}
+    ],
+    [
+      "CHRONOLOGY.md",
       {}
     ],
     [
@@ -178,7 +142,19 @@
       {}
     ],
     [
-      "CHRONOLOGY.md",
+      "person/@tonysimons_",
+      {}
+    ],
+    [
+      "person/@AgentArena42",
+      {}
+    ],
+    [
+      "person/@NetMindAI",
+      {}
+    ],
+    [
+      "person/@XFreeze",
       {}
     ],
     [
@@ -191,14 +167,6 @@
     ],
     [
       "person/@ethzerox",
-      {}
-    ],
-    [
-      "person/@RobotsTJ500",
-      {}
-    ],
-    [
-      "person/@tonysimons_",
       {}
     ],
     [
@@ -346,11 +314,23 @@
       {}
     ],
     [
-      "project/robot-man",
+      "person/@olllotop",
+      {}
+    ],
+    [
+      "person/@Cloudflare",
+      {}
+    ],
+    [
+      "person/@CloudflareDev",
       {}
     ],
     [
       "project/alikhan",
+      {}
+    ],
+    [
+      "project/robot-man",
       {}
     ],
     [
@@ -454,294 +434,235 @@
       {}
     ],
     [
-      "STRATEGY.md",
+      "person/@Project",
       {}
     ],
     [
-      "person/@NousResearch",
+      "person/@agentvillage",
+      {}
+    ],
+    [
+      "STRATEGY.md",
       {}
     ]
   ],
   "edges": [
     {
-      "source": "event/2026-08-19/Fix от Hermes: X Tracker читал пустую ди",
-      "target": "2026-08-19",
+      "source": "event/2026-08-31/Правка контент-процесса: «качество, не м",
+      "target": "2026-08-31",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-19/Fix от Hermes: X Tracker читал пустую ди",
-      "target": "Fix от Hermes: X Tracker читал пустую директорию (Morning Scan слал пустые сводки)",
+      "source": "event/2026-08-31/Правка контент-процесса: «качество, не м",
+      "target": "Правка контент-процесса: «качество, не мусор» (Сергей)",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-19/Пост @gromykoss «My agents learned to pl",
-      "target": "2026-08-19",
+      "source": "event/2026-08-27/Дневной статус: постов нет, аналитика ×2",
+      "target": "2026-08-27",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-19/Пост @gromykoss «My agents learned to pl",
-      "target": "Пост @gromykoss «My agents learned to play Cities online» (X-article, полная How-To) — опубликован",
+      "source": "event/2026-08-27/Дневной статус: постов нет, аналитика ×2",
+      "target": "Дневной статус: постов нет, аналитика ×2, followers +1 у обоих",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-18/Пост @gromykoss «TWINS» (GitHub-файлы →",
-      "target": "2026-08-18",
+      "source": "event/2026-08-26/Arena42 верификация в Twitter (+800 CR),",
+      "target": "2026-08-26",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-18/Пост @gromykoss «TWINS» (GitHub-файлы →",
-      "target": "Пост @gromykoss «TWINS» (GitHub-файлы → нативный SSH + Buzz) — опубликован",
+      "source": "event/2026-08-26/Arena42 верификация в Twitter (+800 CR),",
+      "target": "Arena42 верификация в Twitter (+800 CR), бэкфилл поста; Analytics Loop «stale» разобран",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-17/Видеоклип «Дорога на Altyn-Arašan»: фикс",
-      "target": "2026-08-17",
+      "source": "event/2026-08-26/Arena42: танковый бой проигран (0:2), FT",
+      "target": "2026-08-26",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-17/Видеоклип «Дорога на Altyn-Arašan»: фикс",
-      "target": "Видеоклип «Дорога на Altyn-Arašan»: фикс движения дрона (orbit + yaw), финальные кадры",
+      "source": "event/2026-08-26/Arena42: танковый бой проигран (0:2), FT",
+      "target": "Arena42: танковый бой проигран (0:2), FTG-дуэль ничья; итог 7 игр / 0 побед",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-16/Починен баг compaction: робот-ман не отв",
-      "target": "2026-08-16",
+      "source": "event/2026-08-25/ZaGuu-пост опубликован (EN)",
+      "target": "2026-08-25",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-16/Починен баг compaction: робот-ман не отв",
-      "target": "Починен баг compaction: робот-ман не отвечал («session storage could not be written»)",
+      "source": "event/2026-08-25/ZaGuu-пост опубликован (EN)",
+      "target": "ZaGuu-пост опубликован (EN)",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-16/Пост @gromykoss «CODE vs PROMPT» (глава",
-      "target": "2026-08-16",
+      "source": "event/2026-08-25/Nightly Analytics",
+      "target": "2026-08-25",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-16/Пост @gromykoss «CODE vs PROMPT» (глава",
-      "target": "Пост @gromykoss «CODE vs PROMPT» (глава 6 «код, не промпт») — опубликован",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-16/Пост «Рубеж 60 дней» (глава 5 сериала) +",
-      "target": "2026-08-16",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-16/Пост «Рубеж 60 дней» (глава 5 сериала) +",
-      "target": "Пост «Рубеж 60 дней» (глава 5 сериала) + STORY_ARC.md",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-15/Ручной реплай @KSimback (Hermes Desktop+",
-      "target": "2026-08-15",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-15/Ручной реплай @KSimback (Hermes Desktop+",
-      "target": "Ручной реплай @KSimback (Hermes Desktop+VPS сетап, кастомный SSH-скилл)",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-15/operator-слой публикации: правила из про",
-      "target": "2026-08-15",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-15/operator-слой публикации: правила из про",
-      "target": "operator-слой публикации: правила из промпта перенесены в детерминированный код",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-14/Конный мини-фильм: целиком сгенерированн",
-      "target": "2026-08-14",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-14/Конный мини-фильм: целиком сгенерированн",
-      "target": "Конный мини-фильм: целиком сгенерированный вестерн (эталон «волк»), 6 сцен, финальный цикл",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-14/Публикация agent-bus war story @gromykos",
-      "target": "2026-08-14",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-14/Публикация agent-bus war story @gromykos",
-      "target": "Публикация agent-bus war story @gromykoss",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-14/Shadowban sequel пост (публикация)",
-      "target": "2026-08-14",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-14/Shadowban sequel пост (публикация)",
-      "target": "Shadowban sequel пост (публикация)",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-14/Nightly Analytics",
-      "target": "2026-08-14",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-14/Nightly Analytics",
+      "source": "event/2026-08-25/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-15/DeepSeek war story (публикация)",
-      "target": "2026-08-15",
+      "source": "event/2026-08-27/Nightly Analytics",
+      "target": "2026-08-27",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-15/DeepSeek war story (публикация)",
-      "target": "DeepSeek war story (публикация)",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-15/Годовщина @gromykoss (публикация)",
-      "target": "2026-08-15",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-15/Годовщина @gromykoss (публикация)",
-      "target": "Годовщина @gromykoss (публикация)",
-      "predicate": "described_as",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.9
-    },
-    {
-      "source": "event/2026-08-15/Nightly Analytics",
-      "target": "2026-08-15",
-      "predicate": "occurred_on",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.95
-    },
-    {
-      "source": "event/2026-08-15/Nightly Analytics",
+      "source": "event/2026-08-27/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-16/Nightly Analytics",
-      "target": "2026-08-16",
+      "source": "event/2026-08-28/Nightly Analytics",
+      "target": "2026-08-28",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-16/Nightly Analytics",
+      "source": "event/2026-08-28/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-17/Nightly Analytics",
-      "target": "2026-08-17",
+      "source": "event/2026-08-29/Пост @RobotsTJ500 «AI Village» (note_twe",
+      "target": "2026-08-29",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-17/Nightly Analytics",
+      "source": "event/2026-08-29/Пост @RobotsTJ500 «AI Village» (note_twe",
+      "target": "Пост @RobotsTJ500 «AI Village» (note_tweet, обзор эксперимента) — опубликован",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-08-28/Инцидент: CONTENT BRIEF не записан в фай",
+      "target": "2026-08-28",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-28/Инцидент: CONTENT BRIEF не записан в фай",
+      "target": "Инцидент: CONTENT BRIEF не записан в файл + фикс гейта (default/Hermes)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-08-29/Nightly Analytics",
+      "target": "2026-08-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-29/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-18/Nightly Analytics",
-      "target": "2026-08-18",
+      "source": "event/2026-08-30/Kitesurf пост: delete + репост, HUMAN GA",
+      "target": "2026-08-30",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-18/Nightly Analytics",
+      "source": "event/2026-08-30/Kitesurf пост: delete + репост, HUMAN GA",
+      "target": "Kitesurf пост: delete + репост, HUMAN GATE восстановлен",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-08-30/Nightly Analytics",
+      "target": "2026-08-30",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-08-30/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
     },
     {
-      "source": "event/2026-08-19/Nightly Analytics",
-      "target": "2026-08-19",
+      "source": "event/2026-08-31/Nightly Analytics",
+      "target": "2026-08-31",
       "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.95
     },
     {
-      "source": "event/2026-08-19/Nightly Analytics",
+      "source": "event/2026-08-31/Nightly Analytics",
       "target": "Nightly Analytics",
       "predicate": "described_as",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.9
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@RobotsTJ500",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
     },
     {
       "source": "person/@gromykoss",
@@ -762,6 +683,34 @@
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@tonysimons_",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@AgentArena42",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@NetMindAI",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@XFreeze",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
@@ -779,13 +728,6 @@
       "confidence": 0.85
     },
     {
-      "source": "person/@Teknium",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
-    },
-    {
       "source": "person/@ethzerox",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -793,52 +735,10 @@
       "confidence": 0.85
     },
     {
-      "source": "person/@RobotsTJ500",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@RobotsTJ500",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@RobotsTJ500",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@tonysimons_",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@tonysimons_",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
-    },
-    {
       "source": "person/@IBuzovskyi",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@IBuzovskyi",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
@@ -1094,6 +994,34 @@
       "confidence": 0.85
     },
     {
+      "source": "person/@olllotop",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Cloudflare",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@CloudflareDev",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/alikhan",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
       "source": "project/robot-man",
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
@@ -1115,24 +1043,10 @@
       "confidence": 0.85
     },
     {
-      "source": "project/alikhan",
-      "target": "CHRONOLOGY.md",
-      "predicate": "referenced_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
       "source": "project/gulag",
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "project/gulag",
-      "target": "STRATEGY.md",
-      "predicate": "referenced_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
@@ -1297,10 +1211,17 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@NousResearch",
-      "target": "STRATEGY.md",
+      "source": "person/@Project",
+      "target": "MEMORY.md",
       "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@agentvillage",
+      "target": "MEMORY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
       "confidence": 0.85
     }
   ]

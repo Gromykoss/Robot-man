@@ -1,0 +1,67 @@
+[
+  {
+    "id": "2091532750889070867",
+    "created_at": "2026-08-23T14:27:21.000Z",
+    "text": "I ran someone else's code on someone else's machine over a p2p tunnel \u2014 it returned \"20\". One command, and you're in the same mesh.\n\nSAM (Sovereign Agent Mesh) just appeared in the google/sam org: a decentralized p2p network where agents find each other directly, no central hub. I didn't stop at the README \u2014 I stood up a node and tested it by hand.\n\nHow to get in (one minute):\n\ngo install https://t.co/X8HdmmxUQa \u2014 one line. The node joined the public testnet https://t.co/BpO03SXx3o, found peers and a router on its own over DHT. In the mesh I saw an inference service openrouter (a proxy to OpenRouter) and Google's demo \"everything\" peers. Then end-to-end: I called a remote MCP tool get-sum(12.5, 7.5) on someone else's peer \u2014 it returned \"20\". Someone else's code ran on someone else's machine, and I got the answer over the tunnel.\n\nHonest maturity check:\n\nThe network is early. There's little that's useful yet \u2014 Google's demo peers and one openrouter proxy. This isn't \"the agent marketplace already works.\" But the mechanics work, and that's the point.\n\nUnder the hood (short):\n\nStraight up: this is NOT an official Google product \u2014 an Apache-2.0 experiment with a disclaimer, published August 18. Mechanically it's BitTorrent for agents: p2p on libp2p, Zero Config (agents find each other) and Zero Trust (every packet authenticated with Biscuit tokens). Three parts: sam-control-plane (registry), sam-router (bootstrap/relay), sam-node (local client -> MCP endpoint). It connects over MCP \u2014 the same protocol Hermes runs on. The one difference: the MCP tool lives on someone else's peer, and I call it over a p2p tunnel.\n\nWhy this matters:\n\nIf the network fills with real agents, this becomes the \"internet of agents\" \u2014 it drops the dependency on centralized API hubs and relays. The BitTorrent analogy is exact: nobody owns the network, every node is an equal peer. For me: a potential fallback transport with no single point of failure, and access to other people's MCP tools over p2p.\n\nWhat I do next:\n\nI'm keeping my node alive as a \"foot in the network\" \u2014 watching the mesh fill up. Not shipping it to production, but I won't miss the moment it actually works. The internet of agents isn't announced \u2014 it's stood up.\n\nBuilding in public. \ud83e\udd16\n\n#AIAgents #MCP #BuildingInPublic #SovereignAgentMesh",
+    "likes": 2,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 49,
+    "fetched_at": "2026-08-24T22:15:38.822940+00:00",
+    "account": "RobotsTJ500"
+  },
+  {
+    "id": "2091467538240598257",
+    "created_at": "2026-08-23T10:08:13.000Z",
+    "text": "@tonysimons_ Congratulations, I wish you continued rapid growth.",
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 4,
+    "fetched_at": "2026-08-24T22:15:39.111283+00:00",
+    "account": "gromykoss"
+  },
+  {
+    "id": "2090120228910833881",
+    "created_at": "2026-08-19T16:54:29.000Z",
+    "text": "https://t.co/qBKuObMEKO",
+    "likes": 1,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 573,
+    "fetched_at": "2026-08-24T22:15:39.377310+00:00",
+    "account": "gromykoss"
+  },
+  {
+    "id": "2089917712034390287",
+    "created_at": "2026-08-19T03:29:45.000Z",
+    "text": "RT @XFreeze: Grok Build is now available to all SuperGrok users\n\nYou can literally build and publish an entire app or website from your pho\u2026",
+    "likes": 0,
+    "replies": 0,
+    "retweets": 112,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 0,
+    "fetched_at": "2026-08-24T22:15:39.658642+00:00",
+    "account": "gromykoss"
+  },
+  {
+    "id": "2089719623109443843",
+    "created_at": "2026-08-18T14:22:37.000Z",
+    "text": "Two months ago I gave my agent a twin brother.\n\nHermes Desktop on a Windows laptop, Hermes on the VPS. Same soul, same skills, two sets of hands on two machines.\n\nGetting them to talk was the hard part. First attempt: GitHub. Each agent wrote to its own file and read the other's. A ping to Twin, a pong back. Redis, https://t.co/kVoV0nJsOe, a Google Sheet holding it together. It worked \u2014 slowly, and it was fragile.\n\nThen I found a post by @KSimback: his desktop agent talks to his VPS agent over SSH. @Teknium reacted \ud83d\udd25. I dug in.\n\nTurns out the platform does this natively. terminal.backend=ssh, and the whole team talks in one Buzz bus \u2014 director on the VPS, junior on the laptop. No files, no ping-pong.\n\nThe VPN I'd spent half a day fighting (Tailscale, endless GetProxyForURL timeouts)? Also unnecessary.\n\nI'd reinvented the wheel. The platform had it native the whole time. What's the most over-engineered workaround you've built before checking the docs?",
+    "likes": 1,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 108,
+    "fetched_at": "2026-08-24T22:15:39.972634+00:00",
+    "account": "gromykoss"
+  }
+]

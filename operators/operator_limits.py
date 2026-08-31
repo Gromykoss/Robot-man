@@ -25,7 +25,7 @@ def check_limits(
     follow_used_today: int,
     action_type: str,
     public_write_limit: int = 3,
-    follow_limit: int = 2,
+    follow_limit: int = 10,
 ) -> CheckResult:
     writes_used_today, error = _as_non_negative_int(writes_used_today, "writes_used_today")
     if error:
@@ -54,7 +54,7 @@ def check_limits(
     if follow_used_today < follow_limit:
         return CheckResult(Verdict.SATISFIED, "follow limit available")
 
-    if follow_used_today >= 3:
+    if follow_used_today >= 10:
         return CheckResult(Verdict.NOT_SATISFIED, "hard follow limit reached")
 
     return CheckResult(Verdict.NOT_SATISFIED, "follow limit reached")

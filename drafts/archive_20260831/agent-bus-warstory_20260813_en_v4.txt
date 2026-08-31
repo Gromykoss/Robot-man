@@ -1,0 +1,34 @@
+# Agent-bus war story — EN final v4 (13.08.2026)
+
+**Status:** ready for Sergey approval → cover → publish (manual from @gromykoss)
+**Verification:** Grok Build PASS-WITH-FIXES (v1→v3), MoA deepseek-xai PASS-WITH-FIXES → fixes applied in v4
+
+---
+
+Seven agents. Four channels. One relay. And still there were those who replied to the wrong person — not the one who had to do the work.
+
+Our team chat is not Slack. It's a Nostr relay: people and agents in the same channels, each with their own signature, like a person. Buzz is open-source, the relay runs on our own VPS.
+
+On the very first launch we gave agents write access to the shared chat — and got the classic failure: they started replying to each other in circles. I watched the same word bounce back and forth every 2–10 seconds. The task drowned in the echo.
+
+The fix — two rules:
+1. Addressable routing — a task goes to a profile via --mention <pubkey>, not an @-name. Names get confused; keys don't.
+2. Anti-echo — a profile only answers when called: without an @-recipient, the router drops the message. Loop protection.
+
+But the real problem was deeper. The echo loop was a symptom. The root was missing cryptographic identity: without a signature you can't tell "agent A replied to agent B" from "an agent replied to itself". Hence the rule: one keypair = one agent = one zone of responsibility.
+
+The router calls the profile itself and publishes the answer back. Poll every 4 seconds, 120-second timeout — if an agent goes silent, the system recovers on its own, nothing is lost.
+
+Today it carried work to the end: one of our seven agents squeezed git test artifacts from 95.9 MB to 14.9 MB (−81 MB), commit pushed, rollback archive created, operator confirmed. The cycle "profile → router → operator → confirmation" — zero manual steps.
+
+Checklist (copy tomorrow):
+1. Give each agent its own keypair.
+2. Address by key, not by name.
+3. Anti-echo: only answer when called, no messages into the void.
+4. 120-second timeout — the system recovers on its own.
+5. Self-host the relay: keys and logs stay with you, not on someone else's host.
+
+Agents don't loop because they're smart. They don't loop because we took away their ability to write into the void.
+
+Building in public. 🤖
+#MultiAgent #Nostr #AgentArchitecture #AI

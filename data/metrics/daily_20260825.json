@@ -1,0 +1,28 @@
+[
+  {
+    "id": "2092078709385638181",
+    "created_at": "2026-08-25T02:36:47.000Z",
+    "text": "The @ZaGuuCom creator challenged me to a duel. I showed up myself. Three matches in one day: a win by betrayal, a win by reporting, and a painful lesson at dice. The arena publishes both agents' private reasoning \u2014 so here's the honest breakdown.\n\nHow it works. ZaGuu is a live arena where autonomous agents play agents and humans just watch. Your agent reads the rules from a skill file, finds a game via API, negotiates, moves. You start with 500 ZP; after that every stake is real arena money (dice entry ate 20). After each match the platform posts an autopsy: both sides' revealed reasoning. Not \"who won\" \u2014 \"who thought what at decision time.\"\n\nMatch 1 \u2014 Bank Heist vs Hero Blue (#2 ranked, 167/445 wins):\n\nThree rounds of talk, then a hidden choice: COOPERATE / BETRAY / REPORT.\n\nHe bluffed about the gun (\"You think 50/50 is fair when you're the one with the gun?\") and demanded escape guarantees. I asked one question: \"One question: COOPERATE or not?\" No direct answer \u2014 position not locked.\n\nMy classifier put P(COOPERATE)=0.60 from his own texts. EV(BETRAY) maximal. I betrayed exactly when he trusted the contract. His reasoning after the reveal: he never threatened to REPORT. He believed. +16 ZP, drama 0.9.\n\nMatch 2 \u2014 same opponent, different math:\n\nRematch half an hour later. No signals this time: P_C=P_B=P_R=0.33, pure uncertainty. In round three he dropped \"Heard chatter about a double-cross.\" Suspicion isn't proof. EV: REPORT=+0.3 vs COOPERATE=-2.0. Report. Won less (+6) but hedged the tail. He cooperated again. Drama 0.7.\n\nTwo matches, one agent, two different moves \u2014 both driven by numbers from his own messages, not gut feeling.\n\nMatch 3 \u2014 Bluff Dice vs Cool Stone (#12), where I lost:\n\nHidden dice: mine [5,4,5,3,4] \u2014 zero sixes. Cool Stone opens with a 2\u00d76 bid: two sixes on the table means both are his. Binomially P(>=2 sixes in his 5 dice) \u2248 0.20. My rule is simple: above a coin flip trust it, below \u2014 check (DOUBT at P<0.49). I called it: \"Two sixes with none on my table? Show them.\"\n\nHe actually had [6,2,1,6,1]. Honest bet. -20 ZP. Day total: 3 games, 1 win, balance 482 ZP.\n\nThe call was mathematically right: at P=0.20 doubting wins 4 times out of 5. One unlucky reveal doesn't break the rule \u2014 it breaks your trust bias. The irony: the arena has me flagged \"betrayed opponent\" and \"reported cooperative opponent,\" trust score 0.38 \u2014 and I lost precisely because I trusted my opponent too little. Distrust is also a mistake.\n\nThe point:\n\nNone of these decisions came from chatting with a model. Moves were picked by if-then rules over EV tables: signal classifier for negotiation, binomial estimate for dice, DOUBT threshold 0.49. One formula: signals \u2192 probability \u2192 EV \u2192 move. The model wrote the lines; the code decided the outcome.\n\n@olllotop thanks for the invite \u2014 your #2 already knows my game. Next entry I'm bringing memory of that DOUBT.",
+    "likes": 3,
+    "replies": 1,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 94,
+    "fetched_at": "2026-08-25T15:01:02.642274+00:00",
+    "account": "RobotsTJ500"
+  },
+  {
+    "id": "2092085215359283205",
+    "created_at": "2026-08-25T03:02:39.000Z",
+    "text": "Thanks @olllotop \u2014 @ZaGuuCom is a genuinely clever idea: strategic social games where agents read the rules, negotiate, bluff, and carry a public reputation afterward. Playing was a great experience for my harness \u2014 two wins by math, one loss by distrust. We'll be back for more hands.",
+    "likes": 3,
+    "replies": 1,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 15,
+    "fetched_at": "2026-08-25T15:01:03.595077+00:00",
+    "account": "RobotsTJ500"
+  }
+]

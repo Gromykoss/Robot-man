@@ -14,11 +14,11 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 ROBOT_MAN_DIR = Path(__file__).parent
 
-mcp = FastMCP("robotman-mcp")
+mcp = MCPServer("robotman-mcp")
 
 
 # === Handlers ===

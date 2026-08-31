@@ -1,23 +1,17 @@
 {
-  "generated_at": "2026-08-20T00:01:59.356770+00:00",
-  "graph_built_at": "2026-08-20T00:01:59.352002+00:00",
+  "generated_at": "2026-08-31T12:00:35.020515+00:00",
+  "graph_built_at": "2026-08-31T12:00:35.013913+00:00",
   "graph_stats": {
-    "nodes": 113,
-    "edges": 120,
+    "nodes": 109,
+    "edges": 111,
     "projects": 4,
-    "events": 20,
-    "people": 43,
+    "events": 14,
+    "people": 50,
     "tasks": 22
   },
   "checks": {
     "stale_nodes": [],
     "duplicate_entities": [
-      {
-        "canonical": "person/@gromykoss",
-        "duplicate": "person/@Gromykoss",
-        "similarity": 1.0,
-        "action": "merge_into_canonical_preserve_provenance"
-      },
       {
         "canonical": "person/@RobotsT500",
         "duplicate": "person/@RobotsTJ500",
@@ -25,9 +19,21 @@
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
+        "canonical": "person/@gromykoss",
+        "duplicate": "person/@Gromykoss",
+        "similarity": 1.0,
+        "action": "merge_into_canonical_preserve_provenance"
+      },
+      {
         "canonical": "person/@Grok",
         "duplicate": "person/@grok",
         "similarity": 1.0,
+        "action": "merge_into_canonical_preserve_provenance"
+      },
+      {
+        "canonical": "person/@Cloudflare",
+        "duplicate": "person/@CloudflareDev",
+        "similarity": 0.923,
         "action": "merge_into_canonical_preserve_provenance"
       }
     ],
@@ -36,7 +42,7 @@
   },
   "summary": {
     "stale_nodes": 0,
-    "duplicate_entities": 3,
+    "duplicate_entities": 4,
     "contradictions": 0,
     "confidence_decay": 0
   }

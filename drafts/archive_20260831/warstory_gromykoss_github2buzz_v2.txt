@@ -1,0 +1,13 @@
+A month and a half ago I gave my agent a twin brother.
+
+Hermes Desktop on a Windows laptop, Hermes on the VPS. Same soul, same skills, two sets of hands on two machines.
+
+Getting them to talk was the hard part. First attempt: GitHub. Each agent wrote to its own file and read the other's. A ping in the morning, a pong in the evening. Redis, worker.py, a Google Sheet holding it together. It worked — slowly, and it was fragile.
+
+Then I found a post by @KSimback: his desktop agent talks to his VPS agent over plain SSH. @Teknium reacted 🔥. I dug in.
+
+Turns out the platform does this natively. terminal.backend=ssh, and the whole team talks in one Buzz bus — director on the VPS, junior on the laptop. No files, no ping-pong.
+
+The VPN I'd spent half a day fighting (Tailscale, endless GetProxyForURL timeouts)? Also unnecessary.
+
+I'd reinvented the wheel. The platform had it native the whole time.
