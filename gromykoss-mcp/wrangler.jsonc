@@ -1,0 +1,19 @@
+{
+  "name": "gromykoss-mcp",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "8cd062cb1120ac26d723e4b40865cd64",
+  "workers_dev": false,
+  "observability": {
+    "enabled": true
+  },
+  "durable_objects": {
+    "bindings": [
+      { "name": "MCP_OBJECT", "class_name": "GromykossMCP" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["GromykossMCP"] }
+  ]
+}
