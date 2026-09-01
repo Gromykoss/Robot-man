@@ -1479,3 +1479,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20944236): 1 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 4.7% (average)
 - **31.08.2026 22:47** — chrono: 2026-08-31 (`f77f3d9`)
+
+## 2026-09-01 — Nightly Analytics
+- **Metrics:** 9 постов анализировано, baseline: likes=1.1, replies=0.3, impressions=71.9
+- **👤 @RobotsTJ500:** 5 постов, 10❤️ 3💬 0🔄 0🔖 608👁️
+- **👤 @gromykoss:** 4 постов, 2❤️ 3💬 0🔄 0🔖 231👁️
+- **Best:** 20939747 (3❤️ 1💬 0🔄)
+- **Worst:** 20935633 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20939747): 3 likes, 1 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.1% (average)
+- **01.09.2026 09:16** — infra: MCP server for portfolio deployed to Cloudflare Workers (mcp.crab-ailab.com) (`a32c2f8`)
