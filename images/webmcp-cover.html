@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SITES SPEAK MCP</title>
+<style>
+  @font-face {
+    font-family: "JetBrains Mono NL";
+    src: url("file:///tmp/cover-fonts/fonts/ttf/JetBrainsMonoNL-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///tmp/cover-fonts/extras/ttf/Inter-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("file:///tmp/cover-fonts/extras/ttf/Inter-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: "Poster";
+    src: url("file:///usr/share/fonts/truetype/noto/NotoSansDisplay-ExtraCondensedBlack.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: block;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 2500px; height: 1000px; overflow: hidden; background: #0E0E0E; }
+
+  .stage {
+    width: 2500px;
+    height: 1000px;
+    background: #0E0E0E;
+    color: #F4F1EA;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge {
+    position: absolute;
+    top: 52px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+    line-height: 1;
+    color: #F4F1EA;
+    border: 1.5px solid #F4F1EA;
+    padding: 12px 18px 11px;
+    box-shadow: inset 0 0 0 1px rgba(244, 241, 234, 0.35);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .badge-left { left: 56px; }
+  .badge-right { right: 56px; }
+
+  .cluster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -28px;
+  }
+
+  .callout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .label {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    text-transform: uppercase;
+    color: #F4F1EA;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .arrow {
+    display: block;
+    color: #F4F1EA;
+  }
+
+  .hero-wrap {
+    position: relative;
+    margin: 18px 0 0;
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    position: relative;
+    font-family: "JetBrains Mono NL", ui-monospace, monospace;
+    font-weight: 800;
+    font-size: 92px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    font-variant-ligatures: none;
+    font-feature-settings: "calt" 0, "liga" 0;
+  }
+
+  .hero .heat {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FF8A12;
+    filter: blur(16px);
+    opacity: 0.62;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero .heat-core {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #FFC14A;
+    filter: blur(5px);
+    opacity: 0.55;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero .code {
+    position: relative;
+    background: linear-gradient(180deg, #FFE7A3 0%, #FFC44A 38%, #FF9A14 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .reflection {
+    position: relative;
+    margin-top: 10px;
+    height: 46px;
+    overflow: hidden;
+    font-family: "JetBrains Mono NL", ui-monospace, monospace;
+    font-weight: 800;
+    font-size: 92px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+    font-variant-ligatures: none;
+    font-feature-settings: "calt" 0, "liga" 0;
+    transform: scaleY(-1);
+    transform-origin: top center;
+    opacity: 0.38;
+    background: linear-gradient(180deg, #FFE7A3 0%, #FFC44A 38%, #FF9A14 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 42%, transparent 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 42%, transparent 100%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .callout-bottom {
+    margin-top: 8px;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 54px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: "Poster", "Noto Sans Display", sans-serif;
+    font-weight: 900;
+    font-size: 118px;
+    letter-spacing: -0.045em;
+    line-height: 0.86;
+    color: #F7F4EE;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="badge badge-left">5 MIN SETUP</div>
+    <div class="badge badge-right">FREE TIER</div>
+
+    <div class="cluster">
+      <div class="callout">
+        <div class="label">CLOUDFLARE EDGE INJECTS THIS</div>
+        <svg class="arrow" width="18" height="40" viewBox="0 0 18 40" fill="none" aria-hidden="true">
+          <line x1="9" y1="0" x2="9" y2="28" stroke="currentColor" stroke-width="2"/>
+          <polyline points="2,22 9,38 16,22" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"/>
+        </svg>
+      </div>
+
+      <div class="hero-wrap">
+        <div class="hero">
+          <span class="heat" aria-hidden="true">&lt;script src="/.webmcp/bridge.js"&gt;</span>
+          <span class="heat-core" aria-hidden="true">&lt;script src="/.webmcp/bridge.js"&gt;</span>
+          <span class="code">&lt;script src="/.webmcp/bridge.js"&gt;</span>
+        </div>
+        <div class="reflection" aria-hidden="true">&lt;script src="/.webmcp/bridge.js"&gt;</div>
+      </div>
+
+      <div class="callout callout-bottom">
+        <svg class="arrow" width="18" height="40" viewBox="0 0 18 40" fill="none" aria-hidden="true">
+          <line x1="9" y1="40" x2="9" y2="12" stroke="currentColor" stroke-width="2"/>
+          <polyline points="2,18 9,2 16,18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"/>
+        </svg>
+        <div class="label">AGENTS GET 4 TOOLS</div>
+      </div>
+    </div>
+
+    <div class="caption">SITES SPEAK MCP</div>
+  </div>
+</body>
+</html>

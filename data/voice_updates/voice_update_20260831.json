@@ -14,5 +14,21 @@
       ]
     },
     "summary": "Robot-man Analytics \u2014 2026-08-31"
+  },
+  {
+    "date": "2026-08-31T22:16:17.769304+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2094423680012960043",
+    "performance": "underperformer",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20944236): 1 likes, 1 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 4.7% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-08-31"
   }
 ]

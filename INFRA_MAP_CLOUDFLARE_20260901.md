@@ -19,6 +19,9 @@
 | A | gromykoss.crab-ailab.com | 72.60.16.105 | да | Портфолио Сергея (nginx /var/www/gromykoss-site, LE-серт) |
 | CNAME | www.crab-ailab.com | gromykoss.crab-ailab.com | да | Синоним портфолио |
 | AAAA | mcp.crab-ailab.com | 100:: (Workers custom domain) | да | MCP-сервер gromykoss-mcp |
+| A | buzz.crab-ailab.com | 72.60.16.105 | НЕТ (grey) | Buzz relay (caddy :8443, LE-серт свой, wss — CF-прокси сломает) |
+
+**Урок 01.09 (инцидент):** при импорте зоны CF просканировал только gromykoss/www — buzz потерялся (жил локально в /etc/hosts). Восстановлен по эскалации @Hermes. Правило: при любом изменении зоны — сверка dig всех поддоменов до/после (чеклист Hermes).
 - Apex crab-ailab.com — БЕЗ записей (специально: домен = контейнер поддоменов, проектный сайт в будущем)
 - A-запись apex → 72.60.16.105 удалена 01.09 (была ошибочно добавлена при импорте)
 

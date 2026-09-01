@@ -1489,3 +1489,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20939747): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.1% (average)
 - **01.09.2026 09:16** — infra: MCP server for portfolio deployed to Cloudflare Workers (mcp.crab-ailab.com) (`a32c2f8`)
+- **01.09.2026 10:25** — content: WebMCP post v3 EN final + anti-dup gate + CF infra map (`7a29ebc`)
