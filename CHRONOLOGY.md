@@ -1512,3 +1512,28 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20939747): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.1% (average)
 - **01.09.2026 22:30** — content: tailcat war-story pipeline стартовал. Ресерч (research/tailcat-research-20260901.md): open-source «netcat поверх data plane Tailscale» (WireGuard + NAT traversal, без control plane), автор Brad Fitzpatrick, 5.4k stars — цифры верифицированы GitHub API; claim «с 09/2023» не ставить без оговорки. Драфт v1 RU (drafts/tailcat_draft_v1_ru_20260901.md) — на MoA и правки Сергея, EN финал после.
+- **01.09.2026 22:46** — chrono: 2026-09-01 (`7cf098f`)
+- **02.09.2026 06:00** — tailcat-пост финализирован: гибридный драфт v5 (фактура robot-man + фактура Сергея: механика что осталось/выброшено, адрес-токен, сценарии, сравнение с Iroh; 3440 зн.) — MoA AGREE + 27/30 PASS. Обложка: воссоздана DERP-hub сцена из референса Сергея (звезда-топология, замки на кабелях, tc...-таблички, пакеты в полёте) — 9/10 PASS, кроп чист. Обложка-референс = картинка Сергея (images/tailcat_cover_user_ref.jpg). Созданы: ENGINEERING_POST_TEMPLATE.md (канон инженерных постов), skills engineering-post + joint-moa-protocol (текст+обложка MoA-парой). Пакет на Human Gate.
+- **02.09.2026 06:51** — tailcat-пост ОПУБЛИКОВАН: https://x.com/RobotsTJ500/status/2095041890638794799 (note_tweet 3410 зн., обложка user_ref). Хук-серия WebMCP→tailcat. Публикация: approval Сергея → факт-гейт дополнен → guard MAX_TEXT 1000→4000 (Hermes, негативный тест 5001→DENIED) → post_with_log.sh. Верификация: note_tweet.text 3410 зн. полн. ✓, пиксельная сверка обложки diff=0.0 ✓, guard-лог 'post account=RobotsTJ500 chars=3410' ✓. Пайплайн работает целиком: pipeline → guard → X.
+- **02.09.2026 10:30** — антидубль-гейт расширен: cron Content Draft предложил office-forward — по существу ДУБЛЬ (история «день самоуправства Алихана» уже опубликована 31.08 вручную от @gromykoss, драфт v6/v7 в сессии 30.08). published_posts.jsonl не ловит ручные посты @gromykoss. Фикс: published_topic_check.py + MANUAL_THEMES (curated keyword-сеты тем ручных постов, min_overlap=2). Тесты: office-forward → exit 2 ✓, tailcat → exit 2 ✓ (по published log), rust → exit 0 ✓. Урок: антидубль обязан покрывать оба аккаунта (RobotsTJ500 через jsonl + API, gromykoss через MANUAL_THEMES) — Cron-джоб не знает ручных постов.
+
+## 2026-09-02 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.1, replies=0.3, impressions=73.3
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 0💬 0🔄 0🔖 210👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 20950418 (1❤️ 0💬 0🔄)
+- **Worst:** 20950418 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20950418): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.5% (low)
+- **02.09.2026 07:30** — драфт-презентация Hermes Agent для @gromykoss (v1, 2033 зн., RU human voice): агент как продукт (5 фич из официальных доков), Nous Research разрабы (Quesnelle, открытые модели), факт 214k GitHub stars (startupfortune, верифицировано) + lead dev без CS-образования, агент сам писал свой код (twit.tv интервью Quesnelle). Рефка Portal — 1 абзац в конце. Публикация ручная, Human Gate.
+- **02.09.2026 08:00** — драфт-профайл Nous Research для @gromykoss (v1, 2199 зн., RU human voice): организация (mission human rights через open source), Hermes 4 семейство 14B/70B/405B hybrid reasoning (авг 2025), DisTrO (-3-4 порядка GPU-коммуникации) → Psyche p2p сеть (40B Consilience на добровольных GPU), Forge (Nouscon 2024, Karan сооснователь), Hermes Agent (214k stars, MIT), lead dev без CS — агент сам писал свой код (Quesnelle, twit.tv). Рефка Portal в конце. Fact-check: Forge 96B claim убран (не верифицирован), замена на verified. Ручной постинг, Human Gate.
+
+## 2026-09-02 — Nightly Analytics
+- **Metrics:** 10 постов анализировано, baseline: likes=1.1, replies=0.3, impressions=76.4
+- **👤 @RobotsTJ500:** 6 постов, 10❤️ 6💬 0🔄 0🔖 856👁️
+- **👤 @gromykoss:** 4 постов, 2❤️ 3💬 0🔄 0🔖 330👁️
+- **Best:** 20939747 (3❤️ 1💬 0🔄)
+- **Worst:** 20935633 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20939747): 3 likes, 1 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 1.8% (low)
+- **02.09.2026 19:36** — драфт-реплай reply_hermes_agent_20260902_v2.md (dogfooding-угол: cron с continuity, skills из прошлых ошибок, вопрос к запускающим X-агента на Hermes). В drafts/, на Human Gate, не публиковался. Метрики дня (fetched 22:16): tailcat-пост 20950418 — 1❤️ 210👁️; writes за 02.09 = 1 (tailcat).
