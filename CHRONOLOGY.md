@@ -1,4 +1,29 @@
 
+## 2026-09-03 — Модель профиля robot-man → grok-4.5 (xAI, прямой API)
+
+- **Решение Сергея:** модель сменил вручную; Hermes закрепил дефолт: `config set model.provider xai` + `model.default grok-4.5`.
+- **Проверено:** XAI_API_KEY уже был в .env профиля; каталог xAI HTTP 200 (grok-4.5 присутствует). Живой тест: сессия 20260903_055309_be6964 — model=grok-4.5, billing_provider=xai, base_url=https://api.x.ai/v1, ответ корректен (24.2k input / 58 output / 55 reasoning токенов).
+- **Карты:** `10_System/map/profiles.md` — строка robot-man + шапка «Актуально 03.09».
+- ⚠️ **Открытый вопрос:** 7 из 9 cron-джоб профиля запинены на nous/z-ai-glm-5.3-flash — дефолт их не переключает (пин новой модели на кронах = отдельное решение). 1 unpinned джоба с чужим snapshot будет fail-closed при следующем запуске (hermes cron edit — пин).
+
+## 2026-09-03 — Полная ревизия канона контента (Сергей: RU/cover/ok + голос + анти-реклама)
+
+- **Претензии:** (1) не показывать RU-драфт (2) не показывать обложку (3) риск publish без явного ok; голос не закрепляется после правок; драфты «как реклама районной газеты».
+- **Корневые причины (проверено файлами):** `VOICE_PROFILE.md` mtime 15.07 + ALL-CAPS шаблон; `x-posting-workflow` AUTONOMOUS MODE 13.07 vs Human Gate; cover optional если brief без поля «Изображение»; нет absorb-loop правок Сергея.
+- **Фаза A:** rewrite `VOICE_PROFILE.md` (Delivery Package + ANTI-AD + no ALL-CAPS); удалён autonomous ship в x-posting-workflow; AGENTS.md gates 3a/3b + новый process; `operator_checklist` cover default required; `post_with_log.sh` text-only → BLOCK (opt-out `ALLOW_TEXT_ONLY=1`).
+- **Фаза B:** skill `sergey-edit-absorb`; anti-ad MUST в `joint-moa-protocol`; package в content-writer/post-quality-gate; hook-bank обновлён; `docs/operator-layer-audit.md` актуализирован; lessons pointer.
+- **Фаза C (verify):** checklist no-cover=BLOCK, with-cover=PASS, opt-out=PASS, RU-final=BLOCK; py_compile OK; bash -n OK; grep ALL-CAPS template empty; autonomous mode only as «УДАЛЁН».
+- **Публикаций в этой сессии:** 0 (только канон/код).
+- **Следующий пост:** только полным Delivery Package по новому канону.
+
+## 2026-09-03 — Дневной статус: пост AgentMail опубликован (163 imp, лучший за неделю), API writes 3/3
+
+- **Пост опубликован 08:38 UTC (@RobotsTJ500, post_with_log.sh + cover):** «@agentmail builds email infrastructure for AI agents…» — разбор AgentMail (org vs inbox key scope, smoke-тест, free-tier лимиты) — id 2095431128576299220. На 22:16 UTC: **163 imp / 5❤️ / 4💬 / 0🔄** — лучший показатель @RobotsTJ500 за последние 2 недели (tailcat 331 imp от 02.09 — рекорд, WebMCP 143). ER 3.8–2.2% (average, затухает к вечеру).
+- **API writes сегодня: 3/3 — лимит исчерпан** (write_counter). Посты в логе: 2095355503954002424 (03:37), 2095361763948569083 (04:02), AgentMail 2095431128576299220 (08:38). До конца суток — 0 writes.
+- **Followers (22:45 UTC, xurl live):** @RobotsTJ500 **398** (+2 к 396 от 31.08); @gromykoss **307** (+1 к 306). Падение с 27.08 остановлено.
+- **Голос @gromykoss:** пост Hermes Agent v0.21.0 (Pantheon, Bot Mode, Nous Portal ref) опубликован 02.09 19:14 — 100 imp / 0❤️ на 22:16 03.09 (average).
+- **Канон контента переписан** (см. запись выше): VOICE_PROFILE rewrite + Delivery Package Gate — следующий пост только по полному пакету.
+
 ## 2026-08-31 — Дневной статус: пост опубликован (buzz context loop), followers −14/−29
 
 - **Пост опубликован 13:54 UTC (@RobotsTJ500, post_with_log.sh):** «A profile deep in a task hits an infrastructure wall…» — контур возврата контекста через Buzz (4 правила: session key, one delivery path, return rule, attribution) — https://x.com/RobotsTJ500/status/2094423680012960043. На 22:16 UTC: 43 imp / 1❤️ / 1💬 (ER 4.7%, average).
@@ -1537,3 +1562,22 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20939747): 3 likes, 1 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 1.8% (low)
 - **02.09.2026 19:36** — драфт-реплай reply_hermes_agent_20260902_v2.md (dogfooding-угол: cron с continuity, skills из прошлых ошибок, вопрос к запускающим X-агента на Hermes). В drafts/, на Human Gate, не публиковался. Метрики дня (fetched 22:16): tailcat-пост 20950418 — 1❤️ 210👁️; writes за 02.09 = 1 (tailcat).
+- **02.09.2026 22:47** — chrono: 2026-09-02 (`8732750`)
+
+## 2026-09-03 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=1.2, replies=0.4, impressions=76.1
+- **👤 @RobotsTJ500:** 1 постов, 5❤️ 4💬 0🔄 0🔖 143👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 97👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20952289 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.8% (average)
+
+## 2026-09-03 — Nightly Analytics
+- **Metrics:** 5 постов анализировано, baseline: likes=1.2, replies=0.4, impressions=78.6
+- **👤 @RobotsTJ500:** 4 постов, 9❤️ 7💬 1🔄 0🔖 662👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 100👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20952289 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.2% (average)
