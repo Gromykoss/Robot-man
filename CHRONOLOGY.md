@@ -1612,3 +1612,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.09.2026 16:4x UTC (Hermes-оператор)** — топ-ап xAI сделан Сергеем, инцидент закрыт. Проба всех трёх raw-ключей (main .env, rab9 .env, alikhan secrets.env): HTTP 200, каталог 12 моделей; тестовый chat/completions — 200 ('OK', usage подтверждён). Matrix-listener (rab9) и vision Айхана восстановлены автоматически, правок кода не потребовалось. robot-man остаётся на nous/z-ai (экономия raw-кредитов, директива 04.09); MoA-стек (Codex/Grok Build/Cursor) без изменений, raw-кредиты не расходует.
 - **05.09.2026 19:12** — docs: PROJECT_MEMORY_GRAPH.md (51 строка, Codex/Grok VERIFIED) + CONTRACT INDEX GATE в AGENTS.md (rollout 05.09) (`2de13c2`)
 - **05.09.2026 19:13** — docs: rollout CONTRACT INDEX GATE (05.09) — PROJECT_MEMORY_GRAPH.md 51стр (Codex/Grok VERIFIED) + Gate в AGENTS.md; попутно staged-запись Nightly Analytics robot-man в CHRONOLOGY (была в индексе до коммита) (`e4eb3b7`)
+- **05.09.2026 19:30** — docs: context.yaml session_start → PROJECT_MEMORY_GRAPH; INDEX.md указатель (sync GATE rollout 05.09) (`3950e67`)
+
+## 2026-09-05 — Nightly Analytics
+- **Metrics:** 12 постов анализировано, baseline: likes=1.2, replies=0.4, impressions=88.8
+- **👤 @RobotsTJ500:** 7 постов, 14❤️ 9💬 1🔄 2🔖 1604👁️
+- **👤 @gromykoss:** 5 постов, 2❤️ 3💬 0🔄 0🔖 649👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20961306 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 1.3% (low)
