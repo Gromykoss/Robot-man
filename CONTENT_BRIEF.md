@@ -1,25 +1,85 @@
-# CONTENT_BRIEF — 2026-09-01 (WebMCP кейс, вечернее обновление)
+# CONTENT_BRIEF — 2026-09-05 (серия OpenSpec, часть 2: визуальная)
 
-**Автор:** robot-man (кейс из собственной работы, разрешён Сергеем 01.09: «бери брутализм и публикуй»)
-**Пост:** drafts/webmcp_post_20260901_en_v3.txt + drafts/cover_webmcp_FINAL_20260901.png
-**Статус:** Sergey approved публикацию (TG 01.09)
+**Автор:** Hermes (default) — стратег (бриф согласован с Junior: он даёт макет обложки)
+**Получатель:** robot-man (профиль) — голос/исполнитель
+**Цель:** один пост для @RobotsTJ500 — ПРЯМОЕ ПРОДОЛЖЕНИЕ поста- первоисточника
+**Прошлый пост:** https://x.com/RobotsTJ500/status/2096102362003751175 (OpenSpec → 148 md → 3 layers; 422 imp, 1❤ 1 QT)
 
-## Разрешенные факты (факт-гейт)
+---
+
+## Тема
+
+Что случилось ПОСЛЕ того, как мы построили «граф + 9 карточек + гейт»: граф вырос, дрейф словили в бою, гейт сработал. Урок: контракт — живой организм, метрики растут, если правила соблюдаются.
+
+## Факты (верифицированы Hermes, источники обязательны)
 
 | # | Факт | Источник |
 |---|------|----------|
-| 1 | 1101 — код ошибки POST /mcp при отсутствии DO-биндинга | сессия 01.09, wrangler tail, CHRONOLOGY |
-| 2 | 10063 — код ошибки деплоя без workers.dev subdomain | сессия 01.09, wrangler output |
-| 3 | 146 — Chrome 146+ с experimental WebMCP | webmcp.devpost.com, docs Chrome |
-| 4 | 4 read-only tools (bio, agent farm architecture, recent posts, contact) | gromykoss-mcp/src/index.js |
-| 5 | mcp.crab-ailab.com, gromykoss.crab-ailab.com — живые эндпоинты | верифицировано curl/openssl 01.09 |
-| 6 | MCP_OBJECT — имя Durable Object биндинга | gromykoss-mcp/wrangler.jsonc |
-| 7 | bridge.js inject: <script src="/.webmcp/bridge.js" data-packs="c2pa,mcp-server-client" data-mcp-url="/mcp"></script> | live curl 01.09 |
-| 8 | #enable-webmcp-testing — Chrome flag | webmcp.devpost.com |
-| 9 | free tier Cloudflare | зона CF crab-ailab.com |
-| 10 | nginx VPS, third-party registrar, 2 nameserver changes, no downtime | сессия 01.09 |
-| 11 | who_is_sergey вернул досье с первого вызова | сессия 01.09 |
-| 12 | curl -s site / grep webmcp — проверка | сессия 01.09 |
-| 13 | @CloudflareDev упомянут (verified, id 300637864) | API 01.09 |
-| 14 | token checkboxes vs summary screen — урок | сессия 01.09 |
-| 15 | tools/list JSON Schema, server.tool(), McpAgent, streamable-http, Durable Object, Workers Domains API | gromykoss-mcp код |
+| 1 | Прошлый пост (05.09 05:05 UTC): OpenSpec-идеи → 148 md → 47-строчный граф + 9 карточек + гейт; найдены фантом ojr_sync.py и chrono-петля; пилот vor-import 573 кода | https://x.com/RobotsTJ500/status/2096102362003751175 |
+| 2 | Спустя часы: knowledge_graph/graph.json = 397 узлов / 610 рёбер (было 316/515 на 16.08 — пересборка каждые 6ч), для Obsidian собран view: 126 заметок с [[вики-связями]] + canvas 126 узлов / 141 ребро | graph.json (прочитан 05.09 ~15:55), CHRONOLOGY Alikhan `96742a2` |
+| 3 | Дрейф «14 таблиц ОЖР» → 15 найден и закрыт в 9 местах (README 6 + PROJECT 2 + AGENTS 1): коммиты 363fd9d, ae8fb06 | git log Alikhan-migration, CHRONOLOGY |
+| 4 | AGENTS.md получил секцию CONTRACT INDEX GATE: глубокие доки — только через карточку; после правки домена — обнови граф/карточку или напиши «index update: not needed» | CHRONOLOGY `ae62186`, PROJECT_MEMORY_GRAPH.md:39 |
+| 5 | Программа закрыта merge `d200ad4` (--no-ff); pytest зелёный (23 smoke + 124 полный прогон 03.09); health :3000 connected + :8099 ok | CHRONOLOGY 05.09, git log |
+| 6 | Guard против chrono-петли в .git/hooks/post-commit: коммиты `chrono:` не логируются (тест `4bf4767` — не появился в CHRONOLOGY) | git log, CHRONOLOGY |
+| 7 | В root осталось ровно 16 entry .md (перечислить нельзя все, но PROJECT_MEMORY_GRAPH.md — точка входа) | ls Alikhan-migration/*.md 05.09 |
+
+## Контекст проекта
+
+**Проект:** Alikhan (стройка ТЗРК Джеруй, WhatsApp-бот)
+**CHRONOLOGY:** `/home/hermes-workspace/Alikhan-migration/CHRONOLOGY.md`
+**AGENTS.md:** `/home/hermes-workspace/Alikhan-migration/AGENTS.md`
+
+## Формат и голос
+
+| Параметр | Значение |
+|----------|----------|
+| Тип поста | War Story — часть 2 серии (продолжение, не пересказ) |
+| Аккаунт | @RobotsTJ500 |
+| Голос | English, first person «I», «мы» = рой |
+| Длина | до 4000 (note_tweet) |
+| Hashtags | #BuildingInPublic #AIAgents #AIEngineering |
+| Изображение | ДА — ОБЯЗАТЕЛЬНО, см. блок «Обложка» ниже |
+
+## ОБЛОЖКА (главный акцент этого брифа — упор на графику)
+
+**Стиль-референс:** обложка прошлой части (https://pbs.twimg.com/media/HRbZ-_vXcAAlvOr.jpg?name=orig) — dark-mode dev-эстетика:
+- фон глубокий тёмно-синий #0D1B2B с тонкой сеткой, карточки #15263C–#1A2C44, скругление ~24px
+- моно-кикер сверху (капс, разреженный трекинг): в прошлый раз `CONTRACT INDEX · AGENT DOCS`
+- заголовок-ФОРМУЛА: «148 markdown files → 3 layers» — белый + ОДИН оранжевый акцент #F0A640
+- 3 карточки-колонки: моно-лейбл → заголовок → 1-2 строки → КРУПНАЯ ЦИФРА внизу (47 lines / 9 cards / 16 root .md); главная карточка — оранжевая рамка
+- футер: слева контекст («OpenSpec ideas · live bot dogfood»), справа пилюля-бейдж («phantom module · chrono loop · 573 vor codes»)
+- шрифты: моно (JetBrains Mono-подобный) + жирный гротеск (Inter-подобный); НИКАКИХ ALL CAPS в крупных заголовках кроме моно-кикера
+
+**Задача новой обложки — показать ДИНАМИКУ (до → после), а не статику.** Вариант-A (рекомендую Junior'у):
+- кикер: `CONTRACT INDEX · ONE DAY LATER`
+- заголовок-формула: `graph 316 → 397 nodes` (оранжевым — число 397) ИЛИ `specs that drift get caught`
+- 3 карточки:
+  1. `LIVE GRAPH` (оранжевая рамка): «Knowledge graph rebuilt every 6h. Obsidian view: wikilinks + canvas.» → **397 nodes · 610 edges** (+ в подписи 126 wikilinks / 141 canvas edges)
+  2. `DRIFT CAUGHT`: «'14 tables' → 15. Fixed in 9 places: README, PROJECT, AGENTS.» → **9 fixes**
+  3. `GATE WORKS`: «Deep docs only via domain card. After edit — update card or mark 'not needed'.» → **16 root .md**
+- футер: слева `OpenSpec dogfood · part 2`, справа пилюля: `d200ad4 merged · pytest 124 ✓ · 0 phantoms left`
+- СООТНОШЕНИЕ 16:9, плотность как у референса, ничего не обрезать при кропе в ленту
+
+## Запрещено
+
+- Пересказ части 1 (предполагать, что читатель видел прошлый пост, можно; пересказывать — нет)
+- ALL CAPS в хуках/заголовках (моно-кикер на обложке — исключение по референсу)
+- Самореплай к прошлому посту (всегда запрещено)
+- URL в теле поста (всегда)
+- Выдуманные цифры/детали — только факты из таблицы выше
+- Сравнения с чужими проектами без цифр обеих сторон
+- Слова «твиттер» (только X)
+
+## Tone-направление
+
+Инженерная честность continuation: «мы построили контракт — и на следующий день он уже поймал дрейф и показал рост графа; правила работают, если их соблюдать», без пафоса, с цифрами.
+
+## Сюжетная арка (куда ложится)
+
+STORY_ARC: новая глава «Документация как код» после Главы 6 — продолжение КОНТРАКТ-линии. Сквозной урок серии: «проверяй реальность, прежде чем действовать» — здесь: дрейф поймали сверкой с git, а не интуицией.
+
+## Deadline
+
+**Черновик к:** 2026-09-06 12:00 UTC
+**Обложка:** вместе с драфтом (Junior рендерит по ТЗ из блока «Обложка», Hermes ревьюит до Human Gate)
+**Публикация:** после approval Сергея (HUMAN GATE — без исключений)
