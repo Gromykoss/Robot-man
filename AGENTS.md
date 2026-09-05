@@ -18,6 +18,7 @@
    python3 ~/.hermes/scripts/context_loader.py robot-man <trigger> [--max-tokens 500]
    ```
    Триггеры: `session_start` (gates + last-3-days), `content_write` (voice + brief + chronology), `code_change` (gates + API limits), `bug_fix` (gates + bugs), `audit` (chronology + bugs + analytics), `default` (gates only).
+0.5. **CONTRACT INDEX GATE (05.09.2026):** единый вход сессии — PROJECT_MEMORY_GRAPH.md (корень). Boot Rule: граф + AGENTS Gates на старте, остальные доки по маршруту из графа. Изменил домен/инвариант → обнови граф + CHRONOLOGY; иначе запись «Contract index update: not needed» в CHRONOLOGY.
 
 1. **PRE-PATCH GATE (MANDATORY):** перед любым изменением кода — `grep -rn "имя" .`, показать grep, проследить логику в каждом найденном месте. Нет grep → патч не принят, откат.
 2. **Human Gate:** НИКОГДА не постить без явного approval Сергея. MoA → показать Сергею → «ок» → публикация.

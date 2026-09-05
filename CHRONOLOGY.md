@@ -1598,3 +1598,16 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.09.2026 22:47** — chrono: 2026-09-04 (`a9135c1`)
 - **05.09.2026 16:20 (Hermes-стратег)** — новый CONTENT_BRIEF: OpenSpec часть 2 (продолжение поста 2096102362003751175 от 05.09 05:05 UTC, 422 imp). Тема: день после контракта — граф 316→397 узлов/610 рёбер (пересборка каждые 6ч), дрейф «14 таблиц»→15 закрыт в 9 местах (363fd9d, ae8fb06), CONTRACT INDEX GATE в AGENTS.md, merge d200ad4, pytest зелёный, 0 фантомов. ФАКУЛЬТЕТ брифа — ТЗ на обложку (стиль референса части 1: dark navy #0D1B2B, моно-кикер, формула с оранжевым акцентом #F0A640, 3 карточки-метрики 397/9/16, пилюля-бейдж). Драфт+макет к 06.09 12:00 UTC → MoA → Human Gate. Бриф в шину доставлен (VERIFIED), ТЗ обложки → Junior.
 - **05.09.2026 14:57** — CONTENT_BRIEF: OpenSpec part 2 (continuation of 2096102362003751175) - 7 verified facts + cover spec (graphics focus per Sergey); strategy entry in CHRONOLOGY (`1d3d9cd`)
+
+## 2026-09-05 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=1.2, replies=0.4, impressions=81.0
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 0💬 0🔄 1🔖 423👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 186👁️
+- **Best:** 20961023 (1❤️ 0💬 0🔄)
+- **Worst:** 20961306 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20961023): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.2% (low)
+- **05.09.2026 15:09** — CONTENT_BRIEF v2 per Sergey: plot = finished with VISUALIZATION (part1 rebuild docs -> part2 docs became maps: knowledge graph 397/610 + graph-view Obsidian 126 wikilinks + canvas + Fleet D2 19 blocks); cover = OUR REAL MAPS side by side; v1 plot rejected (`7e85ef5`)
+- **05.09.2026 16:09 UTC (Hermes-оператор)** — смена модели профиля: xAI-кредиты команды 52546c71 исчерпаны (raw probe: HTTP 403 permission-denied). Пин robot-man `xai/grok-4.5` → `nous/z-ai/glm-5.3-flash` (как у оператора). Проверено: `hermes --profile robot-man config get` оба ключа. 8 крон-джоб профиля имеют явные пины nous/z-ai — на смену не среагировали; Analytics Loop error 15:02 = «Interrupted by shutdown», не провайдер. Raw xAI-ключи rab9 (.env) и alikhan (secrets.env) — та же команда 52546c71, тоже 403 (не чинились, доклад Сергею). MoA НЕ перевода: это подписочные CLI (Codex/Grok Build/Cursor), xAI-кредиты не расходуют; watcher `moa_401_watcher.sh` переписан с raw-API проб (openai/xai/deepseek) на CLI auth-чеки (codex login status / grok auth.json свежесть / cursor-agent status), ручной прогон — тишина, rc=0. Откат watcher: `.bak`; откат пина: config set обратно xai/grok-4.5.
+- **05.09.2026 16:4x UTC (Hermes-оператор)** — топ-ап xAI сделан Сергеем, инцидент закрыт. Проба всех трёх raw-ключей (main .env, rab9 .env, alikhan secrets.env): HTTP 200, каталог 12 моделей; тестовый chat/completions — 200 ('OK', usage подтверждён). Matrix-listener (rab9) и vision Айхана восстановлены автоматически, правок кода не потребовалось. robot-man остаётся на nous/z-ai (экономия raw-кредитов, директива 04.09); MoA-стек (Codex/Grok Build/Cursor) без изменений, raw-кредиты не расходует.
+- **05.09.2026 19:12** — docs: PROJECT_MEMORY_GRAPH.md (51 строка, Codex/Grok VERIFIED) + CONTRACT INDEX GATE в AGENTS.md (rollout 05.09) (`2de13c2`)
