@@ -1623,3 +1623,26 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 1.3% (low)
 - **05.09.2026 22:46** — chrono: 2026-09-05 + daily briefing (`58eace4`)
+- **06.09.2026 10:58** — [drift-bootstrap] Spec Drift Gate v1.3.1: AGENTS.md секция + журнал (`1b9575d`)
+
+## 2026-09-06 — Nightly Analytics
+- **Metrics:** 0 постов анализировано, baseline: likes=1.2, replies=0.4, impressions=86.1
+- **👤 @RobotsTJ500:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+
+## 2026-09-06 — Nightly Analytics
+- **Metrics:** 13 постов анализировано, baseline: likes=1.2, replies=0.5, impressions=93.0
+- **👤 @RobotsTJ500:** 7 постов, 12❤️ 8💬 1🔄 2🔖 1599👁️
+- **👤 @gromykoss:** 6 постов, 2❤️ 3💬 0🔄 0🔖 737👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20965084 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 1.1% (low)
+## 2026-09-06 — Дневной статус (Chronology Agent, 22:45 UTC): пост OpenSpec part1, followers стабильны
+
+- **Пост опубликован 10:39 UTC (@RobotsTJ500, post_with_log.sh):** «Part 1 was a pilot: one live loop — a construction-site WhatsApp bot.» — OpenSpec part 1 (pilot) — id 2096548715003511237. На 22:17 UTC: **60 imp / 2❤️ / 1💬** (средний; ниже WebMCP 162 / tailcat 432 из того же окна).
+- **Followers (22:45 UTC, xurl live):** @RobotsTJ500 **398** (без изменений к 03.09); @gromykoss **305** (−2 к 307; tweet_count 1421, чистка продолжалась минимально).
+- **API writes сегодня: 1/3** (один пост; лимит не исчерпан).
+- **X API 402 credits** (от 05.09) — status: НЕ подтверждено восстановление, но read/search через oauth1 работают (метрики 22:17 собраны успешно). Paid-tier статус уточнить у Сергея.
+- **Nightly Analytics 06.09:** 13 постов, ER 1.1% (low); best — AgentMail 20954311 (5❤️ 4💬); worst — gromykoss Memora 20965084 (32 imp, 0 engagement).
+- **Спека:** Spec Drift Gate v1.3.1 забутстрапнут в AGENTS.md + spec_drift_log.md (commit 1b9575d, 10:58 UTC).
