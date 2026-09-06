@@ -18,11 +18,19 @@
    python3 ~/.hermes/scripts/context_loader.py robot-man <trigger> [--max-tokens 500]
    ```
    Триггеры: `session_start` (gates + last-3-days), `content_write` (voice + brief + chronology), `code_change` (gates + API limits), `bug_fix` (gates + bugs), `audit` (chronology + bugs + analytics), `default` (gates only).
+
 0.5. **CONTRACT INDEX GATE (05.09.2026):** единый вход сессии — PROJECT_MEMORY_GRAPH.md (корень). Boot Rule: граф + AGENTS Gates на старте, остальные доки по маршруту из графа. Изменил домен/инвариант → обнови граф + CHRONOLOGY; иначе запись «Contract index update: not needed» в CHRONOLOGY.
 
 1. **PRE-PATCH GATE (MANDATORY):** перед любым изменением кода — `grep -rn "имя" .`, показать grep, проследить логику в каждом найденном месте. Нет grep → патч не принят, откат.
-2. **Human Gate:** НИКОГДА не постить без явного approval Сергея. MoA → показать Сергею → «ок» → публикация.
-3. **Публикация ТОЛЬКО через `post_with_log.sh`.** Никогда напрямую `xurl post` — пост станет невидим для Reply Engine и аналитики.
+2. **Human Gate:** НИКОГДА не постить без явного approval Сергея («ок» / «пости»). Autonomous ship запрещён (03.09.2026).
+3. **Публикация ТОЛЬКО через `post_with_log.sh` с обложкой.** Никогда напрямую `xurl post`. Text-only без `ALLOW_TEXT_ONLY=1` (явный приказ Сергея) → BLOCK.
+3a. **Delivery Package Gate (03.09.2026):** до «пости» показать полный пакет — иначе пакет неполный:
+    1. RU-драфт в чат + `drafts/<topic>_vN_ru.md`
+    2. EN-финал только после ok по смыслу RU → `drafts/<topic>_vN_en.txt`
+    3. Обложка `MEDIA:/abs/path` + joint MoA (текст+обложка)
+    4. Факт-чек / MoA summary
+    Без любого пункта — не просить публикацию.
+3b. **Голос:** единственный канон `VOICE_PROFILE.md` (03.09) + `ENGINEERING_POST_TEMPLATE.md`. ALL-CAPS/реклама/попса запрещены. После правок Сергея — skill `sergey-edit-absorb`.
 4. **Knowledge Graph first:** перед Nightly Analysis / Content Gate / факт-действием — запрос к графу (`knowledge_graph/query_tool.py`).
 5. **API-лимиты (hard):** max 3 public writes/сутки, follow max 2/day (hard 3), 429 → STOP.
 6. **Never expose credentials:** OAuth токены, xurl конфиг — не коммитить, не логировать.
@@ -61,23 +69,29 @@
 ### Процесс: от брифа до публикации
 
 ```
-BRIEF (Hermes) → CHRONOLOGY проекта → AGENTS.md проекта → ДРАФТ → MoA → ФАКТ-ЧЕК → APPROVAL → ПУБЛИКАЦИЯ
+BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + ENGINEERING_POST_TEMPLATE
+  → RU-драфт → (правки Сергея) → EN-финал + обложка
+  → Joint MoA (текст+cover, + anti-ad) → Delivery Package Сергею
+  → «ок/пости» → approval.token → post_with_log.sh EN + cover
+  → sergey-edit-absorb (если были правки) → CHRONOLOGY
 ```
 
-1. Прочитать CONTENT_BRIEF.md (тема, факты, tone, запреты)
+1. Прочитать CONTENT_BRIEF.md (тема, факты, tone, запреты) + CONTENT_BRIEF_STANDARD.md
 2. Прочитать CHRONOLOGY.md указанного проекта (последние 3 дня)
 3. Прочитать AGENTS.md указанного проекта (контекст)
-4. Написать драфт в голосе (VOICE_PROFILE.md / VOICE_PROFILE_GROMYKOSS.md)
-5. MoA-проверка: `/moa deepseek-xai` + `/moa viral-score` — оба agree → дальше
-6. Факт-чек: сверить КАЖДУЮ цифру/дату/имя с брифингом. Нет в брифе → убрать
-7. При нарушениях → переписать
-8. Отправить драфт на approval Сергею
-9. После «ок» Сергея → записать одноразовый токен, затем публикация:
+4. Загрузить канон голоса: `VOICE_PROFILE.md` + `ENGINEERING_POST_TEMPLATE.md` + `post-quality-gate`
+5. Написать **RU-драфт** (`drafts/<topic>_vN_ru.md`) — EN-first запрещён
+6. Показать RU Сергею; после ok по смыслу — EN-финал + обложка (joint)
+7. MoA: deepseek-xai + viral-score + **anti-ad** (joint-moa-protocol); оба agree → дальше
+8. Факт-чек: каждая цифра/дата/имя с брифом. Нет в брифе → убрать
+9. **Delivery Package** в чат: RU (ссылка), EN полный текст, MEDIA:cover, MoA summary
+10. После явного «ок»/«пости» → токен + публикация:
    ```bash
    echo "$(uuidgen)" > data/approval.token
-   bash post_with_log.sh "текст"
+   bash post_with_log.sh "EN text" /abs/path/cover.png
    ```
-   Токен одноразовый: `operators/operator_pipeline.py` стирает `data/approval.token` после успешного поста. «Ок» на один драфт = ровно один пост, следующий требует нового «ок».
+   Токен одноразовый. Text-only без ALLOW_TEXT_ONLY=1 → BLOCK.
+11. Если Сергей правил текст/тон — `sergey-edit-absorb` до конца сессии.
 
 ---
 
@@ -187,7 +201,7 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 - First-person «I», English only
 - Practical guide > report
 - «Building in public. 🤖» — завершение
-- #hashtags обязательны, нет URL в теле
+- #hashtags: по умолчанию 0 (канон Сергея 05.09); добавить только если бриф явно разрешает. Нет URL в теле
 - Одна верификация на сессию
 
 **@gromykoss:** тёплый, ироничный, сторителлинг (VOICE_PROFILE_GROMYKOSS.md).
@@ -289,3 +303,29 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 | `post_with_log.sh` | Публикация + лог (единственный путь) |
 | `published_posts.jsonl` | Лог опубликованных постов |
 | `skills/*/SKILL.md` | Specialist skills |
+
+
+## SPEC DRIFT GATE (перед любой spec-affecting мутацией)
+Spec-affecting мутация = правка кода/данных/конфига/спеки узла. Отчёты/посты/сбор/чтение — мимо гейта.
+1. ДО мутации — append-строка в spec_drift_log.md (через flock, см. шаг журнала): время UTC, что меняю (ПУТИ файлов), зачем (инвариант/требование), что НЕ трогаю. Поле результата пустое.
+2. Выполнить мутацию.
+3. Закоммитить. Hook пропустит по открытому интенту — интент ОДНОРАЗОВЫЙ: после коммита строка считается закрытой, следующий spec-affecting коммит требует НОВОЙ строки.
+4. СРАЗУ после коммита — дописать SHA в поле результата той же строки (в рабочей копии, попадёт в следующий коммит или остаётся локально — аудит сверяет по timestamp+файлам).
+5. Незаписанная мутация = нарушение (аудит в scorecard оператора). Fail-closed.
+
+Формат: | Время-UTC | что меняю (пути) | зачем | что НЕ трогаю | SHA/пусто |
+
+Пример строки с ОТКРЫТЫМ интентом (результат пуст — поле 6):
+| 2026-09-06T08:00 | gateway/run.py, cron/scheduler.py | fix suppress race | tests/, docs/ |  |
+
+Пример ЗАКРЫТОЙ строки (SHA дописан — поле 6):
+| 2026-09-06T08:00 | gateway/run.py | fix suppress race | tests/ | 708eac5790 |
+
+Разбор полей (строка начинается с |, поэтому awk -F'|': поле 1 пустое):
+  awk-поле 2 = Время · поле 3 = что меняю · поле 4 = зачем
+  поле 5 = что НЕ трогаю · поле 6 = SHA/пусто
+Запрещено в ячейках: символ `|` (заменять на `\|`), переносы строк.
+
+Запрещено: код без записи; «улучшать спеку молча»; записи задним числом; редактирование старых строк (только append).
+Meta-правило: правка AGENTS.md — тоже spec-affecting (кроме самой этой секции при bootstrap).
+Bootstrap: самый первый коммит, СОЗДАЮЩИЙ spec_drift_log.md в репо, разрешён без интента (журнала ещё нет — ловить нечем). Помечается в теме коммита `[drift-bootstrap]`.
