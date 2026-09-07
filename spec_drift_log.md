@@ -7,3 +7,4 @@
 |---|---|---|---|---|
 | 2026-09-07T03:22 | .gitignore | ignore data/secrets/ (agentmail envs не должны попасть в git) | контент, данные, код |  |
 | 2026-09-07T03:22 | data/, DRAFT_BANK_RTJ.md, SHADOWBAN_RECOVERY.md, TACTICS.md, TACTICS_GROMYKOSS.md, VOICE_PROFILE.md, VOICE_PROFILE_GROMYKOSS.md, CONTENT_BRIEF_tailcat_20260901.md, ENGINEERING_POST_TEMPLATE.md, TACTICS_GROMYKOSS_2026-09-04.md, TACTICS_GROMYKOSS_20260905.md | рабочие данные аналитики и доки голоса/тактики за 01-06.09 (зачистка рабочего дерева) | data/secrets/, serga personal files |  |
+| 2026-09-07T03:22 | drafts/, images/, scripts/, research/, briefings/ | драфты, обложки, research-дампы и скрипты контент-пайплайна (зачистка рабочего дерева) | data/secrets/, serga personal files |  |

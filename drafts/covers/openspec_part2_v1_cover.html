@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 675px;
+    background: radial-gradient(ellipse at 30% 20%, #1a2744 0%, #0b1020 55%, #070a14 100%);
+    color: #e8eefc;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(80,120,200,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(80,120,200,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  .wrap { position: relative; z-index: 1; padding: 48px 56px; height: 100%; display: flex; flex-direction: column; }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px; letter-spacing: 0.12em; color: #7eb6ff; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 42px; font-weight: 700; line-height: 1.15;
+    max-width: 980px; margin-bottom: 26px;
+  }
+  h1 span { color: #ffb45a; }
+  .layers { display: flex; gap: 18px; flex: 1; align-items: stretch; }
+  .card {
+    flex: 1;
+    border-radius: 18px;
+    border: 1px solid rgba(126,182,255,0.28);
+    background: linear-gradient(165deg, rgba(30,48,86,0.92), rgba(14,22,40,0.95));
+    padding: 20px 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .card.l1 { border-color: rgba(255,180,90,0.55); box-shadow: 0 0 0 1px rgba(255,180,90,0.15), 0 12px 40px rgba(0,0,0,0.35); }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px; color: #9ec0ff; letter-spacing: 0.08em;
+  }
+  .card.l1 .tag { color: #ffc27a; }
+  .title { font-size: 24px; font-weight: 700; }
+  .body { font-size: 16px; line-height: 1.35; color: #c5d3ef; }
+  .num {
+    margin-top: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 30px; font-weight: 500; color: #fff;
+    line-height: 1.15;
+    min-height: 40px;
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 6px;
+  }
+  .num small { font-size: 15px; color: #8aa0c8; font-weight: 500; }
+  .sub { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #7a93bb; margin-top: 4px; }
+  .foot {
+    margin-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #6f86b0;
+  }
+  .pill {
+    background: rgba(126,182,255,0.12);
+    border: 1px solid rgba(126,182,255,0.3);
+    color: #b8d4ff;
+    padding: 8px 14px; border-radius: 999px;
+  }
+</style></head>
+<body>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="kicker">contract index · one day later</div>
+    <h1>graph 316 → <span>397</span> nodes</h1>
+    <div class="layers">
+      <div class="card l1">
+        <div class="tag">LIVE GRAPH</div>
+        <div class="title">Knowledge graph</div>
+        <div class="body">Rebuild every 6h. Obsidian: wikilinks + canvas view.</div>
+        <div class="num">397 <small>nodes · 610 edges</small></div>
+        <div class="sub">126 wikilinks · 141 canvas edges</div>
+      </div>
+      <div class="card">
+        <div class="tag">DRIFT CAUGHT</div>
+        <div class="title">14 tables → 15</div>
+        <div class="body">Stale OJR count fixed in README, PROJECT, AGENTS.</div>
+        <div class="num">9 <small>fixes</small></div>
+      </div>
+      <div class="card">
+        <div class="tag">GATE WORKS</div>
+        <div class="title">Contract index</div>
+        <div class="body">Deep docs via domain card. After edit — update or mark not needed.</div>
+        <div class="num">16 <small>root .md</small></div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>OpenSpec dogfood · part 2</div>
+      <div class="pill">d200ad4 merged · pytest 124 ok · 0 phantoms left</div>
+    </div>
+  </div>
+</body></html>

@@ -1650,3 +1650,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **06.09.2026 23:36** — CONTENT_BRIEF 2026-09-07: night of false alarms (self-shadowban diagnosis, 3 rejected signals, 1 real 402) - winner robot-man 39/42 over Alikhan SDG 36/42 (`2db1a06`)
 - **07.09.2026 03:22** — chore: gitignore data/secrets/ (`3a08f9b`)
 - **07.09.2026 03:22** — chrono: 2026-09-06 (CONTENT_BRIEF) (`2c69328`)
+- **07.09.2026 03:22** — data+docs: аналитика 01-06.09, voice/tactics доки, бэкапы кратких версий (`8a17b09`)

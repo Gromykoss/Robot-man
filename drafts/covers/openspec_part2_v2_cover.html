@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 675px;
+    background: radial-gradient(ellipse at 28% 18%, #1a2744 0%, #0b1020 55%, #070a14 100%);
+    color: #e8eefc;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    overflow: hidden; position: relative;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(80,120,200,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(80,120,200,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 45%, transparent 85%);
+  }
+  .wrap { position: relative; z-index: 1; padding: 36px 48px 28px; height: 100%; display: flex; flex-direction: column; }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px; letter-spacing: 0.12em; color: #7eb6ff; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  h1 { font-size: 40px; font-weight: 700; line-height: 1.1; margin-bottom: 16px; }
+  h1 span { color: #ffb45a; }
+  .maps { display: flex; gap: 16px; flex: 1; min-height: 0; }
+  .map {
+    flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0;
+  }
+  .frame {
+    flex: 1; border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(126,182,255,0.28);
+    background: #0a1220;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+    position: relative;
+  }
+  .frame.hero { border-color: rgba(255,180,90,0.55); box-shadow: 0 0 0 1px rgba(255,180,90,0.12), 0 12px 36px rgba(0,0,0,0.4); }
+  .frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+    display: block;
+  }
+  .cap {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px; color: #b8d4ff;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .cap strong { color: #fff; font-size: 15px; }
+  .cap .lbl { color: #ffc27a; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .metrics {
+    margin-top: 12px;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .chip {
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(126,182,255,0.10);
+    border: 1px solid rgba(126,182,255,0.28);
+    color: #c5d3ef;
+  }
+  .foot {
+    margin-top: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #6f86b0;
+  }
+  .pill {
+    background: rgba(126,182,255,0.12);
+    border: 1px solid rgba(126,182,255,0.3);
+    color: #b8d4ff;
+    padding: 7px 12px; border-radius: 999px;
+  }
+</style></head>
+<body>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="kicker">contract index · now visual</div>
+    <h1>docs → <span>maps</span></h1>
+    <div class="maps">
+      <div class="map">
+        <div class="frame hero">
+          <img src="file:///home/hermes-workspace/robot-man/drafts/covers/alikhan_graph_canvas_real.png" alt="Alikhan knowledge graph canvas"/>
+        </div>
+        <div class="cap"><span class="lbl">Knowledge graph</span><strong>397 nodes · 610 edges</strong></div>
+      </div>
+      <div class="map">
+        <div class="frame">
+          <img src="file:///home/hermes-workspace/robot-man/drafts/covers/fleet_map_real.png" alt="Agent Fleet D2"/>
+        </div>
+        <div class="cap"><span class="lbl">Fleet map</span><strong>19 blocks · 16 links</strong></div>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="chip">126 wikilinks</div>
+      <div class="chip">141 canvas edges</div>
+      <div class="chip">0 overlaps (ELK)</div>
+    </div>
+    <div class="foot">
+      <div>OpenSpec dogfood · part 2</div>
+      <div class="pill">rebuilt every 6h · drift gets caught</div>
+    </div>
+  </div>
+</body></html>

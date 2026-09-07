@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 675px;
+    background: radial-gradient(ellipse at 30% 20%, #1a2744 0%, #0b1020 55%, #070a14 100%);
+    color: #e8eefc;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(80,120,200,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(80,120,200,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  .wrap { position: relative; z-index: 1; padding: 48px 56px; height: 100%; display: flex; flex-direction: column; }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 18px; letter-spacing: 0.12em; color: #7eb6ff; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 44px; font-weight: 700; line-height: 1.15;
+    max-width: 920px; margin-bottom: 28px;
+  }
+  h1 span { color: #ffb45a; }
+  .layers { display: flex; gap: 18px; flex: 1; align-items: stretch; }
+  .card {
+    flex: 1;
+    border-radius: 18px;
+    border: 1px solid rgba(126,182,255,0.28);
+    background: linear-gradient(165deg, rgba(30,48,86,0.92), rgba(14,22,40,0.95));
+    padding: 22px 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .card.l1 { border-color: rgba(255,180,90,0.55); box-shadow: 0 0 0 1px rgba(255,180,90,0.15), 0 12px 40px rgba(0,0,0,0.35); }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px; color: #9ec0ff; letter-spacing: 0.08em;
+  }
+  .card.l1 .tag { color: #ffc27a; }
+  .title { font-size: 26px; font-weight: 700; }
+  .body { font-size: 18px; line-height: 1.35; color: #c5d3ef; }
+  .num {
+    margin-top: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 34px; font-weight: 500; color: #fff;
+  }
+  .num small { font-size: 16px; color: #8aa0c8; margin-left: 6px; }
+  .foot {
+    margin-top: 22px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #6f86b0;
+  }
+  .pill {
+    background: rgba(126,182,255,0.12);
+    border: 1px solid rgba(126,182,255,0.3);
+    color: #b8d4ff;
+    padding: 8px 14px; border-radius: 999px;
+  }
+</style></head>
+<body>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="kicker">contract index · agent docs</div>
+    <h1>148 markdown files → <span>3 layers</span></h1>
+    <div class="layers">
+      <div class="card l1">
+        <div class="tag">LAYER 1 · BOOT</div>
+        <div class="title">Memory graph</div>
+        <div class="body">Mandatory session entry. Invariants + domain map. No deep docs at start.</div>
+        <div class="num">47 <small>lines</small></div>
+      </div>
+      <div class="card">
+        <div class="tag">LAYER 2 · ROUTES</div>
+        <div class="title">Domain cards</div>
+        <div class="body">openspec/specs — role, owners, traps, GIVEN/WHEN/THEN.</div>
+        <div class="num">9 <small>cards</small></div>
+      </div>
+      <div class="card">
+        <div class="tag">LAYER 3 · DEEP</div>
+        <div class="title">Sources on demand</div>
+        <div class="body">MASTER_SPEC / DATA_CONTRACT / code — only via card route.</div>
+        <div class="num">16 <small>root .md</small></div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>OpenSpec ideas · live bot dogfood</div>
+      <div class="pill">phantom module · chrono loop · 573 vor codes</div>
+    </div>
+  </div>
+</body></html>
