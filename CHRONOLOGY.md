@@ -1654,3 +1654,42 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.09.2026 03:23** — content: драфты, обложки, research и скрипты пайплайна (`a214b32`)
 - **07.09.2026 03:25** — ops: watcher sudo-read, cover-gate hard rule, knowledge graph sync (`0d434a7`)
 - **07.09.2026 03:25** — journal: REHAB 2db1a068 (night content agent honest miss) (`8430654`)
+- **07.09.2026 06:29** — draft: Part 3 openspec/spec-drift-gate (RU v1, strategist draft) (`b91d25e`)
+
+## 2026-09-07 — Nightly Analytics
+- **Metrics:** 13 постов анализировано, baseline: likes=1.2, replies=0.5, impressions=99.6
+- **👤 @RobotsTJ500:** 7 постов, 12❤️ 8💬 1🔄 2🔖 1694👁️
+- **👤 @gromykoss:** 6 постов, 2❤️ 3💬 0🔄 0🔖 751👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20965084 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 1.1% (low)
+
+## 2026-09-07 — Weekly analytics report (reports/2026-09-07.md) + баг ACCOUNT_ID
+- Отчёт за неделю: 13 постов (2 из лога 404 — удалены), best @RobotsTJ500 20954311 (2.1x OUTPERFORMER), ER 1.1% (low). Followers: TJ500 409→398, gromykoss 334→305 (чистка твитов).
+- Обнаружен баг: analytics_loop.py ACCOUNT_ID → dataPort_agent (записан BUGS.md #1), fix не делал — зона approval.
+
+## 2026-09-07 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.2, replies=0.5, impressions=99.8
+- **👤 @RobotsTJ500:** 1 постов, 0❤️ 0💬 0🔄 0🔖 144👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 20968673 (0❤️ 0💬 0🔄)
+- **Worst:** 20968673 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20968673): 0 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.0% (low)
+
+## 2026-09-07 — Nightly Analytics
+- **Metrics:** 10 постов анализировано, baseline: likes=1.2, replies=0.5, impressions=100.5
+- **👤 @RobotsTJ500:** 7 постов, 11❤️ 7💬 1🔄 2🔖 1818👁️
+- **👤 @gromykoss:** 3 постов, 0❤️ 0💬 0🔄 0🔖 455👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20968673 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+
+## 2026-09-07 — Пост @RobotsTJ500 «Emergence World» опубликован (22:45 UTC chrono agent, xurl live)
+
+- **Пост опубликован 07:45 UTC (post_with_log.sh + обложка):** «Five cities of AI agents. One rulebook. The only variable was the model…» — Emergence World S1/S2 (models ran self-governing cities) — id 2096867393989472426. На 22:45 UTC (xurl live): **168 imp / 0❤️ / 0💬 / 0🔄** — охват выше baseline (~100), но engagement 0. API writes сегодня: 1/3 (write_counter).
+- **Пайплайн соблюдён:** бриф = CONTENT_BRIEF 07.09 (factcheck allowlist, все числовые токены верифицированы: Fortune + world.emergence.ai + @emergence_ai диспетчи), approval Сергея «пости» по RU-драфту v3 + обложке v3 (`covers/emergence_world_v3.png`, 5:2, PIL-текст). Хендл @emergence_ai — единственный mention; hashtags 0.
+- **Followers (22:45 UTC, xurl live):** @RobotsTJ500 **398**, @gromykoss **305** — стабильно к отчёту 10:06 UTC.
+- **Прочее за день:** weekly analytics report (reports/2026-09-07.md, ER 1.1% low, best AgentMail 2.1x), баг analytics_loop.py ACCOUNT_ID→dataPort_agent записан в BUGS.md (fix не делал — approval); драфты дня: emergence-world v1–v3 RU, x-article-skills, yoroll_yolive; gitignore data/secrets/ (3a08f9b); draft Part 3 openspec/spec-drift-gate (b91d25e).
+- **Pattern:** Overall engagement rate: 0.8% (low)
