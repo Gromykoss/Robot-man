@@ -1,4 +1,9 @@
-# TACTICS v2 — +1000 followers за 30 дней (@RobotsTJ500)
+# DISTRIBUTION PLAYBOOK (ex-SHADOWBAN_RECOVERY)
+
+> ⚠️ **СТАТУС 05.09.2026:** файл исторический. Ban OFF (30.08 чекеры + канон 05.09) — «recovery»-протокол неактуален.
+> Живая часть: раздел «ОБНОВЛЕНИЕ ДИАГНОЗА 30.08» (TweepCred/дистрибуция) — действующий playbook.
+> Цели +1000/30d — архивный сценарий. Живая тактика — TACTICS.md (утренний крон).
+
 
 > ⚠️ **ОБНОВЛЕНИЕ ДИАГНОЗА 30.08.2026:** Прогон 8 независимых shadowban-чекеров (yuzurisa, hisubway, sorsa, postory, notpeople, circleboom, tweethunter, Checker F) показал: **search ban / ghost ban / reply deboost ОТСУТСТВУЮТ**. nitter-диагноз был ложным. Реальная проблема — дистрибуция: TweepCred 50/100 (порог 65 → ~3 твита в дистрибуции), reach ~7.1% фолловеров (норма 20%+), активность ниже нормы. Отсюда стратегия: НЕ «recovery после бана», а подъём TweepCred + наращивание объёма (2-3 поста/день, 10-20 реплаев/день — по целям notpeople). Детали: `research/x-analysis-tools-2026-08-30.md`, уроки: vault `20_Projects/robot-man/memory/lessons.md`.
 
