@@ -21,6 +21,19 @@ export POST_IMAGE="$IMAGE"
 
 PYTHONPATH="$DIR" python3 -m operators.operator_pipeline "$TEXT" "$APPROVAL_TOKEN" || { echo "BLOCKED by operator pipeline" >&2; exit 1; }
 
+# 03.09.2026: @RobotsTJ500 original posts require a cover. Text-only path is a
+# hard block (was WARNING → silent text-only publish). Opt-out only via
+# ALLOW_TEXT_ONLY=1 for rare non-cover cases Sergey explicitly ordered.
+if [ -z "$IMAGE" ]; then
+    if [ "${ALLOW_TEXT_ONLY:-0}" = "1" ]; then
+        echo "ALLOW_TEXT_ONLY=1 — text-only publish (explicit override)" >&2
+    else
+        echo "BLOCKED: cover image required. Usage: post_with_log.sh 'text' /path/cover.png" >&2
+        echo "Opt-out only with ALLOW_TEXT_ONLY=1 after Sergey explicit order." >&2
+        exit 1
+    fi
+fi
+
 if [ -n "$IMAGE" ]; then
     # If IMAGE is a URL, download it first
     if echo "$IMAGE" | grep -qE '^https?://'; then
@@ -30,8 +43,8 @@ if [ -n "$IMAGE" ]; then
     fi
 
     if [ -f "$IMAGE" ]; then
-        # Post with image — xurl outputs JSON + human-readable line, extract JSON part only
-        UPLOAD_OUT=$(xurl --app my-app --auth oauth1 media upload --media-type image/png --category tweet_image "$IMAGE" 2>&1)
+        # Post with image — upload via root guard (write OAuth lives only in /root/.xurl)
+        UPLOAD_OUT=$(sudo -n /usr/local/bin/xurl-post-guard media-upload --file "$IMAGE" --media-type image/png 2>&1)
         MEDIA_ID=$(echo "$UPLOAD_OUT" | python3 -c "
 import sys, json
 lines = sys.stdin.read().strip().split('\n')
@@ -43,14 +56,20 @@ decoder = json.JSONDecoder()
 data, _ = decoder.raw_decode(json_block)
 print(data['data']['id'])
 ")
-        OUTPUT=$(xurl --app my-app --auth oauth1 -u "$ACCOUNT" post "$TEXT" --media-id "$MEDIA_ID" 2>&1)
+        TEXT_TMP=$(mktemp /tmp/robotman_post_text.XXXXXX)
+        printf '%s' "$TEXT" > "$TEXT_TMP"
+        OUTPUT=$(sudo -n /usr/local/bin/xurl-post-guard post --text-file "$TEXT_TMP" --media-id "$MEDIA_ID" 2>&1)
+        rm -f "$TEXT_TMP"
     else
-        echo "WARNING: image file not found — posting text-only"
-        OUTPUT=$(xurl --app my-app --auth oauth1 -u "$ACCOUNT" post "$TEXT" 2>&1)
+        echo "BLOCKED: image file not found: $IMAGE (no text-only fallback)" >&2
+        exit 1
     fi
 else
-    # Text-only post
-    OUTPUT=$(xurl --app my-app --auth oauth1 -u "$ACCOUNT" post "$TEXT" 2>&1)
+    # Text-only only when ALLOW_TEXT_ONLY=1
+    TEXT_TMP=$(mktemp /tmp/robotman_post_text.XXXXXX)
+    printf '%s' "$TEXT" > "$TEXT_TMP"
+    OUTPUT=$(sudo -n /usr/local/bin/xurl-post-guard post --text-file "$TEXT_TMP" 2>&1)
+    rm -f "$TEXT_TMP"
 fi
 
 echo "$OUTPUT"

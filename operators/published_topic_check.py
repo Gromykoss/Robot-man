@@ -14,6 +14,17 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
 PUBLISHED_LOG = PROJECT / "published_posts.jsonl"
+# Manual posts (@gromykoss) never hit published_posts.jsonl — dedupe against them too.
+# Curated keyword sets per known manual-post theme (03.09: office-forward story dup catch).
+MANUAL_THEMES = [
+    {
+        "note": "office-forward / Алихан день самоуправства (gromykoss 31.08, ручной постинг)",
+        "keywords": {"alikhan", "whatsapp", "оркестратор", "прораб", "стройка", "grok", "office",
+                     "прораба", "алихан", "кровля", "смета", "мост", "заявки", "доложил", "73", "грок",
+                     "forward", "webhook", "orchestrator"},
+        "min_overlap": 2,
+    },
+]
 WINDOW_DAYS = 7
 STOP = {"the", "a", "an", "and", "or", "of", "to", "in", "on", "for", "with", "at", "by",
         "is", "are", "was", "were", "it", "its", "we", "our", "i", "my", "me", "you", "your"}
@@ -76,6 +87,11 @@ def main() -> int:
         overlap = draft_tokens & tokens(text)
         if len(overlap) >= 3:
             flagged.append((pid, sorted(overlap)))
+
+    for theme in MANUAL_THEMES:
+        overlap = draft_tokens & theme["keywords"]
+        if len(overlap) >= theme["min_overlap"]:
+            flagged.append((theme["note"], sorted(overlap)))
 
     if flagged:
         print("DUPLICATE RISK — draft topic overlaps recent published posts:")

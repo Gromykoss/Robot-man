@@ -1,27 +1,33 @@
 {
-  "generated_at": "2026-09-01T06:00:25.847363+00:00",
-  "graph_built_at": "2026-09-01T06:00:25.836256+00:00",
+  "generated_at": "2026-09-07T00:00:30.573458+00:00",
+  "graph_built_at": "2026-09-07T00:00:30.536878+00:00",
   "graph_stats": {
-    "nodes": 109,
-    "edges": 111,
+    "nodes": 381,
+    "edges": 360,
     "projects": 4,
-    "events": 14,
-    "people": 50,
+    "events": 136,
+    "people": 52,
     "tasks": 22
   },
   "checks": {
     "stale_nodes": [],
     "duplicate_entities": [
       {
-        "canonical": "person/@RobotsT500",
-        "duplicate": "person/@RobotsTJ500",
-        "similarity": 0.973,
+        "canonical": "event/2026-08-05/Nightly Analytics",
+        "duplicate": "event/2026-08-05/Nightly Analytics (финал)",
+        "similarity": 0.895,
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
         "canonical": "person/@gromykoss",
         "duplicate": "person/@Gromykoss",
         "similarity": 1.0,
+        "action": "merge_into_canonical_preserve_provenance"
+      },
+      {
+        "canonical": "person/@RobotsT500",
+        "duplicate": "person/@RobotsTJ500",
+        "similarity": 0.973,
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
@@ -42,7 +48,7 @@
   },
   "summary": {
     "stale_nodes": 0,
-    "duplicate_entities": 4,
+    "duplicate_entities": 5,
     "contradictions": 0,
     "confidence_decay": 0
   }

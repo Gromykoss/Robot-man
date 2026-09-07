@@ -11,8 +11,9 @@ Deterministic → BLOCK:
      means an RU working draft slipped through → block.
   2. Mentions: every @handle listed in CONTENT_BRIEF.md "Mentions" must appear
      in the final text → block if missing.
-  3. Media: if the brief names a concrete cover file (or "да"/"yes"), the cover
-     must be provided and (for a local path) exist → block if absent.
+  3. Media (03.09.2026 hard rule): @RobotsTJ500 original posts ALWAYS require a
+     cover. Brief "Изображение: нет/no" is the only opt-out. If the field is
+     missing/yes/path → cover_path must be provided; local paths must exist.
 
 Heuristic → WARN (never blocks):
   4. Hashtags: presence/count is quality guidance ("3-5 optional"), so absence
@@ -114,27 +115,43 @@ def _check_mentions(draft_text: str, fields: dict[str, str]) -> CheckResult | No
 def _check_media(
     fields: dict[str, str],
     cover_path: str | None,
+    account: str = EN_ONLY_ACCOUNT,
 ) -> CheckResult | None:
-    image_value = fields.get("Изображение", "")
+    """Cover gate.
+
+    03.09.2026: for @RobotsTJ500, cover is mandatory by default. Only an
+    explicit brief opt-out (Изображение = нет/no/none) skips the cover.
+    Missing brief field no longer means «cover optional».
+    """
+    image_value = (fields.get("Изображение", "") or "").strip()
+    lowered = image_value.lower()
+    is_rtj = _normalize_account(account) == EN_ONLY_ACCOUNT
+
+    # Explicit opt-out only.
+    if lowered in NO_MEDIA_VALUES and image_value != "":
+        return None
+
+    # Default for RTJ500 when field empty: cover required.
     if not image_value:
-        return None
+        if not is_rtj:
+            return None
+        if not cover_path:
+            return CheckResult(
+                Verdict.NOT_SATISFIED,
+                "cover required for @RobotsTJ500 (no brief opt-out; "
+                "pass image to post_with_log.sh)",
+            )
+        return _verify_cover_path(cover_path, label="caller cover")
 
-    lowered = image_value.strip().lower()
-    if lowered in NO_MEDIA_VALUES:
-        return None
-
-    # "да"/"yes" → a cover must be supplied by the caller.
+    # "да"/"yes" or named path/URL → cover must be supplied.
     if lowered in YES_MEDIA_VALUES:
         if not cover_path:
             return CheckResult(
                 Verdict.NOT_SATISFIED,
                 "brief requires a cover image but none was provided",
             )
-        return None
+        return _verify_cover_path(cover_path, label="caller cover")
 
-    # Otherwise the brief names a concrete file (or URL). For a local path the
-    # file must exist; a URL can't be verified on disk → fall through to the
-    # caller-provided cover check without blocking on existence.
     if not cover_path:
         return CheckResult(
             Verdict.NOT_SATISFIED,
@@ -144,18 +161,30 @@ def _check_media(
     if image_value.startswith(("http://", "https://")):
         return None
 
-    target = Path(image_value)
-    if not target.exists():
-        # Resolve relative to the robot-man project root, matching where
-        # post_with_log.sh looks for image files.
-        project_dir = Path(__file__).resolve().parents[1]
-        target = project_dir / image_value
-    if not target.exists():
-        return CheckResult(
-            Verdict.NOT_SATISFIED,
-            f"cover image not found: {image_value}",
-        )
-    return None
+    return _verify_cover_path(image_value, label=image_value, fallback=cover_path)
+
+
+def _verify_cover_path(
+    image_value: str,
+    label: str,
+    fallback: str | None = None,
+) -> CheckResult | None:
+    """Local path must exist (project-relative ok)."""
+    candidates = [Path(image_value)]
+    if fallback:
+        candidates.append(Path(fallback))
+    project_dir = Path(__file__).resolve().parents[1]
+    candidates.append(project_dir / image_value)
+    if fallback:
+        candidates.append(project_dir / fallback)
+
+    for target in candidates:
+        if target.exists() and target.is_file():
+            return None
+    return CheckResult(
+        Verdict.NOT_SATISFIED,
+        f"cover image not found: {label}",
+    )
 
 
 def check_checklist(
@@ -172,7 +201,7 @@ def check_checklist(
     for result in (
         _check_language(draft_text, account),
         _check_mentions(draft_text, fields),
-        _check_media(fields, cover_path),
+        _check_media(fields, cover_path, account),
     ):
         if result is not None and not result.passes:
             return result

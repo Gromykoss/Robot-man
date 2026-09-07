@@ -1,5 +1,24 @@
 # Lessons Learned — robot-man
 
+## Уроки
+
+### 2026-09-05: Хештеги ordinary post ≈ 0 / вред
+**Контекст:** Сергей: алгоритм читает смысл; For You = replies/quotes/reposts/dwell; 3+ = spam; ads bans tags since 2025.
+**Решение:** default 0 tags; VOICE/template/BRIEF/skills; doc research/x_hashtags_2026_sergey.md. Reach = hook + case + early replies.
+**Урок:** не клеить #BuildingInPublic #AIAgents в каждый финал.
+
+
+### 2026-09-05: Голос gromykoss = эталон VPN/Алихан (слова Сергея), не AI-template
+**Контекст:** драфты «клин/проблема/учебник» отклонены; финал — короткий контрастный рассказ + документы площадки (РД/ревизия/ОЖР).
+**Решение:** VOICE_PROFILE_GROMYKOSS v4 + cheatsheet v2; soft polish only если текст дал Сергей.
+**Урок:** решающий стиль — формулировки Сергея + канон 05.09; skills без его сцены → «ИИ 3 года назад».
+
+
+### 2026-09-03: Ревизия канона — правки Сергея не липли
+**Контекст:** RU-first / cover / Human Gate нарушались; голос «как реклама»; VOICE_PROFILE с 15.07 содержал ALL-CAPS announcement.
+**Решение:** rewrite VOICE_PROFILE; Delivery Package Gate; kill AUTONOMOUS MODE; cover hard-block в operator+post_with_log; anti-ad в MoA; skill sergey-edit-absorb.
+**Урок:** несколько skills ≠ один канон. Default voice файл должен обновляться после каждой принятой правки Сергея, иначе следующая сессия откатывается на старый тон.
+
 ## 2026-07-01: Image Generation Breakthrough
 
 ### #8: FLUX confirmed useless for text
