@@ -1653,3 +1653,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.09.2026 03:22** — data+docs: аналитика 01-06.09, voice/tactics доки, бэкапы кратких версий (`8a17b09`)
 - **07.09.2026 03:23** — content: драфты, обложки, research и скрипты пайплайна (`a214b32`)
 - **07.09.2026 03:25** — ops: watcher sudo-read, cover-gate hard rule, knowledge graph sync (`0d434a7`)
+- **07.09.2026 03:25** — journal: REHAB 2db1a068 (night content agent honest miss) (`8430654`)

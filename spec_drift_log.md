@@ -10,3 +10,4 @@
 | 2026-09-07T03:22 | drafts/, images/, scripts/, research/, briefings/ | драфты, обложки, research-дампы и скрипты контент-пайплайна (зачистка рабочего дерева) | data/secrets/, serga personal files |  |
 | 2026-09-07T03:25 | dialog_catmanyau_watch.py, docs/operator-layer-audit.md, knowledge_graph/, lessons.md, operators/, post_with_log.sh, published_posts.jsonl | операционка пайплайна: watcher sudo-read, cover-gate hard rule, graph sync, лог постов | data/secrets/, serga personal files |  |
 | REHAB | 2db1a068 | CONTENT_BRIEF 2026-09-07 committed without intent row: honest miss by night content agent, docs+data only, no spec-affecting mutation | - |  |
+| 2026-09-07T06:29 | drafts/openspec_part3_driftgate_v1_ru.md | Part 3 драфт (Spec Drift Gate) от стратега — RU-версия для ревью | контент-данные, код |  |
