@@ -1648,3 +1648,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Спека:** Spec Drift Gate v1.3.1 забутстрапнут в AGENTS.md + spec_drift_log.md (commit 1b9575d, 10:58 UTC).
 - **06.09.2026 22:46** — chrono: 2026-09-06 (`d762c5f`)
 - **06.09.2026 23:36** — CONTENT_BRIEF 2026-09-07: night of false alarms (self-shadowban diagnosis, 3 rejected signals, 1 real 402) - winner robot-man 39/42 over Alikhan SDG 36/42 (`2db1a06`)
+- **07.09.2026 03:22** — chore: gitignore data/secrets/ (`3a08f9b`)
