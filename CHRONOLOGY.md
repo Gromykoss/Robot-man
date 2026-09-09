@@ -1,4 +1,12 @@
 
+## 2026-09-09 — GWT-контур operators-gate: 6 сценариев, 30 unit-тестов, CI
+
+- **Что сделано:** тиражирован GWT-контур Фазы 0-4 для домена `operators-gate`: `openspec/specs/operators-gate.md`, `.ci/scenario_map.yaml`, `.ci/{check_scenario_map,lint_gwt_cards,run_affected}.py`, `.github/workflows/gwt.yml`, новый `pytest.ini`, `operators/tests/test_operators.py`.
+- **Покрытие:** verdict-contract, checklist-validation, account-normalize, pipeline-approval, topic-dedupe, loop-guard. Unit-only: без сети, без `xurl`, без subprocess; `operator_pipeline` helpers тестируются через tmp path, реальные `data/write_counter.json` / `data/approval.token` не тронуты.
+- **Проверено:** `pytest operators/tests/test_operators.py -q` → 30 passed (+6 subtests); `python3 .ci/lint_gwt_cards.py openspec/specs --tests operators/tests/test_operators.py` → OK.
+- **Contract index:** `PROJECT_MEMORY_GRAPH.md` обновлён: GWT-контур operators-gate: 6 сценариев, `.ci/+CI/карточка`.
+- **Публикаций:** 0; Human Gate и контент-доки не тронуты.
+
 ## 2026-09-05 — Сергей: бана нет; −82 твита gromykoss = ручная чистка; 402 credits
 
 - **Search-ban снят с учёта:** Сергей (инкогнито/Latest): бана нет. Nightly 04.09 «день ~52 / DO_NOT_AMPLIFY» — **отклонён**. Правка `TACTICS.md`: режим = обычный, не recovery. Канон 30.08 (8 чекеров: ban absent) восстановлен как актуальный.

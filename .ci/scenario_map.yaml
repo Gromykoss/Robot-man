@@ -1,0 +1,40 @@
+operators-gate.verdict_contract:
+  card: openspec/specs/operators-gate.md
+  test: operators/tests/test_operators.py::VerdictContractTests
+  code:
+    - operators/verdict.py
+operators-gate.checklist_validation:
+  card: openspec/specs/operators-gate.md
+  test: operators/tests/test_operators.py::ChecklistValidationTests
+  code:
+    - operators/verdict.py
+    - operators/operator_checklist.py
+operators-gate.account_normalize:
+  card: openspec/specs/operators-gate.md
+  test: operators/tests/test_operators.py::AccountNormalizeTests
+  code:
+    - operators/verdict.py
+    - operators/operator_account.py
+operators-gate.pipeline_approval:
+  card: openspec/specs/operators-gate.md
+  test: operators/tests/test_operators.py::PipelineApprovalTests
+  code:
+    - operators/verdict.py
+    - operators/operator_pipeline.py
+    - operators/operator_account.py
+    - operators/operator_approval.py
+    - operators/operator_checklist.py
+    - operators/operator_factcheck.py
+    - operators/operator_limits.py
+operators-gate.topic_dedupe:
+  card: openspec/specs/operators-gate.md
+  test: operators/tests/test_operators.py::TopicDedupeTests
+  code:
+    - operators/verdict.py
+    - operators/published_topic_check.py
+operators-gate.loop_guard:
+  card: openspec/specs/operators-gate.md
+  test: operators/tests/test_operators.py::LoopGuardTests
+  code:
+    - operators/verdict.py
+    - loop_guard.py

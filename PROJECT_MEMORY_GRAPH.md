@@ -29,6 +29,7 @@ Robot-man — исполнитель X/Twitter-контент-фабрики д�
 | voice | `VOICE_PROFILE.md`, `ENGINEERING_POST_TEMPLATE.md`, `VOICE_PROFILE_GROMYKOSS.md` | `data/voice_updates/`, `lessons.md` | рекламный тон, ALL-CAPS, hashtags |
 | strategy | `STRATEGY.md`, `CONTENT_STRATEGY.md`, `TACTICS*.md`, `STORY_ARC.md` | — | robot-man решает стратегию вместо Hermes |
 | x-infra | `AGENTS.md`, `post_with_log.sh`, `published_posts.jsonl`, `data/write_counter.json` | `operators/operator_limits.py`, `operators/operator_approval.py`, `scripts/offpipeline_watchdog.py`, `data/write_counter.json`, `data/engagement_log.jsonl` | прямой post, лимиты, credentials |
+| operators-gate | `openspec/specs/operators-gate.md`, `.ci/scenario_map.yaml`, `pytest.ini` | `operators/tests/test_operators.py`, `.ci/{check_scenario_map,lint_gwt_cards,run_affected}.py`, `.github/workflows/gwt.yml`, `operators/*.py`, `loop_guard.py` | GWT drift, непокрытые operator-регрессии, ложный обход Human Gate |
 | knowledge-graph | `CIRCULATION_GRAPH.md`, `knowledge_graph/graph.json` | `knowledge_graph/{query_tool,maintenance,schema}.py`, `scripts/knowledge_graph.py` | анализ без KG, drift edges |
 | analytics | `reports/`, `data/metrics/`, `scripts/analytics_loop.py` | `scripts/analytics_loop.py` | неверный baseline, stale metrics |
 | shadowban-recovery | `SHADOWBAN_RECOVERY.md`, `BUGS.md`, `CHRONOLOGY.md` | `scripts/offpipeline_watchdog.py` | шаблонные replies, off-pipeline writes |
@@ -39,6 +40,7 @@ Robot-man — исполнитель X/Twitter-контент-фабрики д�
 - **Новый пост / delivery package** → content-briefs + voice + knowledge-graph + x-infra.
 - **Правка голоса / правки Сергея** → voice + `sergey-edit-absorb` при необходимости.
 - **Публикация / reply / follow / API write** → x-infra + shadowban-recovery + лимиты из `AGENTS.md`.
+- **GWT-контур operators-gate** → 6 сценариев, `.ci/+CI/карточка`; читать `openspec/specs/operators-gate.md`, `.ci/scenario_map.yaml`, `operators/tests/test_operators.py`.
 - **Аналитика / nightly / охваты** → analytics + knowledge-graph + последние 3 записи `CHRONOLOGY.md`.
 - **Дубли тем / ручные посты @gromykoss** → content-briefs + `published_posts.jsonl` + `operators/published_topic_check.py`.
 - **Обложка / media** → voice + drafts/images по теме + joint MoA.
