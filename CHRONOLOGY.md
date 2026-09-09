@@ -1741,3 +1741,26 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - CHRONOLOGY дня уже покрыта записями от ночного/content-агентов (Part 3 пост 03:39 UTC, бриф 08.09, vault-connectivity драфт v1, антидубль Part 3, analytics). Новых событий с 10:05 UTC нет.
 - Contract index update: not needed.
 - 2026-09-08 chrono: commit — см. git log.
+- **09.09.2026 11:09** — GWT robot-man: домен operators-gate — 6 сценариев/30 тестов, CI, pytest.ini (`99f37b1`)
+- **08.09.2026 22:45** — chrono: 2026-09-08 (`eb1c714`)
+
+## 2026-09-09 10:3x UTC — Content Draft cron (robot-man)
+
+- Антидубль: тема брифа 09.09 (systemd unit-name typo → ложная авария, diagnose-first) — exit 0, тема свободна (проверены также формулировки «systemd unit name typo false alarm», «diagnose before conclusions» — exit 0).
+- Источники: CONTENT_BRIEF 09.09 (5 фактов) + gooolag/CHRONOLOGY.md записи 08.09 («Тихий день», урок проверки) и 16.08 (прецедент WEB_SERVICES). Все токены драфта сверены с брифом и CHRONOLOGY — расхождений нет.
+- Драфт: drafts/unit_name_typo_20260909_v1_ru.md (v1, RU, ~2000 знаков). Структура «1-2-3-4» по эталону webmcp v4; hashtags 0; first-person; запреты брифа соблюдены.
+- MoA / EN / обложка — после ok Сергея по смыслу RU. Публикация ЗАПРЕЩЕНА (Human Gate).
+- Contract index update: not needed.
+
+## 2026-09-09 — Nightly Analytics
+- **Metrics:** 7 постов анализировано, baseline: likes=1.2, replies=0.5, impressions=112.5
+- **👤 @RobotsTJ500:** 5 постов, 8❤️ 4💬 0🔄 2🔖 1407👁️
+- **👤 @gromykoss:** 2 постов, 0❤️ 0💬 0🔄 0🔖 377👁️
+- **Best:** 20954311 (5❤️ 4💬 0🔄)
+- **Worst:** 20968673 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20954311): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.7% (low)
+## 2026-09-09 22:45 UTC - Chrono Agent session
+- Live xurl: RobotsTJ500 399 followers (unchanged from 08.09), gromykoss 305.
+- Day covered by existing entries (draft unit_name_typo v1, Nightly Analytics, GWT operators-gate 99f37b1). Next: MoA/EN/cover after Sergey ok (Human Gate).
+- Contract index update: not needed.
