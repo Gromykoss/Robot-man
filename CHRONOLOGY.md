@@ -1764,3 +1764,18 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Live xurl: RobotsTJ500 399 followers (unchanged from 08.09), gromykoss 305.
 - Day covered by existing entries (draft unit_name_typo v1, Nightly Analytics, GWT operators-gate 99f37b1). Next: MoA/EN/cover after Sergey ok (Human Gate).
 - Contract index update: not needed.
+- **09.09.2026 22:47** — chrono: 2026-09-09 (`fca650d`)
+
+## 2026-09-10 — Nightly Analytics
+- **Metrics:** 6 постов анализировано, baseline: likes=1.1, replies=0.5, impressions=116.5
+- **👤 @RobotsTJ500:** 4 постов, 3❤️ 0💬 0🔄 1🔖 1126👁️
+- **👤 @gromykoss:** 2 постов, 0❤️ 0💬 0🔄 0🔖 384👁️
+- **Best:** 20961023 (2❤️ 0💬 0🔄)
+- **Worst:** 20968673 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20961023): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.2% (low)
+
+## 2026-09-10 22:4x UTC — Chrono Agent session
+- Live xurl: RobotsTJ500 396 followers (399→396, −3), gromykoss 305 (no live read — OAuth2 token absent, last known). Новых постов с 08.09 (Part 3, 2097167964977901829) нет.
+- Day covered by Nightly Analytics entry (6 постов, engagement 0.2% — падение с 0.7%). Драфт unit_name_typo v1 ждёт ok Сергея (Human Gate).
+- Contract index update: not needed.
