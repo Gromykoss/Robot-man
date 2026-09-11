@@ -1779,3 +1779,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Live xurl: RobotsTJ500 396 followers (399→396, −3), gromykoss 305 (no live read — OAuth2 token absent, last known). Новых постов с 08.09 (Part 3, 2097167964977901829) нет.
 - Day covered by Nightly Analytics entry (6 постов, engagement 0.2% — падение с 0.7%). Драфт unit_name_typo v1 ждёт ok Сергея (Human Gate).
 - Contract index update: not needed.
+- **10.09.2026 22:45** — chrono: 2026-09-10 (`3d03a44`)
+
+## 2026-09-11 — Nightly Analytics
+- **Metrics:** 6 постов анализировано, baseline: likes=1.1, replies=0.5, impressions=120.5
+- **👤 @RobotsTJ500:** 4 постов, 3❤️ 0💬 0🔄 1🔖 1155👁️
+- **👤 @gromykoss:** 2 постов, 0❤️ 0💬 0🔄 0🔖 393👁️
+- **Best:** 20961023 (2❤️ 0💬 0🔄)
+- **Worst:** 20968673 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20961023): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.2% (low)
+
+## 2026-09-11 — CHRONOLOGY Agent: дневной брифинг
+- **22:45 (UTC)** — Followers (xurl live): @RobotsTJ500 **396** (−2 к 398 от 03.09); @gromykoss **305** (−2 к 307 от 03.09).
+- **Публикаций сегодня: 0.** API writes не расходованы; последний пост в логе — 08.09 (Spec Drift Gate Part 3).
+- **Nightly Analytics (авто-запись):** 6 постов в окне, engagement rate 0.2% (low). Best: 20961023 (OpenSpec Part 1 longform, 689 imp / 2 likes / 1 bookmark); Worst: 20968673 (Emergence World, 293 imp / 0 engagement). Инструменты активной зоны не тронуты.
+- Contract index update: not needed.
