@@ -1796,3 +1796,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Nightly Analytics (авто-запись):** 6 постов в окне, engagement rate 0.2% (low). Best: 20961023 (OpenSpec Part 1 longform, 689 imp / 2 likes / 1 bookmark); Worst: 20968673 (Emergence World, 293 imp / 0 engagement). Инструменты активной зоны не тронуты.
 - Contract index update: not needed.
 - **11.09.2026 22:46** — chrono: 2026-09-11 (`672fdca`)
+- **12.09.2026 02:05** — docs: MGT-audit AGENTS.md 331→300 строк — дубли cron/чеклист ужаты, правила сохранены (`5944241`)
+
+## 2026-09-12 — Nightly Analytics
+- **Metrics:** 4 постов анализировано, baseline: likes=1.1, replies=0.4, impressions=120.7
+- **👤 @RobotsTJ500:** 3 постов, 1❤️ 0💬 0🔄 0🔖 485👁️
+- **👤 @gromykoss:** 1 постов, 0❤️ 0💬 0🔄 0🔖 58👁️
+- **Best:** 20965487 (1❤️ 0💬 0🔄)
+- **Worst:** 20968673 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (20965487): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 0.2% (low)
+
+## 2026-09-12 22:4x UTC — Chrono Agent session
+- Live xurl: RobotsTJ500 396 followers (unchanged vs 11.09), gromykoss 305 (unchanged).
+- Публикаций сегодня: 0; последний пост в логе — 08.09 (Part 3). Day covered by Nightly Analytics entry (4 поста, engagement 0.2% low).
+- Drafts в ожидании: openspec_part3_driftgate v5, emergence-world longform v3, unit_name_typo v1, gwt_gates v1 — все ждут ok Сергея (Human Gate).
+- Contract index update: not needed.
