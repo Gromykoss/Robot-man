@@ -76,22 +76,16 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + ENGINEERING_POST_TEMPLATE
   → sergey-edit-absorb (если были правки) → CHRONOLOGY
 ```
 
-1. Прочитать CONTENT_BRIEF.md (тема, факты, tone, запреты) + CONTENT_BRIEF_STANDARD.md
-2. Прочитать CHRONOLOGY.md указанного проекта (последние 3 дня)
-3. Прочитать AGENTS.md указанного проекта (контекст)
-4. Загрузить канон голоса: `VOICE_PROFILE.md` + `ENGINEERING_POST_TEMPLATE.md` + `post-quality-gate`
-5. Написать **RU-драфт** (`drafts/<topic>_vN_ru.md`) — EN-first запрещён
-6. Показать RU Сергею; после ok по смыслу — EN-финал + обложка (joint)
-7. MoA: deepseek-xai + viral-score + **anti-ad** (joint-moa-protocol); оба agree → дальше
-8. Факт-чек: каждая цифра/дата/имя с брифом. Нет в брифе → убрать
-9. **Delivery Package** в чат: RU (ссылка), EN полный текст, MEDIA:cover, MoA summary
-10. После явного «ок»/«пости» → токен + публикация:
+Схема выше = порядок шагов. Детали:
+1. Читаю CONTENT_BRIEF.md (+STANDARD), CHRONOLOGY/AGENTS проекта (3 дня), канон голоса (`VOICE_PROFILE.md` + `ENGINEERING_POST_TEMPLATE.md`).
+2. RU-драфт (`drafts/<topic>_vN_ru.md`) — EN-first запрещён → RU Сергею → ok → EN-финал + обложка.
+3. MoA: deepseek-xai + viral-score + **anti-ad**; факт-чек: нет в брифе → убрать.
+4. **Delivery Package**: RU (ссылка), EN текст, MEDIA:cover, MoA summary → «ок»/«пости» → токен + `post_with_log.sh`:
    ```bash
    echo "$(uuidgen)" > data/approval.token
    bash post_with_log.sh "EN text" /abs/path/cover.png
    ```
-   Токен одноразовый. Text-only без ALLOW_TEXT_ONLY=1 → BLOCK.
-11. Если Сергей правил текст/тон — `sergey-edit-absorb` до конца сессии.
+   Токен одноразовый. Text-only без ALLOW_TEXT_ONLY=1 → BLOCK. Правки Сергея → `sergey-edit-absorb`.
 
 ---
 
@@ -99,12 +93,9 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + ENGINEERING_POST_TEMPLATE
 
 Перед написанием поста читать CHRONOLOGY.md (последние 3 дня) + AGENTS.md указанного проекта.
 
-| Проект | Путь |
-|--------|------|
-| **GULAG** — тюремный мессенджер | `/home/hermes-workspace/gooolag/` |
-| **Alikhan** — стройка, WhatsApp-бот, 2700м | `/home/hermes-workspace/Alikhan-migration/` |
-| **RAB9** — крипто-проект | `/home/hermes-workspace/rab9/` |
-| **robot-man** — X-аккаунты, AI-агентность | `/home/hermes-workspace/robot-man/` |
+- **GULAG** (тюремный мессенджер) → `/home/hermes-workspace/gooolag/`
+- **Alikhan** (стройка, WhatsApp) → `/home/hermes-workspace/Alikhan-migration/`
+- **RAB9** (крипто) → `/home/hermes-workspace/rab9/`
 
 ---
 
@@ -150,11 +141,7 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + ENGINEERING_POST_TEMPLATE
 
 **Сервер:** VPS Hostinger 72.60.16.105 (общий хост Hermes), Ubuntu 24.04, 15 GB RAM
 
-**Сервисы (cron):**
-- Analytics Loop (ежедневно 15:00) — метрики @RobotsTJ500 и @gromykoss
-- X Tracker Fetch (ежедневно 12:00) — посты отслеживаемых аккаунтов
-- Content Draft (10:00 Вт-Чт) — черновик war-story
-- KG rebuild (каждые 6ч) — Knowledge Graph перестроение
+**Cron-сервисы:** см. таблицу «Cron-джобы» выше (Analytics Loop, X Tracker Fetch, Content Draft, KG rebuild).
 
 **Базы данных:**
 - Knowledge Graph: `knowledge_graph/graph.json` + `scripts/knowledge_graph.py`
@@ -174,8 +161,7 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 
 - **xurl CLI** — write-операции (post, reply, like, follow), OAuth 1.0a. Публикация только через `post_with_log.sh`.
 - **X MCP** — 24 read-tool X API через `xurl mcp` bridge (предпочитать `x_search`). Skill: `x-scraping-stack`.
-- **agent-reach + `twitter` CLI / xactions** — scraping (feed/search/followers). Бесплатные, для чтения.
-- **x-monitor** — ⛔ DEPRECATED. Не использовать.
+- **agent-reach + `twitter` CLI / xactions** — scraping (бесплатно, read-only). **x-monitor** — ⛔ DEPRECATED, не использовать.
 - **voice-matching / TTS** — генерация аудио.
 
 ---
@@ -253,16 +239,7 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 
 ## Pre-post чеклист (исполнитель)
 
-1. BRIEF: CONTENT_BRIEF.md (тема, факты, tone, запреты)
-2. КОНТЕКСТ: CHRONOLOGY.md + AGENTS.md указанного проекта
-3. ГРАФ: `query_knowledge_graph("Last 3 days for PROJECT")`
-4. WRITE: драфт в голосе (VOICE_PROFILE.md)
-5. MoA: `/moa deepseek-xai` + `/moa viral-score` — оба agree
-6. ФАКТ-ЧЕК: каждая цифра/дата/имя сверена с брифингом
-7. Изображение (loop если важно, `vision_analyze` 8-10/10)
-8. Показать Сергею (текст + картинка) → ждать «ок»
-9. `bash post_with_log.sh "текст" [image.png]` → ID в `published_posts.jsonl`
-10. 24h: analytics_loop → voice update
+BRIEF → КОНТЕКСТ (CHRONOLOGY+AGENTS проекта) → ГРАФ (`query_knowledge_graph`) → WRITE (VOICE_PROFILE) → MoA (`deepseek-xai` + `viral-score`, оба agree) → ФАКТ-ЧЕК (цифры/даты/имена ↔ бриф) → Изображение (loop если важно, 8-10/10) → Сергей «ок» → `post_with_log.sh` (ID в published_posts.jsonl) → 24h analytics_loop.
 
 ---
 
@@ -304,7 +281,6 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 | `published_posts.jsonl` | Лог опубликованных постов |
 | `skills/*/SKILL.md` | Specialist skills |
 
-
 ## SPEC DRIFT GATE (перед любой spec-affecting мутацией)
 Spec-affecting мутация = правка кода/данных/конфига/спеки узла. Отчёты/посты/сбор/чтение — мимо гейта.
 1. ДО мутации — append-строка в spec_drift_log.md (через flock, см. шаг журнала): время UTC, что меняю (ПУТИ файлов), зачем (инвариант/требование), что НЕ трогаю. Поле результата пустое.
@@ -315,16 +291,8 @@ Spec-affecting мутация = правка кода/данных/конфиг�
 
 Формат: | Время-UTC | что меняю (пути) | зачем | что НЕ трогаю | SHA/пусто |
 
-Пример строки с ОТКРЫТЫМ интентом (результат пуст — поле 6):
-| 2026-09-06T08:00 | gateway/run.py, cron/scheduler.py | fix suppress race | tests/, docs/ |  |
-
-Пример ЗАКРЫТОЙ строки (SHA дописан — поле 6):
-| 2026-09-06T08:00 | gateway/run.py | fix suppress race | tests/ | 708eac5790 |
-
-Разбор полей (строка начинается с |, поэтому awk -F'|': поле 1 пустое):
-  awk-поле 2 = Время · поле 3 = что меняю · поле 4 = зачем
-  поле 5 = что НЕ трогаю · поле 6 = SHA/пусто
-Запрещено в ячейках: символ `|` (заменять на `\|`), переносы строк.
+Пример: `| 2026-09-06T08:00 | gateway/run.py | fix suppress race | tests/ | 708eac5790 |` (открытый интент = поле 6 пустое; закрытый = SHA дописан).
+Разбор полей: awk -F'|' — поле 2 = Время, 3 = что меняю, 4 = зачем, 5 = что НЕ трогаю, 6 = SHA/пусто. Символ `|` в ячейках запрещён (заменять на `\|`), переносы строк запрещены.
 
 Запрещено: код без записи; «улучшать спеку молча»; записи задним числом; редактирование старых строк (только append).
 Meta-правило: правка AGENTS.md — тоже spec-affecting (кроме самой этой секции при bootstrap).

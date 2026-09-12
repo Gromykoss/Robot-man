@@ -1795,3 +1795,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Публикаций сегодня: 0.** API writes не расходованы; последний пост в логе — 08.09 (Spec Drift Gate Part 3).
 - **Nightly Analytics (авто-запись):** 6 постов в окне, engagement rate 0.2% (low). Best: 20961023 (OpenSpec Part 1 longform, 689 imp / 2 likes / 1 bookmark); Worst: 20968673 (Emergence World, 293 imp / 0 engagement). Инструменты активной зоны не тронуты.
 - Contract index update: not needed.
+- **11.09.2026 22:46** — chrono: 2026-09-11 (`672fdca`)
