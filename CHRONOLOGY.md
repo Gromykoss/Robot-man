@@ -1851,3 +1851,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Флот-доклад @Hermes в шину:** 22:53 UTC, event 0408166b… (VERIFIED delivered as robot-man) — пост + reply-разблокировка + chrono.
 - Contract index update: not needed (публикация + отчётность, домены/инварианты не менялись).
 - **14.09.2026 22:5x** — chrono: 2026-09-14
+- **14.09.2026 22:54** — chrono: 2026-09-14 (`12e04c1`)
