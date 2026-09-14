@@ -1828,3 +1828,26 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Публикаций сегодня: 0; последний пост в логе — 08.09 (Part 3, 2097167964977901829). Day covered by Nightly Analytics entry (2 поста, engagement 0.0% — ноль реакций).
 - Drafts в ожидании: openspec_part3_driftgate v5, emergence-world longform v3, unit_name_typo v1, gwt_gates v1 — все ждут ok Сергея (Human Gate).
 - Contract index update: not needed.
+- **13.09.2026 22:45** — chrono: 2026-09-13 (`bcf155d`)
+
+## 2026-09-14 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.1, replies=0.4, impressions=120.8
+- **👤 @RobotsTJ500:** 1 постов, 1❤️ 0💬 0🔄 0🔖 35👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 20971679 (1❤️ 0💬 0🔄)
+- **Worst:** 20971679 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (20971679): 1 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.9% (average)
+- **Contract index:** not needed (analytics run + reports only, no spec/domain changes)
+
+## 2026-09-14 — Harden AIF пост (первый за 6 дней) + 2 reply по новой ветке --reply
+
+- **Пост опубликован 12:43 UTC (@RobotsTJ500, post_with_log.sh + cover):** Harden AIF — security-слой для coding-агентов (каждый tool-call проверяется до исполнения) — id 2099479097193681228. Тема выбрана вручную по согласованию с Сергеем после отказа крон-тем; бриф переписан в CONTENT_BRIEF.md (статус APPROVED). Пайплайн: RU v1 (09:21) → ok → EN v2 (12:42) + cover v3 (09:39, 3 итерации). Approval Сергея: «пости» + «подтверждаю»; approval.token потреблён.
+- **2 reply по mentions — первые через новую ветку `post_with_log.sh --reply`** (добавлена в скрипт в рабочей копии до 14.09, после последнего коммита 0d434a7; reply без cover; guard-разрешение от Hermes): 13:14 UTC → Tanguyvbc (2099486839014826158, target 2099481687570694381); 14:51 UTC → SurgeOnHeff (2099511463396147409, target 2099488278487466167).
+- **Write-действия 14.09: 3** (1 пост + 2 reply, published_posts.jsonl). write_counter: date 2026-09-14, writes=2 — счётчик и лог расходятся, причина не установлена (для разбора).
+- **BUGS.md +1:** `analytics_loop.py` ACCOUNT_ID=1871454196295479296 указывает на @dataPort_agent, не на @RobotsTJ500 (реальный 1880157852632772608, проверено /2/users/by/username). Severity Medium, влияние на отчёты ограничено (метрики берутся из published_posts.jsonl); fix — через Codex после approval.
+- **Followers (22:50 UTC, xurl live):** @RobotsTJ500 **397** (following 232); @gromykoss **306** (1421 твита). Ночная тактика 05:02 UTC: shadowban-риск умеренный (~40%, 6 дней тишины), окно постинга 15–16 UTC — пост вышел в 12:43, до окна.
+- **Nightly Analytics 14.09:** в окне 1 пост (Part 3 от 08.09 — 35 imp / 1❤️), ER 2.9% (average).
+- **Флот-доклад @Hermes в шину:** 22:53 UTC, event 0408166b… (VERIFIED delivered as robot-man) — пост + reply-разблокировка + chrono.
+- Contract index update: not needed (публикация + отчётность, домены/инварианты не менялись).
+- **14.09.2026 22:5x** — chrono: 2026-09-14
