@@ -14,3 +14,4 @@
 | 2026-09-09T11:02 | operators/tests/test_operators.py, openspec/specs/operators-gate.md, .ci/scenario_map.yaml, .ci/check_scenario_map.py, .ci/lint_gwt_cards.py, .ci/run_affected.py, .github/workflows/gwt.yml, pytest.ini, PROJECT_MEMORY_GRAPH.md | GWT robot-man: домен operators-gate — 6 сценариев/30 тестов, CI, pytest.ini (новый) | код-контент AGENTS.md не тронут; CONTENT_BRIEF, STRATEGY, DRAFT_BANK не тронут; Human Gate не тронут | 99f37b1 |
 | 2026-09-12T02:04 | AGENTS.md | MGT-audit: ужать 331→≤300 строк, устранить дубли (cron-таблица, инструментарий), сохранить все правила | skills/, scripts/, data/ | 594424181d |
 | 2026-09-14T22:54 | briefings/2026-09-14.md | новый ежедневный брифинг chrono-агента (данные из CHRONOLOGY/live) | CHRONOLOGY.md уже закоммичен 12e04c1; код/спеки не тронуты | d77e1d2 |
+| 2026-09-15T22:47 | briefings/2026-09-15.md | daily briefing report (не спека, отчётный файл) | код, спеки, конфиги |  |
