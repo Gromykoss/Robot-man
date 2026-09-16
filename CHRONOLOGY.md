@@ -1868,3 +1868,13 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **16.09.2026 14:56** — 16.09 session close: chrome-agent post + canon + dossiers (`5ca1590`)
 - **16.09.2026 14:59** — chrono: 2026-09-16 (chrome-agent post + session close) (`b17f502`)
 - **16.09.2026 15:06** — chrono: 2026-09-16 + spec-drift intent (session close chrome-agent) (`20c2e67`)
+- **16.09.2026 15:06** — chrono: 2026-09-16 (chrome-agent post 2100148268093055247 + session close) (`47aac06`)
+
+## 2026-09-16 — Nightly Analytics
+
+- **Метод:** mcp__robotman__analytics/next_post отсутствуют в tool-catalog сессии; заменены twitter CLI (tweet/search/followers scraping) + локальные отчёты. xactions-скрейпер (x_get_tweets/x_get_profile) вернул null — мёртв сегодня, не полагаться.
+- **Метрики 22:20 UTC:** пост 16.09 chrome-agent 2100148268093055247 = 58 views / 13.5ч, 1 like, 1 входящий reply (@EternitiesAI), наш ответ через 70 мин. Пост 14.09 harden AIF 2099479097193681228 = 96 views, 1 like, **3 входящих reply** (@hardenrun, @pushpakpujari, @Tanguyvbc) — лучшая ветка недели. Baseline отчёта 14.09: avg imp 120.8.
+- **Shadowban-чек:** twitter search `from:RobotsTJ500` возвращает посты; curl обеих ссылок = 200; views 58/96 (не 5-8). Бана нет, режим обычный (канон 30.08, отклонение nightly 04.09 подтверждено).
+- **Тренды (twitter search):** топ "AI agents" = списки ресурсов с числами в хуке (180K–3.1M views: «42,600-star repo», «37-minute guide»).
+- **Очередь:** бриф 16.09 опубликован, новых драфтов нет; Content Draft cron след. запуск 17.09 10:00.
+- **Followers:** 397 (на 14.09, отчёт Analytics Loop); точный WoW-дельта сегодня не измерен (followers CLI не отдаёт счётчик, paid API 402).
