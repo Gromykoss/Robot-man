@@ -1864,3 +1864,7 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **15.09.2026 22:46** — chrono: 2026-09-15 (`1b7364c`)
 - **15.09.2026 22:47** — briefing: 2026-09-15 daily (`96f4a75`)
 - **15.09.2026 22:47** — drift-log: close intent 1b7364c (`a676bd3`)
+- **15.09.2026 22:49** — drift-log: attach sha to 09-15 intent (`5befef7`)
+- **16.09.2026 14:56** — 16.09 session close: chrome-agent post + canon + dossiers (`5ca1590`)
+- **16.09.2026 14:59** — chrono: 2026-09-16 (chrome-agent post + session close) (`b17f502`)
+- **16.09.2026 15:06** — chrono: 2026-09-16 + spec-drift intent (session close chrome-agent) (`20c2e67`)
