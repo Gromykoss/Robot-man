@@ -1878,3 +1878,23 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Тренды (twitter search):** топ "AI agents" = списки ресурсов с числами в хуке (180K–3.1M views: «42,600-star repo», «37-minute guide»).
 - **Очередь:** бриф 16.09 опубликован, новых драфтов нет; Content Draft cron след. запуск 17.09 10:00.
 - **Followers:** 397 (на 14.09, отчёт Analytics Loop); точный WoW-дельта сегодня не измерен (followers CLI не отдаёт счётчик, paid API 402).
+- **16.09.2026 22:45** — chrono: 2026-09-16 (`ceb13ee`)
+
+## 2026-09-17 — Nightly Analytics
+- **Metrics:** 6 постов анализировано, baseline: likes=1.1, replies=0.5, impressions=119.8
+- **👤 @RobotsTJ500:** 6 постов, 8❤️ 10💬 0🔄 0🔖 504👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 21005647 (2❤️ 5💬 0🔄)
+- **Worst:** 20995114 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21005647): 2 likes, 5 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.6% (average)
+
+## 2026-09-17 - Chrono Agent session (22:4x UTC)
+
+- Publikacii 17.09: 1 post + 8 reply (9 zapisej v published_posts.jsonl); write_counter date=2026-09-17, writes=1 - s[c]hetchik snova otstaet ot loga (3x), pattern raskhozhdeniya kak v 14.09.
+- Post 2100564709170729308 (12:37 UTC) - luchshij po Nightly Analytics (2 likes, 5 replies). 8 reply 22:38-22:41 UTC v vetku posta: AgentRandom_, ChristianXCesar, mitansh_j07, kidtsang + 4 bez users-v-poljah.
+- Followers (22:45 UTC, xurl live /2/users/by/username): RobotsTJ500 397 / following 236; gromykoss 305 / following 367. Protiv 15.09: RTJ bez izmenenij, gromykoss -1.
+- Nightly Analytics 17.09: 6 postov, 8 likes / 10 replies / 504 impressions, ER 3.6%; worst - reply 20995114.
+- Drafts v ozhidanii (Human Gate): openspec_part3_driftgate v5, emergence-world longform v3, unit_name_typo v1, gwt_gates v1.
+- Contract index update: not needed (otchetnaya sessiya, domeny/invarianty ne menyalis).
+- **17.09.2026 22:47** - chrono: 2026-09-17
