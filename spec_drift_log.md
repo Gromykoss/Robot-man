@@ -15,3 +15,7 @@
 | 2026-09-12T02:04 | AGENTS.md | MGT-audit: ужать 331→≤300 строк, устранить дубли (cron-таблица, инструментарий), сохранить все правила | skills/, scripts/, data/ | 594424181d |
 | 2026-09-14T22:54 | briefings/2026-09-14.md | новый ежедневный брифинг chrono-агента (данные из CHRONOLOGY/live) | CHRONOLOGY.md уже закоммичен 12e04c1; код/спеки не тронуты | d77e1d2 |
 | 2026-09-15T22:47 | briefings/2026-09-15.md | daily briefing report (не спека, отчётный файл) | код, спеки, конфиги | 96f4a75 |
+| 2026-09-16T14:55 | CHRONOLOGY.md, CONTENT_BRIEF.md, post_with_log.sh, drafts/, research/, published_posts.jsonl | chrome-agent service review post + Service Review canon + interaction dossiers + reply-branch fix | spec-файлы, код гейтов, Human Gate не тронуты |  |
+| 2026-09-16T15:10 | repo-wide: CHRONOLOGY, CONTENT_BRIEF, post_with_log.sh, drafts/, research/, covers/, briefings/, reports/, data/, TACTICS, AGENTS.md.compressed, .specdrift-intent | 16.09 session close: chrome-agent post + Service Review canon + interaction dossiers + reply-branch + accumulated session artifacts | spec-файлы openspec/ и код гейтов не тронуты |  |
+| 2026-09-16T14:50 | . | 16.09 session close: chrome-agent post, Service Review canon, interaction dossiers, reply-branch fix, накопленные артефакты сессии | openspec/ spec-файлы и код гейтов не тронуты |  |
+| 2026-09-17T22:48 | briefings/2026-09-17.md | daily briefing artifact (no spec/domain change) | spec-файлы и код гейтов не тронуты |  |

@@ -1898,3 +1898,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Drafts v ozhidanii (Human Gate): openspec_part3_driftgate v5, emergence-world longform v3, unit_name_typo v1, gwt_gates v1.
 - Contract index update: not needed (otchetnaya sessiya, domeny/invarianty ne menyalis).
 - **17.09.2026 22:47** - chrono: 2026-09-17
+- **17.09.2026 22:46** — chrono: 2026-09-17 (`b0f20e1`)
