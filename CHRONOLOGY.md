@@ -1928,3 +1928,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **18.09.2026 22:50** — drift: reopen intent (`7b73105`)
 - **18.09.2026 22:50** — ci: actually add CONTENT_BRIEF.md to whitelist (`62c21aa`)
 - **18.09.2026 22:51** — drift: close intent (SHA 62c21aa475) (`ec07254`)
+- **18.09.2026 22:52** — ci: commit CONTENT_BRIEF.md whitelist line (`b5747c5`)
