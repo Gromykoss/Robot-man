@@ -23,3 +23,4 @@
 | 2026-09-18T22:48 | briefings/2026-09-18.md | chrono-agent daily briefing (report artifact, no spec change) | CHRONOLOGY.md covered by whitelist, code and specs untouched | 0ebe157333 |
 | 2026-09-18T22:49 | CONTENT_BRIEF.md | reply 2101027259662373274 без обложки: временно Изображение=нет, затем восстановить | drafts/, operators/, CHRONOLOGY.md | 078a9ed7a0 |
 | 2026-09-18T22:50 | .ci/check_scenario_map.py | add CONTENT_BRIEF.md to WHITELIST: workflow doc blocked push of 4 commits (b225240..673985c), same class as CHRONOLOGY.md | specs, tests, drafts | 5bea22ebec |
+| 2026-09-18T22:50 | .ci/check_scenario_map.py | actual whitelist patch (prior intent 5bea22e committed log lines only, mutation missed) | specs, tests, drafts | |
