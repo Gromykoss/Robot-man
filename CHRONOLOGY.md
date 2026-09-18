@@ -1921,3 +1921,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Contract index update: not needed** (домены/инварианты не менялись).
 - **18.09.2026 22:48** — briefing: 2026-09-18 daily (`0ebe157`)
 - **18.09.2026 22:49** — drift: close intent (SHA 0ebe157333) (`673985c`)
+- **18.09.2026 22:50** — brief: restore cover line after reply drift intent (`078a9ed`)

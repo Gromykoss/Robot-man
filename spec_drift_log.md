@@ -21,4 +21,4 @@
 | 2026-09-17T22:48 | briefings/2026-09-17.md | daily briefing artifact (no spec/domain change) | spec-файлы и код гейтов не тронуты |  |
 | 2026-09-18T13:22 | CONTENT_BRIEF.md | reply 2100791589144555715 без обложки: временно Изображение=нет, затем строка восстановлена | drafts/, operators/, CHRONOLOGY.md | b22524095d |
 | 2026-09-18T22:48 | briefings/2026-09-18.md | chrono-agent daily briefing (report artifact, no spec change) | CHRONOLOGY.md covered by whitelist, code and specs untouched | 0ebe157333 |
-| 2026-09-18T22:49 | CONTENT_BRIEF.md | reply 2101027259662373274 без обложки: временно Изображение=нет, затем восстановить | drafts/, operators/, CHRONOLOGY.md | |
+| 2026-09-18T22:49 | CONTENT_BRIEF.md | reply 2101027259662373274 без обложки: временно Изображение=нет, затем восстановить | drafts/, operators/, CHRONOLOGY.md | 078a9ed7a0 |
