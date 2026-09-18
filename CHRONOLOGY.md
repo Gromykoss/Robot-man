@@ -1920,3 +1920,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Uncommitted изменения в репо на момент сессии:** BUGS.md, TACTICS*.md, post_with_log.sh, knowledge_graph/* — не мои, не трогал, коммичу только CHRONOLOGY.md.
 - **Contract index update: not needed** (домены/инварианты не менялись).
 - **18.09.2026 22:48** — briefing: 2026-09-18 daily (`0ebe157`)
+- **18.09.2026 22:49** — drift: close intent (SHA 0ebe157333) (`673985c`)
