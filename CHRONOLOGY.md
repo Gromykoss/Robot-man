@@ -1901,3 +1901,21 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **17.09.2026 22:46** — chrono: 2026-09-17 (`b0f20e1`)
 - **17.09.2026 22:47** — briefing: 2026-09-17 daily (`5142bd2`)
 - **18.09.2026 13:24** — brief: restore cover line after reply-only drift intent (`b225240`)
+- **18.09.2026 13:24** — drift: close intent (SHA b22524095d) (`b55dddf`)
+
+## 2026-09-18 — Nightly Analytics
+- **Metrics:** 12 постов анализировано, baseline: likes=1.1, replies=0.5, impressions=116.8
+- **👤 @RobotsTJ500:** 12 постов, 10❤️ 13💬 0🔄 1🔖 716👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 21005647 (4❤️ 7💬 0🔄)
+- **Worst:** 21007161 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (21005647): 4 likes, 7 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.2% (average)
+
+## 2026-09-18 — Chrono Agent session (день)
+
+- **Публикаций 18.09:** 2 реплая (published_posts.jsonl: 2100771093673836865 → Nitikshofficial 02:17 UTC; 2100938546802516322 → target 2100791589144555715 13:22 UTC). Своих постов 0.
+- **write_counter:** date=2026-09-18, writes=1 — снова отстаёт от лога (2 записи в логе против 1 в счётчике), паттерн расхождения как 14.09/17.09. Не чинил (не зона chrono).
+- **Followers (live, xurl):** @RobotsTJ500 **398** (без изменений к 03.09); @gromykoss **305** (−2 к 307 от 03.09).
+- **Uncommitted изменения в репо на момент сессии:** BUGS.md, TACTICS*.md, post_with_log.sh, knowledge_graph/* — не мои, не трогал, коммичу только CHRONOLOGY.md.
+- **Contract index update: not needed** (домены/инварианты не менялись).

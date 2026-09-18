@@ -20,3 +20,4 @@
 | 2026-09-16T14:50 | . | 16.09 session close: chrome-agent post, Service Review canon, interaction dossiers, reply-branch fix, накопленные артефакты сессии | openspec/ spec-файлы и код гейтов не тронуты |  |
 | 2026-09-17T22:48 | briefings/2026-09-17.md | daily briefing artifact (no spec/domain change) | spec-файлы и код гейтов не тронуты |  |
 | 2026-09-18T13:22 | CONTENT_BRIEF.md | reply 2100791589144555715 без обложки: временно Изображение=нет, затем строка восстановлена | drafts/, operators/, CHRONOLOGY.md | b22524095d |
+| 2026-09-18T22:48 | briefings/2026-09-18.md | chrono-agent daily briefing (report artifact, no spec change) | CHRONOLOGY.md covered by whitelist, code and specs untouched | |
