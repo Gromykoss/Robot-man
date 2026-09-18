@@ -1925,3 +1925,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **18.09.2026 22:50** — drift: close intent (`3a9571d`)
 - **18.09.2026 22:50** — ci: whitelist CONTENT_BRIEF.md in scenario-map coverage gate (`5bea22e`)
 - **18.09.2026 22:50** — drift: close intent (SHA 5bea22ebec) (`6c72f1c`)
+- **18.09.2026 22:50** — drift: reopen intent (`7b73105`)
