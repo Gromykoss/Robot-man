@@ -1900,3 +1900,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **17.09.2026 22:47** - chrono: 2026-09-17
 - **17.09.2026 22:46** — chrono: 2026-09-17 (`b0f20e1`)
 - **17.09.2026 22:47** — briefing: 2026-09-17 daily (`5142bd2`)
+- **18.09.2026 13:24** — brief: restore cover line after reply-only drift intent (`b225240`)
