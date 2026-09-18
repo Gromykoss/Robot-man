@@ -19,3 +19,4 @@
 | 2026-09-16T15:10 | repo-wide: CHRONOLOGY, CONTENT_BRIEF, post_with_log.sh, drafts/, research/, covers/, briefings/, reports/, data/, TACTICS, AGENTS.md.compressed, .specdrift-intent | 16.09 session close: chrome-agent post + Service Review canon + interaction dossiers + reply-branch + accumulated session artifacts | spec-файлы openspec/ и код гейтов не тронуты |  |
 | 2026-09-16T14:50 | . | 16.09 session close: chrome-agent post, Service Review canon, interaction dossiers, reply-branch fix, накопленные артефакты сессии | openspec/ spec-файлы и код гейтов не тронуты |  |
 | 2026-09-17T22:48 | briefings/2026-09-17.md | daily briefing artifact (no spec/domain change) | spec-файлы и код гейтов не тронуты |  |
+| 2026-09-18T13:22 | CONTENT_BRIEF.md | reply 2100791589144555715 без обложки: временно Изображение=нет, затем строка восстановлена | drafts/, operators/, CHRONOLOGY.md | |
