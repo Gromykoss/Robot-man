@@ -1933,3 +1933,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **18.09.2026 22:52** — chrono: append commit log line (`4cf6f69`)
 - **18.09.2026 23:22** — brief: restore cover line after thread-close drift intent (`7ab5e63`)
 - **18.09.2026 23:22** — drift: close intent (`13552f8`)
+- **19.09.2026 16:37** — brief rewritten to security-audit topic (post 2101349593824764232) (`492d79b`)

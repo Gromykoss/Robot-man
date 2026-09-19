@@ -26,4 +26,4 @@
 | 2026-09-18T22:50 | .ci/check_scenario_map.py | actual whitelist patch (prior intent 5bea22e committed log lines only, mutation missed) | specs, tests, drafts | 62c21aa475 |
 | 2026-09-18T22:52 | .ci/check_scenario_map.py | whitelist patch landed only in worktree, commit 62c21aa missed it; re-commit .py | nothing else | b5747c5b0c |
 | 2026-09-18T23:22 | CONTENT_BRIEF.md | thread-closing reply 2101087193347272745 без обложки: временно Изображение=нет, затем восстановить | drafts/, operators/, CHRONOLOGY.md | 7ab5e6369a |
-| 2026-09-19T16:35 | CONTENT_BRIEF.md | перезапись брифа под тему security-audit (владелец: пост ведёт robot-man без отдельного брифа; фактчек требует числовой allowlist) | drafts/, operators/, CHRONOLOGY.md | |
+| 2026-09-19T16:35 | CONTENT_BRIEF.md | перезапись брифа под тему security-audit (владелец: пост ведёт robot-man без отдельного брифа; фактчек требует числовой allowlist) | drafts/, operators/, CHRONOLOGY.md | 492d79bd79 |
