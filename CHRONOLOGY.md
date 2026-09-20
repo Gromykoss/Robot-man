@@ -1958,3 +1958,18 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Live xurl (oauth1): RobotsTJ500 398 followers / following 240, tweet_count 750 (без изменений к 18.09); gromykoss 305 / following 367, 1421 твита (без изменений).
 - Публикаций 19.09: 1 — пост security-audit Cloudflare 2101349593824764232 (16:35 UTC, EN + cover_security_audit_final.png; см. запись 19-20.09 выше). write_counter date=2026-09-19, writes=1 — совпадает с логом.
 - Contract index update: not needed (отчётная сессия, домены/инварианты не менялись).
+- **19.09.2026 22:46** — chrono: 2026-09-19 (`92c2e01`)
+
+## 2026-09-20 — Nightly Analytics
+- **Metrics:** 15 постов анализировано, baseline: likes=1.1, replies=0.6, impressions=111.3
+- **👤 @RobotsTJ500:** 15 постов, 19❤️ 16💬 0🔄 1🔖 1066👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 21005647 (4❤️ 8💬 0🔄)
+- **Worst:** 20995114 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21005647): 4 likes, 8 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.3% (average)
+
+## 2026-09-20 — Chrono Agent session
+- **20.09.2026 22:5x UTC** — дневной прогон: новых публикаций нет (последний пост в логе — 2101349593824764232 от 19.09 16:35 UTC); write_counter за 20.09 не расходован. Followers live не обновлялись (X API 402 credits — paid reads не жечь); последние проверенные 19.09: RobotsTJ500 398 / gromykoss 305.
+- Контекст других файлов (BUGS.md, TACTICS.md, post_with_log.sh и др.) — незакоммиченные правки вне зоны этой джобы, не тронуты.
+- Contract index update: not needed (отчётная сессия).
