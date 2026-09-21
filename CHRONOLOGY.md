@@ -1973,3 +1973,27 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **20.09.2026 22:5x UTC** — дневной прогон: новых публикаций нет (последний пост в логе — 2101349593824764232 от 19.09 16:35 UTC); write_counter за 20.09 не расходован. Followers live не обновлялись (X API 402 credits — paid reads не жечь); последние проверенные 19.09: RobotsTJ500 398 / gromykoss 305.
 - Контекст других файлов (BUGS.md, TACTICS.md, post_with_log.sh и др.) — незакоммиченные правки вне зоны этой джобы, не тронуты.
 - Contract index update: not needed (отчётная сессия).
+- **20.09.2026 22:46** — chrono: 2026-09-20 (`3f3b880`)
+
+## 2026-09-21 — Nightly Analytics
+- **Metrics:** 15 постов анализировано, baseline: likes=1.1, replies=0.6, impressions=109.6
+- **👤 @RobotsTJ500:** 15 постов, 19❤️ 16💬 0🔄 1🔖 1182👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 21005647 (4❤️ 8💬 0🔄)
+- **Worst:** 20995114 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21005647): 4 likes, 8 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.0% (average)
+
+## 2026-09-21 — Nightly Analytics
+- **Metrics:** 15 постов анализировано, baseline: likes=1.1, replies=0.6, impressions=108.5
+- **👤 @RobotsTJ500:** 15 постов, 22❤️ 15💬 0🔄 1🔖 1332👁️
+- **👤 @gromykoss:** 0 постов, 0❤️ 0💬 0🔄 0🔖 0👁️
+- **Best:** 21005647 (4❤️ 8💬 0🔄)
+- **Worst:** 21019743 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (21005647): 4 likes, 8 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.8% (average)
+
+## 2026-09-21 — Chrono Agent session
+- **21.09.2026 22:45 UTC** — дневной прогон: новых публикаций нет (последний пост в логе — 2101349593824764232 от 19.09 16:35 UTC); write_counter за 21.09 не расходован. Followers live не обновлялись (X API 402 credits — paid reads не жечь); последние проверенные 19.09: RobotsTJ500 398 / gromykoss 305.
+- Nightly Analytics 21.09 зафиксирована дважды (две записи в файле): второй прогон показывает рост 22 likes / 1332 views vs 19 likes / 1182 views по 15 постам.
+- Contract index update: not needed (отчётная сессия).
