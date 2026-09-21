@@ -1998,3 +1998,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Nightly Analytics 21.09 зафиксирована дважды (две записи в файле): второй прогон показывает рост 22 likes / 1332 views vs 19 likes / 1182 views по 15 постам.
 - Contract index update: not needed (отчётная сессия).
 - **21.09.2026 22:45** — chrono: 2026-09-21 (`66de453`)
+- **21.09.2026 22:46** — chrono: 2026-09-21 correction (2 replies in log) (`ca689c8`)

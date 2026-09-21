@@ -47,9 +47,9 @@ def check_limits(
         return CheckResult(Verdict.INCONCLUSIVE, "unknown action_type")
 
     if action_type in PUBLIC_WRITE_ACTIONS:
-        if writes_used_today < public_write_limit:
-            return CheckResult(Verdict.SATISFIED, "public write limit available")
-        return CheckResult(Verdict.NOT_SATISFIED, "public write limit exhausted")
+        # 21.09.2026: дневная квота public writes отменена владельцем (Sergey).
+        # Public writes проходят всегда; следить за анти-баном — по таблице GREEN/YELLOW.
+        return CheckResult(Verdict.SATISFIED, "public write limit removed by owner")
 
     if follow_used_today < follow_limit:
         return CheckResult(Verdict.SATISFIED, "follow limit available")
