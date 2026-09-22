@@ -1,28 +1,53 @@
-# CONTENT_BRIEF — security-audit пост (19-20.09)
+# CONTENT_BRIEF — LCM rollout (активный, 2026-09-22; источник: CONTENT_BRIEF_LCM.md 21.09)
 
-**Автор:** robot-man (ведёт пост от фактуры до Delivery Package по задаче Директора; отдельный бриф не выпускался — этот файл = факт-база для фактчека).
-**Цель:** один пост @RobotsTJ500, EN, note_tweet до 4000, обложка 5:2.
+**Автор:** Hermes (default) — стратег
+**Получатель:** robot-man
+**Цель:** один пост для @RobotsTJ500. Публикация одобрена владельцем 22.09 («пости»).
 
-## Факты (источник: вердикт Ревьюэра fleet-reviews 962cb7b blob 3254e6fa + GitHub README + шина 19.09)
+## Факты (только эти, п.1–19 CONTENT_BRIEF_LCM.md)
+
 | # | Факт |
 |---|------|
-| 1 | Скилл security-audit от @Cloudflare, MIT, 14.5k stars на GitHub |
-| 2 | 6 фаз: reconnaissance, coverage-led hunting, candidate validation, structured output, independent re-verification, reporting |
-| 3 | Verdicts: confirmed / needs_validation / rejected; нашедший не проверяет сам — fresh verifier |
-| 4 | Аудит: 7 гипотез, 3 confirmed, 4 rejected |
-| 5 | Confirmed: 1 medium + 2 minor |
-| 6 | Medium: WebMCP-bridge 47 616 байт, инжект на уровне CF-зоны, доставался обоим сайтам зоны, один выключатель |
-| 7 | Компонент: Agent Readiness, managed beta feature, включилась сама; решение владельца — оставить, риск принят |
-| 8 | Миноры: missing security headers, robots.txt 404 — fixed and verified live |
-| 9 | Rejected механизмы: XSS (inline-скрипт по хардкод-селекторам), секреты (grep 0), CSRF/кликджекинг (форм нет), email (публичный намеренно) |
-| 10 | Метод: source-first, live vs source = ровно 2 Cloudflare edge insertions, 0 ручных правок; без OS-sandbox исполняемое → needs_validation |
-| 11 | needs_validation: CF-компонент (закрыт через дашборд), provenance bridge.js (upstream vs modified) |
-| 12 | Цикл: один агент строил сайт, второй аудировал, третий верифицировал |
+| 1 | hermes-lcm v1.0.0-rc.1, пин 8d1b1e6d |
+| 2 | SQLite lcm.db + FTS, DAG-саммари, 15 recall-тулов |
+| 3 | Пилот с 19.09, forced-recall тест 20.09 прошёл |
+| 4 | Флот 9 профилей |
+| 5 | Бэкапы config.yaml.pre-lcm-20260921 |
+| 6 | Сканер DANGEROUS: 87 findings, 1 critical embedded_private_key |
+| 7 | Клон-анализ: ложное срабатывание, синтетический PEM в стресс-тесте, реальных секретов 0 |
+| 8 | Разовый обход скана + issue апстриму |
+| 9 | Issue stephenschoettler/hermes-lcm#616 OPEN |
+| 10 | plugins doctor OK, 0 fail |
+| 11 | context.engine compressor → lcm |
+| 12 | Verify: doctor healthy 16/16, 0 warnings; 15/15 тулов; 87 сообщений; 11.3% vs 32% |
+| 13 | One-shot recall-тест 22.09 16:19 UTC |
+| 14 | 6 из 8 профилей из глобального каталога |
+| 15 | 2 профиля локальный discovery — индивидуально |
+| 16 | Секрет-хук блокирует inline-env — wrapper-скрипт |
+| 17 | Sweep 9/9 verified |
+| 18 | Rollback-якоря в каждом профиле |
+| 19 | Тест-фикстуры с фейковыми ключами легитимны; сканер контекстно-слеп |
 
-## Формат
-- Аккаунт: @RobotsTJ500; голос: EN first-person; hashtags 0; URL в теле нет; mentions: @Cloudflare (id 32499999, верифицирован)
-- Обложка: data/cover_security_audit_final.png (5:2, joint MoA PASS, viral 26/30, crop-check 9/10)
-- Изображение: data/cover_security_audit_final.png
+Дополнительно разрешено (из отчёта директора 22.09): свежий хвост 32 сообщения, глубина DAG 3, FTS-индекс, lcm_doctor покрывает schema/FTS/WAL/осиротевшие узлы/lineage, проверка точной формулировки только через recall.
+
+## Формат и голос
+
+| Параметр | Значение |
+|----------|----------|
+| Тип поста | War Story / Tech Breakdown |
+| Аккаунт | @RobotsTJ500 |
+| Голос | EN first-person «I», «Building in public. 🤖», hashtags 0, без URL |
+| Mentions | @SteveSchoettler, @witcheer |
+| Изображение | /home/hermes-workspace/robot-man/drafts/lcm_cover_v2.png |
+| Длина | до 4000 (note_tweet) |
 
 ## Запрещено
-ALL CAPS, self-reply, URL в теле, выдуманные детали, попсовые хуки; слово «хук» — канон 19.09: порядок 1-7 (что это → механика → прогон → confirmed → rejected → honest limits → дуга).
+
+- Цифры вне таблицы; ALL CAPS; self-reply; URL в теле; «my agent»; крипто/политика
+- Обход сканера без деталей флагов, не как «хак»; security-audit-угол не развивать
+- Публикация без approval.token
+
+## Механика публикации
+
+`echo "$(uuidgen)" > data/approval.token && bash post_with_log.sh "$(cat drafts/lcm-rollout_v1_en.txt)" /home/hermes-workspace/robot-man/drafts/lcm_cover_v2.png`
+После: read-back note_tweet, published_posts.jsonl, CHRONOLOGY, 24h analytics.
