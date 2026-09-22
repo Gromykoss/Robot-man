@@ -69,7 +69,7 @@
 ### Процесс: от брифа до публикации
 
 ```
-BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + ENGINEERING_POST_TEMPLATE
+BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_POST_TEMPLATE
   → RU-драфт → (правки Сергея) → EN-финал + обложка
   → Joint MoA (текст+cover, + anti-ad) → Delivery Package Сергею
   → «ок/пости» → approval.token → post_with_log.sh EN + cover
@@ -77,7 +77,7 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + ENGINEERING_POST_TEMPLATE
 ```
 
 Схема выше = порядок шагов. Детали:
-1. Читаю CONTENT_BRIEF.md (+STANDARD), CHRONOLOGY/AGENTS проекта (3 дня), канон голоса (`VOICE_PROFILE.md` + `ENGINEERING_POST_TEMPLATE.md`).
+1. Читаю CONTENT_BRIEF.md (+STANDARD), CHRONOLOGY/AGENTS проекта (3 дня), канон голоса (`VOICE_PROFILE.md` + `VOICE_LESSONS.md` + `ENGINEERING_POST_TEMPLATE.md`). VOICE_LESSONS.md — накопленные правки Сергея и метрики; читать перед драфтом каждый раз.
 2. RU-драфт (`drafts/<topic>_vN_ru.md`) — EN-first запрещён → RU Сергею → ok → EN-финал + обложка.
 3. MoA: deepseek-xai + viral-score + **anti-ad**; факт-чек: нет в брифе → убрать.
 4. **Delivery Package**: RU (ссылка), EN текст, MEDIA:cover, MoA summary → «ок»/«пости» → токен + `post_with_log.sh`:
