@@ -2008,3 +2008,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **22.09.2026 02:07** — LCM post v4 functional-first published 2102217898315919565 (`bd3c8b4`)
 - **22.09.2026 02:07** — drift: close v4 intent SHA (`80df343`)
 - **22.09.2026 02:25 UTC** — фаза 2 петли Jev (approval владельца): cron-джобы в контуре robot-man — jev-learner `92f23779bd70` (daily 09:30 UTC, обновляет VOICE_LESSONS.md парами правок, resume-safe) и jev-analyzer `2a7b273874df` (Sun 12:00 UTC, свежий 7-дневный корпус + скоринг + отчёт). Обе no-agent (0 токенов LLM), deliver local, silent-by-default. Новый `scripts/jev_corpus_collector.py` (Codex Maker): 10 запросов recent search, dedupe, локальный виральный фильтр (min_faves недоступен на тарифе), smoke верифицирован (raw=100/viral=2). Wrappers: `.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`. Contract index update: not needed.
+- **22.09.2026 02:18** — phase 2: jev cron jobs (learner daily 09:30, analyzer weekly Sun 12:00) + corpus collector (`4df9af1`)
+- **22.09.2026 04:28** — drift: open reply intent (`2a65a76`)
