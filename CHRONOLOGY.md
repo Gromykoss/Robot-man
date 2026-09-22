@@ -2011,3 +2011,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **22.09.2026 02:18** — phase 2: jev cron jobs (learner daily 09:30, analyzer weekly Sun 12:00) + corpus collector (`4df9af1`)
 - **22.09.2026 04:28** — drift: open reply intent (`2a65a76`)
 - **22.09.2026 04:28** — reply with repo link 2102252828597063780 (`027f2ed`)
+- **22.09.2026 04:29** — drift: close reply intent SHA (`e535cdb`)
+- **22.09.2026 07:07** — gromykoss out: metrics+strategy (owner directive 22.09) (`8203127`)
+- **22.09.2026 07:12** — gwt: whitelist meta outputs and cron tooling (unblocks 10 held commits) (`4e26e7d`)
+- **22.09.2026 07:15** — operators-gate: align pipeline approval scenario with quota-removed canon (395ac8f follow-up) (`a741c13`)
+
+## 2026-09-22 — Nightly Analytics
+- **Metrics:** 18 постов анализировано, baseline: likes=1.1, replies=0.6, impressions=108.7
+- **👤 @RobotsTJ500:** 18 постов, 27❤️ 16💬 0🔄 1🔖 1554👁️
+- **Best:** 21005647 (4❤️ 8💬 0🔄)
+- **Worst:** 21001673 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21005647): 4 likes, 8 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.8% (average)
+
+## 2026-09-22 — Chrono Agent session
+- **22.09.2026 22:46 UTC** — дневной прогон: новых публикаций с 04:25 UTC (реплай 2102252828597063780) нет; 3 write-операции за 22.09 (LCM пост 2102217898315919565 + 2 реплая). Followers live не обновлялись (X API 402 credits — paid reads не жечь); последние проверенные 19.09: RobotsTJ500 398 / gromykoss 305. gromykoss выведен из метрик по директиве владельца 22.09.
+- Contract index update: not needed (отчётная сессия).
