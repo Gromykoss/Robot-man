@@ -128,10 +128,14 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
-| Analytics Loop | `8be138a2b33f` | 0 15 * * * | Метрики @RobotsTJ500 и @gromykoss |
+| Analytics Loop | `8be138a2b33f` | 0 15 * * * | Метрики @RobotsTJ500 и @gromykoss (⚠️ живёт в default-профиле, не здесь) |
 | X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов |
 | Content Draft (war-story) | `f6efeb7950d4` | 0 10 * * 2-4 | Черновик поста по процессу |
 | KG rebuild | `3cb47b61ac68` | 0 */6 * * * | Knowledge Graph перестроение |
+| jev-learner | `92f23779bd70` | 30 9 * * * | VOICE_LESSONS.md из пар драфт→финал (no-agent, resume-safe) |
+| jev-analyzer | `2a7b273874df` | 0 12 * * 0 | Свежий 7-дневный корпус + Jev-скоринг + отчёт (no-agent) |
+
+> ⚠️ Таблица — снапшот 22.09. Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
 
 **Статус:** Reply Engine ⏸ пауза (шаблоны = бан). Shadowban-чекер: был `828224497fc3` — в активных джобах отсутствует (проверить/пересоздать).
 
