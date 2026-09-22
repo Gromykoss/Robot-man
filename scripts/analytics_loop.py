@@ -28,7 +28,6 @@ METRICS_DIR = ROOT / "data" / "metrics"
 VOICE_UPDATE_DIR = ROOT / "data" / "voice_updates"
 ACCOUNT_ID = '1871454196295479296'  # @RobotsTJ500
 ROBOT_ACCOUNT = 'RobotsTJ500'
-GROMYKOSS_ACCOUNT = 'gromykoss'
 
 os.makedirs(METRICS_DIR, exist_ok=True)
 os.makedirs(VOICE_UPDATE_DIR, exist_ok=True)
@@ -58,8 +57,6 @@ def normalize_account(account):
     """Normalize account labels for grouping and reporting."""
     if not account:
         return ROBOT_ACCOUNT
-    if account.lower() == GROMYKOSS_ACCOUNT:
-        return GROMYKOSS_ACCOUNT
     if account.lower() == ROBOT_ACCOUNT.lower():
         return ROBOT_ACCOUNT
     return account
@@ -261,8 +258,6 @@ def summarize_metrics(metrics):
 def account_display(account):
     """Normalize account names for report headings."""
     account = normalize_account(account)
-    if account.lower() == GROMYKOSS_ACCOUNT:
-        return '@gromykoss'
     if account.lower() == ROBOT_ACCOUNT.lower():
         return '@RobotsTJ500'
     return f"@{account}"
@@ -315,30 +310,15 @@ def main():
     print(f"=== Robot-man Self-Improvement Loop === {now.strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"Analyzing posts from last {days_back} day(s)\n")
 
-    # 1. Load RobotsTJ500 posts from log and gromykoss posts from X
+    # 1. Load RobotsTJ500 posts from log
     posts = load_published_posts(days_back)
-    cutoff = now - timedelta(days=days_back)
-
-    gromykoss_posts = []
-    for post in fetch_account_posts('Gromykoss', max_results=20):
-        age_h = (now - post['created_at']).total_seconds() / 3600
-        if post['created_at'] >= cutoff and age_h >= 6:
-            post['account'] = normalize_account(GROMYKOSS_ACCOUNT)
-            gromykoss_posts.append(post)
-
-    seen_ids = {p['id'] for p in posts}
-    for post in gromykoss_posts:
-        if post['id'] not in seen_ids:
-            posts.append(post)
-            seen_ids.add(post['id'])
 
     if not posts:
         print("[SKIP] No posts found in the analysis window")
         return
 
     print(f"Found {len(posts)} post(s) to analyze")
-    print(f"  {account_display(ROBOT_ACCOUNT)}: {sum(1 for p in posts if normalize_account(p.get('account')) == ROBOT_ACCOUNT)}")
-    print(f"  {account_display(GROMYKOSS_ACCOUNT)}: {sum(1 for p in posts if normalize_account(p.get('account')) == GROMYKOSS_ACCOUNT)}\n")
+    print(f"  {account_display(ROBOT_ACCOUNT)}: {sum(1 for p in posts if normalize_account(p.get('account')) == ROBOT_ACCOUNT)}\n")
 
     # 2. Fetch fresh metrics for each post
     metrics = []
@@ -398,24 +378,23 @@ def main():
     report_lines.append("")
 
     grouped_metrics = group_metrics_by_account(metrics)
-    for account in (ROBOT_ACCOUNT, GROMYKOSS_ACCOUNT):
-        account_metrics = grouped_metrics.get(account, [])
-        summary = summarize_metrics(account_metrics)
-        report_lines.append(f"👤 {account_display(account)}")
-        report_lines.append(
-            f"Posts: {summary['posts']} | {summary['likes']}❤️ {summary['replies']}💬 "
-            f"{summary['retweets']}🔄 {summary['bookmarks']}🔖 {summary['impressions']}👁️"
+    account_metrics = grouped_metrics.get(ROBOT_ACCOUNT, [])
+    summary = summarize_metrics(account_metrics)
+    report_lines.append(f"👤 {account_display(ROBOT_ACCOUNT)}")
+    report_lines.append(
+        f"Posts: {summary['posts']} | {summary['likes']}❤️ {summary['replies']}💬 "
+        f"{summary['retweets']}🔄 {summary['bookmarks']}🔖 {summary['impressions']}👁️"
+    )
+    if account_metrics:
+        account_best = max(
+            account_metrics,
+            key=lambda m: m['likes'] + m['replies'] + m['retweets']
         )
-        if account_metrics:
-            account_best = max(
-                account_metrics,
-                key=lambda m: m['likes'] + m['replies'] + m['retweets']
-            )
-            report_lines.append(
-                f"Best: {account_best['id'][:8]} "
-                f"({account_best['likes']}❤️ {account_best['replies']}💬 {account_best['retweets']}🔄)"
-            )
-        report_lines.append("")
+        report_lines.append(
+            f"Best: {account_best['id'][:8]} "
+            f"({account_best['likes']}❤️ {account_best['replies']}💬 {account_best['retweets']}🔄)"
+        )
+    report_lines.append("")
 
     if metrics:
         best = max(metrics, key=lambda m: m['likes'] + m['replies'] + m['retweets'])
@@ -440,14 +419,12 @@ def main():
                 f"## {now.strftime('%Y-%m-%d')} — Nightly Analytics",
                 f"- **Metrics:** {len(metrics)} постов анализировано, baseline: likes={averages.get('likes', 'N/A')}, replies={averages.get('replies', 'N/A')}, impressions={averages.get('impressions', 'N/A')}",
             ]
-            for account in (ROBOT_ACCOUNT, GROMYKOSS_ACCOUNT):
-                account_metrics = grouped_metrics.get(account, [])
-                summary = summarize_metrics(account_metrics)
-                chron_entry.append(
-                    f"- **👤 {account_display(account)}:** {summary['posts']} постов, "
-                    f"{summary['likes']}❤️ {summary['replies']}💬 {summary['retweets']}🔄 "
-                    f"{summary['bookmarks']}🔖 {summary['impressions']}👁️"
-                )
+            summary = summarize_metrics(grouped_metrics.get(ROBOT_ACCOUNT, []))
+            chron_entry.append(
+                f"- **👤 {account_display(ROBOT_ACCOUNT)}:** {summary['posts']} постов, "
+                f"{summary['likes']}❤️ {summary['replies']}💬 {summary['retweets']}🔄 "
+                f"{summary['bookmarks']}🔖 {summary['impressions']}👁️"
+            )
             if metrics:
                 chron_entry.append(f"- **Best:** {best['id'][:8]} ({best['likes']}❤️ {best['replies']}💬 {best['retweets']}🔄)")
                 chron_entry.append(f"- **Worst:** {worst['id'][:8]} ({worst['likes']}❤️ {worst['replies']}💬 {worst['retweets']}🔄)")
