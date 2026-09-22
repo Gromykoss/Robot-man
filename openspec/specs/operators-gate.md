@@ -22,7 +22,7 @@ operators-gate
 - Cron `Content Draft (war-story)` (`f6efeb7950d4`, 10:00 Tue-Thu) зависит от дедупа тем и checklist-ожиданий до подготовки delivery package.
 - Cron `Analytics Loop` (`8be138a2b33f`, 15:00 daily) и `X Tracker Fetch` (`cd9bc007c07a`, 12:00 daily) читают публикационный лог и могут ошибочно трактовать off-pipeline writes.
 - `post_with_log.sh` вызывает `operators/operator_pipeline.py`; регресс approval-token, media gate или write counter может открыть путь к публикации без Human Gate либо ложно заблокировать approved post.
-- Engagement/follow скрипты делят лимитные инварианты с operators: публичные writes max 3/day, follow max 2/day (hard 3 по AGENTS).
+- Engagement/follow скрипты делят лимитные инварианты с operators: публичная write-квота снята владельцем 21.09.2026, follow max 2/day (hard 3 по AGENTS).
 
 ## Known Traps
 - `operator_pipeline.read_writes_used_today`, `increment_writes`, `consume_approval_token` имеют глобальные default-path значения, но принимают `Path`; unit-тесты обязаны передавать tmp path и не трогать реальные `data/write_counter.json` / `data/approval.token`.
@@ -53,7 +53,7 @@ operators-gate
 ### GIVEN `operators-gate.pipeline_approval`
 - GIVEN `approve_post` inputs with token/account/limits/facts/checklist and tmp-path write counter/token files.
 - WHEN вызываются `approve_post`, `read_writes_used_today`, `increment_writes`, `consume_approval_token`.
-- THEN valid token + available writes + no numeric facts + media opt-out returns `(True, "all operator gates satisfied")`; missing token blocks at approval; writes=3 blocks at limits; uncovered `2026` blocks at factcheck; missing counter reads `0`, invalid JSON reads `3`, stale date resets to `0`, current date reads stored writes; increment writes supplied path; consume deletes supplied token path.
+- THEN valid token + public write counter at `3` + no numeric facts + media opt-out returns `(True, "all operator gates satisfied")` because the owner removed the public-write quota; missing token blocks at approval; uncovered `2026` blocks at factcheck; missing counter reads `0`, invalid JSON reads `3`, stale date resets to `0`, current date reads stored writes; increment writes supplied path; consume deletes supplied token path.
 
 ### GIVEN `operators-gate.topic_dedupe`
 - GIVEN draft/topic strings and `MANUAL_THEMES[0]` keyword threshold.

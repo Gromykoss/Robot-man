@@ -164,7 +164,7 @@ class PipelineApprovalTests(unittest.TestCase):
         self.assertIn("approval: NOT_SATISFIED", reason)
 
     @pytest.mark.scenario("operators-gate.pipeline_approval")
-    def test_approve_post_blocks_exhausted_public_write_limit(self):
+    def test_approve_post_allows_public_write_after_quota_removed(self):
         ok, reason = operator_pipeline.approve_post(
             "I build publication gates.",
             "human-ok",
@@ -172,8 +172,8 @@ class PipelineApprovalTests(unittest.TestCase):
             3,
             brief_content=brief_table(**{"Изображение": "no"}),
         )
-        self.assertFalse(ok)
-        self.assertIn("limits: NOT_SATISFIED", reason)
+        self.assertTrue(ok)
+        self.assertEqual(reason, "all operator gates satisfied")
 
     @pytest.mark.scenario("operators-gate.pipeline_approval")
     def test_approve_post_blocks_uncovered_fact_tokens(self):

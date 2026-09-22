@@ -40,3 +40,4 @@
 | 2026-09-22T04:28 | published_posts.jsonl | commit лога реплая с GitHub-ссылкой 2102252828597063780 (приказ владельца «давай ссылку в комментарии») | drafts/, operators/, post_with_log.sh | 027f2ed |
 | 2026-09-22T07:07 | scripts/analytics_loop.py, STRATEGY.md | owner directive 22.09: gromykoss excluded from pipeline - remove account from metrics collection and strategy docs | drafts/, operators/, post_with_log.sh, VOICE_PROFILE_GROMYKOSS.md | |
 | 2026-09-22T07:11 | .ci/check_scenario_map.py | gwt: whitelist meta outputs and cron no-agent tooling to unblock push - 10 commits held by completeness since 21.09 night | drafts/, operators/, post_with_log.sh | |
+| 2026-09-22T07:14 | operators/tests/test_operators.py, openspec/specs/operators-gate.md | align pipeline approval scenario with owner-removed public write quota | operator runtime behavior, follow limits, other specs |  |
