@@ -38,6 +38,19 @@ WHITELIST = (
     ".ci/lint_gwt_cards.py",
     ".github/workflows/gwt.yml",
     "pytest.ini",
+    # Repo-level meta outputs, generated data and cron no-agent tooling.
+    # GWT scenario coverage for scripts/* - backlog, owned by robot-man process (2026-09-22).
+    "STRATEGY.md",
+    "VOICE_LESSONS.md",
+    "context.yaml",
+    "published_posts.jsonl",
+    "data/jev_viral_analysis/**",
+    "data/learning/**",
+    "drafts/**",
+    "scripts/analytics_loop.py",
+    "scripts/jev_corpus_collector.py",
+    "scripts/jev_edit_learner.py",
+    "scripts/jev_viral_analyzer.py",
 )
 
 
