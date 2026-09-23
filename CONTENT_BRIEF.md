@@ -1,53 +1,74 @@
-# CONTENT_BRIEF — LCM rollout (активный, 2026-09-22; источник: CONTENT_BRIEF_LCM.md 21.09)
+# CONTENT_BRIEF — 2026-09-23 (генерация: 2026-09-22 23:35 UTC, Content Brief cron)
 
 **Автор:** Hermes (default) — стратег
-**Получатель:** robot-man
-**Цель:** один пост для @RobotsTJ500. Публикация одобрена владельцем 22.09 («пости»).
+**Получатель:** robot-man (профиль) — голос/исполнитель
+**Цель:** один пост для @RobotsTJ500
 
-## Факты (только эти, п.1–19 CONTENT_BRIEF_LCM.md)
+---
 
-| # | Факт |
-|---|------|
-| 1 | hermes-lcm v1.0.0-rc.1, пин 8d1b1e6d |
-| 2 | SQLite lcm.db + FTS, DAG-саммари, 15 recall-тулов |
-| 3 | Пилот с 19.09, forced-recall тест 20.09 прошёл |
-| 4 | Флот 9 профилей |
-| 5 | Бэкапы config.yaml.pre-lcm-20260921 |
-| 6 | Сканер DANGEROUS: 87 findings, 1 critical embedded_private_key |
-| 7 | Клон-анализ: ложное срабатывание, синтетический PEM в стресс-тесте, реальных секретов 0 |
-| 8 | Разовый обход скана + issue апстриму |
-| 9 | Issue stephenschoettler/hermes-lcm#616 OPEN |
-| 10 | plugins doctor OK, 0 fail |
-| 11 | context.engine compressor → lcm |
-| 12 | Verify: doctor healthy 16/16, 0 warnings; 15/15 тулов; 87 сообщений; 11.3% vs 32% |
-| 13 | One-shot recall-тест 22.09 16:19 UTC |
-| 14 | 6 из 8 профилей из глобального каталога |
-| 15 | 2 профиля локальный discovery — индивидуально |
-| 16 | Секрет-хук блокирует inline-env — wrapper-скрипт |
-| 17 | Sweep 9/9 verified |
-| 18 | Rollback-якоря в каждом профиле |
-| 19 | Тест-фикстуры с фейковыми ключами легитимны; сканер контекстно-слеп |
+## Тема
 
-Дополнительно разрешено (из отчёта директора 22.09): свежий хвост 32 сообщения, глубина DAG 3, FTS-индекс, lcm_doctor покрывает schema/FTS/WAL/осиротевшие узлы/lineage, проверка точной формулировки только через recall.
+Одно двусмысленное слово в команде владельца — и агент развернул весь прод из консервации (7 юнитов, полный деплой), поймал спящий production-баг и два авто-отката по smoke — а потом чисто откатил всё обратно и вернул заморозку. Почему «HOLD при ambiguous командах» и общая терминология — не бюрократия, а спасение.
+
+## Факты (верифицированы Hermes по gooolag/CHRONOLOGY.md, записи 21.09.2026)
+
+<!-- ТОЛЬКО проверенные факты. Каждый с ссылкой на источник. -->
+<!-- robot-man НЕ ИМЕЕТ ПРАВА менять цифры или выдумывать детали. -->
+
+| # | Факт | Источник |
+|---|------|----------|
+| 1 | Команда владельца «реверс» (06:10 UTC 21.09) была понята агентом как «поднять проект» — выполнен полный подъём из консервации: 7 юнитов (matrix-synapse, nginx, web-боты, coturn, livekit) → active+enabled | gooolag/CHRONOLOGY.md «РЕВЕРС консервации» + «Откат реверса» (стр. 1448, 1454-1460) |
+| 2 | Деплой head штатным deploy.sh прошёл через ДВА авто-отката по smoke; root-cause: права каталога /opt/gooolag-secrets 750 ломали pending tmp+replace (rate-store) — латентный прод-баг с харденинга; исправлено chmod 770 root:www-data + пре-создание store-файлов | там же, стр. 1450 |
+| 3 | Вторая ловушка: dump-команда pkill -f убивала собственный ssh-шелл деплоя; лечится bracket-трюком в паттерне | там же, стр. 1450 |
+| 4 | После успеха: smoke 12/12, nginx guard FAILS=0; security-блокер проверен СНАРУЖИ: /api/push/send и /api/push/notify-user без токена = 403/403 (до фикс-батча были открыты кому угодно) | там же, стр. 1450 (+ fix-батч 7f29e353, стр. 1430-1439: 2 blocker + 3 major + 3 minor по ревью) |
+| 5 | ~10:0x UTC владелец через Hermes уточнил смысл команды → проект возвращён в консервацию 13.09: 7 юнитов stop+disable, мониторы 6/6 paused, листенеры 8008/443/5000 = 0, сайт снаружи unreachable; на диске остался только код 49d98e20 со всеми security-фиксами | там же, стр. 1454-1458 |
+| 6 | Урок (в канон): команду «реверс» НЕ использовать — только «разморозка/подъём»; при ambiguous командах владельца — HOLD/переспрос ДО исполнения (сработал корректно) | там же, стр. 1460 |
+| 7 | Серебряная lining: случайный подъём стал полигоном — security-фикс-батч оказался на проде, спящий баг починен, реальные грабли подъёма записаны в RESTORE-RUNBOOK (имена юнитов только программно, is-active batch-quirk, /logout/all, права каталога, resume мониторов) | там же, стр. 1450-1452, 1470-1472 |
+
+## Контекст проекта
+
+**Проект:** GULAG (тюремный мессенджер на Matrix, prod в консервации с 13.09)
+**CHRONOLOGY:** `/home/hermes-workspace/gooolag/CHRONOLOGY.md` (записи 21.09, стр. 1422-1472)
+**AGENTS.md:** `/home/hermes-workspace/gooolag/AGENTS.md`
 
 ## Формат и голос
 
 | Параметр | Значение |
 |----------|----------|
-| Тип поста | War Story / Tech Breakdown |
+| Тип поста | War Story (проблема → действие → разворот → урок) |
 | Аккаунт | @RobotsTJ500 |
-| Голос | EN first-person «I», «Building in public. 🤖», hashtags 0, без URL |
-| Mentions | @SteveSchoettler, @witcheer |
-| Изображение | /home/hermes-workspace/robot-man/drafts/lcm_cover_v2.png |
+| Голос | English first-person «I»; спокойный инженерный отчёт; «Building in public. 🤖» |
 | Длина | до 4000 (note_tweet) |
+| Hashtags | 0 (канон 05.09) |
+| Изображение | /home/hermes-workspace/robot-man/drafts/jev_cover_v2.png |
+| Mentions | @tonysimons_ |
 
 ## Запрещено
 
-- Цифры вне таблицы; ALL CAPS; self-reply; URL в теле; «my agent»; крипто/политика
-- Обход сканера без деталей флагов, не как «хак»; security-audit-угол не развивать
-- Публикация без approval.token
+- **Винить владельца или перекладывать вину.** Подача: «the word was ambiguous → my runbook did the right thing twice (deployed safely, rolled back cleanly)». Никаких «my operator messed up».
+- **ALL CAPS в хуках/первой строке** (всегда)
+- Self-reply (всегда); URL в теле (всегда)
+- Выдуманные детали: не реконструировать диалог, не добавлять «30 минут орали», цифры — только из таблицы фактов
+- **Не путать с недавними DUP-темами:** LCM (пост 22.09), Jev/TypeSafe (21.09), security-audit Cloudflare (19.09). Это история про GULAG-инфраструктуру и терминологию команд.
+- Прод-детали пользователей GULAG (никнеймы, комнаты) — не упоминать
+- Выдавать консервацию за «провал»: это плановое замораживание, не падение
 
-## Механика публикации
+## Tone-направление
 
-`echo "$(uuidgen)" > data/approval.token && bash post_with_log.sh "$(cat drafts/lcm-rollout_v1_en.txt)" /home/hermes-workspace/robot-man/drafts/lcm_cover_v2.png`
-После: read-back note_tweet, published_posts.jsonl, CHRONOLOGY, 24h analytics.
+Спокойный отчёт с иронией сцены: одно слово из жаргона — и агент поднял семь юнитов спящего прод-сервера, два раза откатился по smoke, поймал баг, спавший со времён харденинга, а потом без единой ошибки вернул всё в лёд; урок — общая терминология и HOLD-механизм важнее скорости реакции.
+
+## Deadline
+
+**Черновик к:** 10:00 UTC 23.09 (окно Content Draft, Вт-Чт)
+**Публикация:** после RU-драфта → ok Сергея → EN-финал + обложка → approval.token → post_with_log.sh
+
+---
+
+## Процесс robot-man
+
+1. Прочитать этот брифинг
+2. Прочитать gooolag/CHRONOLOGY.md (записи 21.09) + AGENTS.md GULAG
+3. RU-драфт в drafts/ → правки владельца → EN-финал
+4. MoA: deepseek-xai + viral-score + anti-ad
+5. Факт-чек: каждая цифра ↔ таблица фактов
+6. Обложка → joint MoA → Delivery Package → approval → post_with_log.sh
