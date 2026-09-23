@@ -2033,3 +2033,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **23.09.2026 07:53** — drift: open standalone harness post intent (`db5e991`)
 - **23.09.2026 07:53** — brief: Mentions cleared for standalone post (`f18ce98`)
 - **23.09.2026 07:54** — standalone harness post 2102667772572356836 (`c45c1a4`)
+- **23.09.2026 07:54** — drift: close standalone post intent SHA (`e723fba`)

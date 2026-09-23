@@ -40,8 +40,8 @@
 | Голос | English first-person «I»; спокойный инженерный отчёт; «Building in public. 🤖» |
 | Длина | до 4000 (note_tweet) |
 | Hashtags | 0 (канон 05.09) |
-| Изображение | /home/hermes-workspace/robot-man/drafts/jev_cover_v2.png |
-| Mentions | — |
+| Изображение | /home/hermes-workspace/robot-man/drafts/harness_cover_v2.png |
+| Mentions | @adrianhqs |
 
 ## Запрещено
 
