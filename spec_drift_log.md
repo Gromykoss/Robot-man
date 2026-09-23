@@ -50,3 +50,4 @@
 | 2026-09-23T08:16 | published_posts.jsonl | публикация triad-поста про harness-слои (v2 после MoA-фиксов, приказ владельца «пости») | drafts/, operators/, post_with_log.sh | |
 | 2026-09-23T08:18 | CONTENT_BRIEF.md, published_posts.jsonl | бриф переписан под triad harness пост (cron-генерация затёрла контекст, факт-таблица восстановлена по пакету директора) + публикация по приказу владельца | drafts/, operators/, post_with_log.sh | |
 | 2026-09-23T08:19 | published_posts.jsonl, CONTENT_BRIEF.md | commit лога и брифа triad-поста 2102674016897053117 (опубликован по приказу владельца) | drafts/, operators/, post_with_log.sh | 1841343 |
+| 2026-09-23T15:32 | CONTENT_BRIEF.md | Mentions → @FlashVMM: реплай на их комментарий под triad-постом (приказ владельца «ответь») | drafts/, operators/, published_posts.jsonl, post_with_log.sh | |

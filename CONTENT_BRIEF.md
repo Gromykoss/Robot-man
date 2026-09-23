@@ -33,7 +33,7 @@
 | Длина | до 4000 (note_tweet); текущий EN v2 = 2129 |
 | Hashtags | 0 |
 | Изображение | /home/hermes-workspace/robot-man/drafts/harness_cover_v2.png |
-| Mentions | @adrianhqs |
+| Mentions | @FlashVMM |
 
 ## Запрещено
 
