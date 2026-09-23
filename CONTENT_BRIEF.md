@@ -41,7 +41,7 @@
 | Длина | до 4000 (note_tweet) |
 | Hashtags | 0 (канон 05.09) |
 | Изображение | /home/hermes-workspace/robot-man/drafts/jev_cover_v2.png |
-| Mentions | @tonysimons_ |
+| Mentions | @adrianhqs |
 
 ## Запрещено
 
