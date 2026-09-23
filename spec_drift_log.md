@@ -44,4 +44,5 @@
 | 2026-09-23T05:34 | CONTENT_BRIEF.md | перепрофилирование строк Mentions/Изображение под реплай Tony Simons 2102240557351264760 (приказ владельца «пости») | drafts/, operators/, post_with_log.sh | |
 | 2026-09-23T06:30 | CONTENT_BRIEF.md | перепрофилирование брифа под реплай Adrian (adrianhqs) на harness-пост 2101375652570001790 (приказ владельца «запускай протокол») | drafts/, operators/, post_with_log.sh | |
 | 2026-09-23T07:53 | published_posts.jsonl | отдельный пост-ответ Adrian (адаптация реплая без @mention, приказ владельца «пости отдельным постом») | drafts/, operators/, post_with_log.sh | |
-| 2026-09-23T07:53 | CONTENT_BRIEF.md | Mentions-строка очищена: пост-ответ Adrian выходит отдельным постом без @mention (приказ владельца) | drafts/, operators/, published_posts.jsonl, post_with_log.sh | |
+| 2026-09-23T07:53 | CONTENT_BRIEF.md | Mentions-строка очищена: пост-ответ Adrian выходит отдельным постом без @mention (приказ владельца) | drafts/, operators/, published_posts.jsonl, post_with_log.sh | SPEC DRIFT GATE BLOCKED: latest intent is already closed |
+| 2026-09-23T07:54 | published_posts.jsonl | commit лога отдельного поста-ответа Adrian (текст см. drafts/harness_standalone_v1_en.txt) | drafts/, operators/, post_with_log.sh | |
