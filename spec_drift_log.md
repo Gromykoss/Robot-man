@@ -47,3 +47,4 @@
 | 2026-09-23T07:53 | CONTENT_BRIEF.md | Mentions-строка очищена: пост-ответ Adrian выходит отдельным постом без @mention (приказ владельца) | drafts/, operators/, published_posts.jsonl, post_with_log.sh | SPEC DRIFT GATE BLOCKED: latest intent is already closed |
 | 2026-09-23T07:54 | published_posts.jsonl | commit лога отдельного поста-ответа Adrian (текст см. drafts/harness_standalone_v1_en.txt) | drafts/, operators/, post_with_log.sh | c45c1a4 |
 | 2026-09-23T08:06 | CONTENT_BRIEF.md | бриф под triad-пост про harness-слои (запрос-общее-частное, Mentions @adrianhqs, приказ владельца «запускай протокол») | drafts/, operators/, published_posts.jsonl, post_with_log.sh | |
+| 2026-09-23T08:16 | published_posts.jsonl | публикация triad-поста про harness-слои (v2 после MoA-фиксов, приказ владельца «пости») | drafts/, operators/, post_with_log.sh | |
