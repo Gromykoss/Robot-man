@@ -2029,3 +2029,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Contract index update: not needed (отчётная сессия).
 - **22.09.2026 22:46** — chrono: 2026-09-22 (`4874f6a`)
 - **23.09.2026 05:34** — brief: Mentions/Image rows -> tonysimons reply (`61bc959`)
+- **23.09.2026 06:30** — brief: Mentions -> adrianhqs harness reply (`db5911c`)

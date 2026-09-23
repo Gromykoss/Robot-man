@@ -43,3 +43,4 @@
 | 2026-09-22T07:14 | operators/tests/test_operators.py, openspec/specs/operators-gate.md | align pipeline approval scenario with owner-removed public write quota | operator runtime behavior, follow limits, other specs | | a741c13 |
 | 2026-09-23T05:34 | CONTENT_BRIEF.md | перепрофилирование строк Mentions/Изображение под реплай Tony Simons 2102240557351264760 (приказ владельца «пости») | drafts/, operators/, post_with_log.sh | |
 | 2026-09-23T06:30 | CONTENT_BRIEF.md | перепрофилирование брифа под реплай Adrian (adrianhqs) на harness-пост 2101375652570001790 (приказ владельца «запускай протокол») | drafts/, operators/, post_with_log.sh | |
+| 2026-09-23T07:53 | published_posts.jsonl | отдельный пост-ответ Adrian (адаптация реплая без @mention, приказ владельца «пости отдельным постом») | drafts/, operators/, post_with_log.sh | |
