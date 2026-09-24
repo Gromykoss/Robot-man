@@ -54,3 +54,4 @@
 | 2026-09-23T23:30 | BUGS.md, published_posts.jsonl | BUGS: analytics-дубли, xactions dead, delete-синтаксис; вычищен лог удалённого дубля-реплая (находка Nightly Analysis) | drafts/, operators/, post_with_log.sh | |
 | 2026-09-24T09:13 | AGENTS.md | аудит формирующих файлов (да владельца): лимиты 21.09, крон-таблица, backfill удалений постов | drafts/, operators/, post_with_log.sh | 20bab9d |
 | 2026-09-24T09:16 | AGENTS.md | крон-таблица: строка Analytics Loop помечена УДАЛЁН (джоба не существует, проверено 23.09; апрув владельца получен) | drafts/, operators/, CHRONOLOGY.md, post_with_log.sh | b742932 |
+| 2026-09-24T09:47 | AGENTS.md | аудит 24.09 хвосты: cron-сервисы без Analytics Loop (стр 148) + убрать 2+ поста/день из Запрещено (стр 231) | data/, drafts/, tests/ |  |

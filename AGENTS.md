@@ -145,7 +145,7 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 **Сервер:** VPS Hostinger 72.60.16.105 (общий хост Hermes), Ubuntu 24.04, 15 GB RAM
 
-**Cron-сервисы:** см. таблицу «Cron-джобы» выше (Analytics Loop, X Tracker Fetch, Content Draft, KG rebuild).
+**Cron-сервисы:** см. таблицу «Cron-джобы» выше (X Tracker Fetch, Content Draft, KG rebuild).
 
 **Базы данных:**
 - Knowledge Graph: `knowledge_graph/graph.json` + `scripts/knowledge_graph.py`
@@ -228,7 +228,7 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 
 **Follow cap: 10/day (hard).** Лимит public writes отменён приказом 21.09; анти-бан: 429/403 — жёсткий стоп.
 
-**Запрещено:** ALL CAPS в хуках, self-reply, шаблонные реплаи, 2+ поста/день, URL в теле, follow >10/день, RT без комментария.
+**Запрещено:** ALL CAPS в хуках, self-reply, шаблонные реплаи, URL в теле, follow >10/день, RT без комментария.
 
 **Газ** (после 3 дней GREEN): чаще посты, больше thread entry, масштабировать mutuals.
 **Тормоз** (impressions <20 на 2 постах подряд): пауза 48ч, только ручная активность.
