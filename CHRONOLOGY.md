@@ -2061,3 +2061,18 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **24.09.2026 09:15** — audit: apply approved fixes to AGENTS.md + CHRONOLOGY backfill (`20bab9d`)
 - **24.09.2026 09:15** — drift: close audit intent SHA (`597481d`)
 - **24.09.2026 09:16** — agents: cron table - Analytics Loop removed (`b742932`)
+- **24.09.2026 09:16** — drift: close cron-table intent SHA (`0b83771`)
+- **24.09.2026 09:49** — AGENTS.md: аудит 24.09 хвосты — cron-сервисы без Analytics Loop (стр 148), убрать 2+ поста/день из Запрещено (стр 231); approved владельцем (`59e9ec5`)
+
+## 2026-09-24 — Nightly Analytics
+- **Metrics:** 17 постов анализировано, baseline: likes=1.2, replies=0.6, impressions=105.1
+- **👤 @RobotsTJ500:** 17 постов, 22❤️ 9💬 0🔄 0🔖 1094👁️
+- **Best:** 21019300 (5❤️ 4💬 0🔄)
+- **Worst:** 21007161 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21019300): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.8% (average)
+
+## 2026-09-24 — Chrono Agent session
+- **24.09.2026 23:0x UTC** — chrono-джоба: CHRONOLOGY уже содержит записи за 24.09 (backfill удалений владельцем 22.09–23.09, аудит формирующих файлов, 5 коммитов 20bab9d→59e9ec5). Новых событий за вечер не зафиксировано — запись фиксирует сессию. Брифинг briefings/2026-09-24.md создан.
+- **Статус:** последние посты @RobotsTJ500 — 2102674016897053117 (Muse, 24.09) и 2102783802518949936 (реплай-нода). Followers: 399 (снапшот 21.09), @gromykoss — 307 (последняя верификация 03.09).
+- **Contract index update:** not needed.
