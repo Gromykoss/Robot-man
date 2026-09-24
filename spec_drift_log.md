@@ -52,4 +52,4 @@
 | 2026-09-23T08:19 | published_posts.jsonl, CONTENT_BRIEF.md | commit лога и брифа triad-поста 2102674016897053117 (опубликован по приказу владельца) | drafts/, operators/, post_with_log.sh | 1841343 |
 | 2026-09-23T15:32 | CONTENT_BRIEF.md | Mentions → @FlashVMM: реплай на их комментарий под triad-постом (приказ владельца «ответь») | drafts/, operators/, published_posts.jsonl, post_with_log.sh | |
 | 2026-09-23T23:30 | BUGS.md, published_posts.jsonl | BUGS: analytics-дубли, xactions dead, delete-синтаксис; вычищен лог удалённого дубля-реплая (находка Nightly Analysis) | drafts/, operators/, post_with_log.sh | |
-| 2026-09-24T09:13 | AGENTS.md | аудит формирующих файлов (да владельца): лимиты 21.09, крон-таблица, backfill удалений постов | drafts/, operators/, post_with_log.sh | |
+| 2026-09-24T09:13 | AGENTS.md | аудит формирующих файлов (да владельца): лимиты 21.09, крон-таблица, backfill удалений постов | drafts/, operators/, post_with_log.sh | 20bab9d |
