@@ -128,7 +128,7 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
-| Analytics Loop | `8be138a2b33f` | 0 15 * * * | Метрики @RobotsTJ500 и @gromykoss (⚠️ живёт в default-профиле, не здесь) |
+| ~~Analytics Loop~~ | ~~`8be138a2b33f`~~ | — | ❌ УДАЛЁН: джоба не существует ни в одном профиле (проверено 23.09, cronjob list) |
 | X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов |
 | Content Draft (war-story) | `f6efeb7950d4` | 0 10 * * 2-4 | Черновик поста по процессу |
 | KG rebuild | `3cb47b61ac68` | 0 */6 * * * | Knowledge Graph перестроение |
