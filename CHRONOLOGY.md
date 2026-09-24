@@ -2060,3 +2060,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **24.09.2026** — аудит формирующих файлов (задача директора, «да» Сергея): SOUL.md D1-D4/F5 применены, AGENTS.md лимиты и крон-таблица обновлены, бэкапы /tmp/*.bak-231231, memory-уроки записаны.
 - **24.09.2026 09:15** — audit: apply approved fixes to AGENTS.md + CHRONOLOGY backfill (`20bab9d`)
 - **24.09.2026 09:15** — drift: close audit intent SHA (`597481d`)
+- **24.09.2026 09:16** — agents: cron table - Analytics Loop removed (`b742932`)
