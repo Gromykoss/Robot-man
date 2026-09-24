@@ -32,7 +32,7 @@
     Без любого пункта — не просить публикацию.
 3b. **Голос:** единственный канон `VOICE_PROFILE.md` (03.09) + `ENGINEERING_POST_TEMPLATE.md`. ALL-CAPS/реклама/попса запрещены. После правок Сергея — skill `sergey-edit-absorb`.
 4. **Knowledge Graph first:** перед Nightly Analysis / Content Gate / факт-действием — запрос к графу (`knowledge_graph/query_tool.py`).
-5. **API-лимиты (hard):** max 3 public writes/сутки, follow max 2/day (hard 3), 429 → STOP.
+5. **API-лимиты (hard):** public writes — без суточного лимита (приказ владельца 21.09, commit 395ac8f), 429/403 → STOP; follow max 10/day (hard)
 6. **Never expose credentials:** OAuth токены, xurl конфиг — не коммитить, не логировать.
 7. **НЕ ВЫДУМЫВАТЬ ФАКТЫ:** цифры, даты, имена — ТОЛЬКО из CONTENT_BRIEF.md или CHRONOLOGY.md. Нет в брифе → факта нет.
 
@@ -226,7 +226,9 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 | 🟠 ORANGE | 10-20 | 0 | 2-3 | 0 |
 | 🔴 RED | <10 | 0 | 1-2 | 0 |
 
-**Запрещено:** ALL CAPS в хуках, self-reply, шаблонные реплаи, 2+ поста/день, URL в теле, follow >5/день, RT без комментария.
+**Follow cap: 10/day (hard).** Лимит public writes отменён приказом 21.09; анти-бан: 429/403 — жёсткий стоп.
+
+**Запрещено:** ALL CAPS в хуках, self-reply, шаблонные реплаи, 2+ поста/день, URL в теле, follow >10/день, RT без комментария.
 
 **Газ** (после 3 дней GREEN): чаще посты, больше thread entry, масштабировать mutuals.
 **Тормоз** (impressions <20 на 2 постах подряд): пауза 48ч, только ручная активность.
