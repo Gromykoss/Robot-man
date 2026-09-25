@@ -2076,3 +2076,20 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **24.09.2026 23:0x UTC** — chrono-джоба: CHRONOLOGY уже содержит записи за 24.09 (backfill удалений владельцем 22.09–23.09, аудит формирующих файлов, 5 коммитов 20bab9d→59e9ec5). Новых событий за вечер не зафиксировано — запись фиксирует сессию. Брифинг briefings/2026-09-24.md создан.
 - **Статус:** последние посты @RobotsTJ500 — 2102674016897053117 (Muse, 24.09) и 2102783802518949936 (реплай-нода). Followers: 399 (снапшот 21.09), @gromykoss — 307 (последняя верификация 03.09).
 - **Contract index update:** not needed.
+- **24.09.2026 22:47** — chrono: 2026-09-24 (`9d2c1a4`)
+
+## 2026-09-25 — Nightly Analytics
+- **Metrics:** 11 постов анализировано, baseline: likes=1.2, replies=0.6, impressions=104.7
+- **👤 @RobotsTJ500:** 11 постов, 16❤️ 8💬 0🔄 0🔖 1010👁️
+- **Best:** 21019300 (5❤️ 4💬 0🔄)
+- **Worst:** 21010894 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21019300): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.4% (average)
+
+## 2026-09-25 — Nightly Analytics
+- **Metrics:** 2 постов анализировано, baseline: likes=1.2, replies=0.6, impressions=104.4
+- **👤 @RobotsTJ500:** 2 постов, 2❤️ 2💬 0🔄 0🔖 115👁️
+- **Best:** 21026740 (0❤️ 2💬 0🔄)
+- **Worst:** 21026740 (0❤️ 2💬 0🔄)
+- **Pattern:** Best post (21026740): 0 likes, 2 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.5% (average)
