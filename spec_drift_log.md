@@ -57,4 +57,4 @@
 | 2026-09-24T09:47 | AGENTS.md | аудит 24.09 хвосты: cron-сервисы без Analytics Loop (стр 148) + убрать 2+ поста/день из Запрещено (стр 231) | data/, drafts/, tests/ | 59e9ec5 |
 | 2026-09-26T01:30 | AGENTS.md | актуализация cron-таблицы по аудиту MGT_maccha 25.09 (факты оператора, верифицированы по jobs.json обоих профилей; CHRONOLOGY.md ушёл отдельным whitelist-коммитом 37f0921) | контент-данные, код гейтов, Human Gate | 3cc7d77 |
 | 2026-09-26T01:44 | AGENTS.md | дополнение аудита 25.09 от оператора: shadowban-чекер 828224497fc3 НЕ пересоздаём — статус-строку переписать как зачёркнутую (ВЫЧЕРКНУТ, решение оператора) | контент-данные, код гейтов, Human Gate | ff71694 |
-| 2026-09-26T22:46 | briefings/2026-09-26.md | daily briefing (cron), CHRONOLOGY.md whitelisted | drafts/ | |
+| 2026-09-26T22:46 | briefings/2026-09-26.md | daily briefing (cron), CHRONOLOGY.md whitelisted | drafts/ | c49c9db |
