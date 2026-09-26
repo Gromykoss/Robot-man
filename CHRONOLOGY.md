@@ -2106,3 +2106,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **26.09.2026 01:40** — CHRONOLOGY: 26.09 актуализация cron-таблицы AGENTS.md (аудит MGT_maccha) (`37f0921`)
 - **26.09.2026 01:40** — AGENTS.md: cron-таблица актуализирована по аудиту MGT_maccha 25.09 (Content Draft удалён, KG rebuild 4506b578cfa3 действующий, 3cb47b61ac68 застыла, X Tracker cookie, shadowban-чекер — решение оператора) (`3cc7d77`)
 - **26.09.2026 01:45** — AGENTS.md: shadowban-чекер 828224497fc3 вычеркнут по решению оператора (дополнение аудита MGT_maccha 25.09) (`ff71694`)
+- **26.09.2026 01:45** — CHRONOLOGY: дополнение 26.09 — shadowban-чекер вычеркнут (аудит закрыт) (`f12ebeb`)
+
+## 2026-09-26 — Nightly Analytics
+- **Metrics:** 8 постов анализировано, baseline: likes=1.2, replies=0.6, impressions=104.5
+- **👤 @RobotsTJ500:** 8 постов, 13❤️ 7💬 0🔄 0🔖 741👁️
+- **Best:** 21019300 (5❤️ 4💬 0🔄)
+- **Worst:** 21019743 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21019300): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.7% (average)
+
+## 2026-09-26 — CHRONOLOGY Agent: статус дня (live xurl)
+
+- **Followers (live, OAuth):** @RobotsTJ500 **400** (+1 к снапшоту 21.09 — 399); @gromykoss **304** (−5 к 309 от 21.09). tweet_count gromykoss 1420 (было 1419).
+- **Постов за 26.09:** 0 (последний в published_posts.jsonl — reply 23.09 15:35, id 2102783802518949936).
+- **Nightly Analytics 26.09:** 8 постов, 741 imp суммарно, ER 2.7% (average); лучший — Jev-лонгрид 2101930064140968172 (5❤️ / 4💬 / 440 imp).
+- **Файлы:** CHRONOLOGY.md, briefings/2026-09-26.md.
