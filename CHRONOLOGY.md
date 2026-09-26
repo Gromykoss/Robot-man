@@ -1,4 +1,12 @@
 
+## 2026-09-26 — Актуализация cron-таблицы AGENTS.md по аудиту MGT_maccha 25.09
+
+- **Причина:** аудит оператора (Buzz, 25.09): 4 расхождения крон-таблицы с jobs.json. Факты верифицированы мной по jobs.json обоих профилей (f6efeb7950d4 отсутствует в обоих; 3cb47b61ac68 в robot-man, 4506b578cfa3 в default).
+- **Что сделал:** AGENTS.md — удалена строка Content Draft f6efeb7950d4; KG rebuild: действующий 4506b578cfa3 (default), 3cb47b61ac68 помечен «застыла 05.09, решение оператора»; X Tracker cd9bc007c07a — пометка «cookie-сессия сдохла с 18.09, реавторизация у оператора»; shadowban-чекер 828224497fc3 — «решение за оператором, не начато»; заголовок/снапшот → 26.09.
+- **Апрув:** владелец (Sergey, TG, «подтверждаю» 26.09) — гвард AGENTS.md требует явного согласия в сессии.
+- **Как проверено:** diff AGENTS.md (4 патча); intent-строка в spec_drift_log.md записана ДО мутации, SHA дописан после коммита.
+- **Файлы:** AGENTS.md, CHRONOLOGY.md, spec_drift_log.md.
+
 ## 2026-09-09 — GWT-контур operators-gate: 6 сценариев, 30 unit-тестов, CI
 
 - **Что сделано:** тиражирован GWT-контур Фазы 0-4 для домена `operators-gate`: `openspec/specs/operators-gate.md`, `.ci/scenario_map.yaml`, `.ci/{check_scenario_map,lint_gwt_cards,run_affected}.py`, `.github/workflows/gwt.yml`, новый `pytest.ini`, `operators/tests/test_operators.py`.
@@ -2093,3 +2101,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Worst:** 21026740 (0❤️ 2💬 0🔄)
 - **Pattern:** Best post (21026740): 0 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 3.5% (average)
+- **25.09.2026 22:45** — chrono: 2026-09-25 (`b8173d4`)
