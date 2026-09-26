@@ -2103,3 +2103,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Overall engagement rate: 3.5% (average)
 - **25.09.2026 22:45** — chrono: 2026-09-25 (`b8173d4`)
 - **26.09.2026 01:40** — CHRONOLOGY: 26.09 актуализация cron-таблицы AGENTS.md (аудит MGT_maccha) (`37f0921`)
+- **26.09.2026 01:40** — AGENTS.md: cron-таблица актуализирована по аудиту MGT_maccha 25.09 (Content Draft удалён, KG rebuild 4506b578cfa3 действующий, 3cb47b61ac68 застыла, X Tracker cookie, shadowban-чекер — решение оператора) (`3cc7d77`)

@@ -137,7 +137,7 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 > ⚠️ Таблица — снапшот 26.09 (аудит MGT_maccha). Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
 
-**Статус:** Reply Engine ⏸ пауза (шаблоны = бан). Shadowban-чекер: был `828224497fc3` — в активных джобах отсутствует (решение за оператором, не начато).
+**Статус:** Reply Engine ⏸ пауза (шаблоны = бан). ~~Shadowban-чекер `828224497fc3`~~ — ❌ ВЫЧЕРКНУТ: решение оператора 25.09 — не используется.
 
 ---
 
