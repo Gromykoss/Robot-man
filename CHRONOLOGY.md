@@ -2102,3 +2102,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (21026740): 0 likes, 2 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 3.5% (average)
 - **25.09.2026 22:45** — chrono: 2026-09-25 (`b8173d4`)
+- **26.09.2026 01:40** — CHRONOLOGY: 26.09 актуализация cron-таблицы AGENTS.md (аудит MGT_maccha) (`37f0921`)

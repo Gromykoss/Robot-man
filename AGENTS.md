@@ -124,20 +124,20 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 ---
 
-## Cron-джобы (актуальные, 06.08.2026)
+## Cron-джобы (актуальные, 26.09.2026)
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
 | ~~Analytics Loop~~ | ~~`8be138a2b33f`~~ | — | ❌ УДАЛЁН: джоба не существует ни в одном профиле (проверено 23.09, cronjob list) |
-| X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов |
-| Content Draft (war-story) | `f6efeb7950d4` | 0 10 * * 2-4 | Черновик поста по процессу |
-| KG rebuild | `3cb47b61ac68` | 0 */6 * * * | Knowledge Graph перестроение |
+| X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов (⚠️ cookie-сессия сдохла, данных нет с 18.09; реавторизация — у оператора) |
+| KG rebuild | `4506b578cfa3` (default) | 0 0,6,12,18 * * * | Knowledge Graph перестроение (действующий; прогон 26.09 00:00 ok) |
+| ~~KG rebuild~~ | ~~`3cb47b61ac68`~~ | — | ❌ Застыла 05.09 при `0 */6 * * *`; решение оператора |
 | jev-learner | `92f23779bd70` | 30 9 * * * | VOICE_LESSONS.md из пар драфт→финал (no-agent, resume-safe) |
 | jev-analyzer | `2a7b273874df` | 0 12 * * 0 | Свежий 7-дневный корпус + Jev-скоринг + отчёт (no-agent) |
 
-> ⚠️ Таблица — снапшот 22.09. Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
+> ⚠️ Таблица — снапшот 26.09 (аудит MGT_maccha). Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
 
-**Статус:** Reply Engine ⏸ пауза (шаблоны = бан). Shadowban-чекер: был `828224497fc3` — в активных джобах отсутствует (проверить/пересоздать).
+**Статус:** Reply Engine ⏸ пауза (шаблоны = бан). Shadowban-чекер: был `828224497fc3` — в активных джобах отсутствует (решение за оператором, не начато).
 
 ---
 
@@ -145,7 +145,7 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 **Сервер:** VPS Hostinger 72.60.16.105 (общий хост Hermes), Ubuntu 24.04, 15 GB RAM
 
-**Cron-сервисы:** см. таблицу «Cron-джобы» выше (X Tracker Fetch, Content Draft, KG rebuild).
+**Cron-сервисы:** см. таблицу «Cron-джобы» выше (X Tracker Fetch, KG rebuild).
 
 **Базы данных:**
 - Knowledge Graph: `knowledge_graph/graph.json` + `scripts/knowledge_graph.py`
