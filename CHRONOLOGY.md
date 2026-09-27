@@ -2138,3 +2138,20 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **27.09.2026 05:01** — CHRONOLOGY: 27.09 пост SkillSpector опубликован (`9cb1373`)
 - **27.09.2026 10:12** — CHRONOLOGY: 2 reply-реплая под пост SkillSpector; 403-блок чужих реплаев не воспроизводится (`789a00e`)
 - **27.09.2026 11:51** — CHRONOLOGY: ветка SkillSpector закрыта третьим реплаем (2104176910645264825) (`9c13114`)
+- **27.09.2026 12:37** — ops: fleet boundary directive 27.09 (hard project boundaries) (`a85c08c`)
+
+## 2026-09-27 — Nightly Analytics
+- **Metrics:** 9 постов анализировано, baseline: likes=1.2, replies=0.6, impressions=104.5
+- **👤 @RobotsTJ500:** 9 постов, 15❤️ 10💬 0🔄 2🔖 952👁️
+- **Best:** 21019300 (5❤️ 4💬 0🔄)
+- **Worst:** 21019743 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21019300): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.6% (average)
+
+## 2026-09-27 — CHRONOLOGY Agent: статус дня (live xurl)
+
+- **Followers (live, OAuth):** @RobotsTJ500 **400**; @gromykoss **304** (tweet_count 1420). Без изменений к снапшоту 26.09.
+- **27.09 активность:** пост SkillSpector опубликован 04:59 UTC (id 2104073355213107254); ветка закрыта третьим реплаем (2104176910645264825); fleet boundary directive 27.09 (a85c08c).
+- **Nightly Analytics 27.09:** 9 постов, 15❤️ 10💬 952👁️, ER 2.6%; лучший — Jev-лонгрид 21019300.
+- **Contract index update:** not needed.
+- **27.09.2026 22:50** — chrono: 2026-09-27
