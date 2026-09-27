@@ -2133,3 +2133,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **26.09.2026 22:48** — chrono: 2026-09-26 (`c49c9db`)
 - **26.09.2026 22:48** — drift: close intent c49c9db (`631c1f7`)
 - **27.09.2026 04:56** — drafts+images: SkillSpector post artifacts (RU draft, cover v3 PASS 9/10; EN txt local-only) (`a448752`)
+- **27.09.2026 05:01** — CONTENT_BRIEF: факт-таблица SkillSpector; published_posts: 2104073355213107254 (`c745782`)
