@@ -60,4 +60,6 @@
 | 2026-09-26T22:46 | briefings/2026-09-26.md | daily briefing (cron), CHRONOLOGY.md whitelisted | drafts/ | c49c9db |
 | 2026-09-27T04:56 | drafts/skillspector_v1_ru.md, images/skillspector_v1.png, images/skillspector_v2.png, images/skillspector_v3.png | артефакты поста SkillSpector (EN-финал drafts/skillspector_v1_en.txt остаётся локально — в .gitignore; обложка v3 PASS 9/10; MoA viral 25/30 PASS) | контент-данные иного рода, код гейтов, Human Gate | a448752 |
 | 2026-09-27T05:01 | CONTENT_BRIEF.md, published_posts.jsonl | пост SkillSpector опубликован (id 2104073355213107254, апрув владельца); факт-таблица SkillSpector добавлена в бриф (факт-гейт требовал); CHRONOLOGY.md уходит whitelist-коммитом | код гейтов, Human Gate | 9cb1373 |
-| 2026-09-27T05:10 | CHRONOLOGY.md | 2 API-реплая под пост SkillSpector (@_pr0fx_ 2104145527210213534, @ankitdongre100 2104145583678034098) — API-реплаи чужим работают, 403-блок февраля не воспроизводится | код гейтов, Human Gate |  |
+| 2026-09-27T05:10 | CHRONOLOGY.md | 2 API-реплая под пост SkillSpector (@_pr0fx_ 2104145527210213534, @ankitdongre100 2104145583678034098) — API-реплаи чужим работают, 403-блок февраля не воспроизводится | код гейтов, Human Gate | 789a00e |
+| 2026-09-27T12:32 | AGENTS.md (fleet boundary block append) | директива Сергея 27.09: жёсткие границы профилей | код, тесты, конфиги проекта |  |
+| 2026-09-27T12:33 | AGENTS.md | fleet boundary directive 27.09 | код, тесты, конфиги |  |
