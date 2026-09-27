@@ -2123,3 +2123,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Nightly Analytics 26.09:** 8 постов, 741 imp суммарно, ER 2.7% (average); лучший — Jev-лонгрид 2101930064140968172 (5❤️ / 4💬 / 440 imp).
 - **Файлы:** CHRONOLOGY.md, briefings/2026-09-26.md.
 - **26.09.2026 22:48** — chrono: 2026-09-26 (`c49c9db`)
+- **26.09.2026 22:48** — drift: close intent c49c9db (`631c1f7`)

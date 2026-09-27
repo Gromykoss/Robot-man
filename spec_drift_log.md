@@ -58,3 +58,4 @@
 | 2026-09-26T01:30 | AGENTS.md | актуализация cron-таблицы по аудиту MGT_maccha 25.09 (факты оператора, верифицированы по jobs.json обоих профилей; CHRONOLOGY.md ушёл отдельным whitelist-коммитом 37f0921) | контент-данные, код гейтов, Human Gate | 3cc7d77 |
 | 2026-09-26T01:44 | AGENTS.md | дополнение аудита 25.09 от оператора: shadowban-чекер 828224497fc3 НЕ пересоздаём — статус-строку переписать как зачёркнутую (ВЫЧЕРКНУТ, решение оператора) | контент-данные, код гейтов, Human Gate | ff71694 |
 | 2026-09-26T22:46 | briefings/2026-09-26.md | daily briefing (cron), CHRONOLOGY.md whitelisted | drafts/ | c49c9db |
+| 2026-09-27T04:56 | drafts/skillspector_v1_ru.md, images/skillspector_v1.png, images/skillspector_v2.png, images/skillspector_v3.png | артефакты поста SkillSpector (EN-финал drafts/skillspector_v1_en.txt остаётся локально — в .gitignore; обложка v3 PASS 9/10; MoA viral 25/30 PASS) | контент-данные иного рода, код гейтов, Human Gate |  |
