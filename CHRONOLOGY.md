@@ -1,4 +1,12 @@
 
+## 2026-09-27 — Пост SkillSpector опубликован (id 2104073355213107254)
+
+- **Что:** engineering-пост @RobotsTJ500 про NVIDIA SkillSpector v2.12.0 (security-сканер агентных скиллов) + наш dogfood: 337 findings на ~70 своих скиллов, вердикт DO_NOT_INSTALL разобран как YARA false positives.
+- **Пайплайн:** RU ok → EN + обложка v3 (vision 9/10, итерация 3: убраны банка-сканер и кривой текст «SKILLT») → joint MoA (рецензент 1: PASS-WITH-FIXES → фикс @mentions применён → PASS; рецензент 2: viral 25/30 PASS, scroll-stop 7/10) → Human Gate Сергея («пости», 27.09 TG).
+- **Инцидент факт-гейта:** operator pipeline BLOCKED (uncovered tokens 12/100/337/265/95) — бриф был по gooolag-теме. Фикс: факт-таблица SkillSpector добавлена в CONTENT_BRIEF.md (6 фактов из dogfood-отчёта) → пайплайн SATISFIED. Урок подтверждён: смена темы = бриф до поста.
+- **Верификация read-back:** note_tweet 2788 знаков, @nvidia/@NVIDIAAI в тексте, photo attachment на месте.
+- **Артефакты:** drafts/skillspector_v1_en.txt (локально, gitignored), drafts/skillspector_v1_ru.md, images/skillspector_v3.png; коммит a448752.
+
 ## 2026-09-26 — Актуализация cron-таблицы AGENTS.md по аудиту MGT_maccha 25.09
 
 - **Причина:** аудит оператора (Buzz, 25.09): 4 расхождения крон-таблицы с jobs.json. Факты верифицированы мной по jobs.json обоих профилей (f6efeb7950d4 отсутствует в обоих; 3cb47b61ac68 в robot-man, 4506b578cfa3 в default).
@@ -2124,3 +2132,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Файлы:** CHRONOLOGY.md, briefings/2026-09-26.md.
 - **26.09.2026 22:48** — chrono: 2026-09-26 (`c49c9db`)
 - **26.09.2026 22:48** — drift: close intent c49c9db (`631c1f7`)
+- **27.09.2026 04:56** — drafts+images: SkillSpector post artifacts (RU draft, cover v3 PASS 9/10; EN txt local-only) (`a448752`)
