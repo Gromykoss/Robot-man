@@ -2173,3 +2173,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Contract index update:** not needed.
 - **28.09.2026 22:47** — chrono: 2026-09-28 (`1d8f898`)
 - **28.09.2026 22:48** — drift: open intent images whitelist (`accfb93`)
+- **28.09.2026 22:49** — ci: whitelist images/** in scenario map completeness (push blocked since 27.09) (`0267748`)

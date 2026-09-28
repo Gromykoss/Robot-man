@@ -64,4 +64,4 @@
 | 2026-09-27T12:32 | AGENTS.md (fleet boundary block append) | директива Сергея 27.09: жёсткие границы профилей | код, тесты, конфиги проекта | a85c08c |
 | 2026-09-27T12:33 | AGENTS.md | fleet boundary directive 27.09 | код, тесты, конфиги | a85c08c |
 | 2026-09-28T22:47 |  briefings/2026-09-28.md | chrono-джоба 28.09: daily брифинг (CHRONOLOGY.md whitelisted) | код, конфиги, спеки | 1d8f898 |
-| 2026-09-28T22:48 | .ci/check_scenario_map.py | push блокирован с 27.09: images/skillspector_*.png вне whitelist гейта completeness; добавить images/** как repo-level media | сценарии, домены, тесты |
+| 2026-09-28T22:48 | .ci/check_scenario_map.py | push блокирован с 27.09: images/skillspector_*.png вне whitelist гейта completeness; добавить images/** как repo-level media | сценарии, домены, тесты | 0267748 |
