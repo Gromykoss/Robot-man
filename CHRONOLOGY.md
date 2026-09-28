@@ -2155,3 +2155,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Nightly Analytics 27.09:** 9 постов, 15❤️ 10💬 952👁️, ER 2.6%; лучший — Jev-лонгрид 21019300.
 - **Contract index update:** not needed.
 - **27.09.2026 22:50** — chrono: 2026-09-27
+- **27.09.2026 22:45** — chrono: 2026-09-27 (`ec3c87a`)
+
+## 2026-09-28 — Nightly Analytics
+- **Metrics:** 6 постов анализировано, baseline: likes=1.2, replies=0.6, impressions=104.0
+- **👤 @RobotsTJ500:** 6 постов, 7❤️ 6💬 0🔄 2🔖 437👁️
+- **Best:** 21040733 (2❤️ 3💬 0🔄)
+- **Worst:** 21021806 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21040733): 2 likes, 3 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.0% (average)
+
+## 2026-09-28 — CHRONOLOGY Agent: статус дня (live xurl)
+
+- **Followers (live, OAuth):** @RobotsTJ500 **398** (−2 к 400 от 26–27.09); @gromykoss **304** (tweet_count 1420). Без изменений к 27.09.
+- **28.09 активность:** постов не публиковалось (последний в published_posts.jsonl — SkillSpector 27.09 04:59, id 2104073355213107254); коммитов в репо за 28.09 нет; в рабочем дереве — несмерженные правки TACTICS/VOICE_LESSONS/post_with_log.sh (не мои, не трогаю).
+- **Nightly Analytics 28.09:** 6 постов, 7❤️ 6💬 437👁️, ER 3.0%; лучший — SkillSpector 21040733 (2❤️ / 3💬).
+- **Contract index update:** not needed.
