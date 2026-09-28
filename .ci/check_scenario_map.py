@@ -47,6 +47,7 @@ WHITELIST = (
     "data/jev_viral_analysis/**",
     "data/learning/**",
     "drafts/**",
+    "images/**",
     "scripts/analytics_loop.py",
     "scripts/jev_corpus_collector.py",
     "scripts/jev_edit_learner.py",

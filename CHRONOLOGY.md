@@ -2171,3 +2171,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **28.09 активность:** постов не публиковалось (последний в published_posts.jsonl — SkillSpector 27.09 04:59, id 2104073355213107254); коммитов в репо за 28.09 нет; в рабочем дереве — несмерженные правки TACTICS/VOICE_LESSONS/post_with_log.sh (не мои, не трогаю).
 - **Nightly Analytics 28.09:** 6 постов, 7❤️ 6💬 437👁️, ER 3.0%; лучший — SkillSpector 21040733 (2❤️ / 3💬).
 - **Contract index update:** not needed.
+- **28.09.2026 22:47** — chrono: 2026-09-28 (`1d8f898`)
+- **28.09.2026 22:48** — drift: open intent images whitelist (`accfb93`)
