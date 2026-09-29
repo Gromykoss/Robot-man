@@ -2191,3 +2191,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 06:39** — docs(drift): normalize closure lines (double-pipe fix) (`b36c1b2`)
 - **29.09.2026 11:06** — CONTENT_BRIEF: факт-таблица UCP; drafts+covers UCP; published_posts: 2104889500472115551 (`dc6fbfc`)
 - **29.09.2026 11:06** — CHRONOLOGY: 29.09 пост UCP Shopify опубликован (2104889500472115551) (`85a7b5e`)
+- **29.09.2026 11:23** — scripts: ucp_post_watch.sh — 12h/30m наблюдение за постом 2104889500472115551 (`f511d2e`)
