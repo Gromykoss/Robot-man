@@ -2193,3 +2193,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 11:06** — CHRONOLOGY: 29.09 пост UCP Shopify опубликован (2104889500472115551) (`85a7b5e`)
 - **29.09.2026 11:23** — scripts: ucp_post_watch.sh — 12h/30m наблюдение за постом 2104889500472115551 (`f511d2e`)
 - **29.09.2026 11:23** — drift: SHA for ucp_post_watch intent (`9a634c2`)
+- **29.09.2026 13:17** — CONTENT_BRIEF: факт-таблица Meta WebMCP; drafts+covers Meta; публикация 30.09T02:00 UTC (`461611b`)
