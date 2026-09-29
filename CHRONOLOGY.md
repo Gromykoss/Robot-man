@@ -2180,3 +2180,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 06:18** — chore: untrack node_modules (reproducible via npm install) — inventory 29.09 (`f28d8d2`)
 - **29.09.2026 06:24** — ci(inventory 29.09): extend pre-push whitelist for research and cleanup paths (`70f89f1`)
 - **29.09.2026 06:24** — ci(inventory 29.09): whitelist reports dir (`2062f3b`)
+- **29.09.2026 06:26** — chore: fixups — untrack runtime state, archive remaining dated files (inventory 29.09) (`c85c710`)
