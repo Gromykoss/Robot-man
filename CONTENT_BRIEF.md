@@ -116,3 +116,13 @@
 - Корзина €201.67 (XT-6 GTX), continue_url; чекаут: Subtotal €347.00 + Tax €69.36 = Total €416.36
 - delivery_no_delivery_available (recoverable); CartLine-GID (gid://shopify/CartLine/...)
 - complete_checkout ТОЛЬКО после явного подтверждения покупателя; @Shopify верифицирован (id 17136315)
+
+## Факт-таблица Meta WebMCP Wearables (пост на 30.09 — первоисточник docs + X-поиск 29.09)
+- Meta Connect 2026 (~24.09): web apps на Ray-Ban Display + WebMCP agent tools, developer preview (MetaforDevs id 2103181099790934021)
+- API document.modelContext.registerTool(); W3C draft webmachinelearning/webmcp; off by default; HTTPS обязателен; docs updated 18.09.2026
+- Грабли из доки: failure только через throw (fulfilled = успех, isError игнорируется); deadline 10 сек + AbortSignal; имена тула режутся до 57 символов; reserved-имена (openUrl, goBack) тихо отбрасываются; inputSchema только top-level; empty required = ничего не обязательно
+- Дисциплина: страница-рефери, факты страницы, аккаунт модели не принимается; next_action в structured result; per-screen регистрация; голос = одна короткая фраза
+- Тестинг: desktop Chrome (API идентичен) + Ray-Ban Display Simulator; очки: App Settings > App Connections, «Hey Meta»
+- Экосистема: WebMCP vs DOM 3-5x скорость / до ~23x дешевле по токенам (Rauch, про подход вообще); продовых consumer-apps пока нет
+- Наш угол: тот же API в нашем UCP-прогоне Shopify 29.09 (пост 2104889500472115551)
+- @Meta id 2425151, @MetaforDevs id 63359297 — верифицированы
