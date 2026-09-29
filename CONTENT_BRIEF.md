@@ -107,3 +107,12 @@
 7. Факт-чек: каждая цифра ↔ таблица фактов (SHA — только эквиваленты новой истории, см. Запрещено)
 8. Delivery Package → «ок/пости» → approval.token → post_with_log.sh + cover
 9. CHRONOLOGY + 24h analytics_loop
+
+## Факт-таблица UCP/Shopify (заказ Pokupki, 29.09 — подтверждено /tmp/ucp_*.json)
+- 28.09.2026 — Shopify открыл checkout ИИ-агентам (WebMCP + Checkout MCP, UCP от Shopify/Google/Microsoft)
+- 05.08.2026 — WebMCP-тулы на витринах Liquid/Hydrogen
+- 7 итераций agent-профиля UCP (missing profile → version_unsupported → принят)
+- 10 результатов каталога по «Salomon Outpath Pro GTX», снята с производства = 0 в наличии
+- Корзина €201.67 (XT-6 GTX), continue_url; чекаут: Subtotal €347.00 + Tax €69.36 = Total €416.36
+- delivery_no_delivery_available (recoverable); CartLine-GID (gid://shopify/CartLine/...)
+- complete_checkout ТОЛЬКО после явного подтверждения покупателя; @Shopify верифицирован (id 17136315)

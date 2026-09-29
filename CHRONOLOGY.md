@@ -2181,3 +2181,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 06:24** — ci(inventory 29.09): extend pre-push whitelist for research and cleanup paths (`70f89f1`)
 - **29.09.2026 06:24** — ci(inventory 29.09): whitelist reports dir (`2062f3b`)
 - **29.09.2026 06:26** — chore: fixups — untrack runtime state, archive remaining dated files (inventory 29.09) (`c85c710`)
+- **29.09.2026 06:39** — docs(drift): normalize closure lines (double-pipe fix) (`b36c1b2`)
