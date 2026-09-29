@@ -2178,3 +2178,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 05:19** — wip: snapshot pre-cleanup (cron-updated canons, KG, post_with_log.sh) — inventory 29.09 (`f1aac10`)
 - **29.09.2026 05:58** — chore: cleanup per inventory 29.09 — archive stale docs, remove dead scripts and drafts archive (`2d9e205`)
 - **29.09.2026 06:18** — chore: untrack node_modules (reproducible via npm install) — inventory 29.09 (`f28d8d2`)
+- **29.09.2026 06:24** — ci(inventory 29.09): extend pre-push whitelist for research and cleanup paths (`70f89f1`)
