@@ -2190,3 +2190,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 06:26** — chore: fixups — untrack runtime state, archive remaining dated files (inventory 29.09) (`c85c710`)
 - **29.09.2026 06:39** — docs(drift): normalize closure lines (double-pipe fix) (`b36c1b2`)
 - **29.09.2026 11:06** — CONTENT_BRIEF: факт-таблица UCP; drafts+covers UCP; published_posts: 2104889500472115551 (`dc6fbfc`)
+- **29.09.2026 11:06** — CHRONOLOGY: 29.09 пост UCP Shopify опубликован (2104889500472115551) (`85a7b5e`)
