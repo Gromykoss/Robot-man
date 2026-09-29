@@ -75,4 +75,5 @@
 | 2026-09-29T11:23 | scripts/ucp_post_watch.sh | наблюдение 12ч/30мин за постом 2104889500472115551 по поручению владельца; скрипт логирует метрики, сам удаляет джобу после 12ч | спецификации, Human Gate | f511d2e |
 | 2026-09-29T13:17 | drafts/meta_webmcp_wearables_v1_ru.md, images/meta_webmcp_cover_v1.png, images/meta_webmcp_cover_v2.png, images/meta_webmcp_cover_v3.png, CONTENT_BRIEF.md | пост Meta WebMCP подготовлен к отложенной публикации 30.09T02:00 UTC (апрув владельца, full cycle); факт-таблица Meta в бриф | код гейтов, Human Gate | 461611b |
 | 2026-09-29T15:20 | .ci/check_scenario_map.py | push заблокирован хуком: scripts/ucp_post_watch.sh (закоммичен f511d2e, поручение владельца) отсутствует в whitelist — расширение whitelist | код гейтов, спеки постов | e037a75 |
-| 2026-09-29T15:24 | .ci/check_scenario_map.py | закрытие заблокированного пуша: whitelist-строка не попала в e037a75 (amend запрещён хуком) — отдельный коммит | код гейтов, спеки постов | |
+| 2026-09-29T15:24 | .ci/check_scenario_map.py | закрытие заблокированного пуша: whitelist-строка не попала в e037a75 (amend запрещён хуком) — отдельный коммит | код гейтов, спеки постов | d8ea13c |
+| 2026-09-29T15:32 | briefings/2026-09-29.md | брифинг дня robot-man | код гейтов, спеки постов | |

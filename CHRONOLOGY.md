@@ -2228,3 +2228,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Contract index update:** not needed.
 - **29.09.2026 22:45** — chrono: 2026-09-29 (`51e28a2`)
 - **29.09.2026 22:46** — ci: whitelist scripts/ucp_post_watch.sh in scenario map (push blocked since f511d2e) (`e037a75`)
+- **29.09.2026 22:47** — ci: add ucp_post_watch.sh to whitelist (missed in e037a75) (`d8ea13c`)
