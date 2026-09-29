@@ -1,4 +1,12 @@
 
+## 2026-09-29 — Nightly Analysis: xactions мёртв (search/trends пустые), shadowban не подтверждается, followers 398 flat
+
+- **Аналитика (22:16 UTC, mcp analytics):** 7 дней / 4 поста с метриками. SkillSpector 2104073355213107254 — OUTPERFORMER 2.0x (159 imp, 2❤3💬2🔖); UCP Shopify 2104889500472115551 — 1.4x (122 imp, 4❤1💬); два underperformer 0.6x — реплаи ветки. ER 3.3% (average), baseline 104 imp. 21026677 — metrics fetch fail.
+- **Followers:** @RobotsTJ500 **398** — стагнация с 03.09 (26 дней, было 398).
+- **Shadowban:** подтвердить/снять не могу. Прямые ссылки UCP и SkillSpector → 200. xactions `from:RobotsTJ500` → пусто, НО контрольный «Shopify» тоже пуст → скрейпер-стек мёртв, это НЕ сигнал бана. Метрики (159/122 imp на свежих) паттерна бана не показывают. Финальный тест — инкогнито-поиск Latest (Сергей). Урок (контрольный запрос до вывода) добавлен в skill shadowban-diagnosis.
+- **Инфра:** ucp-post-final (9c2ab06dd560, 23:00 UTC 29.09) — скрипт проверен: read-only срез метрик UCP-поста, публикации не будет. meta-webmcp-publish (e51ec23ca64f, 02:00 UTC 30.09) — скрипт, EN-драфт и cover v3 на месте. X Tracker без данных с 18.09 (cookie, зона оператора).
+- **Тренды (web_search fallback):** TechCrunch 28.09 — Shopify открыл checkout браузерным агентам через WebMCP (get/update/complete_checkout, Shop Pay); Shopify выложил reference UCP shopping agent (claude-for-commerce-examples); Google — native UCP checkout в AI Mode/Gemini (23.09). Рекомендация стратегу: бриф «Shopify WebMCP checkout hands-on» — продолжение UCP-серии.
+
 ## 2026-09-29 — Пост Meta WebMCP подготовлен, отложенная публикация 30.09 08:00 Бишкека
 
 - **Что:** engineering-пост @RobotsTJ500: WebMCP agent tools на Meta Ray-Ban Display (Meta Connect ~24.09, developer preview) — тот же document.modelContext, что в нашем UCP-прогоне. Грабли из доки: failure только через throw, deadline 10 сек, 57-символьные имена, тихие reserved-имена, top-level schema. Хук: один стандарт — браузерный агент, носимый агент, серверный транспорт.
@@ -2202,3 +2210,19 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 11:23** — drift: SHA for ucp_post_watch intent (`9a634c2`)
 - **29.09.2026 13:17** — CONTENT_BRIEF: факт-таблица Meta WebMCP; drafts+covers Meta; публикация 30.09T02:00 UTC (`461611b`)
 - **29.09.2026 13:17** — drift: SHA meta_webmcp intent (`56add5b`)
+- **29.09.2026 13:18** — CHRONOLOGY: 29.09 Meta WebMCP пост подготовлен, отложенная публикация 30.09T02:00 UTC (`5f7fcd7`)
+
+## 2026-09-29 — Nightly Analytics
+- **Metrics:** 4 постов анализировано, baseline: likes=1.2, replies=0.7, impressions=104.0
+- **👤 @RobotsTJ500:** 4 постов, 8❤️ 6💬 0🔄 2🔖 422👁️
+- **Best:** 21040733 (2❤️ 3💬 0🔄)
+- **Worst:** 21026740 (0❤️ 2💬 0🔄)
+- **Pattern:** Best post (21040733): 2 likes, 3 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 3.3% (average)
+
+## 2026-09-29 — CHRONOLOGY Agent: брифинг дня
+
+- **Followers (по ночному live-срезу 29.09):** @RobotsTJ500 **398** (стагнация с 03.09); @gromykoss **304**.
+- **29.09 активность:** UCP Shopify пост опубликован 11:02 UTC (2104889500472115551); Meta WebMCP пост подготовлен (бриф, drafts, cover v3) — отложенная публикация 30.09 02:00 UTC; cleanup по inventory 29.09 (архив стейл-доков, untrack node_modules/runtime state, whitelist CI).
+- **Nightly Analytics 29.09:** 4 поста, 8❤️ 6💬 422👁️, ER 3.3%; SkillSpector 21040733 — OUTPERFORMER 2.0x, UCP 1.4x.
+- **Contract index update:** not needed.
