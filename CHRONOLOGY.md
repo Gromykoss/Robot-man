@@ -1,4 +1,11 @@
 
+## 2026-09-29 — Пост Meta WebMCP подготовлен, отложенная публикация 30.09 08:00 Бишкека
+
+- **Что:** engineering-пост @RobotsTJ500: WebMCP agent tools на Meta Ray-Ban Display (Meta Connect ~24.09, developer preview) — тот же document.modelContext, что в нашем UCP-прогоне. Грабли из доки: failure только через throw, deadline 10 сек, 57-символьные имена, тихие reserved-имена, top-level schema. Хук: один стандарт — браузерный агент, носимый агент, серверный транспорт.
+- **Пайплайн:** RU v2 (конкретика: Connect 24.09, протокол результата, тестинг, экосистема) → EN → обложка (v1 7/10 → v2 8/10 → v3 8/10, принята: текст чистый, list_slots/book_slot, крупная галочка) → joint MoA: mentions FIX → @Meta (id 2425151) применён → оба PASS, viral 7/10 → факт-таблица Meta в CONTENT_BRIEF → Human Gate Сергея («полный цикл + публикация завтра 8:00 Бишкека»).
+- **Публикация:** cron-джоба meta-webmcp-publish (одноразовая, repeat 1), 2026-09-30T02:00 UTC = 08:00 Бишкек; скрипт сам генерирует approval.token и постит через post_with_log.sh (EN + cover v3).
+- **Артефакты:** drafts/meta_webmcp_wearables_v1_ru.md, drafts/meta_webmcp_wearables_v1_en.txt (локально), images/meta_webmcp_cover_v3.png.
+
 ## 2026-09-29 — Пост UCP Shopify опубликован (id 2104889500472115551)
 
 - **Что:** engineering-пост @RobotsTJ500 по живому прогону UCP-воронки Shopify (заказ отдела Pokupki; их отчёт факт-чеком подтверждён по /tmp/ucp_*.json: €201.67=20167 минорных, XT-6 GTX, CartLine-GID, delivery_no_delivery_available/recoverable, email в update_checkout, 10 результатов каталога). Хук: агентная покупка = контрактные тулы + человек на финале, не computer-use. Тезис «первые в РФ-сегменте» убран (непроверяемо). @Shopify добавлен по mentions-gate (id 17136315).
@@ -2194,3 +2201,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 11:23** — scripts: ucp_post_watch.sh — 12h/30m наблюдение за постом 2104889500472115551 (`f511d2e`)
 - **29.09.2026 11:23** — drift: SHA for ucp_post_watch intent (`9a634c2`)
 - **29.09.2026 13:17** — CONTENT_BRIEF: факт-таблица Meta WebMCP; drafts+covers Meta; публикация 30.09T02:00 UTC (`461611b`)
+- **29.09.2026 13:17** — drift: SHA meta_webmcp intent (`56add5b`)
