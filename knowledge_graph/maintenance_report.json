@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-07T00:00:30.573458+00:00",
-  "graph_built_at": "2026-09-07T00:00:30.536878+00:00",
+  "generated_at": "2026-09-29T00:00:23.315642+00:00",
+  "graph_built_at": "2026-09-29T00:00:23.103802+00:00",
   "graph_stats": {
-    "nodes": 381,
-    "edges": 360,
+    "nodes": 466,
+    "edges": 448,
     "projects": 4,
-    "events": 136,
-    "people": 52,
+    "events": 177,
+    "people": 61,
     "tasks": 22
   },
   "checks": {
@@ -19,15 +19,27 @@
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
-        "canonical": "person/@gromykoss",
-        "duplicate": "person/@Gromykoss",
-        "similarity": 1.0,
+        "canonical": "event/2026-08-09/Nightly Analytics",
+        "duplicate": "event/2026-09-08/Nightly Analytics",
+        "similarity": 0.941,
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
         "canonical": "person/@RobotsT500",
         "duplicate": "person/@RobotsTJ500",
         "similarity": 0.973,
+        "action": "merge_into_canonical_preserve_provenance"
+      },
+      {
+        "canonical": "person/@nvidia",
+        "duplicate": "person/@NVIDIAAI",
+        "similarity": 0.933,
+        "action": "merge_into_canonical_preserve_provenance"
+      },
+      {
+        "canonical": "person/@gromykoss",
+        "duplicate": "person/@Gromykoss",
+        "similarity": 1.0,
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
@@ -48,7 +60,7 @@
   },
   "summary": {
     "stale_nodes": 0,
-    "duplicate_entities": 5,
+    "duplicate_entities": 7,
     "contradictions": 0,
     "confidence_decay": 0
   }

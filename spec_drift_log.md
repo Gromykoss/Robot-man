@@ -65,3 +65,4 @@
 | 2026-09-27T12:33 | AGENTS.md | fleet boundary directive 27.09 | код, тесты, конфиги | a85c08c |
 | 2026-09-28T22:47 |  briefings/2026-09-28.md | chrono-джоба 28.09: daily брифинг (CHRONOLOGY.md whitelisted) | код, конфиги, спеки | 1d8f898 |
 | 2026-09-28T22:48 | .ci/check_scenario_map.py | push блокирован с 27.09: images/skillspector_*.png вне whitelist гейта completeness; добавить images/** как repo-level media | сценарии, домены, тесты | 0267748 |
+| 2026-09-29T05:19 | CONTENT_BRIEF.md, TACTICS.md, TACTICS_GROMYKOSS.md, VOICE_LESSONS.md, data/engagement_log.jsonl, data/write_counter.json, knowledge_graph/graph.json, knowledge_graph/maintenance_report.json, post_with_log.sh | snapshot pre-cleanup: фиксация накопленного кронами (каноны, KG-граф, post_with_log.sh), логику не меняю | untracked | |

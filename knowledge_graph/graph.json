@@ -1,14 +1,68 @@
 {
-  "built_at": "2026-09-07T00:00:30.536878+00:00",
+  "built_at": "2026-09-29T00:00:23.103802+00:00",
   "stats": {
-    "nodes": 381,
-    "edges": 360,
+    "nodes": 466,
+    "edges": 448,
     "projects": 4,
-    "events": 136,
-    "people": 52,
+    "events": 177,
+    "people": 61,
     "tasks": 22
   },
   "nodes": [
+    [
+      "event/2026-09-27/Пост SkillSpector опубликован (id 210407",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-27",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Пост SkillSpector опубликован (id 2104073355213107254)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-26/Актуализация cron-таблицы AGENTS.md по а",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-26",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Актуализация cron-таблицы AGENTS.md по аудиту MGT_maccha 25.09",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-09/GWT-контур operators-gate: 6 сценариев,",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-09",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "GWT-контур operators-gate: 6 сценариев, 30 unit-тестов, CI",
+      {
+        "type": "unknown"
+      }
+    ],
     [
       "event/2026-09-05/Сергей: бана нет; −82 твита gromykoss =",
       {
@@ -1810,7 +1864,409 @@
       }
     ],
     [
-      "person/@gromykoss",
+      "event/2026-09-07/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-07",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-07/Weekly analytics report (reports/2026-09",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Weekly analytics report (reports/2026-09-07.md) + баг ACCOUNT_ID",
+      {
+        "type": "Weekly analytics report (reports"
+      }
+    ],
+    [
+      "event/2026-09-07/Пост @RobotsTJ500 «Emergence World» опуб",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Пост @RobotsTJ500 «Emergence World» опубликован (22:45 UTC chrono agent, xurl live)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-08/CONTENT_BRIEF 08.09: junior spec-system",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-08",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "CONTENT_BRIEF 08.09: junior spec-system boot (одна ночь «система воспроизвела себя» + самоочистка vault) — winner hermes-vault 38/42",
+      {
+        "type": "CONTENT_BRIEF 08.09: junior spec-system boot (одна ночь «система воспроизвела себя» + самоочистка vault) — winner hermes-vault 38"
+      }
+    ],
+    [
+      "event/2026-09-08/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-08/Chrono Agent сессия",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Chrono Agent сессия",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-09/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-10/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-10",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-11/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-11",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-11/CHRONOLOGY Agent: дневной брифинг",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "CHRONOLOGY Agent: дневной брифинг",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-12/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-12",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-13/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-13",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-14/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-14",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-14/Harden AIF пост (первый за 6 дней) + 2 r",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Harden AIF пост (первый за 6 дней) + 2 reply по новой ветке --reply",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-16/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-16",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-17/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-17",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-17/Chrono Agent session (22:4x UTC)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Chrono Agent session (22:4x UTC)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-18/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-18",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-18/Chrono Agent session (день)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Chrono Agent session (день)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-19/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-19",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-20/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-20",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-20/Chrono Agent session",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Chrono Agent session",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-21/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-21",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-21/Chrono Agent session",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-22/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-22",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-22/Chrono Agent session",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-23/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-23",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-23/Chrono Agent session",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-24/Backfill: удаления постов владельцем (ау",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-24",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Backfill: удаления постов владельцем (аудит формирующих файлов, «да» Сергея)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-24/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-24/Chrono Agent session",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-25/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-25",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-26/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-26/CHRONOLOGY Agent: статус дня (live xurl)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "CHRONOLOGY Agent: статус дня (live xurl)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-27/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-27/CHRONOLOGY Agent: статус дня (live xurl)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-28/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-28",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-28/CHRONOLOGY Agent: статус дня (live xurl)",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "person/@RobotsTJ500",
       {
         "type": "person"
       }
@@ -1822,7 +2278,37 @@
       }
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@mentions",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@nvidia",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@NVIDIAAI",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@_pr0fx_",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@ankitdongre100",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -2110,6 +2596,48 @@
       }
     ],
     [
+      "person/@emergence_ai",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@dataPort_agent",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@EternitiesAI",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@hardenrun",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@pushpakpujari",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Tanguyvbc",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "project/gulag",
+      {
+        "type": "project"
+      }
+    ],
+    [
       "project/robot-man",
       {
         "type": "project"
@@ -2117,12 +2645,6 @@
     ],
     [
       "project/alikhan",
-      {
-        "type": "project"
-      }
-    ],
-    [
-      "project/gulag",
       {
         "type": "project"
       }
@@ -2266,7 +2788,7 @@
       }
     ],
     [
-      "person/@0xTab",
+      "person/@Project",
       {
         "type": "person"
       }
@@ -2278,18 +2800,6 @@
       }
     ],
     [
-      "person/@Project",
-      {
-        "type": "person"
-      }
-    ],
-    [
-      "person/@mentions",
-      {
-        "type": "person"
-      }
-    ],
-    [
       "STRATEGY.md",
       {
         "type": "unknown"
@@ -2297,6 +2807,48 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-09-27/Пост SkillSpector опубликован (id 210407",
+      "target": "2026-09-27",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-27/Пост SkillSpector опубликован (id 210407",
+      "target": "Пост SkillSpector опубликован (id 2104073355213107254)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-26/Актуализация cron-таблицы AGENTS.md по а",
+      "target": "2026-09-26",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-26/Актуализация cron-таблицы AGENTS.md по а",
+      "target": "Актуализация cron-таблицы AGENTS.md по аудиту MGT_maccha 25.09",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-09/GWT-контур operators-gate: 6 сценариев,",
+      "target": "2026-09-09",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-09/GWT-контур operators-gate: 6 сценариев,",
+      "target": "GWT-контур operators-gate: 6 сценариев, 30 unit-тестов, CI",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-09-05/Сергей: бана нет; −82 твита gromykoss =",
       "target": "2026-09-05",
@@ -4209,25 +4761,536 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@gromykoss",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
+      "source": "event/2026-09-07/Nightly Analytics",
+      "target": "2026-09-07",
+      "predicate": "occurred_on",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
+      "confidence": 0.95
     },
     {
-      "source": "person/@gromykoss",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
+      "source": "event/2026-09-07/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
     },
     {
-      "source": "person/@gromykoss",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
-      "confidence": 0.85
+      "source": "event/2026-09-07/Weekly analytics report (reports/2026-09",
+      "target": "2026-09-07",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-07/Weekly analytics report (reports/2026-09",
+      "target": "Weekly analytics report (reports/2026-09-07.md) + баг ACCOUNT_ID",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-07/Пост @RobotsTJ500 «Emergence World» опуб",
+      "target": "2026-09-07",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-07/Пост @RobotsTJ500 «Emergence World» опуб",
+      "target": "Пост @RobotsTJ500 «Emergence World» опубликован (22:45 UTC chrono agent, xurl live)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-08/CONTENT_BRIEF 08.09: junior spec-system",
+      "target": "2026-09-08",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-08/CONTENT_BRIEF 08.09: junior spec-system",
+      "target": "CONTENT_BRIEF 08.09: junior spec-system boot (одна ночь «система воспроизвела себя» + самоочистка vault) — winner hermes-vault 38/42",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-08/Nightly Analytics",
+      "target": "2026-09-08",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-08/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-08/Chrono Agent сессия",
+      "target": "2026-09-08",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-08/Chrono Agent сессия",
+      "target": "Chrono Agent сессия",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-09/Nightly Analytics",
+      "target": "2026-09-09",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-09/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-10/Nightly Analytics",
+      "target": "2026-09-10",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-10/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-11/Nightly Analytics",
+      "target": "2026-09-11",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-11/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-11/CHRONOLOGY Agent: дневной брифинг",
+      "target": "2026-09-11",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-11/CHRONOLOGY Agent: дневной брифинг",
+      "target": "CHRONOLOGY Agent: дневной брифинг",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-12/Nightly Analytics",
+      "target": "2026-09-12",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-12/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-13/Nightly Analytics",
+      "target": "2026-09-13",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-13/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-14/Nightly Analytics",
+      "target": "2026-09-14",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-14/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-14/Harden AIF пост (первый за 6 дней) + 2 r",
+      "target": "2026-09-14",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-14/Harden AIF пост (первый за 6 дней) + 2 r",
+      "target": "Harden AIF пост (первый за 6 дней) + 2 reply по новой ветке --reply",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-16/Nightly Analytics",
+      "target": "2026-09-16",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-16/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-17/Nightly Analytics",
+      "target": "2026-09-17",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-17/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-17/Chrono Agent session (22:4x UTC)",
+      "target": "2026-09-17",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-17/Chrono Agent session (22:4x UTC)",
+      "target": "Chrono Agent session (22:4x UTC)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-18/Nightly Analytics",
+      "target": "2026-09-18",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-18/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-18/Chrono Agent session (день)",
+      "target": "2026-09-18",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-18/Chrono Agent session (день)",
+      "target": "Chrono Agent session (день)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-19/Nightly Analytics",
+      "target": "2026-09-19",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-19/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-20/Nightly Analytics",
+      "target": "2026-09-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-20/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-20/Chrono Agent session",
+      "target": "2026-09-20",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-20/Chrono Agent session",
+      "target": "Chrono Agent session",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-21/Nightly Analytics",
+      "target": "2026-09-21",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-21/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-21/Chrono Agent session",
+      "target": "2026-09-21",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-21/Chrono Agent session",
+      "target": "Chrono Agent session",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-22/Nightly Analytics",
+      "target": "2026-09-22",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-22/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-22/Chrono Agent session",
+      "target": "2026-09-22",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-22/Chrono Agent session",
+      "target": "Chrono Agent session",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-23/Nightly Analytics",
+      "target": "2026-09-23",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-23/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-23/Chrono Agent session",
+      "target": "2026-09-23",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-23/Chrono Agent session",
+      "target": "Chrono Agent session",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-24/Backfill: удаления постов владельцем (ау",
+      "target": "2026-09-24",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-24/Backfill: удаления постов владельцем (ау",
+      "target": "Backfill: удаления постов владельцем (аудит формирующих файлов, «да» Сергея)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-24/Nightly Analytics",
+      "target": "2026-09-24",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-24/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-24/Chrono Agent session",
+      "target": "2026-09-24",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-24/Chrono Agent session",
+      "target": "Chrono Agent session",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-25/Nightly Analytics",
+      "target": "2026-09-25",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-25/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-26/Nightly Analytics",
+      "target": "2026-09-26",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-26/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-26/CHRONOLOGY Agent: статус дня (live xurl)",
+      "target": "2026-09-26",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-26/CHRONOLOGY Agent: статус дня (live xurl)",
+      "target": "CHRONOLOGY Agent: статус дня (live xurl)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-27/Nightly Analytics",
+      "target": "2026-09-27",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-27/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-27/CHRONOLOGY Agent: статус дня (live xurl)",
+      "target": "2026-09-27",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-27/CHRONOLOGY Agent: статус дня (live xurl)",
+      "target": "CHRONOLOGY Agent: статус дня (live xurl)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-28/Nightly Analytics",
+      "target": "2026-09-28",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-28/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-28/CHRONOLOGY Agent: статус дня (live xurl)",
+      "target": "2026-09-28",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-28/CHRONOLOGY Agent: статус дня (live xurl)",
+      "target": "CHRONOLOGY Agent: статус дня (live xurl)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
     },
     {
       "source": "person/@RobotsTJ500",
@@ -4244,17 +5307,66 @@
       "confidence": 0.85
     },
     {
-      "source": "person/@agentmail",
+      "source": "person/@mentions",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@agentmail",
+      "source": "person/@mentions",
       "target": "MEMORY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@nvidia",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@NVIDIAAI",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@_pr0fx_",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@ankitdongre100",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@agentmail",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
@@ -4587,6 +5699,55 @@
       "confidence": 0.85
     },
     {
+      "source": "person/@emergence_ai",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@dataPort_agent",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@EternitiesAI",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@hardenrun",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@pushpakpujari",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Tanguyvbc",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "project/gulag",
+      "target": "CHRONOLOGY.md",
+      "predicate": "referenced_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
       "source": "project/robot-man",
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
@@ -4612,27 +5773,6 @@
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "project/alikhan",
-      "target": "MEMORY.md",
-      "predicate": "referenced_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "project/gulag",
-      "target": "CHRONOLOGY.md",
-      "predicate": "referenced_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "project/gulag",
-      "target": "MEMORY.md",
-      "predicate": "referenced_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
       "confidence": 0.85
     },
     {
@@ -4797,21 +5937,7 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@0xTab",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
       "source": "person/@Project",
-      "target": "MEMORY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@mentions",
       "target": "MEMORY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/.hermes/profiles/robot-man/memories/MEMORY.md",
