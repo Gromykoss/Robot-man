@@ -1,4 +1,11 @@
 
+## 2026-09-29 — Пост UCP Shopify опубликован (id 2104889500472115551)
+
+- **Что:** engineering-пост @RobotsTJ500 по живому прогону UCP-воронки Shopify (заказ отдела Pokupki; их отчёт факт-чеком подтверждён по /tmp/ucp_*.json: €201.67=20167 минорных, XT-6 GTX, CartLine-GID, delivery_no_delivery_available/recoverable, email в update_checkout, 10 результатов каталога). Хук: агентная покупка = контрактные тулы + человек на финале, не computer-use. Тезис «первые в РФ-сегменте» убран (непроверяемо). @Shopify добавлен по mentions-gate (id 17136315).
+- **Пайплайн:** RU okPokupki+Сергей → EN + обложка (v1 8/10 → v2 8.5/10: математика чека сходится, «AGENT PREPARES. HUMAN PAYS.»; v3-итерация зависла в grok, откат на v2) → MoA: качество PASS, mentions PASS, viral 7/10 → факт-таблица UCP в CONTENT_BRIEF → Human Gate «пости» → пост 2104889500472115551.
+- **Верификация read-back:** note_tweet 2794 знаков, @Shopify в тексте, 1 photo, финал «Building in public. 🤖».
+- **Артефакты:** drafts/ucp_shopify_v1_ru.md, drafts/ucp_shopify_v1_en.txt (локально, gitignored), images/ucp_cover_v1.png, images/ucp_cover_v2.png.
+
 ## 2026-09-27 — Пост SkillSpector опубликован (id 2104073355213107254)
 
 - **Что:** engineering-пост @RobotsTJ500 про NVIDIA SkillSpector v2.12.0 (security-сканер агентных скиллов) + наш dogfood: 337 findings на ~70 своих скиллов, вердикт DO_NOT_INSTALL разобран как YARA false positives.
@@ -2182,3 +2189,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 06:24** — ci(inventory 29.09): whitelist reports dir (`2062f3b`)
 - **29.09.2026 06:26** — chore: fixups — untrack runtime state, archive remaining dated files (inventory 29.09) (`c85c710`)
 - **29.09.2026 06:39** — docs(drift): normalize closure lines (double-pipe fix) (`b36c1b2`)
+- **29.09.2026 11:06** — CONTENT_BRIEF: факт-таблица UCP; drafts+covers UCP; published_posts: 2104889500472115551 (`dc6fbfc`)
