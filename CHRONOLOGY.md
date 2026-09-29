@@ -2226,3 +2226,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09 активность:** UCP Shopify пост опубликован 11:02 UTC (2104889500472115551); Meta WebMCP пост подготовлен (бриф, drafts, cover v3) — отложенная публикация 30.09 02:00 UTC; cleanup по inventory 29.09 (архив стейл-доков, untrack node_modules/runtime state, whitelist CI).
 - **Nightly Analytics 29.09:** 4 поста, 8❤️ 6💬 422👁️, ER 3.3%; SkillSpector 21040733 — OUTPERFORMER 2.0x, UCP 1.4x.
 - **Contract index update:** not needed.
+- **29.09.2026 22:45** — chrono: 2026-09-29 (`51e28a2`)

@@ -75,6 +75,15 @@ WHITELIST = (
     "reports/**",
     "scripts/jev_post_monitor.sh",
     "welcome_hermes_updates.png",
+    # inventory 29.09: runtime state and cron-written files (meta)
+    "TACTICS.md",
+    "TACTICS_GROMYKOSS.md",
+    "covers/**",
+    "data/**",
+    "img_*.png",
+    "post_with_log.sh",
+    ".posted_construction_ai_20260630.marker",
+    "quote_draft_wandermist.txt",
 )
 
 
