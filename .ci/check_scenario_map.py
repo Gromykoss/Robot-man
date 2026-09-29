@@ -52,6 +52,25 @@ WHITELIST = (
     "scripts/jev_corpus_collector.py",
     "scripts/jev_edit_learner.py",
     "scripts/jev_viral_analyzer.py",
+    # inventory 29.09: archive dir + cleanup moves/deletions (meta, no scenario ownership)
+    "archive/**",
+    ".gitignore",
+    "x_tracker_fetch.py",
+    "radar_update.py",
+    "voice_calibrate.py",
+    "robotman_mcp.py",
+    "scripts/monitor_ksimback_reply.py",
+    "scripts/crop_candidates.py",
+    "scripts/fix_crop_v3.py",
+    "scripts/offpipeline_watchdog.py",
+    "AGENTS.md.*",
+    "CONTENT_BRIEF_backup_*.md",
+    "CONTENT_BRIEF_LCM.md",
+    "TACTICS_GROMYKOSS_2*",
+    "TACTICS_gromykoss.md",
+    "tactics_gromykoss_*.md",
+    "TECHNICAL_AUDIT_ALIKHAN.md",
+    "gromykoss-mcp/node_modules/**",
 )
 
 

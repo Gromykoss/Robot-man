@@ -2175,3 +2175,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **28.09.2026 22:48** — drift: open intent images whitelist (`accfb93`)
 - **28.09.2026 22:49** — ci: whitelist images/** in scenario map completeness (push blocked since 27.09) (`0267748`)
 - **28.09.2026 22:49** — drift: close intents 1d8f898, 0267748 (`dc5bf28`)
+- **29.09.2026 05:19** — wip: snapshot pre-cleanup (cron-updated canons, KG, post_with_log.sh) — inventory 29.09 (`f1aac10`)

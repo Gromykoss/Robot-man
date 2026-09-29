@@ -1,0 +1,18 @@
+[
+  {
+    "date": "2026-09-14T10:03:20.780995+00:00",
+    "source_run": "analytics_loop",
+    "source_post": "2097167964977901829",
+    "performance": "underperformer",
+    "patterns": {
+      "hooks": [],
+      "formats": [],
+      "topics": [],
+      "recommendations": [
+        "Best post (20971679): 1 likes, 0 replies \u2014 analyze hook and format",
+        "Overall engagement rate: 2.9% (average)"
+      ]
+    },
+    "summary": "Robot-man Analytics \u2014 2026-09-14"
+  }
+]

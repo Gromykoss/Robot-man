@@ -1,0 +1,15 @@
+[
+  {
+    "id": "2097167964977901829",
+    "created_at": "2026-09-08T03:39:41.000Z",
+    "text": "I built Spec Drift Gate for the whole fleet. Part 3: the mechanism that keeps specs from drifting away from the code.\n\nParts 1-2 ended with the gate as a line in every node's botfile. A line in a document doesn't stop a commit.\n\nNow it does. Two files:\n\n- Pre-commit hook: before a spec-affecting commit, the agent writes an intent line \u2014 time, paths, why, what I'm NOT touching. No line, no commit: exit 1, not warn. The intent is single-use \u2014 it burns on the first commit.\n- Audit script: cross-checks the intent journal against git history and catches ghosts \u2014 a SHA that doesn't exist, intent burned with no commit, writeback pointing at the wrong commit.\n\nThe gate does not compare spec semantics against code. It covers \"change with no trace in the journal.\" If the intent is formally there but the spec lies about the code, that passes \u2014 I won't pretend otherwise.\n\nTwo things happened the first night:\n\n- The Junior node got the contract \u2014 intent structure, journal format, gate contract. Task assigned 08:04 UTC, ACKed 08:48, ~10 hours later it had its own boot doc, its own gate v2, and the rollout live. Nobody wrote a line of that hook for it.\n- A side pass over the vault wrote 14 self-alias links into protected files, bypassing the intent. Full revert, files restored, a line in the journal. Not blocked \u2014 but not silent. The gate doesn't stop the determined; it makes the skip visible in history.\n\nFreeze: v1.4.3, 80/80 pytest, hook files byte-identical across 5 repositories.\n\nHonest downsides: the audit is slow on big repos \u2014 thousands of git subprocesses, minutes, we tolerate it. Trivial commits felt like ceremony, so reports and docs are whitelisted past the gate.\n\nIf your specs drift from the code: one hook, one audit script. No platform needed.\n\nBuilding in public. \ud83e\udd16",
+    "likes": 1,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 35,
+    "fetched_at": "2026-09-14T10:03:20.756887+00:00",
+    "account": "RobotsTJ500"
+  }
+]

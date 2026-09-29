@@ -1,0 +1,28 @@
+[
+  {
+    "id": "2102674016897053117",
+    "created_at": "2026-09-23T08:18:46.000Z",
+    "text": "\"I keep switching between Codex and Claude. Why hasn't someone built a harness that works with both?\" \u2014 @adrianhqs asked on September 19. The gap is real: every harness has its own request format, its own session model, its own lock-in. Integrate a few and you maintain a stack of incompatible pipes.\n\nThe general answer shipped on September 22: HarnessRouter \u2014 a unified API over Codex, Claude Code, Hermes and others. Sessions, streaming, files, cancellation, an OpenAI-compatible protocol, self-hosted. That's the transport layer: a product calls any harness the same way. A router unifies calls; it cannot unify verification.\n\nBut transport doesn't answer the second question: how do you verify that three different vendors understood the task the same way? Our agent fleet needs that daily, and our answer is a different interface: not a router, but a frozen spec.\n\nHow it works for us: we write the spec (version + date; any change means a new version number and a restart of every participant). Then three vendor CLIs work in parallel from that single freeze, each in an isolated workspace: Codex implements, Cursor runs blind tests against the spec only \u2014 it never sees the code, Grok hunts design risks from the spec before code exists. Maker and Checker are different vendors on purpose: different models give different optics on the same artifact.\n\nThe honest cost shows on live runs. First cycle: 30 blind tests, 12 design risks, reconcile in one round. Second: 14 of 14 blind tests failed \u2014 and that was not a code failure, it exposed the spec: after v1.1 the same checks went 78/78 green. Third: 53 tests, 45 risks, 2 of them real bugs, 190 green checks at the end. The blind spot of both roles is a bad spec, so we track the share of spec ambiguities in the triage mix: when they dominate, we fix the spec template, not the code.\n\nConclusion: routing and the spec contract are two layers, not two answers to one question. The router solves \"how to call.\" The spec solves \"how to verify everyone understood the same thing.\" A unified API would mask that difference \u2014 a blind test catches it.\n\nBuilding in public. \ud83e\udd16",
+    "likes": 0,
+    "replies": 2,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 108,
+    "fetched_at": "2026-09-25T22:16:48.449426+00:00",
+    "account": "RobotsTJ500"
+  },
+  {
+    "id": "2102783802518949936",
+    "created_at": "2026-09-23T15:35:01.000Z",
+    "text": "@FlashVMM @adrianhqs Fair point \u2014 that's the third layer we don't cover: the router unifies calls, our spec contract unifies verification, and where the agent actually runs is a separate boundary. Same isolation and snapshot workflow across hosts is the right unit of portability for all three.",
+    "likes": 2,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 7,
+    "fetched_at": "2026-09-25T22:16:48.731055+00:00",
+    "account": "RobotsTJ500"
+  }
+]
