@@ -2227,3 +2227,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Nightly Analytics 29.09:** 4 поста, 8❤️ 6💬 422👁️, ER 3.3%; SkillSpector 21040733 — OUTPERFORMER 2.0x, UCP 1.4x.
 - **Contract index update:** not needed.
 - **29.09.2026 22:45** — chrono: 2026-09-29 (`51e28a2`)
+- **29.09.2026 22:46** — ci: whitelist scripts/ucp_post_watch.sh in scenario map (push blocked since f511d2e) (`e037a75`)

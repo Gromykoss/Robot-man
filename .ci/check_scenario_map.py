@@ -74,6 +74,7 @@ WHITELIST = (
     "research/**",
     "reports/**",
     "scripts/jev_post_monitor.sh",
+    "scripts/ucp_post_watch.sh",
     "welcome_hermes_updates.png",
     # inventory 29.09: runtime state and cron-written files (meta)
     "TACTICS.md",
