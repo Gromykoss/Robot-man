@@ -71,6 +71,9 @@ WHITELIST = (
     "tactics_gromykoss_*.md",
     "TECHNICAL_AUDIT_ALIKHAN.md",
     "gromykoss-mcp/node_modules/**",
+    "research/**",
+    "scripts/jev_post_monitor.sh",
+    "welcome_hermes_updates.png",
 )
 
 
