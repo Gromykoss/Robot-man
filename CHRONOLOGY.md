@@ -1,4 +1,10 @@
 
+## 2026-09-30 — Пост Meta WebMCP опубликован по расписанию (id 2105125400774914472)
+
+- **Факт:** cron-джоба meta-webmcp-publish отработала 02:39 UTC (= 08:39 Бишкек, план 02:00 UTC) — пост @RobotsTJ500 (WebMCP agent tools на Meta Ray-Ban Display, EN + cover v3) опубликован через post_with_log.sh, id **2105125400774914472**, запись в published_posts.jsonl подтверждена.
+- **Метрики (Nightly Analytics 30.09, частичное окно):** 1❤️ 0💬 0🔄 — worst за окно (ER 2.8%); лучший за окно — UCP Shopify 2104889500472115551 (5❤️ 3💬, 579👁️ суммарно по 4 постам).
+- **Contract index update:** not needed.
+
 ## 2026-09-29 — Nightly Analysis: xactions мёртв (search/trends пустые), shadowban не подтверждается, followers 398 flat
 
 - **Аналитика (22:16 UTC, mcp analytics):** 7 дней / 4 поста с метриками. SkillSpector 2104073355213107254 — OUTPERFORMER 2.0x (159 imp, 2❤3💬2🔖); UCP Shopify 2104889500472115551 — 1.4x (122 imp, 4❤1💬); два underperformer 0.6x — реплаи ветки. ER 3.3% (average), baseline 104 imp. 21026677 — metrics fetch fail.
@@ -2233,3 +2239,12 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 22:47** — drift: SHA for briefing intent (`6aec502`)
 - **30.09.2026 02:39** — CONTENT_BRIEF: факт 57-символьных имён WebMCP (факт-гейт) (`303e6ca`)
 - **30.09.2026 06:47** — drafts+covers: Fo/Grok юмор-пост (MoA PASS) (`6292000`)
+- **30.09.2026 07:59** — chronology: Fo/Grok humor post published 2105205723680395656 (`66a8d98`)
+
+## 2026-09-30 — Nightly Analytics
+- **Metrics:** 4 постов анализировано, baseline: likes=1.2, replies=0.7, impressions=104.5
+- **👤 @RobotsTJ500:** 4 постов, 10❤️ 6💬 0🔄 2🔖 579👁️
+- **Best:** 21048895 (5❤️ 3💬 0🔄)
+- **Worst:** 21052057 (1❤️ 0💬 0🔄)
+- **Pattern:** Best post (21048895): 5 likes, 3 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.8% (average)
