@@ -2231,3 +2231,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 22:47** — ci: add ucp_post_watch.sh to whitelist (missed in e037a75) (`d8ea13c`)
 - **29.09.2026 22:47** — chrono: briefing 2026-09-29 (`597709b`)
 - **29.09.2026 22:47** — drift: SHA for briefing intent (`6aec502`)
+- **30.09.2026 02:39** — CONTENT_BRIEF: факт 57-символьных имён WebMCP (факт-гейт) (`303e6ca`)
