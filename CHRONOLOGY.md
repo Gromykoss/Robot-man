@@ -2230,3 +2230,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 22:46** — ci: whitelist scripts/ucp_post_watch.sh in scenario map (push blocked since f511d2e) (`e037a75`)
 - **29.09.2026 22:47** — ci: add ucp_post_watch.sh to whitelist (missed in e037a75) (`d8ea13c`)
 - **29.09.2026 22:47** — chrono: briefing 2026-09-29 (`597709b`)
+- **29.09.2026 22:47** — drift: SHA for briefing intent (`6aec502`)
