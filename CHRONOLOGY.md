@@ -2232,3 +2232,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.09.2026 22:47** — chrono: briefing 2026-09-29 (`597709b`)
 - **29.09.2026 22:47** — drift: SHA for briefing intent (`6aec502`)
 - **30.09.2026 02:39** — CONTENT_BRIEF: факт 57-символьных имён WebMCP (факт-гейт) (`303e6ca`)
+- **30.09.2026 06:47** — drafts+covers: Fo/Grok юмор-пост (MoA PASS) (`6292000`)

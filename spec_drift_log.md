@@ -79,4 +79,5 @@
 | 2026-09-29T15:32 | briefings/2026-09-29.md | брифинг дня robot-man | код гейтов, спеки постов | 597709b |
 | 2026-09-30T02:40 | CONTENT_BRIEF.md | факт-гейт: токен 57 не покрыт, добавлена строка про 57-символьные имена тула | код гейтов, Human Gate | 6aec502 |
 | 2026-09-30T02:39 | CONTENT_BRIEF.md | факт-гейт: токен 57 не покрыт, добавлена строка про 57-символьные имена тула Meta WebMCP | код гейтов, Human Gate | 303e6ca |
-| 2026-09-30T06:47 | drafts/fo_grok_v2_ru.md, images/fo_grok_cover_v1.png | юмор-пост Fo/Grok подготовлен (joint MoA PASS, viral 7/10); публикация по Human Gate | код гейтов, Human Gate | |
+| 2026-09-30T06:47 | drafts/fo_grok_v2_ru.md, images/fo_grok_cover_v1.png | юмор-пост Fo/Grok подготовлен (joint MoA PASS, viral 7/10); публикация по Human Gate | код гейтов, Human Gate | 6292000 |
+| 2026-09-30T07:59 | CHRONOLOGY.md | пост Fo/Grok опубликован 2105205723680395656, обложка v3 | - | |
