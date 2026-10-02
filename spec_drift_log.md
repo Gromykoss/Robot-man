@@ -82,4 +82,4 @@
 | 2026-09-30T06:47 | drafts/fo_grok_v2_ru.md, images/fo_grok_cover_v1.png | юмор-пост Fo/Grok подготовлен (joint MoA PASS, viral 7/10); публикация по Human Gate | код гейтов, Human Gate | 6292000 |
 | 2026-09-30T07:59 | CHRONOLOGY.md | пост Fo/Grok опубликован 2105205723680395656, обложка v3 | - | 66a8d98 |
 | 2026-09-30T22:47 | briefings/2026-09-30.md | briefing дня 30.09 (формат как 29.09) | код гейтов, CHRONOLOGY.md | 22d6759 |
-| 2026-10-02T22:46 | briefings/2026-10-02.md | briefing дня 02.10 (формат как 29.09) | код гейтов, CHRONOLOGY.md | |
+| 2026-10-02T22:46 | briefings/2026-10-02.md | briefing дня 02.10 (формат как 29.09) | код гейтов, CHRONOLOGY.md | 8c39801 |
