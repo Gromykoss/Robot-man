@@ -2272,3 +2272,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **02.10.2026 22:48** — chrono: briefing 2026-10-02 (`8c39801`)
 - **02.10.2026 22:48** — drift: SHA for briefing intent (`0494895`)
 - **03.10.2026 03:30** — publish: CF agentic stack post 2106223637304934743 (draft, covers, brief) (`bb23bb6`)
+- **03.10.2026 04:39** — e2e post: draft+cover+facts, scheduled 04.10 04:00 UTC (sha-pending) (`3bdddfd`)
