@@ -93,3 +93,4 @@
 | 2026-10-03T03:29 | drafts/cloudflare_agents_v3_ru.md, images/cf_agents_cover_v1.png, images/cf_agents_cover_v2.png, images/cf_agents_cover_v3.png, images/cf_agents_cover_v4.png, CONTENT_BRIEF.md, VOICE_LESSONS.md, data/write_counter.json | публикация CF-поста 2106223637304934743 (чистый интент) | whitelisted | bb23bb6 |
 | 2026-10-03T04:37 | drafts/e2e_dogfood_v1_en.txt, drafts/e2e_dogfood_v1_ru.md, facts/e2e_facttable.md, CONTENT_BRIEF.md, images/e2e_cover_v6.png, images/e2e_cover_scene.png | scheduled e2e post 04.10 04:00 UTC | не трогаю: cron-скрипты, gateway | 3bdddfd |
 | 2026-10-03T13:22 | CONTENT_BRIEF.md | reply gate: cover field needs real path (images/e2e_cover_v6.png), pipeline _verify_cover_path | ничего | 24374f4 |
+| 2026-10-03T22:52 | briefings/2026-10-03.md | daily briefing 2026-10-03 | CHRONOLOGY.md |  |
