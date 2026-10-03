@@ -2297,3 +2297,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **03.10.2026 22:52** — drift: write back SHA 94f1bd7 (`b291a1e`)
 - **03.10.2026 22:53** — ci: whitelist facts/** (fact tables for briefs) (`7ba8ad3`)
 - **03.10.2026 22:54** — drift: write back SHA 7ba8ad3 (`2e6e76a`)
+- **03.10.2026 22:54** — chrono: log tail (`a26cc18`)
