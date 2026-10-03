@@ -2295,3 +2295,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **03.10.2026 22:51** — chrono: 2026-10-03 (`3cf42fa`)
 - **03.10.2026 22:52** — briefing: 2026-10-03 (`94f1bd7`)
 - **03.10.2026 22:52** — drift: write back SHA 94f1bd7 (`b291a1e`)
+- **03.10.2026 22:53** — ci: whitelist facts/** (fact tables for briefs) (`7ba8ad3`)
