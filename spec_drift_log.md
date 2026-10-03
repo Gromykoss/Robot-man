@@ -83,3 +83,11 @@
 | 2026-09-30T07:59 | CHRONOLOGY.md | пост Fo/Grok опубликован 2105205723680395656, обложка v3 | - | 66a8d98 |
 | 2026-09-30T22:47 | briefings/2026-09-30.md | briefing дня 30.09 (формат как 29.09) | код гейтов, CHRONOLOGY.md | 22d6759 |
 | 2026-10-02T22:46 | briefings/2026-10-02.md | briefing дня 02.10 (формат как 29.09) | код гейтов, CHRONOLOGY.md | 8c39801 |
+| 2026-10-03T03:22 | drafts/cloudflare_agents_v3_ru.md, drafts/cloudflare_agents_v1_en.txt, images/cf_agents_cover_v4.png | пост CF-стек для агентов: полный MoA PASS, viral 7/10; публикация по Human Gate | - | 0494895 |
+| 2026-10-03T03:24 | CHRONOLOGY.md, CONTENT_BRIEF.md | CF-пост опубликован 2106223637304934743, факт-таблица в брифе | - | 0494895 |
+| 2026-10-03T03:24 | CHRONOLOGY.md, CONTENT_BRIEF.md | CF-пост опубликован 2106223637304934743, факт-таблица в брифе | нет спека | 0494895 |
+| 2026-10-03T03:25 | CHRONOLOGY.md, CONTENT_BRIEF.md | CF-пост 2106223637304934743: хронология и факт-таблица | ничего | 0494895 |
+| 2026-10-03T03:25 | CHRONOLOGY.md, CONTENT_BRIEF.md, spec_drift_log.md | фикс журнала: закрыть хронологию CF-поста 2106223637304934743 | ничего | 0494895 |
+| 2026-10-03T03:28 | drafts/cloudflare_agents_v3_ru.md, images/cf_agents_cover_v1.png, images/cf_agents_cover_v2.png, images/cf_agents_cover_v3.png, images/cf_agents_cover_v4.png, CONTENT_BRIEF.md, VOICE_LESSONS.md, data/write_counter.json | публикация CF-поста 2106223637304934743: драфт, обложки, бриф | whitelisted-файлы | 0494895 |
+| 2026-10-03T03:30 | CHRONOLOGY.md, CONTENT_BRIEF.md, spec_drift_log.md, VOICE_LESSONS.md, data/write_counter.json | финальный коммит публикации CF-поста 2106223637304934743 | ничего | 0494895 |
+| 2026-10-03T03:29 | drafts/cloudflare_agents_v3_ru.md, images/cf_agents_cover_v1.png, images/cf_agents_cover_v2.png, images/cf_agents_cover_v3.png, images/cf_agents_cover_v4.png, CONTENT_BRIEF.md, VOICE_LESSONS.md, data/write_counter.json | публикация CF-поста 2106223637304934743 (чистый интент) | whitelisted | |
