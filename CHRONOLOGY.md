@@ -2274,3 +2274,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **03.10.2026 03:30** — publish: CF agentic stack post 2106223637304934743 (draft, covers, brief) (`bb23bb6`)
 - **03.10.2026 04:39** — e2e post: draft+cover+facts, scheduled 04.10 04:00 UTC (sha-pending) (`3bdddfd`)
 - **03.10.2026 04:39** — drift: write back SHA 3bdddfd (`e4fe1d2`)
+- **03.10.2026 13:22** — brief: cover field -> real path for reply gate (`24374f4`)
