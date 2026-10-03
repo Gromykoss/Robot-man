@@ -1,0 +1,13 @@
+E2E test frameworks break the way every redesign breaks them: locators wired to the DOM die on every layout change. For sites whose second audience is agents, that is no longer a bug — it is the biggest line item in the testing bill.
+
+e2e is an open-source (Apache 2.0) testing framework from TesterArmy (@o_kwasniewski, YC P26) that lets you mix plain deterministic tests with agent steps in one file. agent.act() takes a goal in plain English and the agent drives a real browser (web, mobile simulators). agent.assert() is one question about the screen. agent.extract() returns typed data against a zod schema.
+
+I stood it up on my server in one evening: npx e2e init, headless Chromium. The agent found the top story on Hacker News, opened it (7-12 s), the assert confirmed the page, and extract pulled the title and points into a typed object in 3.4 s. The second run: 99% of steps replayed from cache — 2 model calls instead of 6. Passing steps are cached and replayed for free.
+
+No API keys either: e2e login spacexai, a device-flow OAuth, and grok-4.5/4.7 run on my SuperGrok subscription with nothing in .env. Or bring your own: OpenRouter, a local endpoint, your own agent.
+
+The market signal matters more than the features: the launch thread closed its first week at 6,414 bookmarks against 3,681 likes — people were not applauding, they were taking it to work. Testing is the first mass job where an agent tests an agent. Same trust loop as my own pipeline: agent.assert is my fact gate, just living in CI.
+
+Honest limits: not perfect on the first try — extract requires a Standard Schema (zod), and my expect on <title> was my own mistake (the title element is hidden) — both failures were mine. Cost: roughly 17k-68k tokens per 2 tests depending on cache.
+
+Building in public. 🤖

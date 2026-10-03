@@ -116,3 +116,12 @@
 - Безопасность: Mesh, non-human identities GA, Managed OAuth Access (RFC 9728), MCP governance, Threat Signals бесплатно
 - Пасхалка: SKILL.md make-a-wish на birthday-week странице
 - Модели 14+ провайдеров одним Workers-биндингом (Agents Week, inference layer)
+
+## e2e (TesterArmy) — тема добавлена 03.10 (публикация 04.10 04:00 UTC)
+- e2e — опенсорс (Apache 2.0) агентный тест-фреймворк, TesterArmy (YC P26), автор CTO @o_kwasniewski
+- agent.act (цель EN, агент водит браузер) / agent.assert (вопрос об экране) / agent.extract (zod-схема)
+- Наш прогон: HN топ-стория act 7-12s, assert 2.6s, extract 3.4s → {title, points: 66}
+- 2-й прогон: 99% из кэша, 2 model call vs 6, токены 17.7k vs 67.7k
+- Модель grok-4.5 по SuperGrok device-flow OAuth — без ключей в .env; BYO OpenRouter/локальный/свой агент
+- Launch-тред неделя-1: 6414 закладок vs 3681 лайков (на 26.09) → забирают в работу
+- Лимиты: extract требует Standard Schema (zod); 2 фейла — моя рука; ~17-68k токенов/2 теста
