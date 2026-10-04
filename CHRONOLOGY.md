@@ -2324,3 +2324,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 13:18** — drift: open intent (staged journal for next commit) (`427aa18`)
 - **04.10.2026 13:18** — graph: map references/agent-ops.md into x-infra domain (`5bfc0f6`)
 - **04.10.2026 13:18** — drift: write back SHA 5bfc0f6 (`e880fa5`)
+- **04.10.2026 13:19** — drift: open intent check_scenario_map (`077f388`)

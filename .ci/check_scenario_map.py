@@ -73,6 +73,8 @@ WHITELIST = (
     "TECHNICAL_AUDIT_ALIKHAN.md",
     "gromykoss-mcp/node_modules/**",
     "research/**",
+    # references/ 04.10: тактический контент, вынесенный из AGENTS.md (аудит п.3)
+    "references/**",
     "reports/**",
     "scripts/jev_post_monitor.sh",
     "scripts/ucp_post_watch.sh",
