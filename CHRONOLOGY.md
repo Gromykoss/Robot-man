@@ -2300,3 +2300,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **03.10.2026 22:54** — chrono: log tail (`a26cc18`)
 - **03.10.2026 22:54** — chrono: log tail 2 (`f98b2bf`)
 - **03.10.2026 (сессия)** — Dogfood e2e (TesterArmy): установлен, grok-4.5 по SuperGrok OAuth; прогон HN (act/assert/extract, 99% cache). Драфт+обложка+факты закоммичены (3bdddfd). Публикация запланирована cron 8d639cdeaa03 на 04.10 04:00 UTC (приказ Сергея). Реплаи в тред CF-поста: 2106374418121228760 (DARA), 2106374483804037152 (Steve) — оба верифицированы. Чинил: APPROVAL_TOKEN export в скрипте; brief «Изображение» → реальный путь (24374f4); Spec Drift Gate порядок SHA-после-коммита (skill spec-drift-gate-ops). Nightly Strategy Analysis 56aa69d2d98f удалён приказом Сергея. Хендофф: ~/.hermes/cron/output/session-20261003-handoff-robotman.md
+- **04.10.2026 00:36** — chrono: session 20261003 close (`3e303c5`)
