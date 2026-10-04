@@ -95,4 +95,4 @@
 | 2026-10-03T13:22 | CONTENT_BRIEF.md | reply gate: cover field needs real path (images/e2e_cover_v6.png), pipeline _verify_cover_path | ничего | 24374f4 |
 | 2026-10-03T22:52 | briefings/2026-10-03.md | daily briefing 2026-10-03 | CHRONOLOGY.md | 94f1bd7 |
 | 2026-10-03T22:53 | .ci/check_scenario_map.py | push blocked: facts/e2e_facttable.md outside whitelist; facts/** = content fact-tables | CHRONOLOGY.md, briefings | 7ba8ad3 |
-| 2026-10-04T00:36 | published_posts.jsonl | log 2 replies 2106374418121228760 2106374483804037152 | ничего |  |
+| 2026-10-04T00:36 | published_posts.jsonl | log 2 replies 2106374418121228760 2106374483804037152 | ничего | f8d67ba |
