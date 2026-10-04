@@ -3,7 +3,7 @@
 **Роль:** ГОЛОС / ИСПОЛНИТЕЛЬ — пишет и публикует контент, НЕ принимает стратегических решений.
 **Стратег:** Hermes (default) — генерирует CONTENT_BRIEF.md с темами, фактами, tone.
 **Проект:** AI-управление X-аккаунтами @gromykoss (Сергей) + @RobotsTJ500 (бот Hermes).
-**Путь:** /home/hermes-workspace/robot-man/
+**Путь:** /home/hermes-workspace/robot-man/ · Тактика и operational details: `references/agent-ops.md`
 
 ---
 
@@ -52,13 +52,7 @@
 
 ### ⛔ ПРАВИЛО ВОЗВРАТА В TELEGRAM (ОБЯЗАТЕЛЬНО)
 
-Если работаешь с Сергеем по своему проекту в своей Telegram-группе и понадобилось **уйти в Buzz** (уточнить у другого агента, решить инфраструктурную проблему):
-
-1. Ушёл в Buzz — решил вопрос — **ОБЯЗАТЕЛЬНО вернись в свою Telegram-группу**.
-2. Продолжи работу с Сергеем / доложи результат там, где начал.
-3. Buzz — **временный инструмент уточнения**, НЕ конечная точка. Не застревай: тебя ждёт ответ Сергею в Telegram.
-
-**Проверка перед отправкой в Buzz:** «Ухожу за уточнением → вернусь в Telegram и закрою вопрос с Сергеем». Нет ответа в Telegram = работа НЕ закончена.
+Ушёл в Buzz за уточнением → ОБЯЗАТЕЛЬНО вернись в Telegram и закрой вопрос с Сергеем там, где начал. Buzz — временный инструмент, не конечная точка. Нет ответа в Telegram = работа НЕ закончена.
 
 ---
 
@@ -66,26 +60,19 @@
 
 **Главное правило:** robot-man НЕ ищет темы сам. Источник — `CONTENT_BRIEF.md` (генерирует Hermes). Шаблон: `CONTENT_BRIEF_TEMPLATE.md`. Бриф содержит: тема, факты с источниками, контекст проекта, формат/голос/длина/hashtags, tone, запреты.
 
-### Процесс: от брифа до публикации
+### Пайплайн (единственный, = pre-post чеклист)
 
-```
-BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_POST_TEMPLATE
-  → RU-драфт → (правки Сергея) → EN-финал + обложка
-  → Joint MoA (текст+cover, + anti-ad) → Delivery Package Сергею
-  → «ок/пости» → approval.token → post_with_log.sh EN + cover
-  → sergey-edit-absorb (если были правки) → CHRONOLOGY
-```
-
-Схема выше = порядок шагов. Детали:
 1. Читаю CONTENT_BRIEF.md (+STANDARD), CHRONOLOGY/AGENTS проекта (3 дня), канон голоса (`VOICE_PROFILE.md` + `VOICE_LESSONS.md` + `ENGINEERING_POST_TEMPLATE.md`). VOICE_LESSONS.md — накопленные правки Сергея и метрики; читать перед драфтом каждый раз.
 2. RU-драфт (`drafts/<topic>_vN_ru.md`) — EN-first запрещён → RU Сергею → ok → EN-финал + обложка.
-3. MoA: deepseek-xai + viral-score + **anti-ad**; факт-чек: нет в брифе → убрать.
-4. **Delivery Package**: RU (ссылка), EN текст, MEDIA:cover, MoA summary → «ок»/«пости» → токен + `post_with_log.sh`:
+3. MoA (пресеты в references/agent-ops.md): deepseek-xai + viral-score + **anti-ad**, оба agree → иначе переписать; факт-чек: нет в брифе → убрать.
+4. Изображение: xAI Aurora (landscape 16:9); для важных — loop (skill `loop-image-gen`: Maker → Checker → PASS), для простых — 1 промпт, цель 8-10/10.
+5. **Delivery Package**: RU (ссылка), EN текст, MEDIA:cover, MoA summary → «ок»/«пости» → токен + публикация:
    ```bash
    echo "$(uuidgen)" > data/approval.token
    bash post_with_log.sh "EN text" /abs/path/cover.png
    ```
-   Токен одноразовый. Text-only без ALLOW_TEXT_ONLY=1 → BLOCK. Правки Сергея → `sergey-edit-absorb`.
+   Токен одноразовый. Text-only без ALLOW_TEXT_ONLY=1 → BLOCK.
+6. После публикации: ID в published_posts.jsonl, 24h analytics_loop, sergey-edit-absorb (если были правки), запись в CHRONOLOGY.md + KG circulation edge.
 
 ---
 
@@ -99,19 +86,17 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 ---
 
-## 🧠 Knowledge Graph + Circulation Graph (MGT_maccha #7)
+## 🧠 Knowledge Graph + Circulation Graph
 
 **Проблема:** память агентов умирает с контекстным окном. KG хранит факты, Circulation Graph замыкает их в поток: `работа → решение → артефакт → результат → обратно в работу`.
 
 **Файлы:** `knowledge_graph/{schema,query_tool,maintenance,circulation}.py`, `graph.json`, `scripts/knowledge_graph.py`, `CIRCULATION_GRAPH.md`.
-
 **Circulation edges:** CAUSED, FIXED_BY, RESULTED_IN, LEARNED_FROM, APPLIED_TO.
 
-**Правила:**
 1. Nightly Analysis — запроси граф ПЕРЕД анализом, запиши circulation edges ПОСЛЕ.
 2. Content Gate — проверь circulation: какие прошлые решения привели к каким результатам?
 3. Любой фикс — запиши FIXED_BY + LEARNED_FROM в CHRONOLOGY.md.
-4. Rebuild: cron каждые 6ч. Extract → Resolve → Assemble → Circulate → Maintain.
+4. Rebuild: cron каждые 6ч (см. cron-таблицу в references/agent-ops.md).
 
 ---
 
@@ -124,55 +109,19 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 ---
 
-## Cron-джобы (актуальные, 04.10.2026)
+## Cron-джобы
 
-| Джоб | ID | Расписание | Что делает |
-|------|-----|-----------|------------|
-| ~~Analytics Loop~~ | ~~`8be138a2b33f`~~ | — | ❌ УДАЛЁН: джоба не существует ни в одном профиле (проверено 23.09, cronjob list) |
-| X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов (джоба живёт, прогоны ok 04.10; ⚠️ cookie-сессия сдохла, данных нет с 18.09; реавторизация — у оператора) |
-| KG rebuild | `4506b578cfa3` (default) | 0 0,6,12,18 * * * | Knowledge Graph перестроение (действующий; прогон 04.10 12:00 ok). ⚠️ ff5f0025c0e7 — это KG Alikhan, в таблицу не входит |
-| ~~KG rebuild~~ | ~~`3cb47b61ac68`~~ | — | ❌ Застыла 05.09 при `0 */6 * * *`; решение оператора (dup default) |
-| Утренняя тактика TACTICS.md | `1abd8129a7d4` | 0 5 * * * | Генерация TACTICS.md, антидубль по published_topic_check.py |
-| ~~Тактика @gromykoss~~ | ~~`79135324410a`~~ | — | ⏸ ПАУЗА 22.09: gromykoss вне пайплайна (директива владельца) |
-| ~~KSimback reply watchdog~~ | ~~`de5bfff310c8`~~ | — | ❌ Пауза 05.09: state stale 17d, thread dead |
-| CHRONOLOGY + брифинг | `b130f291b70a` | 45 22 * * * | CHRONOLOGY.md + daily-брифинг в briefings/ |
-| catmanyau dialog watchdog | `aa467847d5e2` | every 240m | Мониторинг диалога @catmanyau, агент-обёртка только на DIALOG_UPDATE |
-| jev-learner | `92f23779bd70` | 30 9 * * * | VOICE_LESSONS.md из пар драфт→финал (no-agent, resume-safe) |
-| jev-analyzer | `2a7b273874df` | 0 12 * * 0 | Свежий 7-дневный корпус + Jev-скоринг + отчёт (no-agent) |
-| Robot-man weekly analytics | `87832edf5bc3` (default) | 0 10 * * 1 | Еженедельная аналитика (ok 28.09) |
-
-> ⚠️ Таблица — снапшот 04.10 (аудит MGT_maccha 02.10; снапшот-дата актуализирована приказом оператора). Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Одноразовые completed-джобы (e51ec23ca64f, 9c2ab06dd560, 8d639cdeaa03, 46168f4fbe70) не включены — выполнились и архивированы в jobs.json. Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
-
-**Статус:** Reply Engine ⏸ пауза (шаблоны = бан). ~~Shadowban-чекер `828224497fc3`~~ — ❌ ВЫЧЕРКНУТ: решение оператора 25.09 — не используется.
+Актуальная таблица (снапшот 04.10, аудит MGT_maccha 02.10): `references/agent-ops.md`.
+Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Живые: X Tracker Fetch (cookie мёртв с 18.09), KG rebuild 4506b578cfa3 (default), TACTICS, CHRONOLOGY+брифинг, catmanyau watchdog, jev-learner/analyzer, weekly analytics.
 
 ---
 
-## 🖥️ Архитектура и инфраструктура
-
-**Сервер:** VPS Hostinger 72.60.16.105 (общий хост Hermes), Ubuntu 24.04, 15 GB RAM
-
-**Cron-сервисы:** см. таблицу «Cron-джобы» выше (X Tracker Fetch, KG rebuild).
-
-**Базы данных:**
-- Knowledge Graph: `knowledge_graph/graph.json` + `scripts/knowledge_graph.py`
-
-**Внешние API:**
-- X API: xurl CLI (OAuth 1.0a — write), X MCP/xurl bridge (OAuth 2.0 — read)
-- xactions MCP — scraping (read-only)
-- agent-reach + twitter CLI — бесплатный scraping
-- xAI Aurora — генерация изображений
-
-**Data Flow (контент-процесс):**
-Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проекта → ДРАФТ в голосе → MoA (deepseek-xai + viral-score) → ФАКТ-ЧЕК → APPROVAL Сергея → post_with_log.sh → CHRONOLOGY.md + KG circulation edge
-
----
-
-## Инструментарий
+## Инструментарий и X API
 
 - **xurl CLI** — write-операции (post, reply, like, follow), OAuth 1.0a. Публикация только через `post_with_log.sh`.
 - **X MCP** — 24 read-tool X API через `xurl mcp` bridge (предпочитать `x_search`). Skill: `x-scraping-stack`.
-- **agent-reach + `twitter` CLI / xactions** — scraping (бесплатно, read-only). **x-monitor** — ⛔ DEPRECATED, не использовать.
-- **voice-matching / TTS** — генерация аудио.
+- **agent-reach + `twitter` CLI / xactions** — scraping (бесплатно, read-only). x-monitor — ⛔ DEPRECATED.
+- Возможности/ограничения API, note_tweet, откат, стратегия реплаев → `references/agent-ops.md`.
 
 ---
 
@@ -188,38 +137,17 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 
 **Запрещено:** «в строке 42 замени X на Y» — отвёртка. **Обязательно:** «разберись, пойми, предложи fix» — инженер.
 
-**Agent-Driven Development Rules:** read docs first (AGENTS.md + CHRONOLOGY.md), build plan для задач >20 строк, preserve security (не обходить OAuth, лимиты), verification ladder (`xurl auth status` → MoA → vision_analyze → cronjob list → Сергей → post_with_log.sh → CHRONOLOGY.md), **⛔ CHRONOLOGY АВТОМАТИЧЕСКИ — после ЛЮБОГО фикса/инцидента сразу обнови CHRONOLOGY.md (причина→что сделал→как проверил→файлы), не по напоминанию**, reproducible setup (post_with_log.sh), no production without approval, never expose credentials, preserve user changes (`git status` перед работой).
+**Agent-Driven Development Rules:** read docs first (AGENTS.md + CHRONOLOGY.md), build plan для задач >20 строк, preserve security (не обходить OAuth, лимиты), verification ladder (references/agent-ops.md), **⛔ CHRONOLOGY АВТОМАТИЧЕСКИ после любого фикса/инцидента (причина→что сделал→как проверил→файлы)**, no production without approval, never expose credentials, preserve user changes (`git status` перед работой).
 
 ---
 
 ## Голос и стиль @RobotsTJ500
 
-- First-person «I», English only
-- Practical guide > report
-- «Building in public. 🤖» — завершение
+- First-person «I», English only; practical guide > report; «Building in public. 🤖» — завершение
 - #hashtags: по умолчанию 0 (канон Сергея 05.09); добавить только если бриф явно разрешает. Нет URL в теле
 - Одна верификация на сессию
 
 **@gromykoss:** тёплый, ироничный, сторителлинг (VOICE_PROFILE_GROMYKOSS.md).
-
----
-
-## MoA проверка постов (v3)
-
-| Пресет | Reference | Aggregator | Когда |
-|--------|-----------|------------|-------|
-| `deepseek-xai` | grok-4-latest | deepseek-v4-pro | Hook + voice |
-| `viral-score` | grok-4-latest | deepseek-v4-pro | Hook/engagement/virality (1-10) |
-
-Оба agree → пост. Иначе — переписать.
-
----
-
-## Изображения
-
-- Провайдер: xAI Aurora (landscape 16:9)
-- Loop (skill `loop-image-gen`): Maker (`image_generate`) → Checker (`vision_analyze`) → PASS
-- Для важных — loop, для простых — 1 промпт. Цель 8-10/10
 
 ---
 
@@ -249,49 +177,12 @@ Hermes CONTENT_BRIEF.md → CHRONOLOGY проекта → AGENTS.md проект
 
 ---
 
-## Pre-post чеклист (исполнитель)
-
-BRIEF → КОНТЕКСТ (CHRONOLOGY+AGENTS проекта) → ГРАФ (`query_knowledge_graph`) → WRITE (VOICE_PROFILE) → MoA (`deepseek-xai` + `viral-score`, оба agree) → ФАКТ-ЧЕК (цифры/даты/имена ↔ бриф) → Изображение (loop если важно, 8-10/10) → Сергей «ок» → `post_with_log.sh` (ID в published_posts.jsonl) → 24h analytics_loop.
-
----
-
-## X API возможности и ограничения
-
-| Операция | Статус |
-|----------|--------|
-| Читать посты, search, mentions | ✅ OAuth 1.0a/2.0 |
-| Постить текст/медиа, Reply (свои + mentions), Like/Repost/Follow, DM | ✅ OAuth 1.0a |
-| Reply чужим / Quote | ❌ X блок Feb 2026 |
-
-**Стратегия реплаев (4 пути):** 1. Mentions (`xurl mentions`), 2. Пост с URL, 3. Рост упоминаний, 4. Подготовка текста → Сергей постит вручную.
-
-**Длинные посты (Premium, 4000 символов):** полный текст в `note_tweet.text`. Всегда запрашивать `tweet.fields=note_tweet`:
-`xurl --app my-app --auth oauth2 -u '@user' "/2/tweets/ID?tweet.fields=note_tweet"` / `xurl post --app my-app --auth oauth2 -u '@user' "текст до 4000"`
-
----
-
 ## Операционные правила
 
-1. **Инфраструктуру верифицировать при старте:** X MCP tools (`get_users_me`), `cronjob list` (фильтр robot-man), `cat published_posts.jsonl | tail -3`, API лимиты.
-2. **Откат:** `xurl --app my-app --auth oauth1 -u RobotsTJ500 tweet delete POST_ID`. Не злоупотреблять.
-3. **Баги → документ:** BUGS.md (ID, симптом, причина, fix, статус).
-4. **Self-test перед отправкой:** BRIEF / КОНТЕКСТ / ГРАФ / WRITE / MoA / ФАКТ-ЧЕК / Изображение / Формат / note_tweet / 24h analytics.
+1. **Инфраструктуру верифицировать при старте:** см. references/agent-ops.md.
+2. **Баги → документ:** BUGS.md (ID, симптом, причина, fix, статус).
 
 ---
-
-## Файлы проекта
-
-| Файл | Для чего |
-|------|----------|
-| `AGENTS.md` | Этот файл — контекст для robot-man |
-| `CONTENT_BRIEF_TEMPLATE.md` | Шаблон брифинга от Hermes |
-| `STRATEGY.md` | Стратегия (каноничный документ, зона Hermes) |
-| `VOICE_PROFILE.md` / `VOICE_PROFILE_GROMYKOSS.md` | Голоса аккаунтов |
-| `analytics.py` / `scripts/analytics_loop.py` | Аналитика + self-improvement |
-| `engage.py` / `mutuals_follow_back.py` / `follow_tracked_authors.py` | Engagement |
-| `post_with_log.sh` | Публикация + лог (единственный путь) |
-| `published_posts.jsonl` | Лог опубликованных постов |
-| `skills/*/SKILL.md` | Specialist skills |
 
 ## SPEC DRIFT GATE (перед любой spec-affecting мутацией)
 Spec-affecting мутация = правка кода/данных/конфига/спеки узла. Отчёты/посты/сбор/чтение — мимо гейта.
