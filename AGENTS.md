@@ -124,18 +124,24 @@ BRIEF → CHRONOLOGY → AGENTS → VOICE_PROFILE + VOICE_LESSONS + ENGINEERING_
 
 ---
 
-## Cron-джобы (актуальные, 26.09.2026)
+## Cron-джобы (актуальные, 04.10.2026)
 
 | Джоб | ID | Расписание | Что делает |
 |------|-----|-----------|------------|
 | ~~Analytics Loop~~ | ~~`8be138a2b33f`~~ | — | ❌ УДАЛЁН: джоба не существует ни в одном профиле (проверено 23.09, cronjob list) |
-| X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов (⚠️ cookie-сессия сдохла, данных нет с 18.09; реавторизация — у оператора) |
-| KG rebuild | `4506b578cfa3` (default) | 0 0,6,12,18 * * * | Knowledge Graph перестроение (действующий; прогон 26.09 00:00 ok) |
-| ~~KG rebuild~~ | ~~`3cb47b61ac68`~~ | — | ❌ Застыла 05.09 при `0 */6 * * *`; решение оператора |
+| X Tracker Fetch | `cd9bc007c07a` | 0 12 * * * | Посты отслеживаемых аккаунтов (джоба живёт, прогоны ok 04.10; ⚠️ cookie-сессия сдохла, данных нет с 18.09; реавторизация — у оператора) |
+| KG rebuild | `4506b578cfa3` (default) | 0 0,6,12,18 * * * | Knowledge Graph перестроение (действующий; прогон 04.10 12:00 ok). ⚠️ ff5f0025c0e7 — это KG Alikhan, в таблицу не входит |
+| ~~KG rebuild~~ | ~~`3cb47b61ac68`~~ | — | ❌ Застыла 05.09 при `0 */6 * * *`; решение оператора (dup default) |
+| Утренняя тактика TACTICS.md | `1abd8129a7d4` | 0 5 * * * | Генерация TACTICS.md, антидубль по published_topic_check.py |
+| ~~Тактика @gromykoss~~ | ~~`79135324410a`~~ | — | ⏸ ПАУЗА 22.09: gromykoss вне пайплайна (директива владельца) |
+| ~~KSimback reply watchdog~~ | ~~`de5bfff310c8`~~ | — | ❌ Пауза 05.09: state stale 17d, thread dead |
+| CHRONOLOGY + брифинг | `b130f291b70a` | 45 22 * * * | CHRONOLOGY.md + daily-брифинг в briefings/ |
+| catmanyau dialog watchdog | `aa467847d5e2` | every 240m | Мониторинг диалога @catmanyau, агент-обёртка только на DIALOG_UPDATE |
 | jev-learner | `92f23779bd70` | 30 9 * * * | VOICE_LESSONS.md из пар драфт→финал (no-agent, resume-safe) |
 | jev-analyzer | `2a7b273874df` | 0 12 * * 0 | Свежий 7-дневный корпус + Jev-скоринг + отчёт (no-agent) |
+| Robot-man weekly analytics | `87832edf5bc3` (default) | 0 10 * * 1 | Еженедельная аналитика (ok 28.09) |
 
-> ⚠️ Таблица — снапшот 26.09 (аудит MGT_maccha). Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
+> ⚠️ Таблица — снапшот 04.10 (аудит MGT_maccha 02.10; снапшот-дата актуализирована приказом оператора). Источник истины: `~/.hermes/profiles/robot-man/cron/jobs.json` (и `~/.hermes/cron/jobs.json` для default). Одноразовые completed-джобы (e51ec23ca64f, 9c2ab06dd560, 8d639cdeaa03, 46168f4fbe70) не включены — выполнились и архивированы в jobs.json. Jev-скрипты: `scripts/jev_corpus_collector.py` + wrappers в `~/.hermes/profiles/robot-man/scripts/jev_{learner,analyzer}.sh`.
 
 **Статус:** Reply Engine ⏸ пауза (шаблоны = бан). ~~Shadowban-чекер `828224497fc3`~~ — ❌ ВЫЧЕРКНУТ: решение оператора 25.09 — не используется.
 

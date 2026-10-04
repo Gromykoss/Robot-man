@@ -96,3 +96,4 @@
 | 2026-10-03T22:52 | briefings/2026-10-03.md | daily briefing 2026-10-03 | CHRONOLOGY.md | 94f1bd7 |
 | 2026-10-03T22:53 | .ci/check_scenario_map.py | push blocked: facts/e2e_facttable.md outside whitelist; facts/** = content fact-tables | CHRONOLOGY.md, briefings | 7ba8ad3 |
 | 2026-10-04T00:36 | published_posts.jsonl | log 2 replies 2106374418121228760 2106374483804037152 | ничего | f8d67ba |
+| 2026-10-04T12:07 | AGENTS.md | актуализация cron-таблицы по факту 04.10 (аудит MGT_maccha 02.10, приказ оператора): дата снапшота, KG 4506b578cfa3 прогон 04.10 ok, добавлены живые джобы из jobs.json обоих профилей, зачёркнуты паузные; ff5f0025c0e7 НЕ вносится (Alikhan KG) | CHRONOLOGY.md, CONTENT_BRIEF*, data/, drafts/, images/, scripts/, operators/, TACTICS.md, VOICE_LESSONS.md, published_posts.jsonl, knowledge_graph/ | |
