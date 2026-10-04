@@ -2321,3 +2321,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 12:20** — chrono: auto-log b101942 (`495703e`)
 - **04.10.2026 13:18** — agents: редакция по аудиту п.3 — сжатие 324→215 строк, тактика в references/agent-ops.md (`52fb604`)
 - **04.10.2026 13:18** — drift: write back SHA 52fb604 (`f218a53`)
+- **04.10.2026 13:18** — drift: open intent (staged journal for next commit) (`427aa18`)
