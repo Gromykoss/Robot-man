@@ -2319,3 +2319,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 12:19** — ops: close worktree tails after audit (cron artifacts + drift sha writeback d1bd092) (`b101942`)
 - **04.10.2026 12:19** — drift: write back SHA b101942 (`142e59c`)
 - **04.10.2026 12:20** — chrono: auto-log b101942 (`495703e`)
+- **04.10.2026 13:18** — agents: редакция по аудиту п.3 — сжатие 324→215 строк, тактика в references/agent-ops.md (`52fb604`)
