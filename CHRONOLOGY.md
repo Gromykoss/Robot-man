@@ -2326,3 +2326,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 13:18** — drift: write back SHA 5bfc0f6 (`e880fa5`)
 - **04.10.2026 13:19** — drift: open intent check_scenario_map (`077f388`)
 - **04.10.2026 13:19** — ci: whitelist references/** in scenario map completeness (`a697ee4`)
+- **04.10.2026 13:19** — drift: write back SHA a697ee4 (`507a1f4`)
