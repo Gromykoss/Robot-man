@@ -1,14 +1,92 @@
 {
-  "built_at": "2026-09-29T00:00:23.103802+00:00",
+  "built_at": "2026-10-04T12:00:20.991076+00:00",
   "stats": {
-    "nodes": 466,
-    "edges": 448,
+    "nodes": 491,
+    "edges": 473,
     "projects": 4,
-    "events": 177,
-    "people": 61,
-    "tasks": 22
+    "events": 188,
+    "people": 63,
+    "tasks": 23
   },
   "nodes": [
+    [
+      "event/2026-10-03/Пост Cloudflare agentic stack опубликова",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-10-03",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Пост Cloudflare agentic stack опубликован (id 2106223637304934743); e2e-пост запланирован 04.10",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-30/Пост Meta WebMCP опубликован по расписан",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-30",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Пост Meta WebMCP опубликован по расписанию (id 2105125400774914472)",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-29/Nightly Analysis: xactions мёртв (search",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-09-29",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Nightly Analysis: xactions мёртв (search/trends пустые), shadowban не подтверждается, followers 398 flat",
+      {
+        "type": "Nightly Analysis: xactions мёртв (search"
+      }
+    ],
+    [
+      "event/2026-09-29/Пост Meta WebMCP подготовлен, отложенная",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Пост Meta WebMCP подготовлен, отложенная публикация 30.09 08:00 Бишкека",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-29/Пост UCP Shopify опубликован (id 2104889",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "Пост UCP Shopify опубликован (id 2104889500472115551)",
+      {
+        "type": "unknown"
+      }
+    ],
     [
       "event/2026-09-27/Пост SkillSpector опубликован (id 210407",
       {
@@ -2266,6 +2344,60 @@
       }
     ],
     [
+      "event/2026-09-29/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-09-29/CHRONOLOGY Agent: брифинг дня",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "CHRONOLOGY Agent: брифинг дня",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-09-30/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "event/2026-10-01/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-10-01",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-10-02/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-10-02",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-10-03/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
       "person/@RobotsTJ500",
       {
         "type": "person"
@@ -2275,6 +2407,18 @@
       "CHRONOLOGY.md",
       {
         "type": "unknown"
+      }
+    ],
+    [
+      "person/@Meta",
+      {
+        "type": "person"
+      }
+    ],
+    [
+      "person/@Shopify",
+      {
+        "type": "person"
       }
     ],
     [
@@ -2656,6 +2800,12 @@
       }
     ],
     [
+      "task/T-6",
+      {
+        "type": "task"
+      }
+    ],
+    [
       "task/T-210",
       {
         "type": "task"
@@ -2807,6 +2957,76 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-10-03/Пост Cloudflare agentic stack опубликова",
+      "target": "2026-10-03",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-03/Пост Cloudflare agentic stack опубликова",
+      "target": "Пост Cloudflare agentic stack опубликован (id 2106223637304934743); e2e-пост запланирован 04.10",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-30/Пост Meta WebMCP опубликован по расписан",
+      "target": "2026-09-30",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-30/Пост Meta WebMCP опубликован по расписан",
+      "target": "Пост Meta WebMCP опубликован по расписанию (id 2105125400774914472)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-29/Nightly Analysis: xactions мёртв (search",
+      "target": "2026-09-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-29/Nightly Analysis: xactions мёртв (search",
+      "target": "Nightly Analysis: xactions мёртв (search/trends пустые), shadowban не подтверждается, followers 398 flat",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-29/Пост Meta WebMCP подготовлен, отложенная",
+      "target": "2026-09-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-29/Пост Meta WebMCP подготовлен, отложенная",
+      "target": "Пост Meta WebMCP подготовлен, отложенная публикация 30.09 08:00 Бишкека",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-29/Пост UCP Shopify опубликован (id 2104889",
+      "target": "2026-09-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-29/Пост UCP Shopify опубликован (id 2104889",
+      "target": "Пост UCP Shopify опубликован (id 2104889500472115551)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-09-27/Пост SkillSpector опубликован (id 210407",
       "target": "2026-09-27",
@@ -5293,6 +5513,90 @@
       "confidence": 0.9
     },
     {
+      "source": "event/2026-09-29/Nightly Analytics",
+      "target": "2026-09-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-29/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-29/CHRONOLOGY Agent: брифинг дня",
+      "target": "2026-09-29",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-29/CHRONOLOGY Agent: брифинг дня",
+      "target": "CHRONOLOGY Agent: брифинг дня",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-09-30/Nightly Analytics",
+      "target": "2026-09-30",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-09-30/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-10-01/Nightly Analytics",
+      "target": "2026-10-01",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-01/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-10-02/Nightly Analytics",
+      "target": "2026-10-02",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-02/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-10-03/Nightly Analytics",
+      "target": "2026-10-03",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-03/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
       "source": "person/@RobotsTJ500",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -5304,6 +5608,20 @@
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Meta",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@Shopify",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
@@ -5781,6 +6099,13 @@
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
+    },
+    {
+      "source": "task/T-6",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
     },
     {
       "source": "task/T-210",

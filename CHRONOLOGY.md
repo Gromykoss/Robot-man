@@ -2315,3 +2315,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 00:36** — drift: write back SHA f8d67ba (`e6b2a44`)
 - **04.10.2026 12:13** — chrono: 2026-10-04 cron table audit update (`8545622`)
 - **04.10.2026 12:13** — agents: cron table snapshot 04.10 (audit MGT_maccha 02.10) (`9cb4e3f`)
+- **04.10.2026 12:19** — chrono: auto-log 9cb4e3f + tactics 04.10 cron + drift sha writeback (`d1bd092`)
