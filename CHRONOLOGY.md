@@ -1,4 +1,14 @@
 
+## 2026-10-04 — Актуализация cron-таблицы AGENTS.md (аудит MGT_maccha 02.10, приказ оператора)
+
+- **Причина:** аудит MGT_maccha показал, что cron-таблица в AGENTS.md — снапшот 26.09; оператор приказал сверить с фактическим cron list на 04.10.
+- **Сверка (источник: jobs.json обоих профилей, 04.10 12:07 UTC):** живы и ok — X Tracker Fetch (cd9bc007c07a, cookie мёртв с 18.09), KG rebuild 4506b578cfa3 default (прогон 04.10 12:00 ok), jev-learner, jev-analyzer; отсутствовали в таблице — Утренняя тактика TACTICS.md (1abd8129a7d4), CHRONOLOGY+брифинг (b130f291b70a), catmanyau watchdog (aa467847d5e2), weekly analytics 87832edf5bc3 (default); паузные — Тактика @gromykoss (79135324410a, пауза 22.09), KSimback watchdog (de5bfff310c8, пауза 05.09).
+- **Рекомендация аудитора заменить KG-идентификатор 4506b578cfa3 на ff5f0025c0e7 отклонена** (оператор): ff5f0025c0e7 — KG профиля Alikhan (error/paused), robot-man KG на 4506b578cfa3 жив.
+- **Сделано:** снапшот-даты 26.09→04.10, KG-прогон обновлён, добавлены 4 живые джобы, паузные зачёркнуты, одноразовые completed не включены (пометка в снапшот-футере).
+- **Как проверил:** повторное чтение jobs.json обоих профилей; git log после коммитов.
+- **Файлы:** AGENTS.md (+spec_drift_log.md интент, отдельная строка), CHRONOLOGY.md (эта запись).
+- **SHA:** см. spec_drift_log.md 12:07.
+
 ## 2026-10-03 — Пост Cloudflare agentic stack опубликован (id 2106223637304934743); e2e-пост запланирован 04.10
 
 - **Опубликован 03:23 UTC (@RobotsTJ500, post_with_log.sh):** engineering-пост «Cloudflare достроила полный стенд для агентов» — Sandboxes GA, Browser Run, Agent Memory, AI Search, Monetization Gateway (x402/USDC), Mesh, Agent Lee (RU-драфт cloudflare_agents_v3_ru.md, обложки cf_agents_cover v1–v4, финал v4). Факты из CONTENT_BRIEF (данные Radar, инфра-недели CF).
@@ -2302,3 +2312,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **03.10.2026 (сессия)** — Dogfood e2e (TesterArmy): установлен, grok-4.5 по SuperGrok OAuth; прогон HN (act/assert/extract, 99% cache). Драфт+обложка+факты закоммичены (3bdddfd). Публикация запланирована cron 8d639cdeaa03 на 04.10 04:00 UTC (приказ Сергея). Реплаи в тред CF-поста: 2106374418121228760 (DARA), 2106374483804037152 (Steve) — оба верифицированы. Чинил: APPROVAL_TOKEN export в скрипте; brief «Изображение» → реальный путь (24374f4); Spec Drift Gate порядок SHA-после-коммита (skill spec-drift-gate-ops). Nightly Strategy Analysis 56aa69d2d98f удалён приказом Сергея. Хендофф: ~/.hermes/cron/output/session-20261003-handoff-robotman.md
 - **04.10.2026 00:36** — chrono: session 20261003 close (`3e303c5`)
 - **04.10.2026 00:36** — log: replies 03.10 (`f8d67ba`)
+- **04.10.2026 00:36** — drift: write back SHA f8d67ba (`e6b2a44`)
