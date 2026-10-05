@@ -1,4 +1,12 @@
 
+## 2026-10-05 — Manufact (MCP use) research + драфт + публикация поста 2107040713401598449
+
+- **Research/dogfood (07:51 UTC, fd49641):** manufact MCP-use research — SDK probe ok (dogfood/mcp-use-probe), cloud-прогон блокирован багом браузера; отчёт research/manufact-mcp-use-research-20261005.md.
+- **Драфт/бриф (09:30 UTC, 383b5a1):** fact-секция Manufact добавлена в CONTENT_BRIEF.md, hook rewrite v2, MoA pass 25/30 (drafts/manufact_mcp_use_v1_ru.md).
+- **Публикация (09:30:28 UTC):** пост @RobotsTJ500 id **2107040713401598449** (Manufact), лог + cron-артефакты закоммичены (d124f5a).
+- **Инфра (07:53 UTC, 57afdaa):** восстановлено маппинг dogfood/** и references/agent-ops.md в KG/scenario map (потерялся при конкурентном обновлении графа).
+- **Followers (22:45 UTC, verified xurl 2/users):** @RobotsTJ500 399 (+1), @gromykoss 301.
+
 ## 2026-10-04 — Актуализация cron-таблицы AGENTS.md (аудит MGT_maccha 02.10, приказ оператора)
 
 - **Причина:** аудит MGT_maccha показал, что cron-таблица в AGENTS.md — снапшот 26.09; оператор приказал сверить с фактическим cron list на 04.10.
@@ -2342,3 +2350,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.10.2026 09:30** — brief+drafts: manufact fact section + hook rewrite v2 (MoA pass 25/30) (`383b5a1`)
 - **05.10.2026 09:30** — drift: write back SHA 383b5a1 (`2ddcd15`)
 - **05.10.2026 09:33** — ops: post 2107040713401598449 log + cron artifacts (`d124f5a`)
+- **05.10.2026 09:33** — drift: write back SHA d124f5a (`d56268a`)
