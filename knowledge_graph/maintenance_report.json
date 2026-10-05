@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-04T12:00:21.009016+00:00",
-  "graph_built_at": "2026-10-04T12:00:20.991076+00:00",
+  "generated_at": "2026-10-05T06:00:21.710621+00:00",
+  "graph_built_at": "2026-10-05T06:00:21.686969+00:00",
   "graph_stats": {
-    "nodes": 491,
-    "edges": 473,
+    "nodes": 494,
+    "edges": 475,
     "projects": 4,
-    "events": 188,
+    "events": 189,
     "people": 63,
     "tasks": 23
   },
@@ -25,6 +25,12 @@
         "action": "merge_into_canonical_preserve_provenance"
       },
       {
+        "canonical": "person/@gromykoss",
+        "duplicate": "person/@Gromykoss",
+        "similarity": 1.0,
+        "action": "merge_into_canonical_preserve_provenance"
+      },
+      {
         "canonical": "person/@RobotsT500",
         "duplicate": "person/@RobotsTJ500",
         "similarity": 0.973,
@@ -34,12 +40,6 @@
         "canonical": "person/@nvidia",
         "duplicate": "person/@NVIDIAAI",
         "similarity": 0.933,
-        "action": "merge_into_canonical_preserve_provenance"
-      },
-      {
-        "canonical": "person/@gromykoss",
-        "duplicate": "person/@Gromykoss",
-        "similarity": 1.0,
         "action": "merge_into_canonical_preserve_provenance"
       },
       {

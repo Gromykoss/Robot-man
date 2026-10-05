@@ -2340,3 +2340,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.10.2026 07:53** — ci+graph: map dogfood/** and references/agent-ops.md (graph mapping was lost in concurrent update) (`57afdaa`)
 - **05.10.2026 07:53** — drift: write back SHA 57afdaa (`fd487bc`)
 - **05.10.2026 09:30** — brief+drafts: manufact fact section + hook rewrite v2 (MoA pass 25/30) (`383b5a1`)
+- **05.10.2026 09:30** — drift: write back SHA 383b5a1 (`2ddcd15`)

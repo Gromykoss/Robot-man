@@ -1,14 +1,32 @@
 {
-  "built_at": "2026-10-04T12:00:20.991076+00:00",
+  "built_at": "2026-10-05T06:00:21.686969+00:00",
   "stats": {
-    "nodes": 491,
-    "edges": 473,
+    "nodes": 494,
+    "edges": 475,
     "projects": 4,
-    "events": 188,
+    "events": 189,
     "people": 63,
     "tasks": 23
   },
   "nodes": [
+    [
+      "event/2026-10-04/Актуализация cron-таблицы AGENTS.md (ауд",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-10-04",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Актуализация cron-таблицы AGENTS.md (аудит MGT_maccha 02.10, приказ оператора)",
+      {
+        "type": "unknown"
+      }
+    ],
     [
       "event/2026-10-03/Пост Cloudflare agentic stack опубликова",
       {
@@ -2398,7 +2416,7 @@
       }
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -2407,6 +2425,12 @@
       "CHRONOLOGY.md",
       {
         "type": "unknown"
+      }
+    ],
+    [
+      "person/@RobotsTJ500",
+      {
+        "type": "person"
       }
     ],
     [
@@ -2447,12 +2471,6 @@
     ],
     [
       "person/@ankitdongre100",
-      {
-        "type": "person"
-      }
-    ],
-    [
-      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -2776,7 +2794,7 @@
       }
     ],
     [
-      "project/gulag",
+      "project/alikhan",
       {
         "type": "project"
       }
@@ -2788,7 +2806,7 @@
       }
     ],
     [
-      "project/alikhan",
+      "project/gulag",
       {
         "type": "project"
       }
@@ -2957,6 +2975,20 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-10-04/Актуализация cron-таблицы AGENTS.md (ауд",
+      "target": "2026-10-04",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-04/Актуализация cron-таблицы AGENTS.md (ауд",
+      "target": "Актуализация cron-таблицы AGENTS.md (аудит MGT_maccha 02.10, приказ оператора)",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-10-03/Пост Cloudflare agentic stack опубликова",
       "target": "2026-10-03",
@@ -5597,6 +5629,20 @@
       "confidence": 0.9
     },
     {
+      "source": "person/@gromykoss",
+      "target": "CHRONOLOGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.85
+    },
+    {
+      "source": "person/@gromykoss",
+      "target": "STRATEGY.md",
+      "predicate": "mentioned_in",
+      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
+      "confidence": 0.85
+    },
+    {
       "source": "person/@RobotsTJ500",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
@@ -5664,20 +5710,6 @@
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@gromykoss",
-      "target": "CHRONOLOGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
-      "confidence": 0.85
-    },
-    {
-      "source": "person/@gromykoss",
-      "target": "STRATEGY.md",
-      "predicate": "mentioned_in",
-      "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
@@ -6059,7 +6091,7 @@
       "confidence": 0.85
     },
     {
-      "source": "project/gulag",
+      "source": "project/alikhan",
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
@@ -6087,7 +6119,7 @@
       "confidence": 0.85
     },
     {
-      "source": "project/alikhan",
+      "source": "project/gulag",
       "target": "CHRONOLOGY.md",
       "predicate": "referenced_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
