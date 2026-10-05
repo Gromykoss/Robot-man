@@ -75,6 +75,8 @@ WHITELIST = (
     "research/**",
     # references/ 04.10: тактический контент, вынесенный из AGENTS.md (аудит п.3)
     "references/**",
+    # dogfood/ 05.10: экспериментальные кейсы startup-radar (meta, no scenario ownership)
+    "dogfood/**",
     "reports/**",
     "scripts/jev_post_monitor.sh",
     "scripts/ucp_post_watch.sh",
