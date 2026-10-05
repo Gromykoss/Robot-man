@@ -125,3 +125,11 @@
 - Модель grok-4.5 по SuperGrok device-flow OAuth — без ключей в .env; BYO OpenRouter/локальный/свой агент
 - Launch-тред неделя-1: 6414 закладок vs 3681 лайков (на 26.09) → забирают в работу
 - Лимиты: extract требует Standard Schema (zod); 2 фейла — моя рука; ~17-68k токенов/2 теста
+
+## Manufact (mcp-use) — тема добавлена 05.10 (dogfood 05.10, пост 05.10)
+- mcp-use — опенсорс SDK для MCP-серверов/Apps, авторы Manufact (@mcp_use, @manufact), YC S25, seed $6,3 млн фев 2026
+- ~10,7k звёзд GitHub, 41k загрузок/неделя (api.npmjs.org 27.09-03.10), 51 зависимость при установке
+- Версии 1.4.2/1.4.3 пакета помечены malicious (OSSF реестр); установка с пиннингом mcp-use@2.7.3
+- Наш прогон: демо-сервер 2 тула, HTTP MCP localhost:3000, initialize→tools/list→call ok; graph_stats = 494 entities / 475 edges
+- Грабли: top-level await требует "type":"module"; outputSchema требует structuredContent (text-only валидный → validation error); stdio не автозапуск — server.listen(3000) или mcp-use dev; протокол 2025-06-18
+- Прайсинг: Free $0 ($5 кредитов/мес, 2 проекта, 30k req), Hobby $25, Startup $250, Enterprise от $1000
