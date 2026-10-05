@@ -109,4 +109,4 @@
 | 2026-10-05T07:52 | .ci/check_scenario_map.py, PROJECT_MEMORY_GRAPH.md | маппинг dogfood/** (экспериментальные кейсы радар-протокола, вне scenario-владения) в whitelist пуш-гейта и x-infra артефакты графа | CHRONOLOGY.md, AGENTS.md, spec_drift_log.md, data/, knowledge_graph/ | 57afdaa |
 | 2026-10-05T09:27 | CONTENT_BRIEF.md, drafts/manufact_mcp_use_v1_ru.md | факт-секция Manufact в бриф + хук-переписывание v2 драфтов (MoA: quality PASS, viral 25/30 PASS) | data/, images/, knowledge_graph/ | 383b5a1 |
 | 2026-10-05T09:32 | published_posts.jsonl, VOICE_LESSONS.md, data/write_counter.json, knowledge_graph/graph.json, knowledge_graph/maintenance_report.json | пост-публикация Manufact 2107040713401598449 (лог + cron-артефакты) | CHRONOLOGY.md, spec_drift_log.md, drafts/, images/ | d124f5a |
-| 2026-10-05T22:50 | briefings/2026-10-05.md | ежедневный CHRONOLOGY-брифинг по расписанию cron | CHRONOLOGY.md, spec_drift_log.md, data/, knowledge_graph/ |  |
+| 2026-10-05T22:50 | briefings/2026-10-05.md | ежедневный CHRONOLOGY-брифинг по расписанию cron | CHRONOLOGY.md, spec_drift_log.md, data/, knowledge_graph/ | a4d0fd0 |
