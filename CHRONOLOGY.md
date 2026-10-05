@@ -2341,3 +2341,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.10.2026 07:53** — drift: write back SHA 57afdaa (`fd487bc`)
 - **05.10.2026 09:30** — brief+drafts: manufact fact section + hook rewrite v2 (MoA pass 25/30) (`383b5a1`)
 - **05.10.2026 09:30** — drift: write back SHA 383b5a1 (`2ddcd15`)
+- **05.10.2026 09:33** — ops: post 2107040713401598449 log + cron artifacts (`d124f5a`)
