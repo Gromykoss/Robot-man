@@ -2334,3 +2334,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 22:46** — chrono: log tail + drift sha writeback 0922fb8 (`ba45840`)
 - **05.10.2026 05:10** — tactics: 05.10 morning TACTICS (live xurl + anti-dup clean) (`dbc268e`)
 - **05.10.2026 05:10** — drift: write back SHA dbc268e (`691d14d`)
+- **05.10.2026 07:51** — research: manufact dogfood 05.10 (SDK probe ok, cloud blocked by browser bug) (`fd49641`)
