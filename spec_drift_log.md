@@ -103,4 +103,4 @@
 | 2026-10-04T13:18 | PROJECT_MEMORY_GRAPH.md | маппинг references/agent-ops.md в домен x-infra (push blocked: file outside mapped domains) — правка стратег/контрактного индекса по его Boot Rule | CHRONOLOGY.md, AGENTS.md, spec_drift_log.md, data/, drafts/, images/, TACTICS.md, knowledge_graph/ | 5bfc0f6 |
 | 2026-10-04T13:19 | .ci/check_scenario_map.py | whitelist пуш-гейта: добавить references/** (новый каталог references/agent-ops.md, вынесенный тактический контент AGENTS.md, без scenario-владения) | CHRONOLOGY.md, AGENTS.md, spec_drift_log.md, PROJECT_MEMORY_GRAPH.md, data/, drafts/, images/ | a697ee4 |
 | 2026-10-04T22:46 | briefings/2026-10-04.md | daily briefing per cron procedure | none | 0922fb8 |
-| 2026-10-05T05:10 | TACTICS.md | morning tactics 05.10 | none | |
+| 2026-10-05T05:10 | TACTICS.md | morning tactics 05.10 | none | dbc268e |
