@@ -2331,3 +2331,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **04.10.2026 22:50** — publish: e2e Dogfood TesterArmy post 2106595279331881081 via cron 8d639cdeaa03 (04:00 UTC, approval токен; draft+cover из 3bdddfd) — первый autonomous ship по приказу Сергея
 - **04.10.2026 22:45** — chrono: 2026-10-04 (`af86ea6`)
 - **04.10.2026 22:46** — chrono: briefing 2026-10-04 (`0922fb8`)
+- **04.10.2026 22:46** — chrono: log tail + drift sha writeback 0922fb8 (`ba45840`)
