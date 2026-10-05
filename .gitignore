@@ -34,5 +34,8 @@ drafts/architecture-section.md
 drafts/robots-tj500-war-story-agentsmd.md
 data/secrets/
 gromykoss-mcp/node_modules/
+dogfood/**/node_modules/
+dogfood/**/.mcp-use/
+dogfood/**/server.log
 .specdrift*
 data/approval.token
