@@ -111,3 +111,4 @@
 | 2026-10-05T09:32 | published_posts.jsonl, VOICE_LESSONS.md, data/write_counter.json, knowledge_graph/graph.json, knowledge_graph/maintenance_report.json | пост-публикация Manufact 2107040713401598449 (лог + cron-артефакты) | CHRONOLOGY.md, spec_drift_log.md, drafts/, images/ | d124f5a |
 | 2026-10-05T22:50 | briefings/2026-10-05.md | ежедневный CHRONOLOGY-брифинг по расписанию cron | CHRONOLOGY.md, spec_drift_log.md, data/, knowledge_graph/ | a4d0fd0 |
 | 2026-10-06T08:22 | published_posts.jsonl | пост-публикация Junior-device 2107385912850010212 (лог) | CHRONOLOGY.md, drafts/, images/, data/ | 60b581c |
+| 2026-10-06T22:45 | briefings/2026-10-06.md | daily CHRONOLOGY briefing cron job b130f291b70a | data/, knowledge_graph/ | |

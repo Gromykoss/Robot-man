@@ -1,4 +1,10 @@
 
+## 2026-10-06 — Пост Junior Device опубликован (id 2107385912850010212); followers flat-down
+
+- **Публикация (08:22 UTC, @RobotsTJ500, post_with_log.sh):** engineering-пост «The most useful agent in our firm doesn't live on a server. It lives on a laptop that Windows occasionally reboots» — junior operator на ноутбуке: bus watch, wake sentinel, mention poller as plugin. Артефакты: drafts/junior_device_v1_ru.md, drafts/junior_device_v4_ru.md, images/junior_device_cover_v6.png; лог закоммичен (60b581c).
+- **Метрики (22:45 UTC, xurl v2):** 4 impressions, 0❤️ 0💬 — RED-уровень (<10 imp). По анти-бан матрице: посты 0, только ручная активность; при повторе на следующем посте — тормоз (пауза 48ч).
+- **Followers (22:45 UTC, verified xurl 2/users/by/username):** @RobotsTJ500 **398** (−1 к 399 от 05.10), @gromykoss **301** (flat).
+
 ## 2026-10-05 — Manufact (MCP use) research + драфт + публикация поста 2107040713401598449
 
 - **Research/dogfood (07:51 UTC, fd49641):** manufact MCP-use research — SDK probe ok (dogfood/mcp-use-probe), cloud-прогон блокирован багом браузера; отчёт research/manufact-mcp-use-research-20261005.md.
@@ -2354,3 +2360,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.10.2026 22:49** — chrono: 2026-10-05 + briefing (`a4d0fd0`)
 - **05.10.2026 22:49** — drift: write back SHA a4d0fd0 (`d25c0e3`)
 - **06.10.2026 08:22** — ops: post 2107385912850010212 log (`60b581c`)
+- **06.10.2026 08:22** — drift: write back SHA 60b581c (`40ddc27`)
