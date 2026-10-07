@@ -2363,3 +2363,12 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **06.10.2026 08:22** — drift: write back SHA 60b581c (`40ddc27`)
 - **06.10.2026 22:48** — chrono: 2026-10-06 (`954adf4`)
 - **06.10.2026 22:48** — drift: write back SHA 954adf4 (`2f2e5e0`)
+
+## 2026-10-06 — Nightly Analytics
+- **Metrics:** 8 постов анализировано, baseline: likes=1.3, replies=0.7, impressions=106.5
+- **👤 @RobotsTJ500:** 8 постов, 14❤️ 7💬 0🔄 0🔖 853👁️
+- **Best:** 21070407 (5❤️ 4💬 0🔄)
+- **Worst:** 21073859 (0❤️ 0💬 0🔄)
+- **Pattern:** Best post (21070407): 5 likes, 4 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.5% (average)
+- **07.10.2026 05:03** — tactics: 07.10 morning TACTICS (live xurl + anti-dup clean; RED-watch after Junior Device) (`8264551`)
