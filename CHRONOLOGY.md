@@ -2376,3 +2376,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.10.2026 05:03** — drift: write back SHA 8264551 (`36c8f3f`)
 - **07.10.2026 09:25** — brief: embeddinggemma2 laptop dogfood facts (`c21ca75`)
 - **07.10.2026 09:25** — drift: write back SHA c21ca75 (`f81b665`)
+- **07.10.2026 12:01** — brief: embeddinggemma2 dogfood run numbers (junior report) (`59cadd6`)
