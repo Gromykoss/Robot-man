@@ -1,14 +1,50 @@
 {
-  "built_at": "2026-10-05T06:00:21.686969+00:00",
+  "built_at": "2026-10-07T06:00:26.275184+00:00",
   "stats": {
-    "nodes": 494,
-    "edges": 475,
+    "nodes": 501,
+    "edges": 481,
     "projects": 4,
-    "events": 189,
+    "events": 192,
     "people": 63,
     "tasks": 23
   },
   "nodes": [
+    [
+      "event/2026-10-06/Пост Junior Device опубликован (id 21073",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-10-06",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Пост Junior Device опубликован (id 2107385912850010212); followers flat-down",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "event/2026-10-05/Manufact (MCP use) research + драфт + пу",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "2026-10-05",
+      {
+        "type": "unknown"
+      }
+    ],
+    [
+      "Manufact (MCP use) research + драфт + публикация поста 2107040713401598449",
+      {
+        "type": "unknown"
+      }
+    ],
     [
       "event/2026-10-04/Актуализация cron-таблицы AGENTS.md (ауд",
       {
@@ -2416,7 +2452,13 @@
       }
     ],
     [
-      "person/@gromykoss",
+      "event/2026-10-06/Nightly Analytics",
+      {
+        "type": "event"
+      }
+    ],
+    [
+      "person/@RobotsTJ500",
       {
         "type": "person"
       }
@@ -2428,7 +2470,7 @@
       }
     ],
     [
-      "person/@RobotsTJ500",
+      "person/@gromykoss",
       {
         "type": "person"
       }
@@ -2975,6 +3017,34 @@
     ]
   ],
   "edges": [
+    {
+      "source": "event/2026-10-06/Пост Junior Device опубликован (id 21073",
+      "target": "2026-10-06",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-06/Пост Junior Device опубликован (id 21073",
+      "target": "Пост Junior Device опубликован (id 2107385912850010212); followers flat-down",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "event/2026-10-05/Manufact (MCP use) research + драфт + пу",
+      "target": "2026-10-05",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-05/Manufact (MCP use) research + драфт + пу",
+      "target": "Manufact (MCP use) research + драфт + публикация поста 2107040713401598449",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
     {
       "source": "event/2026-10-04/Актуализация cron-таблицы AGENTS.md (ауд",
       "target": "2026-10-04",
@@ -5629,28 +5699,42 @@
       "confidence": 0.9
     },
     {
-      "source": "person/@gromykoss",
+      "source": "event/2026-10-06/Nightly Analytics",
+      "target": "2026-10-06",
+      "predicate": "occurred_on",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.95
+    },
+    {
+      "source": "event/2026-10-06/Nightly Analytics",
+      "target": "Nightly Analytics",
+      "predicate": "described_as",
+      "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
+      "confidence": 0.9
+    },
+    {
+      "source": "person/@RobotsTJ500",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@gromykoss",
+      "source": "person/@RobotsTJ500",
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@RobotsTJ500",
+      "source": "person/@gromykoss",
       "target": "CHRONOLOGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/CHRONOLOGY.md",
       "confidence": 0.85
     },
     {
-      "source": "person/@RobotsTJ500",
+      "source": "person/@gromykoss",
       "target": "STRATEGY.md",
       "predicate": "mentioned_in",
       "source_file": "/home/hermes-workspace/robot-man/STRATEGY.md",

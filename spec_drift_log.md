@@ -115,3 +115,4 @@
 | 2026-10-07T05:02 | TACTICS.md | утренняя тактика cron (live xurl + anti-dup) | CHRONOLOGY.md, data/, knowledge_graph/ | 8264551 |
 | 2026-10-07T09:25 | CONTENT_BRIEF.md | факт-секция EmbeddingGemma 2 dogfood (факты владельца+Junior) | drafts/, images/, data/, knowledge_graph/ | c21ca75 |
 | 2026-10-07T12:01 | CONTENT_BRIEF.md | dogfood-цифры EmbeddingGemma 2 из отчёта Junior (пост-гейт) | drafts/, images/, data/ | 59cadd6 |
+| 2026-10-07T12:02 | published_posts.jsonl, knowledge_graph/graph.json | пост-публикация EmbeddingGemma2 2107803639775437009 (лог + KG cron-артефакт) | CHRONOLOGY.md, drafts/, images/, data/ | |
