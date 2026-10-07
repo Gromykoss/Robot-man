@@ -24,7 +24,7 @@ WHITELIST = (
     "BUGS.md",
     "AGENTS.md",
     "CHRONOLOGY.md",
-    "CONTENT_BRIEF.md",
+    "CONTENT_BRIEF*",
     "CIRCULATION_GRAPH.md",
     "CONTRACTS.md",
     "GULAG_OWNERS_MANUAL.md",
