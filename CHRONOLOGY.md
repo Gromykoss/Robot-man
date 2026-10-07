@@ -2372,3 +2372,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (21070407): 5 likes, 4 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.5% (average)
 - **07.10.2026 05:03** — tactics: 07.10 morning TACTICS (live xurl + anti-dup clean; RED-watch after Junior Device) (`8264551`)
+- **07.10.2026 05:03** — drift: write back SHA 8264551 (`9f3d93f`)
