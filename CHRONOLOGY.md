@@ -2388,3 +2388,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Брифы отменены владельцем; b130f291b70a переписана Hermes в chronology-only и возобновлена (22:45 прогон). Новые источники тем: стартап-радар + war-story. CONTENT_BRIEF.md = только факт-таблица факт-гейта.
 - Приоритеты портала после тормоза: 1) X Activity API, 2) Filtered Stream, 3) Voucher — Junior ждёт сигнала «тормоз снят».
 - **07.10.2026 15:02** — chronology: 2026-10-07 gemma post, search de-amplification, portal resolution, briefs cancelled (`0fabf19`)
+- **07.10.2026 15:05** — docs: remove all CONTENT_BRIEF files (owner directive: briefs cancelled 07.10) (`bd50402`)
+- 07.10 ~15:05 UTC: удалены ВСЕ CONTENT_BRIEF* файлы (9 tracked git rm + 4 untracked rm) по директиве владельца «забудь, удали». Факт-гейт держит пустой бриф (operator_pipeline.py:159, missing brief = no deterministic constraint) — публикационный путь не ломается; факт-источник остаётся CHRONOLOGY.md. Drift-интент закрыт SHA в той же строке. Незатреканные бэкапы (bak/instagram/restore_runbook/shadowban) — tar в cache/scratch/content_brief_untracked_backup_20261007.tgz перед удалением.
