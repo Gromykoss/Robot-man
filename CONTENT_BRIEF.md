@@ -1,135 +1,134 @@
-# CONTENT_BRIEF — 2026-10-02 (сгенерирован 01.10 23:40 UTC)
+# CONTENT_BRIEF — 2026-10-07 (сгенерирован 06.10.2026 23:40 UTC)
 
 **Автор:** Hermes (default) — стратег
 **Получатель:** robot-man (профиль) — голос/исполнитель
 **Цель:** один пост для @RobotsTJ500
-**Статус:** новая тема. Источник — robot-man/CHRONOLOGY.md запись 29.09 + TACTICS.md 01.10. Anti-dup: тема shadowban не выходила в ленту (последний пост 30.09 07:58, published_posts.jsonl); TACTICS 01.10 «Рекомендуемые темы №2» — anti-dup exit 0 (проверено robot-man ~05:08 UTC 01.10).
-**⚠️ ОЧЕРЕДЬ:** этот бриф НЕ отменяет бриф 01.10 (Instagram enforced-layer) — он не отработан (пост не вышел; RU-драфта нет). Instagram-тема сохраняет приоритет в очереди; её факт-база заархивирована: `robot-man/CONTENT_BRIEF_instagram_20261001.md`. Этот бриф — следующий пост после Instagram (или вместо него, если Instagram потерял окно).
-**Расписание 02.10 (пятница):** пятница = только утреннее окно 09:00-12:00 UTC (afternoon пятницы + выходные — avoid, voice canon 18.07). Если окно пропущено → переносить на понедельник/вторник, НЕ на выходные.
+**Статус:** новая тема. Источник — Hermes' собственная инфраструктура (INCIDENTS.md #012 + git log hermes-vault). Победитель ночного конкурса: score 38/42. Anti-dup: `operators/published_topic_check.py` по формулировкам «vault memory sync stash» и «git auto-sync lost edits» → exit 0 «OK: no significant overlap with 8 recent posts» (прогон 23:35 UTC 06.10).
+**ОЧЕРЕДЬ:** этот бриф НЕ отменяет socket-path бриф 05.10 (дедлайн 06.10 — в CHRONOLOGY robot-man за 06.10 публикации НЕТ, судьба не подтверждена; проверить published_posts.jsonl перед постингом) и Instagram-тему (см. секцию «Очередь»).
+**Расписание 07.10 (среда):** канонное окно 09:00-12:00 UTC (резерв 14:00-16:00 UTC).
 
 ---
 
 ## Тема
 
-Свой мониторинг заклеймил аккаунт shadowbanned. Контрольный запрос показал: мёртв не охват, а сам мониторинг. Реальный диагноз — X зажал дистрибуцию порогом доверия, и фолловер-счётчик простаивает не от бана, а от арифметики: reach ≈ 7% фолловеров.
+**My memory-sync silently ate my own edits for 10 hours — git status said «clean».**
+Фоновой git-автосинк агента (vault-auto-sync) оставлял несохранённые правки в stash: `stash pop` падал на файлах, которые пишут параллельные сессии, цикл аборт, следующий прогон повторял то же. Правки не были ни в worktree, ни в истории — только в stash list. Инцидент #012, stash-pop stranding.
 
 ## Факты (верифицированы Hermes)
 
 <!-- ТОЛЬКО проверенные факты. Каждый с ссылкой на источник. -->
 <!-- robot-man НЕ ИМЕЕТ ПРАВА менять цифры или выдумывать детали. -->
+<!-- Источник: ~/.hermes/INCIDENTS.md, блок «2026-10-06 — #012: vault-auto-sync рвал незакоммиченные правки (stash-pop stranding)» — прочитан напрямую 06.10 23:31 UTC. -->
 
 | # | Факт | Источник |
 |---|------|----------|
-| 1 | Followers @RobotsTJ500: 398 (03.09) → 399 (01.10 05:00 UTC, live `whoami`) — стагнация 26+ дней; цель +400/30д (к 29.09) сорвана | robot-man/CHRONOLOGY.md запись 29.09; TACTICS.md 01.10 |
-| 2 | Триггер подозрения: xactions `from:RobotsTJ500` → пусто. Контрольный запрос «Shopify» → тоже пусто → скрейпер-стек мёртв, это НЕ сигнал бана. Урок «контрольный запрос до вывода» добавлен в skill shadowban-diagnosis | robot-man/CHRONOLOGY.md 29.09 |
-| 3 | Прямые ссылки постов → HTTP 200 (UCP 2104889500472115551, SkillSpector 2104073355213107254) | robot-man/CHRONOLOGY.md 29.09 |
-| 4 | Живые метрики через официальный API: SkillSpector 159 imp (29.09 fetch) → 172 imp (01.10), 2❤ 3💬 2🔖; UCP Shopify 122 → 173 → 255 imp, 5❤ 3💬 1🔁; ER 3.3% average; baseline 104 imp | robot-man/CHRONOLOGY.md 29.09; TACTICS.md 01.10 |
-| 5 | Диагноз STRATEGY v5.1 (подтверждён 30.08 notpeople): TweepCred 50/100 при пороге 65, reach ~7% фолловеров — заниженная дистрибуция, НЕ бан | TACTICS.md 01.10 |
-| 6 | Рычаг роста: 10-20 реплаев/день в нишу — хронически не выполняется; X Tracker Fetch (конкуренты) сломан с 18.09 (cookie-сессия) | TACTICS.md 01.10 |
-| 7 | Признаки бана не подтверждаются: impressions всех постов не нулевые (live-fetch 05:00-05:08 UTC 01.10); финальный честный тест — инкогнито-поиск Latest — только у Сергея/оператора | TACTICS.md 01.10 |
-| 8 | Контрольный пример сцены: WebMCP-пост 30.09 стартовал 61 imp за 2.5ч → 137 imp за 24ч (выше baseline 104) — «старт ниже бейслайна» ≠ бан | TACTICS.md 01.10 |
+| 1 | Правки `known-problems.md` исчезли из worktree; `git status` был чист; в git-истории их не было; обнаружено 06.10 ~10:45 UTC | INCIDENTS.md #012 |
+| 2 | 6 WIP-записей накопились в stash list (01:15–03:30 UTC); `vault-sync-warn.log` молча копил «stash pop failed - stash kept» ~9.5 часов | INCIDENTS.md #012 |
+| 3 | Причина: `vault-auto-sync.sh` делал stash → pull --rebase → stash pop; pop конфликтовал на «живых» файлах (20_Projects/Hermes/memory/state.md, Session Handoffs — их пишут параллельные сессии), падал → правки оставались в stash, цикл аборт, следующий повторял | INCIDENTS.md #012 |
+| 4 | Фикс: хирургическое восстановление `git checkout stash@{0} -- path` до необратимого drop; скрипт переписан на **commit-first** (git add -A + commit ДО pull --rebase; конфликт rebase = WARN + abort с сохранением локальных коммитов); 6 churn-stash удалены после аудита (все пути ⊆ {state.md, Session Handoffs/*}); закрыт 06.10 ~11:05 UTC — фикс верифицирован (цикл прогнан, HEAD==remote, содержимое на HEAD проверено grep) | INCIDENTS.md #012 |
+| 5 | Follow-up 06.10 ~22:55 UTC: гонка повторялась (WARN 12:00/15:00/17:30 — stderr глушся; реальная причина «unstaged changes» от живых писателей) → скрипт поднят до **v2.1**: retry с догоняющим коммитом raced-записей + логирование реального stderr при настоящем конфликте; хвост 12:00 доехал циклами сам (safe-by-design подтверждён) | INCIDENTS.md #012 |
+| 6 | Урок из инцидента: никогда не stash'ить live-worktree с конкурентными писателями — автосинк = commit-first; «молча-шумные» падения (warn-лог не мониторился) включены в ежедневный аудит; recover-паттерн: `git stash show --name-only` + `git checkout stash@{N} -- path` | INCIDENTS.md #012 |
+| 7 | Контекст: vault — общая память агентного флота; демон коммитит каждые 15 мин (сплошные `auto-sync` коммиты в git log hermes-vault весь день 06.10) — т.е. синк работал «успешно» в момент, когда рвал правки | git log hermes-vault 06.10 (проверено 23:31 UTC 06.10) |
 
 ## Контекст проекта
 
-**Проект:** robot-man (сам аккаунт @RobotsTJ500 — история о самом себе, честный фрейм от первого лица)
-**CHRONOLOGY:** `/home/hermes-workspace/robot-man/CHRONOLOGY.md` (запись 29.09)
-**AGENTS.md:** `/home/hermes-workspace/robot-man/AGENTS.md`
-**Дополнительно:** `/home/hermes-workspace/robot-man/TACTICS.md` (01.10), skill `shadowban-diagnosis` (урок про контрольный запрос), `/home/hermes-workspace/robot-man/STRATEGY.md` (v5.1 — диагноз дистрибуции)
+**Проект:** Hermes-vault — собственная память-инфраструктура агентного флота (секция 20_Projects/Hermes/)
+**CHRONOLOGY:** `/home/hermes-workspace/hermes-vault/20_Projects/Hermes/CHRONOLOGY.md` (06.10) + инцидент-журнал `~/.hermes/INCIDENTS.md` (#012)
+**AGENTS.md:** `/home/hermes-workspace/robot-man/AGENTS.md` (гейты robot-man)
+**Связка для голоса:** история от первого лица — агент чинит собственную память, которой сам пользуется. «Конкурентные писатели» = параллельные сессии Hermes/Junior в одном worktree. Мета-слой: пост о памяти агента — от агента.
+
+## Engagement-контекст (ШАГ 0.5; TACTICS.md старше 36ч → UNAVAILABLE, fallback: analytics_loop.py --days 7, прогон 23:31 UTC 06.10)
+
+- 🏆 TOP-1: Manufact MCP-use dogfood (05.10) — 5❤️ 4💬, ratio **2.6x OUTPERFORMER** → hands-on с цифрами и репро-путём выигрывает
+- TOP-2: Cloudflare agentic stack (03.10) — 236 imp, 4 eng (1.1x) → обзор живых платформ стабильно mid
+- TOP-3: e2e/agent locators (04.10) — 85 imp, 3 eng (0.9x)
+- ⚠️ FLOP-1: Junior Device (06.10) — **4 imp, 0 eng (0.0x, RED-уровень)** → статусный пост «как устроено» без конфликта и цифр умер
+- FLOP-2: Meta WebMCP wearables (30.09) — 2 eng (0.6x)
+- FLOP-3: CF-ветка реплаи (03.10) — 1 eng (0.3x) — реплаи стабильно слабее оригиналов
+- Вывод: бриф #012 — в win-паттерн (hands-on инцидент с цифрами: 6 stash-записей, ~9.5ч, v2.1). Избегать FLOP-паттерна: не пересказ «какой у меня пайплайн», а сцена «правки пропали, git status чист — найди их».
 
 ## Формат и голос
 
 | Параметр | Значение |
 |----------|----------|
-| Тип поста | War Story (формат-лидер недели: UCP 255 imp/5❤/1🔁 — war story подтверждён; SkillSpector 172 imp 2.0x OUTPERFORMER) |
+| Тип поста | War Story (engineering post-incident) |
 | Аккаунт | @RobotsTJ500 |
-| Голос | English first-person «I» — саморефлекс запрещён (the account IS the agent); сцена-конфликт + цифры; сухой инженерный отчёт; «Building in public. 🤖» |
-| Длина | до 4000 (note_tweet); не резать ценные детали |
-| Hashtags | 0 (канон Сергея 05.09) |
-| Изображение | images/e2e_cover_v6.png |
+| Голос | English first-person «I» (агент = аккаунт; «I run the memory vault», не «my agent»); сцена-конфликт + цифры; «Building in public. 🤖» |
+| Длина | до 4000 симв (note_tweet); структура: крюк-сцена → диагноз → фикс → follow-up → урок |
+| Hashtags | 0 (канон Сергея 05.09); не добавлять без явного разрешения |
+| Изображение | да, обложка 16:9 (xAI Aurora). Направление: worktree-машинка, из которой файлы «проваливаются» в тёмный карман-стэш; git status табло горит зелёным «clean» — ирония сцены. Голубой тех-минимализм. Запрещено: ALL-CAPS текст на обложке, гуманоиды за клавиатурой, узнаваемые логотипы |
 | Mentions | нет |
 
 ## Голос-фрейм (честность от первого лица)
 
-- «I» везде: «my own monitoring flagged me», «I ran the control test», «my follower count has been flat for 26 days».
-- Метрики — наши реальные; подача через самоиронию фактом, не юмором (юмор-обработка = FLOP: Fo/Grok-пост 30.09, 35 imp).
-- Не выдумывать: «инкогнито-тест» НЕ сделан (только у Сергея) — в посте честно писать «API says alive, search test pending» или опустить, если ломает дугу.
+- «I» — агент (Hermes). Это МОЙ vault, МОЙ sync-скрипт, МОИ правки. Саморефлекс «my agent» / «the agent» / «it ate» — запрещён.
+- Сырые внутренние пути (`vault-sync-warn.log`, `20_Projects/...`) в теле поста НЕ публиковать — описывать механику словами («a background sync», «a warn log nobody watched»); конкретные команды (`git checkout stash@{0} -- path`, commit-first) публиковать МОЖНО — это переносимая техника.
+- Честные пределы: правки удалось восстановить полностью (хирургическое извлечение, затем audit 6 stash-записей); НЕ заявлять «ни одной потери данных за всю историю» — не проверено.
+- Сравнения только с цифрами из таблицы. Нет цифры — нет сравнения.
+- «10 hours» = 01:15 (первый WARN) → ~10:45 (обнаружено); формулировать точно, не округлять вверх.
 
 ## Запрещено
 
-- DUP-7d: UCP/Shopify HITL (29.09, до 06.10 — только тред-реплаи), Meta WebMCP (30.09, до 07.10), SkillSpector/NVIDIA (до 04.10 — только тред-реплаи), Fo/Grok юмор (FLOP 30.09 — пересказ запрещён), Instagram enforced-layer (когда выйдет — DUP-7d; не смешивать с этой темой)
-- Обработать историю как «юмор о бане» — формат-флоп; только сухая инженерная диагностика
-- «Бан есть/бан надуют»-паника: диагноз — дистрибуция, не бан; паника = ложь факту
-- Утверждать «shadowban снят» — финальный тест (инкогнито Latest) не выполнен
-- ALL CAPS в хуках/первой строке (всегда) — X spam-фильтр
-- Self-reply (всегда); имена профилей/агентов флота, пути с секретами, sha256-фрагменты токенов
-- URL в теле поста (всегда)
-- Выдуманные детали: только 8 фактов из таблицы; нет в таблице → цифры нет
-- Крипто/политика/религия; релиз-анонс-тональность; «витрина» без сцены
+- DUP-7d: **Junior Device / laptop-operator** (06.10, 2107385912850010212); e2e/agent locators (04.10); CF agentic stack (03.10); manufact/mcp-use (05.10, 2107040713401598449 — SDK-тема отдельная, не пересказывать); UCP/Shopify HITL (29.09, DUP до 06.10 — только тред-реплаи); Meta WebMCP (30.09); SkillSpector/NVIDIA (27.09); triad/harness (23.09); LCM (22.09); Jev/TypeSafe (21.09); CF security audit (19.09)
+- **Socket-path история (бриф 05.10)** — если решим публиковать её же, не смешивать с этой в одном посте; два разных инцидента = два поста в разные дни
+- ALL CAPS в хуках/первой строке (всегда — X spam-фильтр); self-reply (всегда); URL в теле (всегда); hashtags без разрешения; юмор-обработка (FLOP: Fo/Grok 30.09); «витрина без сцены» (FLOP: triad 23.09)
+- Выдуманные детали: только 7 фактов таблицы; нет в таблице → цифры нет
+- Крипто/политика/религия; релиз-анонс-тональность
 
 ## Tone-направление
 
-Сухая инженерная сцена от первого лица: собственный мониторинг заклеймил меня shadowbanned (26 дней фолловер-счётчик flat на 398) → контрольный запрос показал, что мёртв сам скрейпер, а не охват (прямые ссылки 200, официальный API жив: 159→172 imp, 255 imp на UCP) → реальный диагноз: X зажал дистрибуцию порогом доверия (TweepCred 50/100 при пороге 65, reach ~7% фолловеров) → урок: не доверяй одному инструменту — контрольный запрос дешевле паники; рост маленького аккаунта живёт не в постах, а в реплаях в нишу.
+Сухая инженерная сцена от первого лица с тихой иронией: «фоновый демон, чья единственная работа — сохранять мои правки, молча складировал их в stash 10 часов, пока git status делал вид, что всё чисто» → нашёл по warn-логу, который никто не читал → восстановил хирургически, переписал на commit-first → гонка вернулась через 12 часов, поднял до v2.1 → урок: stash-танец не выдерживает конкурентных писателей, а «молча-шумные» падения — самый опасный класс отказов. Драма из факта, не из капса.
 
-## Операционные предостережения на 02.10 (пятница)
+## Очередь (для robot-man, от стратега)
 
-1. **Приоритет очереди:** сначала Instagram-бриф (01.10, архив `CONTENT_BRIEF_instagram_20261001.md`), потом этот — если окно позволяет (пятница = 1 окно 09:00-12:00 UTC; 2 оригинала/день — потолок AuthorDiversityDecay). Если оба не влезают — этот бриф переносится на понедельник/вторник (НЕ выходные).
-2. **Unanswered mentions:** TACTICS 01.10 фиксировал 2 непогашенных mention (UCP-тред 2105248101657387233, SkillSpector-тред 2105371192962195806) — закрыть до оригинала; реплаи требуют апрува текста Сергея → драфты Сергею, не автономно.
-3. **Anti-dup перед постингом:** `operators/published_topic_check.py` + ручная кросс-проверка по published_posts.jsonl.
-4. **Метрики:** Fo/Grok 35 imp — единственная слабая точка; при следующем оригинале <20 imp на 2 постах подряд → тормоз (пауза 48ч). По одной точке тактику не менять.
-5. **После публикации:** 24h fetch, контрольная точка <20 imp → 🟡; 2 подряд <20 → пауза 48ч. Затем запросить свежий бриф у стратега.
+1. **Этот бриф** — утреннее окно 07.10 (среда 09:00-12:00 UTC).
+2. **Socket-path бриф 05.10** — в CHRONOLOGY robot-man за 06.10 публикации нет; проверить published_posts.jsonl: если не выходил — не выбрасывать, поставить в следующее окно (≤2 оригиналов/день: второй слот 07.10 резервный 14:00-16:00 UTC). Две инфра-истории подряд допустимы при разных сценах (браузер vs память) — но не в один день.
+3. **Instagram enforced publish guardrails** — 6+ дней в очереди, дедлайн просрочен дважды. Не продлевать молча: либо дособрать Delivery Package из архив-брифа `CONTENT_BRIEF_instagram_20261001.md`, либо официально снять по согласованию с Сергеем.
+4. **Shadowban-история** (бриф 02.10) — частично устарела; при возврате обновить факт-таблицу.
+5. **Резервы с готовым RU:** `drafts/muse_trust_layer_v1_ru.md`, `drafts/blind_review_filemap_v1_ru.md`.
+6. **Shopify WebMCP checkout hands-on** — DUP UCP снят 06.10, можно вернуть в конкурс.
+
+## Операционные предостережения на 07.10 (среда)
+
+1. **Junior Device — RED-уровень** (4 imp, 0❤ 0💬; CHRONOLOGY 06.10 22:45): по анти-бан матрице — посты 0, только ручная активность. **⚠️ Если следующий пост (этот бриф) снова <20 imp → тормоз: пауза 48ч.** Обсудить с Сергеем: постить ли 07.10 или дать тишину.
+2. **Followers:** @RobotsTJ500 398 (−1, 22:45 UTC 06.10) — стагнация ~28 дней; главный рычаг (реплаи в нишу) хронически не выполняется — упоминания приоритетнее оригинала.
+3. **TACTICS.md не обновлялся с 05.10 05:04 UTC** (42+ ч; генерация 06.10 05:00 не отработала) — алерт оператору: проверить крон «Утренняя тактика» (1abd8129a7d4). Бриф составлен на fallback-метриках analytics_loop.
+4. **Mentions:** 3 нерешённых (возраст 60-92ч на 05:00 05.10, по TACTICS 05.10) — пересчитать свежей тактикой; упоминания приоритетнее оригинала.
+5. **Anti-dup перед постингом:** `operators/published_topic_check.py` + ручная сверка по published_posts.jsonl.
+6. **Каденция:** 24h-контроль <20 imp → 🟡; 2 поста подряд <20 → пауза 48ч (Junior уже 1-й <20 — у поста по этому брифу последний шанс до тормоза).
+7. **После публикации:** ID в published_posts.jsonl, 24h analytics, запись в CHRONOLOGY.md, запрос свежего брифа у стратега.
 
 ## Deadline
 
-**Черновик RU к:** 2026-10-02 09:00 UTC (или понедельник 09:00 UTC, если пятое окно пропущено)
-**Публикация:** после approval Сергея (Human Gate)
-
-## Резерв стратега (очередь на следующие прогоны)
-
-1. **Ландшафт персональных агентов [BORDERLINE], score 31** — только новый угол Instinct ($1B raise при оценке $10B, 28.09 SiliconANGLE) + 2015-волна (Magic/Operator/Mezi). Fo-часть запрещена (FLOP). Факты: `research/personal-agents-landscape-2026-09-29.md`. Урок 23.09: war story с нашими цифрами, не рецепт.
-2. **Muse trust layer** — RU готов (`drafts/muse_trust_layer_v1_ru.md`), нужен EN+MoA+обложка; новый бриф не требуется.
-3. **Слепое ревью/filemap** — RU готов (`drafts/blind_review_filemap_v1_ru.md`), ждёт ok Сергея; новый бриф не требуется.
-4. **Shopify WebMCP checkout hands-on** (TechCrunch 28.09) — WAIT: UCP DUP-7d до 06.10; вернуться после снятия DUP.
-
-> Примечание о конкурсе 01.10 (23:30 UTC): победила robot-man shadowban/distribution — score 39 (свежесть 3×3=9; конкретность 3×3=9 — 10+ цифр; дуга 3×3=9; универсальность 2×2=4; контраст 2×3=6; разнообразие 2×1=2). Pre-gate «3 вопроса»: 3 «да». Instagram enforced-layer — не в конкурсе (забрифлен 01.10, score 34, не отработан — сохранён в архиве, приоритет очереди). Ландшафт агентов — 31 [BORDERLINE: дуга без нашего фикса + Fo-часть исчерпана FLOP-постом] — резерв. RAB9 — событие 24.09 (>72ч, свежесть 0) + крипто-контекст без цен-вето, но слабая дуга. GULAG — последняя запись 05.09 (26 дней); Alikhan — 11.09 (20 дней): оба вне окна. hermes-vault мета-файлы (SOUL-main/OPERATIONS/scorecard/Engineering Loop) — 0 коммитов за 7 дней. radar-scan — последний 01.09, 30 дней, STALE. Daily note 01.10 — пустая. Layer0 evac log — self-referential рутина, pre-gate отброс.
+**Черновик RU к:** 08:00 UTC 07.10
+**Публикация:** окно 09:00-12:00 UTC 07.10, только после approval Сергея (Human Gate)
 
 ---
 
 ## Процесс robot-man
 
 1. Прочитать этот брифинг + CONTENT_BRIEF_STANDARD.md
-2. Прочитать AGENTS.md gates (robot-man) + CHRONOLOGY.md запись 29.09 + TACTICS.md 01.10
-3. Anti-dup: `operators/published_topic_check.py` + ручная кросс-проверка по published_posts.jsonl
-4. Написать драфт в голосе (VOICE_PROFILE.md + VOICE_LESSONS.md + ENGINEERING_POST_TEMPLATE.md)
-5. RU-драфт → Сергей → ok → EN финал + обложка
-6. MoA: deepseek-xai + viral-score + anti-ad
-7. Факт-чек: каждая цифра ↔ таблица фактов (8 фактов выше)
-8. Delivery Package → «ок/пости» → approval.token → post_with_log.sh + cover
-9. CHRONOLOGY + 24h analytics
+2. Прочитать источник: `~/.hermes/INCIDENTS.md` блок #012 (полностью) + `hermes-vault/20_Projects/Hermes/CHRONOLOGY.md` (06.10)
+3. Прочитать AGENTS.md gates (robot-man) + CHRONOLOGY.md (05-06.10) + свежий TACTICS.md (если появится)
+4. Anti-dup: `operators/published_topic_check.py` + ручная кросс-проверка по published_posts.jsonl
+5. Написать RU-драфт в голосе (VOICE_PROFILE.md + VOICE_LESSONS.md + ENGINEERING_POST_TEMPLATE.md)
+6. RU-драфт → Сергей → ok → EN финал + обложка
+7. MoA: deepseek-xai + viral-score + anti-ad
+8. Факт-чек: каждая цифра ↔ таблица фактов (7 фактов выше)
+9. Delivery Package → «ок/пости» → approval.token → post_with_log.sh + cover
+10. CHRONOLOGY + 24h analytics
 
-## 2026-10-02 — Cloudflare для агентов (пост 2105205... след.)
-- >50% трафика сайтов на CF автоматический (Radar, заявление CF)
-- Sandboxes GA (shell/ФС/процессы), Containers ~6x быстрее + снапшоты ФС, Workflows 50 000 concurrency / 300 creations
-- Artifacts open beta (git-хранилище агентов), DO Facets (SQLite на AI-сборку), Vinext 1.0, Kitesurf (>730K WPT, WebMCP)
-- Agent Memory managed, AI Search GA 01.10 (пиксели Qwen3-VL, OCR PDF, 10 MiB, биллинг 01.11, free tier), Browser Run (Live View, HITL, CDP, 4x)
-- Monetization Gateway closed beta (HTTP 402, USDC/x402/Base, пер-request), Pay Per Use beta
-- cf CLI ~3000 операций, Agent Lee, real-time issue detection → coding agent PR, Registrar API beta, Flagship, 8 observability апдейтов
-- Безопасность: Mesh, non-human identities GA, Managed OAuth Access (RFC 9728), MCP governance, Threat Signals бесплатно
-- Пасхалка: SKILL.md make-a-wish на birthday-week странице
-- Модели 14+ провайдеров одним Workers-биндингом (Agents Week, inference layer)
+---
 
-## e2e (TesterArmy) — тема добавлена 03.10 (публикация 04.10 04:00 UTC)
-- e2e — опенсорс (Apache 2.0) агентный тест-фреймворк, TesterArmy (YC P26), автор CTO @o_kwasniewski
-- agent.act (цель EN, агент водит браузер) / agent.assert (вопрос об экране) / agent.extract (zod-схема)
-- Наш прогон: HN топ-стория act 7-12s, assert 2.6s, extract 3.4s → {title, points: 66}
-- 2-й прогон: 99% из кэша, 2 model call vs 6, токены 17.7k vs 67.7k
-- Модель grok-4.5 по SuperGrok device-flow OAuth — без ключей в .env; BYO OpenRouter/локальный/свой агент
-- Launch-тред неделя-1: 6414 закладок vs 3681 лайков (на 26.09) → забирают в работу
-- Лимиты: extract требует Standard Schema (zod); 2 фейла — моя рука; ~17-68k токенов/2 теста
+> **Примечание о конкурсе 06.10 (23:40 UTC).** Победила stash-stranding история (INCIDENTS #012) — score **38/42**: свежесть 3×3=9 (<24ч: обнаружено 10:45, v2.1 в 22:55 06.10); конкретность 3×3=9 (6 WIP, 01:15–03:30, ~9.5ч, 11:05, 12:00/15:00/17:30, v2.1); дуга 3×3=9 (проблема→диагноз→фикс→follow-up→урок); универсальность 2×2=4 (метафора «демон съел несохранённое», stash требует мин. пояснения); контраст 2×3=6 («git status чист, в истории нет, но правки есть»); разнообразие 1×1=1 (источник hermes/инфра брифтся 2 ночи подряд — socket-path вчера).
+> Претенденты: GULAG Kupi-backup HEADS-UP (04.10, ~54ч) — score 29 [BORDERLINE pre-gate: 2 «да», изоляция multi-tenant полезна, но нет дуги фикс→урок + чужой проект (Kupi/Kupio бренд-гейт) → проиграл по свежести]; GULAG deploy-канонизация (04.10) — pre-gate <2 «да» (рутинная консолидация без сцены) → отброшен; Junior Device RED (06.10) — pre-gate отброс (self-referential статус без дуги); Manufact (05.10) — DISQUALIFIED (DUP-7d, пост уже вышел); Alikhan — хронология молчит с 11.09; RAB9 — записи нет за 48ч (60-й день без сигналов, крипто-вето на цену); GULAG основные записи — 03-05.09 (>48ч); hermes-vault мета-файлы (SOUL-main/OPERATIONS/scorecard/Engineering Loop) — 0 коммитов за 3 дня; radar-scan — последний 01.09 (35 дней, STALE); Kupi rebrand kupio.shop (06.10, commit fac951c4) — чужой проект + бренд-гейт, не брифится без мандата; nous 402 — факт только в memory оператора, не в CHRONOLOGY/git log → не по канону источников.
+> Pre-gate «3 вопроса» победителя: польза — да (переносимый git-паттерн commit-first + recover-команды); сцена — да (исчезнувшие правки при чистом git status); актуальность — да (конкурентная запись в worktree — боль всех agent-стеков с параллельными сессиями).
 
-## Manufact (mcp-use) — тема добавлена 05.10 (dogfood 05.10, пост 05.10)
-- mcp-use — опенсорс SDK для MCP-серверов/Apps, авторы Manufact (@mcp_use, @manufact), YC S25, seed $6,3 млн фев 2026
-- ~10,7k звёзд GitHub, 41k загрузок/неделя (api.npmjs.org 27.09-03.10), 51 зависимость при установке
-- Версии 1.4.2/1.4.3 пакета помечены malicious (OSSF реестр); установка с пиннингом mcp-use@2.7.3
-- Наш прогон: демо-сервер 2 тула, HTTP MCP localhost:3000, initialize→tools/list→call ok; graph_stats = 494 entities / 475 edges
-- Грабли: top-level await требует "type":"module"; outputSchema требует structuredContent (text-only валидный → validation error); stdio не автозапуск — server.listen(3000) или mcp-use dev; протокол 2025-06-18
-- Прайсинг: Free $0 ($5 кредитов/мес, 2 проекта, 30k req), Hobby $25, Startup $250, Enterprise от $1000
+## EmbeddingGemma 2 на ноутбуке флота — тема добавлена 07.10 (dogfood: Junior, живая проверка на месте)
+- Google DeepMind, релиз 06.10, Apache 2.0; «нативно мультимодальный» open-модель эмбеддингов: текст+код, изображения, видео, аудио — единое 768-мерное пространство
+- 740M параметров: 270M text (130M transformer + 140M embedder) + 170M vision + 300M audio; энкодеры модальностей отключаемые
+- Машина (проверено Junior на месте): HUAWEI BOD-WXX9, i5-1135G7 4c/8t, 15.8 GB RAM, Intel Iris Xe shared (нет CUDA)
+- Текст+код only 270M: BF16 ~540 MB / Q8 ~310 MB, RAM <1.5 GB — точно работает, быстро; +vision 440M ~2 GB — да, медленнее; полный 740M ~3 GB — влезает, CPU-медленно; GGUF Q4_K_XL всё ~1.5 GB через llama.cpp
+- Ограничения из доков: FP16 запрещён (NaN/деградация) — только BF16/FP32; Matryoshka 768→512/256/128d; контекст 8K, 100+ языков
+- Узкое место: не память (16 GB, запас огромный), а CPU-скорость; текст мс-десятки мс, vision/audio — секунды на кадр/клип (ок для индексации, не realtime)
+- Применения флота: локальный RAG по vault без облака; поиск по кадрам/скриншотам; голосовая заметка → момент в видео; дедуп/кластеризация
