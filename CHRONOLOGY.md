@@ -2387,3 +2387,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - X Developer Portal: приложение RobotsT500HA (ID 33087436) живо в новой консоли (Access → Apps); ключи не регенерировать; Spend Cap не ставим (решение владельца); $122.68/30д, Credits $12.10, Auto Recharge ON.
 - Брифы отменены владельцем; b130f291b70a переписана Hermes в chronology-only и возобновлена (22:45 прогон). Новые источники тем: стартап-радар + war-story. CONTENT_BRIEF.md = только факт-таблица факт-гейта.
 - Приоритеты портала после тормоза: 1) X Activity API, 2) Filtered Stream, 3) Voucher — Junior ждёт сигнала «тормоз снят».
+- **07.10.2026 15:02** — chronology: 2026-10-07 gemma post, search de-amplification, portal resolution, briefs cancelled (`0fabf19`)
