@@ -112,3 +112,4 @@
 | 2026-10-05T22:50 | briefings/2026-10-05.md | ежедневный CHRONOLOGY-брифинг по расписанию cron | CHRONOLOGY.md, spec_drift_log.md, data/, knowledge_graph/ | a4d0fd0 |
 | 2026-10-06T08:22 | published_posts.jsonl | пост-публикация Junior-device 2107385912850010212 (лог) | CHRONOLOGY.md, drafts/, images/, data/ | 60b581c |
 | 2026-10-06T22:45 | briefings/2026-10-06.md | daily CHRONOLOGY briefing cron job b130f291b70a | data/, knowledge_graph/ | 954adf4 |
+| 2026-10-07T05:02 | TACTICS.md | утренняя тактика cron (live xurl + anti-dup) | CHRONOLOGY.md, data/, knowledge_graph/ |  |
