@@ -2391,3 +2391,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.10.2026 15:05** — docs: remove all CONTENT_BRIEF files (owner directive: briefs cancelled 07.10) (`bd50402`)
 - 07.10 ~15:05 UTC: удалены ВСЕ CONTENT_BRIEF* файлы (9 tracked git rm + 4 untracked rm) по директиве владельца «забудь, удали». Факт-гейт держит пустой бриф (operator_pipeline.py:159, missing brief = no deterministic constraint) — публикационный путь не ломается; факт-источник остаётся CHRONOLOGY.md. Drift-интент закрыт SHA в той же строке. Незатреканные бэкапы (bak/instagram/restore_runbook/shadowban) — tar в cache/scratch/content_brief_untracked_backup_20261007.tgz перед удалением.
 - **07.10.2026 15:06** — drift: write back SHA 0fabf19; chronology: content brief removal (`38c87b9`)
+- **07.10.2026 15:07** — ci: whitelist CONTENT_BRIEF* (briefs deleted by owner directive 07.10, push completeness unaware of remaining names) (`12483e5`)
