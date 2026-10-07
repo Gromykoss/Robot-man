@@ -2379,3 +2379,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.10.2026 12:01** — brief: embeddinggemma2 dogfood run numbers (junior report) (`59cadd6`)
 - **07.10.2026 12:01** — drift: write back SHA 59cadd6 (`f9055fd`)
 - **07.10.2026 12:02** — ops: post 2107803639775437009 log (`3e34ad0`)
+- **07.10.2026 12:02** — drift: write back SHA 3e34ad0 (`2ba59c9`)
+## 2026-10-07 (Robot-man)
+- Опубликован пост EmbeddingGemma 2: id 2107803639775437009, 12:02 UTC (note_tweet, обложка embedding_gemma2_cover_v3.png). Первый прогон заблокирован фак-гейтом → CONTENT_BRIEF.md дополнен цифрами отчёта Junior (59cadd6), повторный прогон прошёл; лог 3e34ad0. Что сделал: бриф-факты + публикация. Как проверил: /2/tweets read-back (note len, media).
+- Search de-amplification: пост 0 импрессий, keyword-поиск «EmbeddingGemma» не возвращает пост (from: — возвращает); Junior-пост 4 импр. Тормоз 48ч (до 09.10 12:00 UTC), API-записи = 0.
+- X Support подтвердил: аккаунт чист, временная метка добавлена и удалена после проверки (сообщение владельца) — официальное объяснение просадки. Watch-джоба devportal-report-watch удалена по приказу «снимай джоб».
+- X Developer Portal: приложение RobotsT500HA (ID 33087436) живо в новой консоли (Access → Apps); ключи не регенерировать; Spend Cap не ставим (решение владельца); $122.68/30д, Credits $12.10, Auto Recharge ON.
+- Брифы отменены владельцем; b130f291b70a переписана Hermes в chronology-only и возобновлена (22:45 прогон). Новые источники тем: стартап-радар + war-story. CONTENT_BRIEF.md = только факт-таблица факт-гейта.
+- Приоритеты портала после тормоза: 1) X Activity API, 2) Filtered Stream, 3) Voucher — Junior ждёт сигнала «тормоз снят».
