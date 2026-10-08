@@ -2393,3 +2393,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.10.2026 15:06** — drift: write back SHA 0fabf19; chronology: content brief removal (`38c87b9`)
 - **07.10.2026 15:07** — ci: whitelist CONTENT_BRIEF* (briefs deleted by owner directive 07.10, push completeness unaware of remaining names) (`12483e5`)
 - **07.10.2026 15:07** — drift: write back SHA 12483e5 (`d6db6c7`)
+- **07.10.2026 22:46** — chrono: 2026-10-07 (`4518332`)
