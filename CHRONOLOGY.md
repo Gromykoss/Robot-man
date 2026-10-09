@@ -2394,3 +2394,8 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.10.2026 15:07** — ci: whitelist CONTENT_BRIEF* (briefs deleted by owner directive 07.10, push completeness unaware of remaining names) (`12483e5`)
 - **07.10.2026 15:07** — drift: write back SHA 12483e5 (`d6db6c7`)
 - **07.10.2026 22:46** — chrono: 2026-10-07 (`4518332`)
+- **08.10.2026 22:47** — chrono: 2026-10-08 (`1759cb9`)
+
+## 2026-10-09 (Robot-man)
+- Тормоз (48ч, RED-watch) истёк по плану 09.10 12:00 UTC. Пробный пост после снятия тормоза НЕ выполнен: 0 API-записей за день (write_counter от 07.10, published_posts.jsonl — последний пост 2107803639775437009 от 07.10), коммитов в репо за 09.10 нет. Развилка из TACTICS 09.10 (imp ≥20-50 → постепенный выход; ~0 → тормоз 7 дней + эскалация) остаётся открытой до пробного поста.
+- Рутинные кроны отработали штатно: TACTICS 09.10 05:02 (тормоз день 2/2, фолловеры 397, follow-back 0), jev-learner 09:31 (analyzed=17, failures=0), X Tracked сбор 12:02 (49 новых постов от 16 аккаунтов; кандидаты в темы — HERMES harness «обвязка важнее модели» и «HR Bot» от tonbistudio), catmanyau watchdog — no change.
