@@ -1,0 +1,13 @@
+Every AI code review agent in the leaderboard finds only 9.6-26% of the real problems in PRs. The best one catches about a quarter. GitHub just made this measurable: ReviewBench, an open benchmark, in research preview since October 5.
+
+Before this, "does the agent catch real issues or add noise?" was gut feeling. Now: 103.9M real PRs → sampled distribution → a corpus of 219 PRs from 187 open-source repos across 19 languages. A golden set built from 4 sources (human reviews, follow-up commits, static analysis, frontier LLMs), independently re-labeled by engineers outside the team — 96.6% agreement.
+
+Grounded precision/recall counts only findings that match the reference; augmented gives credit for new valid findings via an LLM judge (judge config published). In the leaderboard, precision sits in a narrow 84-89% band for everyone — all the difference is in recall. Copilot Code Review: 26% recall at 87.8% precision. Cursor: 87.7% precision at 9.6% recall — nearly silent, but right.
+
+GitHub also reports that offline ReviewBench scores predicted the direction of their production A/B experiment on Copilot code review.
+
+Our run: we evaluated our review agent on 12 PRs (internal contract runs, judge = the official eval.ts from their repo). Micro precision 73.3% — 33 findings confirmed against the reference out of 45 candidates, none marked false positives; the remaining 12 are unresolved. Against a diff-only baseline (precision 70%, recall 10.7%), adding repository context raised recall on critical findings from 14% to 49-92% — a band, on a small 12-PR sample, not a single number.
+
+Where it still fails: recall on diffs of 40K+ lines is weak, we miss a lot in that range. The full portal run (219 PRs × 3) isn't counted yet — a harness-level failure, retry after the fix. All numbers above are internal runs, not the leaderboard.
+
+Building in public. 🤖
