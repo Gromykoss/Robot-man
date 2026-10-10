@@ -2404,3 +2404,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **10.10.2026 16:26** — drift: write back SHA 5a0fab6 (`7f9400c`)
 - 10.10.2026 16:26 UTC: Опубликован пост ReviewBench (пробный после снятия тормоза): id 2108957459511496705, note_tweet, обложка cover_reviewbench_v3.png (MCV PASS 8.5/10). Факт-гейт (allowed_facts empty) заблокировал первый прогон → Codex-фикс operator_pipeline.py: fallback read_allowed_facts на CHRONOLOGY.md (5a0fab6, py_compile OK, pytest 30 passed), повторный прогон прошёл. Read-back /2/tweets: media photo, created 16:26:55Z. Exit 1 скрипта = Discord-постинг шаг (не публикация). MoA: v2 fail (пресс-лид, band, Cursor) → v3 PASS после правок. Текст: drafts/reviewbench_v3_en.txt.
 - **10.10.2026 16:29** — post: ReviewBench 2108957459511496705 (trial post after brake lift; fact-gate fallback 5a0fab6) (`e29996b`)
+- **10.10.2026 16:30** — drift: write back SHA e29996b (`e304190`)
+
+## 2026-10-10 (Robot-man)
+- TACTICS 10.10 утренний (05:00–05:10 UTC, live xurl): тормоз истёк 09.10 12:00, приоритет №1 — пробный пост. Gemma-пост = 8 imp за ~65ч (третий RED-эпизод подряд: Junior Device 6 imp, Gemma 8 imp). Followers 391/257, дельта за 2 суток −6 (397→391). Manufact-пост 05.10 = 235 imp, 5❤ 4💬 — органика возможна, просадка дистрибуционная (X Support 07.10: аккаунт чист).
+- VOICE_LESSONS.md регенерирован (09:30 UTC): 17 пар (было 16), диапазон 2026-09-05..2026-10-06; правки Сергея: length_reduced 76%, cta_changed 76% (13/17).
+- KG rebuild 18:00 UTC: 501 узлов (+7), 481 рёбер (+6), 192 событий.
+- Промежуточный замер ReviewBench (2108957459511496705, ~6ч после публикации, 22:45 UTC): **65 imp, 2❤, 0💬, 0🔄, 0🔖** — выше тормоз-порога ≥20 → сигнал постепенного выхода из RED. Финальный замер 24h — 11.10 после 16:30 UTC (по развилке TACTICS: imp ≥20 → выход; финальное решение по 24h-замеру).
+- Рутинные кроны 10.10: TACTICS 05:00–05:10 (пробный пост приоритет), jev-learner 09:30 (VOICE_LESSONS 17 пар), KG rebuild 18:00 — штатно.
