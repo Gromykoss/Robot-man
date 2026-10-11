@@ -122,4 +122,4 @@
 | 2026-10-10T16:28 | published_posts.jsonl, data/write_counter.json, drafts/reviewbench_v2_ru.md, drafts/reviewbench_v2_en.txt, drafts/reviewbench_v3_en.txt, drafts/cover_reviewbench_v2.png, drafts/cover_reviewbench_v3.png | пост-публикация ReviewBench 2108957459511496705 (пробный после снятия тормоза) + артефакты пакета | images/, operators/ | e29996b |
 | 2026-10-11T03:10 | .hermes/profiles/robot-man/scripts/analytics_metrics.sh + cron-джоба metrics-writer (jobs.json) | возврат metrics-райтера по GO Hermes (фид jev-learner протух с 06.10), no_agent пн/ср/пт 15:00 UTC | drafts/, operators/, post_with_log.sh, knowledge_graph/, cron-джобы чужие | 23b922bf9 |
 | 2026-10-11T05:20 | CHRONOLOGY.md, published_posts.jsonl, data/write_counter.json | post 2109149907651051782 publish artifacts | skills/, cron/, knowledge_graph/ | |
-| 2026-10-11T05:22 | published_posts.jsonl, data/write_counter.json | post 2109149907651051782 publish artifacts | skills/, cron/, knowledge_graph/ | |
+| 2026-10-11T05:22 | published_posts.jsonl, data/write_counter.json | post 2109149907651051782 publish artifacts | skills/, cron/, knowledge_graph/ | 40faa49 |
