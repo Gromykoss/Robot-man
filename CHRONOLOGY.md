@@ -2430,3 +2430,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Best post (21089574): 2 likes, 0 replies — analyze hook and format
 - **Pattern:** Overall engagement rate: 2.7% (average)
 - **11.10.2026 03:03** — drift: metrics-writer cron return (analytics_metrics.sh + jobs.json, GO Hermes 11.10) (`23b922b`)
+- **11.10.2026 03:03** — drift: write back SHA 23b922bf9 (`009a3a3`)
