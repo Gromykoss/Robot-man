@@ -2413,3 +2413,20 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Промежуточный замер ReviewBench (2108957459511496705, ~6ч после публикации, 22:45 UTC): **65 imp, 2❤, 0💬, 0🔄, 0🔖** — выше тормоз-порога ≥20 → сигнал постепенного выхода из RED. Финальный замер 24h — 11.10 после 16:30 UTC (по развилке TACTICS: imp ≥20 → выход; финальное решение по 24h-замеру).
 - Рутинные кроны 10.10: TACTICS 05:00–05:10 (пробный пост приоритет), jev-learner 09:30 (VOICE_LESSONS 17 пар), KG rebuild 18:00 — штатно.
 - **10.10.2026 22:46** — chrono: 2026-10-10 (`43eb5ef`)
+
+## 2026-10-11 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.3, replies=0.7, impressions=106.4
+- **👤 @RobotsTJ500:** 1 постов, 2❤️ 0💬 0🔄 0🔖 74👁️
+- **Best:** 21089574 (2❤️ 0💬 0🔄)
+- **Worst:** 21089574 (2❤️ 0💬 0🔄)
+- **Pattern:** Best post (21089574): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.7% (average)
+
+## 2026-10-11 — Nightly Analytics
+- **Metrics:** 1 постов анализировано, baseline: likes=1.3, replies=0.7, impressions=106.4
+- **👤 @RobotsTJ500:** 1 постов, 2❤️ 0💬 0🔄 0🔖 74👁️
+- **Best:** 21089574 (2❤️ 0💬 0🔄)
+- **Worst:** 21089574 (2❤️ 0💬 0🔄)
+- **Pattern:** Best post (21089574): 2 likes, 0 replies — analyze hook and format
+- **Pattern:** Overall engagement rate: 2.7% (average)
+- **11.10.2026 03:03** — drift: metrics-writer cron return (analytics_metrics.sh + jobs.json, GO Hermes 11.10) (`23b922b`)
