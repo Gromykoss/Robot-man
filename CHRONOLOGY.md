@@ -2431,3 +2431,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Pattern:** Overall engagement rate: 2.7% (average)
 - **11.10.2026 03:03** — drift: metrics-writer cron return (analytics_metrics.sh + jobs.json, GO Hermes 11.10) (`23b922b`)
 - **11.10.2026 03:03** — drift: write back SHA 23b922bf9 (`009a3a3`)
+- **11.10.2026 03:04** — drift: fix SHA field placement in 2026-10-11T03:10 intent (`cf6b8ce`)
+- **11.10.2026 05:11** — post 2109149907651051782 «agents/security» (EN note_tweet + cover NO TRUST). Материал: депозит Reviewer (bus) + факт ThreatBook acquires CyberStrikeAI (пресс-релиз 30.09 threatbook.io, verified) + февральские атаки (вторичный твит s0what, помечено "per reports"). MoA: Р1 PASS (mentions verified, anti-ad чист), Р2 viral 22/30 (порог 24 не взят — 2 итерации, решение владельца «пости»). Human Gate: «пости» 05:09 UTC. Read-back verified: note_tweet полный, mentions ThreatBookLabs 3898296553 + Cloudflare 32499999, media 3_2109149902026448896. Гейты: ran under this pattern (не инструмент), без IP/доменов/цифр пилота.
