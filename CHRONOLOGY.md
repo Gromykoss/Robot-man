@@ -2473,3 +2473,12 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **KG rebuild 12:00 UTC штатно:** graph 512 узлов / 489 рёбер, 196 событий, 4 проекта (maintenance_report.json, 2026-10-15T12:00). Замечания: duplicate_entities (сходство 0.895) — слияние не выполнялось.
 - **Живой список jobs.json профиля robot-man** (проверка 22:46 UTC): только «📝 Robot-man CHRONOLOGY» — задача «Утренняя тактика» в списке отсутствует (коррелирует с аномалией TACTICS выше).
 - **Незакоммиченный writeback** строки «14.10.2026 22:47 — chrono … (e5aa048)» оставался staged с 14.10; включён в этот коммит.
+- **15.10.2026 22:46** — chrono: 2026-10-15 (`c5a5499`)
+
+## 2026-10-16 — Пост Tiny Shops от 15.10 подтверждён: 155 imp — выход из RED; followers 391
+
+- **Пост (id 2110570150474727517, 15.10 03:15 UTC, @RobotsTJ500):** «Tiny Shops — no-code storefront inside Telegram as a Mini App» (catalog/cart/cashback, Stars/Stripe/TON checkout, 0.5–3% fee; built by eugenezelenkov, agents as first-class users). Записи в CHRONOLOGY за 15.10 не было — добавлена сейчас (пропуск автохрона 13–15.10 частично: ежедневные chrono-коммиты велись, но сам пост задокументирован не был).
+- **Метрики (16.10 22:50 UTC, verified xurl raw GET /2/tweets):** **155 impressions**, 1❤ 1💬 1 reply, 0 RT/quote. Первая цифра ≥20 после RED-постов 06.10 (4 imp) — условие выхода из RED выполнено (замер, назначенный на 11.10 после 16:30, исполнен 16.10).
+- **Followers (16.10 22:50 UTC, verified xurl whoami):** @RobotsTJ500 **391**, following 268. Против 390 от 12.10 — +1 (частичный откат падения 399→390).
+- **Незакоммиченный writeback** строки «15.10.2026 22:46 — chrono: 2026-10-15 (c5a5499)» оставался staged с 15.10; включён в этот коммит.
+- **Contract index update:** not needed.
