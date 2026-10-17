@@ -2491,3 +2491,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **KG rebuild 18:00 UTC штатно:** graph 518 узлов / 493 рёбра, 198 событий, 63 people, 23 tasks, 4 проекта (maintenance_report.json, 2026-10-17T18:00). Замечания: duplicate_entities (Nightly Analytics, сходство 0.895/0.941 и др.) — слияние не выполнялось.
 - **Незакоммиченный хвост рабочего дерева** (TACTICS.md регенерация 12.10, VOICE_LESSONS.md прогон 12.10, published_posts.jsonl строка поста 15.10, write_counter 15.10, graph.json+maintenance_report) оставался незакоммиченным; по процедуре автохрона в этот коммит включается только CHRONOLOGY.md — хвост остаётся для профильных коммитов.
 - **Contract index update:** not needed.
+- **17.10.2026 22:45** — chrono: 2026-10-17 (`3971bb8`)
+- **17.10.2026 22:50** — chrono: 2026-10-17 (`3971bb8`)
