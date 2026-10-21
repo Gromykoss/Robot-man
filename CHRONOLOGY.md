@@ -2515,3 +2515,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **20.10.2026 22:46** — chrono: 2026-10-20 (`73b5e49`)
 - **21.10.2026 03:02** — eval-gate: kind=agent post-gate (fleet standard eval-gates, 20.10) (`cf4474e`)
 - **21.10.2026 05:21** — eval-gate: post-gate seed + gitignore runtime-вердиктов (.evals, metrics.json) (`38eb77a`)
+- **21.10.2026 13:47** — eval-gate: post-gate scorer length_ok by mode (spec-drift fix 21.10) (`f6fe8cd`)
+
+## 2026-10-21 — Пост Honcho опубликован (id 2112903459057910104); eval-gate фиксы
+
+- **Публикация 13:46 UTC (@RobotsTJ500):** оригинальный пост id **2112903459057910104** (запись в published_posts.jsonl подтверждена); write_counter: {"date": "2026-10-21", "writes": 2}. Тема — Honcho (memory-сервер, депозит Hermes 21.10); факт-база research/honcho-facts-20261021.md (первоисточники проверены, вердикт директора: md остаётся каноном аудита, пилот self-host — решение за владельцем). Артефакты: drafts/honcho-pilot_20261021_v1_ru.md, research/honcho-facts-20261021.md.
+- **Реплай 19:54 UTC:** id 2112996067595657426 (type reply → 2112995202965119391).
+- **Eval-gate фиксы (3 коммита за 21.10):** kind=agent post-gate (fleet standard eval-gates, `cf4474e`), post-gate seed + gitignore runtime-вердиктов (.evals, metrics.json, `38eb77a`), post-gate scorer length_ok by mode (spec-drift fix, `f6fe8cd`). Файлы: evals/post-gate/scorer.py, evals/post-gate/dataset.jsonl, spec_drift_log.md.
+- **Contract index update:** not needed.
