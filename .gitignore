@@ -39,3 +39,5 @@ dogfood/**/.mcp-use/
 dogfood/**/server.log
 .specdrift*
 data/approval.token
+evals/**/.evals/
+evals/**/metrics.json

@@ -2513,3 +2513,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **KG rebuild 18:00 UTC штатно:** graph 521 узлов / 495 рёбер, 199 событий, 63 people, 23 tasks, 4 проекта (maintenance_report.json, 2026-10-20T18:00). Замечания: 7 duplicate_entities (в т.ч. person/@RobotsT500 vs person/@RobotsTJ500 0.973, person/@gromykoss vs @Gromykoss 1.0) — слияние не выполнялось; stale_nodes/contradictions/confidence_decay — пусто.
 - **Contract index update:** not needed.
 - **20.10.2026 22:46** — chrono: 2026-10-20 (`73b5e49`)
+- **21.10.2026 03:02** — eval-gate: kind=agent post-gate (fleet standard eval-gates, 20.10) (`cf4474e`)
