@@ -125,3 +125,4 @@
 | 2026-10-11T05:22 | published_posts.jsonl, data/write_counter.json | post 2109149907651051782 publish artifacts | skills/, cron/, knowledge_graph/ | 40faa49 |
 | 2026-10-21T02:57 | post_with_log.sh, evals/post-gate/eval.yaml, evals/post-gate/scorer.py | eval-gate kind=agent: детерминированная проверка голос-канона (English/URL/hashtag/ALL-CAPS/длина) перед публикацией — флот-стандарт eval-gates, мандат владельца 20.10 | drafts/, operators/, cron/, knowledge_graph/, VOICE_*, CONTENT_* | cf4474e |
 | 2026-10-21T05:21 | evals/post-gate/dataset.jsonl, .gitignore | eval-gate post-gate: seed dataset + gitignore runtime-вердиктов (.evals, metrics.json) | контент, данные, код, scorer/eval.yaml |  |
+| 2026-10-21T14:xx | evals/post-gate/scorer.py | spec-drift fix: length_ok по mode (post=note_tweet до 4000, reply=500) — жёсткий 500 блокировал все длинные посты; поймано живой публикацией memory-поста | CONTENT_BRIEF.md, drafts/ |

@@ -19,12 +19,15 @@ ALLCAPS = re.compile(r"\b[A-Z]{5,}\b")  # ALL-CAPS прогон ≥5 букв (�
 
 def check_line(line: dict) -> dict:
     text = line.get("text", "")
+    # 21.10 spec-drift fix: длина по mode — post = note_tweet до 4000 (канон),
+    # reply = 500. Раньше жёсткий 500 блокировал все длинные посты.
+    max_len = 4000 if line.get("mode", "post") == "post" else 500
     return {
         "cyrillic_free": 0.0 if CYRILLIC.search(text) else 1.0,
         "url_free": 0.0 if URL.search(text) else 1.0,
         "hashtags_canonical": 1.0 if (line.get("allow_hashtags", False) or "#" not in text) else 0.0,
         "caps_ok": 0.0 if ALLCAPS.search(text[:160]) else 1.0,
-        "length_ok": 1.0 if 10 <= len(text) <= 500 else 0.0,
+        "length_ok": 1.0 if 10 <= len(text) <= max_len else 0.0,
     }
 
 

@@ -2514,3 +2514,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Contract index update:** not needed.
 - **20.10.2026 22:46** — chrono: 2026-10-20 (`73b5e49`)
 - **21.10.2026 03:02** — eval-gate: kind=agent post-gate (fleet standard eval-gates, 20.10) (`cf4474e`)
+- **21.10.2026 05:21** — eval-gate: post-gate seed + gitignore runtime-вердиктов (.evals, metrics.json) (`38eb77a`)
