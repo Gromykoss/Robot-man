@@ -2512,3 +2512,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **TACTICS.md регенерирован (18:46 UTC):** файл «Тактика на 2026-10-21» заменил версию от 12.10 (7-дневный разрыв устранён); в шапке зафиксировано, что крон «Утренняя тактика» (1abd8129a7d4) файл не писал — джоба в живом списке отсутствует, источник цифр — live xurl (18:40–18:46 UTC). Причина отсутствия джобы не диагностировалась (зона оператора).
 - **KG rebuild 18:00 UTC штатно:** graph 521 узлов / 495 рёбер, 199 событий, 63 people, 23 tasks, 4 проекта (maintenance_report.json, 2026-10-20T18:00). Замечания: 7 duplicate_entities (в т.ч. person/@RobotsT500 vs person/@RobotsTJ500 0.973, person/@gromykoss vs @Gromykoss 1.0) — слияние не выполнялось; stale_nodes/contradictions/confidence_decay — пусто.
 - **Contract index update:** not needed.
+- **20.10.2026 22:46** — chrono: 2026-10-20 (`73b5e49`)

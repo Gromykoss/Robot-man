@@ -8,6 +8,23 @@ set -e
 DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG="$DIR/published_posts.jsonl"
 
+# ── EVAL GATE (fleet standard eval-gates, 20.10.2026, kind: agent) ──────────
+# Deterministic voice-canon check on the candidate text BEFORE anything touches
+# X. Verdict artifact: evals/post-gate/.evals/latest.json. Exit 2 = block.
+eval_gate() {
+    local CAND="$1" GMODE="$2"
+    local ED="$DIR/evals/post-gate"
+    python3 - "$CAND" "$GMODE" <<'PYEOF' > "$ED/dataset.jsonl"
+import json, sys
+print(json.dumps({"text": sys.argv[1], "mode": sys.argv[2], "allow_hashtags": False}, ensure_ascii=False))
+PYEOF
+    if ! python3 "$HOME/.hermes/scripts/eval_runner.py" "$ED/eval.yaml" > /dev/null 2>&1; then
+        echo "BLOCKED: eval-gate (kind=agent) FAILED — voice canon violation or scorer error." >&2
+        echo "Verdict: $ED/.evals/latest.json" >&2
+        exit 2
+    fi
+}
+
 MODE="post"
 if [ "$1" = "--reply" ]; then
     MODE="reply"
@@ -39,6 +56,8 @@ if [ "$MODE" = "reply" ]; then
         echo "Usage: post_with_log.sh --reply TARGET_ID 'text'" >&2
         exit 1
     fi
+
+    eval_gate "$REPLY_BODY" "reply"
 
     # Replies carry no cover — the checklist media gate would hard-block every
     # reply against a brief that names a cover image. Pass the brief's cover
@@ -96,6 +115,8 @@ ${REPLY_BODY:0:200}
 fi
 
 # ── ORIGINAL POST MODE ──────────────────────────────────────────
+eval_gate "$TEXT" "post"
+
 # Pass the cover path into the operator pipeline so the checklist gate can
 # verify that a required image is actually present.
 export POST_IMAGE="$IMAGE"
