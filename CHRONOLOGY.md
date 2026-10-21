@@ -2523,3 +2523,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Реплай 19:54 UTC:** id 2112996067595657426 (type reply → 2112995202965119391).
 - **Eval-gate фиксы (3 коммита за 21.10):** kind=agent post-gate (fleet standard eval-gates, `cf4474e`), post-gate seed + gitignore runtime-вердиктов (.evals, metrics.json, `38eb77a`), post-gate scorer length_ok by mode (spec-drift fix, `f6fe8cd`). Файлы: evals/post-gate/scorer.py, evals/post-gate/dataset.jsonl, spec_drift_log.md.
 - **Contract index update:** not needed.
+- **21.10.2026 22:46** — chrono: 2026-10-21 (`4d76739`)

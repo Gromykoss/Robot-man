@@ -46,6 +46,7 @@ WHITELIST = (
     "published_posts.jsonl",
     "data/jev_viral_analysis/**",
     "data/learning/**",
+    "evals/**",
     "drafts/**",
     "facts/**",
     "images/**",
