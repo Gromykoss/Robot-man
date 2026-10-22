@@ -2524,3 +2524,16 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Eval-gate фиксы (3 коммита за 21.10):** kind=agent post-gate (fleet standard eval-gates, `cf4474e`), post-gate seed + gitignore runtime-вердиктов (.evals, metrics.json, `38eb77a`), post-gate scorer length_ok by mode (spec-drift fix, `f6fe8cd`). Файлы: evals/post-gate/scorer.py, evals/post-gate/dataset.jsonl, spec_drift_log.md.
 - **Contract index update:** not needed.
 - **21.10.2026 22:46** — chrono: 2026-10-21 (`4d76739`)
+- **21.10.2026 22:48** — ci: whitelist evals/** in scenario map (pre-push MERGE-CUT fix) (`b722df4`)
+
+## 2026-10-22 — День публикаций (2 поста + 7 ответов); чистка подписок подготовлена
+
+- **Пост Honcho pilot (08:1x UTC):** id 2113198638889419177, обложка cover_honcho_20261021_v2.png (MCV 8.5). Слот 05:00 сорван на 3ч18м — polishing-loop обложки; урок (жёстко): таймбокс 20 мин / 2 итерации → fallback без полировки. Read-back OK. MoA: R1 PASS, R2 27/30 (в A/B-посте; Honcho R1 PASS, R2 high).
+- **Пост A/B abliterated vs stock (11:16 UTC):** id 2113228079938101638, обложка cover_ab0 (0 = 0, MCV 7). Артефакты выложены Junior на ~/robot-man-artifacts/pilot-abliterated/ (20 файлов) — верифицированы мной (20× refusal=0, chars 5157/2371, latency 31.5). MoA: R1 PASS, R2 27/30, scroll-stop 8. Уточнение расхода: $0.19 per-row / $0.38 usage-log. Vердикт в посте: fallback, не замена. @abliteration_ai уведомлены (handle-гейт).
+- **Ответ в тред @HermesWatcher (12:33 UTC):** id 2113247283089174797 — reply 403 (Free-tier, «only where mentioned/author») → оригинальный пост с упоминанием. Правило в x-write-gate: чужой тред без упоминания нас → черновик владельцу, он отвечает вручную.
+- **Ответы:** @Daimonrun (20.10), @honchodotdev ×2, @KeithZhai, @Rahatirtaza, @Nitikshofficial (auth lifecycle), @LanesraOS ×2 (SQLite/solo-team). Лайки на все комментарии engagers.
+- **Метрики-аномалия:** посты 20–21.10 просели ×3 за сутки (168→48 imp, 221→62) при живых новых — гипотеза X-чистки фармового engage; наблюдение 24ч.
+- **Гейты канона обновлены:** mention-credit-gate (handle в тексте; @NousResearch по релевантности), x-write-gate (чужой тред → вручную владельцу), cover-production (таймбокс). Пайплайн-фикс: scorer length_ok по mode (f6fe8cd).
+- **Чистка подписок (t_07a83d19):** просканирован фоллапул 293 → 20 шумовых на отписку (data/unfollow_list_20261031.md; Rahatirtaza владелец оставил). Батч 31.10 после ок.
+- **Follow-back:** Daimonrun, wlodarczykacper, ankitdongre100, shlokbuilds, Nitikshofficial, JWPAX3051 (все following:true).
+- **grok-reports:** чтение SQLite, отправка через send_grok_reports.sh (relay 443; старый :8443 мёртв). Канон-файл: SETUP_DOCUMENTATION_RobotsTJ500.md (создан 20.10, авто-refresh oauth2 секция).

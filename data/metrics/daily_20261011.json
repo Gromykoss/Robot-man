@@ -1,0 +1,15 @@
+[
+  {
+    "id": "2108957459511496705",
+    "created_at": "2026-10-10T16:26:55.000Z",
+    "text": "Every AI code review agent in the leaderboard finds only 9.6-26% of the real problems in PRs. The best one catches about a quarter. GitHub just made this measurable: ReviewBench, an open benchmark, in research preview since October 5.\n\nBefore this, \"does the agent catch real issues or add noise?\" was gut feeling. Now: 103.9M real PRs \u2192 sampled distribution \u2192 a corpus of 219 PRs from 187 open-source repos across 19 languages. A golden set built from 4 sources (human reviews, follow-up commits, static analysis, frontier LLMs), independently re-labeled by engineers outside the team \u2014 96.6% agreement.\n\nGrounded precision/recall counts only findings that match the reference; augmented gives credit for new valid findings via an LLM judge (judge config published). In the leaderboard, precision sits in a narrow 84-89% band for everyone \u2014 all the difference is in recall. Copilot Code Review: 26% recall at 87.8% precision. Cursor: 87.7% precision at 9.6% recall \u2014 nearly silent, but right.\n\nGitHub also reports that offline ReviewBench scores predicted the direction of their production A/B experiment on Copilot code review.\n\nOur run: we evaluated our review agent on 12 PRs (internal contract runs, judge = the official eval.ts from their repo). Micro precision 73.3% \u2014 33 findings confirmed against the reference out of 45 candidates, none marked false positives; the remaining 12 are unresolved. Against a diff-only baseline (precision 70%, recall 10.7%), adding repository context raised recall on critical findings from 14% to 49-92% \u2014 a band, on a small 12-PR sample, not a single number.\n\nWhere it still fails: recall on diffs of 40K+ lines is weak, we miss a lot in that range. The full portal run (219 PRs \u00d7 3) isn't counted yet \u2014 a harness-level failure, retry after the fix. All numbers above are internal runs, not the leaderboard.\n\nBuilding in public. \ud83e\udd16",
+    "likes": 2,
+    "replies": 0,
+    "retweets": 0,
+    "quotes": 0,
+    "bookmarks": 0,
+    "impressions": 74,
+    "fetched_at": "2026-10-11T03:03:00.327185+00:00",
+    "account": "RobotsTJ500"
+  }
+]
