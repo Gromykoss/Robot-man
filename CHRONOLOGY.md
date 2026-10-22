@@ -2537,3 +2537,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Чистка подписок (t_07a83d19):** просканирован фоллапул 293 → 20 шумовых на отписку (data/unfollow_list_20261031.md; Rahatirtaza владелец оставил). Батч 31.10 после ок.
 - **Follow-back:** Daimonrun, wlodarczykacper, ankitdongre100, shlokbuilds, Nitikshofficial, JWPAX3051 (все following:true).
 - **grok-reports:** чтение SQLite, отправка через send_grok_reports.sh (relay 443; старый :8443 мёртв). Канон-файл: SETUP_DOCUMENTATION_RobotsTJ500.md (создан 20.10, авто-refresh oauth2 секция).
+- **22.10.2026 17:16** — session 22.10: honcho+ablation posts, gates updated, unfollow list (`222c4ee`)
