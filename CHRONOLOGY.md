@@ -2562,3 +2562,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - ran == manifest — assertion раннера: ноль необъяснённых skip, иначе exit 2 | дизайн-решение 23.10
 - **23.10.2026 09:46** — chrono: 23.10 factbase mandatory-case manifest reply (`8fe395c`)
 - **23.10.2026 09:51** — eval-gate: mandatory-case coverage manifest + ran==manifest assert (runner fleet-standard 1.2.0) (`ceafd31`)
+- **23.10.2026 09:51** — drift log: close intent ceafd31 (`a84755b`)
+
+## 2026-10-23 — Флот-раскатка mandatory-case coverage завершена (шина, abe3b374)
+
+- 10/10 гейтов под манифестом (верификация оператора): reviewer-verdict 7, robot-man-post 7, rab9-deploy 4, kupi-deploy 5, researcher-report 4, instagram-publish 4, job-hunter-blog 2, pokupki-tbank 3, cyberstrike-findings 3, default-backup 5.
+- kupi: pytest-агрегат от baseline (min_collected 776, skip_baseline 78); закрытие F4 → baseline 0, ratio min 1.0.
+- grok-checker поймал 2 ложнозелёных пути в kupi-скорере — исправлено, реверифицировано. Негативы на живом раннере: забытый кейс → exit 2.
+- Канон: скилл eval-gates v1.1 + rebuild-runbook. Источник фактов для будущих постов — этот блок.
