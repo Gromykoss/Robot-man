@@ -2538,3 +2538,18 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **Follow-back:** Daimonrun, wlodarczykacper, ankitdongre100, shlokbuilds, Nitikshofficial, JWPAX3051 (все following:true).
 - **grok-reports:** чтение SQLite, отправка через send_grok_reports.sh (relay 443; старый :8443 мёртв). Канон-файл: SETUP_DOCUMENTATION_RobotsTJ500.md (создан 20.10, авто-refresh oauth2 секция).
 - **22.10.2026 17:16** — session 22.10: honcho+ablation posts, gates updated, unfollow list (`222c4ee`)
+- **22.10.2026 22:45** — chrono: 2026-10-22 (`86eb3b7`)
+
+## 2026-10-23 — Факт-база для поста t_3e5cd2e9 (evals + observability), digit→fact→source
+
+- 11 — число eval-гейтов во флоте (report, verdict, deploy, publish, blog и др.), источник: research/evals-facts-20261020.md
+- 225 — строк Python-раннера (stdlib + PyYAML, no framework), источник: research/evals-facts-20261020.md
+- 96 — pass_ratio threshold 0.96 у kupi deploy-gate (27 failed / 671 passed / 78 skipped, временный до закрытия fail-класса F4), источник: research/evals-facts-20261020.md
+- 27 — failed-строк в датасете kupi deploy-gate, источник: research/evals-facts-20261020.md
+- 671 — passed-строк в датасете kupi deploy-gate, источник: research/evals-facts-20261020.md
+- 78 — skipped-строк в датасете kupi deploy-gate, источник: research/evals-facts-20261020.md
+- 127 — OTel collector на 127.0.0.1:4317/4318, источник: research/evals-facts-20261020.md
+- 4317 — OTLP gRPC порт коллектора, источник: research/evals-facts-20261020.md
+- 4318 — OTLP HTTP порт коллектора, источник: research/evals-facts-20261020.md
+- 8889 — порт Prometheus spanmetrics exporter, источник: research/evals-facts-20261020.md
+- 7 — золотой сет постов в собственном post-gate, источник: research/evals-facts-20261020.md
