@@ -2555,3 +2555,8 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - 7 — золотой сет постов в собственном post-gate, источник: research/evals-facts-20261020.md
 - **23.10.2026 04:28** — chrono: 23.10 factbase t_3e5cd2e9 evals post (digit tokens) (`521d625`)
 - **23.10.2026 04:30** — brief: swap to t_3e5cd2e9 evals topic (23.10), archive ablation brief (`2bce38f`)
+- **23.10.2026 04:30** — drift log: close intent 2bce38f (`a7a55f2`)
+
+## 2026-10-23 — Факт-база: манифест обязательных кейсов (реплей JamesWalker)
+
+- ran == manifest — assertion раннера: ноль необъяснённых skip, иначе exit 2 | дизайн-решение 23.10
