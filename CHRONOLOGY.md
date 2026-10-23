@@ -2560,3 +2560,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 ## 2026-10-23 — Факт-база: манифест обязательных кейсов (реплей JamesWalker)
 
 - ran == manifest — assertion раннера: ноль необъяснённых skip, иначе exit 2 | дизайн-решение 23.10
+- **23.10.2026 09:46** — chrono: 23.10 factbase mandatory-case manifest reply (`8fe395c`)
+- **23.10.2026 09:51** — eval-gate: mandatory-case coverage manifest + ran==manifest assert (runner fleet-standard 1.2.0) (`ceafd31`)
