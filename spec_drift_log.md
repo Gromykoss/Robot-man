@@ -127,4 +127,4 @@
 | 2026-10-21T05:21 | evals/post-gate/dataset.jsonl, .gitignore | eval-gate post-gate: seed dataset + gitignore runtime-вердиктов (.evals, metrics.json) | контент, данные, код, scorer/eval.yaml |  |
 | 2026-10-21T14:xx | evals/post-gate/scorer.py | spec-drift fix: length_ok по mode (post=note_tweet до 4000, reply=500) — жёсткий 500 блокировал все длинные посты; поймано живой публикацией memory-поста | CONTENT_BRIEF.md, drafts/ |
 | 2026-10-21T22:47 | .ci/check_scenario_map.py | whitelist evals/** — pre-push MERGE-CUT блокировал chrono-пуш из-за незакрытых eval-gate коммитов (файлы вне карты); прецедент 57afdaa 05.10 | knowledge_graph/, content/ | b722df4 |
-| 2026-10-23T04:29 | CONTENT_BRIEF.md,drafts/archive_20261023/CONTENT_BRIEF_ablation_20261022.md | brief swap to evals topic before publish | контент, факт-база |  |
+| 2026-10-23T04:29 | CONTENT_BRIEF.md,drafts/archive_20261023/CONTENT_BRIEF_ablation_20261022.md | brief swap to evals topic before publish | контент, факт-база | 2bce38f |
