@@ -1,34 +1,29 @@
-# CONTENT_BRIEF — пост «A/B: abliterated GLM-5.3 vs stock» (22.10.2026)
+# CONTENT_BRIEF — пост t_3e5cd2e9 «Evals + observability» (23.10.2026)
 
 | Поле | Значение |
 |---|---|
-| Тема | A/B пилот: abliterated GLM-5.3 vs базовый — 0 отказов у обеих; вердикт fallback |
-| Статус | одобрен владельцем 22.10 («пости», тема горячая) |
-| Изображение | /home/hermes-workspace/robot-man/drafts/cover_ab0_20261022_v1.png |
-| Mentions | нет для реплаев-ответов; хендлы в тексте основного поста уже опубликованы и разрезолвлены |
+| Тема | Eval-gate как дисциплина деплоя: 11 гейтов, раннер 225 строк, OTel-observability |
+| Статус | одобрен владельцем 23.10 («публикуй») |
+| Изображение | /home/hermes-workspace/robot-man/drafts/cover_evals_v2.png |
+| Mentions | нет — сторонние хендлы в тексте отсутствуют |
 | Язык | EN |
 
-## Факты (источники: отчёт CyberStrike + сырые артефакты ~/robot-man-artifacts/pilot-abliterated/ — верифицировано мной 22.10; TechCrunch 03.09; Reddit)
+## Факты (источник: research/evals-facts-20261020.md — 225 строк, sha256 d89ffa7db78975be… сверен 22.10; post-gate [PASS] rc=0 живьём; Prometheus series живы)
 
 | Токен | Факт | Источник |
 |---|---|---|
-| 10 / ten | 10 defensive/red-team промптов на обе модели | отчёт; артефакты (21 row) ✓ |
-| 0 / zero | отказов A 0/10, B 0/10 | артефакты: refusal=0 ×20 ✓ |
-| 4.95 | качество A (mean) | артефакты ✓ |
-| 4.80 | качество B (self-score, оштрафован) | отчёт ✓ |
-| 31.5 / 8.2-69.4 | латентность A ср (мин-макс) | артефакты: values ✓ |
-| 5,157 / 5157 | chars A mean | артефакты ✓ |
-| 2,371 / 2371 | chars B mean | артефакты ✓ |
-| 2.2x | A многословнее | расчёт 5157/2371 ✓ |
-| $0.19 / 0.19 | A-side cost per-row (sum 0.1857) | артефакты ✓ |
-| $0.38 / 0.38 | полный пилот по usage-логу (вкл. run1 + refusal probe) | отчёт |
-| $5 / five | prepaid баланс | отчёт |
-| 16k | output cap A (reasoning) | отчёт |
-| $20 / 20 | подписка Developer = $0 кредитов | Reddit r/opencodeCLI |
-| $900 / 900 | юзер сжёг при контексте >150k | Reddit r/opencodeCLI |
-| 150k | контекст-порог | Reddit |
-| September / September | TechCrunch о старте (03.09) | techcrunch.com |
-| GLM-5.3 | база (z.ai) | отчёт |
-| pynput | кейлоггер базовой модели в refusal-прогоне | отчёт |
-| 2,200-char / 200 / 2,200 / 2200 | Layer 0 cap per profile; pgvector HNSW max 2000; gemini-embedding-001 1536 dims; 9 profiles | канон памяти 19.10; пилот 21.10 |
-
+| 0 / zero | exit-код 0 = PASS; refusal=0 N/A | factbase ✓ |
+| 2 | exit-код 2 = FAIL | factbase ✓ |
+| 3 | exit-код 3 = CONFIG | factbase ✓ |
+| 1 | 127.0.0.1 collector; one runner | factbase ✓ |
+| 11 | число eval-гейтов во флоте | factbase ✓ |
+| 225 | строк Python-раннера (stdlib + PyYAML) | factbase ✓ |
+| 96 | pass_ratio threshold 0.96 (kupi deploy-gate, временный) | factbase ✓ |
+| 27 | failed / 671 passed / 78 skipped (kupi) | factbase ✓ |
+| 671 | passed-строк kupi | factbase ✓ |
+| 78 | skipped-строк kupи | factbase ✓ |
+| 127 | OTel collector 127.0.0.1 | factbase ✓ |
+| 4317 | OTLP gRPC порт | factbase ✓ |
+| 4318 | OTLP HTTP порт | factbase ✓ |
+| 8889 | Prometheus spanmetrics порт | factbase ✓ |
+| 7 | золотой сет из 7 постов (post-gate) | factbase ✓ |

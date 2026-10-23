@@ -2553,3 +2553,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - 4318 — OTLP HTTP порт коллектора, источник: research/evals-facts-20261020.md
 - 8889 — порт Prometheus spanmetrics exporter, источник: research/evals-facts-20261020.md
 - 7 — золотой сет постов в собственном post-gate, источник: research/evals-facts-20261020.md
+- **23.10.2026 04:28** — chrono: 23.10 factbase t_3e5cd2e9 evals post (digit tokens) (`521d625`)
