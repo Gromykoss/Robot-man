@@ -4,10 +4,24 @@ run_cmd: python3 scorer.py
 metrics_path: metrics.json
 dataset: dataset.jsonl
 thresholds:
-  cyrillic_free: {min: 1.0}
-  url_free: {min: 1.0}
-  hashtags_canonical: {min: 1.0}
-  caps_ok: {min: 1.0}
-  length_ok: {min: 1.0}
+  cyrillic_free:
+    min: 1.0
+  url_free:
+    min: 1.0
+  hashtags_canonical:
+    min: 1.0
+  caps_ok:
+    min: 1.0
+  length_ok:
+    min: 1.0
 run_timeout: 30
 artifact_dir: .evals
+mandatory:
+- case_1
+- case_2
+- case_3
+- case_4
+- case_5
+- case_6
+- case_7
+report_path: run_report.json
