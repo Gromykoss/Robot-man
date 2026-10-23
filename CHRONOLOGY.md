@@ -2570,3 +2570,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - kupi: pytest-агрегат от baseline (min_collected 776, skip_baseline 78); закрытие F4 → baseline 0, ratio min 1.0.
 - grok-checker поймал 2 ложнозелёных пути в kupi-скорере — исправлено, реверифицировано. Негативы на живом раннере: забытый кейс → exit 2.
 - Канон: скилл eval-gates v1.1 + rebuild-runbook. Источник фактов для будущих постов — этот блок.
+- **23.10.2026 10:27** — chrono: 23.10 fleet rollout mandatory-case coverage (10/10 gates, ops report) (`4e97f20`)
