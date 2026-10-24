@@ -131,3 +131,5 @@
 | 2026-10-23T09:50 | evals/post-gate/eval.yaml,run_report.json | mandatory-case coverage: manifest в eval.yaml + assert ran==manifest в eval_runner (report_path), skip/missing обязательного кейса = FAIL exit 2; задача из шины (JamesWalker-тред) | контент, eval-инфра | ceafd31 |
 | 2026-10-23T09:51 | evals/post-gate/eval.yaml,evals/post-gate/run_report.json | mandatory-case coverage: manifest в eval.yaml + assert ran==manifest в eval_runner (report_path), skip/missing обязательного кейса = FAIL exit 2; задача из шины (JamesWalker-тред) | контент, eval-инфра | ceafd31 |
 | 2026-10-24T02:02 | AGENTS.md | MGT ghost purge: строки GULAG/Alikhan удалены из «Контекст проектов»; grep = 0 | untracked || f2db6b9 |
+| 2026-10-24T06:34 | evals/post-gate/dataset.jsonl | seed для поста «gate on gates»: чистое тело EN без #-заголовков драфта (заголовки ломали cyrillic_free/hashtags/caps) | контент |  |
+| 2026-10-24T06:34 | evals/post-gate/dataset.jsonl,published_posts.jsonl | seed для поста «gate on gates» (чистое тело EN без #-заголовков) + publish log | контент, данные |  |
