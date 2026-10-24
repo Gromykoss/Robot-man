@@ -1,3 +1,10 @@
+## 2026-10-24 — Пост «gate on gates» опубликован (id 2113881716016218515); фикс sha-fill collision
+
+- **Публикация (06:34 UTC, @RobotsTJ500, post_with_log.sh):** engineering-пост «Even the gate on gates failed twice» — 2 ложнозелёных пути в eval-гейте, пойманные независимым чекером; манифест на 10/10 гейтов, негатив на живом раннере (забытый кейс → exit 2). Факты из CHRONOLOGY 23.10 (верифицированы директором); внутренние цифры 776/78 не публиковались.
+- **Инфрафикс (02:07 UTC, 2d7ff52):** fix sha-fill collision — drift_commit auto-chrono дописывал SHA в другую (расщеплённую) строку; теперь одна нерасщеплённая строка с пустыми sha-скобками.
+- **Spec drift:** seed evals/post-gate/dataset.jsonl (чистое тело EN без #-заголовков — заголовки ломали cyrillic_free/hashtags/caps), интент 06:34 закрыт SHA 1015fa3.
+- **Auto-chrono:** drift_commit сам добавил коммит-футер (в т.ч. `7d6d06f` close intent) в конец файла — оставлен как есть.
+
 ## 2026-10-12 — Weekly analytics @RobotsTJ500 (отчёт reports/2026-10-12.md)
 
 - **Метрики (10:05 UTC, verified xurl direct reads):** @RobotsTJ500 followers **390** (−9 к 399 от 05.10 — ПЕРВОЕ падение за 5 недель), following 258, tweets 777 (+6).
@@ -2579,3 +2586,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **24.10.2026 02:02** — chrono: 2026-10-24 MGT ghost purge (SHA-closure f2db6b9) (`ac4a592`)
 - **24.10.2026 02:07** — chrono: fix sha-fill collision with drift_commit auto-chrono (unsplit line, empty sha parens) (`2d7ff52`)
 - **24.10.2026 06:35** — evals: post-gate seed gate-on-gates + publish log (2113881716016218515) (`1015fa3`)
+- **24.10.2026 06:35** — drift log: close intent 1015fa3 (`7d6d06f`)
