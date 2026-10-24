@@ -80,8 +80,6 @@
 
 Перед написанием поста читать CHRONOLOGY.md (последние 3 дня) + AGENTS.md указанного проекта.
 
-- **GULAG** (тюремный мессенджер) → `/home/hermes-workspace/gooolag/`
-- **Alikhan** (стройка, WhatsApp) → `/home/hermes-workspace/Alikhan-migration/`
 - **RAB9** (крипто) → `/home/hermes-workspace/rab9/`
 
 ---

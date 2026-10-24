@@ -2571,3 +2571,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - grok-checker поймал 2 ложнозелёных пути в kupi-скорере — исправлено, реверифицировано. Негативы на живом раннере: забытый кейс → exit 2.
 - Канон: скилл eval-gates v1.1 + rebuild-runbook. Источник фактов для будущих постов — этот блок.
 - **23.10.2026 10:27** — chrono: 23.10 fleet rollout mandatory-case coverage (10/10 gates, ops report) (`4e97f20`)
+- **23.10.2026 22:46** — chrono: 2026-10-23 (SHA-closure 4e97f20) (`118c3d1`)

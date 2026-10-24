@@ -130,3 +130,4 @@
 | 2026-10-23T04:29 | CONTENT_BRIEF.md,drafts/archive_20261023/CONTENT_BRIEF_ablation_20261022.md | brief swap to evals topic before publish | контент, факт-база | 2bce38f |
 | 2026-10-23T09:50 | evals/post-gate/eval.yaml,run_report.json | mandatory-case coverage: manifest в eval.yaml + assert ran==manifest в eval_runner (report_path), skip/missing обязательного кейса = FAIL exit 2; задача из шины (JamesWalker-тред) | контент, eval-инфра | ceafd31 |
 | 2026-10-23T09:51 | evals/post-gate/eval.yaml,evals/post-gate/run_report.json | mandatory-case coverage: manifest в eval.yaml + assert ran==manifest в eval_runner (report_path), skip/missing обязательного кейса = FAIL exit 2; задача из шины (JamesWalker-тред) | контент, eval-инфра | ceafd31 |
+| 2026-10-24T02:02 | AGENTS.md | MGT ghost purge: строки GULAG/Alikhan удалены из «Контекст проектов»; grep = 0 | untracked | |
