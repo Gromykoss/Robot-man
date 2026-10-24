@@ -2572,3 +2572,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Канон: скилл eval-gates v1.1 + rebuild-runbook. Источник фактов для будущих постов — этот блок.
 - **23.10.2026 10:27** — chrono: 23.10 fleet rollout mandatory-case coverage (10/10 gates, ops report) (`4e97f20`)
 - **23.10.2026 22:46** — chrono: 2026-10-23 (SHA-closure 4e97f20) (`118c3d1`)
+
+- **24.10.2026 02:00** — docs: канон AGENTS.md — строки GULAG/Alikhan удалены из «Контекст проектов» (проекты удалены 21.10); vault-зеркало пересинкано, md5 ok. Профильный AGENTS.md: API-лимиты синканы с приказом 21.09 (public writes без суточного лимита, follow 10/day hard; было «max 3/сутки, follow 2/day» — профиль отстал на месяц), зоны/--to-алиасы/маршрутизация эскалации вычищены от GULAG/Alikhan. ()- **24.10.2026 02:02** — docs: purge GULAG/Alikhan from Контекст проектов (проекты удалены 21.10) (`f2db6b9`)
