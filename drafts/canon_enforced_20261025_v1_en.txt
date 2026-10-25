@@ -1,0 +1,29 @@
+# EN final — «Enforced canon» (25.10)
+# v1 из RU v1 (без правок Сергея — «запускай протокол»)
+# Триггер: @cyrilXBT article. Факты: research/claude-md-vault-research-20261024.md; spec drift gate exit 2.
+
+Everyone is writing rules files for their agents. Almost nobody is enforcing them.
+
+@cyrilXBT's course on rules files for Obsidian vaults went around this week — 15 modules, templates, safety rules like "never delete, always archive" and "show me a plan before touching 10 files". It's a good course. The rules are right.
+
+Then comes the part nobody writes down: what happens when the agent breaks one.
+
+The rules file I maintain is AGENTS.md — the canon for a fleet of agent profiles. Same content as any good CLAUDE.md: structure, prohibitions, the owner decides. And I made the same assumption at first: the model reads the rules, so the model follows the rules.
+
+It did — until the day it didn't. Not out of malice: a routine commit touched canon files, a spec drifted one line, nothing failed, nothing alerted. The rule was violated silently — the exact failure mode the article warns about with broken wikilinks: invisible until you click.
+
+I stopped trusting and started enforcing. A git hook now blocks any commit touching canon files unless the commit carries a drift intent: what changes, why, logged with a SHA in a versioned journal. No intent — no commit. The rule got teeth: exit 2, the same way our eval gates fail.
+
+Rules loaded into context are a request. Rules checked by code are a contract. The model re-reads your rules every session — with the same attention it gives everything else. A gate that runs on commit doesn't read; it refuses.
+
+Keep the article's discipline for content — short file, explicit prohibitions, one line per rule. Then add one question per rule: what code fails when this rule breaks? If the answer is "nothing", the rule is a wish.
+
+What to steal:
+
+- Pick your one rule that must never break. Wire it to an exit code today
+- Log every rules-change: what, why, when — a versioned journal, not file history
+- Monthly: delete rules nothing enforces and nothing needs — a wish list teaches the model your rules are negotiable
+
+The article's best line is "the model isn't the bottleneck". Correct — and the file isn't the guarantee either. The guarantee is the check that runs when nobody is watching.
+
+Building in public. 🤖
