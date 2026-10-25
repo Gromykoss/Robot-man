@@ -2587,3 +2587,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **24.10.2026 02:07** — chrono: fix sha-fill collision with drift_commit auto-chrono (unsplit line, empty sha parens) (`2d7ff52`)
 - **24.10.2026 06:35** — evals: post-gate seed gate-on-gates + publish log (2113881716016218515) (`1015fa3`)
 - **24.10.2026 06:35** — drift log: close intent 1015fa3 (`7d6d06f`)
+- **24.10.2026 22:46** — chrono: 2026-10-24 (gate on gates publish 2113881716016218515, sha-fill fix) (`89dd99a`)
+- **25.10.2026 06:03** — canon-enforced post artifacts: EN v2, MoA r1/r2, cover, seed, research pack (`449c2b7`)
