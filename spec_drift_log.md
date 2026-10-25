@@ -134,3 +134,4 @@
 | 2026-10-24T06:34 | evals/post-gate/dataset.jsonl | seed для поста «gate on gates»: чистое тело EN без #-заголовков драфта (заголовки ломали cyrillic_free/hashtags/caps) | контент |  |
 | 2026-10-24T06:34 | evals/post-gate/dataset.jsonl,published_posts.jsonl | seed для поста «gate on gates» (чистое тело EN без #-заголовков) + publish log | контент, данные | 1015fa3 |
 | 2026-10-25T06:03 | drafts/canon_enforced_20261025_v1_en.txt,drafts/canon_enforced_20261025_v1_en_body.txt,drafts/moa_canon_enforced_r1.md,drafts/moa_canon_enforced_r2.md,drafts/cover_canon_enforced_20261025_v1.png,evals/post-gate/dataset.jsonl,research/claude-md-vault-research-20261024.md | артефакты поста «enforced canon»: MoA-рецензии, обложка, research pack, seed | контент, eval-инфра | 449c2b7 |
+| 2026-10-25T06:10 | CONTENT_BRIEF.md,published_posts.jsonl | факт-строка '15 модулей статьи' в бриф + publish log поста enforced-canon | контент, данные |  |
