@@ -2590,3 +2590,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **24.10.2026 22:46** — chrono: 2026-10-24 (gate on gates publish 2113881716016218515, sha-fill fix) (`89dd99a`)
 - **25.10.2026 06:03** — canon-enforced post artifacts: EN v2, MoA r1/r2, cover, seed, research pack (`449c2b7`)
 - **25.10.2026 06:03** — drift log: close intent (`2254912`)
+- **25.10.2026 06:10** — brief: fact row '15 modules' + publish log enforced-canon (2114238023382552756) (`e3d9655`)
