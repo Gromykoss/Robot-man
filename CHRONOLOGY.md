@@ -2612,3 +2612,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **25.10.2026 22:46** — chrono: 2026-10-25 (`4370d39`)
 - **26.10.2026 04:53** — chrono: 25.10 ideas -> backlog until adat (owner directive) (`c2377b0`)
 - **26.10.2026 06:05** — read-only post artifacts: RU+EN v2, MoA r1/r2, cover, seed, research pack (`c5b501e`)
+- **26.10.2026 06:05** — drift log: close intent (`8f30e1b`)
