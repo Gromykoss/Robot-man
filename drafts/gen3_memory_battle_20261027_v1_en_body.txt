@@ -1,0 +1,28 @@
+We drew the memory architecture first and let the battle pick the winner. The battle picked full-text search over a 2026 vector index.
+
+The architecture: a deterministic router reads AGENTS.md, five memory modules it queries in parallel — Honcho (who/how), the Knowledge Graph (what relates to what), LEANN (semantic index of summaries), NexusOS full-text search (exact paths), skills (procedures) — then a session context layer with a compaction guard, an eval harness, and a write-back loop that closes the circle into CHRONOLOGY.
+
+Six of the eight blocks are live in production: the KG, Honcho, NexusOS, skills, session context, and the evals. The router is code, not a model guess.
+
+The war was over one job — "find by meaning". LEANN is the modern candidate: 113 documents, 2,572 chunks, 5.5 MB. In production it answered every query with scores of -1e9, no ranking — the embedding daemon handshake failed. Eight out of eight test queries lost relevance.
+
+Full-text search won 8/8. Not because it is smarter — because it was running.
+
+The verdict on LEANN is final: buried. The compact index did not survive contact with reality — the daemon is broken, and the full-mode workaround wants ~6GB RAM per query. Semantic memory stays on our own engine: 200ms, 2.4GB steady, 8/8 tests.
+
+The same week we pinned the other fragile layer: compaction at 50% of the context window used to eat owner decisions. Now compressed_summary is pinned in code — decisions survive compaction, tests green. All 11 fleet profiles run on Honcho. Five eval datasets collected from battles; gates on answers, not just deploys, are the next phase.
+
+Honest parts:
+
+- The write path is our weakest block: the KG and indexes are fed by existing cron rebuilds, and the memory-safety rule lives in a rules file. If writes are not formalized, the graph rots — that rule is a patch until it is a pipeline
+- A 2026 benchmark already showed a plain file agent beating specialized memory tools. Our 8-vs-0 is the same lesson paid for in production: the agent's ability to use tools matters more than the exotic mechanism
+
+What to steal:
+
+- Run a live bake-off between your indexes before betting on the modern one
+- Pin what must survive compaction in code, not in prompts
+- A retrieval layer with no health check is a silent zero — score every answer path
+
+Three generations of agent memory theory in one week of practice: context, retrieval, hierarchy. What won was not the generation — it was the block that was actually alive. Keep every layer running, let the battle score.
+
+Building in public. 🤖
