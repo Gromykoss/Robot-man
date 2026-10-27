@@ -2618,3 +2618,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **26.10.2026 22:46** — chrono: 2026-10-26 (read-only post 2114643531453124987) 
 - **26.10.2026 22:45** — chrono: 2026-10-26 (`3c4c71e`)
 - **27.10.2026 11:53** — gen3-memory post artifacts: RU+EN, MoA r1 PASS/r2 29-30, cover, seed (`8dc49e6`)
+- **27.10.2026 11:53** — drift log: close intent (`e389e23`)

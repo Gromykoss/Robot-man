@@ -5,7 +5,7 @@
 | Тема | Eval-gate как дисциплина деплоя: 11 гейтов, раннер 225 строк, OTel-observability |
 | Статус | одобрен владельцем 23.10 («публикуй») |
 | Изображение | /home/hermes-workspace/robot-man/drafts/cover_evals_v2.png |
-| Mentions | anrayama |
+| Mentions | ArthurLiu0725 |
 | Язык | EN |
 
 ## Факты (источник: research/evals-facts-20261020.md — 225 строк, sha256 d89ffa7db78975be… сверен 22.10; post-gate [PASS] rc=0 живьём; Prometheus series живы)
@@ -28,3 +28,5 @@
 | 8889 | Prometheus spanmetrics порт | factbase ✓ |
 | 7 | золотой сет из 7 постов (post-gate) | factbase ✓ |
 | 15 | 15 модулей в статье @cyrilXBT про CLAUDE.md (X Article 2114057378001747980) | research/claude-md-vault-research-20261024.md ✓ |
+| 113 / 2572 | доков/чанков в LEANN-индексе (5.5MB) | вердикт директора 27.10, vault leann-final-verdict ✓ |
+| 50 | порог компакции = 50% контекстного окна | вердикт директора 27.10 ✓ |
