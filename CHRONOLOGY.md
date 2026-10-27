@@ -2621,3 +2621,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **27.10.2026 11:53** — drift log: close intent (`e389e23`)
 - **27.10.2026 11:56** — brief: LEANN fact rows + publish log gen3-memory (2115049980306002109) (`4924180`)
 - **27.10.2026 11:57** — drift log: close intent (`f45a223`)
+- **27.10.2026 17:14** — engagement: brief row 350 + publish log (2115129717464424535) (`0fc8db7`)

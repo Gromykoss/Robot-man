@@ -140,4 +140,4 @@
 | 2026-10-26T09:01 | published_posts.jsonl | publish log: read-only credentials post 2114643531453124987 | данные | 13e9dde |
 | 2026-10-27T11:53 | drafts/gen3_memory_battle_20261027_v1_ru.md,drafts/gen3_memory_battle_20261027_v1_en.txt,drafts/gen3_memory_battle_20261027_v1_en_body.txt,drafts/moa_gen3_memory_r1.md,drafts/moa_gen3_memory_r2.md,drafts/cover_gen3_memory_20261027_v1.png,evals/post-gate/dataset.jsonl | артефакты поста «Gen 3 memory in battle»: RU+EN, MoA r1/r2, обложка, seed | контент, eval-инфра | 8dc49e6 |
 | 2026-10-27T11:56 | CONTENT_BRIEF.md,published_posts.jsonl | факт-строки LEANN (113/2572/50%) + publish log gen3-memory (2115049980306002109) | данные, контент | 4924180 |
-| 2026-10-27T17:14 | CONTENT_BRIEF.md,published_posts.jsonl | бриф-строка 350 (прогоны MCP-Injector) + publish log реплая @tech | контент, данные |  |
+| 2026-10-27T17:14 | CONTENT_BRIEF.md,published_posts.jsonl | бриф-строка 350 (прогоны MCP-Injector) + publish log реплая @tech | контент, данные | 0fc8db7 |
