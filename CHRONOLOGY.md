@@ -2622,3 +2622,9 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **27.10.2026 11:56** — brief: LEANN fact rows + publish log gen3-memory (2115049980306002109) (`4924180`)
 - **27.10.2026 11:57** — drift log: close intent (`f45a223`)
 - **27.10.2026 17:14** — engagement: brief row 350 + publish log (2115129717464424535) (`0fc8db7`)
+- **27.10.2026 17:15** — drift log: close intent (`1a3ccd6`)
+
+## 2026-10-27 — Идея из MCP-fault треда (@tech, 13.9K followers): fault-injection eval suite
+
+- Реплай @tech на пост MCP-Injector (2115067371966922885, arXiv 2610.32555, NeurIPS 2026: 1350 прогонов, 120B не лучше 20B при fault-инъекциях, score 8.08→3.23): «retry logic is where i'd look first».
+- ИДЕЯ-5 (в копилку флота, к IDEA-1/4 после adat): fault-injection eval suite — прокси на tool-call path, инъекции ошибок из калибровки реальных issue/PR; вместе с 5 боевыми eval-датасетами = датасет №6. Статус: БЭКЛОГ после адата (инфраструктура).
