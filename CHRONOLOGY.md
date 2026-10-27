@@ -2628,3 +2628,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 
 - Реплай @tech на пост MCP-Injector (2115067371966922885, arXiv 2610.32555, NeurIPS 2026: 1350 прогонов, 120B не лучше 20B при fault-инъекциях, score 8.08→3.23): «retry logic is where i'd look first».
 - ИДЕЯ-5 (в копилку флота, к IDEA-1/4 после adat): fault-injection eval suite — прокси на tool-call path, инъекции ошибок из калибровки реальных issue/PR; вместе с 5 боевыми eval-датасетами = датасет №6. Статус: БЭКЛОГ после адата (инфраструктура).
+- **27.10.2026 17:15** — chrono: IDEA-5 fault-injection eval suite (from @tech thread) (`0903376`)
