@@ -2642,3 +2642,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **29.10.2026 03:43** — research: Greptile review-agent talk (IDEA-7 primary source) (`edbfaf5`)
 - **29.10.2026 03:44** — drift log: close intent (`a4adc7d`)
 - **29.10.2026 03:44** — chrono: IDEA-7 research link (`514e757`)
+- **29.10.2026 03:44** — drift log: close intent 514e757 (`07eaa54`)
