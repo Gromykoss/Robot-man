@@ -144,3 +144,4 @@
 | 2026-10-29T03:41 | research/greptile-review-agent-20261029.md,CHRONOLOGY.md | IDEA-7: research pack по докладу Greptile (первоисточник найден) | research, контент |  |
 | 2026-10-29T03:42 | CHRONOLOGY.md,research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден,chrono-обновление) | research, контент |  |
 | 2026-10-29T03:43 | research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден) | research | edbfaf5 |
+| 2026-10-29T03:44 | CHRONOLOGY.md | IDEA-7 chrono: research link (Greptile source found) | контент |  |
