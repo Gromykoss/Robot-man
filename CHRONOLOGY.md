@@ -2639,3 +2639,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Ограничения: DUP-7d от enforced canon 25.10 (угол другой — «кто проверяет проверяющего», ручная сверка обязательна); сам мандат/апгрейд в пост НЕ входит до реализации (гейт факт-не-обещание); нужен первоисточник доклада Greptile (research до драфта). → Исследование 29.10: research/greptile-review-agent-20261029.md (первоисточник найден: Daksh Gupta, AI Engineer 26.10, youtu.be/4UtrRVtUN_g — 6 фиксов: prompts/nitpicks, датасет инцидентов, model inversion ~+10%, living wiki, sandbox testing computer use, дешёвые модели на подзадачи; Greptile ревьюит ~1% всех PR GitHub).
 - Связь: IDEA-1/4/5 (после реализации дадут цифры для сиквела).
 - **29.10.2026 03:37** — chrono: IDEA-7 Greptile review-agent post candidate (idea, not slot) (`7570059`)
+- **29.10.2026 03:43** — research: Greptile review-agent talk (IDEA-7 primary source) (`edbfaf5`)

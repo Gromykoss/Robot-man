@@ -143,4 +143,4 @@
 | 2026-10-27T17:14 | CONTENT_BRIEF.md,published_posts.jsonl | бриф-строка 350 (прогоны MCP-Injector) + publish log реплая @tech | контент, данные | 0fc8db7 |
 | 2026-10-29T03:41 | research/greptile-review-agent-20261029.md,CHRONOLOGY.md | IDEA-7: research pack по докладу Greptile (первоисточник найден) | research, контент |  |
 | 2026-10-29T03:42 | CHRONOLOGY.md,research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден,chrono-обновление) | research, контент |  |
-| 2026-10-29T03:43 | research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден) | research |  |
+| 2026-10-29T03:43 | research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден) | research | edbfaf5 |
