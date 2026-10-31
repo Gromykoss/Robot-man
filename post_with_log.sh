@@ -202,6 +202,34 @@ with open('$LOG', 'a') as f:
 "
     echo "[LOG] Saved post $POST_ID to published_posts.jsonl"
 
+    # ── DRAFT↔LIVE сверка (31.10, поручение директора): fetch твита по id,
+    # сравнить нормализованный текст с candidate. Несовпадение = FAIL публикации.
+    # note_tweet (premium long post) обязателен: bare text ~280 симв = ложный обрезок.
+    LIVE=$(xurl "/2/tweets/$POST_ID?tweet.fields=note_tweet" 2>/dev/null)
+    printf '%s' "$LIVE" > /tmp/robotman_live_check.json
+    printf '%s' "$TEXT" > /tmp/robotman_draft_check.txt
+    LIVE_OK=$(python3 - <<'PYVERIFY'
+import json, re
+try:
+    raw = open('/tmp/robotman_live_check.json').read()
+    d = json.loads(re.search(r'\{.*\}', raw, re.DOTALL).group(0))
+    t = d.get('data', {})
+    live = (t.get('note_tweet', {}) or {}).get('text') or t.get('text', '')
+    draft = open('/tmp/robotman_draft_check.txt').read()
+    ok = bool(live) and ' '.join(live.split()) == ' '.join(draft.split())
+    print('OK' if ok else 'MISMATCH')
+except Exception:
+    print('FETCH_FAIL')
+PYVERIFY
+)
+    if [ "$LIVE_OK" != "OK" ]; then
+        echo "[VERIFY] DRAFT↔LIVE MISMATCH — публикация требует ручной сверки! (id $POST_ID)" >&2
+        echo "[VERIFY] Сверка вручную: xurl \"/2/tweets/$POST_ID?tweet.fields=note_tweet\"" >&2
+        exit 1
+    fi
+    echo "[VERIFY] DRAFT↔LIVE OK ($POST_ID)"
+    rm -f /tmp/robotman_live_check.json /tmp/robotman_draft_check.txt
+
     # Push to Discord #robot-human via shared helper
     POST_URL="https://x.com/RobotsTJ500/status/$POST_ID"
     TIME_NOW=$(date -u +"%Y-%m-%d %H:%M UTC")

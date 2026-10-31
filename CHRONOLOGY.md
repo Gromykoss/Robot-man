@@ -2657,3 +2657,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **31.10.2026 04:48** — under-the-hood post: EN v2 (cadence fix + @XOpenSource credit + effects), MoA, cover, scorer report emission (`bd0841d`)
 - **31.10.2026 04:48** — drift log: close intent (`f5ad4c6`)
 - **31.10.2026 05:23** — publish fixes: manifest publish-time contract + publish log (2116400255277150435) (`255683d`)
+- **31.10.2026 05:23** — drift log: close intent (`84f14b3`)
