@@ -2659,3 +2659,10 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **31.10.2026 05:23** — publish fixes: manifest publish-time contract + publish log (2116400255277150435) (`255683d`)
 - **31.10.2026 05:23** — drift log: close intent (`84f14b3`)
 - **31.10.2026 05:48** — publish-gate: DRAFT↔LIVE verification (fetch note_tweet, normalize, compare) (`df6d369`)
+- **31.10.2026 05:49** — drift log: close intent (`65b9091`)
+
+## 2026-10-31 — Урок: MoA PASS на candidate ≠ проверка live (поручения директора исполнены)
+
+- Флаг директора (проверено по X API): находка «live = обрезок по 280» оказалась артефактом чтения — bare text отдаёт ~280 симв preview, полный текст живёт в note_tweet. Read-back: live 1972 симв == draft 1972, normalized equal, кредит @XOpenSource в live есть. Поручение 1 (reply 2/2) НЕ исполнено как избыточное — кредит уже в live, дубль = спам. Evidence: /tmp сверка + read-back в сессии.
+- Поручение 2 исполнено: post_with_log.sh — DRAFT↔LIVE сверка в publish-gate (fetch note_tweet по id после постинга, нормализованное сравнение с candidate, MISMATCH = exit 1). SHA в drift-логе.
+- Поручение 3: урок в CHRONOLOGY. «MoA PASS на candidate не защищает live — сверять артефакт с источником до/после публикации».
