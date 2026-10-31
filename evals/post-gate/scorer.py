@@ -32,11 +32,19 @@ def check_line(line: dict) -> dict:
 
 
 rows = [json.loads(l) for l in Path("dataset.jsonl").read_text().splitlines() if l.strip()]
+per_line = [check_line(r) for r in rows]
 if not rows:
     metrics = {m: 0.0 for m in ("cyrillic_free", "url_free", "hashtags_canonical", "caps_ok", "length_ok")}
 else:
-    per_line = [check_line(r) for r in rows]
     metrics = {m: min(float(d[m]) for d in per_line)
                for m in ("cyrillic_free", "url_free", "hashtags_canonical", "caps_ok", "length_ok")}
 Path("metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2) + "\n")
+
+# 31.10: emit per-case run report for mandatory coverage (ran == manifest).
+# Each dataset line is a case; a line passes only if all five checks hold.
+report_rows = [
+    {"id": f"case_{i}", "status": "pass" if all(d[m] for m in ("cyrillic_free", "url_free", "hashtags_canonical", "caps_ok", "length_ok")) else "fail"}
+    for i, d in enumerate(per_line, 1)
+]
+Path("run_report.json").write_text(json.dumps(report_rows, ensure_ascii=False, indent=1) + "\n")
 print(json.dumps(metrics, ensure_ascii=False))

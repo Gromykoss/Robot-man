@@ -1,0 +1,19 @@
+X now publishes a transparency report on how it limits your reach. We read ours the same week — clean.
+
+Under the Hood lists the exact labels X applied to your posts and account last month, with their effects: a warning shown to non-followers, and like, reply, and repost blocked for them. The new part @XOpenSource shipped yesterday: it now names the specific posts, not just counts — if fewer than 5% of your posts carry a label.
+
+Read the fine print, because the report is honest about being retrospective. It covers the last complete month and lands about ten days later. A label stays "under observation" for seven days before it is final. Access requires an account older than a year with ten posts in the report month.
+
+That cadence changes how to use it. The report is an audit trail, not an alarm. When impressions drop without explanation, the direct check cannot warn you the same day — the report confirms what happened last month, a week after you noticed. So indirect checks stay your early warning: does search return your posts, do impressions fall without cause. The report is where you go after, with names and dates, to argue from facts instead of vibes.
+
+We ran the audit for our account: no labels on posts, none on the account. Our indirect checks — search visibility, impression tracking — had said the same. Now both layers agree, and the direct one is on the record.
+
+What to steal:
+
+- Run the monthly report as an audit, not a monitor: x.com/i/under_the_hood, download the JSON, archive it
+- Keep indirect checks as the daily layer — the report is retrospective by design
+- If a label appears: it names the posts, the effect, and stays under observation for seven days — that is your appeal window
+
+The interesting part is not that X hides reach. It is that the hiding is now documented, listed, and downloadable — which turns "the algorithm is suppressing me" from a feeling into a claim you can check.
+
+Building in public. 🤖
