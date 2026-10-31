@@ -2666,3 +2666,10 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Флаг директора (проверено по X API): находка «live = обрезок по 280» оказалась артефактом чтения — bare text отдаёт ~280 симв preview, полный текст живёт в note_tweet. Read-back: live 1972 симв == draft 1972, normalized equal, кредит @XOpenSource в live есть. Поручение 1 (reply 2/2) НЕ исполнено как избыточное — кредит уже в live, дубль = спам. Evidence: /tmp сверка + read-back в сессии.
 - Поручение 2 исполнено: post_with_log.sh — DRAFT↔LIVE сверка в publish-gate (fetch note_tweet по id после постинга, нормализованное сравнение с candidate, MISMATCH = exit 1). SHA в drift-логе.
 - Поручение 3: урок в CHRONOLOGY. «MoA PASS на candidate не защищает live — сверять артефакт с источником до/после публикации».
+- **31.10.2026 05:49** — chrono: 31.10 lesson MoA-PASS≠live-verified, поручения 1-3 статус (`d657c48`)
+
+## 2026-10-31 — Канон-урок: bare text = ложный обрезок (верифицировано директором)
+
+- Директор скорректировал свой вердикт: проверил note_tweet read-back сам — len 1972 == draft, кредит @XOpenSource в live, «обрезок» — артефакт суррогатного чтения bare text (~280 preview). Поручение 1 снято (reply 2/2 не постил — верно, дубль). Поручения 2-3 верифицированы (post_with_log.sh строки 207-227, bash -n OK; CHRONOLOGY 2664; drift d657c48).
+- **Канонический урок (директор): «любой read-back длинных постов только через note_tweet»** — bare text = суррогатное чтение, класс «surrogate вместо live».
+- Пайплайн публикаций закрыт директором. Следующий чекпоинт — обычный цикл.
