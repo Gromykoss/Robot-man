@@ -145,4 +145,4 @@
 | 2026-10-29T03:42 | CHRONOLOGY.md,research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден,chrono-обновление) | research, контент |  |
 | 2026-10-29T03:43 | research/greptile-review-agent-20261029.md | IDEA-7: research pack Greptile (первоисточник найден) | research | edbfaf5 |
 | 2026-10-29T03:44 | CHRONOLOGY.md | IDEA-7 chrono: research link (Greptile source found) | контент | 514e757 |
-| 2026-10-31T04:18 | CHRONOLOGY.md | Under the Hood check clean (owner manual, 31.10) | контент |  |
+| 2026-10-31T04:18 | CHRONOLOGY.md | Under the Hood check clean (owner manual, 31.10) | контент | 18ba70c |
