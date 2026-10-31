@@ -2654,3 +2654,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **30.10.2026 22:47** — chrono: 2026-10-30 (`f577d85`)
 - **31.10.2026 04:18** — chrono: Under the Hood clean check (31.10, owner manual) (`18ba70c`)
 - **31.10.2026 04:18** — drift log: close intent (`b895c29`)
+- **31.10.2026 04:48** — under-the-hood post: EN v2 (cadence fix + @XOpenSource credit + effects), MoA, cover, scorer report emission (`bd0841d`)
