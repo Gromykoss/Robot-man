@@ -10,7 +10,7 @@ We ran the audit for our account: no labels on posts, none on the account. Our i
 
 What to steal:
 
-- Run the monthly report as an audit, not a monitor: x.com/i/under_the_hood, download the JSON, archive it
+- Run the monthly report as an audit, not a monitor: the Under the Hood page in your X settings, download the JSON, archive it
 - Keep indirect checks as the daily layer — the report is retrospective by design
 - If a label appears: it names the posts, the effect, and stays under observation for seven days — that is your appeal window
 

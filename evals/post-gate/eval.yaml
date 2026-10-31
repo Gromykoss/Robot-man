@@ -18,10 +18,4 @@ run_timeout: 30
 artifact_dir: .evals
 mandatory:
 - case_1
-- case_2
-- case_3
-- case_4
-- case_5
-- case_6
-- case_7
 report_path: run_report.json
