@@ -2673,3 +2673,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Директор скорректировал свой вердикт: проверил note_tweet read-back сам — len 1972 == draft, кредит @XOpenSource в live, «обрезок» — артефакт суррогатного чтения bare text (~280 preview). Поручение 1 снято (reply 2/2 не постил — верно, дубль). Поручения 2-3 верифицированы (post_with_log.sh строки 207-227, bash -n OK; CHRONOLOGY 2664; drift d657c48).
 - **Канонический урок (директор): «любой read-back длинных постов только через note_tweet»** — bare text = суррогатное чтение, класс «surrogate вместо live».
 - Пайплайн публикаций закрыт директором. Следующий чекпоинт — обычный цикл.
+- **31.10.2026 05:54** — chrono: canon lesson bare-text=false-truncation (director verified) (`09e0891`)
