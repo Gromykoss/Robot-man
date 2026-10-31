@@ -2644,9 +2644,11 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - ИДЕЯ-7 (кандидат поста, статус: идея, НЕ слот): разбор доклада Greptile + наша живая практика независимо от мандата — Maker≠Checker доказан (grok-checker поймал 2 ложнозелёных пути в своём скорере, пост 24.10), model inversion = наш MoA, критик +5.9-9.5 п. при 1.13-1.25x (dair_ai, Competitor Watch 28.10), «review ok = not found, not_run обязателен».
 - Ограничения: DUP-7d от enforced canon 25.10 (угол другой — «кто проверяет проверяющего», ручная сверка обязательна); сам мандат/апгрейд в пост НЕ входит до реализации (гейт факт-не-обещание); нужен первоисточник доклада Greptile (research до драфта). → Исследование 29.10: research/greptile-review-agent-20261029.md (первоисточник найден: Daksh Gupta, AI Engineer 26.10, youtu.be/4UtrRVtUN_g — 6 фиксов: prompts/nitpicks, датасет инцидентов, model inversion ~+10%, living wiki, sandbox testing computer use, дешёвые модели на подзадачи; Greptile ревьюит ~1% всех PR GitHub).
 - Связь: IDEA-1/4/5 (после реализации дадут цифры для сиквела).
+- **Under the Hood проверка 31.10 (владелец, вручную): @RobotsTJ500 чистый** — ни постов, ни аккаунта нет visibility-limiting labels. Прямое подтверждение индексации поверх косвенного xSearch (TACTICS 22.10). Триггер: X Open Source анонс (30.10, 2116262141745565826, 1.29M imp).
 - **29.10.2026 03:37** — chrono: IDEA-7 Greptile review-agent post candidate (idea, not slot) (`7570059`)
 - **29.10.2026 03:43** — research: Greptile review-agent talk (IDEA-7 primary source) (`edbfaf5`)
 - **29.10.2026 03:44** — drift log: close intent (`a4adc7d`)
 - **29.10.2026 03:44** — chrono: IDEA-7 research link (`514e757`)
 - **29.10.2026 03:44** — drift log: close intent 514e757 (`07eaa54`)
 - **29.10.2026 22:47** — chrono: 2026-10-29 (`dfc2619`)
+- **30.10.2026 22:47** — chrono: 2026-10-30 (`f577d85`)
