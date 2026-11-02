@@ -2675,3 +2675,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Пайплайн публикаций закрыт директором. Следующий чекпоинт — обычный цикл.
 - **31.10.2026 05:54** — chrono: canon lesson bare-text=false-truncation (director verified) (`09e0891`)
 - **31.10.2026 22:46** — chrono: 2026-10-31 (`4ba8b61`)
+- **01.11.2026 22:46** — chrono: 2026-10-31 footer (dangling line from 4ba8b61 race) (`e2f201b`)
