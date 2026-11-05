@@ -151,4 +151,4 @@
 | 2026-10-31T05:48 | post_with_log.sh | DRAFT↔LIVE сверка в publish-gate (поручение 2 директора 31.10): после постинга fetch note_tweet по id, нормализованное сравнение с candidate, MISMATCH = exit 1 | инфра | df6d369 |
 | 2026-11-05T08:02 | CHRONOLOGY.md,drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив | контент |  |
 | 2026-11-05T08:04 | drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив (CHRONOLOGY whitelisted — вне интента) | контент | 7faf8b5 |
-| 2026-11-05T12:23 | data/unfollow_review_20261105.md | fix total: 59 (40+10+9) — ошибка суммирования, записи не терялись | данные |  |
+| 2026-11-05T12:23 | data/unfollow_review_20261105.md | fix total: 59 (40+10+9) — ошибка суммирования, записи не терялись | данные | aa568b4 |

@@ -2685,3 +2685,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Материал остаётся в архиве: research/octoverse-fleet-20261105.md (факты флота актуальны на 05.11), версии драфтов v1-v7.
 - Урок сессии (для киборг-голоса): русские драфты — только в чат владельцу; голос киборгизма берётся из дневника/VOICE_PROFILE, не из engineering-шаблона.
 - **05.11.2026 08:04** — cancel: octoverse/cyborg post archived (owner directive) (`7faf8b5`)
+- **05.11.2026 08:04** — drift log: close intent (`b550def`)
+- **05.11.2026 12:23** — fix: unfollow total 59 (программная сверка) (`aa568b4`)
