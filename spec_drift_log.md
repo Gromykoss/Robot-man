@@ -150,4 +150,4 @@
 | 2026-10-31T05:23 | evals/post-gate/eval.yaml,evals/post-gate/dataset.jsonl,evals/post-gate/run_report.json,published_posts.jsonl,drafts/under_the_hood_20261031_v1_en_body.txt | publish fix: eval.yaml mandatory=[case_1] (publish-time dataset=1 строка кандидата; конфликт раскатки pipeline-vs-manifest), publish log gen поста | eval-инфра, данные | 255683d |
 | 2026-10-31T05:48 | post_with_log.sh | DRAFT↔LIVE сверка в publish-gate (поручение 2 директора 31.10): после постинга fetch note_tweet по id, нормализованное сравнение с candidate, MISMATCH = exit 1 | инфра | df6d369 |
 | 2026-11-05T08:02 | CHRONOLOGY.md,drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив | контент |  |
-| 2026-11-05T08:04 | drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив (CHRONOLOGY whitelisted — вне интента) | контент |  |
+| 2026-11-05T08:04 | drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив (CHRONOLOGY whitelisted — вне интента) | контент | 7faf8b5 |
