@@ -2707,3 +2707,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **07.11.2026 02:52** — drift log: close intent (S8) (`c180d86`)
 - **07.11.2026 02:54** — S8 проверен живой публикацией: ответ 2118899740502814763 на 2115726968272654437 (@ScrappyBuilds), тело без @handle, X поставил адресата сама — @ScrappyBuilds ровно 1 раз. Запись в published_posts.jsonl. Код в origin/main `c180d86`.
 - **07.11.2026 06:19** — unfollow batch1 10/10 done + verified (following 320->310) (`96a458b`)
+- **07.11.2026 06:19** — drift log: close intent (`47ca634`)
