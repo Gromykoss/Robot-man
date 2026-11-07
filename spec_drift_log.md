@@ -152,4 +152,4 @@
 | 2026-11-05T08:02 | CHRONOLOGY.md,drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив | контент |  |
 | 2026-11-05T08:04 | drafts/archive_20261105/cyborg_diary_octoverse_20261105_v7_ru.md | отмена поста Octoverse/киборгизм, материалы в архив (CHRONOLOGY whitelisted — вне интента) | контент | 7faf8b5 |
 | 2026-11-05T12:23 | data/unfollow_review_20261105.md | fix total: 59 (40+10+9) — ошибка суммирования, записи не терялись | данные | aa568b4 |
-| 2026-11-07T02:49 | operators/operator_checklist.py, operators/operator_pipeline.py, operators/tests/test_operators.py, post_with_log.sh | S8: reply mentions gate checks exact body (X prepends addressee) | untracked | |
+| 2026-11-07T02:49 | operators/operator_checklist.py, operators/operator_pipeline.py, operators/tests/test_operators.py, post_with_log.sh | S8: reply mentions gate checks exact body (X prepends addressee) | untracked || d91bd47 |

@@ -2702,3 +2702,4 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Тесты: +4, operators/tests 34 passed; мутация (вернуть старую проверку в reply) → 2 красных.
 - Навыки robot-man (x-post-publishing, joint-moa-protocol, robot-man-operator-pipeline) приведены к одному правилу, бэкапы `.bak-20261107-s8`.
 - Ветка `wt/s8-mentions`, без push. Живой публикацией не проверялось.
+- **07.11.2026 02:49** — S8: reply mentions gate checks the exact body (X prepends addressee) (`d91bd47`)
