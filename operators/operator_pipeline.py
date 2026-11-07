@@ -33,6 +33,7 @@ def approve_post(
     allowed_accounts: set[str] | list[str] | tuple[str, ...] = DEFAULT_ALLOWED_ACCOUNTS,
     brief_content: str | None = None,
     cover_path: str | None = None,
+    mode: str = "post",
 ) -> tuple[bool, str]:
     checks = [
         ("account", check_account(account, allowed_accounts)),
@@ -41,7 +42,7 @@ def approve_post(
         ("factcheck", check_fact_coverage(draft_text, allowed_facts)),
         (
             "checklist",
-            check_checklist(draft_text, brief_content or "", account, cover_path),
+            check_checklist(draft_text, brief_content or "", account, cover_path, mode),
         ),
     ]
 
@@ -174,6 +175,7 @@ def main(argv: list[str]) -> int:
         allowed_facts=allowed_facts,
         brief_content=brief_content,
         cover_path=cover_path,
+        mode=os.environ.get("POST_MODE", "post"),
     )
     if ok:
         return 0

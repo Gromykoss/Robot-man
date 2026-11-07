@@ -2695,3 +2695,10 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - **05.11.2026 08:04** — drift log: close intent (`b550def`)
 - **05.11.2026 12:23** — fix: unfollow total 59 (программная сверка) (`aa568b4`)
 - **05.11.2026 12:23** — drift log: close intent (`c6eca07`)
+
+## 2026-11-07 — S8: mentions в ответах (Hermes, по слову владельца)
+- Факт (read-only API, ответы 2115094693050462511 / 2115094765758767251 / 2115129717464424535): тело отправлялось без @handle, X сама ставит адресата в начало (display_text_range начинается после него). У guard prepend нет — канон навыков ошибался.
+- Код: `check_checklist(..., mode)`; в `POST_MODE=reply` вместо Mentions-row — `_check_reply_mentions` (блок: тело начинается с @handle или повтор handle). `post_with_log.sh --reply` передаёт `POST_MODE=reply`. Оригинальные посты — без изменений.
+- Тесты: +4, operators/tests 34 passed; мутация (вернуть старую проверку в reply) → 2 красных.
+- Навыки robot-man (x-post-publishing, joint-moa-protocol, robot-man-operator-pipeline) приведены к одному правилу, бэкапы `.bak-20261107-s8`.
+- Ветка `wt/s8-mentions`, без push. Живой публикацией не проверялось.

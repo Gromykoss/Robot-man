@@ -101,6 +101,31 @@ class ChecklistValidationTests(unittest.TestCase):
         self.assertIn("@NetMindAI", result.message)
 
     @pytest.mark.scenario("operators-gate.checklist_validation")
+    def test_reply_body_without_handle_passes_even_if_brief_requires_mentions(self):
+        brief = brief_table(Mentions="@aksenHQ", Изображение="нет")
+        result = operator_checklist.check_checklist("Relevance, scored binary.", brief, "RobotsTJ500", None, "reply")
+        self.assertTrue(result.passes, result.message)
+
+    @pytest.mark.scenario("operators-gate.checklist_validation")
+    def test_reply_body_starting_with_handle_blocks(self):
+        brief = brief_table(Mentions="@aksenHQ", Изображение="нет")
+        result = operator_checklist.check_checklist("@aksenHQ Relevance, scored binary.", brief, "RobotsTJ500", None, "reply")
+        self.assertEqual(result.verdict, Verdict.NOT_SATISFIED)
+        self.assertIn("starts with a @handle", result.message)
+
+    @pytest.mark.scenario("operators-gate.checklist_validation")
+    def test_reply_body_with_duplicate_handle_blocks(self):
+        result = operator_checklist._check_reply_mentions("Thanks — see @AgentMail and again @agentmail")
+        self.assertEqual(result.verdict, Verdict.NOT_SATISFIED)
+        self.assertIn("@agentmail", result.message)
+
+    @pytest.mark.scenario("operators-gate.checklist_validation")
+    def test_post_mode_still_requires_brief_mentions(self):
+        brief = brief_table(Mentions="@aksenHQ", Изображение="нет")
+        result = operator_checklist.check_checklist("Relevance, scored binary.", brief, "RobotsTJ500", None)
+        self.assertEqual(result.verdict, Verdict.NOT_SATISFIED)
+
+    @pytest.mark.scenario("operators-gate.checklist_validation")
     def test_media_opt_out_allows_missing_cover_and_default_robotstj500_blocks(self):
         self.assertIsNone(operator_checklist._check_media({"Изображение": "нет"}, None, "RobotsTJ500"))
         result = operator_checklist._check_media({}, None, "@RobotsTJ500")

@@ -97,6 +97,32 @@ def _check_language(draft_text: str, account: str) -> CheckResult | None:
     return None
 
 
+def _check_reply_mentions(draft_text: str) -> CheckResult | None:
+    """Reply mode (S8, 07.11.2026).
+
+    X itself prepends the parent author's @handle to a reply (verified on live
+    replies 2115094693050462511 / 2115094765758767251 / 2115129717464424535:
+    body sent without the handle, published text starts with it,
+    display_text_range starts after it). So the body must NOT start with a
+    handle (that is what produced «@A @A …» doubles) and must not repeat one.
+    The brief Mentions row is not required in a reply body.
+    """
+    stripped = draft_text.lstrip()
+    if stripped.startswith("@"):
+        return CheckResult(
+            Verdict.NOT_SATISFIED,
+            "reply body starts with a @handle; X prepends the addressee itself — remove it",
+        )
+    handles = [h.lower() for h in MENTION_RE.findall(draft_text)]
+    dupes = sorted({h for h in handles if handles.count(h) > 1})
+    if dupes:
+        return CheckResult(
+            Verdict.NOT_SATISFIED,
+            "duplicate mentions in reply body: " + ", ".join("@" + h for h in dupes),
+        )
+    return None
+
+
 def _check_mentions(draft_text: str, fields: dict[str, str]) -> CheckResult | None:
     mentions_value = fields.get("Mentions", "")
     required = MENTION_RE.findall(mentions_value)
@@ -192,15 +218,19 @@ def check_checklist(
     brief_content: str,
     account: str,
     cover_path: str | None = None,
+    mode: str = "post",
 ) -> CheckResult:
     if not isinstance(draft_text, str) or not draft_text.strip():
         return CheckResult(Verdict.NOT_SATISFIED, "draft text empty")
 
     fields = parse_brief_fields(brief_content)
+    mentions_check = (
+        _check_reply_mentions(draft_text) if mode == "reply" else _check_mentions(draft_text, fields)
+    )
 
     for result in (
         _check_language(draft_text, account),
-        _check_mentions(draft_text, fields),
+        mentions_check,
         _check_media(fields, cover_path, account),
     ):
         if result is not None and not result.passes:

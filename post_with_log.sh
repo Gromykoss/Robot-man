@@ -69,7 +69,9 @@ if [ "$MODE" = "reply" ]; then
 
     # Operator pipeline gate: same write-limit/approval checks as original posts.
     # Reply counts against the daily public-write budget.
-    PYTHONPATH="$DIR" python3 -m operators.operator_pipeline "$REPLY_BODY" "$APPROVAL_TOKEN" || { echo "BLOCKED by operator pipeline" >&2; exit 1; }
+    # S8 (07.11): X prepends the addressee itself; the reply gate checks the
+    # exact body the guard will send (no leading @handle, no duplicates).
+    POST_MODE=reply PYTHONPATH="$DIR" python3 -m operators.operator_pipeline "$REPLY_BODY" "$APPROVAL_TOKEN" || { echo "BLOCKED by operator pipeline" >&2; exit 1; }
 
     TEXT_TMP=$(mktemp /tmp/robotman_reply_text.XXXXXX)
     printf '%s' "$REPLY_BODY" > "$TEXT_TMP"
