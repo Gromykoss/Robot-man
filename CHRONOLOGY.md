@@ -2703,3 +2703,5 @@ AGENTS.md: добавлены 8 правил делегирования в Codex
 - Навыки robot-man (x-post-publishing, joint-moa-protocol, robot-man-operator-pipeline) приведены к одному правилу, бэкапы `.bak-20261107-s8`.
 - Ветка `wt/s8-mentions`, без push. Живой публикацией не проверялось.
 - **07.11.2026 02:49** — S8: reply mentions gate checks the exact body (X prepends addressee) (`d91bd47`)
+- **05.11.2026 22:46** — chrono: 2026-11-05 (`35989ee`)
+- **07.11.2026 02:52** — drift log: close intent (S8) (`c180d86`)

@@ -29,9 +29,7 @@
 @AIHegemonyMemes (28K) — AGI-мемы
 @prorab4ik (766) — мемы
 @BoopDaBuilder (187) — мемы
-@Rahatirtaza (20.5K) — Web3/NFT Community Builder (в прошлый раз владелец оставлял — сейчас критерий тот же, решает владелец)
 @neil_xbt (16K) — крипто
-@agentsdotland (14K) — crypto-agents (Solana/Oraichain токен) — крипто-проект с агентским словом
 @JWPAX3051 (3.3K) — «AI+SpaceX+Bitcoin+K-POP 100% IFB» — follow-back фарм
 @Joshua_WD (2.9K) — «I follow back» фарм-паттерн
 @shannholmberg (37K) — «growth» гуру, вне ниши
@@ -63,6 +61,6 @@
 ОТПИСАТЬ: @blueeyeswhinih (вне ниши), @feyelo (шум/промо), @Hx87666 (вне ниши), @YorollAI, @Peptibase, @chibifanpage2, @orynth, @z00m3rf13d, @CWG_Moon
 
 ## Итог
-- К отписке: **59** (Блок A: 40 + Блок B: 10 + Блок C-отписать: 9) — сверено программно 05.11
+- К отписке: **57** (Блок A: 38 + Блок B: 10 + Блок C-отписать: 9) — GO владельца 05.11: спорные @Rahatirtaza/@agentsdotland сняты
 - Лимит: 10/day hard → батч 6 дней, старт после ок владельца
 - Сверить со старым unfollow_list_20261031.md при исполнении
